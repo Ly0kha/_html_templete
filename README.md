@@ -1,2 +1,3 @@
 # _html_templete
-templete
+
+HTML5テンプレートです
