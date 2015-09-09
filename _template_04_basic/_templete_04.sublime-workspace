@@ -1,0 +1,642 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/Users/digitaldesigner/Desktop/work_kikushima/_work/work/private_work_20150813/doc.txt",
+			"settings":
+			{
+				"buffer_size": 8385,
+				"line_ending": "Unix",
+				"name": "var Hello = React.createClass ({"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 272.0,
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 521.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/html-templete/_template_04_basic/index.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/html-templete/_template_04_basic/debug.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/html-templete/_template_04_basic/css/style.css",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/html-templete/_template_04_basic/js/lib/jquery/plugin.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/content99.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/content06.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/content05.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/content04.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/content03.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/content02.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/content01.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/content00.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/sp/content99.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/sp/content06.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/sp/content05.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/sp/content04.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/sp/content03.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/sp/content02.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/sp/content01.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/sp/content00.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/sp/index.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconweb20150120/htdocs/js/src/viw/static/StaticContent.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconweb20150120/htdocs/index.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconweb20150120/htdocs/js/src/viw/Main.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconweb20150120/htdocs/js/src/viw/static/StaticPageManager.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconweb20150120/htdocs/js/src/viw/static/StaticPage.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconweb20150120/htdocs/js/src/Index.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_pmj20150611/_fla/_fla20150805/.htpasswd",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_pmj20150611/_fla/_fla20150805/.htaccess",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/_pmj20150611/htaccess/.htpasswd",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/_pmj20150611/htaccess/.htaccess",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconweb20150120/htdocs/_static_new/career/career_graduate.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconweb20150120/htdocs/inquiry/confirm.php",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconweb20150120/htdocs/inquiry/confirm.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_watashi20150309/htdocs/js/lib/jquery/plugin.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/_coleman20150320/_doc/deploylist_20150805.txt",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_watashi20150309/htdocs/js/lib/jquery/jquery.wookmark.min.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_watashi20150309/htdocs/index.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_watashi20150309/htdocs/include/header.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_watashi20150309/htdocs/index.php",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_watashi20150309/htdocs/js/lib/canvas/excanvas.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_watashi20150309/htdocs/functions.php",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_watashi20150309/htdocs/footer.php",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconweb20150120/htdocs/static/graduate.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconweb20150120/htdocs/static/js/Index.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/sp/css/style.css",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/css/bootstrap/bootstrap.css",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/css/style.css",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/index.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/_epipen20150526/_doc/_source20150727/decoard.txt",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/js/lib/jquery/plugin.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/sp/js/lib/jquery/plugin.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/js/lib/jstream/content99.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/sp/js/lib/jstream/content00.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/_epipen20150526/_doc/_source20150721/EHP_Mov_07_Tag_iFrame_150721_01.txt",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/pc/js/lib/jquery/selectivizr-min.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/pc/js/lib/jquery/plugin.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/pc/css/style.css",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/pc/index.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/include/header.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/css/colorbox.css",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/_epipen20150526/_doc/_source20150709/EHP_Mov_06_Tag_iFrame_150709_01.txt",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/_epipen20150526/_doc/_source20150709/EHP_Mov_04_Tag_iFrame_150709_01.txt",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/_epipen20150526/_doc/_source20150709/EHP_Mov_05_Tag_iFrame_150709_01.txt",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/_epipen20150526/_doc/_source20150709/EHP_Mov_03_Tag_iFrame_150709_01.txt",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/_epipen20150526/_doc/_source20150709/EHP_Mov_02_Tag_iFrame_150709_01.txt",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/_epipen20150526/_doc/_source20150709/EHP_Mov_01_Tag_iFrame_150709_01.txt",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/_epipen20150526/_doc/_source20150709/EHP_Mov_00_Tag_iFrame_150709_01.txt",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/js/lib/jstream/content06.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/js/lib/jstream/content05.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/js/lib/jstream/content04.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/js/lib/jstream/content03.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/js/lib/jstream/content02.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/js/lib/jstream/content01.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/js/lib/jstream/content00.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/js/lib/jstream/vtr06.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/js/lib/jstream/vtr05.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/js/lib/jstream/vtr04.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/js/lib/jstream/vtr03.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/js/lib/jstream/vtr02.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/js/lib/jstream/vtr01.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/js/lib/jstream/vtr00.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/test.html",
+		"/Users/digitaldesigner/Downloads/colorbox-master/example3/index.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/_epipen20150526/_doc/_source20150708/EHP_Mov_00_Tag_iFrame_150708_02.txt",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/css/flexslider.css",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/js/lib/jquery/jquery.colorbox-min.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/_epipen20150526/_doc/_source20150708/EHP_Mov_06_Tag_iFrame_150708_02.txt",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/_epipen20150526/_doc/_source20150708/EHP_Mov_05_Tag_iFrame_150708_02.txt",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/_epipen20150526/_doc/_source20150708/EHP_Mov_04_Tag_iFrame_150708_02.txt",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/_epipen20150526/_doc/_source20150708/EHP_Mov_03_Tag_iFrame_150708_02.txt",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/_epipen20150526/_doc/_source20150708/EHP_Mov_02_Tag_iFrame_150708_02.txt",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/_epipen20150526/_doc/_source20150708/EHP_Mov_01_Tag_iFrame_150708_02.txt",
+		"/Users/digitaldesigner/Downloads/colorbox-master/example2/index.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/css/shadowbox/shadowbox.css",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/js/lib/shadowbox/shadowbox.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/css/shadowbox/shadowbox-video.css",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/_epipen20150526/_doc/_source20150708/EHP_Mov_06_Tag_iFrame_150708_01.txt",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/_epipen20150526/_doc/_source20150708/EHP_Mov_05_Tag_iFrame_150708_01.txt",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/_epipen20150526/_doc/_source20150708/EHP_Mov_04_Tag_iFrame_150708_01.txt",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/_epipen20150526/_doc/_source20150708/EHP_Mov_03_Tag_iFrame_150708_01.txt",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/_epipen20150526/_doc/_source20150708/EHP_Mov_02_Tag_iFrame_150708_01.txt",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/_epipen20150526/_doc/_source20150708/EHP_Mov_01_Tag_iFrame_150708_01.txt",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/_epipen20150526/_doc/_source20150708/EHP_Mov_00_Tag_iFrame_150708_01.txt",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/_epipen20150526/_doc/_source/EHP_Mov_06_Tag_iFrame_150707_01.txt",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/_epipen20150526/_doc/_source/EHP_Mov_05_Tag_iFrame_150707_01.txt",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/_epipen20150526/_doc/_source/EHP_Mov_04_Tag_iFrame_150707_01.txt",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/_epipen20150526/_doc/_source/EHP_Mov_03_Tag_iFrame_150707_01.txt",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/_epipen20150526/_doc/_source/EHP_Mov_02_Tag_iFrame_150707_01.txt",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/_epipen20150526/_doc/_source/EHP_Mov_01_Tag_iFrame_150707_01.txt",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/_epipen20150526/_doc/_source/EHP_Mov_00_Tag_iFrame_150707_01.txt",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/_smirnoff20150227/_doc/tokyo_scene_20150707.txt",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/debug.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_pml20150611/htdocs/index.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_watashi20150309/htdocs/style.css",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/html-templete/_template_05_parallax/js/lib/jquery/plugin.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/html-templete/_template_01_basic_new/js/lib/jquery/plugin.js",
+		"/Volumes/_WIN/works/_Beacon/work_kikushima/_work/work/_smirnoff20150227/htdocs/pc/js/lib/jquery/plugin.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/html-templete/_template_01_basic_new/index.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_pml20150611/htdocs/5/Day30/Day30_body.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_pml20150611/htdocs/5/Day3/Day3_body.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_pml20150611/htdocs/5/Day17/Day17_body.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_pml20150611/htdocs/5/Day1/Day1_body.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_pml20150611/htdocs/4/REG00005b_OTHER/body.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_pml20150611/htdocs/4/REG00005b_IQ/body.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_pml20150611/htdocs/4/REG00005a_OTHER/body.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_pml20150611/htdocs/4/REG00005a_IQ/body.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_pml20150611/htdocs/3/REGNG00004_認証NG_生年月日不正/text/subject.tpl"
+	],
+	"find":
+	{
+		"height": 38.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs",
+			"<open files>",
+			"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_pml20150611/htdocs",
+			"<open files>",
+			"/Users/digitaldesigner/Downloads/fullPage.js-master/",
+			"/Users/digitaldesigner/Desktop/work_kikushima/_doc/html-templete/_template_05_parallax,/Users/digitaldesigner/Downloads/fullPage.js-master/examples",
+			"/Users/digitaldesigner/Desktop/work_kikushima/_doc/html-templete/_template_05_parallax",
+			"/Users/digitaldesigner/Desktop/work_kikushima/_doc/html-templete/_template_04_basic",
+			"<open files>",
+			"/Users/digitaldesigner/Desktop/work_kikushima/_doc/html-templete/_template_01_basic_new",
+			"<open files>",
+			"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_coleman20150320/htdocs",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"href=\"../images/favicon/",
+			"href=\"images/favicon/",
+			"mb_20",
+			"\">",
+			"italic",
+			"新卒",
+			"ul,",
+			"ul, ol",
+			"ul",
+			"// Lists",
+			"scrollWidth",
+			"_pc",
+			"}",
+			"// Device Measures En:英語、Jp:日本語  //\n// 1.SP版とPC版でレイアウトを変える  //\n$(window).load(function() {\n\n	var ua = navigator.userAgent;\n\n	// iPhone, AndroidなどのSP端末の表示 //\n    if (ua.indexOf('iPhone') > 0 || ua.indexOf('iPad') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 || ua.indexOf('BlackBerry') > 0 || ua.indexOf('windows Phone') > 0 || ua.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(ua)){\n\n		// common -SP版背景画像を固定化- //\n		/* SPかPCかの判定を切り替える */\n		$(\".bg_top_pc\").addClass(\"bg_top_sp\").removeClass(\"bg_top_pc\");\n		$(\".bg_contents_pc\").addClass(\"bg_contents_sp\").removeClass(\"bg_contents_pc\");\n		$(\".bg_work_pc\").addClass(\"bg_work_sp\").removeClass(\"bg_work_pc\");\n\n		/* SPならば背景固定用のソースを挿入する */\n		$(\"body.bg_top\").append(\"<div class='background-bg_top'></div>\");\n		$(\"body.bg_contents\").append(\"<div class='background-bg_contents'></div>\");\n		$(\"body.bg_work\").append(\"<div class='background-bg_work'></div>\");\n\n		/* iOS用にスクロールして背景がカクつく現象を解消させる */\n		$(window).bind(\"resize load\", function(){\n			var wh = $(window).outerHeight();\n\n			$(\"#lb_overlay,.background-bg_top,.background-bg_contents,.background-bg_work\").css({\n				\"height\" : wh\n			});\n\n		}).trigger(\"resize\");\n\n		// form -SP版wrapperレイアウト- //\n		$(\"#wrapper\").addClass(\"wrapper_sp\").removeClass(\"wrapper\");\n\n		// form  -SP版formレイアウト- //\n		$(\"#form_layoutJp,#form_layoutEn\").addClass(\"form_sp\").removeClass(\"form\");\n\n		// form -SP版formComplete画像サイズ- //\n		$(\"#sentCompleteJp,#sentCompleteEn\").addClass(\"img_complete_sp\")\n\n		// form -SP版suggestレイアウト- //\n		$(\".suggest_pc\").addClass(\"suggest_sp\").removeClass(\"suggest_pc\");\n		$(\"#suggestJp,#suggestEn\").addClass(\"suggest_wrap_sp\").removeClass(\"suggest_wrap_pc\");\n\n	}\n\n});",
+			"246px",
+			"320px",
+			"images/pc/",
+			"hp:150,",
+			"wp:270",
+			"wp:320",
+			"hp:180,",
+			"fff",
+			"vtr0",
+			"wt:640",
+			"ht:360",
+			"wt:200",
+			"ht:113",
+			"col3",
+			"col1",
+			"14px",
+			"bottomContent",
+			" -->",
+			"jquery.easings.min.js",
+			"sectionsColor",
+			"fp-slidesContainer",
+			"\n<",
+			"btn_top",
+			"background-color: #eee;",
+			"ui-state-hover",
+			"nav",
+			"btn_slider_sprite.png ",
+			"btn_slider_sprite.png",
+			"6",
+			"img_thumb_08",
+			"middle mr_05 float_l",
+			"64px",
+			"<span class=\"italic\">tags</span>\n							/",
+			"<span class=\"italic\">tags</span>\n							/\nurl(../images/",
+			"\n\nurl(../images/",
+			"url(images/",
+			"url(../images/",
+			"INFLUECER",
+			"self_expression",
+			"#influecer",
+			"_influecer",
+			"contents",
+			"left",
+			"contents_wrapper",
+			"&nbsp;/",
+			"<span class=\"italic\">tag</span>",
+			"a:hover",
+			"20px",
+			"\">\n",
+			"a ",
+			"h1",
+			"mb_16",
+			"fi_right",
+			"fi_left",
+			"radioButtonActive",
+			"checkBoxActive",
+			"class=\"blank\"",
+			"class=\"blank\" ",
+			"btn_link_next_02",
+			"text-indent: 100%;",
+			"checkbox10",
+			"checkbox_08",
+			"itemList",
+			"clearCheckBox",
+			"#radio",
+			"#anchor",
+			"MinkaraFooter",
+			".zip",
+			".rar",
+			".zip",
+			"］",
+			"［",
+			"] ",
+			"  [",
+			".zip",
+			".rar",
+			"] ",
+			"］",
+			"［",
+			"］",
+			".zip",
+			".rar",
+			"] ",
+			"［",
+			"］",
+			"［"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"href=\"/images/favicon/",
+			"_sp",
+			"images/index/",
+			"hp:75,",
+			"wp:135",
+			"wp:270",
+			"hp:150,",
+			"content0",
+			"wt:135",
+			"ht:77",
+			"wt:148",
+			"ht:84",
+			"float_l",
+			"url(images/",
+			"url(../images/",
+			"url(images/",
+			"INFLUENCER",
+			"self-expression",
+			"#influencer",
+			"_influencer",
+			"/",
+			"<span class=\"italic\">tags</span>",
+			"mb_20",
+			"float_r",
+			"float_l",
+			"radioButtonIEActive",
+			"checkBoxIEActive",
+			"#radio_",
+			"#checkbox_",
+			"",
+			"]",
+			"[",
+			"]",
+			"[",
+			"",
+			"]",
+			"[",
+			"\n[",
+			"]",
+			"",
+			"]",
+			"[",
+			"]",
+			"["
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/Users/digitaldesigner/Desktop/work_kikushima/_work/work/private_work_20150813/doc.txt",
+					"settings":
+					{
+						"buffer_size": 8385,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7224,
+								7224
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"auto_name": "var Hello = React.createClass ({",
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"is_xml": false,
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"devel": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": "load-save",
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 35.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.516585394879,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.unsaved_changes":
+	{
+		"height": 124.0
+	},
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"theme",
+				"/Volumes/Macintosh Sub_HD/_private/work/work_kikushima20111204/_template01_basic/index.html"
+			],
+			[
+				"install",
+				"/Volumes/Macintosh Sub_HD/_private/work/work_kikushima20111204/_template01_basic/index.html"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 212.0,
+	"status_bar_visible": true
+}
