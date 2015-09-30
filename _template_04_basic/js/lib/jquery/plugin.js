@@ -37,14 +37,14 @@
 
 // test IE判定実装 //
 // IEであるか否かの判定
-//var isIE = false; // IEか否か
-//var version = null; // IEのバージョン
-//var ua = navigator.userAgent;
-//if( ua.match(/MSIE/) || ua.match(/Trident/) ) {
-//	isIE = true;
-//	version = ua.match(/(MSIE\s|rv:)([\d\.]+)/)[2];
-//	location.href="http://www.yahoo.co.jp/"
-//}
+// var isIE = false; // IEか否か
+// var version = null; // IEのバージョン
+// var ua = navigator.userAgent;
+// if( ua.match(/MSIE/) || ua.match(/Trident/) ) {
+// 	isIE = true;
+// 	version = ua.match(/(MSIE\s|rv:)([\d\.]+)/)[2];
+// 	location.href="http://www.yahoo.co.jp/"
+// }
 
 
 // header共通化 //
