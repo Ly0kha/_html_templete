@@ -792,7 +792,7 @@ $(function() {
 			// ウィンドウサイズが630px以上になったら  //
 			else {
 				$(".colon").show();
-				$(".textarea").css("width", 400 + "px" );
+				$(".textarea").css("width", 600 + "px" );
 			}
 
 		}
@@ -1140,7 +1140,7 @@ $(window).load(function() {
 		$("#wrapper").addClass("wrapper_sp").removeClass("wrapper");
 
 		// form  -SP版formレイアウト- //
-		$("#form_layoutJp,#form_layoutEn").addClass("form_sp").removeClass("form");
+		$("#form_layoutJp,#form_layoutEn").addClass("form_sp").removeClass("form_pc");
 
 		// form -SP版formComplete画像サイズ- //
 		$("#sentCompleteJp,#sentCompleteEn").addClass("img_complete_sp")
