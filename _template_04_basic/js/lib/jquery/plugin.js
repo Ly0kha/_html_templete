@@ -230,6 +230,15 @@ else if(window.attachEvent) {
 }
 
 
+// target_blank for IE8 //
+$(function(){
+	$('.blank').click(function(){
+		window.open(this.href, '_blank');
+		return false;
+	});
+});
+
+
 
 
 /* ライトボックス
