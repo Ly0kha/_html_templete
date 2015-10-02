@@ -100,9 +100,7 @@ $(function() {
 	adjust();
 
 	$(window).bind("resize load", function() {
-
 		adjust();
-
 	})
 
 });
@@ -121,9 +119,7 @@ $(function() {
 	adjust();
 
 	$(window).bind("resize load", function() {
-
 		adjust();
-
 	})
 
 });
@@ -240,16 +236,12 @@ function smartRollover() {
 	}
 }
 
-if(window.addEventListener) {
-
+if　(window.addEventListener) {
 	window.addEventListener("load", smartRollover, false);
-
 }
 
-else if(window.attachEvent) {
-
+else if　(window.attachEvent) {
 	window.attachEvent("onload", smartRollover);
-
 }
 
 
@@ -780,9 +772,7 @@ $(function() {
 
 	// 戻るボタンを押したときの判定 //
 	$("input#btn_formback_ja,input#btn_formback_en").click(function() {
-
 		location.href="index.html"
-
 	});
 
 
@@ -1112,6 +1102,7 @@ $(function() {
 
 	// 3.デフォルトの表示 -lang:PC版、lang_ja / lang_en:SP版- //
 	$(function() {
+
 		var lang_ja = $.cookie("lang_ja");
 		var lang_en = $.cookie("lang_en");
 		var lang = $.cookie("lang");
@@ -1191,7 +1182,7 @@ $(window).load(function() {
 	var ua = navigator.userAgent;
 
 	// iPhone, AndroidなどのSP端末の表示 //
-    if (ua.indexOf('iPhone') > 0 || ua.indexOf('iPad') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 || ua.indexOf('BlackBerry') > 0 || ua.indexOf('windows Phone') > 0 || ua.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(ua)){
+	if (ua.indexOf('iPhone') > 0 || ua.indexOf('iPad') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 || ua.indexOf('BlackBerry') > 0 || ua.indexOf('windows Phone') > 0 || ua.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(ua)){
 
 		// common -SP版背景画像を固定化- //
 		/* SPかPCかの判定を切り替える */
