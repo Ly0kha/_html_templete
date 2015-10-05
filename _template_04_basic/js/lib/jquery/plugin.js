@@ -826,7 +826,7 @@ $(function() {
 			if((ww) < 630) {
 
 				$(".colon").hide();
-				$(".textarea").css("width", 400 / 400 * 100 + "%" );
+				$("dl.form_pc dd").css("width", 400 / 400 * 100 + "%" );
 
 			}
 
@@ -834,7 +834,7 @@ $(function() {
 			else {
 
 				$(".colon").show();
-				$(".textarea").css("width", 600 + "px" );
+				$("dl.form_pc dd").css("width", 600 + "px" );
 
 			}
 

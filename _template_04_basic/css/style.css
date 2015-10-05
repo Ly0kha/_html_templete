@@ -232,11 +232,13 @@ select {
 		top: 0px;
 		left: 6px;
 
-		content: "\002714";
+		content: "\002713";
 		color: #000;
 
 		display: block;
 	}
+
+}
 
 
 /* 本文、コンテンツボックス、テーブル、リスト、定義、罫線など
@@ -872,7 +874,8 @@ address {
 /* 項目レイアウト -PC用- */
 dl.form_pc {
 	min-width: 280px;
-	max-width: 980px;
+	max-width: 960px;
+	margin: 0px 10px;
 	padding: 0px;
 }
 
