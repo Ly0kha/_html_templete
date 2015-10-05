@@ -510,7 +510,7 @@ $(function() {
 
 			//半角アルファベット（大文字･小文字）のみ
 			jQuery.validator.addMethod("alphabet", function(value, element) {
-				return this.optional(element) || /^([a-zA-z¥s]+)$/.test(value);
+				return this.optional(element) || /^([a-zA-Z0-9\s\@_\.\-]+)$/.test(value);
 				}, "半角英字を入力してください"
 			);
 
@@ -518,16 +518,13 @@ $(function() {
 				ignore: ".ignore",
 				rules: {
 					inquiryListJp :{
-						required: true,
+						required: true
 					},
-					/* 20150220 Sitemap Release
-					// inquiryCompanyNameJp :{
-					// 	required: true,
-					// },
-					*/
+					inquiryCompanyNameJp :{
+						required: true
+					},
 					inquiryNameJaJp :{
-						required: true,
-						kana: true
+						required: true
 					},
 					inquiryNameEnJp :{
 						required: true,
@@ -546,14 +543,11 @@ $(function() {
 					inquiryListJp :{
 						required: "※お問い合わせ内容をお選び下さい。"
 					},
-					/* 20150220 Sitemap Release
-					// inquiryCompanyNameJp :{
-					// 	required: "※必須項目です。"
-					// },
-					*/
+					inquiryCompanyNameJp :{
+						required: "※必須項目です。"
+					},
 					inquiryNameJaJp :{
-						required: "※必須項目です。",
-						kana: "※全角で入力して下さい。"
+						required: "※必須項目です。"
 					},
 					inquiryNameEnJp :{
 						required: "※必須項目です。",
@@ -608,13 +602,11 @@ $(function() {
 				ignore: ".ignore",
 				rules: {
 					inquiryListEn :{
-						required: true,
+						required: true
 					},
-					/* 20150220 Sitemap Release
-					// inquiryCompanyNameEn :{
-					// 	required: true,
-					// },
-					*/
+					inquiryCompanyNameEn :{
+						required: true
+					},
 					inquiryNameEnEn :{
 						required: true,
 						alphabet: true
@@ -631,13 +623,11 @@ $(function() {
 					inquiryListEn :{
 						required: "*Please select."
 					},
-					/* 20150220 Sitemap Release
-					// inquiryCompanyNameEn :{
-					// 	required: "*Please enter xxx."
-					// },
-					*/
+					inquiryCompanyNameEn :{
+						required: "*Please enter xxx."
+					},
 					inquiryNameEnEn :{
-						required: "*Please enter xxx.",
+						required: "*Please enter xxx."
 					},
 					inquiryMailEn :{
 						required: "*Please enter xxx.",
