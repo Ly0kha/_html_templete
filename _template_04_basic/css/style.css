@@ -337,7 +337,7 @@ ul.list {
 }
 
 ul.list li {
-	margin: 0px 0px 20px 20px;
+	margin: 0px 0px 20px 25px;
 }
 
 /* navタグ以降のliは並列で表示 */
@@ -393,7 +393,7 @@ ol.list {
 }
 
 ol.list li {
-	margin: 0px 0px 20px 20px;
+	margin: 0px 0px 20px 25px;
 }
 
 /* 定義：ヘッドラインなど */
