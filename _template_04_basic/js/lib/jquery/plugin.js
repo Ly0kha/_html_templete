@@ -83,29 +83,6 @@ $(function() {
 });
 
 
-// Search //
-$(function() {
-
-	function adjust() {
-
-		var ww = $(window).width(); // ウィンドウの幅 //
-		var dw = $(document).width(); // ドキュメントの幅 //
-		var sw= $(".search_area").width(); // 他要素の高さ //
-
-		$(".search_area").css("width", ww - 90 + $(window).scrollLeft()  + "px")
-		$(".search").css("width", ww - 190 + $(window).scrollLeft()  + "px")
-
-	}
-
-	adjust();
-
-	$(window).bind("resize load", function() {
-		adjust();
-	})
-
-});
-
-
 // dt adjust //
 $(function() {
 
@@ -141,8 +118,8 @@ $(function() {
 				var targetOffset = target.offset().top - sclpos;
 				$('html,body')
 					.animate({scrollTop: targetOffset}, {duration: scldurat, easing: "easeOutExpo"});
-				return false;
 			}
+			return false;
 
 		}
 
@@ -289,11 +266,14 @@ $(function() {
 
 			if ($("#lb_overlay").is(":hidden")) {
 
+
 				// ライトボックスのオーバーレイを出す //
 				$("#lb_overlay, #lb_container").fadeIn();
 
+
 				// todo: ライトボックスコンテンツを読み込ませる方法と切り分け方 //
 				$(".bg_lightbox").html("<img src='"+$(this).attr("href")+"' class='mg_left-right_auto block'/>").fadeIn();
+
 
 				// ライトボックスの背景をドキュメントの高さに合わせる //
 				var ww = $(window).width();
@@ -325,6 +305,7 @@ $(function() {
 						});
 
 					}
+
 
 				// 傾けてもライトボックスの背景をドキュメントの高さに合わせる //
 				$(window).bind("resize load", function() {
@@ -367,11 +348,13 @@ $(function() {
 
 				$(".bg_lightbox").html("").hide();
 
+
 				// ライトボックスのオーバーレイ、背景を引っ込める //
 				$("#lb_overlay, #lb_container").hide();
 			}
 
 	});
+
 
 	// テキストボックスを出す //
 	$('a[rel=textbox]').click(function(e) {
@@ -380,8 +363,10 @@ $(function() {
 
 		if ($("#lb_overlay").is(":hidden")) {
 
+
 				// ライトボックスのオーバーレイを出す //
 				$("#lb_overlay, #lb_container").fadeIn();
+
 
 				// todo: ライトボックスコンテンツを読み込ませる方法と切り分け方 //
 				var title = $(this).attr('title');
@@ -419,6 +404,7 @@ $(function() {
 
 				}
 
+
 				// 傾けてもライトボックスの背景をドキュメントの高さに合わせる //
 				$(window).bind("resize load", function() {
 
@@ -460,11 +446,13 @@ $(function() {
 
 				$(".bg_lightbox").html("").hide();
 
+
 				// ライトボックスのオーバーレイ、背景を引っ込める //
 				$("#lb_overlay, #lb_container").hide();
 			}
 
 	});
+
 
 	// ライトボックスの背景でクローズする //
 	$("#lb_overlay").click(function(e) {
@@ -493,8 +481,10 @@ $(function() {
 // MailValidate //
 $(function() {
 
+
 		// Submitを押したときの判定 Jp:日本語  //
 		$("input#btn_confirm_ja:submit").click(function() {
+
 
 			//全角ひらがな･カタカナのみ
 			jQuery.validator.addMethod("kana", function(value, element) {
@@ -502,11 +492,13 @@ $(function() {
 				}, "全角ひらがな･カタカナを入力してください"
 			);
 
+
 			//全角ひらがなのみ
 			jQuery.validator.addMethod("hiragana", function(value, element) {
 				return this.optional(element) || /^([ぁ-ん]+)$/.test(value);
 				}, "全角ひらがなを入力してください"
 			);
+
 
 			//半角アルファベット（大文字･小文字）のみ
 			jQuery.validator.addMethod("alphabet", function(value, element) {
@@ -566,6 +558,7 @@ $(function() {
 
 			var ua = navigator.userAgent;
 			var scldurat = 500;
+
 
 			// エラーが出た箇所へ飛ぶ -SP版- //
 			if (ua.indexOf('iPhone') > 0 || ua.indexOf('iPad') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 || ua.indexOf('BlackBerry') > 0 || ua.indexOf('windows Phone') > 0 || ua.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(ua)){
@@ -639,6 +632,7 @@ $(function() {
 				}
 			});
 
+
 			// エラーが出た箇所へ飛ぶ -SP版- //
 			var ua = navigator.userAgent;
 			var scldurat = 500;
@@ -679,6 +673,7 @@ $(function() {
 	// Resetを押したときの判定 //
 	$("input#btn_reset_ja,input#btn_reset_en").click(function() {
 
+
 		// バリデート注意文言を消す -日本語- //
 		$("label#inquiryListJp-error").html("").hide();
 		$("label#inquiryCompanyNameJp-error").html("").hide();
@@ -688,6 +683,7 @@ $(function() {
 		$("label#inquiryPhoneJp-error").html("").hide();
 		$("label#inquiryTextJp-error").html("").hide();
 
+
 		// バリデート注意文言を消す -英語- //
 		$("label#inquiryListEn-error").html("").hide();
 		$("label#inquiryCompanyNameEn-error").html("").hide();
@@ -696,15 +692,19 @@ $(function() {
 		$("label#inquiryPhoneEn-error").html("").hide();
 		$("label#inquiryTextEn-error").html("").hide();
 
+
 		// サジェスト部分の注意文言及び[input type="hidden"]内の値を消す -共通- //
 		$("p#inquiryListDisplayJp,p#inquiryListDisplayEn").html("");
 		$("input#inquiryListJp,input#inquiryListEn").val("");
 
+
 		// [input type="text"][textarea]内の値を消す -共通- //
 		$("input:text,input:checked,textarea").val("");
 
+
 		// 同意するボタン内の値を消す -共通- //
 		$("#accept_ja,#accept_en").attr("checked", false);
+
 
 		// 同意ボタンにチェックが入っているか否かでのリセット、確認ボタンの判定 //
 		if ($("#accept_ja:checked,#accept_en:checked").length === 0) {
@@ -715,6 +715,7 @@ $(function() {
 			$("#btn_confirm_en").attr('id',"btn_confirm_off_en").attr('disabled', true);
 
 		}
+
 
 		// リセットボタン押したらページトップへ飛ぶ -SP版- //
 		var ua = navigator.userAgent;
@@ -799,11 +800,12 @@ $(function() {
 
 	});
 
+
 	// windowをリサイズした時にコロンを取る //
 	$(window).bind("resize load", function() {
 
-
 		var ua = navigator.userAgent;
+
 
 		// -SP版- //
 		if (ua.indexOf('iPhone') > 0 || ua.indexOf('iPad') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 || ua.indexOf('BlackBerry') > 0 || ua.indexOf('windows Phone') > 0 || ua.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(ua)){
@@ -811,6 +813,7 @@ $(function() {
 			// なし  //
 
 		}
+
 
 		// -PC版-  //
 		else {
@@ -851,6 +854,7 @@ $(function() {
 // Suggest En:英語、Jp:日本語  //
 $(function() {
 
+
 	// サジェスト外がクリッカブルになる為のサジェストクリアゾーン -初期設定: hidden- //
 	$(".suggestClear").hide();
 
@@ -863,13 +867,16 @@ $(function() {
 
 			$("#inquiryListDisplayJp,#inquiryListDisplayEn").on({
 
+
 				// タッチがサジェストの上に乗った時の判定 //
 				'click':function() {
 
 					$("#suggestJp,#suggestEn").fadeIn();
 
+
 					// サジェストクリアゾーンを出す //
 					$(".suggestClear").show();
+
 
 					// サジェストクリアゾーンが全面に出るように設定 //
 					var ww = $(window).width();
@@ -885,6 +892,7 @@ $(function() {
 
 			$(".suggestClear").on({
 
+
 				// タッチがサジェストクリアゾーンの上に乗った時の判定 //
 				'click':function() {
 
@@ -898,16 +906,20 @@ $(function() {
 
 		}
 
+
 		// サジェストを出す -PC版-  //
 		else {
 
+
 			// マウスカーソルがセレクターの上に乗ったらサジェストを出す//
 			$(".suggest_pc").on({
+
 
 				// マウスカーソルがサジェストの上に乗った時の判定 //
 				'mouseenter':function() {
 					$("#suggestJp,#suggestEn").fadeIn();
 				},
+
 
 				// マウスカーソルがサジェストの上から外れた時の判定 //
 				'mouseleave':function() {
@@ -918,6 +930,7 @@ $(function() {
 
 		}
 
+
 		// セレクター内のテキストをクリックした時の判定  //
 		$("#suggestJp,#suggestEn").click(function() {
 			$("#suggestJp,#suggestEn").fadeOut();
@@ -926,6 +939,7 @@ $(function() {
 
 
 	});
+
 
 	// サジェスト内のお問い合わせ事項テキストを値として読み込む  //
 	var suggestBusinessJp = $("#menuJp0").text();
@@ -939,6 +953,7 @@ $(function() {
 	var suggestCreativeEn = $("#menuEn2").text();
 	var suggestPersonalEn = $("#menuEn3").text();
 	var suggestOtherEn    = $("#menuEn4").text();
+
 
 	// テキストの値をinput#inquiryListへ与える  //
 	$("#menuJp0,#menuEn0").mouseover(function() {
@@ -998,6 +1013,7 @@ $(function() {
 // Language Change //
 $(function() {
 
+
 	// 1.ブラウザの言語設定から言語判定をとり、そこから日本語表示か英語表示か切り替える //
 	function browserLanguage() {
 		try {
@@ -1009,6 +1025,7 @@ $(function() {
 	}
 
 	var settinglang = browserLanguage();
+
 
 	// 2.グローバルナビから言語判定をとり、そこから日本語表示か英語表示か切り替える -SP版-//
 	function showLanguageSP(i) {
@@ -1053,6 +1070,7 @@ $(function() {
 
 	}
 
+
 	// 2.グローバルナビから言語判定をとり、そこから日本語表示か英語表示か切り替える -PC版- //
 	function showLanguagePC(i) {
 
@@ -1090,6 +1108,7 @@ $(function() {
 
 	}
 
+
 	// 3.デフォルトの表示 -lang:PC版、lang_ja / lang_en:SP版- //
 	$(function() {
 
@@ -1118,6 +1137,7 @@ $(function() {
 		}
 
 	});
+
 
 	// 4.切り替えた時の表示 -SP版- //
 	$("#jaBtn").click(function() {
@@ -1174,16 +1194,19 @@ $(window).load(function() {
 	// iPhone, AndroidなどのSP端末の表示 //
 	if (ua.indexOf('iPhone') > 0 || ua.indexOf('iPad') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 || ua.indexOf('BlackBerry') > 0 || ua.indexOf('windows Phone') > 0 || ua.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(ua)){
 
+
 		// common -SP版背景画像を固定化- //
 		/* SPかPCかの判定を切り替える */
 		$(".bg_top_pc").addClass("bg_top_sp").removeClass("bg_top_pc");
 		$(".bg_contents_pc").addClass("bg_contents_sp").removeClass("bg_contents_pc");
 		$(".bg_work_pc").addClass("bg_work_sp").removeClass("bg_work_pc");
 
+
 		/* SPならば背景固定用のソースを挿入する */
 		$("body.bg_top").append("<div class='background-bg_top'></div>");
 		$("body.bg_contents").append("<div class='background-bg_contents'></div>");
 		$("body.bg_work").append("<div class='background-bg_work'></div>");
+
 
 		/* iOS用にスクロールして背景がカクつく現象を解消させる */
 		$(window).bind("resize load", function(){
@@ -1195,11 +1218,14 @@ $(window).load(function() {
 
 		}).trigger("resize");
 
+
 		// form -SP版wrapperレイアウト- //
 		$("#wrapper").addClass("wrapper_sp").removeClass("wrapper");
 
+
 		// form  -SP版formレイアウト- //
 		$("#form_layoutJp,#form_layoutEn").addClass("form_sp").removeClass("form_pc");
+
 
 		// form -SP版formComplete画像サイズ- //
 		$("#sentCompleteJp,#sentCompleteEn").addClass("img_complete_sp")
@@ -1220,8 +1246,10 @@ $(window).bind("resize load", function() {
 
 	var ua = navigator.userAgent;
 
+
 	// デバッグ用 //
 	//$("#test01").html(ww);
+
 
 	// iPhone, iPadなど //
 	if ((ua.indexOf('iPhone') > 0 && ua.indexOf('iPad') == -1) || ua.indexOf('iPod') > 0) {
@@ -1229,6 +1257,7 @@ $(window).bind("resize load", function() {
 		$("html").css("zoom" , 1 );
 
 	}
+
 
 	// Android //
 	else if (ua.indexOf('Android') > 0) {
