@@ -874,9 +874,9 @@ address {
 /* 項目レイアウト -PC用- */
 dl.form_pc {
 	min-width: 280px;
-	max-width: 960px;
-	margin: 0px 10px;
-	padding: 0px;
+	max-width: 944px;
+	margin: 0px;
+	padding: 0px 8px;
 }
 
 dl.form_pc dt {
