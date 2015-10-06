@@ -822,8 +822,8 @@ $(function() {
 			var ww = $(window).width();
 			//$("#test").html(ww);　デバッグ用
 
-			// ウィンドウサイズが630px以下になったら  //
-			if((ww) < 630) {
+			// ウィンドウサイズが940px以下になったら  //
+			if((ww) < 940) {
 
 				$(".colon").hide();
 				$("dl.form_pc dd").css("width", 400 / 400 * 100 + "%" );

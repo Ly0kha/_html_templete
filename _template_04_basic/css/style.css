@@ -306,8 +306,8 @@ table {
 table.border {
 	width: 98%;
 	margin: 8px auto;
-
-	border: 1px solid #000;
+	border: none;
+	/* border: 1px solid #000; */
 }
 
 table.border th,
@@ -317,11 +317,20 @@ table.border td {
 
 	font-size: 1em;
 	text-align: left;
-	border-bottom: 1px solid #000;
 }
 
 table.border th {
-	border-right: 1px solid #000;
+	border-bottom: 3px solid #337ab7;
+}
+
+table.border td {
+	border-right: 1px dotted #337ab7;
+	border-bottom: 1px solid #337ab7;
+}
+
+table.border td:last-child {
+	border-right: none;
+	border-bottom: 1px solid #337ab7;
 }
 
 /* リスト */
@@ -424,8 +433,8 @@ dl.news dd p {
 
 /* 境界線指定 */
 hr {
-	border-bottom: 1px #666 solid;
-	opacity: 0.6;
+	border-bottom: 1px #000 dotted;
+	opacity: 1;
 	clear: both;
 }
 
