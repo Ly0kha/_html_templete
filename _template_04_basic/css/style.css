@@ -340,6 +340,15 @@ ul.list li {
 	margin: 0px 0px 20px 25px;
 }
 
+/* 数字付きリスト */
+ol.list {
+	list-style: outside decimal
+}
+
+ol.list li {
+	margin: 0px 0px 20px 25px;
+}
+
 /* navタグ以降のliは並列で表示 */
 nav li,
 nav.bread li {
@@ -385,15 +394,6 @@ nav.bread li:last-child:after {
 #tabs .nav .open > a:focus {
 	background-color: #eee;
 	border-color: #337ab7;
-}
-
-/* 数字付きリスト */
-ol.list {
-	list-style: outside decimal
-}
-
-ol.list li {
-	margin: 0px 0px 20px 25px;
 }
 
 /* 定義：ヘッドラインなど */
