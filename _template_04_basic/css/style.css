@@ -192,6 +192,7 @@ select {
 
 /* checkbox内チェック表示のカスタム */
 @media (min-width: 1px) {
+
 	.bg_inputChecker input[type=radio],
 	.bg_inputChecker input[type=checkbox] {
 		display: none;
