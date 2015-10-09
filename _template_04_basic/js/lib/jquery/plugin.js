@@ -564,23 +564,51 @@ $(function() {
 			if (ua.indexOf('iPhone') > 0 || ua.indexOf('iPad') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 || ua.indexOf('BlackBerry') > 0 || ua.indexOf('windows Phone') > 0 || ua.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(ua)){
 
 				if ($("input#inquiryListJp").val() === ""){
-					$('html,body').animate({ scrollTop: 170 }, {duration: scldurat, easing: "easeOutExpo"});
+
+					var inquiryListJp = $("input#inquiryListJp");
+					var offset = inquiryListJp.offset();
+
+					$('html,body').animate({ scrollTop: offset.top }, {duration: scldurat, easing: "easeOutExpo"});
+				}
+
+				else if ($("input#inquiryCompanyNameJp").val() === ""){
+
+					var inquiryCompanyNameJp = $("input#inquiryCompanyNameJp");
+					var offset = inquiryCompanyNameJp.offset();
+
+					$('html,body').animate({ scrollTop: offset.top }, {duration: scldurat, easing: "easeOutExpo"});
 				}
 
 				else if ($("input#inquiryNameJaJp").val() === ""){
-					$('html,body').animate({ scrollTop: 370 }, {duration: scldurat, easing: "easeOutExpo"});
+
+					var inquiryNameJaJp = $("input#inquiryNameJaJp");
+					var offset = inquiryNameJaJp.offset();
+
+					$('html,body').animate({ scrollTop: offset.top }, {duration: scldurat, easing: "easeOutExpo"});
 				}
 
 				else if ($("input#inquiryNameEnJp").val() === ""){
-					$('html,body').animate({ scrollTop: 470 }, {duration: scldurat, easing: "easeOutExpo"});
+
+					var inquiryNameEnJp = $("input#inquiryNameEnJp");
+					var offset = inquiryNameEnJp.offset();
+
+					$('html,body').animate({ scrollTop: offset.top }, {duration: scldurat, easing: "easeOutExpo"});
 				}
 
 				else if ($("input#inquiryMailJp").val() === ""){
-					$('html,body').animate({ scrollTop: 570 }, {duration: scldurat, easing: "easeOutExpo"});
+
+					var inquiryMailJp = $("input#inquiryMailJp");
+					var offset = inquiryMailJp.offset();
+
+					$('html,body').animate({ scrollTop: offset.top }, {duration: scldurat, easing: "easeOutExpo"});
 				}
 
 				else if ($("textarea#inquiryTextJp").val() === ""){
-					$('html,body').animate({ scrollTop: 770 }, {duration: scldurat, easing: "easeOutExpo"});
+
+					var inquiryTextJp = $("input#inquiryTextJp");
+					var offset = inquiryTextJp.offset();
+
+					$('html,body').animate({ scrollTop: offset.top }, {duration: scldurat, easing: "easeOutExpo"});
 				}
 
 			}

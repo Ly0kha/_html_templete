@@ -468,35 +468,35 @@ hr {
 
 
 /* テキストカラー指定 */
-.text-color_gold {
+.text_color_gold {
 	color: #ffd700;
 }
 
-.text-color_darkorange {
+.text_color_darkorange {
 	color: #ff8c00;
 }
 
-.text-color_red {
+.text_color_red {
 	color: #ff0000;
 }
 
-.text-color_crimson {
+.text_color_crimson {
 	color: #dc143c;
 }
 
-.text-color_blue {
+.text_color_blue {
 	color: #0000ff;
 }
 
-.text-color_navy {
+.text_color_navy {
 	color: #000080;
 }
 
-.text-color_gray {
+.text_color_gray {
 	color: #808080;
 }
 
-.text-color_lightgray {
+.text_color_lightgray {
 	color: #d3d3d3;
 }
 
@@ -963,7 +963,7 @@ dl.form_pc dd.textarea {
 }
 
 dl.form_pc dd {
-	margin: 0px 0px 40px;
+	margin: 0px 0px 32px;
 }
 
 dl.form_pc dd.textarea {
@@ -997,7 +997,7 @@ dl.form_sp dd.textarea {
 }
 
 dl.form_sp dd {
-	margin: 0px 0px 8px;
+	margin: 0px 0px 32px;
 }
 
 dl.form_sp dd.textarea {
