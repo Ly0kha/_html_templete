@@ -890,6 +890,7 @@ address {
 	width: 90% !important;
 }
 
+
 /*************** common END ******************/
 
 /* 2nd: top
@@ -927,6 +928,7 @@ address {
 	width: 62px;
 	height: 16px;
 }
+
 
 /* 2nd: form
 --------------------------*/
@@ -989,6 +991,7 @@ dl.form_sp dd.colon {
 	margin: 0px 0px 8px;
 	width: 10px;
 }
+
 dl.form_sp dd,
 dl.form_sp dd.textarea {
 	clear: both;
