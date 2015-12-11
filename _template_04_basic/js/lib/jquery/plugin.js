@@ -41,9 +41,9 @@
 // var version = null; // IEのバージョン
 // var ua = navigator.userAgent;
 // if( ua.match(/MSIE/) || ua.match(/Trident/) ) {
-// 	isIE = true;
-// 	version = ua.match(/(MSIE\s|rv:)([\d\.]+)/)[2];
-// 	location.href="http://www.yahoo.co.jp/"
+//  isIE = true;
+//  version = ua.match(/(MSIE\s|rv:)([\d\.]+)/)[2];
+//  location.href="http://www.yahoo.co.jp/"
 // }
 
 
@@ -213,11 +213,11 @@ function smartRollover() {
 	}
 }
 
-if　(window.addEventListener) {
+if (window.addEventListener) {
 	window.addEventListener("load", smartRollover, false);
 }
 
-else if　(window.attachEvent) {
+else if (window.attachEvent) {
 	window.attachEvent("onload", smartRollover);
 }
 
@@ -1186,7 +1186,7 @@ $(function() {
 
 
 // Twitter_Facebook //
-function popupLink(type, _self)	{
+function popupLink(type, _self) {
 
 	var href,
 		windowname;
@@ -1262,7 +1262,7 @@ $(window).load(function() {
 		$(".suggest_pc").addClass("suggest_sp").removeClass("suggest_pc");
 		$("#suggestJp,#suggestEn").addClass("suggest_wrap_sp").removeClass("suggest_wrap_pc");
 
-   	}
+	}
 
 });
 
