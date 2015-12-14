@@ -88,6 +88,8 @@ body {
 a {
 	color: #000;
 	text-decoration: underline;
+	outline: none;
+	noFocusLine: expression(this.onFocus=this.blur()); /* OLD IE */
 }
 
 a:hover {
@@ -116,7 +118,7 @@ select {
 input,
 textarea,
 select {
-	outline:none;
+	outline: none;
 }
 
 
@@ -398,6 +400,8 @@ nav.bread li:last-child:after {
 #tabs .nav > li > a:focus {
 	text-decoration: none;
 	background-color: #eee;
+	outline: none;
+	noFocusLine: expression(this.onFocus=this.blur()); /* OLD IE */
 }
 
 #tabs .nav > li.disabled > a {
