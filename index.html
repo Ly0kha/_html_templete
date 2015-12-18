@@ -27,8 +27,8 @@
 	<link href="_template_04_basic/css/style.css" rel="stylesheet" type="text/css" />
 	<link href="_template_04_basic/css/flexslider.css" rel="stylesheet" type="text/css" media="screen" />
 
-    <!-- Bootstrap -->
-    <link href="_template_04_basic/css/bootstrap/bootstrap.css" rel="stylesheet">
+	<!-- Bootstrap -->
+	<link href="_template_04_basic/css/bootstrap/bootstrap.css" rel="stylesheet">
 
 	<!-- Jquery -->
 	<script type="text/javascript" src="_template_04_basic/js/lib/jquery/jquery.min.js"></script>
@@ -47,86 +47,70 @@
 
 <div id="container">
 
-	<!-- ライトボックス -->
-	<!--body要素内のヘッダーを埋め込みたい箇所に記述-->
-	<div class="lightbox">
+	<div class="centerParentWrapper">
 
-		<script type="text/javascript">
+		<div class="centerChildWrapper">
 
-		//
-		//
-		// writeLightboxDocument(); の()内指定について
-		//
-		// 同階層 ："./"
-		// 1階層下："../"
-		// 2階層下："../../"
-		//
-		//
+			<!-- ヘッダー -->
+			<header>
+				<h1 class="small">Test Site -Enter Title Here-</h1>
+			</header>
 
-			writeLightboxDocument("./");
-		</script>
-	</div>
+			<p class="small">テストサイト</p>
+			<h2>我が闘争</h2>
 
-	<div id="wrapper">
+			<hr class="hr_large">
 
-		<!-- ヘッダー -->
-		<header>
-			<h1 class="small">Test Site -Enter Title Here-</h1>
-		</header>
+			<!-- テキストボックス 1カラム -->
+			<section>
+				<nav>
+					<ul>
 
-		<p class="small">テストサイト</p>
-		<h2>我が闘争</h2>
+						<li>
+							<a href="_template_04_basic/debug.html" class="blank">
+								html_templete
+							</a>
+						</li>
 
-		<hr class="hr_large">
+						<li>
+							<a href="createjs/easeljs/htdocs/index.html" class="blank">
+								easeljs
+							</a>
+						</li>
 
-		<!-- テキストボックス 1カラム -->
-		<section>
-			<nav>
-				<ul>
+						<li>
+							<a href="createjs/tweenjs/htdocs/index.html" class="blank">
+								tweenjs
+							</a>
+						</li>
 
-					<li>
-						<a href="_template_04_basic/debug.html" class="blank">
-							html_templete
-						</a>
-					</li>
+						<li>
+							<a href="fullpage/demo.html" class="blank">
+								fullpage
+							</a>
+						</li>
 
-					<li>
-						<a href="createjs/easeljs/htdocs/index.html" class="blank">
-							easeljs
-						</a>
-					</li>
+					</ul>
+				</nav>
+			</section>
 
-					<li>
-						<a href="createjs/tweenjs/htdocs/index.html" class="blank">
-							tweenjs
-						</a>
-					</li>
+			<hr class="hr_large">
 
-					<li>
-						<a href="fullpage/demo.html" class="blank">
-							fullpage
-						</a>
-					</li>
+			<!-- フッター -->
+			<footer class="box center">
 
-				</ul>
-			</nav>
-		</section>
+				<!-- ページトップへの導線
+				<div class="btn_top">
+					<a href="#top">
+						<span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span>
+					</a>
+				</div>
+				-->
+				<address>(c) 2015 Atsushi Kikushima.</address>
 
-		<hr class="hr_large">
+			</footer>
 
-		<!-- フッター -->
-		<footer class="box center">
-
-			<!-- ページトップへの導線
-			<div class="btn_top">
-				<a href="#top">
-					<span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span>
-				</a>
-			</div>
-			-->
-			<address>(c) 2015 Atsushi Kikushima.</address>
-
-		</footer>
+		</div>
 
 	</div>
 
