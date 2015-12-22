@@ -6,8 +6,28 @@
 
 *****************************************/
 
-article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+/* normalize
+--------------------------*/
+article, aside, canvas, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
 	display: block;
+}
+
+audio,
+canvas,
+progress,
+video {
+	display: inline-block;
+	vertical-align: baseline;
+}
+
+audio:not([controls]) {
+	display: none;
+	height: 0;
+}
+
+[hidden],
+template {
+	display: none;
 }
 
 html, body, div, span, object, iframe,
@@ -118,6 +138,22 @@ svg:not(:root) {
 	overflow: hidden;
 }
 
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sup {
+	top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
 figure {
 	margin: 1em 40px;
 }
@@ -210,8 +246,6 @@ th,　td {
 }
 
 
-/*************** common END ******************/
-
 /****************************************
 
 			  clearfix
@@ -248,7 +282,6 @@ th,　td {
 	display: block;
 }
 
-/******** clearfix END **********/
 
 /****************************************
 
