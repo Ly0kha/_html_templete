@@ -1133,6 +1133,6 @@ dl.form_sp label#inquiryTextEn-error {
 
 
 /* レイアウト -個人情報同意ウィンドウ- */
-h2.accept {
+h3.accept {
 	font-size: 1em;
 }
