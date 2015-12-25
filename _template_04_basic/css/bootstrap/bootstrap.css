@@ -333,8 +333,8 @@ th {
 
 .glyphicon {
 	position: relative;
-	top: 1px;
-	left: 6px;
+	top: 0px;
+	left: 0px;
 	display: inline-block;
 	font-family: 'Glyphicons Halflings';
 	font-style: normal;
