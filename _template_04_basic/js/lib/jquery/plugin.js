@@ -30,7 +30,6 @@
 --------------------------*/
 
 
-
 /* UI共通プラグイン
 --------------------------*/
 
@@ -40,6 +39,7 @@
 // var isIE = false; // IEか否か
 // var version = null; // IEのバージョン
 // var ua = navigator.userAgent;
+
 // if( ua.match(/MSIE/) || ua.match(/Trident/) ) {
 //  isIE = true;
 //  version = ua.match(/(MSIE\s|rv:)([\d\.]+)/)[2];
@@ -70,7 +70,6 @@ $(function() {
 		var h = $(window).height(); // ウィンドウの高さ //
 		var h1= $("header").height(); // ヘッダーの高さ //
 		var h2= $("footer").height(); // フッターの高さ //
-
 		$(".centerParentWrapper").css("height", h-h1-h2); // 可変部分の高さを適用 //
 	}
 
@@ -87,10 +86,8 @@ $(function() {
 $(function() {
 
 	function adjust(){
-
 		var dtw = $("dl#column dt").outerWidth(); // dtの幅 //
 		$("dl#column dd").css("margin-left", dtw + 10 + "px"); // 可変部分の高さを適用 //
-
 	}
 
 	adjust();
@@ -134,24 +131,24 @@ $(function() {
 	$(".panel-btn").click(function(){
 
 		if ($(".panel").is(":hidden")) {
+
 			// パネルを出す //
 			$(".panel").slideDown("slow");
-
 			// グローバルメニューの画像を切り替える //
 			$("#global_menu").removeClass("menu").addClass("menu_active");
+
 		}
 
 		else {
 
 			// パネルを引っ込める //
 			$(".panel").slideUp();
-
 			// グローバルメニューの画像を切り替える //
 			$("#global_menu").removeClass("menu_active").addClass("menu");
 
 		}
-
 		return false;
+
 	});
 
 });
@@ -192,6 +189,7 @@ function quitBox(cmd) {
 
 // Rollover Switch -PC版-//
 function smartRollover() {
+
 	if(document.getElementsByTagName) {
 
 		var images = document.getElementsByTagName("img");
@@ -211,6 +209,7 @@ function smartRollover() {
 		}
 
 	}
+
 }
 
 if (window.addEventListener) {
@@ -266,14 +265,11 @@ $(function() {
 
 			if ($("#lb_overlay").is(":hidden")) {
 
-
 				// ライトボックスのオーバーレイを出す //
 				$("#lb_overlay, #lb_container").fadeIn();
 
-
 				// todo: ライトボックスコンテンツを読み込ませる方法と切り分け方 //
 				$(".bg_lightbox").html("<img src='"+$(this).attr("href")+"' class='mg_left-right_auto block'/>").fadeIn();
-
 
 				// ライトボックスの背景をドキュメントの高さに合わせる //
 				var ww = $(window).width();
@@ -345,10 +341,7 @@ $(function() {
 			}
 
 			else {
-
 				$(".bg_lightbox").html("").hide();
-
-
 				// ライトボックスのオーバーレイ、背景を引っ込める //
 				$("#lb_overlay, #lb_container").hide();
 			}
@@ -363,17 +356,48 @@ $(function() {
 
 		if ($("#lb_overlay").is(":hidden")) {
 
+			// ライトボックスのオーバーレイを出す //
+			$("#lb_overlay, #lb_container").fadeIn();
 
-				// ライトボックスのオーバーレイを出す //
-				$("#lb_overlay, #lb_container").fadeIn();
+			// todo: ライトボックスコンテンツを読み込ませる方法と切り分け方 //
+			var title = $(this).attr('title');
+			$(".bg_lightbox").html('<p>' + title + '</p>').fadeIn();
+
+			// ライトボックスの背景をドキュメントの高さに合わせる //
+			var ww = $(window).width();
+			var wh = $(window).height();
+			var dh = $(document).height();
+			var lw = $(".bg_lightbox").width();
+			var lh = $(".bg_lightbox").height();
+			var ua = navigator.userAgent;
+
+			if (ua.indexOf('iPhone') > 0 || ua.indexOf('iPad') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 || ua.indexOf('BlackBerry') > 0 || ua.indexOf('windows Phone') > 0 || ua.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(ua)){
+
+				$("#lb_overlay").css({
+					"width" : ww,
+					"height" : wh + 100 + "px"
+				});
+
+				$(".lb_wrapper").css({
+					"zoom" : 0.6,
+					"font-size" : 1 + "em"
+				});
+
+			}
+
+			else {
+
+				$("#lb_overlay").css({
+					"width" : ww,
+					"height" : wh
+				});
+
+			}
 
 
-				// todo: ライトボックスコンテンツを読み込ませる方法と切り分け方 //
-				var title = $(this).attr('title');
-				$(".bg_lightbox").html('<p>' + title + '</p>').fadeIn();
+			// 傾けてもライトボックスの背景をドキュメントの高さに合わせる //
+			$(window).bind("resize load", function() {
 
-
-				// ライトボックスの背景をドキュメントの高さに合わせる //
 				var ww = $(window).width();
 				var wh = $(window).height();
 				var dh = $(document).height();
@@ -404,52 +428,15 @@ $(function() {
 
 				}
 
+			}).trigger("resize");
 
-				// 傾けてもライトボックスの背景をドキュメントの高さに合わせる //
-				$(window).bind("resize load", function() {
+		}
 
-					var ww = $(window).width();
-					var wh = $(window).height();
-					var dh = $(document).height();
-					var lw = $(".bg_lightbox").width();
-					var lh = $(".bg_lightbox").height();
-					var ua = navigator.userAgent;
-
-					if (ua.indexOf('iPhone') > 0 || ua.indexOf('iPad') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 || ua.indexOf('BlackBerry') > 0 || ua.indexOf('windows Phone') > 0 || ua.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(ua)){
-
-						$("#lb_overlay").css({
-							"width" : ww,
-							"height" : wh + 100 + "px"
-						});
-
-						$(".lb_wrapper").css({
-							"zoom" : 0.6,
-							"font-size" : 1 + "em"
-						});
-
-					}
-
-					else {
-
-						$("#lb_overlay").css({
-							"width" : ww,
-							"height" : wh
-						});
-
-					}
-
-				}).trigger("resize");
-
-			}
-
-			else {
-
-				$(".bg_lightbox").html("").hide();
-
-
-				// ライトボックスのオーバーレイ、背景を引っ込める //
-				$("#lb_overlay, #lb_container").hide();
-			}
+		else {
+			$(".bg_lightbox").html("").hide();
+			// ライトボックスのオーバーレイ、背景を引っ込める //
+			$("#lb_overlay, #lb_container").hide();
+		}
 
 	});
 
@@ -482,212 +469,216 @@ $(function() {
 $(function() {
 
 
-		// Submitを押したときの判定 Jp:日本語  //
-		$("input#btn_confirm_ja:submit").click(function() {
+	// Submitを押したときの判定 Jp:日本語  //
+	$("input#btn_confirm_ja:submit").click(function() {
 
+		//全角ひらがな･カタカナのみ
+		jQuery.validator.addMethod("kana", function(value, element) {
+			return this.optional(element) || /^([ァ-ヶーぁ-ん]+)$/.test(value);
+			}, "全角ひらがな･カタカナを入力してください"
+		);
 
-			//全角ひらがな･カタカナのみ
-			jQuery.validator.addMethod("kana", function(value, element) {
-				return this.optional(element) || /^([ァ-ヶーぁ-ん]+)$/.test(value);
-				}, "全角ひらがな･カタカナを入力してください"
-			);
+		//全角ひらがなのみ
+		jQuery.validator.addMethod("hiragana", function(value, element) {
+			return this.optional(element) || /^([ぁ-ん]+)$/.test(value);
+			}, "全角ひらがなを入力してください"
+		);
 
+		//半角アルファベット（大文字･小文字）のみ
+		jQuery.validator.addMethod("alphabet", function(value, element) {
+			return this.optional(element) || /^([a-zA-Z0-9\s\@_\.\-]+)$/.test(value);
+			}, "半角英字を入力してください"
+		);
 
-			//全角ひらがなのみ
-			jQuery.validator.addMethod("hiragana", function(value, element) {
-				return this.optional(element) || /^([ぁ-ん]+)$/.test(value);
-				}, "全角ひらがなを入力してください"
-			);
-
-
-			//半角アルファベット（大文字･小文字）のみ
-			jQuery.validator.addMethod("alphabet", function(value, element) {
-				return this.optional(element) || /^([a-zA-Z0-9\s\@_\.\-]+)$/.test(value);
-				}, "半角英字を入力してください"
-			);
-
-			$("#inquiryFormJp").validate({
-				ignore: ".ignore",
-				rules: {
-					inquiryListJp :{
-						required: true
-					},
-					inquiryCompanyNameJp :{
-						required: true
-					},
-					inquiryNameJaJp :{
-						required: true
-					},
-					inquiryNameEnJp :{
-						required: true,
-						alphabet: true
-					},
-					inquiryMailJp :{
-						required: true,
-						alphabet: true,
-						email: true
-					},
-					inquiryTextJp :{
-						required: true
-					}
+		$("#inquiryFormJp").validate({
+			ignore: ".ignore",
+			rules: {
+				inquiryListJp :{
+					required: true
 				},
-				messages: {
-					inquiryListJp :{
-						required: "※お問い合わせ内容をお選び下さい。"
-					},
-					inquiryCompanyNameJp :{
-						required: "※必須項目です。"
-					},
-					inquiryNameJaJp :{
-						required: "※必須項目です。"
-					},
-					inquiryNameEnJp :{
-						required: "※必須項目です。",
-						alphabet: "※半角英数で入力して下さい。"
-					},
-					inquiryMailJp :{
-						required: "※必須項目です",
-						alphabet: "※半角英数で入力して下さい。",
-						email: "※メールアドレスを入力してください。"
-					},
-					inquiryTextJp :{
-						required: "※必須項目です。"
-					}
+				inquiryCompanyNameJp :{
+					required: true
+				},
+				inquiryNameJaJp :{
+					required: true
+				},
+				inquiryNameEnJp :{
+					required: true,
+					alphabet: true
+				},
+				inquiryMailJp :{
+					required: true,
+					alphabet: true,
+					email: true
+				},
+				inquiryTextJp :{
+					required: true
 				}
-			});
-
-			var ua = navigator.userAgent;
-			var scldurat = 500;
-
-
-			// エラーが出た箇所へ飛ぶ -SP版- //
-			if (ua.indexOf('iPhone') > 0 || ua.indexOf('iPad') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 || ua.indexOf('BlackBerry') > 0 || ua.indexOf('windows Phone') > 0 || ua.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(ua)){
-
-				if ($("input#inquiryListJp").val() === ""){
-
-					var inquiryListJp = $("input#inquiryListJp");
-					var offset = inquiryListJp.offset();
-
-					$('html,body').animate({ scrollTop: offset.top }, {duration: scldurat, easing: "easeOutExpo"});
+			},
+			messages: {
+				inquiryListJp :{
+					required: "※お問い合わせ内容をお選び下さい。"
+				},
+				inquiryCompanyNameJp :{
+					required: "※必須項目です。"
+				},
+				inquiryNameJaJp :{
+					required: "※必須項目です。"
+				},
+				inquiryNameEnJp :{
+					required: "※必須項目です。",
+					alphabet: "※半角英数で入力して下さい。"
+				},
+				inquiryMailJp :{
+					required: "※必須項目です",
+					alphabet: "※半角英数で入力して下さい。",
+					email: "※メールアドレスを入力してください。"
+				},
+				inquiryTextJp :{
+					required: "※必須項目です。"
 				}
+			}
+		});
 
-				else if ($("input#inquiryCompanyNameJp").val() === ""){
+		var ua = navigator.userAgent;
+		var scldurat = 500;
 
-					var inquiryCompanyNameJp = $("input#inquiryCompanyNameJp");
-					var offset = inquiryCompanyNameJp.offset();
 
-					$('html,body').animate({ scrollTop: offset.top }, {duration: scldurat, easing: "easeOutExpo"});
-				}
+		// エラーが出た箇所へ飛ぶ -SP版- //
+		if (ua.indexOf('iPhone') > 0 || ua.indexOf('iPad') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 || ua.indexOf('BlackBerry') > 0 || ua.indexOf('windows Phone') > 0 || ua.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(ua)){
 
-				else if ($("input#inquiryNameJaJp").val() === ""){
+			if ($("input#inquiryListJp").val() === ""){
 
-					var inquiryNameJaJp = $("input#inquiryNameJaJp");
-					var offset = inquiryNameJaJp.offset();
+				var inquiryListJp = $("input#inquiryListJp");
+				var offset = inquiryListJp.offset();
 
-					$('html,body').animate({ scrollTop: offset.top }, {duration: scldurat, easing: "easeOutExpo"});
-				}
-
-				else if ($("input#inquiryNameEnJp").val() === ""){
-
-					var inquiryNameEnJp = $("input#inquiryNameEnJp");
-					var offset = inquiryNameEnJp.offset();
-
-					$('html,body').animate({ scrollTop: offset.top }, {duration: scldurat, easing: "easeOutExpo"});
-				}
-
-				else if ($("input#inquiryMailJp").val() === ""){
-
-					var inquiryMailJp = $("input#inquiryMailJp");
-					var offset = inquiryMailJp.offset();
-
-					$('html,body').animate({ scrollTop: offset.top }, {duration: scldurat, easing: "easeOutExpo"});
-				}
-
-				else if ($("textarea#inquiryTextJp").val() === ""){
-
-					var inquiryTextJp = $("input#inquiryTextJp");
-					var offset = inquiryTextJp.offset();
-
-					$('html,body').animate({ scrollTop: offset.top }, {duration: scldurat, easing: "easeOutExpo"});
-				}
+				$('html,body').animate({ scrollTop: offset.top }, {duration: scldurat, easing: "easeOutExpo"});
 
 			}
 
-		});
+			else if ($("input#inquiryCompanyNameJp").val() === ""){
 
+				var inquiryCompanyNameJp = $("input#inquiryCompanyNameJp");
+				var offset = inquiryCompanyNameJp.offset();
 
-		// Submitを押したときの判定 En:英語  //
-		$("input#btn_confirm_en:submit").click(function() {
-
-			$("#inquiryFormEn").validate({
-				ignore: ".ignore",
-				rules: {
-					inquiryListEn :{
-						required: true
-					},
-					inquiryCompanyNameEn :{
-						required: true
-					},
-					inquiryNameEnEn :{
-						required: true,
-						alphabet: true
-					},
-					inquiryMailEn :{
-						required: true,
-						email: true
-					},
-					inquiryTextEn :{
-						required: true
-					}
-				},
-				messages: {
-					inquiryListEn :{
-						required: "*Please select."
-					},
-					inquiryCompanyNameEn :{
-						required: "*Please enter xxx."
-					},
-					inquiryNameEnEn :{
-						required: "*Please enter xxx."
-					},
-					inquiryMailEn :{
-						required: "*Please enter xxx.",
-						email: "*Your e-mail address is incorrect."
-					},
-					inquiryTextEn :{
-						required: "*Please enter xxx."
-					}
-				}
-			});
-
-
-			// エラーが出た箇所へ飛ぶ -SP版- //
-			var ua = navigator.userAgent;
-			var scldurat = 500;
-
-			if (ua.indexOf('iPhone') > 0 || ua.indexOf('iPad') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 || ua.indexOf('BlackBerry') > 0 || ua.indexOf('windows Phone') > 0 || ua.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(ua)){
-
-				if ($("input#inquiryListEn").val() === ""){
-					$('html,body').animate({ scrollTop: 170 }, {duration: scldurat, easing: "easeOutExpo"});
-				}
-
-				else if ($("input#inquiryNameEnEn").val() === ""){
-					$('html,body').animate({ scrollTop: 370 }, {duration: scldurat, easing: "easeOutExpo"});
-				}
-
-				else if ($("input#inquiryMailEn").val() === ""){
-					$('html,body').animate({ scrollTop: 470 }, {duration: scldurat, easing: "easeOutExpo"});
-				}
-
-				else if ($("textarea#inquiryTextEn").val() === ""){
-					$('html,body').animate({ scrollTop: 670 }, {duration: scldurat, easing: "easeOutExpo"});
-				}
+				$('html,body').animate({ scrollTop: offset.top }, {duration: scldurat, easing: "easeOutExpo"});
 
 			}
 
+			else if ($("input#inquiryNameJaJp").val() === ""){
+
+				var inquiryNameJaJp = $("input#inquiryNameJaJp");
+				var offset = inquiryNameJaJp.offset();
+
+				$('html,body').animate({ scrollTop: offset.top }, {duration: scldurat, easing: "easeOutExpo"});
+
+			}
+
+			else if ($("input#inquiryNameEnJp").val() === ""){
+
+				var inquiryNameEnJp = $("input#inquiryNameEnJp");
+				var offset = inquiryNameEnJp.offset();
+
+				$('html,body').animate({ scrollTop: offset.top }, {duration: scldurat, easing: "easeOutExpo"});
+
+			}
+
+			else if ($("input#inquiryMailJp").val() === ""){
+
+				var inquiryMailJp = $("input#inquiryMailJp");
+				var offset = inquiryMailJp.offset();
+
+				$('html,body').animate({ scrollTop: offset.top }, {duration: scldurat, easing: "easeOutExpo"});
+
+			}
+
+			else if ($("textarea#inquiryTextJp").val() === ""){
+
+				var inquiryTextJp = $("input#inquiryTextJp");
+				var offset = inquiryTextJp.offset();
+
+				$('html,body').animate({ scrollTop: offset.top }, {duration: scldurat, easing: "easeOutExpo"});
+
+			}
+
+		}
+
+	});
+
+
+	// Submitを押したときの判定 En:英語  //
+	$("input#btn_confirm_en:submit").click(function() {
+
+		$("#inquiryFormEn").validate({
+			ignore: ".ignore",
+			rules: {
+				inquiryListEn :{
+					required: true
+				},
+				inquiryCompanyNameEn :{
+					required: true
+				},
+				inquiryNameEnEn :{
+					required: true,
+					alphabet: true
+				},
+				inquiryMailEn :{
+					required: true,
+					email: true
+				},
+				inquiryTextEn :{
+					required: true
+				}
+			},
+			messages: {
+				inquiryListEn :{
+					required: "*Please select."
+				},
+				inquiryCompanyNameEn :{
+					required: "*Please enter xxx."
+				},
+				inquiryNameEnEn :{
+					required: "*Please enter xxx."
+				},
+				inquiryMailEn :{
+					required: "*Please enter xxx.",
+					email: "*Your e-mail address is incorrect."
+				},
+				inquiryTextEn :{
+					required: "*Please enter xxx."
+				}
+			}
 		});
+
+
+		// エラーが出た箇所へ飛ぶ -SP版- //
+		var ua = navigator.userAgent;
+		var scldurat = 500;
+
+		if (ua.indexOf('iPhone') > 0 || ua.indexOf('iPad') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 || ua.indexOf('BlackBerry') > 0 || ua.indexOf('windows Phone') > 0 || ua.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(ua)){
+
+			if ($("input#inquiryListEn").val() === ""){
+				$('html,body').animate({ scrollTop: 170 }, {duration: scldurat, easing: "easeOutExpo"});
+			}
+
+			else if ($("input#inquiryNameEnEn").val() === ""){
+				$('html,body').animate({ scrollTop: 370 }, {duration: scldurat, easing: "easeOutExpo"});
+			}
+
+			else if ($("input#inquiryMailEn").val() === ""){
+				$('html,body').animate({ scrollTop: 470 }, {duration: scldurat, easing: "easeOutExpo"});
+			}
+
+			else if ($("textarea#inquiryTextEn").val() === ""){
+				$('html,body').animate({ scrollTop: 670 }, {duration: scldurat, easing: "easeOutExpo"});
+			}
+
+		}
+
+	});
 
 });
+
 
 
 
@@ -698,9 +689,9 @@ $(function() {
 // Mailform //
 $(function() {
 
+
 	// Resetを押したときの判定 //
 	$("input#btn_reset_ja,input#btn_reset_en").click(function() {
-
 
 		// バリデート注意文言を消す -日本語- //
 		$("label#inquiryListJp-error").html("").hide();
@@ -711,7 +702,6 @@ $(function() {
 		$("label#inquiryPhoneJp-error").html("").hide();
 		$("label#inquiryTextJp-error").html("").hide();
 
-
 		// バリデート注意文言を消す -英語- //
 		$("label#inquiryListEn-error").html("").hide();
 		$("label#inquiryCompanyNameEn-error").html("").hide();
@@ -720,19 +710,15 @@ $(function() {
 		$("label#inquiryPhoneEn-error").html("").hide();
 		$("label#inquiryTextEn-error").html("").hide();
 
-
 		// サジェスト部分の注意文言及び[input type="hidden"]内の値を消す -共通- //
 		$("p#inquiryListDisplayJp,p#inquiryListDisplayEn").html("");
 		$("input#inquiryListJp,input#inquiryListEn").val("");
 
-
 		// [input type="text"][textarea]内の値を消す -共通- //
 		$("input:text,input:checked,textarea").val("");
 
-
 		// 同意するボタン内の値を消す -共通- //
 		$("#accept_ja,#accept_en").attr("checked", false);
-
 
 		// 同意ボタンにチェックが入っているか否かでのリセット、確認ボタンの判定 //
 		if ($("#accept_ja:checked,#accept_en:checked").length === 0) {
@@ -744,15 +730,12 @@ $(function() {
 
 		}
 
-
 		// リセットボタン押したらページトップへ飛ぶ -SP版- //
 		var ua = navigator.userAgent;
 		var scldurat = 500;
 
 		if (ua.indexOf('iPhone') > 0 || ua.indexOf('iPad') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 || ua.indexOf('BlackBerry') > 0 || ua.indexOf('windows Phone') > 0 || ua.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(ua)){
-
 			$('html,body').animate({ scrollTop: 0 }, 'fast');
-
 		}
 
 	});
@@ -788,7 +771,6 @@ $(function() {
 
 	}).css("cursor","pointer");
 
-
 	// 戻るボタンを押したときの判定 //
 	$("input#btn_formback_ja,input#btn_formback_en").click(function() {
 		location.href="index.html"
@@ -804,11 +786,9 @@ $(function() {
 		if (ua.indexOf('iPhone') > 0 || ua.indexOf('iPad') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 || ua.indexOf('BlackBerry') > 0 || ua.indexOf('windows Phone') > 0 || ua.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(ua)){
 
 			$(".policy").click(function() {
-
 				// location.href="../sitepolicy/index.html"
 				// window.open("../sitepolicy/index.html", '_blank');
 				return false;
-
 			});
 
 		}
@@ -817,11 +797,9 @@ $(function() {
 		else {
 
 			$(".policy").click(function() {
-
 				// location.href="../../#/sitepolicy/"
 				// window.open("../../#/sitepolicy/", '_blank');
 				return false;
-
 			});
 
 		}
@@ -834,14 +812,12 @@ $(function() {
 
 		var ua = navigator.userAgent;
 
-
 		// -SP版- //
 		if (ua.indexOf('iPhone') > 0 || ua.indexOf('iPad') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 || ua.indexOf('BlackBerry') > 0 || ua.indexOf('windows Phone') > 0 || ua.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(ua)){
 
 			// なし  //
 
 		}
-
 
 		// -PC版-  //
 		else {
@@ -852,18 +828,14 @@ $(function() {
 
 			// ウィンドウサイズが940px以下になったら  //
 			if((ww) < 940) {
-
 				$(".colon").hide();
 				$("dl.form_pc dd").css("width", 400 / 400 * 100 + "%" );
-
 			}
 
 			// ウィンドウサイズが630px以上になったら  //
 			else {
-
 				$(".colon").show();
 				$("dl.form_pc dd").css("width", 600 + "px" );
-
 			}
 
 		}
@@ -890,21 +862,19 @@ $(function() {
 
 		var ua = navigator.userAgent;
 
+
 		// サジェストを出す -SP版- //
 		if (ua.indexOf('iPhone') > 0 || ua.indexOf('iPad') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 || ua.indexOf('BlackBerry') > 0 || ua.indexOf('windows Phone') > 0 || ua.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(ua)){
 
 			$("#inquiryListDisplayJp,#inquiryListDisplayEn").on({
-
 
 				// タッチがサジェストの上に乗った時の判定 //
 				'click':function() {
 
 					$("#suggestJp,#suggestEn").fadeIn();
 
-
 					// サジェストクリアゾーンを出す //
 					$(".suggestClear").show();
-
 
 					// サジェストクリアゾーンが全面に出るように設定 //
 					var ww = $(window).width();
@@ -919,18 +889,12 @@ $(function() {
 			});
 
 			$(".suggestClear").on({
-
-
 				// タッチがサジェストクリアゾーンの上に乗った時の判定 //
 				'click':function() {
-
 					$("#suggestJp,#suggestEn").fadeOut();
 					$(".suggestClear").hide();
-
 				}
-
 			});
-
 
 		}
 
@@ -938,33 +902,25 @@ $(function() {
 		// サジェストを出す -PC版-  //
 		else {
 
-
 			// マウスカーソルがセレクターの上に乗ったらサジェストを出す//
 			$(".suggest_pc").on({
-
-
 				// マウスカーソルがサジェストの上に乗った時の判定 //
 				'mouseenter':function() {
 					$("#suggestJp,#suggestEn").fadeIn();
 				},
-
-
 				// マウスカーソルがサジェストの上から外れた時の判定 //
 				'mouseleave':function() {
 					$("#suggestJp,#suggestEn").fadeOut();
 				}
-
 			});
 
 		}
-
 
 		// セレクター内のテキストをクリックした時の判定  //
 		$("#suggestJp,#suggestEn").click(function() {
 			$("#suggestJp,#suggestEn").fadeOut();
 			$(".suggestClear").hide();
 		});
-
 
 	});
 
@@ -1166,7 +1122,6 @@ $(function() {
 
 	});
 
-
 	// 4.切り替えた時の表示 -SP版- //
 	$("#jaBtn").click(function() {
 		showLanguageSP('ja');
@@ -1222,19 +1177,16 @@ $(window).load(function() {
 	// iPhone, AndroidなどのSP端末の表示 //
 	if (ua.indexOf('iPhone') > 0 || ua.indexOf('iPad') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 || ua.indexOf('BlackBerry') > 0 || ua.indexOf('windows Phone') > 0 || ua.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(ua)){
 
-
 		// common -SP版背景画像を固定化- //
 		/* SPかPCかの判定を切り替える */
 		$(".bg_top_pc").addClass("bg_top_sp").removeClass("bg_top_pc");
 		$(".bg_contents_pc").addClass("bg_contents_sp").removeClass("bg_contents_pc");
 		$(".bg_work_pc").addClass("bg_work_sp").removeClass("bg_work_pc");
 
-
 		/* SPならば背景固定用のソースを挿入する */
 		$("body.bg_top").append("<div class='background-bg_top'></div>");
 		$("body.bg_contents").append("<div class='background-bg_contents'></div>");
 		$("body.bg_work").append("<div class='background-bg_work'></div>");
-
 
 		/* iOS用にスクロールして背景がカクつく現象を解消させる */
 		$(window).bind("resize load", function(){
@@ -1246,17 +1198,14 @@ $(window).load(function() {
 
 		}).trigger("resize");
 
-
 		// form -SP版wrapperレイアウト- //
 		$("#wrapper").addClass("wrapper_sp").removeClass("wrapper");
-
 
 		// form  -SP版formレイアウト- //
 		$("#form_layoutJp,#form_layoutEn").addClass("form_sp").removeClass("form_pc");
 
-
 		// form -SP版formComplete画像サイズ- //
-		$("#sentCompleteJp,#sentCompleteEn").addClass("img_complete_sp")
+		$("#sentCompleteJp,#sentCompleteEn").addClass("img_complete_sp");
 
 		// form -SP版suggestレイアウト- //
 		$(".suggest_pc").addClass("suggest_sp").removeClass("suggest_pc");
@@ -1274,18 +1223,13 @@ $(window).bind("resize load", function() {
 
 	var ua = navigator.userAgent;
 
-
 	// デバッグ用 //
 	//$("#test01").html(ww);
 
-
 	// iPhone, iPadなど //
 	if ((ua.indexOf('iPhone') > 0 && ua.indexOf('iPad') == -1) || ua.indexOf('iPod') > 0) {
-
 		$("html").css("zoom" , 1 );
-
 	}
-
 
 	// Android //
 	else if (ua.indexOf('Android') > 0) {
@@ -1295,15 +1239,17 @@ $(window).bind("resize load", function() {
 			window.addEventListener("orientationchange", function () {
 
 				if (window.innerHeight > window.innerWidth) {
-				// ポートレイト（ランドスケープ）
+					// ポートレイト（ランドスケープ）
 					$("html").css("zoom" , landscapeWidth / 320 );
 				}
+
 				else {
-				// ランドスケープ（ポートレイト）
+					// ランドスケープ（ポートレイト）
 					$("html").css("zoom" , portraitWidth / 320 );
 				};
 
 			}, false);
+
 		}
 
 	}
