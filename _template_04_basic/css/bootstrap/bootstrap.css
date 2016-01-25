@@ -334,7 +334,7 @@ th {
 .glyphicon {
 	position: relative;
 	top: 0px;
-	left: 0px;
+	/* left: 0px; */
 	display: inline-block;
 	font-family: 'Glyphicons Halflings';
 	font-style: normal;
@@ -7445,7 +7445,8 @@ button.close {
 
 .carousel {
 	position: relative;
-}
+	margin: 0px 0px 40px;
+ }
 
 .carousel-inner {
 	position: relative;
@@ -7625,7 +7626,7 @@ button.close {
 
 .carousel-indicators {
 	position: absolute;
-	bottom: 10px;
+	bottom: -30px;
 	left: 50%;
 	z-index: 15;
 	width: 60%;
@@ -7639,20 +7640,41 @@ button.close {
 	display: inline-block;
 	width: 10px;
 	height: 10px;
-	margin: 1px;
+	margin: 0px 5px;
 	text-indent: -999px;
 	cursor: pointer;
+
+	/*
 	background-color: #000 \9;
 	background-color: rgba(0, 0, 0, 0);
 	border: 1px solid #fff;
 	border-radius: 10px;
+	*/
+
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+	/*IE 7 AND 8 DO NOT SUPPORT BORDER RADIUS*/
+	-moz-box-shadow: inset 1px 1px 2px #4a4938;
+	-webkit-box-shadow: inset 1px 1px 2px #4a4938;
+	box-shadow: inset 1px 1px 2px #4a4938;
+	/*Inner elements should not cover inner shadows*/
+	/*Chrome renders inset shadows incorrectly with border-radius*/
+	/*IE 7 AND 8 DO NOT SUPPORT INSET SHADOWS*/
+	opacity: 0.6;
+	-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity = 60);
+	/*-ms-filter must come before filter*/
+	filter: alpha(opacity = 60);
+	/*INNER ELEMENTS MUST NOT BREAK THIS ELEMENTS BOUNDARIES*/
+	/*All filters must be placed together*/
+
 }
 
 .carousel-indicators .active {
-	width: 12px;
-	height: 12px;
-	margin: 0;
-	background-color: #fff;
+	width: 10px;
+	height: 10px;
+	margin: 0px 5px;
+	background-color: #ccc;
 }
 
 .carousel-caption {
@@ -7701,7 +7723,7 @@ button.close {
 	}
 
 	.carousel-indicators {
-		bottom: 20px;
+		/* bottom: 20px; */
 	}
 
 }

@@ -32,9 +32,9 @@
 	<link href="css/bootstrap/bootstrap.css" rel="stylesheet">
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" media="all">
 
-	<!-- Jquery
+	<!-- Jquery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script type="text/javascript" src="js/lib/jquery/plugin.js"></script> -->
+	<script type="text/javascript" src="js/lib/jquery/plugin.js"></script>
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -101,6 +101,12 @@
 		<h3>小見出し1が入ります。</h3>
 
 		<hr class="hr_large">
+
+
+		<div id="test">
+		test
+
+		</div>
 
 
 		<!-- Text Appearance -->
@@ -179,12 +185,12 @@
 var proto = Object.create(HTMLElement.prototype, {
 	createdCallback: {
 		value: function() {
-		var mountPoint = document.createElement('span');
-		this.createShadowRoot().appendChild(mountPoint);
+			var mountPoint = document.createElement('span');
+			this.createShadowRoot().appendChild(mountPoint);
 
-		var name = this.getAttribute('name');
-		var url = 'https://www.google.com/search?q=' + encodeURIComponent(name);
-		ReactDOM.render(<a href={url}>{name}</a>, mountPoint);
+			var name = this.getAttribute('name');
+			var url = 'https://www.google.com/search?q=' + encodeURIComponent(name);
+			ReactDOM.render(<a href={url}>{name}</a>, mountPoint);
 		}
 	}
 });
@@ -198,22 +204,23 @@ class HelloMessage extends React.Component {
 }
 
 // Mount React Component (which uses WebComponent which uses React)
-var containesr = document.getElementById('container');
-ReactDOM.render(<HelloMessage name="Jim Sproch" />, container);
+var containesr = document.getElementById('test');
+ReactDOM.render(<HelloMessage name="Reactのテストちう" />, test);
+
 </script>
 
 
-<!-- JS PlugIn
+<!-- JS PlugIn　 -->
 <script type="text/javascript" src="js/lib/jquery/jquery-ui.min.js"></script>
 <script type="text/javascript" src="js/lib/jquery/jquery.easing.1.3.js"></script>
 <script type="text/javascript" src="js/lib/jquery/jquery.flexslider-min.js"></script>
 <script type="text/javascript" src="js/lib/jquery/jquery.validate.min.js"></script>
 <script type="text/javascript" src="js/lib/jquery/jquery.validate.japlugin.js"></script>
 <script type="text/javascript" src="js/lib/jquery/jquery.cookie.js"></script>
-<script type="text/javascript" src="js/lib/jquery/heightLine.js"></script> -->
+<script type="text/javascript" src="js/lib/jquery/heightLine.js"></script>
 
-<!-- Bootstrap
-<script type="text/javascript" src="js/lib/bootstrap/bootstrap.min.js"></script> -->
+<!-- Bootstrap -->
+<script type="text/javascript" src="js/lib/bootstrap/bootstrap.min.js"></script>
 
 </body>
 

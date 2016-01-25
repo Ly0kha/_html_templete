@@ -155,13 +155,17 @@ $(function() {
 
 
 // Slider //
-$(function() {
-
-	$(".flexslider").flexslider({
-		animation: "slide"
-	});
-
+$('.carousel').carousel({
+	interval: 2000
 });
+
+//$(function() {
+
+//	$(".flexslider").flexslider({
+//		animation: "slide"
+//	});
+
+//});
 
 
 // Tabs //

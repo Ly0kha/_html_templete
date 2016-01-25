@@ -3,6 +3,9 @@
 	[
 		{
 			"path": "_template_04_basic"
+		},
+		{
+			"path": "react-0.14.6"
 		}
 	]
 }
