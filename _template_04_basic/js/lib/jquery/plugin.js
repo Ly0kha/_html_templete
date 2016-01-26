@@ -41,9 +41,9 @@
 // var ua = navigator.userAgent;
 
 // if( ua.match(/MSIE/) || ua.match(/Trident/) ) {
-//  isIE = true;
-//  version = ua.match(/(MSIE\s|rv:)([\d\.]+)/)[2];
-//  location.href="http://www.yahoo.co.jp/"
+//		isIE = true;
+//		version = ua.match(/(MSIE\s|rv:)([\d\.]+)/)[2];
+//		location.href="http://www.yahoo.co.jp/"
 // }
 
 
@@ -168,11 +168,20 @@ $('.carousel').carousel({
 //});
 
 
+// Slider-Swipe //
+$(function() {
+	var carousel = $('.carousel');
+	var hammer = new Hammer(carousel[0]);
+	hammer.on('swipeleft', function(){ carousel.carousel('next'); });   //--- 左にスワイプしたら次の画像に切り替え
+	hammer.on('swiperight', function(){ carousel.carousel('prev'); });  //--- 右にスワイプしたら前の画像に切り替え
+});
+
+
 // Tabs //
 $(function() {
 
 	$("#tabs").tabs({
-		collapsible: true,
+		collapsible: false,
 		show: { effect: "fadeIn", duration: 800 },
 		fx: { height: 'toggle', opacity: 'toggle', duration: 300 }
 	});

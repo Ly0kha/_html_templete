@@ -7590,7 +7590,7 @@ button.close {
 .carousel-control .glyphicon-chevron-left,
 .carousel-control .glyphicon-chevron-right {
 	position: absolute;
-	top: 50%;
+	top: 45%;
 	z-index: 5;
 	display: inline-block;
 }
@@ -7640,16 +7640,9 @@ button.close {
 	display: inline-block;
 	width: 10px;
 	height: 10px;
-	margin: 0px 5px;
+	margin: 0px 2px;
 	text-indent: -999px;
 	cursor: pointer;
-
-	/*
-	background-color: #000 \9;
-	background-color: rgba(0, 0, 0, 0);
-	border: 1px solid #fff;
-	border-radius: 10px;
-	*/
 
 	-moz-border-radius: 50px;
 	-webkit-border-radius: 50px;
@@ -7658,11 +7651,13 @@ button.close {
 	-moz-box-shadow: inset 1px 1px 2px #4a4938;
 	-webkit-box-shadow: inset 1px 1px 2px #4a4938;
 	box-shadow: inset 1px 1px 2px #4a4938;
+
 	/*Inner elements should not cover inner shadows*/
 	/*Chrome renders inset shadows incorrectly with border-radius*/
 	/*IE 7 AND 8 DO NOT SUPPORT INSET SHADOWS*/
 	opacity: 0.6;
 	-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity = 60);
+
 	/*-ms-filter must come before filter*/
 	filter: alpha(opacity = 60);
 	/*INNER ELEMENTS MUST NOT BREAK THIS ELEMENTS BOUNDARIES*/
@@ -7673,7 +7668,7 @@ button.close {
 .carousel-indicators .active {
 	width: 10px;
 	height: 10px;
-	margin: 0px 5px;
+	margin: 0px 2px;
 	background-color: #ccc;
 }
 
@@ -7702,7 +7697,7 @@ button.close {
 	.carousel-control .icon-next {
 		width: 30px;
 		height: 30px;
-		margin-top: -15px;
+		margin-top: 0px;
 		font-size: 30px;
 	}
 
