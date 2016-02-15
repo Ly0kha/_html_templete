@@ -8,34 +8,18 @@
 	"buffers":
 	[
 		{
-			"file": "index.html",
-			"settings":
-			{
-				"buffer_size": 4036,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "_template_04_basic/debug.html",
 			"settings":
 			{
-				"buffer_size": 19222,
+				"buffer_size": 28194,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconweb20150120/htdocs/inquiry/css/style.css",
+			"file": "_template_04_basic/test.html",
 			"settings":
 			{
-				"buffer_size": 26512,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconweb20150120/htdocs/inquiry/js/lib/jquery/plugin.js",
-			"settings":
-			{
-				"buffer_size": 26679,
+				"buffer_size": 6849,
 				"line_ending": "Unix"
 			}
 		},
@@ -43,15 +27,7 @@
 			"file": "_template_04_basic/js/lib/jquery/plugin.js",
 			"settings":
 			{
-				"buffer_size": 28630,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "_template_04_basic/css/style.css",
-			"settings":
-			{
-				"buffer_size": 14958,
+				"buffer_size": 28712,
 				"line_ending": "Unix"
 			}
 		},
@@ -59,7 +35,59 @@
 			"file": "_template_04_basic/css/bootstrap/bootstrap.css",
 			"settings":
 			{
-				"buffer_size": 139126,
+				"buffer_size": 139735,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "_template_04_basic/css/flexslider.css",
+			"settings":
+			{
+				"buffer_size": 5651,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "_template_04_basic/js/lib/jquery/hammer.min.js",
+			"settings":
+			{
+				"buffer_size": 19757,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "User:Atsuko Kubota\nPass:Uf4h2O2tZPS0sOH&AZ(IPs97\n\nMail:atsuko.kubota@beaconcom.co.jp\n\n\nUser:Atsushi Kikushima\nPass:LwufLDBeg3Dba#5iIAGZdl1W\nNewPass:a2cgsrva2cgsrv\n\nMail:atsushi.kikushima@gmail.com\n",
+			"settings":
+			{
+				"buffer_size": 197,
+				"line_ending": "Unix",
+				"name": "User:Atsuko Kubota"
+			}
+		},
+		{
+			"contents": "",
+			"file": "/Users/digitaldesigner/Downloads/mach3-flashspritejs-816312d/demo/index.html",
+			"file_size": -1,
+			"file_write_time": -1,
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "react-0.14.6/examples/jquery-bootstrap/index.html",
+			"settings":
+			{
+				"buffer_size": 926,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "react-0.14.6/examples/jquery-bootstrap/js/app.js",
+			"settings":
+			{
+				"buffer_size": 3242,
 				"line_ending": "Unix"
 			}
 		}
@@ -112,18 +140,34 @@
 	},
 	"file_history":
 	[
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/html-templete/_html_templete/_template_04_basic/js/lib/bootstrap/hammer.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/html-templete/_html_templete/_template_04_basic/js/lib/jquery/jquery.validate.min.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/html-templete/_html_templete/_template_04_basic/js/lib/jquery/heightLine.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/html-templete/_html_templete/_template_04_basic/js/lib/jquery/html5shiv.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/html-templete/_html_templete/index.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/html-templete/_html_templete/_template_04_basic/js/lib/jquery/plugin.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/html-templete/_html_templete/_template_04_basic/include/header.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/html-templete/_html_templete/_template_04_basic/css/bootstrap/bootstrap.css",
+		"/Users/digitaldesigner/Downloads/react-0.14.6/examples/webcomponents/index.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/html-templete/_html_templete/_template_04_basic/css/hover.css",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/html-templete/_html_templete/_template_04_basic/css/style.css",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/html-templete/_html_templete/_template_04_basic/include/headerTop.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/html-templete/_html_templete/_template_04_basic/include/headerSecond.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/html-templete/_html_templete/_template_04_basic/index.html",
+		"/Users/digitaldesigner/Downloads/Hover-master/css/hover.css",
+		"/Users/digitaldesigner/Downloads/Hover-master/css/demo-page.css",
+		"/Users/digitaldesigner/Downloads/Hover-master/index.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/html-templete/_html_templete/_template_04_basic/css/reset.css",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/html-templete/_html_templete/_template_04_basic/debug.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconweb20150120/htdocs/inquiry/js/lib/jquery/plugin.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconweb20150120/htdocs/inquiry/css/style.css",
 		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/html-templete/_html_templete/_template_04_basic/css/bootstrap/bootstrap.css.bkup",
 		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/private_work_20150813/doc.txt",
-		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/html-templete/_html_templete/_template_04_basic/js/lib/jquery/plugin.js",
-		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/html-templete/_html_templete/_template_04_basic/css/style.css",
 		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/html-templete/_html_templete/_template_04_basic/css/bootstrap/bootstrap-theme.css",
-		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/html-templete/_html_templete/_template_04_basic/js/lib/jquery/jquery.validate.min.js",
 		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/html-templete/_html_templete/_template_04_basic/js/lib/jquery/jquery.validate.japlugin.js",
-		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconweb20150120/htdocs/inquiry/css/style.css",
 		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconweb20150120/htdocs/inquiry/index.html",
 		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconweb20150120/htdocs/inquiry/js/lib/jquery/jquery.validate.japlugin.js",
 		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/html-templete/_html_templete/_template_04_basic/css/flexslider.css",
-		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/html-templete/_html_templete/_template_04_basic/css/reset.css",
 		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/html-templete/_template_04_basic/index.html",
 		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/html-templete/_template_04_basic/debug.html",
 		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/html-templete/_template_04_basic/css/style.css",
@@ -223,23 +267,7 @@
 		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/css/shadowbox/shadowbox-video.css",
 		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/_epipen20150526/_doc/_source20150708/EHP_Mov_06_Tag_iFrame_150708_01.txt",
 		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/_epipen20150526/_doc/_source20150708/EHP_Mov_05_Tag_iFrame_150708_01.txt",
-		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/_epipen20150526/_doc/_source20150708/EHP_Mov_04_Tag_iFrame_150708_01.txt",
-		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/_epipen20150526/_doc/_source20150708/EHP_Mov_03_Tag_iFrame_150708_01.txt",
-		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/_epipen20150526/_doc/_source20150708/EHP_Mov_02_Tag_iFrame_150708_01.txt",
-		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/_epipen20150526/_doc/_source20150708/EHP_Mov_01_Tag_iFrame_150708_01.txt",
-		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/_epipen20150526/_doc/_source20150708/EHP_Mov_00_Tag_iFrame_150708_01.txt",
-		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/_epipen20150526/_doc/_source/EHP_Mov_06_Tag_iFrame_150707_01.txt",
-		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/_epipen20150526/_doc/_source/EHP_Mov_05_Tag_iFrame_150707_01.txt",
-		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/_epipen20150526/_doc/_source/EHP_Mov_04_Tag_iFrame_150707_01.txt",
-		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/_epipen20150526/_doc/_source/EHP_Mov_03_Tag_iFrame_150707_01.txt",
-		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/_epipen20150526/_doc/_source/EHP_Mov_02_Tag_iFrame_150707_01.txt",
-		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/_epipen20150526/_doc/_source/EHP_Mov_01_Tag_iFrame_150707_01.txt",
-		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/_epipen20150526/_doc/_source/EHP_Mov_00_Tag_iFrame_150707_01.txt",
-		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/_smirnoff20150227/_doc/tokyo_scene_20150707.txt",
-		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/debug.html",
-		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_pml20150611/htdocs/index.html",
-		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_watashi20150309/htdocs/style.css",
-		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/html-templete/_template_05_parallax/js/lib/jquery/plugin.js"
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/_epipen20150526/_doc/_source20150708/EHP_Mov_04_Tag_iFrame_150708_01.txt"
 	],
 	"find":
 	{
@@ -271,6 +299,9 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"glyphicon-new-window",
+			"hvr-fade",
+			" ",
 			"text-color",
 			"768px",
 			"769px",
@@ -394,6 +425,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"	",
 			"text_color",
 			"850px",
 			"851px",
@@ -456,23 +488,189 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 6,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "index.html",
+					"file": "_template_04_basic/debug.html",
 					"settings":
 					{
-						"buffer_size": 4036,
+						"buffer_size": 28194,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1985,
-								1985
+								2047,
+								2047
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"is_xml": false,
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"devel": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": "load-save",
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 170.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "_template_04_basic/test.html",
+					"settings":
+					{
+						"buffer_size": 6849,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2104,
+								2104
 							]
 						],
 						"settings":
@@ -626,19 +824,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "_template_04_basic/debug.html",
+					"buffer": 2,
+					"file": "_template_04_basic/js/lib/jquery/plugin.js",
 					"settings":
 					{
-						"buffer_size": 19222,
+						"buffer_size": 28712,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7423,
-								7373
+								3093,
+								3093
 							]
 						],
 						"settings":
@@ -738,7 +936,6 @@
 							"gjslint_options":
 							[
 							],
-							"is_xml": false,
 							"javascript_linter": "jshint",
 							"jshint_options":
 							{
@@ -782,29 +979,29 @@
 								"Ruby on Rails": "ruby"
 							},
 							"sublimelinter_wrap_find": true,
-							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 5361.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconweb20150120/htdocs/inquiry/css/style.css",
+					"buffer": 3,
+					"file": "_template_04_basic/css/bootstrap/bootstrap.css",
 					"settings":
 					{
-						"buffer_size": 26512,
+						"buffer_size": 139735,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								133940,
+								133940
 							]
 						],
 						"settings":
@@ -951,196 +1148,25 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 34188.0,
+						"translation.y": 145949.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconweb20150120/htdocs/inquiry/js/lib/jquery/plugin.js",
-					"settings":
-					{
-						"buffer_size": 26679,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"annotations":
-							[
-								"TODO",
-								"README",
-								"FIXME"
-							],
-							"bh_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close"
-							],
-							"csslint_options":
-							{
-								"adjoining-classes": "warning",
-								"box-model": true,
-								"box-sizing": "warning",
-								"compatible-vendor-prefixes": "warning",
-								"display-property-grouping": true,
-								"duplicate-background-images": "warning",
-								"duplicate-properties": true,
-								"empty-rules": true,
-								"errors": true,
-								"fallback-colors": "warning",
-								"floats": "warning",
-								"font-faces": "warning",
-								"font-sizes": "warning",
-								"gradients": "warning",
-								"ids": "warning",
-								"import": "warning",
-								"important": "warning",
-								"known-properties": true,
-								"outline-none": "warning",
-								"overqualified-elements": "warning",
-								"qualified-headings": "warning",
-								"regex-selectors": "warning",
-								"rules-count": "warning",
-								"shorthand": "warning",
-								"star-property-hack": "warning",
-								"text-indent": "warning",
-								"underscore-property-hack": "warning",
-								"unique-headings": "warning",
-								"universal-selector": "warning",
-								"vendor-prefix": true,
-								"zero-units": "warning"
-							},
-							"gjslint_ignore":
-							[
-								110.0
-							],
-							"gjslint_options":
-							[
-							],
-							"javascript_linter": "jshint",
-							"jshint_options":
-							{
-								"browser": true,
-								"devel": true,
-								"evil": true,
-								"regexdash": true,
-								"sub": true,
-								"trailing": true,
-								"wsh": true
-							},
-							"pep8": true,
-							"pep8_ignore":
-							[
-								"E501"
-							],
-							"perl_linter": "perlcritic",
-							"pyflakes_ignore":
-							[
-							],
-							"pyflakes_ignore_import_*": true,
-							"sublimelinter": "load-save",
-							"sublimelinter_delay": 2.0,
-							"sublimelinter_disable":
-							[
-							],
-							"sublimelinter_executable_map":
-							{
-							},
-							"sublimelinter_fill_outlines": false,
-							"sublimelinter_gutter_marks": true,
-							"sublimelinter_gutter_marks_theme": "simple",
-							"sublimelinter_mark_style": "none",
-							"sublimelinter_notes": false,
-							"sublimelinter_objj_check_ascii": false,
-							"sublimelinter_popup_errors_on_save": false,
-							"sublimelinter_syntax_map":
-							{
-								"C++": "c",
-								"Python Django": "python",
-								"Ruby on Rails": "ruby"
-							},
-							"sublimelinter_wrap_find": true,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 8840.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 1,
-			"sheets":
-			[
-				{
 					"buffer": 4,
-					"file": "_template_04_basic/js/lib/jquery/plugin.js",
+					"file": "_template_04_basic/css/flexslider.css",
 					"settings":
 					{
-						"buffer_size": 28630,
+						"buffer_size": 5651,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								9530,
-								9530
+								4622,
+								4622
 							]
 						],
 						"settings":
@@ -1283,7 +1309,7 @@
 								"Ruby on Rails": "ruby"
 							},
 							"sublimelinter_wrap_find": true,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"syntax": "Packages/CSS/CSS.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
@@ -1294,18 +1320,18 @@
 				},
 				{
 					"buffer": 5,
-					"file": "_template_04_basic/css/style.css",
+					"file": "_template_04_basic/js/lib/jquery/hammer.min.js",
 					"settings":
 					{
-						"buffer_size": 14958,
+						"buffer_size": 19757,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								652,
-								652
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1448,8 +1474,7 @@
 								"Ruby on Rails": "ruby"
 							},
 							"sublimelinter_wrap_find": true,
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1459,18 +1484,432 @@
 				},
 				{
 					"buffer": 6,
-					"file": "_template_04_basic/css/bootstrap/bootstrap.css",
 					"settings":
 					{
-						"buffer_size": 139126,
+						"buffer_size": 197,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								17298,
-								17298
+								196,
+								87
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_name": "User:Atsuko Kubota",
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"is_xml": false,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 7,
+					"file": "/Users/digitaldesigner/Downloads/mach3-flashspritejs-816312d/demo/index.html",
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"is_xml": false,
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"devel": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": "load-save",
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "react-0.14.6/examples/jquery-bootstrap/index.html",
+					"settings":
+					{
+						"buffer_size": 926,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"is_xml": false,
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"devel": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": "load-save",
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "react-0.14.6/examples/jquery-bootstrap/js/app.js",
+					"settings":
+					{
+						"buffer_size": 3242,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1613,12 +2052,12 @@
 								"Ruby on Rails": "ruby"
 							},
 							"sublimelinter_wrap_find": true,
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 24741.0,
+						"translation.y": 1149.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1654,7 +2093,7 @@
 		"cols":
 		[
 			0.0,
-			0.394588551222,
+			0.752642293358,
 			1.0
 		],
 		"rows":
