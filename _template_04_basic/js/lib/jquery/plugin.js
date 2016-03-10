@@ -63,25 +63,6 @@ function writeHeader(rootDir) {
 }
 
 
-// vertical horizontal center-wrap //
-$(function() {
-
-	function adjust(){
-		var h = $(window).height(); // ウィンドウの高さ //
-		var h1= $("header").height(); // ヘッダーの高さ //
-		var h2= $("footer").height(); // フッターの高さ //
-		$(".centerParentWrapper").css("height", h-h1-h2); // 可変部分の高さを適用 //
-	}
-
-	adjust();
-
-	$(window).bind("resize load", function(){
-		adjust();
-	})
-
-});
-
-
 // dt adjust //
 $(function() {
 
@@ -125,47 +106,10 @@ $(function() {
 });
 
 
-// MenuPanel //
-$(function() {
-
-	$(".panel-btn").click(function(){
-
-		if ($(".panel").is(":hidden")) {
-
-			// パネルを出す //
-			$(".panel").slideDown("slow");
-			// グローバルメニューの画像を切り替える //
-			$("#global_menu").removeClass("menu").addClass("menu_active");
-
-		}
-
-		else {
-
-			// パネルを引っ込める //
-			$(".panel").slideUp();
-			// グローバルメニューの画像を切り替える //
-			$("#global_menu").removeClass("menu_active").addClass("menu");
-
-		}
-		return false;
-
-	});
-
-});
-
-
 // Slider //
 $('.carousel').carousel({
 	interval: 2000
 });
-
-//$(function() {
-
-//	$(".flexslider").flexslider({
-//		animation: "slide"
-//	});
-
-//});
 
 
 // Slider-Swipe //
@@ -564,6 +508,8 @@ $(function() {
 
 				var inquiryListJp = $("input#inquiryListJp");
 				var offset = inquiryListJp.offset();
+				var sclpos = 20;
+				var targetOffset = inquiryListJp.offset().top + sclpos;
 
 				$('html,body').animate({ scrollTop: offset.top }, {duration: scldurat, easing: "easeOutExpo"});
 
@@ -707,21 +653,7 @@ $(function() {
 	$("input#btn_reset_ja,input#btn_reset_en").click(function() {
 
 		// バリデート注意文言を消す -日本語- //
-		$("label#inquiryListJp-error").html("").hide();
-		$("label#inquiryCompanyNameJp-error").html("").hide();
-		$("label#inquiryNameJaJp-error").html("").hide();
-		$("label#inquiryNameEnJp-error").html("").hide();
-		$("label#inquiryMailJp-error").html("").hide();
-		$("label#inquiryPhoneJp-error").html("").hide();
-		$("label#inquiryTextJp-error").html("").hide();
-
-		// バリデート注意文言を消す -英語- //
-		$("label#inquiryListEn-error").html("").hide();
-		$("label#inquiryCompanyNameEn-error").html("").hide();
-		$("label#inquiryNameEnEn-error").html("").hide();
-		$("label#inquiryMailEn-error").html("").hide();
-		$("label#inquiryPhoneEn-error").html("").hide();
-		$("label#inquiryTextEn-error").html("").hide();
+		$("label.error").html("").hide();
 
 		// サジェスト部分の注意文言及び[input type="hidden"]内の値を消す -共通- //
 		$("p#inquiryListDisplayJp,p#inquiryListDisplayEn").html("");
