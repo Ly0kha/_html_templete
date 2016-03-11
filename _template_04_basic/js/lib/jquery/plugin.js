@@ -137,7 +137,7 @@ $(function() {
 function quitBox(cmd) {
 
 	if (cmd=='quit'){
-		open(location, '_self').close();
+		open(location, '-self').close();
 	}
 	return false;
 
@@ -152,13 +152,13 @@ function smartRollover() {
 		var images = document.getElementsByTagName("img");
 		for(var i=0; i < images.length; i++) {
 
-			if(images[i].getAttribute("src").match("_off.")) {
+			if(images[i].getAttribute("src").match("-off.")) {
 
 				images[i].onmouseover = function() {
-					this.setAttribute("src", this.getAttribute("src").replace("_off.", "_on."));
+					this.setAttribute("src", this.getAttribute("src").replace("-off.", "-on."));
 				}
 				images[i].onmouseout = function() {
-					this.setAttribute("src", this.getAttribute("src").replace("_on.", "_off."));
+					this.setAttribute("src", this.getAttribute("src").replacee("-on.", "-off."));
 				}
 
 			}
@@ -178,11 +178,11 @@ else if (window.attachEvent) {
 }
 
 
-// target_blank for IE8 //
+// target-blank for IE8 //
 $(function(){
 
 	$('.blank').click(function(){
-		window.open(this.href, '_blank');
+		window.open(this.href, '-blank');
 		return false;
 	});
 
@@ -220,30 +220,30 @@ $(function() {
 
 		e.preventDefault();
 
-			if ($("#lb_overlay").is(":hidden")) {
+			if ($("#lb-overlay").is(":hidden")) {
 
 				// ライトボックスのオーバーレイを出す //
-				$("#lb_overlay, #lb_container").fadeIn();
+				$("#lb-overlay, #lb-container").fadeIn();
 
 				// todo: ライトボックスコンテンツを読み込ませる方法と切り分け方 //
-				$(".bg_lightbox").html("<img src='"+$(this).attr("href")+"' class='mg_left-right_auto block'/>").fadeIn();
+				$(".bg-lightbox").html("<img src='"+$(this).attr("href")+"' class='mg-left-right-auto block'/>").fadeIn();
 
 				// ライトボックスの背景をドキュメントの高さに合わせる //
 				var ww = $(window).width();
 				var wh = $(window).height();
 				var dh = $(document).height();
-				var lw = $(".bg_lightbox").width();
-				var lh = $(".bg_lightbox").height();
+				var lw = $(".bg-lightbox").width();
+				var lh = $(".bg-lightbox").height();
 				var ua = navigator.userAgent;
 
 					if (ua.indexOf('iPhone') > 0 || ua.indexOf('iPad') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 || ua.indexOf('BlackBerry') > 0 || ua.indexOf('windows Phone') > 0 || ua.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(ua)){
 
-						$("#lb_overlay").css({
+						$("#lb-overlay").css({
 							"width" : ww,
 							"height" : wh + 100 + "px"
 						});
 
-						$(".lb_wrapper").css({
+						$(".lb-wrapper").css({
 							"zoom" : 0.6,
 							"font-size" : 1 + "em"
 						});
@@ -252,7 +252,7 @@ $(function() {
 
 					else {
 
-						$("#lb_overlay").css({
+						$("#lb-overlay").css({
 							"width" : ww,
 							"height" : wh
 						});
@@ -266,18 +266,18 @@ $(function() {
 					var ww = $(window).width();
 					var wh = $(window).height();
 					var dh = $(document).height();
-					var lw = $(".bg_lightbox").width();
-					var lh = $(".bg_lightbox").height();
+					var lw = $(".bg-lightbox").width();
+					var lh = $(".bg-lightbox").height();
 					var ua = navigator.userAgent;
 
 					if (ua.indexOf('iPhone') > 0 || ua.indexOf('iPad') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 || ua.indexOf('BlackBerry') > 0 || ua.indexOf('windows Phone') > 0 || ua.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(ua)){
 
-						$("#lb_overlay").css({
+						$("#lb-overlay").css({
 							"width" : ww,
 							"height" : wh + 100 + "px"
 						});
 
-						$(".lb_wrapper").css({
+						$(".lb-wrapper").css({
 							"zoom" : 0.6,
 							"font-size" : 1 + "em"
 						});
@@ -286,7 +286,7 @@ $(function() {
 
 					else {
 
-						$("#lb_overlay").css({
+						$("#lb-overlay").css({
 							"width" : ww,
 							"height" : wh
 						});
@@ -298,9 +298,9 @@ $(function() {
 			}
 
 			else {
-				$(".bg_lightbox").html("").hide();
+				$(".bg-lightbox").html("").hide();
 				// ライトボックスのオーバーレイ、背景を引っ込める //
-				$("#lb_overlay, #lb_container").hide();
+				$("#lb-overlay, #lb-container").hide();
 			}
 
 	});
@@ -311,31 +311,31 @@ $(function() {
 
 		e.preventDefault();
 
-		if ($("#lb_overlay").is(":hidden")) {
+		if ($("#lb-overlay").is(":hidden")) {
 
 			// ライトボックスのオーバーレイを出す //
-			$("#lb_overlay, #lb_container").fadeIn();
+			$("#lb-overlay, #lb-container").fadeIn();
 
 			// todo: ライトボックスコンテンツを読み込ませる方法と切り分け方 //
 			var title = $(this).attr('title');
-			$(".bg_lightbox").html('<p>' + title + '</p>').fadeIn();
+			$(".bg-lightbox").html('<p>' + title + '</p>').fadeIn();
 
 			// ライトボックスの背景をドキュメントの高さに合わせる //
 			var ww = $(window).width();
 			var wh = $(window).height();
 			var dh = $(document).height();
-			var lw = $(".bg_lightbox").width();
-			var lh = $(".bg_lightbox").height();
+			var lw = $(".bg-lightbox").width();
+			var lh = $(".bg-lightbox").height();
 			var ua = navigator.userAgent;
 
 			if (ua.indexOf('iPhone') > 0 || ua.indexOf('iPad') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 || ua.indexOf('BlackBerry') > 0 || ua.indexOf('windows Phone') > 0 || ua.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(ua)){
 
-				$("#lb_overlay").css({
+				$("#lb-overlay").css({
 					"width" : ww,
 					"height" : wh + 100 + "px"
 				});
 
-				$(".lb_wrapper").css({
+				$(".lb-wrapper").css({
 					"zoom" : 0.6,
 					"font-size" : 1 + "em"
 				});
@@ -344,7 +344,7 @@ $(function() {
 
 			else {
 
-				$("#lb_overlay").css({
+				$("#lb-overlay").css({
 					"width" : ww,
 					"height" : wh
 				});
@@ -358,18 +358,18 @@ $(function() {
 				var ww = $(window).width();
 				var wh = $(window).height();
 				var dh = $(document).height();
-				var lw = $(".bg_lightbox").width();
-				var lh = $(".bg_lightbox").height();
+				var lw = $(".bg-lightbox").width();
+				var lh = $(".bg-lightbox").height();
 				var ua = navigator.userAgent;
 
 				if (ua.indexOf('iPhone') > 0 || ua.indexOf('iPad') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 || ua.indexOf('BlackBerry') > 0 || ua.indexOf('windows Phone') > 0 || ua.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(ua)){
 
-					$("#lb_overlay").css({
+					$("#lb-overlay").css({
 						"width" : ww,
 						"height" : wh + 100 + "px"
 					});
 
-					$(".lb_wrapper").css({
+					$(".lb-wrapper").css({
 						"zoom" : 0.6,
 						"font-size" : 1 + "em"
 					});
@@ -378,7 +378,7 @@ $(function() {
 
 				else {
 
-					$("#lb_overlay").css({
+					$("#lb-overlay").css({
 						"width" : ww,
 						"height" : wh
 					});
@@ -390,23 +390,23 @@ $(function() {
 		}
 
 		else {
-			$(".bg_lightbox").html("").hide();
+			$(".bg-lightbox").html("").hide();
 			// ライトボックスのオーバーレイ、背景を引っ込める //
-			$("#lb_overlay, #lb_container").hide();
+			$("#lb-overlay, #lb-container").hide();
 		}
 
 	});
 
 
 	// ライトボックスの背景でクローズする //
-	$("#lb_overlay").click(function(e) {
+	$("#lb-overlay").click(function(e) {
 
 		e.preventDefault();
 
-		$(".bg_lightbox").html("").hide();
+		$(".bg-lightbox").html("").hide();
 
-		$("#lb_overlay").hide();
-		$("#lb_overlay").css({
+		$("#lb-overlay").hide();
+		$("#lb-overlay").css({
 			"width" : "",
 			"height" : ""
 		});
@@ -427,7 +427,7 @@ $(function() {
 
 
 	// Submitを押したときの判定 Jp:日本語  //
-	$("input#btn_confirm_ja:submit").click(function() {
+	$("input#btn-confirm-ja:submit").click(function() {
 
 		//全角ひらがな･カタカナのみ
 		jQuery.validator.addMethod("kana", function(value, element) {
@@ -443,7 +443,7 @@ $(function() {
 
 		//半角アルファベット（大文字･小文字）のみ
 		jQuery.validator.addMethod("alphabet", function(value, element) {
-			return this.optional(element) || /^([a-zA-Z0-9\s\@_\.\-]+)$/.test(value);
+			return this.optional(element) || /^([a-zA-Z0-9\s\@-\.\-]+)$/.test(value);
 			}, "半角英字を入力してください"
 		);
 
@@ -566,7 +566,7 @@ $(function() {
 
 
 	// Submitを押したときの判定 En:英語  //
-	$("input#btn_confirm_en:submit").click(function() {
+	$("input#btn-confirm-en:submit").click(function() {
 
 		$("#inquiryFormEn").validate({
 			ignore: ".ignore",
@@ -650,7 +650,7 @@ $(function() {
 
 
 	// Resetを押したときの判定 //
-	$("input#btn_reset_ja,input#btn_reset_en").click(function() {
+	$("input#btn-reset-ja,input#btn-reset-en").click(function() {
 
 		// バリデート注意文言を消す -日本語- //
 		$("label.error").html("").hide();
@@ -663,15 +663,15 @@ $(function() {
 		$("input:text,input:checked,textarea").val("");
 
 		// 同意するボタン内の値を消す -共通- //
-		$("#accept_ja,#accept_en").attr("checked", false);
+		$("#accept-ja,#accept-en").attr("checked", false);
 
 		// 同意ボタンにチェックが入っているか否かでのリセット、確認ボタンの判定 //
-		if ($("#accept_ja:checked,#accept_en:checked").length === 0) {
+		if ($("#accept-ja:checked,#accept-en:checked").length === 0) {
 
-			$("#btn_reset_ja").attr('id',"btn_reset_off_ja").attr('disabled', true);
-			$("#btn_reset_en").attr('id',"btn_reset_off_en").attr('disabled', true);
-			$("#btn_confirm_ja").attr('id',"btn_confirm_off_ja").attr('disabled', true);
-			$("#btn_confirm_en").attr('id',"btn_confirm_off_en").attr('disabled', true);
+			$("#btn-reset-ja").attr('id',"btn-reset-off-ja").attr('disabled', true);
+			$("#btn-reset-en").attr('id',"btn-reset-off-en").attr('disabled', true);
+			$("#btn-confirm-ja").attr('id',"btn-confirm-off-ja").attr('disabled', true);
+			$("#btn-confirm-en").attr('id',"btn-confirm-off-en").attr('disabled', true);
 
 		}
 
@@ -688,36 +688,36 @@ $(function() {
 
 	// 同意ボタンを押したときのリセット、確認ボタンの判定 //
 	/*  default */
-			$("#btn_reset_ja").attr('id',"btn_reset_off_ja").attr('disabled', true);
-			$("#btn_reset_en").attr('id',"btn_reset_off_en").attr('disabled', true);
-			$("#btn_confirm_ja").attr('id',"btn_confirm_off_ja").attr('disabled', true);
-			$("#btn_confirm_en").attr('id',"btn_confirm_off_en").attr('disabled', true);
+			$("#btn-reset-ja").attr('id',"btn-reset-off-ja").attr('disabled', true);
+			$("#btn-reset-en").attr('id',"btn-reset-off-en").attr('disabled', true);
+			$("#btn-confirm-ja").attr('id',"btn-confirm-off-ja").attr('disabled', true);
+			$("#btn-confirm-en").attr('id',"btn-confirm-off-en").attr('disabled', true);
 
 	/*  accept */
-	$("#accept_ja,#accept_en").click(function() {
+	$("#accept-ja,#accept-en").click(function() {
 
-		if ($("#accept_ja:checked,#accept_en:checked").length === 1) {
+		if ($("#accept-ja:checked,#accept-en:checked").length === 1) {
 
-			$("#btn_reset_off_ja").attr('id',"btn_reset_ja").attr('disabled', false);
-			$("#btn_reset_off_en").attr('id',"btn_reset_en").attr('disabled', false);
-			$("#btn_confirm_off_ja").attr('id',"btn_confirm_ja").attr('disabled', false);
-			$("#btn_confirm_off_en").attr('id',"btn_confirm_en").attr('disabled', false);
+			$("#btn-reset-off-ja").attr('id',"btn-reset-ja").attr('disabled', false);
+			$("#btn-reset-off-en").attr('id',"btn-reset-en").attr('disabled', false);
+			$("#btn-confirm-off-ja").attr('id',"btn-confirm-ja").attr('disabled', false);
+			$("#btn-confirm-off-en").attr('id',"btn-confirm-en").attr('disabled', false);
 
 		}
 
 		else {
 
-			$("#btn_reset_ja").attr('id',"btn_reset_off_ja").attr('disabled', true);
-			$("#btn_reset_en").attr('id',"btn_reset_off_en").attr('disabled', true);
-			$("#btn_confirm_ja").attr('id',"btn_confirm_off_ja").attr('disabled', true);
-			$("#btn_confirm_en").attr('id',"btn_confirm_off_en").attr('disabled', true);
+			$("#btn-reset-ja").attr('id',"btn-reset-off-ja").attr('disabled', true);
+			$("#btn-reset-en").attr('id',"btn-reset-off-en").attr('disabled', true);
+			$("#btn-confirm-ja").attr('id',"btn-confirm-off-ja").attr('disabled', true);
+			$("#btn-confirm-en").attr('id',"btn-confirm-off-en").attr('disabled', true);
 
 		}
 
 	}).css("cursor","pointer");
 
 	// 戻るボタンを押したときの判定 //
-	$("input#btn_formback_ja,input#btn_formback_en").click(function() {
+	$("input#btn-formback-ja,input#btn-formback-en").click(function() {
 		location.href="index.html"
 	});
 
@@ -732,7 +732,7 @@ $(function() {
 
 			$(".policy").click(function() {
 				// location.href="../sitepolicy/index.html"
-				// window.open("../sitepolicy/index.html", '_blank');
+				// window.open("../sitepolicy/index.html", '-blank');
 				return false;
 			});
 
@@ -743,7 +743,7 @@ $(function() {
 
 			$(".policy").click(function() {
 				// location.href="../../#/sitepolicy/"
-				// window.open("../../#/sitepolicy/", '_blank');
+				// window.open("../../#/sitepolicy/", '-blank');
 				return false;
 			});
 
@@ -774,13 +774,13 @@ $(function() {
 			// ウィンドウサイズが940px以下になったら  //
 			if((ww) < 940) {
 				$(".colon").hide();
-				$("dl.form_pc dd").css("width", 400 / 400 * 100 + "%" );
+				$("dl.form-pc dd").css("width", 400 / 400 * 100 + "%" );
 			}
 
 			// ウィンドウサイズが630px以上になったら  //
 			else {
 				$(".colon").show();
-				$("dl.form_pc dd").css("width", 600 + "px" );
+				$("dl.form-pc dd").css("width", 600 + "px" );
 			}
 
 		}
@@ -848,7 +848,7 @@ $(function() {
 		else {
 
 			// マウスカーソルがセレクターの上に乗ったらサジェストを出す//
-			$(".suggest_pc").on({
+			$(".suggest-pc").on({
 				// マウスカーソルがサジェストの上に乗った時の判定 //
 				'mouseenter':function() {
 					$("#suggestJp,#suggestEn").fadeIn();
@@ -968,8 +968,8 @@ $(function() {
 
 				$("#ja").fadeIn().show();
 				$("#en").fadeOut().hide();
-				$(".language_list li.btn_ja").removeClass("btn_ja").addClass("btn_ja_active");
-				$(".language_list li.btn_en_active").removeClass("btn_en_active").addClass("btn_en");
+				$(".language-list li.btn-ja").removeClass("btn-ja").addClass("btn-ja-active");
+				$(".language-list li.btn-en-active").removeClass("btn-en-active").addClass("btn-en");
 
 				break;
 
@@ -979,8 +979,8 @@ $(function() {
 
 				$("#en").fadeIn().show();
 				$("#ja").fadeOut().hide();
-				$(".language_list li.btn_en").removeClass("btn_en").addClass("btn_en_active");
-				$(".language_list li.btn_ja_active").removeClass("btn_ja_active").addClass("btn_ja");
+				$(".language-list li.btn-en").removeClass("btn-en").addClass("btn-en-active");
+				$(".language-list li.btn-ja-active").removeClass("btn-ja-active").addClass("btn-ja");
 
 				break;
 
@@ -990,8 +990,8 @@ $(function() {
 
 				$("#ja").fadeIn().show();
 				$("#en").fadeOut().hide();
-				$(".language_list li.btn_ja").removeClass("btn_ja").addClass("btn_ja_active");
-				$(".language_list li.btn_en_active").removeClass("btn_en_active").addClass("btn_en");
+				$(".language-list li.btn-ja").removeClass("btn-ja").addClass("btn-ja-active");
+				$(".language-list li.btn-en-active").removeClass("btn-en-active").addClass("btn-en");
 
 				break;
 
@@ -1085,7 +1085,7 @@ $(function() {
 --------------------------*/
 
 
-// Twitter_Facebook //
+// Twitter-Facebook //
 function popupLink(type, _self) {
 
 	var href,
@@ -1124,37 +1124,37 @@ $(window).load(function() {
 
 		// common -SP版背景画像を固定化- //
 		/* SPかPCかの判定を切り替える */
-		$(".bg_top_pc").addClass("bg_top_sp").removeClass("bg_top_pc");
-		$(".bg_contents_pc").addClass("bg_contents_sp").removeClass("bg_contents_pc");
-		$(".bg_work_pc").addClass("bg_work_sp").removeClass("bg_work_pc");
+		$(".bg-top-pc").addClass("bg-top-sp").removeClass("bg-top-pc");
+		$(".bg-contents-pc").addClass("bg-contents-sp").removeClass("bg-contents-pc");
+		$(".bg-work-pc").addClass("bg-work-sp").removeClass("bg-work-pc");
 
 		/* SPならば背景固定用のソースを挿入する */
-		$("body.bg_top").append("<div class='background-bg_top'></div>");
-		$("body.bg_contents").append("<div class='background-bg_contents'></div>");
-		$("body.bg_work").append("<div class='background-bg_work'></div>");
+		$("body.bg-top").append("<div class='background-bg-top'></div>");
+		$("body.bg-contents").append("<div class='background-bg-contents'></div>");
+		$("body.bg-work").append("<div class='background-bg-work'></div>");
 
 		/* iOS用にスクロールして背景がカクつく現象を解消させる */
 		$(window).bind("resize load", function(){
 			var wh = $(window).outerHeight();
 
-			$("#lb_overlay,.background-bg_top,.background-bg_contents,.background-bg_work").css({
+			$("#lb-overlay,.background-bg-top,.background-bg-contents,.background-bg-work").css({
 				"height" : wh
 			});
 
 		}).trigger("resize");
 
 		// form -SP版wrapperレイアウト- //
-		$("#wrapper").addClass("wrapper_sp").removeClass("wrapper");
+		$("#wrapper").addClass("wrapper-sp").removeClass("wrapper");
 
 		// form  -SP版formレイアウト- //
-		$("#form_layoutJp,#form_layoutEn").addClass("form_sp").removeClass("form_pc");
+		$("#form-layoutJp,#form-layoutEn").addClass("form-sp").removeClass("form-pc");
 
 		// form -SP版formComplete画像サイズ- //
-		$("#sentCompleteJp,#sentCompleteEn").addClass("img_complete_sp");
+		$("#sentCompleteJp,#sentCompleteEn").addClass("img-complete-sp");
 
 		// form -SP版suggestレイアウト- //
-		$(".suggest_pc").addClass("suggest_sp").removeClass("suggest_pc");
-		$("#suggestJp,#suggestEn").addClass("suggest_wrap_sp").removeClass("suggest_wrap_pc");
+		$(".suggest-pc").addClass("suggest-sp").removeClass("suggest-pc");
+		$("#suggestJp,#suggestEn").addClass("suggest-wrap-sp").removeClass("suggest-wrap-pc");
 
 	}
 
