@@ -137,7 +137,7 @@ $(function() {
 function quitBox(cmd) {
 
 	if (cmd=='quit'){
-		open(location, '-self').close();
+		open(location, '_self').close();
 	}
 	return false;
 
@@ -152,13 +152,13 @@ function smartRollover() {
 		var images = document.getElementsByTagName("img");
 		for(var i=0; i < images.length; i++) {
 
-			if(images[i].getAttribute("src").match("-off.")) {
+			if(images[i].getAttribute("src").match("_off.")) {
 
 				images[i].onmouseover = function() {
-					this.setAttribute("src", this.getAttribute("src").replace("-off.", "-on."));
+					this.setAttribute("src", this.getAttribute("src").replace("_off.", "_on."));
 				}
 				images[i].onmouseout = function() {
-					this.setAttribute("src", this.getAttribute("src").replacee("-on.", "-off."));
+					this.setAttribute("src", this.getAttribute("src").replacee("_on.", "_off."));
 				}
 
 			}
@@ -182,7 +182,7 @@ else if (window.attachEvent) {
 $(function(){
 
 	$('.blank').click(function(){
-		window.open(this.href, '-blank');
+		window.open(this.href, '_blank');
 		return false;
 	});
 
@@ -443,7 +443,7 @@ $(function() {
 
 		//半角アルファベット（大文字･小文字）のみ
 		jQuery.validator.addMethod("alphabet", function(value, element) {
-			return this.optional(element) || /^([a-zA-Z0-9\s\@-\.\-]+)$/.test(value);
+			return this.optional(element) || /^([a-zA-Z0-9\s\@_\.\-]+)$/.test(value);
 			}, "半角英字を入力してください"
 		);
 
