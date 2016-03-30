@@ -62,6 +62,29 @@ function writeHeader(rootDir) {
 
 }
 
+$(function() {
+	$.ajax({
+		dataType: "json"// ,
+		// url: url,
+		// data: data,
+		// success: success
+	});
+
+	$.getJSON( "ajax/test.json", function( data ) {
+
+		var items = [];
+		$.each( data, function( key, val ) {
+			items.push("<li id='" + key + "'>" + val + "</li>");
+		});
+
+		$("<ul/>",{
+			"class": "my-new-list",
+			html: items.join("")
+		}).appendTo("#wrapper");
+
+	});
+});
+
 
 // dt adjust //
 $(function() {
@@ -732,7 +755,7 @@ $(function() {
 
 			$(".policy").click(function() {
 				// location.href="../sitepolicy/index.html"
-				// window.open("../sitepolicy/index.html", '-blank');
+				// window.open("../sitepolicy/index.html", '_blank');
 				return false;
 			});
 
@@ -743,7 +766,7 @@ $(function() {
 
 			$(".policy").click(function() {
 				// location.href="../../#/sitepolicy/"
-				// window.open("../../#/sitepolicy/", '-blank');
+				// window.open("../../#/sitepolicy/", '_blank');
 				return false;
 			});
 
@@ -771,16 +794,16 @@ $(function() {
 			var ww = $(window).width();
 			//$("#test").html(ww);　デバッグ用
 
-			// ウィンドウサイズが940px以下になったら  //
-			if((ww) < 940) {
+			// ウィンドウサイズが640px以下になったら  //
+			if((ww) < 767) {
 				$(".colon").hide();
 				$("dl.form-pc dd").css("width", 400 / 400 * 100 + "%" );
 			}
 
-			// ウィンドウサイズが630px以上になったら  //
+			// ウィンドウサイズが640px以上になったら  //
 			else {
 				$(".colon").show();
-				$("dl.form-pc dd").css("width", 600 + "px" );
+				$("dl.form-pc dd").css("width", 400 + "px" );
 			}
 
 		}
