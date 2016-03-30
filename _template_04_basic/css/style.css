@@ -912,40 +912,26 @@ address {
 --------------------------*/
 
 .centerParentWrapper {
+	display: -webkit-flex;
+	display: flex;
+	-webkit-align-items: center;
+	align-items: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+
+	background: #ccc;
+
 	position: relative;
 	top: 0px;
 	left: 0px;
 	right: 0px;
 	bottom: 0px;
+	margin: 0px;
+	padding: 0px;
 	width: 100%;
-	margin: auto;
+	min-height: 480px;
+	overflow: hidden;
 }
-
-.centerChildWrapper {
-	position: absolute;
-	top: -100%;
-	left: -100%;
-	right: -100%;
-	bottom: -100%;
-	min-width: 300px;
-	max-width: 980px;
-	height: 292px;
-	margin: auto;
-}
-
-.wrapperBox {
-	position: absolute;
-	min-width: 300px;
-	max-width: 980px;
-	height: 292px;
-	margin: auto;
-}
-
-.textSearch {
-	width: 62px;
-	height: 16px;
-}
-
 
 /* 2nd: form
 --------------------------*/

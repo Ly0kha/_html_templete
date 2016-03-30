@@ -33,6 +33,11 @@
 /* UI共通プラグイン
 --------------------------*/
 
+// グローバル変数 //
+var ww = $(window).width();
+var wh = $(window).height();
+var ua = navigator.userAgent;
+
 
 // test IE判定実装 //
 // IEであるか否かの判定
@@ -62,6 +67,8 @@ function writeHeader(rootDir) {
 
 }
 
+
+// jsonテスト //
 $(function() {
 	$.ajax({
 		dataType: "json"// ,
@@ -212,6 +219,14 @@ $(function(){
 });
 
 
+// centering //
+$(window).bind("resize load", function() {
+
+	$(".centerParentWrapper").css({
+		"height" : wh + "px"
+	});
+
+});
 
 
 /* ライトボックス
@@ -252,12 +267,9 @@ $(function() {
 				$(".bg-lightbox").html("<img src='"+$(this).attr("href")+"' class='mg-left-right-auto block'/>").fadeIn();
 
 				// ライトボックスの背景をドキュメントの高さに合わせる //
-				var ww = $(window).width();
-				var wh = $(window).height();
 				var dh = $(document).height();
 				var lw = $(".bg-lightbox").width();
 				var lh = $(".bg-lightbox").height();
-				var ua = navigator.userAgent;
 
 					if (ua.indexOf('iPhone') > 0 || ua.indexOf('iPad') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 || ua.indexOf('BlackBerry') > 0 || ua.indexOf('windows Phone') > 0 || ua.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(ua)){
 
@@ -286,12 +298,9 @@ $(function() {
 				// 傾けてもライトボックスの背景をドキュメントの高さに合わせる //
 				$(window).bind("resize load", function() {
 
-					var ww = $(window).width();
-					var wh = $(window).height();
 					var dh = $(document).height();
 					var lw = $(".bg-lightbox").width();
 					var lh = $(".bg-lightbox").height();
-					var ua = navigator.userAgent;
 
 					if (ua.indexOf('iPhone') > 0 || ua.indexOf('iPad') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 || ua.indexOf('BlackBerry') > 0 || ua.indexOf('windows Phone') > 0 || ua.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(ua)){
 
@@ -344,12 +353,9 @@ $(function() {
 			$(".bg-lightbox").html('<p>' + title + '</p>').fadeIn();
 
 			// ライトボックスの背景をドキュメントの高さに合わせる //
-			var ww = $(window).width();
-			var wh = $(window).height();
 			var dh = $(document).height();
 			var lw = $(".bg-lightbox").width();
 			var lh = $(".bg-lightbox").height();
-			var ua = navigator.userAgent;
 
 			if (ua.indexOf('iPhone') > 0 || ua.indexOf('iPad') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 || ua.indexOf('BlackBerry') > 0 || ua.indexOf('windows Phone') > 0 || ua.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(ua)){
 
@@ -378,12 +384,9 @@ $(function() {
 			// 傾けてもライトボックスの背景をドキュメントの高さに合わせる //
 			$(window).bind("resize load", function() {
 
-				var ww = $(window).width();
-				var wh = $(window).height();
 				var dh = $(document).height();
 				var lw = $(".bg-lightbox").width();
 				var lh = $(".bg-lightbox").height();
-				var ua = navigator.userAgent;
 
 				if (ua.indexOf('iPhone') > 0 || ua.indexOf('iPad') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 || ua.indexOf('BlackBerry') > 0 || ua.indexOf('windows Phone') > 0 || ua.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(ua)){
 
@@ -634,7 +637,6 @@ $(function() {
 
 
 		// エラーが出た箇所へ飛ぶ -SP版- //
-		var ua = navigator.userAgent;
 		var scldurat = 500;
 
 		if (ua.indexOf('iPhone') > 0 || ua.indexOf('iPad') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 || ua.indexOf('BlackBerry') > 0 || ua.indexOf('windows Phone') > 0 || ua.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(ua)){
@@ -699,7 +701,6 @@ $(function() {
 		}
 
 		// リセットボタン押したらページトップへ飛ぶ -SP版- //
-		var ua = navigator.userAgent;
 		var scldurat = 500;
 
 		if (ua.indexOf('iPhone') > 0 || ua.indexOf('iPad') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 || ua.indexOf('BlackBerry') > 0 || ua.indexOf('windows Phone') > 0 || ua.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(ua)){
@@ -748,8 +749,6 @@ $(function() {
 	// SP版とPC版でとび先を変える //
 	$(window).load(function() {
 
-		var ua = navigator.userAgent;
-
 		// -SP版- //
 		if (ua.indexOf('iPhone') > 0 || ua.indexOf('iPad') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 || ua.indexOf('BlackBerry') > 0 || ua.indexOf('windows Phone') > 0 || ua.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(ua)){
 
@@ -777,8 +776,6 @@ $(function() {
 
 	// windowをリサイズした時にコロンを取る //
 	$(window).bind("resize load", function() {
-
-		var ua = navigator.userAgent;
 
 		// -SP版- //
 		if (ua.indexOf('iPhone') > 0 || ua.indexOf('iPad') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 || ua.indexOf('BlackBerry') > 0 || ua.indexOf('windows Phone') > 0 || ua.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(ua)){
@@ -827,8 +824,6 @@ $(function() {
 	$(".suggestClear").hide();
 
 	$(window).bind("resize load", function() {
-
-		var ua = navigator.userAgent;
 
 
 		// サジェストを出す -SP版- //
@@ -1140,7 +1135,6 @@ function popupLink(type, _self) {
 // 1.SP版とPC版でレイアウトを変える  //
 $(window).load(function() {
 
-	var ua = navigator.userAgent;
 
 	// iPhone, AndroidなどのSP端末の表示 //
 	if (ua.indexOf('iPhone') > 0 || ua.indexOf('iPad') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 || ua.indexOf('BlackBerry') > 0 || ua.indexOf('windows Phone') > 0 || ua.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(ua)){
@@ -1189,7 +1183,6 @@ var portraitWidth,landscapeWidth;
 
 $(window).bind("resize load", function() {
 
-	var ua = navigator.userAgent;
 
 	// デバッグ用 //
 	//$("#test01").html(ww);
