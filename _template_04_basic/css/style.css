@@ -1,15 +1,18 @@
 @charset "utf-8";
 
+
 /****************************************
 
 			   common
 
 *****************************************/
 
+
 /********** コンテンツ共有CSS ***********/
 
 /* ページ本体
 --------------------------*/
+
 
 html,
 body,
@@ -66,21 +69,54 @@ body {
 	background: #fff;
 }
 
+
+/* ヘッダー／フッター
+--------------------------*/
+
+
+/* 共通 */
 header,
-footer {
-	position: relative;
+footer,
+header.fixed,
+footer.fixed {
 	width: 100%;
 	margin: 0px;
 	z-index: 10;
 }
 
-footer .btn-top {
+
+/* 通常用 */
+header,
+footer {
+	position: relative;
+}
+
+
+/* 固定用 */
+header.fixed,
+footer.fixed {
+	position: fixed;
+}
+
+header.fixed {
+	top: 0px;
+}
+
+footer.fixed {
+	bottom: 0px;
+}
+
+
+/* ボタン */
+footer .btn-top,
+footer.fixed .btn-top {
 	font-size: 2em;
 }
 
 
 /* 背景色
 --------------------------*/
+
 
 body {
 	background: #f1f1f1;
@@ -89,6 +125,7 @@ body {
 
 /* リンク、見出し、フォームパーツ
 --------------------------*/
+
 
 /* リンク */
 a {
@@ -254,6 +291,7 @@ select {
 
 /* 本文、コンテンツボックス、テーブル、リスト、定義、罫線など
 --------------------------*/
+
 
 /* 画像 */
 img {
@@ -532,6 +570,7 @@ address {
 /* todo:ライトボックス
 --------------------------*/
 
+
 #lb-overlay {
 	position: fixed;
 	top: 0px;
@@ -601,6 +640,7 @@ address {
 /* フロート
 --------------------------*/
 
+
 .float-l {
 	float: left;
 }
@@ -612,6 +652,7 @@ address {
 
 /* テキストアライン
 --------------------------*/
+
 
 .left {
 	text-align: left;
@@ -629,6 +670,7 @@ address {
 /* バーティカルアライン
 --------------------------*/
 
+
 .top {
 	vertical-align: top;
 }
@@ -644,6 +686,7 @@ address {
 
 /* パディング調整
 --------------------------*/
+
 
 /* パディングなし */
 .pd-00 {
@@ -707,6 +750,7 @@ address {
 
 /* マージン調整
 --------------------------*/
+
 
 /* 左右マージン均等 */
 .mg-left-right-auto {
@@ -837,6 +881,7 @@ address {
 /* 幅調整
 --------------------------*/
 
+
 .wd-all {
 	width: 100% !important;
 }
@@ -911,6 +956,7 @@ address {
 /* 2nd: top
 --------------------------*/
 
+
 .centerParentWrapper {
 	display: -webkit-flex;
 	display: flex;
@@ -933,8 +979,10 @@ address {
 	overflow: hidden;
 }
 
+
 /* 2nd: form
 --------------------------*/
+
 
 /* 項目レイアウト -PC用- */
 dl.form-pc {

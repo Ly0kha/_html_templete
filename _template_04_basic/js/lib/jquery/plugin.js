@@ -33,9 +33,15 @@
 /* UI共通プラグイン
 --------------------------*/
 
+
 // グローバル変数 //
 var ww = $(window).width();
 var wh = $(window).height();
+var wow = $(window).outerWidth();
+var woh = $(window).outerHeight();
+var wiw = $(window).innerWidth();
+var wih = $(window).innerHeight();
+
 var ua = navigator.userAgent;
 
 
@@ -43,7 +49,6 @@ var ua = navigator.userAgent;
 // IEであるか否かの判定
 // var isIE = false; // IEか否か
 // var version = null; // IEのバージョン
-// var ua = navigator.userAgent;
 
 // if( ua.match(/MSIE/) || ua.match(/Trident/) ) {
 //		isIE = true;
@@ -70,6 +75,7 @@ function writeHeader(rootDir) {
 
 // jsonテスト //
 $(function() {
+
 	$.ajax({
 		dataType: "json"// ,
 		// url: url,
@@ -90,6 +96,7 @@ $(function() {
 		}).appendTo("#wrapper");
 
 	});
+
 });
 
 
@@ -137,18 +144,31 @@ $(function() {
 
 
 // Slider //
-$('.carousel').carousel({
-	interval: 2000
-});
+if (ua.indexOf('iPhone') > 0 || ua.indexOf('iPad') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 || ua.indexOf('BlackBerry') > 0 || ua.indexOf('windows Phone') > 0 || ua.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(ua)){
 
+	// Slider-Config //
+	$('.carousel').carousel({
+		interval: 2000
+	});
 
-// Slider-Swipe //
-$(function() {
-	var carousel = $('.carousel');
-	var hammer = new Hammer(carousel[0]);
-	hammer.on('swipeleft', function(){ carousel.carousel('next'); });   //--- 左にスワイプしたら次の画像に切り替え
-	hammer.on('swiperight', function(){ carousel.carousel('prev'); });  //--- 右にスワイプしたら前の画像に切り替え
-});
+	// Slider-Swipe -forSP-//
+	$(function() {
+		var carousel = $('.carousel');
+		var hammer = new Hammer(carousel[0]);
+		hammer.on('swipeleft', function(){ carousel.carousel('next'); });   //--- 左にスワイプしたら次の画像に切り替え
+		hammer.on('swiperight', function(){ carousel.carousel('prev'); });  //--- 右にスワイプしたら前の画像に切り替え
+	});
+
+}
+
+else {
+
+	// Slider-Config //
+	$('.carousel').carousel({
+		interval: 2000
+	});
+
+}
 
 
 // Tabs //
@@ -174,7 +194,7 @@ function quitBox(cmd) {
 }
 
 
-// Rollover Switch -PC版-//
+// Rollover Switch -forPC-//
 function smartRollover() {
 
 	if(document.getElementsByTagName) {
@@ -222,11 +242,21 @@ $(function(){
 // centering //
 $(window).bind("resize load", function() {
 
+	var ww = $(window).width();
+	var wh = $(window).height();
+
 	$(".centerParentWrapper").css({
 		"height" : wh + "px"
+		// "height" : 100 + "%"
 	});
 
-});
+	// デバッグ用 //
+	$("#test01").html(ww);
+	$("#test02").html(wh);
+
+}).trigger("resize");
+
+
 
 
 /* ライトボックス
@@ -267,6 +297,8 @@ $(function() {
 				$(".bg-lightbox").html("<img src='"+$(this).attr("href")+"' class='mg-left-right-auto block'/>").fadeIn();
 
 				// ライトボックスの背景をドキュメントの高さに合わせる //
+				var ww = $(window).width();
+				var wh = $(window).height();
 				var dh = $(document).height();
 				var lw = $(".bg-lightbox").width();
 				var lh = $(".bg-lightbox").height();
@@ -298,6 +330,8 @@ $(function() {
 				// 傾けてもライトボックスの背景をドキュメントの高さに合わせる //
 				$(window).bind("resize load", function() {
 
+					var ww = $(window).width();
+					var wh = $(window).height();
 					var dh = $(document).height();
 					var lw = $(".bg-lightbox").width();
 					var lh = $(".bg-lightbox").height();
@@ -353,6 +387,8 @@ $(function() {
 			$(".bg-lightbox").html('<p>' + title + '</p>').fadeIn();
 
 			// ライトボックスの背景をドキュメントの高さに合わせる //
+			var ww = $(window).width();
+			var wh = $(window).height();
 			var dh = $(document).height();
 			var lw = $(".bg-lightbox").width();
 			var lh = $(".bg-lightbox").height();
@@ -384,6 +420,8 @@ $(function() {
 			// 傾けてもライトボックスの背景をドキュメントの高さに合わせる //
 			$(window).bind("resize load", function() {
 
+				var ww = $(window).width();
+				var wh = $(window).height();
 				var dh = $(document).height();
 				var lw = $(".bg-lightbox").width();
 				var lh = $(".bg-lightbox").height();
@@ -527,7 +565,7 @@ $(function() {
 		var scldurat = 500;
 
 
-		// エラーが出た箇所へ飛ぶ -SP版- //
+		// エラーが出た箇所へ飛ぶ -forSP- //
 		if (ua.indexOf('iPhone') > 0 || ua.indexOf('iPad') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 || ua.indexOf('BlackBerry') > 0 || ua.indexOf('windows Phone') > 0 || ua.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(ua)){
 
 			if ($("input#inquiryListJp").val() === ""){
@@ -636,7 +674,7 @@ $(function() {
 		});
 
 
-		// エラーが出た箇所へ飛ぶ -SP版- //
+		// エラーが出た箇所へ飛ぶ -forSP- //
 		var scldurat = 500;
 
 		if (ua.indexOf('iPhone') > 0 || ua.indexOf('iPad') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 || ua.indexOf('BlackBerry') > 0 || ua.indexOf('windows Phone') > 0 || ua.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(ua)){
@@ -700,7 +738,7 @@ $(function() {
 
 		}
 
-		// リセットボタン押したらページトップへ飛ぶ -SP版- //
+		// リセットボタン押したらページトップへ飛ぶ -forSP- //
 		var scldurat = 500;
 
 		if (ua.indexOf('iPhone') > 0 || ua.indexOf('iPad') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 || ua.indexOf('BlackBerry') > 0 || ua.indexOf('windows Phone') > 0 || ua.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(ua)){
@@ -746,10 +784,10 @@ $(function() {
 	});
 
 
-	// SP版とPC版でとび先を変える //
+	// SPとPCでとび先を変える //
 	$(window).load(function() {
 
-		// -SP版- //
+		// -forSP- //
 		if (ua.indexOf('iPhone') > 0 || ua.indexOf('iPad') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 || ua.indexOf('BlackBerry') > 0 || ua.indexOf('windows Phone') > 0 || ua.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(ua)){
 
 			$(".policy").click(function() {
@@ -760,7 +798,7 @@ $(function() {
 
 		}
 
-		// -PC版-  //
+		// -forPC-  //
 		else {
 
 			$(".policy").click(function() {
@@ -777,14 +815,14 @@ $(function() {
 	// windowをリサイズした時にコロンを取る //
 	$(window).bind("resize load", function() {
 
-		// -SP版- //
+		// -forSP- //
 		if (ua.indexOf('iPhone') > 0 || ua.indexOf('iPad') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 || ua.indexOf('BlackBerry') > 0 || ua.indexOf('windows Phone') > 0 || ua.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(ua)){
 
 			// なし  //
 
 		}
 
-		// -PC版-  //
+		// -forPC- //
 		else {
 
 			// ウィンドウサイズを精査  //
@@ -826,7 +864,7 @@ $(function() {
 	$(window).bind("resize load", function() {
 
 
-		// サジェストを出す -SP版- //
+		// サジェストを出す -forSP- //
 		if (ua.indexOf('iPhone') > 0 || ua.indexOf('iPad') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 || ua.indexOf('BlackBerry') > 0 || ua.indexOf('windows Phone') > 0 || ua.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(ua)){
 
 			$("#inquiryListDisplayJp,#inquiryListDisplayEn").on({
@@ -862,7 +900,7 @@ $(function() {
 		}
 
 
-		// サジェストを出す -PC版-  //
+		// サジェストを出す -forPC- //
 		else {
 
 			// マウスカーソルがセレクターの上に乗ったらサジェストを出す//
@@ -974,7 +1012,7 @@ $(function() {
 	var settinglang = browserLanguage();
 
 
-	// 2.グローバルナビから言語判定をとり、そこから日本語表示か英語表示か切り替える -SP版-//
+	// 2.グローバルナビから言語判定をとり、そこから日本語表示か英語表示か切り替える -forSP-//
 	function showLanguageSP(i) {
 
 		var langArr = i ;
@@ -1018,7 +1056,7 @@ $(function() {
 	}
 
 
-	// 2.グローバルナビから言語判定をとり、そこから日本語表示か英語表示か切り替える -PC版- //
+	// 2.グローバルナビから言語判定をとり、そこから日本語表示か英語表示か切り替える -forPC- //
 	function showLanguagePC(i) {
 
 		var langArr = i ;
@@ -1152,10 +1190,9 @@ $(window).load(function() {
 
 		/* iOS用にスクロールして背景がカクつく現象を解消させる */
 		$(window).bind("resize load", function(){
-			var wh = $(window).outerHeight();
 
 			$("#lb-overlay,.background-bg-top,.background-bg-contents,.background-bg-work").css({
-				"height" : wh
+				"height" : woh
 			});
 
 		}).trigger("resize");
