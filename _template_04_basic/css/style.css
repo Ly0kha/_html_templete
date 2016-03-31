@@ -548,6 +548,14 @@ hr {
 	color: #d3d3d3;
 }
 
++.text-color-white {
+	color: #fff;
+}
+
+.text-color-black {
+	color: #000;
+}
+
 
 /* インラインアイコン指定 */
 img.smallIcon {

@@ -43,7 +43,7 @@
 			"file": "_template_04_basic/css/style.css",
 			"settings":
 			{
-				"buffer_size": 15537,
+				"buffer_size": 15612,
 				"line_ending": "Unix"
 			}
 		},
@@ -1151,7 +1151,7 @@
 			]
 		},
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -1159,15 +1159,15 @@
 					"file": "_template_04_basic/css/style.css",
 					"settings":
 					{
-						"buffer_size": 15537,
+						"buffer_size": 15612,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								12140,
-								12137
+								7343,
+								7343
 							]
 						],
 						"settings":
@@ -1314,7 +1314,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 17609.0,
+						"translation.y": 9659.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
