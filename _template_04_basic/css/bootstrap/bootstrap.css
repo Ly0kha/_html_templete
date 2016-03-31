@@ -7604,6 +7604,7 @@ button.close {
 	position: relative;
 	overflow: hidden;
 	width: 100%;
+	margin: 0px 0px 40px;
 }
 
 .carousel-inner > .item {
@@ -7815,10 +7816,10 @@ button.close {
 }
 
 .carousel-indicators .active {
-	margin: 0;
 	width: 10px;
 	height: 10px;
-	background-color: #ffffff;
+	margin: 0px 2px;
+	background-color: #ccc;
 }
 
 .carousel-caption {
