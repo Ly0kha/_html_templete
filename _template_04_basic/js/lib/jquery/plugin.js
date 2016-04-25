@@ -83,7 +83,7 @@ $(function() {
 		// success: success
 	});
 
-	$.getJSON( "ajax/test.json", function( data ) {
+	$.getJSON("ajax/test.json", function( data ) {
 
 		var items = [];
 		$.each( data, function( key, val ) {
@@ -256,6 +256,13 @@ $(window).bind("resize load", function() {
 
 }).trigger("resize");
 
+
+// Kerning //
+$(function($) {
+
+	$("p,h1,h2,h3").FLAutoKerning();
+
+});
 
 
 
@@ -1171,46 +1178,36 @@ function popupLink(type, _self) {
 
 // Device Measures En:英語、Jp:日本語  //
 // 1.SP版とPC版でレイアウトを変える  //
-$(window).load(function() {
+$(function() {
+
+	$(window).setBreakpoints({
+		distinct: true,
+		breakpoints: [ 1, 1124 ]
+	});
 
 
-	// iPhone, AndroidなどのSP端末の表示 //
-	if (ua.indexOf('iPhone') > 0 || ua.indexOf('iPad') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 || ua.indexOf('BlackBerry') > 0 || ua.indexOf('windows Phone') > 0 || ua.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(ua)){
+	// ブレークポイント768の時 //
+	$(window).on('enterBreakpoint1124',function() {
 
-		// common -SP版背景画像を固定化- //
-		/* SPかPCかの判定を切り替える */
-		$(".bg-top-pc").addClass("bg-top-sp").removeClass("bg-top-pc");
-		$(".bg-contents-pc").addClass("bg-contents-sp").removeClass("bg-contents-pc");
-		$(".bg-work-pc").addClass("bg-work-sp").removeClass("bg-work-pc");
+		// PC用画像ソースフォルダに切り替える //
+		$('.img-response').each(function() {
+			$(this).attr('src', $(this).attr('src').replace('sp', 'pc'));
+		});
 
-		/* SPならば背景固定用のソースを挿入する */
-		$("body.bg-top").append("<div class='background-bg-top'></div>");
-		$("body.bg-contents").append("<div class='background-bg-contents'></div>");
-		$("body.bg-work").append("<div class='background-bg-work'></div>");
+	});
 
-		/* iOS用にスクロールして背景がカクつく現象を解消させる */
-		$(window).bind("resize load", function(){
+	// ブレークポイント1の時 //
+	$(window).on('enterBreakpoint1',function() {
 
-			$("#lb-overlay,.background-bg-top,.background-bg-contents,.background-bg-work").css({
-				"height" : woh
-			});
+		var wh = $(window).height();
 
-		}).trigger("resize");
+		// SP用画像ソースフォルダに切り替える //
+		$('.img-response').each(function() {
+			$(this).attr('src', $(this).attr('src').replace('pc', 'sp'));
+		});
 
-		// form -SP版wrapperレイアウト- //
-		$("#wrapper").addClass("wrapper-sp").removeClass("wrapper");
+	});
 
-		// form  -SP版formレイアウト- //
-		$("#form-layoutJp,#form-layoutEn").addClass("form-sp").removeClass("form-pc");
-
-		// form -SP版formComplete画像サイズ- //
-		$("#sentCompleteJp,#sentCompleteEn").addClass("img-complete-sp");
-
-		// form -SP版suggestレイアウト- //
-		$(".suggest-pc").addClass("suggest-sp").removeClass("suggest-pc");
-		$("#suggestJp,#suggestEn").addClass("suggest-wrap-sp").removeClass("suggest-wrap-pc");
-
-	}
 
 });
 
@@ -1218,11 +1215,7 @@ $(window).load(function() {
 // 2.Android対策 -横向きで微妙にずれる- //
 var portraitWidth,landscapeWidth;
 
-$(window).bind("resize load", function() {
-
-
-	// デバッグ用 //
-	//$("#test01").html(ww);
+$(window).on('load resize',function(){
 
 	// iPhone, iPadなど //
 	if ((ua.indexOf('iPhone') > 0 && ua.indexOf('iPad') == -1) || ua.indexOf('iPod') > 0) {
