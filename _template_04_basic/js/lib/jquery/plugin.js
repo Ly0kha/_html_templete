@@ -86,7 +86,7 @@ $(function() {
 		processData: false,
 		}).done(function(html) {
 			html = html.replace(/\{\$root\}/g, relativeDir);
-			$('header.navi').append(html);
+			$('header#navi').append(html);
 	});
 
 
@@ -887,13 +887,13 @@ $(function() {
 			var ww = $(window).width();
 			//$('#test').html(ww);　デバッグ用
 
-			// ウィンドウサイズが1124px以下になったら  //
-			if(ww < 1124) {
+			// ウィンドウサイズが960px以下になったら  //
+			if(ww < 960) {
 				$('.colon').hide();
-				$('dl.form-pc dd').css('width', 400 / 400 * 100 + '%' );
+				$('dl.form-pc dd, dl.form-sp dd').css('width', 400 / 400 * 100 + '%' );
 			}
 
-			// ウィンドウサイズが1124px以上になったら  //
+			// ウィンドウサイズが960px以上になったら  //
 			else {
 				$('.colon').show();
 				$('dl.form-pc dd').css('width', 400 + 'px' );
@@ -1220,12 +1220,12 @@ $(function() {
 	// ブレークポイントの設定 //
 	$(window).setBreakpoints({
 		distinct: true,
-		breakpoints: [ 1, 1200 ]
+		breakpoints: [ 1, 960 ]
 	});
 
 
 	// ブレークポイント1124の時 //
-	$(window).on('enterBreakpoint1200', function() {
+	$(window).on('enterBreakpoint960', function() {
 
 		// PC用画像ソースフォルダに切り替える //
 		$('.img-response').each(function() {
