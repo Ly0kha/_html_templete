@@ -12,11 +12,11 @@
 	<meta property="og:url" content="url"/>
 	<meta property="og:type" content="company"/>
 	<meta property="og:site-name" content="site_name"/>
-
+	<meta property="og:description" content="テキストが入ります。テキストが入ります。テキストが入ります。" />
+	<meta name="description" content="テキストが入ります。テキストが入ります。テキストが入ります。" />
+	<meta name="keywords" content="テキストが入ります。,テキストが入ります。" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=yes">
 
-	<meta name="keywords" content="Keywords">
-	<meta name="description" content="Description">
 	<link rel="icon" href="" type="image/vnd.microsoft.icon" />
 
 	<title>Test Site | Enter Title Here</title>
@@ -54,21 +54,6 @@
 	<!--body要素内のヘッダーを埋め込みたい箇所に記述-->
 	<div class="lightbox">
 
-		<script type="text/javascript">
-
-		//
-		//
-		// writeLightboxDocument(); の()内指定について
-		//
-		// 同階層 ："./"
-		// 1階層下："../"
-		// 2階層下："../../"
-		//
-		//
-
-			writeLightboxDocument("./");
-		</script>
-
 	</div>
 
 
@@ -77,26 +62,12 @@
 
 
 		<!-- Header -->
-		<header>
+		<header class="navi">
 
 			<h1 class="small">Head Title -SEO Text Word Here-</h1>
 
 			<!-- Global Navi -->
 			<!--body要素内のヘッダーを埋め込みたい箇所に記述-->
-			<script type="text/javascript">
-
-			//
-			//
-			// writeHeader(); の()内指定について
-			//
-			// 同階層 ："./"
-			// 1階層下："../"
-			// 2階層下："../../"
-			//
-			//
-
-				writeHeader("./");
-			</script>
 
 		</header><!-- /.Header -->
 
@@ -112,7 +83,6 @@
 
 		<hr class="hr-small">
 
-
 		<!-- Bread -->
 		<nav class="bread">
 			<ul>
@@ -120,6 +90,16 @@
 				<li><a href="#">パン屑リスト2</a><span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></li>
 			</ul>
 		</nav>
+
+
+		<!-- Windowサイズ取得テスト -->
+		<div id="test01"></div>
+		<div id="test02"></div>
+		<div id="test03"></div>
+
+		<div class="box">
+			<img src="images/common/btn_off.png" alt="03" class="mouseover" />
+		</div>
 
 
 		<!-- Headline -->
@@ -356,33 +336,9 @@
 		<hr class="hr-large">
 
 
-		<!-- Windowサイズ取得テスト -->
-		<div id="test01"></div>
-		<div id="test02"></div>
-
 		<section>
 
 			<h3>スライダー</h3>
-
-
-			<!-- Flexslider
-			<div class="flexslider mb-40">
-				<ul class="slides">
-					<li>
-						<img src="images/common/main_img01.jpg" alt="01" />
-					</li>
-					<li>
-						<img src="images/common/main_img02.jpg" alt="02" />
-					</li>
-					<li>
-						<img src="images/common/main_img03.jpg" alt="03" />
-					</li>
-					<li>
-						<img src="images/common/main_img04.jpg" alt="04" />
-					</li>
-				</ul>
-			</div>
-			 -->
 
 			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 
@@ -752,12 +708,12 @@
 							<h3 class="accept">ウェブサイト上の個人情報の取扱いについて</h3>
 							<div class="box small">
 
-								<ul class="mb-16">
+								<ul class="form-accept mb-16">
 									<li>
 										いただいた個人情報は、お問い合わせへの対応のみに使用し、他の目的に利用することはございません。また、弊社はあらかじめお客様の同意を得ないで、いただいた個人情報を第三者に提供いたしません。
 									</li>
 									<li>
-										弊社のその他の個人情報に関する取り扱いについては、<a href="javascript:void(0)" class="policy">「個人情報の取り扱いについて」</a>をご覧ください。上記事項をご確認の上、ご同意いただける方は下の「同意する」をチェックしてください。
+										弊社のその他の個人情報に関する取り扱いについては、<a href="javascript:void(0)" class="policy"> &#12300;個人情報の取り扱いについて&#12301; </a>をご覧ください。上記事項をご確認の上、ご同意いただける方は下の「同意する」をチェックしてください。
 									</li>
 								</ul>
 
