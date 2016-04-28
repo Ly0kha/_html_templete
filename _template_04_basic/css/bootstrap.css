@@ -332,8 +332,8 @@ th {
 
 @font-face {
 	font-family: 'Glyphicons Halflings';
-	src: url('../../fonts/glyphicons-halflings-regular.eot');
-	src: url('../../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../../fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+	src: url('../fonts/glyphicons-halflings-regular.eot');
+	src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 
 .glyphicon {
@@ -5313,14 +5313,11 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-toggle {
 	position: relative;
 	float: right;
-	margin-right: 15px;
-	padding: 9px 10px;
-	margin-top: 8px;
-	margin-bottom: 8px;
+	margin: 14px 15px 14px 0px;
+	padding: 8px 10px;
 	background-color: transparent;
 	background-image: none;
-	border: 1px solid transparent;
-	border-radius: 4px;
+	border: none;
 }
 
 .navbar-toggle:focus {
@@ -5602,16 +5599,16 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-default .navbar-toggle {
-	border-color: #dddddd;
+	border-color: none;
 }
 
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
-	background-color: #dddddd;
+	background-color: none;
 }
 
 .navbar-default .navbar-toggle .icon-bar {
-	background-color: #888888;
+	background-color: none;
 }
 
 .navbar-default .navbar-collapse,

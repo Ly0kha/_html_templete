@@ -30,11 +30,17 @@
 --------------------------*/
 
 
+
+
+$(function() {
+
+
+
+
 /* UI共通プラグイン
 --------------------------*/
 
 
-$(function() {
 
 
 	/* グローバル変数
@@ -48,11 +54,14 @@ $(function() {
 
 	var ua = navigator.userAgent;
 
+
+	// ウィンドウ自体の幅と高さを計測し、使っているブラウザのユーザーエージェントを判定
 	$(window).on('load resize', function() {
 		var ww = $(window).width();
 		var wh = $(window).height();
-		$('#test01').html(ww);
-		$('#test02').html(wh);
+		$('#test01').html('ウィンドウ幅' + '&nbsp;' + ww);
+		$('#test02').html('ウィンドウ高さ' + '&nbsp;' + wh);
+		$('#test03').html('ユーザーエージェント' + '&nbsp;' + ua);
 	});
 
 
@@ -73,21 +82,39 @@ $(function() {
 	--------------------*/
 	var rootDir = location.href.split('/');
 	var currentDir = rootDir[rootDir.length -2];
-	var relativeDir = ('include/')
+	var relativeFirstDir = ('include/')
+	var relativeSecondDir = ('../include/')
 
 
-	$('#test03').html(currentDir)
-	$('#test04').html(relativeDir)
+	$('#test04').html('現在のディレクトリ' + '&nbsp;' + currentDir)
 
-	$.ajax({
-		url: relativeDir + 'header.html',
-		cache: true, // キャッシュを利用 //
-		async: true, // 非同期で読み込む //
-		processData: false,
-		}).done(function(html) {
-			html = html.replace(/\{\$root\}/g, relativeDir);
-			$('header#navi').append(html);
-	});
+	if ($('header#navi-1st').length) {
+
+		$.ajax ({
+			url: relativeFirstDir + 'header.html',
+			cache: true, // キャッシュを利用 //
+			async: true, // 非同期で読み込む //
+			processData: false,
+			}).done(function(html) {
+				html = html.replace(/\{\$root\}/g, relativeFirstDir);
+				$('header#navi-1st').append(html);
+		});
+
+	}
+
+	else {
+
+		$.ajax ({
+			url: relativeSecondDir + 'header.html',
+			cache: true, // キャッシュを利用 //
+			async: true, // 非同期で読み込む //
+			processData: false,
+			}).done(function(html) {
+				html = html.replace(/\{\$root\}/g, relativeSecondDir);
+				$('header#navi-2nd').append(html);
+		});
+
+	}
 
 
 	/* jsonテスト
@@ -311,14 +338,34 @@ $(function() {
 
 
 	// 1.lightboxのインクルードファイルを読み込む  //
-	$.ajax({
-		url: 'include/lightbox.html',
-		cache: true, // キャッシュを利用 //
-		async: true, // 非同期で読み込む //
-		processData: false,
-		}).done(function(html) {
-			$('.lightbox').append(html);
-	});
+
+	if ($('header#navi-1st').length) {
+
+		$.ajax ({
+			url: relativeFirstDir + 'lightbox.html',
+			cache: true, // キャッシュを利用 //
+			async: true, // 非同期で読み込む //
+			processData: false,
+			}).done(function(html) {
+				html = html.replace(/\{\$root\}/g, relativeFirstDir);
+				$('.lightbox').append(html);
+		});
+
+	}
+
+	else {
+
+		$.ajax ({
+			url: relativeSecondDir + 'lightbox.html',
+			cache: true, // キャッシュを利用 //
+			async: true, // 非同期で読み込む //
+			processData: false,
+			}).done(function(html) {
+				html = html.replace(/\{\$root\}/g, relativeSecondDir);
+				$('.lightbox').append(html);
+		});
+
+	}
 
 
 	// 2.lightbox本体を読み込む  //
@@ -333,7 +380,8 @@ $(function() {
 				$('#lb-overlay, #lb-container').fadeIn();
 
 				// todo: ライトボックスコンテンツを読み込ませる方法と切り分け方 //
-				$('.bg-lightbox').html("<img src=''+$(this).attr('href')+'' class='mg-left-right-auto block'/>").fadeIn();
+				var href = $(this).attr('href');
+				$('.bg-lightbox').html('<img src=' + href + '>' ).fadeIn();
 
 				// ライトボックスの背景をドキュメントの高さに合わせる //
 				var ww = $(window).width();
@@ -342,28 +390,28 @@ $(function() {
 				var lw = $('.bg-lightbox').width();
 				var lh = $('.bg-lightbox').height();
 
-					if (ua.indexOf('iPhone') > 0 || ua.indexOf('iPad') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 || ua.indexOf('BlackBerry') > 0 || ua.indexOf('windows Phone') > 0 || ua.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(ua)){
+				if (ua.indexOf('iPhone') > 0 || ua.indexOf('iPad') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 || ua.indexOf('BlackBerry') > 0 || ua.indexOf('windows Phone') > 0 || ua.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(ua)){
 
-						$('#lb-overlay').css({
-							'width' : ww,
-							'height' : wh + 100 + 'px'
-						});
+					$('#lb-overlay').css({
+						'width' : ww,
+						'height' : wh + 100 + 'px'
+					});
 
-						$('.lb-wrapper').css({
-							'zoom' : 0.6,
-							'font-size' : 1 + 'em'
-						});
+					$('.lb-wrapper').css({
+						'zoom' : 0.6,
+						'font-size' : 1 + 'em'
+					});
 
-					}
+				}
 
-					else {
+				else {
 
-						$('#lb-overlay').css({
-							'width' : ww,
-							'height' : wh
-						});
+					$('#lb-overlay').css({
+						'width' : ww,
+						'height' : wh
+					});
 
-					}
+				}
 
 
 				// 傾けてもライトボックスの背景をドキュメントの高さに合わせる //
@@ -405,7 +453,7 @@ $(function() {
 			else {
 				$('.bg-lightbox').html('').hide();
 				// ライトボックスのオーバーレイ、背景を引っ込める //
-				$('#lb-overlay, #lb-container').hide();
+				$('#lb-overlay, #lb-container').fadeOut();
 			}
 
 	});
@@ -426,8 +474,6 @@ $(function() {
 			$('.bg-lightbox').html('<p>' + title + '</p>').fadeIn();
 
 			// ライトボックスの背景をドキュメントの高さに合わせる //
-			var ww = $(window).width();
-			var wh = $(window).height();
 			var dh = $(document).height();
 			var lw = $('.bg-lightbox').width();
 			var lh = $('.bg-lightbox').height();
@@ -1173,6 +1219,7 @@ $(function() {
 
 	});
 
+
 	// 4.切り替えた時の表示 -SP版- //
 	$('#jaBtn').on('click', function() {
 		showLanguageSP('ja');
@@ -1238,6 +1285,7 @@ $(function() {
 
 	});
 
+
 	// ブレークポイント1の時 //
 	$(window).on('enterBreakpoint1', function() {
 
@@ -1258,6 +1306,7 @@ $(function() {
 
 	$(window).on('load resize', function() {
 
+
 		// iPhone, iPadなど //
 		if ((ua.indexOf('iPhone') > 0 && ua.indexOf('iPad') == -1) || ua.indexOf('iPod') > 0) {
 			$('html').css('zoom' , 1 );
@@ -1268,8 +1317,8 @@ $(function() {
 
 			// Android時の傾き（ポートレイトかランドスケープか）を判定
 			if ('object' === typeof window.onorientationchange) {
-				window.addEventListener('orientationchange', function () {
 
+				window.addEventListener('orientationchange', function () {
 					if (window.innerHeight > window.innerWidth) {
 						// ポートレイト（ランドスケープ）
 						$('html').css('zoom' , landscapeWidth / 320 );
@@ -1279,13 +1328,16 @@ $(function() {
 						// ランドスケープ（ポートレイト）
 						$('html').css('zoom' , portraitWidth / 320 );
 					};
-
 				}, false);
 
 			}
 
 		}
 
+
 	}).trigger('resize');
+
+
+
 
 });

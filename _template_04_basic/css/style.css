@@ -1,5 +1,7 @@
 @charset "utf-8";
 
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+
 
 /****************************************
 
@@ -589,7 +591,7 @@ address {
 	padding: 0px;
 
 	background:rgba(0,0,0,0.5);
-	z-index: 1000;
+	z-index: 4000;
 	cursor: pointer;
 }
 
@@ -832,6 +834,60 @@ address {
 }
 
 
+/* 上マージン */
+.mt-05 {
+	margin-top: 5px !important;
+}
+
+.mt-10 {
+	margin-top: 10px !important;
+}
+
+.mt-15 {
+	margin-top: 15px !important;
+}
+
+.mt-20 {
+	margin-top: 20px !important;
+}
+
+.mt-25 {
+	margin-top: 25px !important;
+}
+
+.mt-30 {
+	margin-top: 30px !important;
+}
+
+.mt-40 {
+	margin-top: 40px !important;
+}
+
+.mt-50 {
+	margin-top: 50px !important;
+}
+
+.mt-60 {
+	margin-top: 60px !important;
+}
+
+.mt-70 {
+	margin-top: 70px !important;
+}
+
+.mt-80 {
+	margin-top: 80px !important;
+}
+
+.mt-90 {
+	margin-top: 90px !important;
+}
+
+.mt-100 {
+	margin-bottom: 100px !important;
+}
+
+
 /* 下マージン */
 .mb-05 {
 	margin-bottom: 5px !important;
@@ -958,6 +1014,60 @@ address {
 	width: 90% !important;
 }
 
+
+/* ナビゲーション
+--------------------------*/
+
+
+.navbar-default .navbar-toggle span,
+.navbar-default .navbar-toggle:not(.collapsed) span {
+	display: inline-block;
+	transition: all .4s;
+	box-sizing: border-box;
+}
+
+.navbar-default .navbar-toggle.collapsed,
+.navbar-default .navbar-toggle:not(.collapsed) {
+	position: absolute;
+	right: 0px;
+	width: 30px;
+	height: 22px;
+}
+
+.navbar-default .navbar-toggle.collapsed span,
+.navbar-default .navbar-toggle:not(.collapsed) span {
+	position: absolute;
+	right: 0px;
+	width: 100%;
+	height: 2px;
+	background-color: #999;
+}
+
+.navbar-default .navbar-toggle.collapsed span:nth-of-type(1) {
+	top: 0px;
+}
+
+.navbar-default .navbar-toggle.collapsed span:nth-of-type(2) {
+	top: 10px;
+}
+
+.navbar-default .navbar-toggle.collapsed span:nth-of-type(3) {
+	bottom: 0px;
+}
+
+.navbar-default .navbar-toggle:not(.collapsed) span:nth-of-type(1) {
+	-webkit-transform: translateY(0px) rotate(-45deg);
+	transform: translateY(0px) rotate(-45deg);
+}
+
+.navbar-default .navbar-toggle:not(.collapsed) span:nth-of-type(2){
+	opacity: 0;
+}
+
+.navbar-default .navbar-toggle:not(.collapsed) span:nth-of-type(3) {
+	-webkit-transform: translateY(0px) rotate(45deg);
+	transform: translateY(0px) rotate(45deg);
+}
 
 /*************** common END ******************/
 
