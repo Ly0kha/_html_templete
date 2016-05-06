@@ -78,6 +78,27 @@ $(function() {
 	// }
 
 
+	/* test btn-hover実装
+	--------------------*/
+	if (ua.indexOf('iPhone') > 0 || ua.indexOf('iPad') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 || ua.indexOf('BlackBerry') > 0 || ua.indexOf('windows Phone') > 0 || ua.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(ua)){
+
+	}
+
+	else {
+
+		$.ajax ({
+			url: 'include/btn.html',
+			cache: true, // キャッシュを利用 //
+			async: true, // 非同期で読み込む //
+			processData: false,
+			}).done(function(html) {
+				html = html.replace(/\{\$root\}/g, relativeFirstDir);
+				$('#hover').append(html);
+		});
+
+	}
+
+
 	/* Header共通化
 	--------------------*/
 	var rootDir = location.href.split('/');
