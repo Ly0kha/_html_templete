@@ -1,5 +1,6 @@
 @charset "utf-8";
 
+
 @import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
 
 
@@ -31,13 +32,9 @@ html {
 
 body {
 	margin: 0px;
-	font-family: "Helvetica Neue",Helvetica,"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ",Meiryo,"ＭＳ Ｐゴシック", "MS PGothic",Osaka,sans-serif;
-	font-size: 1.6rem; /* SP用 */
-	font-size: 14px; /* PC用 */
-
+	color: #000;
 	line-height: 1.42857143;
 
-	color: #000;
 	-webkit-text-size-adjust: 100%;
 	word-break: break-all;
 	word-wrap: break-word;
@@ -46,6 +43,29 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
+
+
+/* BreakPoint for PC */
+@media (min-width: 960px) {
+
+	body {
+		font-family: 'Noto Sans Japanese', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', Osaka, sans-serif;
+		font-size: 14px; /* PC用 */
+	}
+
+}
+
+
+/* BreakPoint for SP */
+@media (max-width: 959px) {
+
+	body {
+		font-family: 'Noto Sans Japanese', sans-serif;
+		font-size: 11px; /* SP用 */
+	}
+
+}
+
 
 #container {
 	position: relative;
@@ -63,7 +83,7 @@ body {
 	margin: 0px auto;
 	padding: 0px 20px;
 	min-width: 300px;
-	max-width: 980px;
+	max-width: 960px;
 	height: 100%;
 	overflow: hidden;
 	z-index: 10;
@@ -405,8 +425,24 @@ ul.list {
 	list-style: outside;
 }
 
-ul.list li {
-	margin: 0px 0px 20px 25px;
+
+/* BreakPoint for PC */
+@media (min-width: 960px) {
+
+	ul.list li {
+		margin: 0px 0px 20px 25px;
+	}
+
+}
+
+
+/* BreakPoint for SP */
+@media (max-width: 959px) {
+
+	ul.list li {
+		margin: 0px 0px 10px 12.5px;
+	}
+
 }
 
 
@@ -415,28 +451,73 @@ ol.list {
 	list-style: outside decimal
 }
 
-ol.list li {
-	margin: 0px 0px 20px 25px;
+
+/* BreakPoint for PC */
+@media (min-width: 960px) {
+
+	ol.list li {
+		margin: 0px 0px 20px 25px;
+	}
+
+}
+
+
+/* BreakPoint for SP */
+@media (max-width: 959px) {
+
+	ol.list li {
+		margin: 0px 0px 10px 12.5px;
+	}
+
 }
 
 
 /* navタグ以降のliは並列で表示 */
-nav li,
-nav.bread li {
-	display: inline;
-	margin: 0px 8px 0px 0px;
-	font-size: 0.9em;
+/* BreakPoint for PC */
+@media (min-width: 960px) {
+
+	nav li,
+	nav.bread li {
+		display: inline;
+		margin: 0px 8px 0px 0px;
+		font-size: 0.9em;
+	}
+
+	nav.bread li:after {
+		content: ">";
+		margin: 0px 0px 0px 12px;
+	}
+
+	nav.bread li:last-child:after {
+		content: "";
+		margin: 0px 0px 0px 12px;
+	}
+
 }
 
-nav.bread li:after {
-	content: ">";
-	margin: 0px 0px 0px 12px;
+
+/* BreakPoint for SP */
+@media (max-width: 959px) {
+
+	nav li,
+	nav.bread li {
+		display: inline;
+		margin: 0px 4px 0px 0px;
+		font-size: 0.9em;
+	}
+
+	nav.bread li:after {
+		content: ">";
+		margin: 0px 0px 0px 6px;
+	}
+
+	nav.bread li:last-child:after {
+		content: "";
+		margin: 0px 0px 0px 6px;
+	}
+
 }
 
-nav.bread li:last-child:after {
-	content: "";
-	margin: 0px 0px 0px 12px;
-}
 
 #tabs .nav > li > a {
 	background-color: #f9f9f9;
@@ -484,13 +565,34 @@ dt {
 	float: left;
 }
 
-dd {
-	margin: 0px 0px 4px 80px;
+
+/* BreakPoint for PC */
+@media (min-width: 960px) {
+
+	dd {
+		margin: 0px 0px 4px 80px;
+	}
+
+	dl.news dd {
+		margin: 0px 0px 4px 100px;
+	}
+
 }
 
-dl.news dd {
-	margin: 0px 0px 4px 100px;
+
+/* BreakPoint for SP */
+@media (max-width: 959px) {
+
+	dd {
+		margin: 0px 0px 2px 40px;
+	}
+
+	dl.news dd {
+		margin: 0px 0px 2px 80px;
+	}
+
 }
+
 
 dl.news dd p {
 	/* width: 98%; */
@@ -504,6 +606,10 @@ hr {
 	clear: both;
 }
 
+
+/* BreakPoint for PC */
+@media (min-width: 960px) {
+
 	.hr-large {
 		margin: 30px 0px;
 	}
@@ -511,6 +617,23 @@ hr {
 	.hr-small {
 		margin: 10px 0px;
 	}
+
+}
+
+
+/* BreakPoint for SP */
+@media (max-width: 959px) {
+
+	.hr-large {
+		margin: 15px 0px;
+	}
+
+	.hr-small {
+		margin: 5px 0px;
+	}
+
+}
+
 
 .border {
 	border: 1px solid #000;
@@ -571,9 +694,29 @@ img.smallIcon {
 }
 
 address {
-	margin: 40px 0px;
 	text-align: center;
-	font-size: 0.8em;
+}
+
+
+/* BreakPoint for PC */
+@media (min-width: 960px) {
+
+	address {
+		margin: 40px 0px;
+		font-size: 0.8em;
+	}
+
+}
+
+
+/* BreakPoint for SP */
+@media (max-width: 959px) {
+
+	address {
+		margin: 20px 0px;
+		font-size: 0.8em;
+	}
+
 }
 
 
@@ -704,57 +847,121 @@ address {
 }
 
 
-/* 四隅パディング */
-.pd-10 {
-	padding: 10px !important;
+/* BreakPoint for PC */
+@media (min-width: 960px) {
+
+	/* 四隅パディング */
+	.pd-10 {
+		padding: 10px !important;
+	}
+
+	.pd-20 {
+		padding: 20px !important;
+	}
+
+	.pd-30 {
+		padding: 30px !important;
+	}
+
+	.pd-40 {
+		padding: 40px !important;
+	}
+
+
+	/* 上下パディング */
+	.pd-top-bottom-10 {
+		padding: 10px 0px !important;
+	}
+
+	.pd-top-bottom-20 {
+		padding: 20px 0px !important;
+	}
+
+	.pd-top-bottom-30 {
+		padding: 30px 0px !important;
+	}
+
+	.pd-top-bottom-40 {
+		padding: 40px 0px !important;
+	}
+
+
+	/* 左右パディング */
+	.pd-left-right-10 {
+		padding: 0px 10px !important;
+	}
+
+	.pd-left-right-20 {
+		padding: 0px 20px !important;
+	}
+
+	.pd-left-right-30 {
+		padding: 0px 30px !important;
+	}
+
+	.pd-left-right-40 {
+		padding: 0px 40px !important;
+	}
+
 }
 
-.pd-20 {
-	padding: 20px !important;
-}
 
-.pd-30 {
-	padding: 30px !important;
-}
+/* BreakPoint for SP */
+@media (max-width: 959px) {
 
-.pd-40 {
-	padding: 40px !important;
-}
+	/* 四隅パディング */
+	.pd-10 {
+		padding: 5px !important;
+	}
 
+	.pd-20 {
+		padding: 10px !important;
+	}
 
-/* 上下パディング */
-.pd-top-bottom-10 {
-	padding: 10px 0px !important;
-}
+	.pd-30 {
+		padding: 15px !important;
+	}
 
-.pd-top-bottom-20 {
-	padding: 20px 0px !important;
-}
-
-.pd-top-bottom-30 {
-	padding: 30px 0px !important;
-}
-
-.pd-top-bottom-40 {
-	padding: 40px 0px !important;
-}
+	.pd-40 {
+		padding: 20px !important;
+	}
 
 
-/* 左右パディング */
-.pd-left-right-10 {
-	padding: 0px 10px !important;
-}
+	/* 上下パディング */
+	.pd-top-bottom-10 {
+		padding: 5px 0px !important;
+	}
 
-.pd-left-right-20 {
-	padding: 0px 20px !important;
-}
+	.pd-top-bottom-20 {
+		padding: 10px 0px !important;
+	}
 
-.pd-left-right-30 {
-	padding: 0px 30px !important;
-}
+	.pd-top-bottom-30 {
+		padding: 15px 0px !important;
+	}
 
-.pd-left-right-40 {
-	padding: 0px 40px !important;
+	.pd-top-bottom-40 {
+		padding: 20px 0px !important;
+	}
+
+
+	/* 左右パディング */
+	.pd-left-right-10 {
+		padding: 0px 5px !important;
+	}
+
+	.pd-left-right-20 {
+		padding: 0px 10px !important;
+	}
+
+	.pd-left-right-30 {
+		padding: 0px 15px !important;
+	}
+
+	.pd-left-right-40 {
+		padding: 0px 20px !important;
+	}
+
 }
 
 
@@ -774,171 +981,349 @@ address {
 }
 
 
-/* 左マージン */
-.ml-05 {
-	margin-left: 5px !important;
+/* BreakPoint for PC */
+@media (min-width: 960px) {
+
+	/* 左マージン */
+	.ml-05 {
+		margin-left: 5px !important;
+	}
+
+	.ml-10 {
+		margin-left: 10px !important;
+	}
+
+	.ml-15 {
+		margin-left: 15px !important;
+	}
+
+	.ml-20 {
+		margin-left: 20px !important;
+	}
+
+	.ml-25 {
+		margin-left: 25px !important;
+	}
+
+	.ml-30 {
+		margin-left: 30px !important;
+	}
+
+	.ml-40 {
+		margin-left: 40px !important;
+	}
+
+
+	/* 右マージン */
+	.mr-05 {
+		margin-right: 5px !important;
+	}
+
+	.mr-10 {
+		margin-right: 10px !important;
+	}
+
+	.mr-15 {
+		margin-right: 15px !important;
+	}
+
+	.mr-20 {
+		margin-right: 20px !important;
+	}
+
+	.mr-25 {
+		margin-right: 25px !important;
+	}
+
+	.mr-30 {
+		margin-right: 30px !important;
+	}
+
+	.mr-40 {
+		margin-right: 40px !important;
+	}
+
+
+	/* 上マージン */
+	.mt-05 {
+		margin-top: 5px !important;
+	}
+
+	.mt-10 {
+		margin-top: 10px !important;
+	}
+
+	.mt-15 {
+		margin-top: 15px !important;
+	}
+
+	.mt-20 {
+		margin-top: 20px !important;
+	}
+
+	.mt-25 {
+		margin-top: 25px !important;
+	}
+
+	.mt-30 {
+		margin-top: 30px !important;
+	}
+
+	.mt-40 {
+		margin-top: 40px !important;
+	}
+
+	.mt-50 {
+		margin-top: 50px !important;
+	}
+
+	.mt-60 {
+		margin-top: 60px !important;
+	}
+
+	.mt-70 {
+		margin-top: 70px !important;
+	}
+
+	.mt-80 {
+		margin-top: 80px !important;
+	}
+
+	.mt-90 {
+		margin-top: 90px !important;
+	}
+
+	.mt-100 {
+		margin-bottom: 100px !important;
+	}
+
+
+	/* 下マージン */
+	.mb-05 {
+		margin-bottom: 5px !important;
+	}
+
+	.mb-10 {
+		margin-bottom: 10px !important;
+	}
+
+	.mb-15 {
+		margin-bottom: 15px !important;
+	}
+
+	.mb-20 {
+		margin-bottom: 20px !important;
+	}
+
+	.mb-25 {
+		margin-bottom: 25px !important;
+	}
+
+	.mb-30 {
+		margin-bottom: 30px !important;
+	}
+
+	.mb-40 {
+		margin-bottom: 40px !important;
+	}
+
+	.mb-50 {
+		margin-bottom: 50px !important;
+	}
+
+	.mb-60 {
+		margin-bottom: 60px !important;
+	}
+
+	.mb-70 {
+		margin-bottom: 70px !important;
+	}
+
+	.mb-80 {
+		margin-bottom: 80px !important;
+	}
+
+	.mb-90 {
+		margin-bottom: 90px !important;
+	}
+
+	.mb-100 {
+		margin-bottom: 100px !important;
+	}
+
 }
 
-.ml-10 {
-	margin-left: 10px !important;
-}
 
-.ml-15 {
-	margin-left: 15px !important;
-}
+/* BreakPoint for SP */
+@media (max-width: 959px) {
 
-.ml-20 {
-	margin-left: 20px !important;
-}
+	/* 左マージン */
+	.ml-05 {
+		margin-left: 2.5px !important;
+	}
 
-.ml-25 {
-	margin-left: 25px !important;
-}
+	.ml-10 {
+		margin-left: 5px !important;
+	}
 
-.ml-30 {
-	margin-left: 30px !important;
-}
+	.ml-15 {
+		margin-left: 7.5px !important;
+	}
 
-.ml-40 {
-	margin-left: 40px !important;
-}
+	.ml-20 {
+		margin-left: 10px !important;
+	}
 
+	.ml-25 {
+		margin-left: 12.5px !important;
+	}
 
-/* 右マージン */
-.mr-05 {
-	margin-right: 5px !important;
-}
+	.ml-30 {
+		margin-left: 15px !important;
+	}
 
-.mr-10 {
-	margin-right: 10px !important;
-}
-
-.mr-15 {
-	margin-right: 15px !important;
-}
-
-.mr-20 {
-	margin-right: 20px !important;
-}
-
-.mr-25 {
-	margin-right: 25px !important;
-}
-
-.mr-30 {
-	margin-right: 30px !important;
-}
-
-.mr-40 {
-	margin-right: 40px !important;
-}
+	.ml-40 {
+		margin-left: 20px !important;
+	}
 
 
-/* 上マージン */
-.mt-05 {
-	margin-top: 5px !important;
-}
+	/* 右マージン */
+	.mr-05 {
+		margin-right: 2.5px !important;
+	}
 
-.mt-10 {
-	margin-top: 10px !important;
-}
+	.mr-10 {
+		margin-right: 5px !important;
+	}
 
-.mt-15 {
-	margin-top: 15px !important;
-}
+	.mr-15 {
+		margin-right: 7.5px !important;
+	}
 
-.mt-20 {
-	margin-top: 20px !important;
-}
+	.mr-20 {
+		margin-right: 10px !important;
+	}
 
-.mt-25 {
-	margin-top: 25px !important;
-}
+	.mr-25 {
+		margin-right: 12.5px !important;
+	}
 
-.mt-30 {
-	margin-top: 30px !important;
-}
+	.mr-30 {
+		margin-right: 15px !important;
+	}
 
-.mt-40 {
-	margin-top: 40px !important;
-}
-
-.mt-50 {
-	margin-top: 50px !important;
-}
-
-.mt-60 {
-	margin-top: 60px !important;
-}
-
-.mt-70 {
-	margin-top: 70px !important;
-}
-
-.mt-80 {
-	margin-top: 80px !important;
-}
-
-.mt-90 {
-	margin-top: 90px !important;
-}
-
-.mt-100 {
-	margin-bottom: 100px !important;
-}
+	.mr-40 {
+		margin-right: 20px !important;
+	}
 
 
-/* 下マージン */
-.mb-05 {
-	margin-bottom: 5px !important;
-}
+	/* 上マージン */
+	.mt-05 {
+		margin-top: 2.5px !important;
+	}
 
-.mb-10 {
-	margin-bottom: 10px !important;
-}
+	.mt-10 {
+		margin-top: 5px !important;
+	}
 
-.mb-15 {
-	margin-bottom: 15px !important;
-}
+	.mt-15 {
+		margin-top: 7.5px !important;
+	}
 
-.mb-20 {
-	margin-bottom: 20px !important;
-}
+	.mt-20 {
+		margin-top: 10px !important;
+	}
 
-.mb-25 {
-	margin-bottom: 25px !important;
-}
+	.mt-25 {
+		margin-top: 12.5px !important;
+	}
 
-.mb-30 {
-	margin-bottom: 30px !important;
-}
+	.mt-30 {
+		margin-top: 15px !important;
+	}
 
-.mb-40 {
-	margin-bottom: 40px !important;
-}
+	.mt-40 {
+		margin-top: 20px !important;
+	}
 
-.mb-50 {
-	margin-bottom: 50px !important;
-}
+	.mt-50 {
+		margin-top: 25px !important;
+	}
 
-.mb-60 {
-	margin-bottom: 60px !important;
-}
+	.mt-60 {
+		margin-top: 30px !important;
+	}
 
-.mb-70 {
-	margin-bottom: 70px !important;
-}
+	.mt-70 {
+		margin-top: 35px !important;
+	}
 
-.mb-80 {
-	margin-bottom: 80px !important;
-}
+	.mt-80 {
+		margin-top: 40px !important;
+	}
 
-.mb-90 {
-	margin-bottom: 90px !important;
-}
+	.mt-90 {
+		margin-top: 45px !important;
+	}
 
-.mb-100 {
-	margin-bottom: 100px !important;
+	.mt-100 {
+		margin-bottom: 50px !important;
+	}
+
+
+	/* 下マージン */
+	.mb-05 {
+		margin-bottom: 2.5px !important;
+	}
+
+	.mb-10 {
+		margin-bottom: 5px !important;
+	}
+
+	.mb-15 {
+		margin-bottom: 7.5px !important;
+	}
+
+	.mb-20 {
+		margin-bottom: 10px !important;
+	}
+
+	.mb-25 {
+		margin-bottom: 12.5px !important;
+	}
+
+	.mb-30 {
+		margin-bottom: 15px !important;
+	}
+
+	.mb-40 {
+		margin-bottom: 20px !important;
+	}
+
+	.mb-50 {
+		margin-bottom: 25px !important;
+	}
+
+	.mb-60 {
+		margin-bottom: 30px !important;
+	}
+
+	.mb-70 {
+		margin-bottom: 35px !important;
+	}
+
+	.mb-80 {
+		margin-bottom: 40px !important;
+	}
+
+	.mb-90 {
+		margin-bottom: 45px !important;
+	}
+
+	.mb-100 {
+		margin-bottom: 50px !important;
+	}
+
 }
 
 

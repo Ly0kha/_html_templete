@@ -59,9 +59,9 @@ $(function() {
 	$(window).on('load resize', function() {
 		var ww = $(window).width();
 		var wh = $(window).height();
-		$('#test01').html('ウィンドウ幅' + '&nbsp;' + ww);
-		$('#test02').html('ウィンドウ高さ' + '&nbsp;' + wh);
-		$('#test03').html('ユーザーエージェント' + '&nbsp;' + ua);
+		$('#test01').html('ウィンドウ幅' + '&nbsp;:&nbsp;' + ww);
+		$('#test02').html('ウィンドウ高さ' + '&nbsp;:&nbsp;' + wh);
+		$('#test03').html('ユーザーエージェント' + '&nbsp;:&nbsp;' + ua);
 	});
 
 
@@ -86,7 +86,7 @@ $(function() {
 	var relativeSecondDir = ('../include/')
 
 
-	$('#test04').html('現在のディレクトリ' + '&nbsp;' + currentDir)
+	$('#test04').html('現在のディレクトリ' + '&nbsp;:&nbsp;' + currentDir)
 
 	if ($('header#navi-1st').length) {
 
