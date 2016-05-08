@@ -1,10 +1,12 @@
 @charset "utf-8";
 
+
 /****************************************
 
 			   reset
 
 *****************************************/
+
 
 /* normalize
 --------------------------*/
@@ -51,7 +53,6 @@ time, mark, audio, video {
 	vertical-align: baseline;
 	background: transparent;
 }
-
 
 body {
 	font-family: "ヒラギノ明朝 Pro W6", "Hiragino Mincho Pro", "HGS明朝E", "ＭＳ Ｐ明朝", "Times New Roman", serif;
