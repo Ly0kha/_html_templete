@@ -35,12 +35,8 @@
 $(function() {
 
 
-
-
 /* UI共通プラグイン
 --------------------------*/
-
-
 
 
 	/* グローバル変数
@@ -166,8 +162,10 @@ $(function() {
 	/* dt adjust
 	--------------------*/
 	function adjust(){
-		var dtw = $('dl#column dt').outerWidth(); // dtの幅 //
-		$('dl#column dd').css('margin-left', dtw + 10 + 'px'); // 可変部分の高さを適用 //
+		var dtColW = $('dl#column dt').outerWidth(); // dtの幅 //
+		var dtNewsW = $('dl.news dt').outerWidth(); // dtの幅 //
+		$('dl#column dd').css('margin-left', dtColW + 10 + 'px'); // 可変部分の高さを適用 //
+		$('dl.news dd').css('margin-left', dtNewsW  + 'px'); // 可変部分の高さを適用 //
 	};
 
 	adjust();
@@ -214,8 +212,12 @@ $(function() {
 
 			var carousel = $('.carousel');
 			var hammer = new Hammer(carousel[0]);
-			hammer.on('swipeleft', function(){ carousel.carousel('next'); });   //--- 左にスワイプしたら次の画像に切り替え
-			hammer.on('swiperight', function(){ carousel.carousel('prev'); });  //--- 右にスワイプしたら前の画像に切り替え
+
+			//左にスワイプしたら次の画像に切り替え
+			hammer.on('swipeleft', function(){ carousel.carousel('next'); });
+
+			//右にスワイプしたら前の画像に切り替え
+			hammer.on('swiperight', function(){ carousel.carousel('prev'); });
 
 		});
 
@@ -282,13 +284,22 @@ $(function() {
 
 	}
 
-	$('img.mouseover').mouseover(function() {
-		mouseOver('on')
-	});
+	if (ua.indexOf('iPhone') > 0 || ua.indexOf('iPad') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 || ua.indexOf('BlackBerry') > 0 || ua.indexOf('windows Phone') > 0 || ua.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(ua)){
 
-	$('img.mouseover').mouseout(function() {
-		mouseOver('off')
-	});
+	}
+
+	else {
+
+		$('img.mouseover').mouseover(function() {
+			mouseOver('on')
+		});
+
+		$('img.mouseover').mouseout(function() {
+			mouseOver('off')
+		});
+
+	}
+
 
 
 	/* Target-blank
@@ -1357,8 +1368,6 @@ $(function() {
 
 
 	}).trigger('resize');
-
-
 
 
 });

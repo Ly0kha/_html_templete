@@ -351,18 +351,31 @@ p.caption-center {
 
 
 /* 文字大きさ */
+.x-large {
+	font-size: 1.4em;
+}
+
 .large {
-	font-size:1.8em;
+	font-size: 1.2em;
+}
+
+.normal {
+	font-size: 1em;
 }
 
 .small {
-	font-size:0.8em;
+	font-size: 0.8em;
+}
+
+.x-small {
+	font-size: 0.6em;
 }
 
 
 /* ボックス、ブロック指定 */
 .box {
 	margin: 0px;
+	padding: 0px;
 	overflow: hidden;
 }
 
@@ -440,7 +453,7 @@ ul.list {
 @media (max-width: 959px) {
 
 	ul.list li {
-		margin: 0px 0px 10px 12.5px;
+		margin: 0px 0px 10px 16px;
 	}
 
 }
@@ -466,7 +479,7 @@ ol.list {
 @media (max-width: 959px) {
 
 	ol.list li {
-		margin: 0px 0px 10px 12.5px;
+		margin: 0px 0px 10px 16px;
 	}
 
 }
@@ -565,16 +578,28 @@ dt {
 	float: left;
 }
 
+dl.news dt,
+dl.news dd {
+	border: 0;
+	border-top: 1px solid #eeeeee;
+}
+
 
 /* BreakPoint for PC */
 @media (min-width: 960px) {
 
 	dd {
-		margin: 0px 0px 4px 80px;
+		margin: 0px 0px 40px 80px;
+		padding: 0px;
+	}
+
+	dl.news dt {
+		padding: 20px 0px 0px;
 	}
 
 	dl.news dd {
-		margin: 0px 0px 4px 100px;
+		margin: 0px 0px 20px 100px;
+		padding: 20px 0px 0px 20px;
 	}
 
 }
@@ -584,11 +609,17 @@ dt {
 @media (max-width: 959px) {
 
 	dd {
-		margin: 0px 0px 2px 40px;
+		margin: 0px 0px 20px 40px;
+		padding: 0px;
+	}
+
+	dl.news dt {
+		padding: 10px 0px 0px;
 	}
 
 	dl.news dd {
-		margin: 0px 0px 2px 80px;
+		margin: 0px 0px 10px 80px;
+		padding: 10px 0px 0px 10px;
 	}
 
 }
@@ -601,8 +632,8 @@ dl.news dd p {
 
 /* 境界線指定 */
 hr {
-	border-bottom: 1px #000 dotted;
-	opacity: 1;
+	border: 0;
+	border-top: 1px solid #eeeeee;
 	clear: both;
 }
 
@@ -611,11 +642,11 @@ hr {
 @media (min-width: 960px) {
 
 	.hr-large {
-		margin: 30px 0px;
+		margin: 80px 0px;
 	}
 
 	.hr-small {
-		margin: 10px 0px;
+		margin: 40px 0px;
 	}
 
 }
@@ -625,11 +656,11 @@ hr {
 @media (max-width: 959px) {
 
 	.hr-large {
-		margin: 15px 0px;
+		margin: 40px 0px;
 	}
 
 	.hr-small {
-		margin: 5px 0px;
+		margin: 20px 0px;
 	}
 
 }
@@ -1478,9 +1509,8 @@ address {
 	-ms-flex-align: center;
 	-webkit-align-items: center;
 	align-items: center;
-	background: #ccc;
 
-	position: relative;
+	position: fixed;
 	top: 0px;
 	left: 0px;
 	right: 0px;
@@ -1488,7 +1518,18 @@ address {
 	margin: 0px;
 	padding: 0px;
 	width: 100%;
-	min-height: 480px;
+	height: auto;
+	overflow: hidden;
+}
+
+.centerChildrenWrapper {
+	background: #fff;
+
+	margin: 0px auto;
+	padding: 40px 20px;
+	min-width: 240px;
+	max-width: 960px;
+	height: 480px;
 	overflow: hidden;
 }
 
