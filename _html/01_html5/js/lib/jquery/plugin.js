@@ -336,7 +336,9 @@ $(function() {
 		if( wih < MIN_HEIGHT ) {
 			wih = MIN_HEIGHT
 			$('.centerParentWrapper').css('position', 'relative');
-		} else {
+		}
+
+		else {
 			$('.centerParentWrapper').css('position', 'fixed');
 		}
 
@@ -913,6 +915,7 @@ $(function() {
 		}
 
 	}).css('cursor','pointer');
+
 
 	// 戻るボタンを押したときの判定 //
 	$('input#btn-formback-ja,input#btn-formback-en').on('click', function() {
