@@ -162,10 +162,10 @@ $(function() {
 	/* dt adjust
 	--------------------*/
 	function adjust(){
-		var dtColW = $('dl#column dt').outerWidth(); // dtの幅 //
-		var dtNewsW = $('dl.news dt').outerWidth(); // dtの幅 //
-		$('dl#column dd').css('margin-left', dtColW + 10 + 'px'); // 可変部分の高さを適用 //
-		$('dl.news dd').css('margin-left', dtNewsW  + 'px'); // 可変部分の高さを適用 //
+		var dtcolw = $('dl#column dt').outerWidth(); // dtの幅 //
+		var dtnewsw = $('dl.news dt').outerWidth(); // dtの幅 //
+		$('dl#column dd').css('margin-left', dtcolw + 10 + 'px'); // 可変部分の高さを適用 //
+		$('dl.news dd').css('margin-left', dtnewsw  + 'px'); // 可変部分の高さを適用 //
 	};
 
 	adjust();
