@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jsmpeg Demo - Test</title>
+	<style type="text/css">
+		html,body {
+			background-color: #000;
+			color: #555;
+			font-family: helvetica, arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			font-size: 12pt;
+		}
+
+		#container {
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 30px;
+			margin: auto;
+			width: 640px;
+		}
+		a {
+			color: #777;
+			text-decoration: none;
+		}
+		a:hover {
+			color: #ccc;
+		}
+		#jsmpeg-debug {
+			background-color: #333;
+			color: #fff;
+			border: 0;
+			padding: 5px;
+			width: 80%;
+		}
+	</style>
+	<script type="text/javascript" src="jsmpg.js"></script>
+</head>
+<body>
+	<div id="container">
+		<div><canvas id="videoCanvas" width="640" height="360"></canvas></div>
+		test
+	</div>
+
+	<script type="text/javascript">
+		var canvas = document.getElementById('videoCanvas');
+		var player = new jsmpeg('test.mpg', {canvas:canvas, autoplay:true, loop: true});
+	</script>
+</body>
+</html>

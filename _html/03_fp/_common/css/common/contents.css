@@ -1,0 +1,225 @@
+@charset "utf-8";
+
+/* CSS contents */
+
+
+
+
+/*==============================================================
+
+	CSS tuned by Atsushi Kikushima 
+	tuned at 2011/07/30
+
+==============================================================*/
+
+
+
+
+
+
+
+
+/*==============================================================
+
+	Parts 
+
+==============================================================*/
+
+
+/* Contents ===============================*/
+
+#wrapper {
+	background-image: url();
+	background-repeat:repeat-y;
+	overflow:hidden;
+}
+
+
+/*   main   */
+
+#contents {
+}
+
+.box {
+	overflow:hidden;
+}
+
+#contents #pankuzu {
+	font-size: 0.85em;
+	text-align: right;
+}
+
+#contents #item_box {
+}
+
+#contents h2{ 
+	border-bottom: 1px solid #ddd;
+	border-left: 2px solid #ff9900;
+	border-right: 1px solid #eec;
+	background: #ffd; 
+	border-radius: 4px;        /* CSS3草案 */  
+	-webkit-border-radius: 4px;    /* Safari,Google Chrome用 */  
+	-moz-border-radius: 4px;   /* Firefox用 */  
+}  
+
+#contents h3{ 
+	border-left: 1px dotted #000;
+} 
+
+#contents .box p {
+	
+}
+
+
+/*   side   */
+
+#banners {
+}
+
+#banners li {
+	margin: 0px 0px 10px;
+}
+
+#side {
+}
+
+#side .categories ,#side .archives {
+	background-image: url();
+	background-repeat: no-repeat;
+	background-position: left bottom;
+}
+
+#side h2 {
+}
+
+.side_line {
+	border-right:1px dotted #ccc;
+}
+
+.corp_txt {
+	text-align: left;
+}
+
+.corp_txt .map_btn {
+	text-align: right;
+}
+
+
+/*   table 01  */
+
+table.t_01	{
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+table.t_01 th, table.t_01 td	{
+	color: #1D5C79;
+}
+
+.t_01 .odd	{
+	background: #E5F2F8;
+}
+
+
+/*   table 02  */
+
+table.t_02	{
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+table.t_02 th, table.t_02 td	{
+	color: #1D5C79;
+}
+
+table.t_02 th {
+	border-bottom: 2px solid #1D5C79;
+}
+
+table.t_02 td	{
+	border-bottom: 1px solid #DDD;
+}
+
+
+/*   list 01  */
+
+#contents ol {
+	list-style: decimal inside;
+}
+
+#contents ol ul {
+	list-style: circle outside;
+}
+
+
+/*   headline 01  */
+
+#topicsline {
+	overflow: hidden;
+}
+
+#topicsline_box {
+	background: #F2EBDE;
+}
+
+#topicsline ul li {
+	display: block;
+	clear: both;
+}
+
+#topicsline ul p.date {
+	color: #933;
+	font-size: 70%;
+	line-height: 1.25em;
+}
+
+#topicsline ul p.text {
+	color: #333;
+	font-size: 80%;
+	line-height: 1.25em;
+}
+
+
+/*   column -3 column- */
+
+.column2 {
+	border-right: 1px dotted #ccc;
+}
+
+.column2 ul {
+}
+
+.column2 li {
+	color: #333;
+	font-size: 80%;
+	line-height: 1.2em;
+}
+
+.column2 li.next {
+	text-align: right;
+}
+
+
+
+/*   column -3 column- */
+
+.column3 {
+	border-right: 1px dotted #ccc;
+}
+
+.column3 ul {
+}
+
+.column3 li {
+	color: #333;
+	font-size: 80%;
+	line-height: 1.2em;
+}
+
+.column3 li.next {
+	text-align: right;
+}
+
+.none {
+	border:none;	
+}
+

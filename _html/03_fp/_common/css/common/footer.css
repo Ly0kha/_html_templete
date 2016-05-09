@@ -1,0 +1,78 @@
+@charset "utf-8";
+
+/* CSS footer */
+
+
+
+
+/*==============================================================
+
+	CSS tuned by Atsushi Kikushima 
+	tuned at 2011/07/30
+
+==============================================================*/
+
+
+
+
+
+
+
+
+/*==============================================================
+
+	Parts 
+
+==============================================================*/
+
+
+/* Footer ===============================*/
+
+#footer {
+	text-align: center;
+	color: #ffd;
+	background: #333  url() repeat;
+	background-position: left top;
+}
+
+#footer p {
+	font-size:60%;	
+}
+
+#footer address {
+	font-size:60%;
+	font-style:normal;
+}
+
+#footer .footer_box {
+}
+
+.footer_box .li_top {
+	margin: 0px 0px 20px;
+	font-size: 80%;
+	list-style:disc;
+}
+
+.footer_box li {
+	margin:0px 0px 10px 10px;
+	font-size: 60%;
+	list-style:circle;
+}
+
+#footer .qr {
+}
+
+#footer #yahoo {
+	background:#fff;
+}
+
+#footer #f_menu {
+	font-size: 1em;
+	line-height: 30px;
+	color: #FFFFFF;
+}
+
+#footer #f_credit {
+	color: #333333;
+	line-height: 46px;
+}

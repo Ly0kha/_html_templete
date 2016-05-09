@@ -1,0 +1,170 @@
+@charset "utf-8";
+
+/* CSS common */
+
+
+
+
+/*==============================================================
+
+	CSS tuned by Atsushi Kikushima 
+	tuned at 2011/07/30
+
+==============================================================*/
+
+
+/*==============================================================
+
+	CSS site-map
+
+　　	body
+	     │
+	     │
+	     │
+	     ├#header
+	     │　  ｜
+	     │　  ├#header_top
+	     │　  ｜
+	     │　  ├#header_logo
+	     │　  ｜
+	     │  　├#header_info
+	     │
+	     ├#main_img
+	     │
+	     ├#side
+	     │
+	     ├#container
+	     │　｜
+	     │  └#wrapper
+	     │       ｜
+	     │       ├#side
+	     │       ｜
+	     │       └#main
+	     │
+	     └#footer
+	      
+==============================================================*/
+
+
+
+
+
+
+
+
+/*==============================================================
+
+	Parts 
+
+==============================================================*/
+
+
+/* ClearFix ===============================*/
+
+.clearfix:after {
+	content: " ";  
+	display: block; 
+	visibility: hidden; 
+	clear: both; 
+	height: 0.1px; 
+	font-size: 0.1em; 
+	line-height: 0; 
+}
+
+.clearfix {
+	display: inline-table;
+	min-height: 1%;
+}
+
+/* Hides from IE-mac \*/
+
+* html .clearfix {
+	height: 1%;
+}
+
+.clearfix {
+	display: block;
+}
+
+/* End hide from IE-mac */
+
+
+/* Body ===============================*/
+
+html {
+	overflow-y:scroll;
+	height: 100%;
+}
+
+body {
+	height: 100%;
+	text-align:left;
+	color: #000;
+	font-style: normal;
+	font-weight: normal;
+	font-size : 100%;
+	text-decoration: none;
+	background-image: url();
+	background-repeat: repeat-x;
+	background-color: #FFFFFF;
+	line-height: 1.45em;
+	font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,Osaka,"ＭＳ Ｐゴシック","MS PGothic",sans-serif;
+}
+
+* html body {
+	font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,Osaka,"ＭＳ Ｐゴシック","MS PGothic",sans-serif;
+}
+
+*:first-child+html body {
+	font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,Osaka,"ＭＳ Ｐゴシック","MS PGothic",sans-serif;
+}
+
+/* IE7でpadding指定 */
+
+*:first-child+html body {
+	padding-left: 1px;
+}
+
+
+/* IE6以下でpadding指定 */
+
+* html body {
+	padding-left: 1px;
+}
+
+
+/* Print for WinIE6 ===============================*/
+
+@media print{
+
+/* \ */
+
+* html body {
+	zoom: 80%;/* WinIE only 649px÷印刷したい横幅×100 */
+}
+
+.clearfix:after{
+  content:".";
+  display:block;
+  height:0;
+  clear:both;
+  visibility:hidden;
+}
+.clearfix{
+  overflow:hidden;
+}
+
+/* Hides from IE-mac \*/
+
+* html .clearfix{
+  height:1%;
+  overflow:visible;
+}
+
+/* End hide from IE-mac */
+
+}
+
+
+
+

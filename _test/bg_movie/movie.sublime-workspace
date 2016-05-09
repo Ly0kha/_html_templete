@@ -1,0 +1,679 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 28194,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 272.0,
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 521.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_wordpress/user-submitted-posts/user-submitted-posts.php",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_wordpress/beaconupdate/js/lib/jquery/plugin.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_wordpress/beaconupdate/css/colorbox.css",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_wordpress/beaconupdate/js/lib/jquery/jquery.colorbox-min.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_htdocs/css/colorbox.css",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_htdocs/css/top_org.css",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_htdocs/css/top.css",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_htdocs/index.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_htdocs/index.php",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_htdocs/js/plugin_adjust.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_htdocs/js/jquery.colorbox-min.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_htdocs/todaysperson_top.php",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_htdocs20151210_refine/index.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_htdocs20151210_refine/css/colorbox.css",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_wordpress/beaconupdate/style.css",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_wordpress/beaconupdate/footer.php",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_wordpress/beaconupdate/css/bootstrap/bootstrap.css",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_wordpress/user-submitted-posts/views/submission-form.php",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_wordpress/beaconupdate/header.php",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_wordpress/beaconupdate/css/style.css",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_htdocs/js/colorbox_adjust.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_wordpress/beaconupdate/functions.php",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_wordpress/beaconupdate/content.php",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_wordpress/beaconupdate/home.php",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_htdocs/style.css",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/html-templete/_html_templete/_template_04_basic/css/style.css",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/html-templete/_html_templete/_template_04_basic/debug.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_wordpress/user-submitted-posts/resources/usp.css",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_wordpress/user-submitted-posts/resources/jquery.usp.admin.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_wordpress/user-submitted-posts/resources/jquery.usp.files.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_wordpress/user-submitted-posts/resources/jquery.usp.core.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_wordpress/user-submitted-posts/resources/jquery.parsley.min.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_wordpress/beaconupdate/js/lib/jquery/jquery.gallery.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_watashi20150309/htdocs/index.php",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_wordpress/beaconupdate/more.php",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_wordpress/beaconupdate/content-single.php",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_watashi20150309/htdocs/style.css",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_watashi20150309/htdocs/debug.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_wordpress/beaconupdate/single.php",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_wordpress/user-submitted-posts/resources/usp-posts.css",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_wordpress/beaconupdate/content-page.php",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_wordpress/user-submitted-posts/library/core-functions.php",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_wordpress/user-submitted-posts/languages/usp.pot",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_htdocs/css/style.css",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_htdocs/js/lib/jquery/plugin.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_htdocs/js/lib/jquery/jquery.gallery.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_htdocs/js/lib/jquery/jquery.gallery.param.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_htdocs/js/lib/jquery/jquery.gallery.org.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_htdocs/index2.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_htdocs/untitled.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_wordpress/beaconupdate/index.php",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_htdocs/js/lib/jquery/jquery.min.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_wordpress/post-from-site/includes/twentyeleven.css",
+		"/Users/digitaldesigner/Downloads/post-from-site/includes/twentyeleven.css",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_wordpress/beaconupdate/inc/custom-header.php",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_htdocs/css/bootstrap/bootstrap.css",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_htdocs/js/lib/jquery/jquery.clever-infinite-scroll.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_htdocs/js/lib/jquery/jquery.infinitescroll.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_wordpress/beaconupdate/readme.txt",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_wordpress/beaconupdate/inc/customizer.php",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_htdocs/js/lib/jquery/_jquery.infinitescroll.js",
+		"/Users/digitaldesigner/Downloads/infinite-scroll-master 2/jquery.infinitescroll.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_static_htdocs/index.html",
+		"/Users/digitaldesigner/Downloads/infinite-scroll-master 2/test/index.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_htdocs/js/lib/jquery/jquery.infinitescroll.min.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_htdocs/debug.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_htdocs/index01.html",
+		"/Users/digitaldesigner/Downloads/jquery-truncate-master/demo.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_htdocs/js/lib/jquery/jquery.truncate.min.js",
+		"/Users/digitaldesigner/Downloads/truncate.js-master 2/examples/demo.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_htdocs/js/lib/jquery/jquery.truncate.js",
+		"/Users/digitaldesigner/Downloads/truncate.js-master/demo/demo.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_htdocs/include/header.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_static_htdocs/_inc/header.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_static_htdocs/css/ui.css",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconweb20150120/htdocs/inquiry/js/lib/jquery/jquery.autoConfirm.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconweb20150120/htdocs/inquiry/complete.php",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconweb20150120/htdocs/inquiry/confirm.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconweb20150120/htdocs/index.html",
+		"/Users/digitaldesigner/beaconweb/inquiry/js/lib/jquery/plugin.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconweb20150120/htdocs/inquiry/js/lib/jquery/jquery.validate.japlugin.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconweb20150120/htdocs/inquiry/js/lib/jquery/jquery.validate.min.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconweb20150120/htdocs/inquiry/js/lib/jquery/plugin.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconweb20150120/htdocs/inquiry/index.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconweb20150120/htdocs/inquiry/css/style.css",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconweb20150120/htdocs/js/src/viw/static/StaticContent.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconweb20150120/htdocs/js/src/viw/Main.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconweb20150120/htdocs/js/src/viw/static/StaticPageManager.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconweb20150120/htdocs/js/src/viw/static/StaticPage.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconweb20150120/htdocs/js/src/Index.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_pmj20150611/_fla/_fla20150805/.htpasswd",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_pmj20150611/_fla/_fla20150805/.htaccess",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/_pmj20150611/htaccess/.htpasswd",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/_pmj20150611/htaccess/.htaccess",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconweb20150120/htdocs/_static_new/career/career_graduate.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconweb20150120/htdocs/inquiry/confirm.php",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_watashi20150309/htdocs/js/lib/jquery/plugin.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/_coleman20150320/_doc/deploylist_20150805.txt",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_watashi20150309/htdocs/js/lib/jquery/jquery.wookmark.min.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_watashi20150309/htdocs/index.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_watashi20150309/htdocs/include/header.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_watashi20150309/htdocs/js/lib/canvas/excanvas.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_watashi20150309/htdocs/functions.php",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_watashi20150309/htdocs/footer.php",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconweb20150120/htdocs/static/graduate.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconweb20150120/htdocs/static/js/Index.js",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/sp/content99.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/sp/content06.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/sp/content05.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/sp/content04.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/sp/content03.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/sp/content02.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/sp/content01.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/sp/content00.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/content00.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/content01.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/content02.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/content03.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/content04.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/content05.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/content06.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/content99.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/sp/css/style.css",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/css/bootstrap/bootstrap.css",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/css/style.css",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/index.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_epipen20150526/htdocs/sp/index.html",
+		"/Users/digitaldesigner/Desktop/work_kikushima/_doc/_epipen20150526/_doc/_source20150727/decoard.txt"
+	],
+	"find":
+	{
+		"height": 38.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_wordpress/user-submitted-posts",
+			"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_wordpress/beaconupdate",
+			"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_wordpress/user-submitted-posts",
+			"<open files>",
+			"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_beaconUpdate20151027/_static_htdocs",
+			"<open files>",
+			"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_pml20150611/htdocs",
+			"<open files>",
+			"/Users/digitaldesigner/Downloads/fullPage.js-master/",
+			"/Users/digitaldesigner/Desktop/work_kikushima/_doc/html-templete/_template_05_parallax,/Users/digitaldesigner/Downloads/fullPage.js-master/examples",
+			"/Users/digitaldesigner/Desktop/work_kikushima/_doc/html-templete/_template_05_parallax",
+			"/Users/digitaldesigner/Desktop/work_kikushima/_doc/html-templete/_template_04_basic",
+			"<open files>",
+			"/Users/digitaldesigner/Desktop/work_kikushima/_doc/html-templete/_template_01_basic_new",
+			"<open files>",
+			"/Users/digitaldesigner/Desktop/work_kikushima/_work/work/_coleman20150320/htdocs",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"files",
+			"file-type",
+			"usp_images",
+			"Post Images",
+			"usp-input",
+			"closeButton",
+			"close",
+			"	$(\".inline\").click(function() {\n		$(\"#cboxClose\").fadeIn();\n	})\n",
+			"txt",
+			"#watashi",
+			"#watashi ",
+			"20151210",
+			"#watashi",
+			"#people #people-main a .txt",
+			"#watashi",
+			"js",
+			"$addAnother",
+			"user-submitted-image[]",
+			"ファイル",
+			"ファイルを選択",
+			"class=\"parsley-errors-list",
+			"This value is required.",
+			"class=\"parsley-errors-list",
+			" $",
+			"success",
+			"paginate",
+			"paginate_links()",
+			"pagenation_wrapper",
+			"plugins",
+			"paginate_links",
+			"required-url",
+			"Error",
+			"success=",
+			"?success=",
+			"usp_url",
+			"upload-message",
+			"$usp_options",
+			"Please select your image(s) to upload.",
+			"upload-message",
+			"$usp_options['upload-message'];",
+			"update_post_meta",
+			"$",
+			".bind(\"resize load\", function() {",
+			"0",
+			"i",
+			"		</",
+			"images/",
+			"../images/",
+			"scrollHeight",
+			".load()",
+			"infscr",
+			"heading into ajax",
+			"galleryList",
+			"\">",
+			"expandHeight",
+			"secRight",
+			"secRight\nselfRepInner\n",
+			"selfRepInner\n",
+			"selfRep\n",
+			"expandHeight\n",
+			"$(\"#test01\").html(ww)\n",
+			"expandHeight",
+			"img/",
+			"/img/",
+			"global-header",
+			"--><",
+			"listBaseWidth",
+			"listItem",
+			"division",
+			"YPAbeltchild",
+			" ",
+			"_template_04_basic/",
+			"Contact",
+			"mb_20",
+			"\">",
+			"italic",
+			"新卒",
+			"ul,",
+			"ul, ol",
+			"ul",
+			"// Lists",
+			"scrollWidth",
+			"_pc",
+			"}",
+			"// Device Measures En:英語、Jp:日本語  //\n// 1.SP版とPC版でレイアウトを変える  //\n$(window).load(function() {\n\n	var ua = navigator.userAgent;\n\n	// iPhone, AndroidなどのSP端末の表示 //\n    if (ua.indexOf('iPhone') > 0 || ua.indexOf('iPad') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 || ua.indexOf('BlackBerry') > 0 || ua.indexOf('windows Phone') > 0 || ua.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(ua)){\n\n		// common -SP版背景画像を固定化- //\n		/* SPかPCかの判定を切り替える */\n		$(\".bg_top_pc\").addClass(\"bg_top_sp\").removeClass(\"bg_top_pc\");\n		$(\".bg_contents_pc\").addClass(\"bg_contents_sp\").removeClass(\"bg_contents_pc\");\n		$(\".bg_work_pc\").addClass(\"bg_work_sp\").removeClass(\"bg_work_pc\");\n\n		/* SPならば背景固定用のソースを挿入する */\n		$(\"body.bg_top\").append(\"<div class='background-bg_top'></div>\");\n		$(\"body.bg_contents\").append(\"<div class='background-bg_contents'></div>\");\n		$(\"body.bg_work\").append(\"<div class='background-bg_work'></div>\");\n\n		/* iOS用にスクロールして背景がカクつく現象を解消させる */\n		$(window).bind(\"resize load\", function(){\n			var wh = $(window).outerHeight();\n\n			$(\"#lb_overlay,.background-bg_top,.background-bg_contents,.background-bg_work\").css({\n				\"height\" : wh\n			});\n\n		}).trigger(\"resize\");\n\n		// form -SP版wrapperレイアウト- //\n		$(\"#wrapper\").addClass(\"wrapper_sp\").removeClass(\"wrapper\");\n\n		// form  -SP版formレイアウト- //\n		$(\"#form_layoutJp,#form_layoutEn\").addClass(\"form_sp\").removeClass(\"form\");\n\n		// form -SP版formComplete画像サイズ- //\n		$(\"#sentCompleteJp,#sentCompleteEn\").addClass(\"img_complete_sp\")\n\n		// form -SP版suggestレイアウト- //\n		$(\".suggest_pc\").addClass(\"suggest_sp\").removeClass(\"suggest_pc\");\n		$(\"#suggestJp,#suggestEn\").addClass(\"suggest_wrap_sp\").removeClass(\"suggest_wrap_pc\");\n\n	}\n\n});",
+			"246px",
+			"320px",
+			"images/pc/",
+			"hp:150,",
+			"wp:270",
+			"wp:320",
+			"hp:180,",
+			"fff",
+			"vtr0",
+			"wt:640",
+			"ht:360",
+			"wt:200",
+			"ht:113",
+			"col3",
+			"col1",
+			"14px",
+			"bottomContent",
+			" -->",
+			"jquery.easings.min.js",
+			"sectionsColor",
+			"fp-slidesContainer",
+			"\n<",
+			"btn_top",
+			"background-color: #eee;",
+			"ui-state-hover",
+			"nav",
+			"btn_slider_sprite.png ",
+			"btn_slider_sprite.png",
+			"6",
+			"img_thumb_08",
+			"middle mr_05 float_l",
+			"64px",
+			"<span class=\"italic\">tags</span>\n							/",
+			"<span class=\"italic\">tags</span>\n							/\nurl(../images/",
+			"\n\nurl(../images/",
+			"url(images/",
+			"url(../images/",
+			"INFLUECER",
+			"self_expression",
+			"#influecer",
+			"_influecer",
+			"contents",
+			"left"
+		],
+		"highlight": false,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"必須項目です。",
+			"jQuery",
+			".load(function() {",
+			"img/",
+			"../img/",
+			"img/",
+			"_",
+			"",
+			"_sp",
+			"images/index/",
+			"hp:75,",
+			"wp:135",
+			"wp:270",
+			"hp:150,",
+			"content0",
+			"wt:135",
+			"ht:77",
+			"wt:148",
+			"ht:84",
+			"float_l",
+			"url(images/",
+			"url(../images/",
+			"url(images/",
+			"INFLUENCER",
+			"self-expression",
+			"#influencer",
+			"_influencer",
+			"/",
+			"<span class=\"italic\">tags</span>",
+			"mb_20",
+			"float_r",
+			"float_l",
+			"radioButtonIEActive",
+			"checkBoxIEActive",
+			"#radio_",
+			"#checkbox_",
+			"",
+			"]",
+			"[",
+			"]",
+			"[",
+			"",
+			"]",
+			"[",
+			"\n[",
+			"]",
+			"",
+			"]",
+			"[",
+			"]",
+			"["
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "index.html",
+					"settings":
+					{
+						"buffer_size": 28194,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"is_xml": false,
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"devel": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": "load-save",
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 35.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.698332250641,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.unsaved_changes":
+	{
+		"height": 124.0
+	},
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"theme",
+				"/Volumes/Macintosh Sub_HD/_private/work/work_kikushima20111204/_template01_basic/index.html"
+			],
+			[
+				"install",
+				"/Volumes/Macintosh Sub_HD/_private/work/work_kikushima20111204/_template01_basic/index.html"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 217.0,
+	"status_bar_visible": true
+}

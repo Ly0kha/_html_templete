@@ -1,0 +1,142 @@
+@charset "utf-8";
+
+/* CSS navigation */
+
+
+
+
+/*==============================================================
+
+	CSS tuned by Atsushi Kikushima 
+	tuned at 2011/07/30
+
+==============================================================*/
+
+
+
+
+
+
+
+
+/*==============================================================
+
+	Parts 
+
+==============================================================*/
+
+
+/* Header ===============================*/
+
+#head_menu {
+ 	position:relative;
+	width: 1080px;
+	margin: 0 auto;
+	padding: 0px;
+	background-image: url();
+	background-repeat: no-repeat;
+	background-color: #FF9900;
+	background-position: center top;
+	z-index: 9998;
+
+}
+
+#head_menu ul#nav {
+	position:relative;
+	margin: 0px;
+	padding: 0px;
+	line-height:2em;
+	display: block;
+}
+
+
+#head_menu ul#nav li {
+	position: relative;
+	width: 180px;
+	margin: 0px;
+	padding: 0px;
+	float: left;
+	text-align: center;
+	list-style: none;
+}
+
+#head_menu ul#nav ul {
+	position: absolute;
+	top: auto;
+	margin: 0px;
+	padding: 0px;
+	display: none;
+	opacity: 0.8;
+}
+
+#head_menu ul#nav ul ul{
+	position: absolute;
+	top: 0px;
+	left: 180px;
+	margin: 0px;
+	padding: 0px;
+	display: none;
+	opacity: 1;
+}
+
+
+#head_menu a {
+	margin :0px;
+	padding: 0px;
+	display: block;
+	background-color: #FF9900;
+	color: #000000;
+}
+
+#head_menu a:hover {
+	background-color: #FF0000;
+	color: #000000;
+	text-decoration: none;
+}
+
+
+/* Footer ===============================*/
+
+#footer a {
+	padding:0.5em 0px;
+	width: 100%;
+	color: #FF9900;
+}
+
+#footer a:hover {
+	color: #FF0000;
+	text-decoration: none;
+}
+
+#foot_menu {
+	position: relative;
+	width: 1040px;
+	margin: 0px 20px 20px;
+	background-image: url();
+	background-repeat: no-repeat;
+	background-position: center top;
+	border-top: solid 1px #999;
+}
+
+#foot_menu ul {
+	margin: 20px 0px;
+	padding: 0px;
+}
+
+#foot_menu ul li {
+  display: inline;
+	margin: 0px;
+	padding: 0px 10px;
+}
+
+#foot_menu a {
+	padding:0.5em 0px;
+	width: 100%;
+	color: #FF9900;
+}
+
+#foot_menu a:hover {
+	color: #FF0000;
+	text-decoration: none;
+}
+

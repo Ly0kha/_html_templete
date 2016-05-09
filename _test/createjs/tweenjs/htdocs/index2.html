@@ -1,0 +1,223 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<meta property="og:title" content="Keywords"/>
+	<meta property="og:description" content="Description"/>
+	<meta property="og:image" content="img:url"/>
+	<meta property="og:url" content="url"/>
+	<meta property="og:type" content="company"/>
+	<meta property="og:site_name" content="site_name"/>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+
+	<meta name="keywords" content="Keywords">
+	<meta name="description" content="Description">
+	<link rel="shortcut icon" href="favicon/favicon.ico" type="image/vnd.microsoft.icon" />
+
+	<title>Title -Site Title Here-</title>
+
+	<link href="css/reset.css" rel="stylesheet" type="text/css" />
+	<link href="css/style.css" rel="stylesheet" type="text/css" />
+	<link href="css/flexslider.css" rel="stylesheet" type="text/css" media="screen" />
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap/bootstrap.css" rel="stylesheet">
+
+	<!-- Jquery -->
+	<script type="text/javascript" src="js/lib/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="js/lib/jquery/plugin.js"></script>
+
+	<!-- Canvas -->
+	<script>
+
+		function initialize() {
+
+			// canvas要素のIDを取得
+			var canvasElement = document.getElementById("myCanvas01");
+
+			// コンテキストの参照を得る。引数は”2d"
+			var context2D = canvasElement.getContext("2d");
+
+			// 描画の為の関数を定める
+			draw(context2D);
+
+			// 2D描画をする為のメソッド。X:10 y:10 width:100px height: 100px
+			context2D.fillRect(10, 10, 100, 100);
+
+		}
+
+		function draw(context2D) {
+
+			// 矩形に塗る為のメソッド。16進数で記述
+			// context2D.fillStyle = "#0000FF"
+
+			// 2D描画をする為のメソッド。X:10 y:10 width:100px height: 100px
+			// context2D.fillRect(10, 10, 100, 100);
+
+			// 矩形の始点
+			context2D.beginPath();
+
+				// 線に塗る色指定のメソッド。16進数で記述
+				context2D.strokeStyle = "#990000"
+
+				// 矩形に塗る色指定のメソッド。16進数で記述
+				context2D.fillStyle = "#FF0000"
+
+				// 矩形パスを描く関数
+				drawRect(context2D, 10, 10, 100, 100);
+
+			// 矩形の終点
+			context2D.closePath();
+
+			// 矩形に塗る為のメソッド。
+			context2D.fill();
+
+			// 線に塗る為のメソッド。
+			context2D.stroke();
+
+		}
+
+		function drawRect(context2D, nX, nY, nWidth, nHeight) {
+
+			// 矩形の描き初めの座標
+			context2D.moveTo(nX, nY);
+
+			// 右上
+			context2D.lineTo(nX + nWidth , nY);
+
+			// 右下
+			context2D.lineTo(nX + nWidth , nY + nHeight);
+
+			// 左下
+			context2D.lineTo(nX, nY + nHeight);
+
+			// 左上（始点/終点）
+			context2D.lineTo(nX, nY);
+
+		}
+
+	</script>
+
+
+	<!-- CreateJS /　TweenJS　/ EaselJS -->
+	<script src="js/lib/createjs/createjs-2015.05.21.min.js"></script>
+	<script src="js/lib/tweenjs/tweenjs-0.6.1.min.js"></script>
+	<script src="js/lib/easeljs/easeljs-0.8.1.min.js"></script>
+	<script type="text/javascript">
+
+		var createjs = window;
+
+	</script>
+
+
+	<!-- CreateJS -->
+	<script src="js/src/createjs/events/Event.js"></script>
+	<script src="js/src/createjs/events/EventDispatcher.js"></script>
+	<script src="js/src/createjs/utils/Ticker.js"></script>
+	<script src="js/src/createjs/utils/extend.js"></script>
+	<script src="js/src/createjs/utils/indexOf.js"></script>
+	<script src="js/src/createjs/utils/promote.js"></script>
+
+
+	<!-- TweenJS -->
+	<script src="js/src/tweenjs/Tween.js"></script>
+	<script src="js/src/tweenjs/Ease.js"></script>
+
+
+	<!-- EaselJS -->
+	<script src="js/src/easeljs/utils/UID.js"></script>
+	<script src="js/src/easeljs/geom/Matrix2D.js"></script>
+	<script src="js/src/easeljs/geom/DisplayProps.js"></script>
+	<script src="js/src/easeljs/geom/Rectangle.js"></script>
+	<script src="js/src/easeljs/events/MouseEvent.js"></script>
+	<script src="js/src/easeljs/display/DisplayObject.js"></script>
+	<script src="js/src/easeljs/display/Container.js"></script>
+	<script src="js/src/easeljs/display/Stage.js"></script>
+	<script src="js/src/easeljs/display/Graphics.js"></script>
+	<script src="js/src/easeljs/display/Shape.js"></script>
+	<script type="text/javascript">
+
+		var stage;
+
+		function init {
+			var canvasObj = document.getElementById("myCanvas")
+			stage = new Stage(canvasObj);
+			alert(stage);
+		}
+
+	</script>
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+
+</head>
+
+<body id="top" onload="initialize();">
+
+<div id="container">
+
+	<!-- ライトボックス -->
+	<!--body要素内のヘッダーを埋め込みたい箇所に記述-->
+	<div class="lightbox">
+
+		<script type="text/javascript">
+		//
+		//
+		// writeLightboxDocument(); の()内指定について
+		//
+		// 同階層 ："./"
+		// 1階層下："../"
+		// 2階層下："../../"
+		//
+		//
+
+			writeLightboxDocument("./");
+		</script>
+	</div>
+
+	<div id="wrapper">
+
+		<!-- Windowサイズ取得テスト -->
+		<div id="test01"></div>
+		<div id="test02"></div>
+
+		<div id="test03" class="pd_top-bottom_20">
+
+			<div class="box mb_20">
+				<canvas id="myCanvas" width="318" height="600"></canvas>
+				<!-- <canvas id="myCanvas" width="938" height="600"></canvas> -->
+			</div>
+
+		</div>
+
+	</div>
+
+</div>
+
+<!-- スクリプトプラグイン -->
+<script type="text/javascript" src="js/lib/jquery/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/lib/jquery/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="js/lib/jquery/jquery.flexslider-min.js"></script>
+<script type="text/javascript" src="js/lib/jquery/jquery.cookie.js"></script>
+<script type="text/javascript" src="js/lib/jquery/selectivizr-min.js"></script>
+<script type="text/javascript" src="js/lib/jquery/heightLine.js"></script>
+<script type="text/javascript" src="js/lib/jquery/html5shiv.js"></script>
+
+<!-- Bootstrap -->
+<script type="text/javascript" src="js/lib/bootstrap/bootstrap.min.js"></script>
+
+</body>
+
+</html>

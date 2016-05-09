@@ -1,0 +1,72 @@
+@charset "utf-8";
+
+/* CSS IE6 */
+/*==============================================================
+
+	Parts
+
+==============================================================*/
+
+
+
+
+/* ============================================= */
+/* common settings                  */
+
+
+
+/* ============================================= */
+/* safe settings                                 */
+
+/* add display:inline to floated elements */
+#contents,
+#contents #item_box,
+#banners,
+#side,
+.float_l,
+.float_r {
+	display: inline;
+}
+
+/* convert min height values */
+#wrapper {
+
+}
+
+#banners {
+	height: 100px;
+}
+
+#side {height:100px;}
+
+
+/* add zoom:1 to overflow:hidden */
+#wrapper,
+.box,
+#topicsline,
+#topicsline_box,
+.column2,
+.column3 {
+	zoom: 1;
+}
+
+/* add zoom:1 to pos:relative elements */
+#header-layout,
+#header,
+#footer {
+	zoom: 1;
+}
+
+/* add overflow:visible to (submit) buttons */
+ input, button {
+ 	overflow: visible;
+ }
+
+
+/* ============================================= */
+/* potentially harmful settings                  */
+
+/* add zoom:1 to backgrounds -- Manually check for problems with inline elements! */
+.t_01 .odd {
+	zoom: 1;
+}

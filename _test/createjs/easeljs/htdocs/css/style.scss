@@ -1,0 +1,1246 @@
+@charset "utf-8";
+
+/****************************************
+
+			   common
+
+*****************************************/
+
+/********** コンテンツ共有CSS ***********/
+
+/* ページ本体
+--------------------------*/
+
+html, body, #container {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+}
+
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0px;
+  font-family: "Lucida Grande",Helvetica,"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ",Meiryo,"ＭＳ Ｐゴシック", "MS PGothic",Osaka,sans-serif;
+  font-size: 1.6rem;
+  /* SP用 */
+  font-size: 14px;
+  /* PC用 */
+  line-height: 1.7;
+  color: #000;
+  -webkit-text-size-adjust: 100%;
+  word-break: break-all;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+#container {
+  position: relative;
+  margin: 0px auto;
+  padding: 0px;
+  min-width: 320px;
+  height: 100%;
+  overflow: visible;
+}
+
+#wrapper {
+  position: relative;
+  margin: 0px auto;
+  padding: 0px 20px;
+  min-width: 300px;
+  height: 100%;
+  overflow: visible;
+  z-index: 10;
+}
+
+header, footer {
+  position: relative;
+  width: 100%;
+  margin: 0px;
+  z-index: 10;
+}
+
+/* 背景色
+--------------------------*/
+
+body {
+  background: #fff;
+}
+
+/* リンク、見出し、フォームパーツ
+--------------------------*/
+
+/* リンク */
+
+a {
+  color: #000;
+  text-decoration: underline;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+/* 見出し */
+
+h1 {
+  font-size: 0.8em;
+}
+
+h2 {
+  margin: 0px 0px 10px;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.h2_title {
+  width: 161px;
+  height: 18px;
+}
+
+h3 {
+  margin: 0px;
+  font-size: 1.2em;
+}
+
+h4, h5 {
+  margin: 20px 0px;
+}
+
+h4 {
+  font-weight: bold;
+}
+
+/* フォーム */
+
+input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 140px;
+  background-color: rgba(0, 0, 0, 0);
+  color: #333;
+  border: none;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 14px;
+  &[type="text"], &[type="password"] {
+    font-family: "Lucida Grande","ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ",Meiryo,"ＭＳ Ｐゴシック", "MS PGothic",Helvetica,Osaka,sans-serif;
+  }
+}
+
+textarea, select {
+  font-family: "Lucida Grande","ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ",Meiryo,"ＭＳ Ｐゴシック", "MS PGothic",Helvetica,Osaka,sans-serif;
+}
+
+input, textarea, select {
+  outline: none;
+}
+
+/* input、textareaのカスタム */
+
+.bg_input input, .bg_textarea textarea, .bg_inputChecker input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0);
+  color: #333;
+  border: none;
+  font-size: 14px;
+  text-align: left;
+  padding: 4px;
+}
+
+.bg_input {
+  input, button {
+    width: 100%;
+    vertical-align: middle;
+  }
+}
+
+.bg_textarea textarea {
+  width: 100%;
+  height: 120px;
+  vertical-align: top;
+  resize: none;
+}
+
+.bg_inputChecker input {
+  display: none;
+  width: 20px;
+  vertical-align: bottom;
+}
+
+#selected {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 240px;
+  background-color: rgba(0, 0, 0, 0);
+  color: #333;
+  font-size: 12px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+/* checkboxのカスタム */
+
+ul.search {
+  li {
+    position: relative;
+    width: 227px;
+    min-height: 30px;
+    margin: 0px 0px 10px;
+    padding: 10px 0px 10px 20px;
+    float: left;
+  }
+  input {
+    &[type=radio], &[type=checkbox] {
+      display: inline-block;
+      margin-right: 6px;
+    }
+    &[type=radio] + label, &[type=checkbox] + label {
+      position: relative;
+      margin: 0px;
+      display: inline-block;
+      font-size: 14px;
+      line-height: 30px;
+      cursor: pointer;
+    }
+  }
+  li {
+    &.checked {
+      background: url("../images/common/ui/icn_checkbox_02.png") no-repeat 8% 40%;
+    }
+    &.not-checked {
+      background: url("../images/common/ui/icn_checkbox_01.png") no-repeat 8% 40%;
+    }
+    &.disabled {
+      background: url("../images/common/ui/icn_checkbox_03.png") no-repeat 8% 40%;
+    }
+  }
+}
+
+@media (min-width: 1px) {
+  ul.search input {
+    &[type=radio], &[type=checkbox] {
+      display: none;
+      margin: 0;
+    }
+    &[type=radio] + label, &[type=checkbox] + label {
+      padding: 0px 0px 0px 32px;
+    }
+    &[type=radio] + label::before, &[type=checkbox] + label::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      display: block;
+      width: 18px;
+      height: 18px;
+      margin-top: -9px;
+      background: #FFF;
+    }
+    &[type=radio] + label::before, &[type=checkbox] + label::before {
+      width: 22px;
+      height: 22px;
+      border: 2px #a1836a solid;
+      -moz-border-radius: 3px;
+      -webkit-border-radius: 3px;
+      border-radius: 3px;
+      color: #333;
+    }
+    &[type=radio]:checked + label::after, &[type=checkbox]:checked + label::after {
+      position: absolute;
+      top: 25%;
+      width: 22px;
+      height: 22px;
+      content: url("../images/common/ui/icn_checkbox.png");
+      -moz-border-radius: 3px;
+      -webkit-border-radius: 3px;
+      border-radius: 3px;
+      color: #333;
+      display: block;
+    }
+    &[type=radio]:checked + label::after, &[type=checkbox]:checked + label::after {
+      left: 0px;
+      width: 8px;
+      height: 8px;
+      margin: 0px;
+    }
+  }
+}
+
+/* 本文、コンテンツボックス、テーブル、リスト、定義、罫線など
+--------------------------*/
+
+/* 本文、文字装飾*/
+
+p {
+  margin: 0px;
+  padding: 0px;
+  &.caption_left, &.caption_center {
+    height: 24px;
+    margin: 0px 0px 16px;
+    padding: 0px;
+    font-size: 0.83em;
+    line-height: 1.15;
+  }
+  &.caption_left {
+    text-align: left;
+  }
+  &.caption_center {
+    text-align: center;
+  }
+}
+
+.bold {
+  font-weight: bold;
+}
+
+/* 文字大きさ */
+
+.large {
+  font-size: 1.8em;
+}
+
+.small {
+  font-size: 0.8em;
+}
+
+/* ボックス、ブロック指定 */
+
+.box {
+  margin: 0px;
+  overflow: hidden;
+}
+
+.block {
+  display: block;
+}
+
+/* テーブル */
+
+table {
+  width: 99%;
+  margin: 0 auto;
+  &.border {
+    width: 98%;
+    margin: 8px auto;
+    border: 1px solid #000;
+    th, td {
+      margin: 0px;
+      padding: 8px;
+      font-size: 1em;
+      text-align: left;
+      border-bottom: 1px solid #000;
+    }
+    th {
+      border-right: 1px solid #000;
+    }
+  }
+}
+
+/* 罫線ありテーブル */
+
+/* リスト */
+
+ul, li {
+  margin: 0px;
+  padding: 0px;
+}
+
+/* ナカグロありリスト */
+
+ul.list {
+  list-style: outside;
+  li {
+    margin: 0px 0px 20px 20px;
+  }
+}
+
+/* navタグ以降のliは並列で表示 */
+
+nav li {
+  display: inline;
+  margin: 0px 8px 0px 0px;
+  font-size: 0.9em;
+}
+
+/* 数字付きリスト */
+
+ol.list {
+  list-style: outside decimal;
+  li {
+    margin: 0px 0px 20px 20px;
+  }
+}
+
+/* 定義：ヘッドラインなど */
+
+dl {
+  width: 100%;
+  padding: 0px;
+  &.news {
+    width: 100%;
+    padding: 0px;
+    background: url(../images/common/bg_news.png) no-repeat right center;
+    background-size: 279px 24px;
+  }
+}
+
+dt {
+  float: left;
+}
+
+dd {
+  margin: 0px 0px 4px 80px;
+}
+
+dl.news dd {
+  margin: 0px 0px 4px 120px;
+  padding: 0px;
+  overflow: hidden;
+  p {
+    width: 98%;
+  }
+}
+
+/* 境界線指定 */
+
+hr {
+  border-bottom: 1px #666 solid;
+  opacity: 0.6;
+  clear: both;
+}
+
+.hr_large {
+  margin: 30px 0px;
+}
+
+.hr_small {
+  margin: 10px 0px;
+}
+
+.border {
+  border: 1px solid #000;
+}
+
+/* テキストカラー指定 */
+
+.red {
+  color: #F00;
+}
+
+/* インラインアイコン指定 */
+
+img.mailIcon {
+  margin-left: 2px;
+  vertical-align: middle;
+}
+
+address {
+  margin: 40px 0px;
+  text-align: center;
+  font-size: 0.8em;
+}
+
+/* ナビゲーション関連および検索窓
+--------------------------*/
+
+/* グローバルメニュー検索窓側 -- ポジション指定 */
+
+div {
+  &.search_area {
+    position: absolute;
+    left: 0px;
+    width: 200px;
+    min-width: 200px;
+  }
+  &.menu_area {
+    position: absolute;
+    right: 0px;
+    width: 80px;
+  }
+}
+
+/* グローバルメニューボタン側 -- ポジション指定 */
+
+/* グローバルメニュー -- サイズ指定 */
+
+nav {
+  .menu, .menu_active {
+    min-width: 320px;
+    height: 36px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  .menu li, .menu_active li {
+    float: left;
+  }
+}
+
+.menu a, .menu_active a, .sns_list a, .language_list div {
+  width: 100%;
+  height: 36px;
+  cursor: pointer;
+}
+
+.menu_list a {
+  width: 100%;
+  height: 62px;
+}
+
+/* グローバルメニュー -- グローバルメニュー共通パーツ
+--------------------------*/
+
+/* サイズ指定 */
+
+li {
+  &.btn_back, &.btn_navi, &.btn_mail, &.search {
+    margin: 0px 4px 0px 0px;
+    height: 36px;
+  }
+  &.btn_back {
+    width: 50px;
+  }
+  &.btn_navi, &.btn_mail {
+    width: 36px;
+  }
+  &.btn_back, &.btn_navi, &.btn_mail {
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}
+
+/* ボタン箇所のみテキストリンク処理 */
+
+/* グローバルメニュー -- 通常時
+--------------------------*/
+
+.menu li {
+  &.btn_back a.gmenu {
+    background: url(../images/common/btn_gmenu_sprite.png) no-repeat center top;
+    background-size: 300px 72px;
+    background-position: 0px 0px;
+  }
+  &.btn_navi a.gmenu {
+    background: url(../images/common/btn_gmenu_sprite.png) no-repeat center top;
+    background-size: 300px 72px;
+    background-position: -222px 0px;
+  }
+  &.btn_mail a.gmenu {
+    background: url(../images/common/btn_gmenu_sprite.png) no-repeat center top;
+    background-size: 300px 72px;
+    background-position: -264px 0px;
+  }
+}
+
+/* グローバルメニュー -- アクティブ時
+--------------------------*/
+
+.menu_active li {
+  &.btn_back a.gmenu {
+    background: url(../images/common/btn_gmenu_sprite.png) no-repeat center top;
+    background-size: 300px 72px;
+    background-position: 0px -36px;
+  }
+  &.btn_navi a.gmenu {
+    background: url(../images/common/btn_gmenu_sprite.png) no-repeat center top;
+    background-size: 300px 72px;
+    background-position: -222px -36px;
+  }
+  &.btn_mail a.gmenu {
+    background: url(../images/common/btn_gmenu_sprite.png) no-repeat center top;
+    background-size: 300px 72px;
+    background-position: -264px -36px;
+  }
+}
+
+/* グローバルメニュー -- その他
+--------------------------*/
+
+.btn_search {
+  position: absolute;
+  right: 4px;
+  top: 12px;
+  width: 14px;
+  height: 14px;
+}
+
+.btn_backtop {
+  width: 36px;
+  height: 36px;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* グローバルメニュー -- 検索窓
+--------------------------*/
+
+/* 背景 */
+
+.bg_search {
+  position: relative;
+  left: 0px;
+  top: -1px;
+  width: 100%;
+  height: 36px;
+  background-color: #ffffff;
+  border: 1px solid rgba(122, 122, 122, 0.5);
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  -moz-box-shadow: inset 2px 2px 2px #a8a47e;
+  -webkit-box-shadow: inset 2px 2px 2px #a8a47e;
+  box-shadow: inset 2px 2px 2px #a8a47e;
+  opacity: 0.66;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity = 66);
+  filter: alpha(opacity = 66);
+}
+
+/* サイズ指定 */
+
+li.search {
+  width: 100%;
+}
+
+.bg_search input {
+  margin: 10px 0px;
+}
+
+/* プルダウンメニュー -- プルダウン共通パーツ
+--------------------------*/
+
+/* 背景 */
+
+.panel {
+  position: absolute;
+  right: 0px;
+  top: 40px;
+  width: 303px;
+  height: 509px;
+  background: url(../images/common/bg_menu.png) no-repeat center top;
+  background-size: 303px 509px;
+  z-index: 2000;
+}
+
+.panel_wrapper {
+  margin: 15px 2px 15px 2px;
+  padding: 0px;
+  overflow: hidden;
+}
+
+/* プルダウンメニュー -- メインメニュー
+--------------------------*/
+
+/* 背景 */
+
+.menu_list {
+  width: 300px;
+  height: 372px;
+  background: url(../images/common/bg_navi.png) no-repeat center top;
+  background-size: 300px 372px;
+  overflow: hidden;
+  li {
+    width: 100%;
+    height: 61px;
+    margin: 0px;
+    float: none;
+    display: block;
+    border-bottom: 1px #cfcfcf solid;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}
+
+/* サイズ指定 */
+
+/* プルダウンメニュー -- 外部メニュー
+--------------------------*/
+
+/* 背景 */
+
+.sns_list {
+  width: 261px;
+  height: 36px;
+  margin: 0px auto;
+  background: url(../images/common/btn_sns.png) no-repeat center top;
+  background-size: 261px 36px;
+  overflow: hidden;
+  li {
+    margin: 0px;
+    height: 36px;
+    float: left;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}
+
+/* サイズ指定 */
+
+li {
+  &.btn_facebook, &.btn_twitter {
+    width: 65px;
+    margin: 0px;
+    padding: 0px;
+  }
+  &.btn_privacy {
+    width: 130px;
+    margin: 0px;
+    padding: 0px;
+  }
+}
+
+/* プルダウンメニュー -- 言語切替メニュー
+--------------------------*/
+
+/* 背景 */
+
+.language_list {
+  width: 261px;
+  height: 36px;
+  margin: 0px auto;
+  background: url(../images/common/btn_language.png) no-repeat center top;
+  background-size: 261px 73px;
+  overflow: hidden;
+  li {
+    width: 50%;
+    height: 36px;
+    margin: 0px;
+    padding: 0px;
+    float: left;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}
+
+/* サイズ指定 */
+
+li {
+  &.btn_ja, &.btn_en {
+    width: 130px;
+    margin: 0px;
+    padding: 0px;
+  }
+  &.btn_ja_active {
+    width: 130px;
+    margin: 0px;
+    padding: 0px;
+    background: url(../images/common/btn_language.png) no-repeat center top;
+    background-size: 261px 73px;
+    background-position: 0% 100%;
+  }
+  &.btn_en_active {
+    background: url(../images/common/btn_language.png) no-repeat center top;
+    background-size: 261px 73px;
+    background-position: 100% 100%;
+  }
+}
+
+#open, #close {
+  display: block;
+  cursor: pointer;
+}
+
+/* todo:ライトボックス
+--------------------------*/
+
+#lb_overlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  margin: 0px;
+  padding: 0px;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.lb_container {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  margin: auto;
+  cursor: pointer;
+}
+
+.lb_wrapper {
+  margin: auto;
+  overflow: auto;
+  /* 内容がはみ出る場合の表示方法 */
+  z-index: 1500;
+  cursor: pointer;
+}
+
+.bg_lightbox {
+  padding: 8px;
+  overflow: auto;
+  /* 内容がはみ出る場合の表示方法 */
+  z-index: 1500;
+  cursor: pointer;
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  -moz-box-shadow: 0px 0px 1px #807e64;
+  -webkit-box-shadow: 0px 0px 1px #807e64;
+  box-shadow: 0px 0px 1px #807e64;
+  opacity: 0.94;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity = 94);
+  filter: alpha(opacity = 94);
+}
+
+/********** コンテンツ調整用CSS ***********/
+
+/* フロート
+--------------------------*/
+
+.float_l {
+  float: left;
+}
+
+.float_r {
+  float: right;
+}
+
+/* テキストアライン
+--------------------------*/
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.center {
+  text-align: center;
+}
+
+/* バーティカルアライン
+--------------------------*/
+
+.top {
+  vertical-align: top;
+}
+
+.middle {
+  vertical-align: middle;
+}
+
+.bottom {
+  vertical-align: bottom;
+}
+
+/* パディング調整
+--------------------------*/
+
+/* パディングなし */
+
+.pd_00 {
+  padding: 0px !important;
+}
+
+/* 四隅パディング */
+
+.pd_10 {
+  padding: 10px !important;
+}
+
+.pd_20 {
+  padding: 20px !important;
+}
+
+.pd_30 {
+  padding: 30px !important;
+}
+
+.pd_40 {
+  padding: 40px !important;
+}
+
+/* 上下パディング */
+
+.pd_top-bottom_10 {
+  padding: 10px 0px !important;
+}
+
+.pd_top-bottom_20 {
+  padding: 20px 0px !important;
+}
+
+.pd_top-bottom_30 {
+  padding: 30px 0px !important;
+}
+
+.pd_top-bottom_40 {
+  padding: 40px 0px !important;
+}
+
+/* 左右パディング */
+
+.pd_left-right_10 {
+  padding: 0px 10px !important;
+}
+
+.pd_left-right_20 {
+  padding: 0px 20px !important;
+}
+
+.pd_left-right_30 {
+  padding: 0px 30px !important;
+}
+
+.pd_left-right_40 {
+  padding: 0px 40px !important;
+}
+
+/* マージン調整
+--------------------------*/
+
+/* 左右マージン均等 */
+
+.mg_left-right_auto {
+  margin: 0px auto !important;
+}
+
+/* マージンなし */
+
+.mg_00 {
+  margin: 0px !important;
+}
+
+/* 左マージン */
+
+.ml_10 {
+  margin-left: 10px !important;
+}
+
+.ml_20 {
+  margin-left: 20px !important;
+}
+
+.ml_30 {
+  margin-left: 30px !important;
+}
+
+.ml_40 {
+  margin-left: 40px !important;
+}
+
+/* 右マージン */
+
+.mr_10 {
+  margin-right: 10px !important;
+}
+
+.mr_20 {
+  margin-right: 20px !important;
+}
+
+.mr_30 {
+  margin-right: 30px !important;
+}
+
+.mr_40 {
+  margin-right: 40px !important;
+}
+
+/* 下マージン */
+
+.mb_10 {
+  margin-bottom: 10px !important;
+}
+
+.mb_15 {
+  margin-bottom: 15px !important;
+}
+
+.mb_20 {
+  margin-bottom: 20px !important;
+}
+
+.mb_25 {
+  margin-bottom: 25px !important;
+}
+
+.mb_30 {
+  margin-bottom: 30px !important;
+}
+
+.mb_40 {
+  margin-bottom: 40px !important;
+}
+
+.mb_50 {
+  margin-bottom: 50px !important;
+}
+
+.mb_60 {
+  margin-bottom: 60px !important;
+}
+
+.mb_70 {
+  margin-bottom: 70px !important;
+}
+
+.mb_80 {
+  margin-bottom: 80px !important;
+}
+
+/* 幅調整
+--------------------------*/
+
+.wd_all {
+  width: 100% !important;
+}
+
+.wd_2nd {
+  width: 50% !important;
+}
+
+.wd_3rd {
+  width: 33% !important;
+}
+
+.wd_4th {
+  width: 25% !important;
+}
+
+.wd_5th {
+  width: 20% !important;
+}
+
+.wd_6th {
+  width: 16% !important;
+}
+
+.wd_7th {
+  width: 14% !important;
+}
+
+.wd_8th {
+  width: 13% !important;
+}
+
+.wd_10 {
+  width: 10% !important;
+}
+
+.wd_20 {
+  width: 20% !important;
+}
+
+.wd_30 {
+  width: 30% !important;
+}
+
+.wd_40 {
+  width: 40% !important;
+}
+
+.wd_50 {
+  width: 50% !important;
+}
+
+.wd_60 {
+  width: 60% !important;
+}
+
+.wd_70 {
+  width: 70% !important;
+}
+
+.wd_80 {
+  width: 80% !important;
+}
+
+.wd_90 {
+  width: 90% !important;
+}
+
+/*************** common END ******************/
+
+/* 2nd: top
+--------------------------*/
+
+.centerParentWrapper {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 100%;
+  margin: auto;
+}
+
+.centerChildWrapper {
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  right: -100%;
+  bottom: -100%;
+  width: 162px;
+  height: 80px;
+  margin: auto;
+}
+
+.wrapperBox {
+  position: absolute;
+  width: 162px;
+  height: 36px;
+  margin: auto;
+}
+
+.textSearch {
+  width: 62px;
+  height: 16px;
+}
+
+/* 2nd: access
+--------------------------*/
+
+dl.access {
+  width: 100%;
+  padding: 0px;
+  dt {
+    float: left;
+  }
+  dd {
+    margin: 0px 0px 4px 88px;
+  }
+}
+
+/* 2nd: career
+--------------------------*/
+
+.iconCareer {
+  width: 156px;
+  height: 156px;
+}
+
+table.career {
+  width: 100%;
+  th, td {
+    padding: 0px 0px 16px;
+  }
+}
+
+ul.careerProcedure {
+  margin: 10px 0 15px 2em;
+}
+
+/* 2nd: manage
+--------------------------*/
+
+.imgManagerThumb {
+  width: 98px;
+  height: 137px;
+}
+
+.imgManagerText {
+  width: 160px;
+  height: 62px;
+}
+
+/* 2nd: privacy
+--------------------------*/
+
+.imgPmark {
+  width: 44px;
+  height: 44px;
+}
+
+/* 2nd: project
+--------------------------*/
+
+nav .tab_list {
+  width: 161px;
+  height: 17px;
+  overflow: hidden;
+}
+
+.tab_list li {
+  margin: 0px;
+}
+
+/* サイズ指定 */
+
+li a {
+  &.btn_work, &.btn_award, &.btn_news {
+    height: 17px;
+    margin: 0px;
+    float: left;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  &.btn_work {
+    width: 54px;
+  }
+  &.btn_award {
+    width: 64px;
+  }
+  &.btn_news {
+    width: 43px;
+  }
+}
+
+/* タブメニュー -- 通常時 */
+
+.tab_list li {
+  a {
+    &.btn_work {
+      background: url(../images/projects/material/btn_tabmenu_sprite.png) no-repeat center top;
+      background-size: 161px 34px;
+      background-position: 0px -17px;
+    }
+    &.btn_award {
+      background: url(../images/projects/material/btn_tabmenu_sprite.png) no-repeat center top;
+      background-size: 161px 34px;
+      background-position: -54px -17px;
+    }
+    &.btn_news {
+      background: url(../images/projects/material/btn_tabmenu_sprite.png) no-repeat center top;
+      background-size: 161px 34px;
+      background-position: -118px -17px;
+    }
+    &.btn_work:hover {
+      background: url(../images/projects/material/btn_tabmenu_sprite.png) no-repeat center top;
+      background-size: 161px 34px;
+      background-position: 0px 0px;
+    }
+  }
+  &.ui-state-active a.btn_work {
+    background: url(../images/projects/material/btn_tabmenu_sprite.png) no-repeat center top;
+    background-size: 161px 34px;
+    background-position: 0px 0px;
+  }
+  a.btn_award:hover, &.ui-state-active a.btn_award {
+    background: url(../images/projects/material/btn_tabmenu_sprite.png) no-repeat center top;
+    background-size: 161px 34px;
+    background-position: -54px 0px;
+  }
+  a.btn_news:hover, &.ui-state-active a.btn_news {
+    background: url(../images/projects/material/btn_tabmenu_sprite.png) no-repeat center top;
+    background-size: 161px 34px;
+    background-position: -118px 0px;
+  }
+}

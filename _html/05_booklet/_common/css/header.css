@@ -1,0 +1,95 @@
+@charset "utf-8";
+
+/* CSS header */
+
+
+
+
+/*==============================================================
+
+	CSS tuned by Atsushi Kikushima 
+	tuned at 2011/07/30
+
+==============================================================*/
+
+
+
+
+
+
+
+
+/*==============================================================
+
+	Parts 
+
+==============================================================*/
+
+
+/* Header ===============================*/
+
+#header {
+	background-image: url();
+	background-repeat: no-repeat;
+	background-color: #ffffff;
+	background-position: center top;
+}
+
+#header h1 {
+	color: #b0cac4;
+	font-size: 10px;
+	font-weight:normal;
+	line-height: 13px;
+}
+
+#header .logo {
+}
+
+#header .btn {
+}
+
+#header .btn li {
+	float: right;
+	font-size: 80%;
+	border: 1px dotted #000;
+	width:100%;
+}
+
+#header .btn li:hover {
+	background-color: #333333;
+	color: #FFFFFF;
+	cursor: pointer;
+}
+
+#header p {
+	text-align: left;
+	font-size: 10px;
+	font-weight: normal;
+}
+
+#header #font li{
+	float: left;
+	border: 1px dotted #000;
+}
+
+#header .btn li.last, #header #font li.last {
+}
+
+#main_img {
+	z-index: 1;
+}
+
+#main_img  h2 {
+	font-size:80%;
+	font-style: normal;
+}
+
+#main_img  p {
+	font-size:80%;
+	font-style: normal;
+}
+
+#main_img  img {
+	opacity: 2;
+}
+

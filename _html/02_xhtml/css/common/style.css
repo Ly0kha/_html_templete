@@ -1,0 +1,1292 @@
+@charset "utf-8";
+
+/****************************************
+
+			   common
+
+*****************************************/
+
+/********** コンテンツ共有CSS ***********/
+
+/* ページ本体
+--------------------------*/
+html,
+body,
+#container {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+}
+
+html {
+	font-size: 100%;
+	-webkit-text-size-adjust: 100%;
+	  -ms-text-size-adjust: 100%;
+}
+
+body {
+	margin: 0px;
+	font-family: "Lucida Grande",Helvetica,"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ",Meiryo,"ＭＳ Ｐゴシック", "MS PGothic",Osaka,sans-serif;
+	font-size: 1.6rem; /* SP用 */
+	font-size: 14px; /* PC用 */
+	line-height: 1.7;
+	color: #000;
+	-webkit-text-size-adjust: 100%;
+	word-break: break-all;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+}
+
+#container {
+	position: relative;
+	margin: 0px auto;
+	width: 100%;
+	padding: 0px;
+	height: 100%;
+	overflow: visible;
+}
+
+#wrapper {
+	position: relative;
+	margin: 0px auto;
+	padding: 0px 20px;
+	width: 980px;
+	height: 100%;
+	overflow: visible;
+	z-index: 10;
+}
+
+
+/* header footer */
+#header,
+#footer {
+ 	position: relative;
+	width: 980px;
+	margin: 0px auto;
+	padding: 0px;
+	overflow: hidden;
+	z-index: 10;
+}
+
+#header {
+	height: 160px;
+}
+
+#header .logo {
+	position:absolute;
+	left: 0px;
+	margin: 20px;
+	padding: 0px;
+	display: block;
+}
+
+#header h1 {
+	height: 13px;
+	padding: 5px 0px 0px 20px;
+}
+
+#header .btn {
+	position: absolute;
+    right: 0px;
+    top: 5px;
+}
+
+#header .btn li {
+	margin: 0px 10px 0px 0px;
+	padding: 5px 10px;
+
+	float: left;
+	font-size: 80%;
+	border: 1px solid #ccc;
+}
+
+#header .btn li.last, #header #font li.last {
+	margin: 0px;
+}
+
+#header p {
+	position:absolute;
+	top: 40px;
+	right: 0px;
+	width: 500px;
+
+	text-align: left;
+	font-size: 10px;
+	font-weight: normal;
+}
+
+#header #font {
+	position:absolute;
+	top: 100px;
+	right: 0px;
+}
+
+#header #font li {
+	margin: 0px 10px 0px 0px;
+	padding: 5px 10px;
+
+	float: left;
+	border: 1px solid #ccc;
+}
+
+#header .btn li:hover {
+	background-color: #333333;
+	color: #FFFFFF;
+	cursor: pointer;
+}
+
+#head_menu {
+	background-color: #bece2f;
+	width: 100%;
+	margin: 0px auto;
+	padding: 0px;
+	text-align: center;
+}
+
+#foot_menu {
+	margin: 0px auto;
+	padding: 0px;
+	text-align: center;
+	overflow: hidden;
+}
+
+
+
+
+/* 背景色および背景画像の切り替え
+--------------------------*/
+
+/* 背景白
+--------------------------*/
+
+body {
+	background: #fff;
+}
+
+
+/* リンク、見出し、フォームパーツ
+--------------------------*/
+
+/* リンク */
+a {
+	color: #000;
+	text-decoration: underline;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/* 見出し */
+h1 {
+	color: #000;
+	font-size: 10px;
+	font-weight:normal;
+	line-height: 13px;
+}
+
+h2 {
+	margin: 0px 0px 4px;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+	.h2_title {
+		width: 161px;
+		height: 18px;
+	}
+
+h3 {
+	margin: 0px;
+	font-size: 1.2em;
+}
+
+h4,
+h5 {
+	margin: 16px 0px;
+}
+
+h4 {
+	font-weight: bold;
+}
+
+/* フォーム */
+input {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 140px;
+
+	background-color: rgba(0,0,0,0);
+	color: #333;
+	border: none;
+	vertical-align: middle;
+	text-align: center;
+	font-size: 14px;
+
+}
+
+input[type="text"],
+input[type="password"],
+textarea,
+select {
+	font-family: "Lucida Grande","ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ",Meiryo,"ＭＳ Ｐゴシック", "MS PGothic",Helvetica,Osaka,sans-serif;
+}
+
+input,
+textarea,
+select {
+	outline:none;
+}
+
+/* input、textareaのカスタム */
+.bg_input input,
+.bg_textarea textarea,
+.bg_inputChecker input {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	background-color: rgba(0,0,0,0);
+	color: #333;
+	border: none;
+	font-size: 14px;
+	text-align: left;
+	padding: 4px;
+}
+
+.bg_input input,
+.bg_input button {
+	width: 100%;
+	vertical-align: middle;
+}
+
+.bg_textarea textarea {
+	width: 100%;
+	height: 120px;
+
+	vertical-align: top;
+	resize: none;
+}
+
+.bg_inputChecker input {
+	display: none;
+	width: 20px;
+	vertical-align: bottom;
+}
+
+#selected {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 240px;
+
+	background-color: rgba(0,0,0,0);
+	color: #333;
+	font-size: 12px;
+	vertical-align: middle;
+	text-align: center;
+}
+
+/* checkboxのカスタム */
+label.checkbox {
+	display: inline;
+}
+
+.regular-checkbox {
+	display: none;
+}
+
+.regular-checkbox + label.checkbox {
+	padding: 9px;
+	display: inline-block;
+	position: relative;
+}
+
+.regular-checkbox + label.checkbox:active, .regular-checkbox:checked + label.checkbox:active {
+}
+
+.regular-checkbox:checked + label.checkbox {
+	color: #99a1a7;
+}
+
+.regular-checkbox:checked + label.checkbox:after {
+	content: '\2714';
+	font-size: 18px;
+	position: absolute;
+	top: -5px;
+	left: 3px;
+	/*text-shadow:
+		-1px -1px 1px rgba(0, 0, 0, 1),
+		1px 1px 1px rgba(0, 0, 0, 0.4);
+	*/
+	color: #000;
+}
+
+
+/* 本文、コンテンツボックス、テーブル、リスト、定義、罫線など
+--------------------------*/
+/* 本文、文字装飾*/
+p {
+	margin: 0px;
+	padding: 0px;
+}
+
+	p.caption_left,
+	p.caption_center {
+		height: 24px;
+		margin: 0px 0px 16px;
+		padding: 0px;
+
+		font-size: 0.83em;
+		line-height: 1.15;
+	}
+
+	p.caption_left {
+		text-align: left;
+	}
+
+	p.caption_center {
+		text-align: center;
+	}
+
+.bold {
+	font-weight: bold;
+}
+
+/* 文字大きさ */
+.large {
+	font-size:1.8em;
+}
+
+.small {
+	font-size:0.8em;
+}
+
+/* ボックス、ブロック指定 */
+.box {
+	margin: 0px;
+	overflow: hidden;
+}
+
+.block {
+	display: block;
+}
+
+/* テーブル */
+table {
+	width: 99%;
+	margin: 0 auto;
+}
+
+/* 罫線ありテーブル */
+table.border {
+	width: 98%;
+	margin: 8px auto;
+
+	border: 1px solid #000;
+}
+
+table.border th,
+table.border td {
+	margin: 0px;
+	padding: 8px;
+
+	font-size: 1em;
+	text-align: left;
+	border-bottom: 1px solid #000;
+}
+
+table.border th {
+	border-right: 1px solid #000;
+}
+
+/* リスト */
+ul {
+	margin: 0px;
+	padding: 0px;
+}
+
+li {
+	margin: 0px;
+}
+
+/* ナカグロありリスト */
+ul.list {
+	list-style: outside;
+}
+
+ul.list li {
+	margin: 0px 0px 16px 20px;
+}
+
+/* 丸数字リスト */
+ul.list_circle_decimal li {
+    margin-bottom: 8px;
+    text-indent: -1em;
+}
+
+table.border td ul.list_circle_decimal li {
+    margin-bottom: 8px;
+    text-indent: -1.4em;
+}
+
+/* 数字付きリスト */
+ol.list {
+	list-style: outside decimal
+}
+
+ol.list li {
+	margin: 0px 0px 16px 20px;
+}
+
+/* 定義：ヘッドラインなど */
+dl {
+	width: 100%;
+	padding: 0px;
+}
+
+dt {
+	float: left;
+}
+
+dd {
+	width: 88%;
+	min-height: 120px;
+	margin: 0px 0px 4px 120px;
+}
+
+/* 境界線指定 */
+hr {
+	border-bottom: 1px #666 solid;
+	opacity: 0.6;
+	clear: both;
+}
+
+	.hr_large {
+		margin: 30px 0px;
+	}
+
+	.hr_small {
+		margin: 10px 0px;
+	}
+
+.side_line {
+	border-right:1px dotted #ccc;
+}
+
+.border {
+	border: 1px solid #000;
+}
+.none {
+	border: none;
+}
+
+/* テキストカラー指定 */
+.red {
+	color: #F00;
+}
+
+/* インラインアイコン指定 */
+img.mailIcon {
+    margin-left: 2px;
+    vertical-align: middle;
+}
+
+address {
+	margin: 40px 0px;
+	text-align: center;
+	font-size: 0.8em;
+}
+
+
+/* ナビゲーション関連および検索窓
+--------------------------*/
+
+/* グローバルメニュー検索窓側 -- ポジション指定 */
+div.search_area {
+	position: absolute;
+	left: 0px;
+	width: 200px;
+	min-width: 200px;
+}
+
+/* グローバルメニューボタン側 -- ポジション指定 */
+div.menu_area {
+	position: absolute;
+	right: 0px;
+	width: 80px;
+}
+
+/* グローバルメニュー -- サイズ指定 */
+
+/* ヘッダーナビ */
+ul#nav {
+	list-style-type: none;
+	width: 980px;
+	margin: 0px auto;
+	padding: 0px;
+	z-index: 50;
+}
+
+ul#nav li {
+	position: relative;
+	width: 16.6%;
+	float: left;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+ul#nav li a {
+	display: block;
+	margin: 0;
+	padding: 16px 0;
+	background: #8a9b0f;
+	color: #fff;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 1;
+	text-decoration: none;
+}
+
+ul#nav li a {
+	display: block;
+	margin: 0;
+	padding: 16px 0;
+	background: #8a9b0f;
+	color: #fff;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 1;
+	text-decoration: none;
+}
+
+ul#nav li ul {
+	list-style: none;
+	position: absolute;
+	z-index: 100;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+ul#nav li ul li {
+	overflow: hidden;
+	width: 100%;
+	height: 0;
+	color: #fff;
+	transition: .2s;
+}
+
+ul#nav li ul li a {
+	padding: 13px 15px;
+	background: #7c8c0e;
+	text-align: left;
+	font-size: 12px;
+	font-weight: normal;
+}
+
+ul#nav > li:hover > a {  background: #7c8c0e }
+ul#nav > li:hover li:hover > a {  background: #6e7c0c }
+ul#nav li:hover > ul > li {
+	overflow: visible;
+	height: 38px;
+}
+
+ul#nav li ul li ul {
+	top: 0;
+	left: 100%;
+}
+
+ul#nav li:last-child ul li ul {
+	left: -100%;
+	width: 100%;
+}
+
+ul#nav li ul li ul li a {  background: #616d0b }
+ul#nav li:hover ul li ul li:hover > a {  background: #535d09 }
+ul#nav li ul li ul:before {
+	position: absolute;
+	content: "";
+	top: 13px;
+	left: -20px;
+	width: 0;
+	height: 0;
+	border: 5px solid transparent;
+	border-left-color: #454e08;
+}
+
+ul#nav li:last-child ul li ul:before {
+	position: absolute;
+	content: "";
+	top: 13px;
+	left: 200%;
+	margin-left: -20px;
+	border: 5px solid transparent;
+	border-right-color: #454e08;
+}
+
+
+/* フッターナビ */
+#footer a {
+	padding:0.5em 0px;
+	width: 100%;
+	color: #000;
+}
+
+#footer a:hover {
+	color: #000;
+	text-decoration: none;
+}
+
+#foot_menu ul {
+	margin: 20px 0px;
+	padding: 0px;
+}
+
+#foot_menu ul li {
+	display: inline;
+	margin: 0px;
+	padding: 0px 10px;
+}
+
+#foot_menu a {
+	padding:0.5em 0px;
+	width: 100%;
+	color: #000;
+}
+
+#foot_menu a:hover {
+	color: #000;
+	text-decoration: none;
+}
+
+
+/* グローバルメニュー -- グローバルメニュー共通パーツ
+--------------------------*/
+
+/* サイズ指定 */
+li.btn_back,
+li.btn_navi,
+li.btn_mail,
+li.search {
+	margin: 0px 4px 0px 0px;
+	height: 36px;
+}
+
+li.btn_back {
+	width: 50px;
+}
+
+li.btn_navi,
+li.btn_mail {
+	width: 36px;
+}
+
+/* ボタン箇所のみテキストリンク処理 */
+li.btn_back,
+li.btn_navi,
+li.btn_mail {
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+
+/* グローバルメニュー -- 通常時
+--------------------------*/
+
+.menu li.btn_back a.gmenu {
+	background: url(../images/common/btn_gmenu_sprite.png) no-repeat center top;
+	background-size: 300px 72px;
+	background-position: 0px 0px;
+}
+
+.menu li.btn_navi a.gmenu {
+	background: url(../images/common/btn_gmenu_sprite.png) no-repeat center top;
+	background-size: 300px 72px;
+	background-position: -222px 0px;
+}
+
+.menu li.btn_mail a.gmenu {
+	background: url(../images/common/btn_gmenu_sprite.png) no-repeat center top;
+	background-size: 300px 72px;
+	background-position: -264px 0px;
+}
+
+
+/* グローバルメニュー -- アクティブ時
+--------------------------*/
+
+.menu_active li.btn_back a.gmenu {
+	background: url(../images/common/btn_gmenu_sprite.png) no-repeat center top;
+	background-size: 300px 72px;
+	background-position: 0px -36px;
+}
+
+.menu_active li.btn_navi a.gmenu {
+	background: url(../images/common/btn_gmenu_sprite.png) no-repeat center top;
+	background-size: 300px 72px;
+	background-position: -222px -36px;
+}
+
+.menu_active li.btn_mail a.gmenu {
+	background: url(../images/common/btn_gmenu_sprite.png) no-repeat center top;
+	background-size: 300px 72px;
+	background-position: -264px -36px;
+}
+
+
+/* グローバルメニュー -- その他
+--------------------------*/
+
+.btn_search {
+	position: absolute;
+	right: 4px;
+	top: 12px;
+	width: 14px;
+	height: 14px;
+}
+
+.btn_backtop {
+	width: 36px;
+	height: 36px;
+
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+
+/* グローバルメニュー -- 検索窓
+--------------------------*/
+
+/* 背景 */
+.bg_search {
+	position: relative;
+	left: 0px;
+	top: -1px;
+	width: 100%;
+	height: 36px;
+
+	background-color: #ffffff;
+	border: 1px solid rgba(122, 122, 122, 0.5);
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	 border-radius: 4px;
+
+	-moz-box-shadow: inset 2px 2px 2px #a8a47e;
+	-webkit-box-shadow: inset 2px 2px 2px #a8a47e;
+	box-shadow: inset 2px 2px 2px #a8a47e;
+
+	opacity: 0.66;
+	-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity = 66);
+	filter: alpha(opacity = 66);
+}
+
+/* サイズ指定 */
+li.search {
+	width: 100%;
+}
+
+.bg_search input {
+	margin: 10px 0px;
+}
+
+
+/* プルダウンメニュー -- プルダウン共通パーツ
+--------------------------*/
+
+/* 背景 */
+.panel {
+	position: absolute;
+	right: 0px;
+	top: 40px;
+	width: 303px;
+	height: 509px;
+
+	background: url(../images/common/bg_menu.png) no-repeat center top;
+	background-size: 303px 509px;
+	z-index: 2000;
+}
+
+.panel_wrapper {
+	margin: 15px 2px 15px 2px;
+	padding: 0px;
+	overflow: hidden;
+}
+
+
+/* プルダウンメニュー -- メインメニュー
+--------------------------*/
+
+/* 背景 */
+.menu_list {
+	width: 300px;
+	height: 372px;
+
+	background: url(../images/common/bg_navi.png) no-repeat center top;
+	background-size: 300px 372px;
+	overflow: hidden;
+}
+
+/* サイズ指定 */
+.menu_list li {
+	width:100%;
+	height: 61px;
+	margin: 0px;
+	float: none;
+
+	display: block;
+	border-bottom: 1px #cfcfcf solid;
+
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+
+/* プルダウンメニュー -- 外部メニュー
+--------------------------*/
+
+/* 背景 */
+.sns_list {
+	width: 261px;
+	height: 36px;
+	margin: 0px auto;
+
+	background: url(../images/common/btn_sns.png) no-repeat center top;
+	background-size: 261px 36px;
+	overflow: hidden;
+}
+
+/* サイズ指定 */
+.sns_list li {
+	margin: 0px;
+	height: 36px;
+	float: left;
+
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+li.btn_facebook,
+li.btn_twitter {
+	width: 65px;
+	margin: 0px;
+	padding: 0px;
+}
+
+li.btn_privacy {
+	width: 130px;
+	margin: 0px;
+	padding: 0px;
+}
+
+
+/* プルダウンメニュー -- 言語切替メニュー
+--------------------------*/
+
+/* 背景 */
+.language_list {
+	width: 261px;
+	height: 36px;
+	margin: 0px auto;
+
+	background: url(../images/common/btn_language.png) no-repeat center top;
+	background-size: 261px 73px;
+	overflow: hidden;
+}
+
+/* サイズ指定 */
+.language_list li {
+	width:50%;
+	height: 36px;
+	margin: 0px;
+	padding: 0px;
+	float: left;
+
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+li.btn_ja,
+li.btn_en,
+li.btn_ja_active,
+li.btn_ja_active {
+	width: 130px;
+	margin: 0px;
+	padding: 0px;
+}
+
+li.btn_ja_active {
+	background: url(../images/common/btn_language.png) no-repeat center top;
+	background-size: 261px 73px;
+	background-position: 0% 100% ;
+}
+
+li.btn_en_active {
+	background: url(../images/common/btn_language.png) no-repeat center top;
+	background-size: 261px 73px;
+	background-position: 100% 100% ;
+}
+
+#open,
+#close {
+	display: block;
+	cursor: pointer;
+}
+
+
+/* todo:ライトボックス
+--------------------------*/
+#lb_overlay {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	margin: 0px;
+	padding: 0px;
+
+	background:rgba(0,0,0,0.5);
+	z-index: 1000;
+	cursor: pointer;
+}
+
+.lb_container {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	margin: auto;
+
+	cursor: pointer;
+}
+
+.lb_wrapper {
+	margin: auto;
+	overflow: auto;  /* 内容がはみ出る場合の表示方法 */
+	z-index: 1500;
+	cursor: pointer;
+}
+
+.bg_lightbox {
+	padding: 8px;
+
+	overflow: auto;  /* 内容がはみ出る場合の表示方法 */
+	z-index: 1500;
+	cursor: pointer;
+
+	background-color: #ffffff;
+
+	border: 1px solid #ffffff;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	 border-radius: 4px;
+
+	-moz-box-shadow: 0px 0px 1px #807e64;
+	-webkit-box-shadow: 0px 0px 1px #807e64;
+	 box-shadow: 0px 0px 1px #807e64;
+
+	opacity: 0.94;
+	-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity = 94);
+	filter: alpha(opacity = 94);
+}
+
+
+/********** コンテンツ調整用CSS ***********/
+
+/* フォントサイズチェンジ
+--------------------------*/
+
+#font_change li:hover {
+	background-color: #333333;
+	color: #FFFFFF;
+	cursor: pointer;
+}
+
+.font_s {
+	font-size: 0.8em;
+}
+
+.font_m {
+	font-size: 1em;
+}
+
+.font_l {
+	font-size: 1.2em;
+}
+
+
+/* フロート
+--------------------------*/
+
+.float_l {
+	float: left;
+}
+
+.float_r {
+	float: right;
+}
+
+
+/* テキストアライン
+--------------------------*/
+
+.left {
+	text-align: left;
+}
+
+.right {
+	text-align: right;
+}
+
+.center {
+	text-align: center;
+}
+
+
+/* バーティカルアライン
+--------------------------*/
+
+.top {
+	vertical-align: top;
+}
+
+.middle {
+	vertical-align: middle;
+}
+
+.bottom {
+	vertical-align: bottom;
+}
+
+
+/* パディング調整
+--------------------------*/
+
+/* パディングなし */
+.pd_00 {
+	padding: 0px !important;
+}
+
+/* 四隅パディング */
+.pd_10 {
+	padding: 10px !important;
+}
+
+.pd_20 {
+	padding: 20px !important;
+}
+
+.pd_30 {
+	padding: 30px !important;
+}
+
+.pd_40 {
+	padding: 40px !important;
+}
+
+/* 上下パディング */
+.pd_top-bottom_10 {
+	padding: 10px 0px !important;
+}
+
+.pd_top-bottom_20 {
+	padding: 20px 0px !important;
+}
+
+.pd_top-bottom_30 {
+	padding: 30px 0px !important;
+}
+
+.pd_top-bottom_40 {
+	padding: 40px 0px !important;
+}
+
+/* 左右パディング */
+.pd_left-right_10 {
+	padding: 0px 10px !important;
+}
+
+.pd_left-right_20 {
+	padding: 0px 20px !important;
+}
+
+.pd_left-right_30 {
+	padding: 0px 30px !important;
+}
+
+.pd_left-right_40 {
+	padding: 0px 40px !important;
+}
+
+
+/* マージン調整
+--------------------------*/
+
+/* 左右マージン均等 */
+.mg_left-right_auto {
+	margin: 0px auto !important;
+}
+
+/* マージンなし */
+.mg_00 {
+	margin: 0px !important;
+}
+
+/* 左マージン */
+.ml_10 {
+	margin-left: 10px !important;
+}
+
+.ml_20 {
+	margin-left: 20px !important;
+}
+
+.ml_30 {
+	margin-left: 30px !important;
+}
+
+.ml_40 {
+	margin-left: 40px !important;
+}
+
+/* 右マージン */
+.mr_10 {
+	margin-right: 10px !important;
+}
+
+.mr_20 {
+	margin-right: 20px !important;
+}
+
+.mr_30 {
+	margin-right: 30px !important;
+}
+
+.mr_40 {
+	margin-right: 40px !important;
+}
+
+/* 下マージン */
+.mb_10 {
+	margin-bottom: 10px !important;
+}
+
+.mb_15 {
+	margin-bottom: 15px !important;
+}
+
+.mb_20 {
+	margin-bottom: 20px !important;
+}
+
+.mb_25 {
+	margin-bottom: 25px !important;
+}
+
+.mb_30 {
+	margin-bottom: 30px !important;
+}
+
+.mb_40 {
+	margin-bottom: 40px !important;
+}
+
+.mb_50 {
+	margin-bottom: 50px !important;
+}
+
+.mb_60 {
+	margin-bottom: 60px !important;
+}
+
+.mb_70 {
+	margin-bottom: 70px !important;
+}
+
+.mb_80 {
+	margin-bottom: 80px !important;
+}
+
+
+/* 幅調整
+--------------------------*/
+
+.wd_all {
+	width: 100% !important;
+}
+
+.wd_2nd {
+	width: 50% !important;
+}
+
+.wd_3rd {
+	width: 33% !important;
+}
+
+.wd_4th {
+	width: 25% !important;
+}
+
+.wd_5th {
+	width: 20% !important;
+}
+
+.wd_6th {
+	width: 16% !important;
+}
+
+.wd_7th {
+	width: 14% !important;
+}
+
+.wd_8th {
+	width: 13% !important;
+}
+
+.wd_10 {
+	width: 10% !important;
+}
+
+.wd_20 {
+	width: 20% !important;
+}
+
+.wd_30 {
+	width: 30% !important;
+}
+
+.wd_40 {
+	width: 40% !important;
+}
+
+.wd_50 {
+	width: 50% !important;
+}
+
+.wd_60 {
+	width: 60% !important;
+}
+
+.wd_70 {
+	width: 70% !important;
+}
+
+.wd_80 {
+	width: 80% !important;
+}
+
+.wd_90 {
+	width: 90% !important;
+}
+
+/*************** common END ******************/

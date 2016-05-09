@@ -1,0 +1,160 @@
+@charset "utf-8";
+
+/* CSS font */
+
+
+
+
+/*==============================================================
+
+	CSS tuned by Atsushi Kikushima 
+	tuned at 2011/07/30
+
+==============================================================*/
+
+
+
+
+
+
+
+
+/*==============================================================
+
+	Parts 
+
+==============================================================*/
+
+
+/* Common ===============================*/
+
+/* テキスト装飾関係 */
+
+.txt_right {
+	text-align: right;
+}
+
+.txt_center {
+	text-align: center;
+}
+
+.txt_left {
+	text-align: left;
+}
+
+.txt_60p {
+	font-size: 60%;
+}
+
+.txt_80p {
+	font-size: 80%;
+}
+
+.txt_100p {
+	font-size: 100%;
+}
+
+.txt_140p {
+	font-size: 140%;
+}
+
+.txt_160p {
+	font-size: 160%;
+}
+
+.txt_180p {
+	font-size: 180%;
+}
+
+.txt_200p {
+	font-size: 200%;
+}
+
+.txt_strong {
+	font-weight: bold;
+}
+
+.txt_orange_strong {
+	font-weight: bold;
+	color: #FF6600;
+}
+
+.txt_orange_normal {
+	font-weight: normal;
+	color: #FF6600;
+}
+
+.txt_yellow_strong {
+	font-weight: bold;
+	color: #f8ea48;
+}
+
+.txt_yellow_normal {
+	font-weight: normal;
+	color: #f8ea48;
+}
+
+.txt_red_strong {
+	font-weight: bold;
+	color: #CC0000;
+}
+
+.txt_red_normal {
+	font-weight: normal;
+	color: #CC0000;
+}
+
+
+/* 共通テキストサイズ */
+
+#contents p {
+	margin-bottom: 0.8em;
+	/*font-size: 80%;*/
+	line-height: 1.5em;
+}
+
+#contents p.attention {
+	color: #666;
+	font-size: 70%;
+	line-height: 1.25em;
+}
+
+#contents li {
+	line-height: 1.5em;
+}
+
+#side .categories ,#side .archives {
+	font-size: 80%;
+	line-height: 1.8em;
+}
+
+#fontChange li:hover {
+	background-color: #333333;
+	color: #FFFFFF;
+	cursor: pointer;
+}
+
+#fontChange li {
+	border: 1px solid #CCCCCC;
+	display: block;
+	float: right;
+	height: 30px;
+	line-height: 30px;
+	margin-right: 5px;
+	padding: 0;
+	text-align: center;
+	text-shadow: 1px 1px 1px #CCCCCC;
+	width: 30px;
+}
+
+.fontS {
+	font-size: 90%;
+}
+
+.fontM {
+	font-size: 100%;
+}
+
+.fontL {
+	font-size: 110%;
+}

@@ -1,0 +1,637 @@
+<!-- document.write -->
+<h4>ドキュメントにテキストを加える</h4>
+
+<div class="box mb_20">
+	<script>
+		var myText = "テキストが入ります。"
+		document.write(myText);
+		alert(myText);
+	</script>
+</div>
+
+var = 変数名;
+var = 変数名 = 値;
+
+
+<!-- Math.random -->
+<h4>ランダムな数字を出す</h4>
+
+<button type="button" onClick="alert(randomNumber);">
+	ランダム数
+</button>
+
+<div class="box mb_20">
+	<script>
+		var randomNumber = Math.random();
+	</script>
+</div>
+
+function 関数名() {
+	//　ステートメント
+}
+
+
+<!-- Math.floor -->
+<h4>関数を定義してランダムな数字を出す</h4>
+
+<button type="button" onClick="showRandomNumber()">
+	ランダム数
+</button>
+
+<div class="box mb_20">
+	<script>
+		function showRandomNumber() {
+			var randomNumber = Math.floor( Math.random() * 6 ) + 1;
+			alert(randomNumber);
+		}
+	</script>
+</div>
+
+var randomNumber;  // 追加
+function showRandomNumber() {
+//  var randomNumber = Math.floor(Math.random() * 6) + 1;
+	randomNumber = Math.floor(Math.random() * 6) + 1;  //  書替え
+	alert(randomNumber);
+}
+
+var my_array = new Array();
+my_array.push(100);
+my_array.push(200);
+my_array.push(300);
+alert(my_array);
+
+var test_array = [];
+test_array[0] = "<img src='images/common/main_img01.jpg' alt='01' />";
+test_array[1] = "<img src='images/common/main_img02.jpg' alt='02' />";
+test_array[2] = "<img src='images/common/main_img03.jpg' alt='03' />";
+document.write(test_array);
+// alert(test_array);
+
+
+var test_array = [];
+test_array = ["<img src='images/index/detail_01.jpg' alt='01' />","<img src='images/index/detail_02.jpg' alt='02' />","<img src='images/index/detail_01.jpg' alt='03' />"];
+document.write(test_array);
+// alert(test_array);
+
+
+var my_date = new Date();
+var nDay = my_date.getDay();
+var my_array = ["日曜日","火曜日","水曜日","木曜日","金曜日","土曜日"] ;
+document.write([my_date, my_array[nDay]]);
+
+<head>
+
+<script>
+	function initialize() {
+		// 初めに行う処理
+	}
+</script>
+
+</head>
+
+<body onload="initialize();">
+	<canvas id="myCanvas" width="240" height="180"></canvas>
+</body>
+
+
+<head>
+
+<script>
+	function initialize() {
+
+		// canvas要素のIDを取得
+		var canvasElement = document.getElementById("myCanvas");
+
+		// コンテキストの参照を得る。引数は”2d"
+		var context2D = canvasElement.getContext("2d");
+
+		// 2D描画をする為のメソッド。X:10 y:10 width:100px height: 100px
+		context2D.fillRect(10, 10, 100, 100);
+
+	}
+</script>
+
+</head>
+
+<body onload="initialize();">
+	<canvas id="myCanvas" width="240" height="180"></canvas>
+</body>
+
+2Dコンテクスト.fillstyle = カラー値
+
+function initialize() {
+
+	// canvas要素のIDを取得
+	var canvasElement = document.getElementById("myCanvas");
+
+	// コンテキストの参照を得る。引数は”2d"
+	var context2D = canvasElement.getContext("2d");
+
+	// 描画の為の関数を定める
+	draw(context2D);
+
+}
+
+function draw(context2D) {
+
+	// 矩形に塗る為のメソッド。16進数で記述
+	context2D.fillStyle = "#0000FF"
+
+	// 2D描画をする為のメソッド。X:10 y:10 width:100px height: 100px
+	context2D.fillRect(10, 10, 100, 100);
+
+}
+
+
+2Dコンテクスト.beginPath();	// 直線の始点
+	// 塗りと線の設定
+	// パスを描く
+2Dコンテクスト.closePath();	// 直線の終点
+2Dコンテクスト.fill();			// 矩形に塗りを入れる
+2Dコンテクスト.stroke();		// 線として描く
+
+function initialize() {
+
+	// canvas要素のIDを取得
+	var canvasElement = document.getElementById("myCanvas");
+
+	// コンテキストの参照を得る。引数は”2d"
+	var context2D = canvasElement.getContext("2d");
+
+	// 描画の為の関数を定める
+	draw(context2D);
+
+}
+
+function draw(context2D) {
+
+	// 矩形の始点
+	context2D.beginPath();
+
+		// 線に塗る色指定のメソッド。16進数で記述
+		context2D.strokeStyle = "#0000FF"
+
+		// 矩形に塗る色指定のメソッド。16進数で記述
+		context2D.fillStyle = "#0000FF"
+
+		// 矩形パスを描く関数
+		drawRect(context2D, 10, 10, 100, 100);
+
+	// 矩形の終点
+	context2D.closePath();
+
+	// 矩形に塗る為のメソッド。
+	context2D.fill();
+
+	// 線に塗る為のメソッド。
+	context2D.stroke();
+
+}
+
+function drawRect(context2D, nX, nY, nWidth, nHeight) {
+
+	// 矩形の描き初めの座標
+	context2D.moveTo(nX, nY);
+
+	// 右上
+	context2D.lineTo(nX + nWidth , nY);
+
+	// 右下
+	context2D.lineTo(nX + nWidth , nY + nHeight);
+
+	// 左下
+	context2D.lineTo(nX, nY + nHeight);
+
+	// 左上（始点/終点）
+	context2D.lineTo(nX, nY);
+
+}
+
+drawStar(2Dコンテクスト, 中心のX座標, 中心のY座標, 頂点数, 山の半径, 谷の半径)
+
+// drawStar(2Dコンテクスト, 中心のX座標, 中心のY座標, 頂点数, 山の半径, 谷の半径)
+function drawStar(context2D, nX, nY, numVertex, longRadius, shortRadius) {
+
+	// 円周率。Math.PI定数で定めている。
+	var nStart = Math.PI;
+
+	// 山と谷の角度を求め、nTheta変数に定める
+	var nTheta = nStart / numVertex;
+
+	// ラジアン : 角度を単位円における弧の長さで表す。つまり2πラジアンは角度に直すと360度。
+	// このソースコードでは現在の角度をnRadians変数として宣言
+	var nRadians = -nStart / 2;
+
+	// 時計の12時の位置からスタート (角度 - π / 2ラジアン)
+	context2D.moveTo(nX, -longRadius + nY);
+
+	//　for文で中心角を加えて谷の座標、山の座標を各々三角関数(Math.cos, Math.sin)で求め、lineToメソッドでパスを作る
+	for (var i = 1; i <= numVertex; i++) {
+		nRadians += nTheta;
+		context2D.lineTo(shortRadius * Math.cos(nRadians) + nX, shortRadius * Math.sin(nRadians) + nY);
+		context2D.lineTo(longRadius * Math.cos(nRadians) + nX, longRadius * Math.sin(nRadians) + nY);
+	}
+
+}
+
+for (初期化処理; 継続条件; 更新処理 ) {
+	// 繰り返し行う処理
+}
+
+for (var i = 1; i <= 10; i++) {
+	document.write("<p class='mb_20'>テキストが入ります。</p>")
+}
+
+var rank = 1;
+var pref = new Array(
+	"東京", "千葉", "埼玉", "神奈川", "栃木", "群馬", "茨城"
+);
+
+document.write("<table border='2'>");
+
+for (var i = 0; i <= 4; i++) {
+	document.write("<tr>");
+	document.write("<th>" + rank + "</th>");
+	document.write("<td>" + pref[i] + "</td>");
+	document.write("</tr>");
+	rank++;
+}
+
+document.write("</table>");
+
+
+for (var i = 1; i <= 10; i++) {
+	if (i == 3) continue;
+	if (i == 7) break;
+	document.write("<p class='mb_20'>" + i + "行目のテキストが入ります。</p>");
+}
+
+
+<!-- CreateJS / EaselJS -->
+<script src="js/lib/createjs/createjs-2015.05.21.min.js"></script>
+<script src="js/lib/easeljs/easeljs-0.8.1.min.js"></script>
+
+<script type="text/javascript">
+	var createjs = window;
+</script>
+
+<!-- CreateJS -->
+<script src="js/src/createjs/events/Event.js"></script>
+<script src="js/src/createjs/events/EventDispatcher.js"></script>
+<script src="js/src/createjs/utils/Ticker.js"></script>
+<script src="js/src/createjs/utils/extend.js"></script>
+<script src="js/src/createjs/utils/indexOf.js"></script>
+<script src="js/src/createjs/utils/promote.js"></script>
+
+<!-- EaselJS -->
+<script src="js/src/easeljs/utils/UID.js"></script>
+<script src="js/src/easeljs/geom/Matrix2D.js"></script>
+<script src="js/src/easeljs/geom/DisplayProps.js"></script>
+<script src="js/src/easeljs/geom/Rectangle.js"></script>
+<script src="js/src/easeljs/events/MouseEvent.js"></script>
+<script src="js/src/easeljs/display/DisplayObject.js"></script>
+<script src="js/src/easeljs/display/Container.js"></script>
+<script src="js/src/easeljs/display/Stage.js"></script>
+
+<script type="text/javascript">
+
+	var stage;
+
+	function initialize() {
+		var canvasObject = document.getElementById("myCanvas03");
+		stage = new Stage(canvasObject);
+		alert(stage);
+	}
+
+</script>
+
+
+function initialize() {
+	var canvasObject = document.getElementById("myCanvas03");
+	stage = new Stage(canvasObject);
+	alert(stage);
+}
+
+function initialize() {
+	stage = new Stage("myCanvas03");
+	alert(stage);
+}
+
+
+ソースその１
+-----------------------
+
+new Shape()
+
+ソースその２
+-----------------------
+
+new Shape()
+
+
+<!-- CreateJS / EaselJS -->
+<script src="js/lib/createjs/createjs-2015.05.21.min.js"></script>
+<script src="js/lib/easeljs/easeljs-0.8.1.min.js"></script>
+
+<script type="text/javascript">
+	var createjs = window;
+</script>
+
+<!-- CreateJS -->
+<script src="js/src/createjs/events/Event.js"></script>
+<script src="js/src/createjs/events/EventDispatcher.js"></script>
+<script src="js/src/createjs/utils/Ticker.js"></script>
+<script src="js/src/createjs/utils/extend.js"></script>
+<script src="js/src/createjs/utils/indexOf.js"></script>
+<script src="js/src/createjs/utils/promote.js"></script>
+
+<!-- EaselJS -->
+<script src="js/src/easeljs/utils/UID.js"></script>
+<script src="js/src/easeljs/geom/Matrix2D.js"></script>
+<script src="js/src/easeljs/geom/DisplayProps.js"></script>
+<script src="js/src/easeljs/geom/Rectangle.js"></script>
+<script src="js/src/easeljs/events/MouseEvent.js"></script>
+<script src="js/src/easeljs/display/DisplayObject.js"></script>
+<script src="js/src/easeljs/display/Container.js"></script>
+<script src="js/src/easeljs/display/Stage.js"></script>
+<script src="js/src/easeljs/display/Graphics.js"></script>
+<script src="js/src/easeljs/display/Shape.js"></script>
+
+<script type="text/javascript">
+
+	var stage;
+
+	function initialize() {
+
+		// Stageオブジェクト確認
+		// var canvasObject = document.getElementById("myCanvas03");
+		// stage = new Stage(canvasObject);
+		// alert(stage);
+
+		// Shapeオブジェクト確認
+		var canvasElement = document.getElementById("myCanvas04");
+		stage = new Stage(canvasElement);
+
+		var myShape = new Shape();
+		stage.addChild(myShape);
+		alert([myShape, myShape.parent]); // 確認用
+
+	}
+
+</script>
+
+
+var stage;
+
+function initialize() {
+
+	// Graphicsオブジェクトの練習
+	var canvasElement = document.getElementById("myCanvas05");
+	stage = new Stage(canvasElement);
+	var myShape = new Shape();
+	stage.addChild(myShape);
+	myShape.x = 50;
+	myShape.y = 50;
+	draw(myShape);
+
+}
+
+function draw(myShape){
+
+	var myGraphics = myShape.graphics;
+	myGraphics.beginStroke("#0000FF");
+	myGraphics.beginFill("#00FFFF");
+	myGraphics.drawCircle(0, 0, 40);
+	stage.update();
+
+}
+
+
+var stage;
+
+function initialize() {
+
+	// Graphicsオブジェクトの練習
+	var canvasElement = document.getElementById("myCanvas05");
+	stage = new Stage(canvasElement);
+	var myGraphics = new Graphics();
+	// var myShape = new Shape();
+	var myShape = new Shape(myGraphics);
+	stage.addChild(myShape);
+	myShape.x = 50;
+	myShape.y = 50;
+	// draw(myShape);
+	draw(myGraphics);
+
+}
+
+//function draw(myShape){
+function draw(myGraphics){
+
+	/*
+	var myGraphics = myShape.graphics;
+	myGraphics.beginStroke("#0000FF");
+	myGraphics.beginFill("#00FFFF");
+	myGraphics.drawCircle(0, 0, 40);
+	*/
+
+	myGraphics.beginStroke("#0000FF").beginFill("#00FFFF").drawCircle(0, 0, 40);
+	stage.update();
+
+}
+
+var stage;
+
+function initialize() {
+
+	// Graphicsオブジェクトの練習
+	var canvasElement = document.getElementById("myCanvas06");
+	stage = new Stage(canvasElement);
+	var myShape = new Shape();
+	stage.addChild(myShape);
+	myShape.x = 50;
+	myShape.y = 50;
+	draw(myShape.graphics);
+
+}
+
+function draw(myGraphics){
+
+	var randomNumber = Math.floor(Math.random() * 0xFFFFFF);
+	var randomColor = Graphics.getRGB(randomNumber);
+
+	myGraphics.beginStroke("blue");
+	myGraphics.beginFill(randomColor);
+	myGraphics.drawPolyStar(0, 0, 40, 5, 0.6, -90);
+	stage.update();
+
+}
+
+
+var myShape;
+function initialize() {
+	// var myShape = new Shape();
+	myShape = new Shape();
+	Ticker.addEventListener("tick". rotate);
+}
+
+function rotate() {
+	myShape.rotation += 5;
+	stage.update();
+}
+
+
+
+<!-- CreateJS / EaselJS -->
+<script src="js/lib/createjs/createjs-2015.05.21.min.js"></script>
+<script src="js/lib/easeljs/easeljs-0.8.1.min.js"></script>
+<script type="text/javascript">
+
+	var createjs = window;
+
+</script>
+
+
+<!-- CreateJS -->
+<script src="js/src/createjs/events/Event.js"></script>
+<script src="js/src/createjs/events/EventDispatcher.js"></script>
+<script src="js/src/createjs/utils/Ticker.js"></script>
+<script src="js/src/createjs/utils/extend.js"></script>
+<script src="js/src/createjs/utils/indexOf.js"></script>
+<script src="js/src/createjs/utils/promote.js"></script>
+
+
+<!-- EaselJS -->
+<script src="js/src/easeljs/utils/UID.js"></script>
+<script src="js/src/easeljs/geom/Matrix2D.js"></script>
+<script src="js/src/easeljs/geom/DisplayProps.js"></script>
+<script src="js/src/easeljs/geom/Rectangle.js"></script>
+<script src="js/src/easeljs/events/MouseEvent.js"></script>
+<script src="js/src/easeljs/display/DisplayObject.js"></script>
+<script src="js/src/easeljs/display/Container.js"></script>
+<script src="js/src/easeljs/display/Stage.js"></script>
+<script src="js/src/easeljs/display/Graphics.js"></script>
+<script src="js/src/easeljs/display/Shape.js"></script>
+<script type="text/javascript">
+
+	var stage;
+	var myShape;
+
+	function initialize() {
+
+		// Shapeオブジェクト確認
+		var canvasElement = document.getElementById("myCanvas07");
+		stage = new Stage(canvasElement);
+		myShape = new Shape();
+		stage.addChild(myShape);
+		myShape.x = 50;
+		myShape.y = 50;
+		draw(myShape.graphics);
+		Ticker.setFPS(30);
+		Ticker.addEventListener("tick", rotate);
+
+	}
+
+	function draw(myGraphics) {
+
+		var randomNumber = Math.floor(Math.random() * 0xFFFFFF);
+		var randomColor = Graphics.getRGB(randomNumber);
+		myGraphics.beginStroke("blue");
+		myGraphics.beginFill(randomColor);
+		myGraphics.drawPolyStar(0, 0, 40, 5, 0.6, -90);
+		stage.update();
+
+	}
+
+	function rotate() {
+
+		myShape.rotation += 5;
+		stage.update();
+
+	}
+
+</script>
+
+
+<!-- CreateJS / EaselJS -->
+<script src="js/lib/createjs/createjs-2015.05.21.min.js"></script>
+<script src="js/lib/tweenjs/tweenjs-0.6.1.min.js"></script>
+<script src="js/lib/easeljs/easeljs-0.8.1.min.js"></script>
+<script type="text/javascript">
+
+	var createjs = window;
+
+</script>
+
+
+<!-- CreateJS -->
+<script src="js/src/createjs/events/Event.js"></script>
+<script src="js/src/createjs/events/EventDispatcher.js"></script>
+<script src="js/src/createjs/utils/Ticker.js"></script>
+<script src="js/src/createjs/utils/extend.js"></script>
+<script src="js/src/createjs/utils/indexOf.js"></script>
+<script src="js/src/createjs/utils/promote.js"></script>
+
+
+<!-- EaselJS -->
+<script src="js/src/easeljs/utils/UID.js"></script>
+<script src="js/src/easeljs/geom/Matrix2D.js"></script>
+<script src="js/src/easeljs/geom/DisplayProps.js"></script>
+<script src="js/src/easeljs/geom/Rectangle.js"></script>
+<script src="js/src/easeljs/events/MouseEvent.js"></script>
+<script src="js/src/easeljs/display/DisplayObject.js"></script>
+<script src="js/src/easeljs/display/Container.js"></script>
+<script src="js/src/easeljs/display/Stage.js"></script>
+<script src="js/src/easeljs/display/Graphics.js"></script>
+<script src="js/src/easeljs/display/Shape.js"></script>
+<script type="text/javascript">
+
+	var stage;
+	var myShape = new Shape();
+	var nWidth;
+	var nHeight;
+	var nRadius = 40;
+
+	function initialize() {
+
+		// TweenJS確認
+		var canvasElement = document.getElementById("myCanvas08");
+		nWidth = canvasElement.width;
+		nHeight = canvasElement.height;
+		stage = new Stage(canvasElement);
+		stage.addChild(myShape);
+		myShape.x = nWidth * Math.random();
+		myShape.y = nHeight / 2;
+		draw(myShape.graphics);
+
+	}
+
+	function draw(myGraphics) {
+
+		var randomNumber = Math.floor(Math.random() * 0xFFFFFF);
+		var randomColor = Graphics.getRGB(randomNumber);
+		myGraphics.beginStroke("blue");
+		myGraphics.beginFill(randomColor);
+		myGraphics.drawPolyStar(0, 0, nRadius, 5, 0.6, -90);
+		stage.update();
+
+	}
+
+</script>
+
+
+function lnitialize() {
+	Ticker.addEventListener("tick", tick);
+	setTween(myShape);
+}
+
+function setTween() {
+	var myTween = new Tween(target, {loop: true})
+	myTween.to({y: nHeight - nRadius, rotation: 360}, 5000, Ease.bounceOut);
+}
+
+function tick() {
+	stage.update();
+}
+
+

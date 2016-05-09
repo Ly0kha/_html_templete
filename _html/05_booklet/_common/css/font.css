@@ -1,0 +1,144 @@
+@charset "utf-8";
+
+/* CSS font */
+
+
+
+
+/*==============================================================
+
+	CSS tuned by Atsushi Kikushima 
+	tuned at 2011/07/30
+
+==============================================================*/
+
+
+
+
+
+
+
+
+/*==============================================================
+
+	Parts 
+
+==============================================================*/
+
+
+/* Common ===============================*/
+
+/* テキスト装飾関係 */
+
+.txt_right {
+	text-align: right;
+}
+
+.txt_center {
+	text-align: center;
+}
+
+.txt_left {
+	text-align: left;
+}
+
+.txt_8px {
+	font-size: 8px;
+}
+
+.txt_10px {
+	font-size: 10px;
+}
+
+.txt_12px {
+	font-size: 12px;
+}
+
+.txt_14px {
+	font-size: 14px;
+}
+
+.txt_strong {
+	font-weight: bold;
+}
+
+.txt_orange_strong {
+	font-weight: bold;
+	color: #FF6600;
+}
+
+.txt_orange_normal {
+	font-weight: normal;
+	color: #FF6600;
+}
+
+.txt_yellow_strong {
+	font-weight: bold;
+	color: #f8ea48;
+}
+
+.txt_yellow_normal {
+	font-weight: normal;
+	color: #f8ea48;
+}
+
+.txt_red_strong {
+	font-weight: bold;
+	color: #CC0000;
+}
+
+.txt_red_normal {
+	font-weight: normal;
+	color: #CC0000;
+}
+
+
+/* 共通テキストサイズ */
+
+#contents p {
+	margin-bottom: 0.8em;
+	/*font-size: 80%;*/
+	line-height: 1.5em;
+}
+
+#contents p.attention {
+	color: #666;
+	font-size: 70%;
+	line-height: 1em;
+}
+
+#side .categories ,#side .archives {
+	font-size: 80%;
+	line-height: 1.8em;
+}
+
+#fontChange li:hover {
+	background-color: #333333;
+	color: #FFFFFF;
+	cursor: pointer;
+}
+
+#fontChange li {
+	border: 1px solid #CCCCCC;
+	display: block;
+	float: right;
+	height: 30px;
+	line-height: 30px;
+	margin-right: 5px;
+	padding: 0;
+	text-align: center;
+	text-shadow: 1px 1px 1px #CCCCCC;
+	width: 30px;
+}
+
+.fontS {
+	font-size: 70%;
+}
+
+.fontM {
+	font-size: 80%;
+}
+
+.fontL {
+	font-size: 90%;
+}

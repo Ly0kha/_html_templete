@@ -1,0 +1,180 @@
+@charset "utf-8";
+
+/****************************************
+
+               reset
+
+*****************************************/
+
+div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p,
+a, abbr, address, em, img,
+small, strong, sub, sup,
+b, i,
+hr,
+dl, dt, dd, ol, ul, li,
+form, label,
+table, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    font-weight: inherit;
+    font-style: inherit;
+    font-family: inherit;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+ul,
+li {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0px;
+    border:0;
+}
+
+img {
+    vertical-align: baseline;
+}
+
+:focus {
+    outline: 0;
+}
+
+a {
+    resize: none;
+}
+
+/*************** common END ******************/
+
+/****************************************
+
+              clearfix
+
+*****************************************/
+
+.clearboth {
+    display: block;
+    clear: both;
+}
+
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  line-height: 0;
+  content: "";
+}
+
+
+/* clearfix for ie7 */
+.clearfix {
+    display: inline-block;
+}
+
+.clearfix {
+    display: block;
+}
+
+
+/******** clearfix END **********/
+
+/****************************************
+
+               Body
+
+*****************************************/
+
+html {
+	overflow-y:scroll;
+	height: 100%;
+}
+
+body {
+	height: 100%;
+	text-align:left;
+	color: #000;
+	font-style: normal;
+	font-weight: normal;
+	font-size : 100%;
+	text-decoration: none;
+	background-image: url();
+	background-repeat: repeat-x;
+	background-color: #FFFFFF;
+	line-height: 1.45em;
+	font-family: Verdana,"ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN","游ゴシック",YuGothic,"メイリオ",Meiryo,sans-serif;
+}
+
+* html body {
+	font-family: Verdana,"ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN","游ゴシック",YuGothic,"メイリオ",Meiryo,sans-serif;
+}
+
+*:first-child+html body {
+	font-family: Verdana,"ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN","游ゴシック",YuGothic,"メイリオ",Meiryo,sans-serif;
+}
+
+/* IE7でpadding指定 */
+
+*:first-child+html body {
+	padding-left: 1px;
+}
+
+
+/* IE6以下でpadding指定 */
+
+* html body {
+	padding-left: 1px;
+}
+
+
+/* Print for WinIE6 ===============================*/
+
+@media print {
+
+	* html body {
+		zoom: 80%;/* WinIE only 649px÷印刷したい横幅×100 */
+	}
+
+	.clearfix:after {
+	  content: ".";
+	  display: block;
+	  height: 0;
+	  clear: both;
+	  visibility: hidden;
+	}
+	.clearfix {
+	  overflow: hidden;
+	}
+
+	/* Hides from IE-mac */
+
+	* html .clearfix {
+	  height: 1%;
+	  overflow: visible;
+	}
+
+}

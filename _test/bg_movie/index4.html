@@ -1,0 +1,792 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<meta property="og:title" content="Keywords"/>
+	<meta property="og:description" content="Description"/>
+	<meta property="og:image" content="img:url"/>
+	<meta property="og:url" content="url"/>
+	<meta property="og:type" content="company"/>
+	<meta property="og:site_name" content="site_name"/>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+
+	<meta name="keywords" content="Keywords">
+	<meta name="description" content="Description">
+	<link rel="icon" href="" type="image/vnd.microsoft.icon" />
+
+	<title>Test Site | Enter Title Here</title>
+
+	<!-- CSS -->
+	<link href="css/reset.css" rel="stylesheet" type="text/css" />
+	<link href="css/style.css" rel="stylesheet" type="text/css" />
+	<link href="css/hover.css" rel="stylesheet" type="text/css" media="screen" />
+	<link href="css/bootstrap/bootstrap.css" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" media="all">
+
+	<!-- JS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="js/lib/bootstrap/bootstrap.min.js"></script>
+	<script type="text/javascript" src="https://vjs.zencdn.net/4.3/video.js"></script>
+
+	<script type="text/javascript" src="js/lib/canvas/Decoder.js"></script>
+	<script type="text/javascript" src="js/lib/canvas/YUVCanvas.js"></script>
+	<script type="text/javascript" src="js/lib/canvas/Player.js"></script>
+	<script type="text/javascript" src="js/lib/canvas/stream.js"></script>
+	<script type="text/javascript" src="js/lib/canvas/mp4.js"></script>
+
+	<script type="text/javascript">
+		function load() {
+			var nodes = document.querySelectorAll('div.broadway');
+			for (var i = 0; i < nodes.length; i++) {
+				var broadway = new Broadway(nodes[i]);
+				// broadway.play();
+			}
+		}
+	</script>
+
+	<script type="text/javascript" src="js/lib/jquery/plugin_4th.js"></script>
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+</head>
+
+<body id="top" onload="load()">
+
+<!-- Container -->
+<div id="container">
+
+	<!-- Lightbox -->
+	<!--body要素内のヘッダーを埋め込みたい箇所に記述-->
+	<div class="lightbox">
+
+		<script type="text/javascript">
+
+		//
+		//
+		// writeLightboxDocument(); の()内指定について
+		//
+		// 同階層 ："./"
+		// 1階層下："../"
+		// 2階層下："../../"
+		//
+		//
+
+			writeLightboxDocument("./");
+		</script>
+
+	</div>
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header -->
+		<header>
+
+			<h1 class="small">Head Title -SEO Text Word Here-</h1>
+
+			<!-- Global Navi -->
+			<!--body要素内のヘッダーを埋め込みたい箇所に記述-->
+			<script type="text/javascript">
+
+			//
+			//
+			// writeHeader(); の()内指定について
+			//
+			// 同階層 ："./"
+			// 1階層下："../"
+			// 2階層下："../../"
+			//
+			//
+
+				writeHeader("./");
+			</script>
+
+		</header>
+
+		<!-- <div id="canvas" class="box"></div> -->
+		<div class="broadway" src="assets/christmas_snow.mp4" width="560" height="304" workers="false" render="true" webgl="auto" style="float: left; position: relative;"></div>
+
+		<!-- Main -->
+
+		<p class="small">キャプション</p>
+		<h2>タイトルが入ります。</h2>
+
+		<nav>
+			<a href="debugTestDirectory/debugDirectory.html">デバッグディレクトリページに飛びます。</a>
+			<a href="#">リンクが入ります。</a>
+		</nav>
+
+		<hr class="hr_small">
+
+		<!-- Bread -->
+		<nav class="bread">
+			<ul>
+				<li><a href="#">パン屑リスト1</a></li>
+				<li><a href="#">パン屑リスト2</a><span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></li>
+			</ul>
+		</nav>
+
+
+		<!-- Headline -->
+		<h3>小見出し1が入ります。</h3>
+
+		<h4>小見出し2が入ります。</h4>
+
+		<h5>小見出し3が入ります。</h5>
+
+		<h6>小見出し4が入ります。</h6>
+
+		<hr class="hr_large">
+
+		<!-- Hover Animation -->
+		<script type="text/javascript">
+
+		//
+		//
+		// writeBtnDocument(); の()内指定について
+		//
+		// 同階層 ："./"
+		// 1階層下："../"
+		// 2階層下："../../"
+		//
+		//
+		var ua = navigator.userAgent;
+		if (ua.indexOf('iPhone') > 0 || ua.indexOf('iPad') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 || ua.indexOf('BlackBerry') > 0 || ua.indexOf('windows Phone') > 0 || ua.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(ua)) {
+
+		}
+		else {
+			writeBtnDocument("./");
+		}
+
+		</script>
+
+		<!-- Text Appearance -->
+		<section>
+
+			<h3>テキスト表示</h3>
+
+			<div class="box mb_20">
+
+				<p>
+					テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+				</p>
+				<p>
+					txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.
+				</p>
+				<p>
+					<span class="text_color_gold">テキストが入ります。テキストが入ります。</span><br />
+					<span class="text_color_darkorange">テキストが入ります。テキストが入ります。</span><br />
+					<span class="text_color_red">テキストが入ります。テキストが入ります。</span><br />
+					<span class="text_color_crimson">テキストが入ります。テキストが入ります。</span><br />
+					<span class="text_color_blue">テキストが入ります。テキストが入ります。</span><br />
+					<span class="text_color_navy">テキストが入ります。テキストが入ります。</span><br />
+					<span class="text_color_gray">テキストが入ります。テキストが入ります。</span><br />
+					<span class="text_color_lightgray">テキストが入ります。テキストが入ります。</span>
+				</p>
+			</div>
+
+		</section>
+
+		<hr class="hr_large">
+
+		<!-- Windowサイズ取得テスト -->
+		<div id="test01"></div>
+		<div id="test02"></div>
+
+		<section>
+
+			<h3>スライダー</h3>
+
+			<!-- Flexslider
+			<div class="flexslider mb_40">
+				<ul class="slides">
+					<li>
+						<img src="images/common/main_img01.jpg" alt="01" />
+					</li>
+					<li>
+						<img src="images/common/main_img02.jpg" alt="02" />
+					</li>
+					<li>
+						<img src="images/common/main_img03.jpg" alt="03" />
+					</li>
+					<li>
+						<img src="images/common/main_img04.jpg" alt="04" />
+					</li>
+				</ul>
+			</div>
+			 -->
+
+			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
+				<!-- Indicators -->
+				<ol class="carousel-indicators">
+					<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+					<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+					<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+					<li data-target="#carousel-example-generic" data-slide-to="3"></li>
+				</ol>
+
+				<!-- Wrapper for slides -->
+				<div class="carousel-inner" role="listbox">
+					<div class="item active">
+						<img src="images/common/main_img01.jpg" alt="01" />
+						<div class="carousel-caption">
+							１枚目の画像が入ります１枚目の画像が入ります１枚目の画像が入ります１枚目の画像が入ります
+						</div>
+					</div>
+					<div class="item">
+						<img src="images/common/main_img02.jpg" alt="02" />
+						<div class="carousel-caption">
+							２枚目の画像が入ります２枚目の画像が入ります２枚目の画像が入ります２枚目の画像が入ります
+						</div>
+					</div>
+					<div class="item">
+						<img src="images/common/main_img03.jpg" alt="03" />
+						<div class="carousel-caption">
+							３枚目の画像が入ります３枚目の画像が入ります３枚目の画像が入ります３枚目の画像が入ります
+						</div>
+					</div>
+					<div class="item">
+						<img src="images/common/main_img04.jpg" alt="04" />
+						<div class="carousel-caption">
+							４枚目の画像が入ります４枚目の画像が入ります４枚目の画像が入ります４枚目の画像が入ります
+						</div>
+					</div>
+				</div>
+
+				<!-- Controls -->
+				<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+					<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a>
+				<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+					<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
+
+			</div>
+
+		</section>
+
+		<hr class="hr_large">
+
+		<!-- Tabs -->
+		<section>
+
+			<h3>タブ</h3>
+
+			<div id="tabs">
+
+				<nav>
+					<ul class="nav nav-tabs nav-justified mb_20">
+						<li><a href="#tabs-1">test01</a></li>
+						<li><a href="#tabs-2">test02</a></li>
+						<li><a href="#tabs-3">test03</a></li>
+					</ul>
+				</nav>
+
+				<article>
+					<div id="tabs-1" class="box mb_20">
+						<h3>タブ1</h3>
+						<p class="mg_00">
+							親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰を抜かす奴があるかと云ったから、この次は抜かさずに飛んで見せますと答えた。（青空文庫より）
+						</p>
+					</div>
+				</article>
+
+				<article>
+					<div id="tabs-2" class="box mb_20">
+						<h3>タブ2</h3>
+						<p class="mg_00">
+							つれづれなるまゝに、日暮らし、硯にむかひて、心にうつりゆくよしなし事を、そこはかとなく書きつくれば、あやしうこそものぐるほしけれ。（Wikipediaより）
+						</p>
+					</div>
+				</article>
+
+				<article>
+					<div id="tabs-3" class="box mb_20">
+						<h3>タブ3</h3>
+						<p class="mg_00">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						</p>
+					</div>
+				</article>
+
+			</div>
+
+		</section>
+
+		<hr class="hr_large">
+
+		<!-- Textbox 1Columns -->
+		<section>
+
+			<h3>1カラム</h3>
+
+			<div class="box mb_20">
+				<p>
+					テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+				</p>
+				<p>
+					txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.
+				</p>
+			</div>
+
+		</section>
+
+		<!-- Textbox 2Columns -->
+		<section>
+
+			<h3>2カラム</h3>
+
+			<div class="box mb_20">
+				<div class="box wd_20 mr_10 float_l">
+					<a href="images/index/detail_01.jpg" rel="imagebox" title="テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。">
+						<img src="images/index/thumb_01.jpg" alt="test01">
+					</a>
+				</div>
+				<p class="mg_00">
+					テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+				</p>
+			</div>
+
+		</section>
+
+		<hr class="hr_large">
+
+		<!-- Img 2Columns -->
+		<section>
+
+			<h3>イメージ 2カラム</h3>
+
+			<div class="box">
+				<div class="float_l wd_2nd center">
+					<a href="#" rel="textbox" title="テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。">
+						<img src="images/index/thumb_02.jpg" alt="test02">
+						<p class="mg_00 center">txtinsert.</p>
+					</a>
+				</div>
+				<div class="float_r wd_2nd center">
+					<a href="#" rel="textbox" title="テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。">
+						<img src="images/index/thumb_01.jpg" alt="test01">
+						<p class="mg_00 center">txtinsert.</p>
+					</a>
+				</div>
+			</div>
+
+		</section>
+
+		<hr class="hr_large">
+
+		<!-- Img 3Columns -->
+		<section>
+
+			<h3>イメージ 3カラム</h3>
+
+			<div class="box">
+
+				<div class="float_l wd_3rd center mb_20">
+					<a href="images/index/detail_02.jpg" rel="imagebox">
+						<img src="images/index/thumb_02.jpg" alt="test02">
+						<p class="mg_00 center">
+							txtinsert.
+						</p>
+					</a>
+				</div>
+				<div class="float_l wd_3rd center mb_20">
+					<a href="images/index/detail_01.jpg" rel="imagebox">
+						<img src="images/index/thumb_01.jpg" alt="test01">
+						<p class="mg_00 center">
+							txtinsert.
+						</p>
+					</a>
+				</div>
+				<div class="float_l wd_3rd center mb_20">
+					<a href="images/index/detail_02.jpg" rel="imagebox">
+						<img src="images/index/thumb_02.jpg" alt="test02">
+						<p class="mg_00 center">
+							txtinsert.
+						</p>
+					</a>
+				</div>
+				<div class="float_l wd_3rd center mb_20">
+					<a href="images/index/detail_01.jpg" rel="imagebox">
+						<img src="images/index/thumb_01.jpg" alt="test01">
+						<p class="mg_00 center">
+							txtinsert.
+						</p>
+					</a>
+				</div>
+				<div class="float_l wd_3rd center mb_20">
+					<a href="images/index/detail_02.jpg" rel="imagebox">
+						<img src="images/index/thumb_02.jpg" alt="test02">
+						<p class="mg_00 center">
+							txtinsert.
+						</p>
+					</a>
+				</div>
+				<div class="float_l wd_3rd center mb_20">
+					<a href="images/index/detail_01.jpg" rel="imagebox">
+						<img src="images/index/thumb_01.jpg" alt="test01">
+						<p class="mg_00 center">
+							txtinsert.
+						</p>
+					</a>
+				</div>
+
+			</div>
+
+		</section>
+
+		<hr class="hr_large">
+
+		<!-- News List -->
+		<section>
+
+			<h3>記事項目</h3>
+
+			<article>
+
+				<h3>記事</h3>
+
+				<a href="#">
+					<div class="box">
+						<dl class="news">
+							<dt>
+								2015.05.01
+							</dt>
+							<dd>
+								テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+							</dd>
+						</dl>
+					</div>
+				</a>
+
+				<hr class="hr_small">
+
+				<a href="#">
+					<div class="box">
+						<dl class="news">
+							<dt>
+								2015.05.01
+							</dt>
+							<dd>
+								テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+							</dd>
+						</dl>
+					</div>
+				</a>
+
+				<hr class="hr_small">
+
+				<a href="#">
+					<div class="box">
+						<dl class="news">
+							<dt>
+								2015.05.01
+							</dt>
+							<dd>
+								テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+							</dd>
+						</dl>
+					</div>
+				</a>
+
+			</article>
+
+		</section>
+
+		<hr class="hr_large">
+
+		<!-- Form / Input -->
+		<section>
+
+			<div id="form">
+
+				<h3>お問い合わせフォーム</h3>
+
+				<p class="pd_top-bottom_24 small">
+					<span class="text_color_red">※</span>印の項目は必ずご記入をお願いいたします。
+				</p>
+
+				<article>
+
+					<form id="inquiryFormJp" method="post" action="#" class="autoConfirm">
+
+						<fieldset>
+
+							<div class="box">
+
+								<!-- Form -->
+								<dl id="form_layoutJp" class="form_pc">
+
+									<dt>お問い合わせ内容&nbsp;<span class="text_color_red">※</span>&nbsp;</dt>
+									<dd>
+										<div class="bg_input">
+											<input type="text" id="inquiryListJp" name="inquiryListJp" value="" size="40" autocomplete="off">
+										</div>
+									</dd>
+									<dt>会社名&nbsp;</dt>
+									<dd>
+										<div class="bg_input">
+											<input type="text" id="inquiryCompanyNameJp" name="inquiryCompanyNameJp" value="" size="40" autocomplete="off">
+										</div>
+									</dd>
+									<dt>お名前[日]&nbsp;<span class="text_color_red">※</span>&nbsp;<span class="small">(全角)</span></dt>
+									<dd>
+										<div class="bg_input">
+											<input type="text" id="inquiryNameJaJp" name="inquiryNameJaJp" value="" size="40" autocomplete="off">
+										</div>
+									</dd>
+									<dt>お名前[英]&nbsp;<span class="text_color_red">※</span>&nbsp;<span class="small">(半角英数)</span></dt>
+									<dd>
+										<div class="bg_input">
+											<input type="text" id="inquiryNameEnJp" name="inquiryNameEnJp" value="" size="40" autocomplete="off">
+										</div>
+									</dd>
+									<dt>メールアドレス&nbsp;<span class="text_color_red">※</span>&nbsp;<span class="small">(半角英数)</span></dt>
+									<dd>
+										<div class="bg_input">
+											<input type="text" id="inquiryMailJp" name="inquiryMailJp" value="" size="40" autocomplete="off">
+										</div>
+									</dd>
+									<dt>電話番号&nbsp;<span class="small">(半角英数)</span></dt>
+									<dd>
+										<div class="bg_input">
+											<input type="text" id="inquiryPhoneJp" name="inquiryPhoneJp" value="" size="40" autocomplete="off">
+										</div>
+									</dd>
+									<dt>お問い合わせ内容&nbsp;<span class="text_color_red">※</span>&nbsp;</dt>
+									<dd class="textarea">
+										<div class="bg_textarea">
+											<textarea id="inquiryTextJp" name="inquiryTextJp"></textarea>
+										</div>
+									</dd>
+
+								</dl>
+
+							</div>
+
+							<hr class="hr_large">
+
+							<!-- Form Accept -->
+							<h3 class="accept">ウェブサイト上の個人情報の取扱いについて</h3>
+							<div class="box small">
+
+								<ul class="mb_16">
+									<li>
+										いただいた個人情報は、お問い合わせへの対応のみに使用し、他の目的に利用することはございません。また、弊社はあらかじめお客様の同意を得ないで、いただいた個人情報を第三者に提供いたしません。
+									</li>
+									<li>
+										弊社のその他の個人情報に関する取り扱いについては、<a href="javascript:void(0)" class="policy">「個人情報の取り扱いについて」</a>をご覧ください。上記事項をご確認の上、ご同意いただける方は下の「同意する」をチェックしてください。
+									</li>
+								</ul>
+
+								<div class="box center">
+									<div class="box bg_inputChecker">
+										<input id="accept_ja" type="checkbox" value="agree" /><label class="checkbox" for="accept_ja">同意する</label>
+									</div>
+								</div>
+
+							</div>
+
+							<hr class="hr_large">
+
+							<!-- Form Btn -->
+							<div class="box mb_24 center">
+								<input id="btn_reset_ja" type="button" value="リセットする">
+								<input id="btn_confirm_ja" type="submit" value="確認">
+							</div>
+
+						</fieldset>
+
+					</form>
+
+				</article>
+
+			</div>
+
+		</section>
+
+		<hr class="hr_large">
+
+		<!-- List -->
+		<section>
+
+			<h3>リスト(数字、ナカグロ)</h3>
+
+			<div class="box">
+
+				<ul class="list">
+
+					<li>
+						第１項目が入ります。第１項目が入ります。第１項目が入ります。第１項目が入ります。第１項目が入ります。第１項目が入ります。第１項目が入ります。第１項目が入ります。第１項目が入ります。第１項目が入ります。第１項目が入ります。第１項目が入ります。
+					</li>
+					<li>
+						第２項目が入ります。第２項目が入ります。第２項目が入ります。第２項目が入ります。第２項目が入ります。第２項目が入ります。第２項目が入ります。第２項目が入ります。第２項目が入ります。第２項目が入ります。第２項目が入ります。第２項目が入ります。
+					</li>
+					<li>
+						第３項目が入ります。第３項目が入ります。第３項目が入ります。第３項目が入ります。第３項目が入ります。第３項目が入ります。第３項目が入ります。第３項目が入ります。第３項目が入ります。第３項目が入ります。第３項目が入ります。第３項目が入ります。
+					</li>
+					<li>
+						第４項目が入ります。第４項目が入ります。第４項目が入ります。第４項目が入ります。第４項目が入ります。第４項目が入ります。第４項目が入ります。第４項目が入ります。第４項目が入ります。第４項目が入ります。第４項目が入ります。第４項目が入ります。
+					</li>
+
+				</ul>
+
+				<ol class="list">
+
+					<li>
+						第１項目が入ります。第１項目が入ります。第１項目が入ります。第１項目が入ります。第１項目が入ります。第１項目が入ります。第１項目が入ります。第１項目が入ります。第１項目が入ります。第１項目が入ります。第１項目が入ります。第１項目が入ります。
+					</li>
+					<li>
+						第２項目が入ります。第２項目が入ります。第２項目が入ります。第２項目が入ります。第２項目が入ります。第２項目が入ります。第２項目が入ります。第２項目が入ります。第２項目が入ります。第２項目が入ります。第２項目が入ります。第２項目が入ります。
+					</li>
+					<li>
+						第３項目が入ります。第３項目が入ります。第３項目が入ります。第３項目が入ります。第３項目が入ります。第３項目が入ります。第３項目が入ります。第３項目が入ります。第３項目が入ります。第３項目が入ります。第３項目が入ります。第３項目が入ります。
+					</li>
+					<li>
+						第４項目が入ります。第４項目が入ります。第４項目が入ります。第４項目が入ります。第４項目が入ります。第４項目が入ります。第４項目が入ります。第４項目が入ります。第４項目が入ります。第４項目が入ります。第４項目が入ります。第４項目が入ります。
+					</li>
+
+				</ol>
+
+			</div>
+
+		</section>
+
+		<hr class="hr_large">
+
+		<!-- Description List 2Columns -->
+		<section>
+
+			<h3>定義項目</h3>
+
+			<article>
+
+				<h3>記事</h3>
+
+				<div class="box mb_30">
+
+					<dl id="column">
+
+						<dt>
+							項目1項目1項目1項目1
+						</dt>
+						<dd>
+							テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+						</dd>
+						<dt>
+							項目2項目2項目2項目2
+						</dt>
+						<dd>
+							txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.
+						</dd>
+
+					</dl>
+
+				</div>
+
+			</article>
+
+		</section>
+
+		<hr class="hr_large">
+
+		<!-- Table -->
+		<section>
+
+			<h3>テーブル</h3>
+
+			<div class="box mb_30">
+
+				<table class="border">
+
+					<tbody>
+						<tr>
+							<th>見出し</th>
+							<td>内容1</td>
+							<td>内容2</td>
+						</tr>
+						<tr>
+							<th>見出し</th>
+							<td>内容1</td>
+							<td>内容2</td>
+						</tr>
+						<tr>
+							<th>見出し</th>
+							<td>内容1</td>
+							<td>内容2</td>
+						</tr>
+						<tr>
+							<th>見出し</th>
+							<td>内容1</td>
+							<td>内容2</td>
+						</tr>
+						<tr>
+							<th>見出し</th>
+							<td>内容1</td>
+							<td>内容2</td>
+						</tr>
+						<tr>
+							<th>見出し</th>
+							<td>内容1</td>
+							<td>内容2</td>
+						</tr>
+					</tbody>
+
+				</table>
+
+			</div>
+
+		</section>
+
+		<hr class="hr_large">
+
+		<!-- Footer -->
+		<footer class="box center">
+
+			<!-- For Top -->
+			<div class="btn_top">
+				<a href="#top" class="hvr-fade-btn">
+					<span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span>
+				</a>
+			</div>
+			<address>(c) 2015 Atsushi Kikushima.</address>
+
+		</footer>
+
+	</div>
+
+</div>
+
+<!-- JS PlugIn -->
+<script type="text/javascript" src="js/lib/jquery/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="js/lib/jquery/jquery.validate.min.js"></script>
+<script type="text/javascript" src="js/lib/jquery/jquery.validate.japlugin.js"></script>
+<script type="text/javascript" src="js/lib/jquery/jquery.cookie.js"></script>
+<script type="text/javascript" src="js/lib/jquery/heightLine.js"></script>
+<script type="text/javascript" src="js/lib/jquery/hammer.min.js"></script>
+
+<!-- Movie PlugIn
+<script type="text/javascript" src="js/lib/jquery/jquery.videoBG.js"></script>
+<script type="text/javascript" src="js/lib/canvas/apng-canvas.min.js"></script>
+<script type="text/javascript" src="js/lib/canvas/jsmpg.js"></script>
+ -->
+
+<script type="text/javascript" src="js/lib/jquery/bigvideo.js"></script>
+
+</body>
+
+</html>
