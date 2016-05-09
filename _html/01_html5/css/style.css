@@ -589,17 +589,17 @@ dl.news dd {
 @media (min-width: 960px) {
 
 	dd {
-		margin: 0px 0px 40px 80px;
+		margin: 0px 0px 20px 80px;
 		padding: 0px;
 	}
 
 	dl.news dt {
-		padding: 20px 0px 0px;
+		padding: 40px 0px 0px;
 	}
 
 	dl.news dd {
-		margin: 0px 0px 20px 100px;
-		padding: 20px 0px 0px 20px;
+		margin: 0px 0px 40px 100px;
+		padding: 40px 0px 0px 20px;
 	}
 
 }
@@ -609,17 +609,17 @@ dl.news dd {
 @media (max-width: 959px) {
 
 	dd {
-		margin: 0px 0px 20px 40px;
+		margin: 0px 0px 10px 40px;
 		padding: 0px;
 	}
 
 	dl.news dt {
-		padding: 10px 0px 0px;
+		padding: 20px 0px 0px;
 	}
 
 	dl.news dd {
-		margin: 0px 0px 10px 80px;
-		padding: 10px 0px 0px 10px;
+		margin: 0px 0px 20px 80px;
+		padding: 20px 0px 0px 10px;
 	}
 
 }

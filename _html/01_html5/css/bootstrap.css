@@ -83,11 +83,6 @@ dfn {
 	font-style: italic;
 }
 
-h1 {
-	font-size: 2em;
-	margin: 0.67em 0;
-}
-
 mark {
 	background: #ff0;
 	color: #000;
@@ -1508,64 +1503,54 @@ img {
 	cursor: pointer;
 }
 
+
 h1,
 h2,
 h3,
 h4,
 h5,
-h6,
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6 {
+h6 {
+	line-height: 1.45;
 	font-family: inherit;
 	font-weight: 500;
-	line-height: 0.95;
 	color: inherit;
 }
 
-h1 small,
-h2 small,
-h3 small,
-h4 small,
-h5 small,
-h6 small,
-.h1 small,
-.h2 small,
-.h3 small,
-.h4 small,
-.h5 small,
-.h6 small,
-h1 .small,
-h2 .small,
-h3 .small,
-h4 .small,
-h5 .small,
-h6 .small,
-.h1 .small,
-.h2 .small,
-.h3 .small,
-.h4 .small,
-.h5 .small,
-.h6 .small {
-	font-weight: normal;
-	line-height: 0.95;
-	color: #777777;
-}
-
 
 /* BreakPoint for PC */
 @media (min-width: 960px) {
 
 	h1,
-	.h1,
 	h2,
-	.h2,
 	h3,
-	.h3 {
-		margin: 0px 0px 40px;
+	h4,
+	h5,
+	h6 {
+		margin: 0px 0px 20px;
+	}
+
+	h1 {
+		font-size: 30px;
+	}
+
+	h2 {
+		font-size: 26px;
+	}
+
+	h3 {
+		font-size: 24px;
+	}
+
+	h4 {
+		font-size: 20px;
+	}
+
+	h5 {
+		font-size: 16px;
+	}
+
+	h6 {
+		font-size: 12px;
 	}
 
 }
@@ -1575,107 +1560,40 @@ h6 .small,
 @media (max-width: 959px) {
 
 	h1,
-	.h1,
 	h2,
-	.h2,
 	h3,
-	.h3 {
-		margin: 0px 0px 20px;
-	}
-
-}
-
-
-h1 small,
-.h1 small,
-h2 small,
-.h2 small,
-h3 small,
-.h3 small,
-h1 .small,
-.h1 .small,
-h2 .small,
-.h2 .small,
-h3 .small,
-.h3 .small {
-	font-size: 65%;
-}
-
-
-/* BreakPoint for PC */
-@media (min-width: 960px) {
-
 	h4,
-	.h4,
 	h5,
-	.h5,
-	h6,
-	.h6 {
-		margin: 0px 0px 40px;
+	h6 {
+		margin: 0px 0px 10px;
+	}
+
+	h1 {
+		font-size: 24px;
+	}
+
+	h2 {
+		font-size: 20px;
+	}
+
+	h3 {
+		font-size: 16px;
+	}
+
+	h4 {
+		font-size: 14px;
+	}
+
+	h5 {
+		font-size: 12px;
+	}
+
+	h6 {
+		font-size: 10px;
 	}
 
 }
 
-
-/* BreakPoint for SP */
-@media (max-width: 959px) {
-
-	h4,
-	.h4,
-	h5,
-	.h5,
-	h6,
-	.h6 {
-		margin: 0px 0px 20px;
-	}
-
-}
-
-
-h4 small,
-.h4 small,
-h5 small,
-.h5 small,
-h6 small,
-.h6 small,
-h4 .small,
-.h4 .small,
-h5 .small,
-.h5 .small,
-h6 .small,
-.h6 .small {
-	font-size: 75%;
-}
-
-h1,
-.h1 {
-	font-size: 2.0rem;
-}
-
-h2,
-.h2 {
-	font-size: 1.8rem;
-}
-
-h3,
-.h3 {
-	font-size: 1.4rem;
-}
-
-h4,
-.h4 {
-	font-size: 1.2rem;
-}
-
-h5,
-.h5 {
-	font-size: 1rem;
-}
-
-h6,
-.h6 {
-	font-size: 1rem;
-}
 
 p {
 	margin: 0px 0px 10px;
@@ -1693,11 +1611,6 @@ p {
 		font-size: 21px;
 	}
 
-}
-
-small,
-.small {
-	font-size: 85%;
 }
 
 mark,
@@ -7905,14 +7818,14 @@ display: inline-block;
 
 .carousel-caption {
 	position: absolute;
-	left: 15%;
-	right: 15%;
-	bottom: 20px;
+	right: 10px;
+	bottom: 10px;
+	width: 80%;
+	padding: 0px;
+
 	z-index: 10;
-	padding-top: 20px;
-	padding-bottom: 20px;
 	color: #ffffff;
-	text-align: center;
+	text-align: right;
 	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
 }
 
@@ -7942,9 +7855,8 @@ display: inline-block;
 	}
 
 	.carousel-caption {
-		left: 20%;
-		right: 20%;
-		padding-bottom: 30px;
+		right: 20px;
+		padding: 0px;
 	}
 
 	.carousel-indicators {

@@ -57,7 +57,7 @@ $(function() {
 		var wh = $(window).height();
 		$('#test01').html('ウィンドウ幅' + '&nbsp;:&nbsp;' + ww);
 		$('#test02').html('ウィンドウ高さ' + '&nbsp;:&nbsp;' + wh);
-		$('#test03').html('ユーザーエージェント' + '&nbsp;:&nbsp;' + ua);
+		$('#test03').html('ユーザーエージェント' + '&nbsp;:&nbsp;' + '<br />' + ua);
 	});
 
 
@@ -164,7 +164,7 @@ $(function() {
 	function adjust(){
 		var dtcolw = $('dl#column dt').outerWidth(); // dtの幅 //
 		var dtnewsw = $('dl.news dt').outerWidth(); // dtの幅 //
-		$('dl#column dd').css('margin-left', dtcolw + 10 + 'px'); // 可変部分の高さを適用 //
+		$('dl#column dd').css('margin-left', dtcolw + 20 + 'px'); // 可変部分の高さを適用 //
 		$('dl.news dd').css('margin-left', dtnewsw  + 'px'); // 可変部分の高さを適用 //
 	};
 
