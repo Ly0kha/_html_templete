@@ -183,23 +183,12 @@ $(function() {
 
 	/* PageScroll
 	--------------------*/
-	$('a[href*=#top]').on('click', function() {
+	$('a[href^=#]').on('click', function() {
 
-		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') &&　location.hostname == this.hostname) {
-
-			var target = $(this.hash);
-			target = target.length && target;
-
-			if (target.length) {
-				var sclpos = 10;
-				var scldurat = 500;
-				var targetOffset = target.offset().top - sclpos;
-				$('html,body')
-					.animate({scrollTop: targetOffset}, {duration: scldurat, easing: 'easeOutExpo'});
-			}
+			var href = $(this).attr("href"),
+			target = $(href === "#" || href === "" ? 'html' : href);
+			target.velocity('scroll', { duration: 500, easing: 'easeOutExpo' });
 			return false;
-
-		}
 
 	});
 
@@ -612,25 +601,8 @@ $(function() {
 	// Submitを押したときの判定 Jp:日本語  //
 	$('input#btn-confirm-ja:submit').on('click', function() {
 
-		//全角ひらがな･カタカナのみ
-		$.validator.addMethod('kana', function(value, element) {
-			return this.optional(element) || /^([ァ-ヶーぁ-ん]+)$/.test(value);
-			}, '全角ひらがな･カタカナを入力してください'
-		);
-
-		//全角ひらがなのみ
-		$.validator.addMethod('hiragana', function(value, element) {
-			return this.optional(element) || /^([ぁ-ん]+)$/.test(value);
-			}, '全角ひらがなを入力してください'
-		);
-
-		//半角アルファベット（大文字･小文字）のみ
-		$.validator.addMethod('alphabet', function(value, element) {
-			return this.optional(element) || /^([a-zA-Z0-9\s\@_\.\-]+)$/.test(value);
-			}, '半角英字を入力してください'
-		);
-
 		$('#inquiryFormJp').validate({
+
 			ignore: '.ignore',
 			rules: {
 				inquiryListJp :{
@@ -677,68 +649,87 @@ $(function() {
 				inquiryTextJp :{
 					required: '※必須項目です。'
 				}
+
 			}
 
 		});
 
+
 		var scldurat = 500;
+
 
 		// エラーが出た箇所へ飛ぶ -for SP- //
 		if (user_agent.indexOf('iPhone') > 0 || user_agent.indexOf('iPad') > 0 || user_agent.indexOf('iPod') > 0 || user_agent.indexOf('Android') > 0 || user_agent.indexOf('BlackBerry') > 0 || user_agent.indexOf('windows Phone') > 0 || user_agent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(user_agent)) {
 
 			if ($('input#inquiryListJp').val() === '') {
 
+				var sclpos = 100;
 				var inquiryListJp = $('input#inquiryListJp');
 				var offset = inquiryListJp.offset();
-				var sclpos = 20;
-				var targetOffset = inquiryListJp.offset().top + sclpos;
+					target = $(inquiryListJp);
 
-				$('html,body').animate({ scrollTop: offset.top - 20}, { duration: scldurat, easing: 'easeOutExpo' });
+				target.velocity('scroll', { duration: scldurat, easing: 'easeOutExpo' });
+				return false;
 
 			}
 
 			else if ($('input#inquiryCompanyNameJp').val() === '') {
 
+				var sclpos = 100;
 				var inquiryCompanyNameJp = $('input#inquiryCompanyNameJp');
 				var offset = inquiryCompanyNameJp.offset();
+					target = $(inquiryCompanyNameJp);
 
-				$('html,body').animate({ scrollTop: offset.top - 20 }, { duration: scldurat, easing: 'easeOutExpo' });
+				target.velocity('scroll', { duration: scldurat, easing: 'easeOutExpo' });
+				return false;
 
 			}
 
 			else if ($('input#inquiryNameJaJp').val() === '') {
 
+				var sclpos = 100;
 				var inquiryNameJaJp = $('input#inquiryNameJaJp');
 				var offset = inquiryNameJaJp.offset();
+					target = $(inquiryNameJaJp);
 
-				$('html,body').animate({ scrollTop: offset.top - 20 }, { duration: scldurat, easing: 'easeOutExpo' });
+				target.velocity('scroll', { duration: scldurat, easing: 'easeOutExpo' });
+				return false;
 
 			}
 
 			else if ($('input#inquiryNameEnJp').val() === '') {
 
+				var sclpos = 100;
 				var inquiryNameEnJp = $('input#inquiryNameEnJp');
 				var offset = inquiryNameEnJp.offset();
+					target = $(inquiryNameEnJp);
 
-				$('html,body').animate({ scrollTop: offset.top - 20 }, { duration: scldurat, easing: 'easeOutExpo' });
+				target.velocity('scroll', { duration: scldurat, easing: 'easeOutExpo' });
+				return false;
 
 			}
 
 			else if ($('input#inquiryMailJp').val() === '') {
 
+				var sclpos = 100;
 				var inquiryMailJp = $('input#inquiryMailJp');
 				var offset = inquiryMailJp.offset();
+					target = $(inquiryMailJp);
 
-				$('html,body').animate({ scrollTop: offset.top - 20 }, { duration: scldurat, easing: 'easeOutExpo' });
+				target.velocity('scroll', { duration: scldurat, easing: 'easeOutExpo' });
+				return false;
 
 			}
 
 			else if ($('textarea#inquiryTextJp').val() === '') {
 
+				var sclpos = 100;
 				var inquiryTextJp = $('input#inquiryTextJp');
 				var offset = inquiryTextJp.offset();
+					target = $(inquiryTextJp);
 
-				$('html,body').animate({ scrollTop: offset.top - 20 }, { duration: scldurat, easing: 'easeOutExpo' });
+				target.velocity('scroll', { duration: scldurat, easing: 'easeOutExpo' });
+				return false;
 
 			}
 
@@ -805,7 +796,7 @@ $(function() {
 				var sclpos = 20;
 				var targetOffset = inquiryListEn.offset().top + sclpos;
 
-				$('html,body').animate({ scrollTop: offset.top - 20}, {duration: scldurat, easing: 'easeOutExpo'});
+				$('html,body').animate({ scrollTop: offset.top - 100 }, { duration: scldurat, easing: 'easeOutExpo' });
 
 			}
 
@@ -814,7 +805,7 @@ $(function() {
 				var inquiryCompanyNameEn = $('input#inquiryCompanyNameEn');
 				var offset = inquiryCompanyNameEn.offset();
 
-				$('html,body').animate({ scrollTop: offset.top - 20 }, {duration: scldurat, easing: 'easeOutExpo'});
+				$('html,body').animate({ scrollTop: offset.top - 100 }, { duration: scldurat, easing: 'easeOutExpo' });
 
 			}
 
@@ -823,7 +814,7 @@ $(function() {
 				var inquiryNameEn = $('input#inquiryNameEn');
 				var offset = inquiryNameEn.offset();
 
-				$('html,body').animate({ scrollTop: offset.top - 20 }, {duration: scldurat, easing: 'easeOutExpo'});
+				$('html,body').animate({ scrollTop: offset.top - 100 }, { duration: scldurat, easing: 'easeOutExpo' });
 
 			}
 
@@ -832,7 +823,7 @@ $(function() {
 				var inquiryMailEn = $('input#inquiryMailEn');
 				var offset = inquiryMailEn.offset();
 
-				$('html,body').animate({ scrollTop: offset.top - 20 }, {duration: scldurat, easing: 'easeOutExpo'});
+				$('html,body').animate({ scrollTop: offset.top - 100 }, { duration: scldurat, easing: 'easeOutExpo' });
 
 			}
 
@@ -841,7 +832,7 @@ $(function() {
 				var inquiryTextEn = $('input#inquiryTextEn');
 				var offset = inquiryTextEn.offset();
 
-				$('html,body').animate({ scrollTop: offset.top - 20 }, {duration: scldurat, easing: 'easeOutExpo'});
+				$('html,body').animate({ scrollTop: offset.top - 100 }, { duration: scldurat, easing: 'easeOutExpo' });
 
 			}
 
@@ -1141,7 +1132,7 @@ $(function() {
 	function browserLanguage() {
 
 		try {
-			eturn (navigator.browserLanguage || navigator.language || navigator.userLanguage).substr(0,2) == 'ja' ? 'ja' : 'en';
+			return (navigator.browserLanguage || navigator.language || navigator.userLanguage).substr(0,2) == 'ja' ? 'ja' : 'en';
 		}
 		catch(e) {
 			return undefined;
@@ -1150,6 +1141,48 @@ $(function() {
 	}
 
 	var settinglang = browserLanguage();
+
+
+	// 2.グローバルナビから言語判定をとり、そこから日本語表示か英語表示か切り替える -for PC- //
+	function showLanguagePC(i) {
+
+		var langArr = i ;
+
+		switch (langArr) {
+
+			case 'ja' :
+				/* Cookie判定 */
+				$.cookie('lang', langArr, { expires: 365 , path: '/' });
+				$.removeCookie('lang_en', { path: '/' });
+
+				/* IDを切り替え */
+				$('#ja').fadeIn().show();
+				$('#en').fadeOut().hide();
+				break;
+
+			case 'en' :
+				/* Cookie判定 */
+				$.cookie('lang', langArr, { expires: 365 , path: '/' });
+				$.removeCookie('lang_ja', { path: '/' });
+
+				/* IDを切り替え */
+				$('#en').fadeIn().show();
+				$('#ja').fadeOut().hide();
+				break;
+
+			default :
+				/* Cookie判定 */
+				$.cookie('lang', langArr, { expires: 365 , path: '/' });
+				$.removeCookie('lang_en', { path: '/' });
+
+				/* IDを切り替え */
+				$('#ja').fadeIn().show();
+				$('#en').fadeOut().hide();
+				break;
+
+		}
+
+	}
 
 
 	// 2.グローバルナビから言語判定をとり、そこから日本語表示か英語表示か切り替える -for SP-//
@@ -1206,71 +1239,23 @@ $(function() {
 	}
 
 
-	// 2.グローバルナビから言語判定をとり、そこから日本語表示か英語表示か切り替える -forPC- //
-	function showLanguagePC(i) {
-
-		var langArr = i ;
-
-		switch (langArr) {
-
-			case 'ja' :
-				/* Cookie判定 */
-				$.cookie('lang', langArr, { expires: 365 , path: '/' });
-				$.removeCookie('lang_en', { path: '/' });
-
-				/* IDを切り替え */
-				$('#ja').fadeIn().show();
-				$('#en').fadeOut().hide();
-				break;
-
-			case 'en' :
-				/* Cookie判定 */
-				$.cookie('lang', langArr, { expires: 365 , path: '/' });
-				$.removeCookie('lang_ja', { path: '/' });
-
-				/* IDを切り替え */
-				$('#en').fadeIn().show();
-				$('#ja').fadeOut().hide();
-				break;
-
-			default :
-				/* Cookie判定 */
-				$.cookie('lang', langArr, { expires: 365 , path: '/' });
-				$.removeCookie('lang_en', { path: '/' });
-
-				/* IDを切り替え */
-				$('#ja').fadeIn().show();
-				$('#en').fadeOut().hide();
-				break;
-
-		}
-
-	}
-
-
 	// 3.デフォルトの表示 -lang:PC版、lang_ja / lang_en:SP版- //
 	var lang_ja = $.cookie('lang_ja');
 	var lang_en = $.cookie('lang_en');
-	var lang = $.cookie('lang');
 
 	if (lang_ja) {
+		showLanguagePC('ja');
 		showLanguageSP('ja');
 	}
 
 	else if (lang_en) {
+		showLanguagePC('en');
 		showLanguageSP('en');
 	}
 
-	else if (lang === 'ja') {
-		showLanguagePC('ja');
-	}
-
-	else if (lang === 'en') {
-		showLanguagePC('en');
-	}
-
 	else {
-		showLanguageSP('ja');
+		showLanguagePC();
+		showLanguageSP();
 	}
 
 
