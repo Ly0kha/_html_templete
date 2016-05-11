@@ -187,7 +187,7 @@ $(function() {
 
 			var href = $(this).attr("href"),
 			target = $(href === "#" || href === "" ? 'html' : href);
-			target.velocity('scroll', { duration: 500, easing: 'easeOutExpo' });
+			target.velocity( 'scroll', { duration: 500, easing: 'easeOutExpo' });
 			return false;
 
 	});
@@ -655,85 +655,84 @@ $(function() {
 		});
 
 
+		// エラーが出た箇所へ飛ぶ -for SP- //
 		var scldurat = 500;
 
+		function validateScrollJp(i) {
 
-		// エラーが出た箇所へ飛ぶ -for SP- //
-		if (user_agent.indexOf('iPhone') > 0 || user_agent.indexOf('iPad') > 0 || user_agent.indexOf('iPod') > 0 || user_agent.indexOf('Android') > 0 || user_agent.indexOf('BlackBerry') > 0 || user_agent.indexOf('windows Phone') > 0 || user_agent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(user_agent)) {
+			var caseArr = i ;
 
-			if ($('input#inquiryListJp').val() === '') {
+			switch (caseArr) {
+				case 'inquiryList' :
+					target = $('#inquiryListJp');
+					target.velocity( 'scroll', { duration: scldurat, easing: 'easeOutExpo' });
+					return false;
+					break;
 
-				var sclpos = 100;
-				var inquiryListJp = $('input#inquiryListJp');
-				var offset = inquiryListJp.offset();
-					target = $(inquiryListJp);
+				case 'inquiryCompanyName' :
+					target = $('#inquiryCompanyNameJp');
+					target.velocity( 'scroll', { duration: scldurat, easing: 'easeOutExpo' });
+					return false;
+					break;
 
-				target.velocity('scroll', { duration: scldurat, easing: 'easeOutExpo' });
-				return false;
+				case 'inquiryNameJa' :
+					target = $('#inquiryNameJaJp');
+					target.velocity( 'scroll', { duration: scldurat, easing: 'easeOutExpo' });
+					return false;
+					break;
 
-			}
+				case 'inquiryNameEn' :
+					target = $('#inquiryNameEnJp');
+					target.velocity( 'scroll', { duration: scldurat, easing: 'easeOutExpo' });
+					return false;
+					break;
 
-			else if ($('input#inquiryCompanyNameJp').val() === '') {
+				case 'inquiryMail' :
+					target = $('#inquiryMailJp');
+					target.velocity( 'scroll', { duration: scldurat, easing: 'easeOutExpo' });
+					return false;
+					break;
 
-				var sclpos = 100;
-				var inquiryCompanyNameJp = $('input#inquiryCompanyNameJp');
-				var offset = inquiryCompanyNameJp.offset();
-					target = $(inquiryCompanyNameJp);
-
-				target.velocity('scroll', { duration: scldurat, easing: 'easeOutExpo' });
-				return false;
-
-			}
-
-			else if ($('input#inquiryNameJaJp').val() === '') {
-
-				var sclpos = 100;
-				var inquiryNameJaJp = $('input#inquiryNameJaJp');
-				var offset = inquiryNameJaJp.offset();
-					target = $(inquiryNameJaJp);
-
-				target.velocity('scroll', { duration: scldurat, easing: 'easeOutExpo' });
-				return false;
-
-			}
-
-			else if ($('input#inquiryNameEnJp').val() === '') {
-
-				var sclpos = 100;
-				var inquiryNameEnJp = $('input#inquiryNameEnJp');
-				var offset = inquiryNameEnJp.offset();
-					target = $(inquiryNameEnJp);
-
-				target.velocity('scroll', { duration: scldurat, easing: 'easeOutExpo' });
-				return false;
-
-			}
-
-			else if ($('input#inquiryMailJp').val() === '') {
-
-				var sclpos = 100;
-				var inquiryMailJp = $('input#inquiryMailJp');
-				var offset = inquiryMailJp.offset();
-					target = $(inquiryMailJp);
-
-				target.velocity('scroll', { duration: scldurat, easing: 'easeOutExpo' });
-				return false;
-
-			}
-
-			else if ($('textarea#inquiryTextJp').val() === '') {
-
-				var sclpos = 100;
-				var inquiryTextJp = $('input#inquiryTextJp');
-				var offset = inquiryTextJp.offset();
-					target = $(inquiryTextJp);
-
-				target.velocity('scroll', { duration: scldurat, easing: 'easeOutExpo' });
-				return false;
+				case 'inquiryText' :
+					target = $('#inquiryTextJp');
+					target.velocity( 'scroll', { duration: scldurat, easing: 'easeOutExpo' });
+					return false;
+					break;
 
 			}
 
 		}
+
+
+		if (user_agent.indexOf('iPhone') > 0 || user_agent.indexOf('iPad') > 0 || user_agent.indexOf('iPod') > 0 || user_agent.indexOf('Android') > 0 || user_agent.indexOf('BlackBerry') > 0 || user_agent.indexOf('windows Phone') > 0 || user_agent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(user_agent)) {
+
+			if ($('input#inquiryListJp').val() === '') {
+				validateScrollJp('inquiryList');
+			}
+
+			else if ($('input#inquiryCompanyNameJp').val() === '') {
+				validateScrollJp('inquiryCompanyName');
+			}
+
+			else if ($('input#inquiryNameJaJp').val() === '') {
+				validateScrollJp('inquiryNameJa');
+			}
+
+			else if ($('input#inquiryNameEnJp').val() === '') {
+				validateScrollJp('inquiryNameEn');
+			}
+
+			else if ($('input#inquiryMailJp').val() === '') {
+				validateScrollJp('inquiryMail');
+			}
+
+			else if ($('textarea#inquiryTextJp').val() === '') {
+				validateScrollJp('inquiryText');
+			}
+
+		}
+
+
 
 	});
 
@@ -784,59 +783,74 @@ $(function() {
 
 		});
 
+
 		// エラーが出た箇所へ飛ぶ -for SP- //
 		var scldurat = 500;
 
-		if (user_agent.indexOf('iPhone') > 0 || user_agent.indexOf('iPad') > 0 || user_agent.indexOf('iPod') > 0 || user_agent.indexOf('Android') > 0 || user_agent.indexOf('BlackBerry') > 0 || user_agent.indexOf('windows Phone') > 0 || user_agent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(user_agent)) {
+		function validateScrollEn(i) {
 
-			if ($('input#inquiryListEn').val() === '') {
+			var caseArr = i ;
 
-				var inquiryListEn = $('input#inquiryListEn');
-				var offset = inquiryListEn.offset();
-				var sclpos = 20;
-				var targetOffset = inquiryListEn.offset().top + sclpos;
+			switch (caseArr) {
+				case 'inquiryList' :
+					target = $('#inquiryListEn');
+					target.velocity( 'scroll', { duration: scldurat, easing: 'easeOutExpo' });
+					return false;
+					break;
 
-				$('html,body').animate({ scrollTop: offset.top - 100 }, { duration: scldurat, easing: 'easeOutExpo' });
+				case 'inquiryCompanyName' :
+					target = $('#inquiryCompanyNameEn');
+					target.velocity( 'scroll', { duration: scldurat, easing: 'easeOutExpo' });
+					return false;
+					break;
 
-			}
+				case 'inquiryNameEn' :
+					target = $('#inquiryNameEnEn');
+					target.velocity( 'scroll', { duration: scldurat, easing: 'easeOutExpo' });
+					return false;
+					break;
 
-			else if ($('input#inquiryCompanyNameEn').val() === '') {
+				case 'inquiryMail' :
+					target = $('#inquiryMailEn');
+					target.velocity( 'scroll', { duration: scldurat, easing: 'easeOutExpo' });
+					return false;
+					break;
 
-				var inquiryCompanyNameEn = $('input#inquiryCompanyNameEn');
-				var offset = inquiryCompanyNameEn.offset();
-
-				$('html,body').animate({ scrollTop: offset.top - 100 }, { duration: scldurat, easing: 'easeOutExpo' });
-
-			}
-
-			else if ($('input#inquiryNameEn').val() === '') {
-
-				var inquiryNameEn = $('input#inquiryNameEn');
-				var offset = inquiryNameEn.offset();
-
-				$('html,body').animate({ scrollTop: offset.top - 100 }, { duration: scldurat, easing: 'easeOutExpo' });
-
-			}
-
-			else if ($('input#inquiryMailEn').val() === '') {
-
-				var inquiryMailEn = $('input#inquiryMailEn');
-				var offset = inquiryMailEn.offset();
-
-				$('html,body').animate({ scrollTop: offset.top - 100 }, { duration: scldurat, easing: 'easeOutExpo' });
-
-			}
-
-			else if ($('textarea#inquiryTextEn').val() === '') {
-
-				var inquiryTextEn = $('input#inquiryTextEn');
-				var offset = inquiryTextEn.offset();
-
-				$('html,body').animate({ scrollTop: offset.top - 100 }, { duration: scldurat, easing: 'easeOutExpo' });
+				case 'inquiryText' :
+					target = $('#inquiryTextEn');
+					target.velocity( 'scroll', { duration: scldurat, easing: 'easeOutExpo' });
+					return false;
+					break;
 
 			}
 
 		}
+
+
+		if (user_agent.indexOf('iPhone') > 0 || user_agent.indexOf('iPad') > 0 || user_agent.indexOf('iPod') > 0 || user_agent.indexOf('Android') > 0 || user_agent.indexOf('BlackBerry') > 0 || user_agent.indexOf('windows Phone') > 0 || user_agent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(user_agent)) {
+
+			if ($('input#inquiryListJp').val() === '') {
+				validateScrollEn('inquiryList');
+			}
+
+			else if ($('input#inquiryCompanyNameJp').val() === '') {
+				validateScrollEn('inquiryCompanyName');
+			}
+
+			else if ($('input#inquiryNameEnJp').val() === '') {
+				validateScrollEn('inquiryNameEn');
+			}
+
+			else if ($('input#inquiryMailJp').val() === '') {
+				validateScrollEn('inquiryMail');
+			}
+
+			else if ($('textarea#inquiryTextJp').val() === '') {
+				validateScrollEn('inquiryText');
+			}
+
+		}
+
 
 	});
 
@@ -878,7 +892,9 @@ $(function() {
 
 		if (user_agent.indexOf('iPhone') > 0 || user_agent.indexOf('iPad') > 0 || user_agent.indexOf('iPod') > 0 || user_agent.indexOf('Android') > 0 || user_agent.indexOf('BlackBerry') > 0 || user_agent.indexOf('windows Phone') > 0 || user_agent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(user_agent)){
 
-			$('html,body').animate({ scrollTop: 0 }, 'fast');
+			target = $('#form');
+			target.velocity( 'scroll', { duration: scldurat, easing: 'easeOutExpo' });
+			return false;
 
 		}
 
