@@ -706,27 +706,27 @@ $(function() {
 
 		if (user_agent.indexOf('iPhone') > 0 || user_agent.indexOf('iPad') > 0 || user_agent.indexOf('iPod') > 0 || user_agent.indexOf('Android') > 0 || user_agent.indexOf('BlackBerry') > 0 || user_agent.indexOf('windows Phone') > 0 || user_agent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(user_agent)) {
 
-			if ($('input#inquiryListJp').val() === '') {
+			if ($('input#formInquiryListJp').val() === '') {
 				validateScrollJp('inquiryList');
 			}
 
-			else if ($('input#inquiryCompanyNameJp').val() === '') {
+			else if ($('input#formInquiryCompanyNameJp').val() === '') {
 				validateScrollJp('inquiryCompanyName');
 			}
 
-			else if ($('input#inquiryNameJaJp').val() === '') {
+			else if ($('input#formInquiryNameJaJp').val() === '') {
 				validateScrollJp('inquiryNameJa');
 			}
 
-			else if ($('input#inquiryNameEnJp').val() === '') {
+			else if ($('input#formInquiryNameEnJp').val() === '') {
 				validateScrollJp('inquiryNameEn');
 			}
 
-			else if ($('input#inquiryMailJp').val() === '') {
+			else if ($('input#formInquiryMailJp').val() === '') {
 				validateScrollJp('inquiryMail');
 			}
 
-			else if ($('textarea#inquiryTextJp').val() === '') {
+			else if ($('textarea#formInquiryTextJp').val() === '') {
 				validateScrollJp('inquiryText');
 			}
 
@@ -829,23 +829,23 @@ $(function() {
 
 		if (user_agent.indexOf('iPhone') > 0 || user_agent.indexOf('iPad') > 0 || user_agent.indexOf('iPod') > 0 || user_agent.indexOf('Android') > 0 || user_agent.indexOf('BlackBerry') > 0 || user_agent.indexOf('windows Phone') > 0 || user_agent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(user_agent)) {
 
-			if ($('input#inquiryListJp').val() === '') {
+			if ($('input#formInquiryListEn').val() === '') {
 				validateScrollEn('inquiryList');
 			}
 
-			else if ($('input#inquiryCompanyNameJp').val() === '') {
+			else if ($('input#formInquiryCompanyNameEn').val() === '') {
 				validateScrollEn('inquiryCompanyName');
 			}
 
-			else if ($('input#inquiryNameEnJp').val() === '') {
+			else if ($('input#formInquiryNameEnEn').val() === '') {
 				validateScrollEn('inquiryNameEn');
 			}
 
-			else if ($('input#inquiryMailJp').val() === '') {
+			else if ($('input#formInquiryMailEn').val() === '') {
 				validateScrollEn('inquiryMail');
 			}
 
-			else if ($('textarea#inquiryTextJp').val() === '') {
+			else if ($('textarea#formInquiryTextEn').val() === '') {
 				validateScrollEn('inquiryText');
 			}
 

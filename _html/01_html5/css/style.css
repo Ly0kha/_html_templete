@@ -1692,25 +1692,25 @@ label.error {
 
 
 /* エラーメッセージ  -PC版- */
-dl.form-pc label#inquiryListJp-error,
-dl.form-pc label#inquiryCompanyNameJp-error,
-dl.form-pc label#inquiryNameJaJp-error,
-dl.form-pc label#inquiryNameEnJp-error,
-dl.form-pc label#inquiryMailJp-error,
-dl.form-pc label#inquiryPhoneJp-error,
+dl.form-pc label#formInquiryListJp-error,
+dl.form-pc label#formInquiryCompanyNameJp-error,
+dl.form-pc label#formInquiryNameJaJp-error,
+dl.form-pc label#formInquiryNameEnJp-error,
+dl.form-pc label#formInquiryMailJp-error,
+dl.form-pc label#formInquiryPhoneEn-error,
 
-dl.form-pc label#inquiryListEn-error,
-dl.form-pc label#inquiryCompanyNameEn-error,
-dl.form-pc label#inquiryNameEnEn-error,
-dl.form-pc label#inquiryMailEn-error,
-dl.form-pc label#inquiryPhoneEn-error {
+dl.form-pc label#formInquiryListEn-error,
+dl.form-pc label#formInquiryCompanyNameEn-error,
+dl.form-pc label#formInquiryNameEnEn-error,
+dl.form-pc label#formInquiryMailEn-error,
+dl.form-pc label#formInquiryPhoneEn-error {
 	position: absolute;
 	left: 0px;
 	top: 32px;
 }
 
-dl.form-pc label#inquiryTextJp-error,
-dl.form-pc label#inquiryTextEn-error {
+dl.form-pc label#formInquiryTextJp-error,
+dl.form-pc label#formInquiryTextEn-error {
 	position: absolute;
 	left: 0px;
 	top: 130px;
@@ -1718,18 +1718,18 @@ dl.form-pc label#inquiryTextEn-error {
 
 
 /* エラーメッセージ  -SP版- */
-dl.form-sp label#inquiryListJp-error,
-dl.form-sp label#inquiryCompanyNameJp-error,
-dl.form-sp label#inquiryNameJaJp-error,
-dl.form-sp label#inquiryNameEnJp-error,
-dl.form-sp label#inquiryMailJp-error,
-dl.form-sp label#inquiryPhoneJp-error,
+dl.form-sp label#formInquiryListJp-error,
+dl.form-sp label#formInquiryCompanyNameJp-error,
+dl.form-sp label#formInquiryNameJaJp-error,
+dl.form-sp label#formInquiryNameEnJp-error,
+dl.form-sp label#formInquiryMailJp-error,
+dl.form-sp label#formInquiryPhoneEn-error,
 
-dl.form-sp label#inquiryListEn-error,
-dl.form-sp label#inquiryCompanyNameEn-error,
-dl.form-sp label#inquiryNameEnEn-error,
-dl.form-sp label#inquiryMailEn-error,
-dl.form-sp label#inquiryPhoneEn-error {
+dl.form-sp label#formInquiryListEn-error,
+dl.form-sp label#formInquiryCompanyNameEn-error,
+dl.form-sp label#formInquiryNameEnEn-error,
+dl.form-sp label#formInquiryMailEn-error,
+dl.form-sp label#formInquiryPhoneEn-error {
 	position: absolute;
 	left: 0px;
 	top: 32px;

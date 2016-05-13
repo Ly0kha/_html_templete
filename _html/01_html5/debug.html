@@ -36,12 +36,13 @@
 	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" media="all">
 
-	<!-- JS -->
+	<!-- JS Framework -->
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/velocity/1.2.2/velocity.js"></script>
 
+	<!-- JS Executable file -->
 	<script type="text/javascript" src="js/lib/jquery/plugin.js"></script>
 
 	<!-- <script type="text/javascript" src="js/lib/coffee/coffee-script.js"></script>
@@ -513,43 +514,43 @@
 								<!-- Form -->
 								<dl id="form-layoutJp" class="form-pc">
 
-									<dt>お問い合わせ内容&nbsp;<span class="text-color-red">※</span>&nbsp;</dt>
+									<dt id="inquiryListJp">お問い合わせ内容&nbsp;<span class="text-color-red">※</span>&nbsp;</dt>
 									<dd>
 										<div class="bg-input">
-											<input type="text" id="inquiryListJp" name="inquiryListJp" value="" size="40" autocomplete="off">
+											<input type="text" id="formInquiryListJp" name="inquiryListJp" value="" size="40" autocomplete="off">
 										</div>
 									</dd>
-									<dt>会社名&nbsp;</dt>
+									<dt id="inquiryCompanyNameJp">会社名&nbsp;</dt>
 									<dd>
 										<div class="bg-input">
-											<input type="text" id="inquiryCompanyNameJp" name="inquiryCompanyNameJp" value="" size="40" autocomplete="off">
+											<input type="text" id="formInquiryCompanyNameJp" name="inquiryCompanyNameJp" value="" size="40" autocomplete="off">
 										</div>
 									</dd>
-									<dt>お名前[日]&nbsp;<span class="text-color-red">※</span>&nbsp;<span class="small">(全角)</span></dt>
+									<dt id="inquiryNameJaJp">お名前[日]&nbsp;<span class="text-color-red">※</span>&nbsp;<span class="small">(全角)</span></dt>
 									<dd>
 										<div class="bg-input">
-											<input type="text" id="inquiryNameJaJp" name="inquiryNameJaJp" value="" size="40" autocomplete="off">
+											<input type="text" id="formInquiryNameJaJp" name="inquiryNameJaJp" value="" size="40" autocomplete="off">
 										</div>
 									</dd>
-									<dt>お名前[英]&nbsp;<span class="text-color-red">※</span>&nbsp;<span class="small">(半角英数)</span></dt>
+									<dt id="inquiryNameEnJp">お名前[英]&nbsp;<span class="text-color-red">※</span>&nbsp;<span class="small">(半角英数)</span></dt>
 									<dd>
 										<div class="bg-input">
-											<input type="text" id="inquiryNameEnJp" name="inquiryNameEnJp" value="" size="40" autocomplete="off">
+											<input type="text" id="formInquiryNameEnJp" name="inquiryNameEnJp" value="" size="40" autocomplete="off">
 										</div>
 									</dd>
-									<dt>メールアドレス&nbsp;<span class="text-color-red">※</span>&nbsp;<span class="small">(半角英数)</span></dt>
+									<dt id="inquiryMailJp">メールアドレス&nbsp;<span class="text-color-red">※</span>&nbsp;<span class="small">(半角英数)</span></dt>
 									<dd>
 										<div class="bg-input">
-											<input type="text" id="inquiryMailJp" name="inquiryMailJp" value="" size="40" autocomplete="off">
+											<input type="text" id="formInquiryMailJp" name="inquiryMailJp" value="" size="40" autocomplete="off">
 										</div>
 									</dd>
-									<dt>電話番号&nbsp;<span class="small">(半角英数)</span></dt>
+									<dt id="inquiryPhoneJp">電話番号&nbsp;<span class="small">(半角英数)</span></dt>
 									<dd>
 										<div class="bg-input">
-											<input type="text" id="inquiryPhoneJp" name="inquiryPhoneJp" value="" size="40" autocomplete="off">
+											<input type="text" id="formInquiryTextJp" name="inquiryPhoneJp" value="" size="40" autocomplete="off">
 										</div>
 									</dd>
-									<dt>お問い合わせ内容&nbsp;<span class="text-color-red">※</span>&nbsp;</dt>
+									<dt id="inquiryTextJp">お問い合わせ内容&nbsp;<span class="text-color-red">※</span>&nbsp;</dt>
 									<dd class="textarea">
 										<div class="bg-textarea">
 											<textarea id="inquiryTextJp" name="inquiryTextJp"></textarea>
@@ -785,8 +786,7 @@
 
 </div>
 
-<!-- JS PlugIn -->
-<script type="text/javascript" src="js/lib/jquery/jquery.easing.1.3.js"></script>
+<!-- JS PlugIn File -->
 <script type="text/javascript" src="js/lib/jquery/jquery.cookie.js"></script>
 <script type="text/javascript" src="js/lib/jquery/jquery.validate.min.js"></script>
 <script type="text/javascript" src="js/lib/jquery/jquery.validate.japlugin.js"></script>
