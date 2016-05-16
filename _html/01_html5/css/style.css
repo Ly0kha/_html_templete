@@ -178,6 +178,8 @@ input[type="password"],
 textarea,
 select {
 	font-family: "Lucida Grande","ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ",Meiryo,"ＭＳ Ｐゴシック", "MS PGothic",Helvetica,Osaka,sans-serif;
+	font-size: 16px !important;
+	scale(0.8);
 }
 
 input,
