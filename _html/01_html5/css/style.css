@@ -49,7 +49,7 @@ body {
 @media (min-width: 960px) {
 
 	body {
-		font-family: 'Noto Sans Japanese', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', Osaka, sans-serif;
+		font-family: 'Noto Sans Japanese', 'Glyphicons Halflings', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', Osaka, sans-serif;
 		font-size: 14px; /* PC用 */
 	}
 
@@ -60,7 +60,7 @@ body {
 @media (max-width: 959px) {
 
 	body {
-		font-family: 'Noto Sans Japanese', sans-serif;
+		font-family: 'Noto Sans Japanese', 'Glyphicons Halflings', sans-serif;
 		font-size: 11px; /* SP用 */
 	}
 
@@ -178,14 +178,39 @@ input[type="password"],
 textarea,
 select {
 	font-family: "Lucida Grande","ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ",Meiryo,"ＭＳ Ｐゴシック", "MS PGothic",Helvetica,Osaka,sans-serif;
-	font-size: 16px !important;
-	scale(0.8);
 }
 
 input,
 textarea,
 select {
 	outline: none;
+}
+
+
+/* BreakPoint for PC */
+@media (min-width: 960px) {
+
+	input[type="text"],
+	input[type="password"],
+	textarea,
+	select {
+		font-size: 12px !important;
+	}
+
+}
+
+
+/* BreakPoint for SP */
+@media (max-width: 959px) {
+
+	input[type="text"],
+	input[type="password"],
+	textarea,
+	select {
+		font-size: 16px !important;
+		scale(0.8);
+	}
+
 }
 
 
@@ -253,7 +278,7 @@ select {
 
 	display: inline-block;
 	font-size: 14px;
-	line-height: 26px;
+	line-height: 22px;
 
 	cursor: pointer;
 }
@@ -304,7 +329,7 @@ select {
 		top: 0px;
 		left: 6px;
 
-		content: "\002713";
+		content: "\e013";
 		color: #000;
 
 		display: block;
@@ -718,7 +743,7 @@ hr {
 	color: #d3d3d3;
 }
 
-+.text-color-white {
+.text-color-white {
 	color: #fff;
 }
 
@@ -1633,8 +1658,8 @@ dl.form-sp dd p {
 
 
 /* フォーム部品のサイズ、背景用 */
-p#inquiryListDisplayJp,
-p#inquiryListDisplayEn {
+p#formInquiryListDisplayJp,
+p#formInquiryListDisplayEn {
 	position: relative;
 	left: 0px;
 	top: 0px;
@@ -1748,4 +1773,138 @@ dl.form-sp label#inquiryTextEn-error {
 /* レイアウト -個人情報同意ウィンドウ- */
 h3.accept {
 	font-size: 1em;
+}
+
+
+/* 2nd: formSuggest
+--------------------------*/
+
+
+/* サジェスト外にクリッカブルなエリアを作らない為のボックス -PC版のみ- */
+.suggestClear {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+
+	margin: auto;
+	padding: 0px;
+
+	z-index: 1000;
+	cursor: pointer;
+	-webkit-tap-highlight-color:rgba(0, 0, 0, 0)!important;
+}
+
+/* サジェストレイアウト -_pc:PC版、_sp:SP版- */
+/* 大枠 */
+.suggest-pc {
+	position: relative;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+
+	cursor: pointer;
+}
+
+.suggest-sp {
+	position: relative;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+
+	cursor: pointer;
+}
+
+/* wrap部分 */
+.suggest-wrapper-pc,
+.suggest-wrapper-sp {
+	position: absolute;
+	height: auto;
+	padding: 0px;
+	overflow: hidden;
+	font-family: "Lucida Grande","ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ",Meiryo,"ＭＳ Ｐゴシック", "MS PGothic",Helvetica,Osaka,sans-serif;
+	z-index: 3000;
+}
+
+/* サジェストの表示開始位置 -_pc:PC版、_sp:SP版- */
+.suggest-pc .suggest-wrapper-pc,
+.suggest-sp .suggest-wrapper-sp {
+	top: 30px;
+	width: 100%;
+}
+
+/* サジェストの吹き出し部分 */
+.suggestBox {
+	width: 270px;
+	margin: 0px auto;
+	overflow: hidden;
+}
+
+/* サジェスト本体のContainer */
+.suggestContainer {
+	background: #fff;
+	width: 100%;
+	margin: 0px;
+
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+/* サジェスト本体のリンク装飾 */
+.suggestContainer ul li a {
+	width: 190px;
+	margin-bottom: 7px;
+	font-size: 12px;
+	color: #5b9f1f;
+	cursor: pointer;
+	display: block;
+}
+
+.suggestContainer ul li.acv a {
+	color: #5b9f1f;
+	background-color: #f2f7de;
+}
+
+.suggestContainer ul li a:hover{
+	color: #5b9f1f;
+	background-color: #f2f7de;
+}
+
+/*　横向き、縦向きになった時のサジェスト表示サイズ -SP版のみ- */
+@media only screen and (orientation : landscape) { /* 横向き */
+	.suggest-wrap-sp {
+		z-index: 3000;
+		zoom: 1.25;
+		-webkit-tap-highlight-color:rgba(0, 0, 0, 0)!important;
+	}
+
+	.suggestContainer ul li a  {
+		font-size: 1em;
+	}
+}
+
+@media only screen and (orientation : portrait) { /* 縦向き */
+	.suggest-wrap-sp {
+		z-index: 3000;
+		zoom: 1;
+		-webkit-tap-highlight-color:rgba(0, 0, 0, 0)!important;
+	}
+
+	.suggestContainer ul li a  {
+		font-size: 1em;
+	}
+}
+
+/* メール送信後 */
+@media only screen and (orientation : landscape) { /* 横向き */
+	.img-complete-sp {
+		width: 70%;
+	}
+}
+
+@media only screen and (orientation : portrait) { /* 縦向き */
+	.img-complete-sp {
+		width: 100%;
+	}
 }

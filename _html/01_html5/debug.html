@@ -516,44 +516,125 @@
 
 									<dt id="inquiryListJp">お問い合わせ内容&nbsp;<span class="text-color-red">※</span>&nbsp;</dt>
 									<dd>
-										<div class="bg-input">
-											<input type="text" id="formInquiryListJp" name="inquiryListJp" value="" size="40" autocomplete="off">
+
+										<!-- Suggest  PC:.suggest_pc  SP:.suggest_sp -->
+										<div class="suggest-pc">
+
+											<!-- SuggestSelector -->
+											<div class="bg-inputSelector">
+												<p class="pd_04" id="formInquiryListDisplayJp"></p>
+												<input type="hidden" id="formInquiryListJp" name="inquiryListJp" value="" size="40" autocomplete="off">
+												<img src="images/common/icon_pulldown.png" class="btn-pulldown">
+											</div>
+
+											<!-- Suggest Wrapper -->
+											<div id="suggestJp" class="suggest-wrapper-pc" style="display: none;">
+
+												<div class="suggestBox">
+
+														<div class="box pd-left-right-20 suggestContainer">
+
+																<nav>
+																	<ul id="suggestMenuJp">
+																		<li id="menuJp1">
+																			<a href="javascript:void(0)">
+																				お問い合わせその１が入ります。
+																			</a>
+																		</li>
+																		<li id="menuJp2">
+																			<a href="javascript:void(0)">
+																				お問い合わせその２が入ります。
+																			</a>
+																		</li>
+																		<li id="menuJp3">
+																			<a href="javascript:void(0)">
+																				お問い合わせその３が入ります。
+																			</a>
+																		</li>
+																		<li id="menuJp4">
+																			<a href="javascript:void(0)">
+																				お問い合わせその４が入ります。
+																			</a>
+																		</li>
+																		<li id="menuJp5">
+																			<a href="javascript:void(0)">
+																				お問い合わせその５が入ります。
+																			</a>
+																		</li>
+																	</ul>
+																</nav>
+
+														</div>
+
+												</div>
+
+											</div>
+
 										</div>
+
+										<div class="suggestClear"></div>
+
 									</dd>
-									<dt id="inquiryCompanyNameJp">会社名&nbsp;</dt>
+
+
+									<dt id="inquiryCompanyNameJp">
+										会社名&nbsp;
+									</dt>
 									<dd>
 										<div class="bg-input">
 											<input type="text" id="formInquiryCompanyNameJp" name="inquiryCompanyNameJp" value="" size="40" autocomplete="off">
 										</div>
 									</dd>
-									<dt id="inquiryNameJaJp">お名前[日]&nbsp;<span class="text-color-red">※</span>&nbsp;<span class="small">(全角)</span></dt>
+
+									<dt id="inquiryNameJaJp">
+										お名前[日]&nbsp;
+										<span class="text-color-red">※</span>&nbsp;
+										<span class="small">(全角)</span>
+									</dt>
 									<dd>
 										<div class="bg-input">
 											<input type="text" id="formInquiryNameJaJp" name="inquiryNameJaJp" value="" size="40" autocomplete="off">
 										</div>
 									</dd>
-									<dt id="inquiryNameEnJp">お名前[英]&nbsp;<span class="text-color-red">※</span>&nbsp;<span class="small">(半角英数)</span></dt>
+
+									<dt id="inquiryNameEnJp">
+										お名前[英]&nbsp;
+										<span class="text-color-red">※</span>&nbsp;
+										<span class="small">(半角英数)</span>
+									</dt>
 									<dd>
 										<div class="bg-input">
 											<input type="text" id="formInquiryNameEnJp" name="inquiryNameEnJp" value="" size="40" autocomplete="off">
 										</div>
 									</dd>
-									<dt id="inquiryMailJp">メールアドレス&nbsp;<span class="text-color-red">※</span>&nbsp;<span class="small">(半角英数)</span></dt>
+
+									<dt id="inquiryMailJp">メールアドレス&nbsp;
+										<span class="text-color-red">※</span>&nbsp;
+										<span class="small">(半角英数)</span>
+									</dt>
 									<dd>
 										<div class="bg-input">
 											<input type="text" id="formInquiryMailJp" name="inquiryMailJp" value="" size="40" autocomplete="off">
 										</div>
 									</dd>
-									<dt id="inquiryPhoneJp">電話番号&nbsp;<span class="small">(半角英数)</span></dt>
+
+									<dt id="inquiryPhoneJp">
+										電話番号&nbsp;
+										<span class="small">(半角英数)</span>
+									</dt>
 									<dd>
 										<div class="bg-input">
 											<input type="text" id="formInquiryTextJp" name="inquiryPhoneJp" value="" size="40" autocomplete="off">
 										</div>
 									</dd>
-									<dt id="inquiryTextJp">お問い合わせ内容&nbsp;<span class="text-color-red">※</span>&nbsp;</dt>
+
+									<dt id="inquiryTextJp">
+										お問い合わせ内容&nbsp;
+										<span class="text-color-red">※</span>&nbsp;
+									</dt>
 									<dd class="textarea">
 										<div class="bg-textarea">
-											<textarea id="inquiryTextJp" name="inquiryTextJp"></textarea>
+											<textarea id="formInquiryTextJp" name="inquiryTextJp"></textarea>
 										</div>
 									</dd>
 
@@ -775,7 +856,7 @@
 					<span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span>
 				</a>
 			</div>
-			<address>(c) 2015 Atsushi Kikushima.</address>
+			<address>&copy;2016 Atsushi Kikushima.</address>
 
 
 		</footer>

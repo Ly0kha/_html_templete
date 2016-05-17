@@ -793,31 +793,31 @@ $(function() {
 
 			switch (caseArr) {
 				case 'inquiryList' :
-					target = $('#inquiryListEn');
+					target = $('#formInquiryListEn');
 					target.velocity( 'scroll', { duration: scldurat, easing: 'easeOutExpo' });
 					return false;
 					break;
 
 				case 'inquiryCompanyName' :
-					target = $('#inquiryCompanyNameEn');
+					target = $('#formInquiryCompanyNameEn');
 					target.velocity( 'scroll', { duration: scldurat, easing: 'easeOutExpo' });
 					return false;
 					break;
 
 				case 'inquiryNameEn' :
-					target = $('#inquiryNameEnEn');
+					target = $('#formInquiryNameEnEn');
 					target.velocity( 'scroll', { duration: scldurat, easing: 'easeOutExpo' });
 					return false;
 					break;
 
 				case 'inquiryMail' :
-					target = $('#inquiryMailEn');
+					target = $('#formInquiryMailEn');
 					target.velocity( 'scroll', { duration: scldurat, easing: 'easeOutExpo' });
 					return false;
 					break;
 
 				case 'inquiryText' :
-					target = $('#inquiryTextEn');
+					target = $('#formInquiryTextEn');
 					target.velocity( 'scroll', { duration: scldurat, easing: 'easeOutExpo' });
 					return false;
 					break;
@@ -862,23 +862,23 @@ $(function() {
 
 
 	// Resetを押したときの判定 //
-	$('input#btn-reset-ja,input#btn-reset-en').on('click', function() {
+	$('input#btn-reset-ja, input#btn-reset-en').on('click', function() {
 
 		// バリデート注意文言を消す -日本語- //
 		$('label.error').html('').hide();
 
 		// サジェスト部分の注意文言及び[input type='hidden']内の値を消す -共通- //
-		$('p#inquiryListDisplayJp,p#inquiryListDisplayEn').html('');
-		$('input#inquiryListJp,input#inquiryListEn').val('');
+		$('p#formInquiryListDisplayJp, p#formInquiryListDisplayEn').html('');
+		$('input#formInquiryListJp, input#formInquiryListEn').val('');
 
 		// [input type='text'][textarea]内の値を消す -共通- //
-		$('input:text,input:checked,textarea').val('');
+		$('input:text, input:checked, textarea').val('');
 
 		// 同意するボタン内の値を消す -共通- //
-		$('#accept-ja,#accept-en').attr('checked', false);
+		$('#accept-ja, #accept-en').attr('checked', false);
 
 		// 同意ボタンにチェックが入っているか否かでのリセット、確認ボタンの判定 //
-		if ($('#accept-ja:checked,#accept-en:checked').length === 0) {
+		if ($('#accept-ja:checked, #accept-en:checked').length === 0) {
 
 			$('#btn-reset-ja').attr('id','btn-reset-off-ja').attr('disabled', true);
 			$('#btn-reset-en').attr('id','btn-reset-off-en').attr('disabled', true);
@@ -903,29 +903,29 @@ $(function() {
 
 	// 同意ボタンを押したときのリセット、確認ボタンの判定 //
 	/*  default */
-			$('#btn-reset-ja').attr('id','btn-reset-off-ja').attr('disabled', true);
-			$('#btn-reset-en').attr('id','btn-reset-off-en').attr('disabled', true);
-			$('#btn-confirm-ja').attr('id','btn-confirm-off-ja').attr('disabled', true);
-			$('#btn-confirm-en').attr('id','btn-confirm-off-en').attr('disabled', true);
+			$('#btn-reset-ja').attr('id', 'btn-reset-off-ja').attr('disabled', true);
+			$('#btn-reset-en').attr('id', 'btn-reset-off-en').attr('disabled', true);
+			$('#btn-confirm-ja').attr('id', 'btn-confirm-off-ja').attr('disabled', true);
+			$('#btn-confirm-en').attr('id', 'btn-confirm-off-en').attr('disabled', true);
 
 	/*  accept */
 	$('#accept-ja,#accept-en').click(function() {
 
 		if ($('#accept-ja:checked,#accept-en:checked').length === 1) {
 
-			$('#btn-reset-off-ja').attr('id','btn-reset-ja').attr('disabled', false);
-			$('#btn-reset-off-en').attr('id','btn-reset-en').attr('disabled', false);
-			$('#btn-confirm-off-ja').attr('id','btn-confirm-ja').attr('disabled', false);
-			$('#btn-confirm-off-en').attr('id','btn-confirm-en').attr('disabled', false);
+			$('#btn-reset-off-ja').attr('id', 'btn-reset-ja').attr('disabled', false);
+			$('#btn-reset-off-en').attr('id', 'btn-reset-en').attr('disabled', false);
+			$('#btn-confirm-off-ja').attr('id', 'btn-confirm-ja').attr('disabled', false);
+			$('#btn-confirm-off-en').attr('id', 'btn-confirm-en').attr('disabled', false);
 
 		}
 
 		else {
 
-			$('#btn-reset-ja').attr('id','btn-reset-off-ja').attr('disabled', true);
-			$('#btn-reset-en').attr('id','btn-reset-off-en').attr('disabled', true);
-			$('#btn-confirm-ja').attr('id','btn-confirm-off-ja').attr('disabled', true);
-			$('#btn-confirm-en').attr('id','btn-confirm-off-en').attr('disabled', true);
+			$('#btn-reset-ja').attr('id', 'btn-reset-off-ja').attr('disabled', true);
+			$('#btn-reset-en').attr('id', 'btn-reset-off-en').attr('disabled', true);
+			$('#btn-confirm-ja').attr('id', 'btn-confirm-off-ja').attr('disabled', true);
+			$('#btn-confirm-en').attr('id', 'btn-confirm-off-en').attr('disabled', true);
 
 		}
 
@@ -933,7 +933,7 @@ $(function() {
 
 
 	// 戻るボタンを押したときの判定 //
-	$('input#btn-formback-ja,input#btn-formback-en').on('click', function() {
+	$('input#btn-formback-ja, input#btn-formback-en').on('click', function() {
 		location.href='index.html'
 	});
 
@@ -1012,12 +1012,12 @@ $(function() {
 		// サジェストを出す -forSP- //
 		if (user_agent.indexOf('iPhone') > 0 || user_agent.indexOf('iPad') > 0 || user_agent.indexOf('iPod') > 0 || user_agent.indexOf('Android') > 0 || user_agent.indexOf('BlackBerry') > 0 || user_agent.indexOf('windows Phone') > 0 || user_agent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(user_agent)) {
 
-			$('#inquiryListDisplayJp,#inquiryListDisplayEn').on({
+			$('#formInquiryListDisplayJp,#formInquiryListDisplayEn').on({
 
 				// タッチがサジェストの上に乗った時の判定 //
 				'click':function() {
 
-					$('#suggestJp,#suggestEn').fadeIn();
+					$('#suggestJp, #suggestEn').fadeIn();
 
 					// サジェストクリアゾーンを出す //
 					$('.suggestClear').show();
@@ -1038,7 +1038,7 @@ $(function() {
 
 				// タッチがサジェストクリアゾーンの上に乗った時の判定 //
 				'click':function() {
-					$('#suggestJp,#suggestEn').fadeOut();
+					$('#suggestJp, #suggestEn').fadeOut();
 					$('.suggestClear').hide();
 				}
 
@@ -1055,11 +1055,11 @@ $(function() {
 
 				// マウスカーソルがサジェストの上に乗った時の判定 //
 				'mouseenter':function() {
-					$('#suggestJp,#suggestEn').fadeIn();
+					$('#suggestJp, #suggestEn').fadeIn();
 				},
 				// マウスカーソルがサジェストの上から外れた時の判定 //
 				'mouseleave':function() {
-					$('#suggestJp,#suggestEn').fadeOut();
+					$('#suggestJp, #suggestEn').fadeOut();
 				}
 
 			});
@@ -1078,62 +1078,62 @@ $(function() {
 
 
 	// サジェスト内のお問い合わせ事項テキストを値として読み込む  //
-	var suggestBusinessJp = $('#menuJp0').text();
-	var suggestRecruitJp  = $('#menuJp1').text();
-	var suggestCreativeJp = $('#menuJp2').text();
-	var suggestPersonalJp = $('#menuJp3').text();
-	var suggestOtherJp    = $('#menuJp4').text();
+	var suggestBusinessJp = $('#menuJp1').text();
+	var suggestRecruitJp  = $('#menuJp2').text();
+	var suggestCreativeJp = $('#menuJp3').text();
+	var suggestPersonalJp = $('#menuJp4').text();
+	var suggestOtherJp    = $('#menuJp5').text();
 
-	var suggestBusinessEn = $('#menuEn0').text();
-	var suggestRecruitEn  = $('#menuEn1').text();
-	var suggestCreativeEn = $('#menuEn2').text();
-	var suggestPersonalEn = $('#menuEn3').text();
-	var suggestOtherEn    = $('#menuEn4').text();
+	var suggestBusinessEn = $('#menuEn1').text();
+	var suggestRecruitEn  = $('#menuEn2').text();
+	var suggestCreativeEn = $('#menuEn3').text();
+	var suggestPersonalEn = $('#menuEn4').text();
+	var suggestOtherEn    = $('#menuEn5').text();
 
 
 	// テキストの値をinput#inquiryListへ与える  //
-	$('#menuJp0,#menuEn0').mouseover(function() {
+	$('#menuJp1, #menuEn1').mouseover(function() {
 
-		$('#inquiryListJp').val(suggestBusinessJp);
-		$('#inquiryListDisplayJp').html(suggestBusinessJp);
-		$('#inquiryListEn').val(suggestBusinessEn);
-		$('#inquiryListDisplayEn').html(suggestBusinessEn);
-
-	});
-
-	$('#menuJp1,#menuEn1').mouseover(function() {
-
-		$('#inquiryListJp').val(suggestRecruitJp);
-		$('#inquiryListDisplayJp').html(suggestRecruitJp);
-		$('#inquiryListEn').val(suggestRecruitEn);
-		$('#inquiryListDisplayEn').html(suggestRecruitEn);
+		$('#formInquiryListJp').val(suggestBusinessJp);
+		$('#formInquiryListDisplayJp').html(suggestBusinessJp);
+		$('#formInquiryListEn').val(suggestBusinessEn);
+		$('#formInquiryListDisplayEn').html(suggestBusinessEn);
 
 	});
 
-	$('#menuJp2,#menuEn2').mouseover(function() {
+	$('#menuJp2, #menuEn2').mouseover(function() {
 
-		$('#inquiryListJp').val(suggestCreativeJp);
-		$('#inquiryListDisplayJp').html(suggestCreativeJp);
-		$('#inquiryListEn').val(suggestCreativeEn);
-		$('#inquiryListDisplayEn').html(suggestCreativeEn);
-
-	});
-
-	$('#menuJp3,#menuEn3').mouseover(function() {
-
-		$('#inquiryListJp').val(suggestPersonalJp);
-		$('#inquiryListDisplayJp').html(suggestPersonalJp);
-		$('#inquiryListEn').val(suggestPersonalEn);
-		$('#inquiryListDisplayEn').html(suggestPersonalEn);
+		$('#formInquiryListJp').val(suggestRecruitJp);
+		$('#formInquiryListDisplayJp').html(suggestRecruitJp);
+		$('#formInquiryListEn').val(suggestRecruitEn);
+		$('#formInquiryListDisplayEn').html(suggestRecruitEn);
 
 	});
 
-	$('#menuJp4,#menuEn4').mouseover(function() {
+	$('#menuJp3, #menuEn3').mouseover(function() {
 
-		$('#inquiryListJp').val(suggestOtherJp);
-		$('#inquiryListDisplayJp').html(suggestOtherJp);
-		$('#inquiryListEn').val(suggestOtherEn);
-		$('#inquiryListDisplayEn').html(suggestOtherEn);
+		$('#formInquiryListJp').val(suggestCreativeJp);
+		$('#formInquiryListDisplayJp').html(suggestCreativeJp);
+		$('#formInquiryListEn').val(suggestCreativeEn);
+		$('#formInquiryListDisplayEn').html(suggestCreativeEn);
+
+	});
+
+	$('#menuJp4, #menuEn4').mouseover(function() {
+
+		$('#formInquiryListJp').val(suggestPersonalJp);
+		$('#formInquiryListDisplayJp').html(suggestPersonalJp);
+		$('#formInquiryListEn').val(suggestPersonalEn);
+		$('#formInquiryListDisplayEn').html(suggestPersonalEn);
+
+	});
+
+	$('#menuJp5, #menuEn5').mouseover(function() {
+
+		$('#formInquiryListJp').val(suggestOtherJp);
+		$('#formInquiryListDisplayJp').html(suggestOtherJp);
+		$('#formInquiryListEn').val(suggestOtherEn);
+		$('#formInquiryListDisplayEn').html(suggestOtherEn);
 
 	});
 
