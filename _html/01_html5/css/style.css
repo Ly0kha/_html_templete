@@ -327,10 +327,10 @@ select {
 	.bg-inputChecker input[type=checkbox]:checked + label::after {
 		position: absolute;
 		top: 0px;
-		left: 6px;
+		left: 4px;
 
 		content: "\e013";
-		color: #000;
+		color: #999;
 
 		display: block;
 	}
