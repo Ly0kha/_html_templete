@@ -1710,6 +1710,16 @@ p#formInquiryListDisplayEn {
 	height: 7px;
 }
 
+.input-btn-yellow {
+	background: #ffff00;
+	color: #000;
+}
+
+.input-btn-green {
+	background: #008000;
+	color: #fff;
+}
+
 
 /* エラー表示用 */
 label.error {
