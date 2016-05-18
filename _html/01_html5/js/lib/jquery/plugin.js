@@ -183,7 +183,8 @@ $(function() {
 
 	/* PageScroll
 	--------------------*/
-	$('a[href^=#]').on('click', function() {
+
+	$('a[rel=scroll]').on('click', function() {
 
 			var href = $(this).attr("href"),
 			target = $(href === "#" || href === "" ? 'html' : href);
