@@ -973,6 +973,42 @@ address {
 		padding: 0px 40px !important;
 	}
 
+
+	/* 左パディング */
+	.pd-left-10 {
+		padding: 0px 0px 0px 10px !important;
+	}
+
+	.pd-left-20 {
+		padding: 0px 0px 0px 20px !important;
+	}
+
+	.pd-left-30 {
+		padding: 0px 0px 0px 30px !important;
+	}
+
+	.pd-left-40 {
+		padding: 0px 0px 0px 40px !important;
+	}
+
+
+	/* 右パディング */
+	.pd-right-10 {
+		padding: 0px 10px 0px 0px !important;
+	}
+
+	.pd-right-20 {
+		padding: 0px 20px 0px 0px !important;
+	}
+
+	.pd-right-30 {
+		padding: 0px 30px 0px 0px !important;
+	}
+
+	.pd-right-40 {
+		padding: 0px 40px 0px 0px !important;
+	}
+
 }
 
 
@@ -1030,6 +1066,42 @@ address {
 
 	.pd-left-right-40 {
 		padding: 0px 20px !important;
+	}
+
+
+	/* 左パディング */
+	.pd-left-10 {
+		padding: 0px 0px 0px 5px !important;
+	}
+
+	.pd-left-20 {
+		padding: 0px 0px 0px 10px !important;
+	}
+
+	.pd-left-30 {
+		padding: 0px 0px 0px 15px !important;
+	}
+
+	.pd-left-40 {
+		padding: 0px 0px 0px 20px !important;
+	}
+
+
+	/* 右パディング */
+	.pd-right-10 {
+		padding: 0px 5px 0px 0px !important;
+	}
+
+	.pd-right-20 {
+		padding: 0px 10px 0px 0px !important;
+	}
+
+	.pd-right-30 {
+		padding: 0px 15px 0px 0px !important;
+	}
+
+	.pd-right-40 {
+		padding: 0px 20px 0px 0px !important;
 	}
 
 }
