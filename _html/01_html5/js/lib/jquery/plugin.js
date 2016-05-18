@@ -602,7 +602,7 @@ $(function() {
 	// Submitを押したときの判定 Jp:日本語  //
 	$('input#btn-confirm-ja:submit').on('click', function() {
 
-		$('#inquiryFormJp').validate({
+		$('#inquiry-form-jp').validate({
 
 			ignore: '.ignore',
 			rules: {
@@ -664,38 +664,38 @@ $(function() {
 			var caseArr = i ;
 
 			switch (caseArr) {
-				case 'inquiryList' :
-					target = $('#inquiryListJp');
+				case 'inquiry-list-jp' :
+					target = $('#inquiry-list-jp');
 					target.velocity( 'scroll', { duration: scldurat, easing: 'easeOutExpo' });
 					return false;
 					break;
 
-				case 'inquiryCompanyName' :
-					target = $('#inquiryCompanyNameJp');
+				case 'inquiry-companyName-jp' :
+					target = $('#inquiry-companyName-jp');
 					target.velocity( 'scroll', { duration: scldurat, easing: 'easeOutExpo' });
 					return false;
 					break;
 
-				case 'inquiryNameJa' :
-					target = $('#inquiryNameJaJp');
+				case 'inquiry-nameJa-jp' :
+					target = $('#inquiry-nameJa-jp');
 					target.velocity( 'scroll', { duration: scldurat, easing: 'easeOutExpo' });
 					return false;
 					break;
 
-				case 'inquiryNameEn' :
-					target = $('#inquiryNameEnJp');
+				case 'inquiry-nameEn-jp' :
+					target = $('#inquiry-nameEn-jp');
 					target.velocity( 'scroll', { duration: scldurat, easing: 'easeOutExpo' });
 					return false;
 					break;
 
-				case 'inquiryMail' :
-					target = $('#inquiryMailJp');
+				case 'inquiry-mail-jp' :
+					target = $('#inquiry-mail-jp');
 					target.velocity( 'scroll', { duration: scldurat, easing: 'easeOutExpo' });
 					return false;
 					break;
 
-				case 'inquiryText' :
-					target = $('#inquiryTextJp');
+				case 'inquiry-text-jp' :
+					target = $('#inquiry-text-jp');
 					target.velocity( 'scroll', { duration: scldurat, easing: 'easeOutExpo' });
 					return false;
 					break;
@@ -707,28 +707,28 @@ $(function() {
 
 		if (user_agent.indexOf('iPhone') > 0 || user_agent.indexOf('iPad') > 0 || user_agent.indexOf('iPod') > 0 || user_agent.indexOf('Android') > 0 || user_agent.indexOf('BlackBerry') > 0 || user_agent.indexOf('windows Phone') > 0 || user_agent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(user_agent)) {
 
-			if ($('input#formInquiryListJp').val() === '') {
-				validateScrollJp('inquiryList');
+			if ($('input#form-inquiryList-jp').val() === '') {
+				validateScrollJp('inquiry-list-jp');
 			}
 
-			else if ($('input#formInquiryCompanyNameJp').val() === '') {
-				validateScrollJp('inquiryCompanyName');
+			else if ($('input#form-inquiryCompanyName-jp').val() === '') {
+				validateScrollJp('inquiry-companyName-jp');
 			}
 
-			else if ($('input#formInquiryNameJaJp').val() === '') {
-				validateScrollJp('inquiryNameJa');
+			else if ($('input#form-inquiryNameJa-jp').val() === '') {
+				validateScrollJp('inquiry-nameJa-jp');
 			}
 
-			else if ($('input#formInquiryNameEnJp').val() === '') {
-				validateScrollJp('inquiryNameEn');
+			else if ($('input#form-inquiryNameEn-jp').val() === '') {
+				validateScrollJp('inquiry-nameEn-jp');
 			}
 
-			else if ($('input#formInquiryMailJp').val() === '') {
-				validateScrollJp('inquiryMail');
+			else if ($('input#form-inquiryMail-jp').val() === '') {
+				validateScrollJp('inquiry-mail-jp');
 			}
 
-			else if ($('textarea#formInquiryTextJp').val() === '') {
-				validateScrollJp('inquiryText');
+			else if ($('textarea#form-inquiryText-jp').val() === '') {
+				validateScrollJp('inquiry-text-jp');
 			}
 
 		}
@@ -741,7 +741,7 @@ $(function() {
 	// Submitを押したときの判定 En:英語  //
 	$('input#btn-confirm-en:submit').on('click', function() {
 
-		$('#inquiryFormEn').validate({
+		$('#inquiry-form-en').validate({
 
 			ignore: '.ignore',
 			rules: {
@@ -793,32 +793,32 @@ $(function() {
 			var caseArr = i ;
 
 			switch (caseArr) {
-				case 'inquiryList' :
-					target = $('#formInquiryListEn');
+				case 'inquiry-list-en' :
+					target = $('#inquiry-list-en');
 					target.velocity( 'scroll', { duration: scldurat, easing: 'easeOutExpo' });
 					return false;
 					break;
 
-				case 'inquiryCompanyName' :
-					target = $('#formInquiryCompanyNameEn');
+				case 'inquiry-companyName-en' :
+					target = $('#inquiry-companyName-en');
 					target.velocity( 'scroll', { duration: scldurat, easing: 'easeOutExpo' });
 					return false;
 					break;
 
-				case 'inquiryNameEn' :
-					target = $('#formInquiryNameEnEn');
+				case 'inquiry-nameEn-en' :
+					target = $('#inquiry-nameEn-en');
 					target.velocity( 'scroll', { duration: scldurat, easing: 'easeOutExpo' });
 					return false;
 					break;
 
-				case 'inquiryMail' :
-					target = $('#formInquiryMailEn');
+				case 'inquiry-mail-en' :
+					target = $('#inquiry-mail-en');
 					target.velocity( 'scroll', { duration: scldurat, easing: 'easeOutExpo' });
 					return false;
 					break;
 
-				case 'inquiryText' :
-					target = $('#formInquiryTextEn');
+				case 'inquiry-text-en' :
+					target = $('#inquiry-text-en');
 					target.velocity( 'scroll', { duration: scldurat, easing: 'easeOutExpo' });
 					return false;
 					break;
@@ -830,24 +830,24 @@ $(function() {
 
 		if (user_agent.indexOf('iPhone') > 0 || user_agent.indexOf('iPad') > 0 || user_agent.indexOf('iPod') > 0 || user_agent.indexOf('Android') > 0 || user_agent.indexOf('BlackBerry') > 0 || user_agent.indexOf('windows Phone') > 0 || user_agent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(user_agent)) {
 
-			if ($('input#formInquiryListEn').val() === '') {
-				validateScrollEn('inquiryList');
+			if ($('input#form-inquiryList-en').val() === '') {
+				validateScrollEn('inquiry-list-en');
 			}
 
-			else if ($('input#formInquiryCompanyNameEn').val() === '') {
-				validateScrollEn('inquiryCompanyName');
+			else if ($('input#form-inquiryCompanyName-en').val() === '') {
+				validateScrollEn('inquiry-companyName-en');
 			}
 
-			else if ($('input#formInquiryNameEnEn').val() === '') {
-				validateScrollEn('inquiryNameEn');
+			else if ($('input#form-inquiryNameEn-en').val() === '') {
+				validateScrollEn('inquiry-nameEn-en');
 			}
 
-			else if ($('input#formInquiryMailEn').val() === '') {
-				validateScrollEn('inquiryMail');
+			else if ($('input#form-inquiryMail-en').val() === '') {
+				validateScrollEn('inquiry-mail-en');
 			}
 
-			else if ($('textarea#formInquiryTextEn').val() === '') {
-				validateScrollEn('inquiryText');
+			else if ($('textarea#form-inquiryText-en').val() === '') {
+				validateScrollEn('inquiry-text-en');
 			}
 
 		}
@@ -869,8 +869,8 @@ $(function() {
 		$('label.error').html('').hide();
 
 		// サジェスト部分の注意文言及び[input type='hidden']内の値を消す -共通- //
-		$('p#formInquiryListDisplayJp, p#formInquiryListDisplayEn').html('');
-		$('input#formInquiryListJp, input#formInquiryListEn').val('');
+		$('p#form-inquiryListDisplay-jp, p#form-inquiryListDisplay-en').html('');
+		$('input#form-inquiryList-jp, input#form-inquiryList-en').val('');
 
 		// [input type='text'][textarea]内の値を消す -共通- //
 		$('input:text, input:checked, textarea').val('');
@@ -967,37 +967,6 @@ $(function() {
 	});
 
 
-	// windowをリサイズした時にコロンを取る //
-	$(window).on('load resize', function() {
-
-		// -for SP- //
-		if (user_agent.indexOf('iPhone') > 0 || user_agent.indexOf('iPad') > 0 || user_agent.indexOf('iPod') > 0 || user_agent.indexOf('Android') > 0 || user_agent.indexOf('BlackBerry') > 0 || user_agent.indexOf('windows Phone') > 0 || user_agent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(user_agent)) {
-
-		}
-
-		// -for PC- //
-		else {
-
-			// ウィンドウサイズを精査  //
-			var window_width = $(window).width();
-
-			// ウィンドウサイズが960px以下になったら  //
-			if(window_width < 960) {
-				$('.colon').hide();
-				$('dl.form-pc dd, dl.form-sp dd').css('width', 400 / 400 * 100 + '%' );
-			}
-
-			// ウィンドウサイズが960px以上になったら  //
-			else {
-				$('.colon').show();
-				$('dl.form-pc dd').css('width', 400 + 'px' );
-			}
-
-		}
-
-	});
-
-
 
 
 /* Suggest
@@ -1006,27 +975,27 @@ $(function() {
 
 	// Suggest En:英語、Jp:日本語  //
 	// サジェスト外がクリッカブルになる為のサジェストクリアゾーン -初期設定: hidden- //
-	$('.suggestClear').hide();
+	$('.suggest-clear').hide();
 
 	$(window).on('load resize', function() {
 
 		// サジェストを出す -forSP- //
 		if (user_agent.indexOf('iPhone') > 0 || user_agent.indexOf('iPad') > 0 || user_agent.indexOf('iPod') > 0 || user_agent.indexOf('Android') > 0 || user_agent.indexOf('BlackBerry') > 0 || user_agent.indexOf('windows Phone') > 0 || user_agent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(user_agent)) {
 
-			$('#formInquiryListDisplayJp,#formInquiryListDisplayEn').on({
+			$('#form-inquiryListDisplay-jp, #form-inquiryListDisplay-en').on({
 
 				// タッチがサジェストの上に乗った時の判定 //
 				'click':function() {
 
-					$('#suggestJp, #suggestEn').fadeIn();
+					$('#suggest-jp, #suggest-en').fadeIn();
 
 					// サジェストクリアゾーンを出す //
-					$('.suggestClear').show();
+					$('.suggest-clear').show();
 
 					// サジェストクリアゾーンが全面に出るように設定 //
 					var window_width = $(window).width();
 					var window_height = $(window).height();
-					$('.suggestClear').css({
+					$('.suggest-clear').css({
 						'width': window_width,
 						'height': window_height,
 					});
@@ -1035,12 +1004,12 @@ $(function() {
 
 			});
 
-			$('.suggestClear').on({
+			$('.suggest-clear').on({
 
 				// タッチがサジェストクリアゾーンの上に乗った時の判定 //
 				'click':function() {
-					$('#suggestJp, #suggestEn').fadeOut();
-					$('.suggestClear').hide();
+					$('#suggest-jp, #suggest-en').fadeOut();
+					$('.suggest-clear').hide();
 				}
 
 			});
@@ -1056,11 +1025,11 @@ $(function() {
 
 				// マウスカーソルがサジェストの上に乗った時の判定 //
 				'mouseenter':function() {
-					$('#suggestJp, #suggestEn').fadeIn();
+					$('#suggest-jp, #suggest-en').fadeIn();
 				},
 				// マウスカーソルがサジェストの上から外れた時の判定 //
 				'mouseleave':function() {
-					$('#suggestJp, #suggestEn').fadeOut();
+					$('#suggest-jp, #suggest-en').fadeOut();
 				}
 
 			});
@@ -1068,10 +1037,10 @@ $(function() {
 		}
 
 		// セレクター内のテキストをクリックした時の判定  //
-		$('#suggestJp,#suggestEn').on('click', function() {
+		$('#suggest-jp, #suggest-en').on('click', function() {
 
-			$('#suggestJp,#suggestEn').fadeOut();
-			$('.suggestClear').hide();
+			$('#suggest-jp, #suggest-en').fadeOut();
+			$('.suggest-clear').hide();
 
 		});
 
@@ -1079,62 +1048,62 @@ $(function() {
 
 
 	// サジェスト内のお問い合わせ事項テキストを値として読み込む  //
-	var suggestBusinessJp = $('#menuJp1').text();
-	var suggestRecruitJp  = $('#menuJp2').text();
-	var suggestCreativeJp = $('#menuJp3').text();
-	var suggestPersonalJp = $('#menuJp4').text();
-	var suggestOtherJp    = $('#menuJp5').text();
+	var suggestBusinessJp = $('#menu-jp1').text();
+	var suggestRecruitJp  = $('#menu-jp2').text();
+	var suggestCreativeJp = $('#menu-jp3').text();
+	var suggestPersonalJp = $('#menu-jp4').text();
+	var suggestOtherJp    = $('#menu-jp5').text();
 
-	var suggestBusinessEn = $('#menuEn1').text();
-	var suggestRecruitEn  = $('#menuEn2').text();
-	var suggestCreativeEn = $('#menuEn3').text();
-	var suggestPersonalEn = $('#menuEn4').text();
-	var suggestOtherEn    = $('#menuEn5').text();
+	var suggestBusinessEn = $('#menu-en1').text();
+	var suggestRecruitEn  = $('#menu-en2').text();
+	var suggestCreativeEn = $('#menu-en3').text();
+	var suggestPersonalEn = $('#menu-en4').text();
+	var suggestOtherEn    = $('#menu-en5').text();
 
 
 	// テキストの値をinput#inquiryListへ与える  //
-	$('#menuJp1, #menuEn1').mouseover(function() {
+	$('#menu-jp1, #menu-en1').mouseover(function() {
 
-		$('#formInquiryListJp').val(suggestBusinessJp);
-		$('#formInquiryListDisplayJp').html(suggestBusinessJp);
-		$('#formInquiryListEn').val(suggestBusinessEn);
-		$('#formInquiryListDisplayEn').html(suggestBusinessEn);
-
-	});
-
-	$('#menuJp2, #menuEn2').mouseover(function() {
-
-		$('#formInquiryListJp').val(suggestRecruitJp);
-		$('#formInquiryListDisplayJp').html(suggestRecruitJp);
-		$('#formInquiryListEn').val(suggestRecruitEn);
-		$('#formInquiryListDisplayEn').html(suggestRecruitEn);
+		$('#form-inquiryList-jp').val(suggestBusinessJp);
+		$('#form-inquiryListDisplay-jp').html(suggestBusinessJp);
+		$('#form-inquiryList-en').val(suggestBusinessEn);
+		$('#form-inquiryListDisplay-en').html(suggestBusinessEn);
 
 	});
 
-	$('#menuJp3, #menuEn3').mouseover(function() {
+	$('#menu-jp2, #menu-en2').mouseover(function() {
 
-		$('#formInquiryListJp').val(suggestCreativeJp);
-		$('#formInquiryListDisplayJp').html(suggestCreativeJp);
-		$('#formInquiryListEn').val(suggestCreativeEn);
-		$('#formInquiryListDisplayEn').html(suggestCreativeEn);
-
-	});
-
-	$('#menuJp4, #menuEn4').mouseover(function() {
-
-		$('#formInquiryListJp').val(suggestPersonalJp);
-		$('#formInquiryListDisplayJp').html(suggestPersonalJp);
-		$('#formInquiryListEn').val(suggestPersonalEn);
-		$('#formInquiryListDisplayEn').html(suggestPersonalEn);
+		$('#form-inquiryList-jp').val(suggestRecruitJp);
+		$('#form-inquiryListDisplay-jp').html(suggestRecruitJp);
+		$('#form-inquiryList-en').val(suggestRecruitEn);
+		$('#form-inquiryListDisplay-en').html(suggestRecruitEn);
 
 	});
 
-	$('#menuJp5, #menuEn5').mouseover(function() {
+	$('#menu-jp3, #menu-en3').mouseover(function() {
 
-		$('#formInquiryListJp').val(suggestOtherJp);
-		$('#formInquiryListDisplayJp').html(suggestOtherJp);
-		$('#formInquiryListEn').val(suggestOtherEn);
-		$('#formInquiryListDisplayEn').html(suggestOtherEn);
+		$('#form-inquiryList-jp').val(suggestCreativeJp);
+		$('#form-inquiryListDisplay-jp').html(suggestCreativeJp);
+		$('#form-inquiryList-en').val(suggestCreativeEn);
+		$('#form-inquiryListDisplay-en').html(suggestCreativeEn);
+
+	});
+
+	$('#menu-jp4, #menu-en4').mouseover(function() {
+
+		$('#form-inquiryList-jp').val(suggestPersonalJp);
+		$('#form-inquiryListDisplay-jp').html(suggestPersonalJp);
+		$('#form-inquiryList-en').val(suggestPersonalEn);
+		$('#form-inquiryListDisplay-en').html(suggestPersonalEn);
+
+	});
+
+	$('#menu-jp5, #menu-en5').mouseover(function() {
+
+		$('#form-inquiryList-jp').val(suggestOtherJp);
+		$('#form-inquiryListDisplay-jp').html(suggestOtherJp);
+		$('#form-inquiryList-en').val(suggestOtherEn);
+		$('#form-inquiryListDisplay-en').html(suggestOtherEn);
 
 	});
 
@@ -1156,7 +1125,6 @@ $(function() {
 		}
 
 	}
-
 	var settinglang = browserLanguage();
 
 
@@ -1325,13 +1293,14 @@ $(function() {
 	$(window).setBreakpoints({
 
 		distinct: true,
-		breakpoints: [ 1, 960 ]
+		breakpoints: [ 1, 945 ]
 
 	});
 
 
-	// ブレークポイント1124の時 //
-	$(window).on('enterBreakpoint960', function() {
+	// ブレークポイント945の時 //
+	$(window).on('enterBreakpoint945', function() {
+
 
 		// PC用画像ソースフォルダに切り替える //
 		$('.img-response').each(function() {
@@ -1339,6 +1308,12 @@ $(function() {
 		});
 
 		$('#form-layoutJp').each(function() {
+			$(this).attr('class', $(this).attr('class').replace('sp', 'pc'));
+			$('.colon').show();
+			$('dl.form-pc dd').css('width', 400 + 'px' );
+		});
+
+		$('#suggest').each(function() {
 			$(this).attr('class', $(this).attr('class').replace('sp', 'pc'));
 		});
 
@@ -1354,6 +1329,12 @@ $(function() {
 		});
 
 		$('#form-layoutJp').each(function() {
+			$(this).attr('class', $(this).attr('class').replace('pc', 'sp'));
+			$('.colon').hide();
+			$('dl.form-sp dd').css('width', 400 / 400 * 100 + '%' );
+		});
+
+		$('#suggest').each(function() {
 			$(this).attr('class', $(this).attr('class').replace('pc', 'sp'));
 		});
 
