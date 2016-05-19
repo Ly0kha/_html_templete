@@ -86,15 +86,38 @@ $(function() {
 
 	else {
 
-		$.ajax ({
-			url: 'include/btn.html',
-			cache: true, // キャッシュを利用 //
-			async: true, // 非同期で読み込む //
-			processData: false,
-			}).done(function(html) {
-				html = html.replace(/\{\$root\}/g, relativeFirstDir);
-				$('#hover').append(html);
-		});
+		var rootDir = location.href.split('/');
+		var currentDir = rootDir[rootDir.length -2];
+		var relativeFirstDir = ('include/')
+		var relativeSecondDir = ('../include/')
+
+		if ($('header#navi-1st').length) {
+
+			$.ajax ({
+				url: relativeFirstDir + 'btn.html',
+				cache: true, // キャッシュを利用 //
+				async: true, // 非同期で読み込む //
+				processData: false,
+				}).done(function(html) {
+					html = html.replace(/\{\$root\}/g, relativeFirstDir);
+					$('#hover').append(html);
+			});
+
+		}
+
+		else {
+
+			$.ajax ({
+				url: relativeSecondDir + 'btn.html',
+				cache: true, // キャッシュを利用 //
+				async: true, // 非同期で読み込む //
+				processData: false,
+				}).done(function(html) {
+					html = html.replace(/\{\$root\}/g, relativeSecondDir);
+					$('#hover').append(html);
+			});
+
+		}
 
 	}
 
@@ -313,8 +336,8 @@ $(function() {
 	  例）<a href="javascript:void(0)" class="policy"> &#12300;個人情報の取り扱いについて&#12301; </a>
 	*/
 
-	var tag = $('p, h1, h2, h3, h4, h5, h6, span, dt, dd, th, td, ul.list li, ol.list li, ul.form-accept li, a')
-	$(tag).FLAutoKerning();
+	var tag = $('p, h1, h2, h3, h4, h5, h6, dt, dd, th, td, ul.list li, ol.list li, ul.form-accept li, a')
+	$(tag).kerning('ajax/kerning.json');
 
 
 	/* Centering
