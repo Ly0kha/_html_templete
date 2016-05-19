@@ -336,8 +336,8 @@ $(function() {
 	  例）<a href="javascript:void(0)" class="policy"> &#12300;個人情報の取り扱いについて&#12301; </a>
 	*/
 
-	var tag = $('p, h1, h2, h3, h4, h5, h6, dt, dd, th, td, ul.list li, ol.list li, ul.form-accept li, a')
-	$(tag).kerning('ajax/kerning.json');
+	var tag = $('p, h1, h2, h3, h4, h5, h6, span, dt, dd, th, td, ul.list li, ol.list li, ul.form-accept li, a')
+	$(tag).FLAutoKerning();
 
 
 	/* Centering
