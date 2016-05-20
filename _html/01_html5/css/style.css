@@ -148,6 +148,11 @@ body {
 	background: #f1f1f1;
 }
 
+
+/* テキストトラッキング
+--------------------------*/
+
+
 p,
 h1, h2, h3, h4, h5, h6,
 dt, dd,
@@ -157,7 +162,7 @@ ol.list li,
 ul.form-accept li,
 a,
 address {
-	letter-spacing: 0.25;
+	letter-spacing: 0.05em;
 }
 
 
@@ -166,15 +171,30 @@ address {
 
 
 /* リンク */
-a {
-	color: #000;
-	text-decoration: underline;
+a,
+a span {
+	color: #0a1c2b;
+	text-decoration: none;
 	outline: none;
 	noFocusLine: expression(this.onFocus=this.blur()); /* OLD IE */
 }
 
-a:hover {
-	text-decoration: none;
+a:hover,
+a:focus,
+a:hover span,
+a:focus span  {
+	outline: none;
+	color: #23527c;
+	text-decoration: underline;
+}
+
+a.carousel-control span {
+	color: #fff !important;
+	text-decoration: none !important;
+}
+
+a.hvr-fade-btn span {
+	text-decoration: none !important;
 }
 
 
@@ -193,7 +213,7 @@ input[type="text"],
 input[type="password"],
 textarea,
 select {
-	font-family: "Lucida Grande","ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ",Meiryo,"ＭＳ Ｐゴシック", "MS PGothic",Helvetica,Osaka,sans-serif;
+	font-family: 'Noto Sans Japanese', 'Glyphicons Halflings', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', Osaka, sans-serif;
 }
 
 input,
@@ -763,17 +783,23 @@ ul.suggest-menu li {
 	padding: 0px;
 
 	font-size: 12px;
-	color: #666;
 	cursor: pointer;
 	display: block;
 }
 
-.suggest-container ul li.acv a {
+.suggest-container ul li a,
+.suggest-container ul li a span {
+	color: #666;
+}
+
+.suggest-container ul li.acv a,
+.suggest-container ul li.acv a span {
 	color: #000;
 	background-color: #ddd;
 }
 
-.suggest-container ul li a:hover{
+.suggest-container ul li a:hover,
+.suggest-container ul li a:hover span {
 	color: #000;
 	background-color: #ddd;
 }
@@ -921,7 +947,7 @@ ul.list {
 @media (min-width: 961px) {
 
 	ul.list li {
-		margin: 0px 0px 20px 25px;
+		margin: 0px 0px 20px 24px;
 	}
 
 }
@@ -931,7 +957,7 @@ ul.list {
 @media (max-width: 960px) {
 
 	ul.list li {
-		margin: 0px 0px 10px 16px;
+		margin: 0px 0px 10px 18px;
 	}
 
 }
@@ -947,7 +973,7 @@ ol.list {
 @media (min-width: 961px) {
 
 	ol.list li {
-		margin: 0px 0px 20px 25px;
+		margin: 0px 0px 20px 24px;
 	}
 
 }
@@ -957,7 +983,7 @@ ol.list {
 @media (max-width: 960px) {
 
 	ol.list li {
-		margin: 0px 0px 10px 16px;
+		margin: 0px 0px 10px 18px;
 	}
 
 }
