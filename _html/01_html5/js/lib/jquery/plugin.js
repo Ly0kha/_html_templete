@@ -98,7 +98,7 @@ $(function() {
 				url: relativeFirstDir + 'btn.html',
 				dataType: 'html',
 				cache: true, // キャッシュを利用 //
-				processData: false,
+				async: true, // 非同期で読み込む //
 				}).done(function(html) {
 					html = html.replace(/\{\$root\}/g, relativeFirstDir);
 					$('#hover').append(html);
@@ -113,7 +113,7 @@ $(function() {
 				url: relativeSecondDir + 'btn.html',
 				dataType: 'html',
 				cache: true, // キャッシュを利用 //
-				processData: false,
+				async: true, // 非同期で読み込む //
 				}).done(function(html) {
 					html = html.replace(/\{\$root\}/g, relativeSecondDir);
 					$('#hover').append(html);
@@ -141,7 +141,7 @@ $(function() {
 			url: relativeFirstDir + 'header.html',
 			dataType: 'html',
 			cache: true, // キャッシュを利用 //
-			processData: false,
+			async: true, // 非同期で読み込む //
 			}).done(function(html) {
 				html = html.replace(/\{\$root\}/g, relativeFirstDir);
 				$('header#navi-1st').append(html);
@@ -156,7 +156,7 @@ $(function() {
 			url: relativeSecondDir + 'header.html',
 			dataType: 'html',
 			cache: true, // キャッシュを利用 //
-			processData: false,
+			async: true, // 非同期で読み込む //
 			}).done(function(html) {
 				html = html.replace(/\{\$root\}/g, relativeSecondDir);
 				$('header#navi-2nd').append(html);

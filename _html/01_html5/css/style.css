@@ -46,7 +46,7 @@ body {
 
 
 /* BreakPoint for PC */
-@media (min-width: 961px) {
+@media (min-width: 960px) {
 
 	body {
 		font-family: 'Noto Sans Japanese', 'Glyphicons Halflings', sans-serif;
@@ -57,7 +57,7 @@ body {
 
 
 /* BreakPoint for SP */
-@media (max-width: 960px) {
+@media (max-width: 959px) {
 
 	body {
 		font-family: 'Noto Sans Japanese', 'Glyphicons Halflings', sans-serif;
@@ -87,7 +87,7 @@ body {
 	margin: 0px auto;
 	padding: 0px 20px;
 	min-width: 300px;
-	max-width: 960px;
+	max-width: 959px;
 	height: 100%;
 	overflow: hidden;
 	z-index: 10;
@@ -225,7 +225,7 @@ select {
 
 
 /* BreakPoint for PC */
-@media (min-width: 961px) {
+@media (min-width: 960px) {
 
 	input[type="text"],
 	input[type="password"],
@@ -238,7 +238,7 @@ select {
 
 
 /* BreakPoint for SP */
-@media (max-width: 960px) {
+@media (max-width: 959px) {
 
 	input[type="text"],
 	input[type="password"],
@@ -624,7 +624,7 @@ h3.accept {
 
 /* サジェストレイアウト -_pc:PC版、_sp:SP版- */
 /* BreakPoint for PC */
-@media (min-width: 961px) {
+@media (min-width: 960px) {
 
 	/* 大枠 */
 	.suggest-pc {
@@ -655,7 +655,7 @@ h3.accept {
 
 
 /* BreakPoint for SP */
-@media (max-width: 960px) {
+@media (max-width: 959px) {
 
 	/* 大枠 */
 	.suggest-sp {
@@ -945,7 +945,7 @@ ul.list {
 
 
 /* BreakPoint for PC */
-@media (min-width: 961px) {
+@media (min-width: 960px) {
 
 	ul.list li {
 		margin: 0px 0px 20px 24px;
@@ -955,7 +955,7 @@ ul.list {
 
 
 /* BreakPoint for SP */
-@media (max-width: 960px) {
+@media (max-width: 959px) {
 
 	ul.list li {
 		margin: 0px 0px 10px 18px;
@@ -971,7 +971,7 @@ ol.list {
 
 
 /* BreakPoint for PC */
-@media (min-width: 961px) {
+@media (min-width: 960px) {
 
 	ol.list li {
 		margin: 0px 0px 20px 24px;
@@ -981,7 +981,7 @@ ol.list {
 
 
 /* BreakPoint for SP */
-@media (max-width: 960px) {
+@media (max-width: 959px) {
 
 	ol.list li {
 		margin: 0px 0px 10px 18px;
@@ -992,7 +992,7 @@ ol.list {
 
 /* navタグ以降のliは並列で表示 */
 /* BreakPoint for PC */
-@media (min-width: 961px) {
+@media (min-width: 960px) {
 
 	nav li,
 	nav.bread li {
@@ -1015,7 +1015,7 @@ ol.list {
 
 
 /* BreakPoint for SP */
-@media (max-width: 960px) {
+@media (max-width: 959px) {
 
 	nav li,
 	nav.bread li {
@@ -1088,7 +1088,7 @@ dl.news dd {
 
 
 /* BreakPoint for PC */
-@media (min-width: 961px) {
+@media (min-width: 960px) {
 
 	dd {
 		margin: 0px 0px 20px 80px;
@@ -1108,7 +1108,7 @@ dl.news dd {
 
 
 /* BreakPoint for SP */
-@media (max-width: 960px) {
+@media (max-width: 959px) {
 
 	dd {
 		margin: 0px 0px 10px 40px;
@@ -1145,7 +1145,7 @@ hr {
 
 
 /* BreakPoint for PC */
-@media (min-width: 961px) {
+@media (min-width: 960px) {
 
 	.hr-large {
 		margin: 80px 0px;
@@ -1163,7 +1163,7 @@ hr {
 
 
 /* BreakPoint for SP */
-@media (max-width: 960px) {
+@media (max-width: 959px) {
 
 	.hr-large {
 		margin: 40px 0px;
@@ -1272,7 +1272,7 @@ address {
 
 
 /* BreakPoint for PC */
-@media (min-width: 961px) {
+@media (min-width: 960px) {
 
 	address {
 		margin: 40px 0px;
@@ -1283,7 +1283,7 @@ address {
 
 
 /* BreakPoint for SP */
-@media (max-width: 960px) {
+@media (max-width: 959px) {
 
 	address {
 		margin: 20px 0px;
@@ -1421,7 +1421,7 @@ address {
 
 
 /* BreakPoint for PC */
-@media (min-width: 961px) {
+@media (min-width: 960px) {
 
 	/* 四隅パディング */
 	.pd-10 {
@@ -1516,7 +1516,7 @@ address {
 
 
 /* BreakPoint for SP */
-@media (max-width: 960px) {
+@media (max-width: 959px) {
 
 	/* 四隅パディング */
 	.pd-10 {
@@ -1627,7 +1627,7 @@ address {
 
 
 /* BreakPoint for PC */
-@media (min-width: 961px) {
+@media (min-width: 960px) {
 
 	/* 左マージン */
 	.ml-05 {
@@ -1800,7 +1800,7 @@ address {
 
 
 /* BreakPoint for SP */
-@media (max-width: 960px) {
+@media (max-width: 959px) {
 
 	/* 左マージン */
 	.ml-05 {
@@ -2143,7 +2143,7 @@ address {
 	margin: 0px auto;
 	padding: 40px 20px;
 	min-width: 240px;
-	max-width: 960px;
+	max-width: 959px;
 	height: 480px;
 	overflow: hidden;
 }
