@@ -49,7 +49,7 @@ body {
 @media (min-width: 961px) {
 
 	body {
-		font-family: 'Noto Sans Japanese', 'Glyphicons Halflings', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', Osaka, sans-serif;
+		font-family: 'Noto Sans Japanese', 'Glyphicons Halflings', sans-serif;
 		font-size: 14px; /* PC用 */
 	}
 
@@ -159,10 +159,11 @@ dt, dd,
 th, td,
 ul.list li,
 ol.list li,
+ul.suggest-menu li,
 ul.form-accept li,
 a,
 address {
-	letter-spacing: 0.05em;
+	letter-spacing: 0.035em;
 }
 
 
@@ -213,7 +214,7 @@ input[type="text"],
 input[type="password"],
 textarea,
 select {
-	font-family: 'Noto Sans Japanese', 'Glyphicons Halflings', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', Osaka, sans-serif;
+	font-family: 'Noto Sans Japanese', 'Glyphicons Halflings', sans-serif;
 }
 
 input,

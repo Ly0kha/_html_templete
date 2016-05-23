@@ -94,9 +94,10 @@ $(function() {
 		if ($('header#navi-1st').length) {
 
 			$.ajax ({
+				type: 'GET',
 				url: relativeFirstDir + 'btn.html',
+				dataType: 'html',
 				cache: true, // キャッシュを利用 //
-				async: true, // 非同期で読み込む //
 				processData: false,
 				}).done(function(html) {
 					html = html.replace(/\{\$root\}/g, relativeFirstDir);
@@ -108,9 +109,10 @@ $(function() {
 		else {
 
 			$.ajax ({
+				type: 'GET',
 				url: relativeSecondDir + 'btn.html',
+				dataType: 'html',
 				cache: true, // キャッシュを利用 //
-				async: true, // 非同期で読み込む //
 				processData: false,
 				}).done(function(html) {
 					html = html.replace(/\{\$root\}/g, relativeSecondDir);
@@ -135,9 +137,10 @@ $(function() {
 	if ($('header#navi-1st').length) {
 
 		$.ajax ({
+			type: 'GET',
 			url: relativeFirstDir + 'header.html',
+			dataType: 'html',
 			cache: true, // キャッシュを利用 //
-			async: true, // 非同期で読み込む //
 			processData: false,
 			}).done(function(html) {
 				html = html.replace(/\{\$root\}/g, relativeFirstDir);
@@ -149,9 +152,10 @@ $(function() {
 	else {
 
 		$.ajax ({
+			type: 'GET',
 			url: relativeSecondDir + 'header.html',
+			dataType: 'html',
 			cache: true, // キャッシュを利用 //
-			async: true, // 非同期で読み込む //
 			processData: false,
 			}).done(function(html) {
 				html = html.replace(/\{\$root\}/g, relativeSecondDir);
@@ -169,10 +173,10 @@ $(function() {
 			dataType: 'json'
 		});
 
-		$.getJSON('ajax/text.json', function( data ) {
+		$.getJSON('ajax/text.json', function(data) {
 
 			var items = [];
-			$.each( data, function( key, val ) {
+			$.each(data, function(key, val) {
 				items.push('<li id=' + key + '>' + val + '</li>');
 			});
 
@@ -188,7 +192,7 @@ $(function() {
 
 	/* dt adjust
 	--------------------*/
-	function adjust(){
+	function adjust() {
 
 		var dt_column_width = $('dl#column dt').outerWidth(); // dtの幅 //
 		var dt_news_width = $('dl.news dt').outerWidth(); // dtの幅 //
@@ -209,9 +213,12 @@ $(function() {
 
 	$('a[rel=scroll]').on('click', function() {
 
-			var href = $(this).attr("href"),
+			var href = $(this).attr('href'),
 			target = $(href === "#" || href === "" ? 'html' : href);
-			target.velocity( 'scroll', { duration: 500, easing: 'easeOutExpo' });
+			target.velocity('scroll', {
+				duration: 500,
+				easing: 'easeOutExpo'
+			});
 			return false;
 
 	});
@@ -231,9 +238,14 @@ $(function() {
 		var hammer = new Hammer(carousel[0]);
 
 		//左にスワイプしたら次の画像に切り替え
-		hammer.on('swipeleft', function() { carousel.carousel('next'); });
+		hammer.on('swipeleft', function() {
+			carousel.carousel('next');
+		});
+
 		//右にスワイプしたら前の画像に切り替え
-		hammer.on('swiperight', function() { carousel.carousel('prev'); });
+		hammer.on('swiperight', function() {
+			carousel.carousel('prev');
+		});
 
 	}
 
@@ -262,7 +274,7 @@ $(function() {
 	--------------------*/
 	function quitBox(cmd) {
 
-		if ( cmd=='quit' ){
+		if (cmd=='quit'){
 			open(location, '_self').close();
 		}
 		return false;
@@ -316,7 +328,6 @@ $(function() {
 	}
 
 
-
 	/* TargetBlank
 	   for IE8
 	--------------------*/
@@ -338,16 +349,14 @@ $(function() {
 
 	var tag = $('p, h1, h2, h3, h4, h5, h6, .carousel-caption, dl.news dt, dl.news dd, dl#column dt, dl#column dd, dl#form-layout-jp dt, dl#form-layout-en dt, ul.list li, ol.list li, ul.suggest-menu li, ul.form-accept li, th, td, a')
 
-	$(function() {
+	$.ajax({
+		dataType: 'json',
+	});
 
-		$.ajax({
-			dataType: 'json'
+	$.getJSON('ajax/kerning.json', function(data) {
+		$(tag).kerning({
+			'data': data
 		});
-
-		$.getJSON('ajax/kerning.json', function( data ) {
-			$(tag).kerning({'data': data});
-		});
-
 	});
 
 
@@ -700,37 +709,49 @@ $(function() {
 			switch (caseArr) {
 				case 'inquiry-list-jp' :
 					target = $('#inquiry-list-jp');
-					target.velocity( 'scroll', { duration: scldurat, easing: 'easeOutExpo' });
+					target.velocity('scroll', {
+						duration: scldurat, easing: 'easeOutExpo'
+					});
 					return false;
 					break;
 
 				case 'inquiry-companyName-jp' :
 					target = $('#inquiry-companyName-jp');
-					target.velocity( 'scroll', { duration: scldurat, easing: 'easeOutExpo' });
+					target.velocity('scroll', {
+						duration: scldurat, easing: 'easeOutExpo'
+					});
 					return false;
 					break;
 
 				case 'inquiry-nameJa-jp' :
 					target = $('#inquiry-nameJa-jp');
-					target.velocity( 'scroll', { duration: scldurat, easing: 'easeOutExpo' });
+					target.velocity('scroll', {
+						duration: scldurat, easing: 'easeOutExpo'
+					});
 					return false;
 					break;
 
 				case 'inquiry-nameEn-jp' :
 					target = $('#inquiry-nameEn-jp');
-					target.velocity( 'scroll', { duration: scldurat, easing: 'easeOutExpo' });
+					target.velocity('scroll', {
+						duration: scldurat, easing: 'easeOutExpo'
+					});
 					return false;
 					break;
 
 				case 'inquiry-mail-jp' :
 					target = $('#inquiry-mail-jp');
-					target.velocity( 'scroll', { duration: scldurat, easing: 'easeOutExpo' });
+					target.velocity('scroll', {
+						duration: scldurat, easing: 'easeOutExpo'
+					});
 					return false;
 					break;
 
 				case 'inquiry-text-jp' :
 					target = $('#inquiry-text-jp');
-					target.velocity( 'scroll', { duration: scldurat, easing: 'easeOutExpo' });
+					target.velocity('scroll', {
+						duration: scldurat, easing: 'easeOutExpo'
+					});
 					return false;
 					break;
 
@@ -829,31 +850,41 @@ $(function() {
 			switch (caseArr) {
 				case 'inquiry-list-en' :
 					target = $('#inquiry-list-en');
-					target.velocity( 'scroll', { duration: scldurat, easing: 'easeOutExpo' });
+					target.velocity('scroll', {
+						duration: scldurat, easing: 'easeOutExpo'
+					});
 					return false;
 					break;
 
 				case 'inquiry-companyName-en' :
 					target = $('#inquiry-companyName-en');
-					target.velocity( 'scroll', { duration: scldurat, easing: 'easeOutExpo' });
+					target.velocity('scroll', {
+						duration: scldurat, easing: 'easeOutExpo'
+					});
 					return false;
 					break;
 
 				case 'inquiry-nameEn-en' :
 					target = $('#inquiry-nameEn-en');
-					target.velocity( 'scroll', { duration: scldurat, easing: 'easeOutExpo' });
+					target.velocity('scroll', {
+						duration: scldurat, easing: 'easeOutExpo'
+					});
 					return false;
 					break;
 
 				case 'inquiry-mail-en' :
 					target = $('#inquiry-mail-en');
-					target.velocity( 'scroll', { duration: scldurat, easing: 'easeOutExpo' });
+					target.velocity('scroll', {
+						duration: scldurat, easing: 'easeOutExpo'
+					});
 					return false;
 					break;
 
 				case 'inquiry-text-en' :
 					target = $('#inquiry-text-en');
-					target.velocity( 'scroll', { duration: scldurat, easing: 'easeOutExpo' });
+					target.velocity('scroll', {
+						duration: scldurat, easing: 'easeOutExpo'
+					});
 					return false;
 					break;
 
@@ -928,7 +959,9 @@ $(function() {
 		if (user_agent.indexOf('iPhone') > 0 || user_agent.indexOf('iPad') > 0 || user_agent.indexOf('iPod') > 0 || user_agent.indexOf('Android') > 0 || user_agent.indexOf('BlackBerry') > 0 || user_agent.indexOf('windows Phone') > 0 || user_agent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(user_agent)){
 
 			target = $('#form');
-			target.velocity( 'scroll', { duration: scldurat, easing: 'easeOutExpo' });
+			target.velocity('scroll', {
+				duration: scldurat, easing: 'easeOutExpo'
+			});
 			return false;
 
 		}
@@ -1013,43 +1046,34 @@ $(function() {
 
 	$(window).on('load resize', function() {
 
-		// サジェストを出す -forSP- //
+		// サジェストを出す -for SP- //
 		if (user_agent.indexOf('iPhone') > 0 || user_agent.indexOf('iPad') > 0 || user_agent.indexOf('iPod') > 0 || user_agent.indexOf('Android') > 0 || user_agent.indexOf('BlackBerry') > 0 || user_agent.indexOf('windows Phone') > 0 || user_agent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(user_agent)) {
 
-			$('#form-inquiryListDisplay-jp, #form-inquiryListDisplay-en').on({
+			// タッチがサジェストの上に乗った時の判定 //
+			$('#form-inquiryListDisplay-jp, #form-inquiryListDisplay-en').on('click', function() {
 
-				// タッチがサジェストの上に乗った時の判定 //
-				'click':function() {
+				$('#suggest-jp, #suggest-en').fadeIn();
 
-					$('#suggest-jp, #suggest-en').fadeIn();
+				// サジェストクリアゾーンを出す //
+				$('.suggest-clear').show();
 
-					// サジェストクリアゾーンを出す //
-					$('.suggest-clear').show();
-
-					// サジェストクリアゾーンが全面に出るように設定 //
-					var window_width = $(window).width();
-					var window_height = $(window).height();
-					$('.suggest-clear').css({
-						'width': window_width,
-						'height': window_height,
-					});
-
-				}
+				// サジェストクリアゾーンが全面に出るように設定 //
+				var window_width = $(window).width();
+				var window_height = $(window).height();
+				$('.suggest-clear').css({
+					'width': window_width,
+					'height': window_height,
+				});
 
 			});
 
-			$('.suggest-clear').on({
-
-				// タッチがサジェストクリアゾーンの上に乗った時の判定 //
-				'click':function() {
-					$('#suggest-jp, #suggest-en').fadeOut();
-					$('.suggest-clear').hide();
-				}
-
+			// タッチがサジェストクリアゾーンの上に乗った時の判定 //
+			$('.suggest-clear').on('click', function() {
+				$('#suggest-jp, #suggest-en').fadeOut();
+				$('.suggest-clear').hide();
 			});
 
 		}
-
 
 		// サジェストを出す -for PC- //
 		else {
@@ -1057,12 +1081,13 @@ $(function() {
 			// マウスカーソルがセレクターの上に乗ったらサジェストを出す//
 			$('.suggest-pc').on({
 
-				// マウスカーソルがサジェストの上に乗った時の判定 //
-				'mouseenter':function() {
-					$('#suggest-jp, #suggest-en').fadeIn();
+				// マウスオン
+				'mouseenter': function() {
+				$('#suggest-jp, #suggest-en').fadeIn();
 				},
-				// マウスカーソルがサジェストの上から外れた時の判定 //
-				'mouseleave':function() {
+
+				// マウスアウト
+				'mouseleave': function() {
 					$('#suggest-jp, #suggest-en').fadeOut();
 				}
 
@@ -1072,10 +1097,8 @@ $(function() {
 
 		// セレクター内のテキストをクリックした時の判定  //
 		$('#suggest-jp, #suggest-en').on('click', function() {
-
 			$('#suggest-jp, #suggest-en').fadeOut();
 			$('.suggest-clear').hide();
-
 		});
 
 	});
@@ -1096,7 +1119,7 @@ $(function() {
 
 
 	// テキストの値をinput#inquiryListへ与える  //
-	$('#menu-jp1, #menu-en1').mouseover(function() {
+	$('#menu-jp1, #menu-en1').on('mouseover', function() {
 
 		$('#form-inquiryList-jp').val(suggestBusinessJp);
 		$('#form-inquiryListDisplay-jp').html(suggestBusinessJp);
@@ -1105,7 +1128,7 @@ $(function() {
 
 	});
 
-	$('#menu-jp2, #menu-en2').mouseover(function() {
+	$('#menu-jp2, #menu-en2').on('mouseover', function() {
 
 		$('#form-inquiryList-jp').val(suggestRecruitJp);
 		$('#form-inquiryListDisplay-jp').html(suggestRecruitJp);
@@ -1114,7 +1137,7 @@ $(function() {
 
 	});
 
-	$('#menu-jp3, #menu-en3').mouseover(function() {
+	$('#menu-jp3, #menu-en3').on('mouseover', function() {
 
 		$('#form-inquiryList-jp').val(suggestCreativeJp);
 		$('#form-inquiryListDisplay-jp').html(suggestCreativeJp);
@@ -1123,7 +1146,7 @@ $(function() {
 
 	});
 
-	$('#menu-jp4, #menu-en4').mouseover(function() {
+	$('#menu-jp4, #menu-en4').on('mouseover', function() {
 
 		$('#form-inquiryList-jp').val(suggestPersonalJp);
 		$('#form-inquiryListDisplay-jp').html(suggestPersonalJp);
@@ -1132,7 +1155,7 @@ $(function() {
 
 	});
 
-	$('#menu-jp5, #menu-en5').mouseover(function() {
+	$('#menu-jp5, #menu-en5').on('mouseover', function() {
 
 		$('#form-inquiryList-jp').val(suggestOtherJp);
 		$('#form-inquiryListDisplay-jp').html(suggestOtherJp);
@@ -1344,7 +1367,9 @@ $(function() {
 		$('#form-layout-jp').each(function() {
 			$(this).attr('class', $(this).attr('class').replace('sp', 'pc'));
 			$('.colon').show();
-			$('dl.form-pc dd').css('width', 400 + 'px' );
+			$('dl.form-pc dd').css({
+				'width': 400 + 'px'
+			});
 		});
 
 		$('#suggest').each(function() {
@@ -1365,7 +1390,9 @@ $(function() {
 		$('#form-layout-jp').each(function() {
 			$(this).attr('class', $(this).attr('class').replace('pc', 'sp'));
 			$('.colon').hide();
-			$('dl.form-sp dd').css('width', 400 / 400 * 100 + '%' );
+			$('dl.form-sp dd').css({
+				'width': 400 / 400 * 100 + '%'
+			});
 		});
 
 		$('#suggest').each(function() {
@@ -1382,7 +1409,9 @@ $(function() {
 
 		// iPhone, iPadなど //
 		if ((user_agent.indexOf('iPhone') > 0 && user_agent.indexOf('iPad') == -1) || user_agent.indexOf('iPod') > 0) {
-			$('html').css('zoom' , 1 );
+			$('html').css({
+				'zoom': 1
+			});
 		}
 
 		// Android //
@@ -1395,12 +1424,16 @@ $(function() {
 
 					if (window.innerHeight > window.innerWidth) {
 						// ポートレイト（ランドスケープ）
-						$('html').css('zoom' , landscapeWidth / 320 );
+						$('html').css({
+							'zoom': landscapeWidth / 320
+						});
 					}
 
 					else {
 						// ランドスケープ（ポートレイト）
-						$('html').css('zoom' , portraitWidth / 320 );
+						$('html').css({
+							'zoom': portraitWidth / 320
+						});
 					}
 
 				}, false);
