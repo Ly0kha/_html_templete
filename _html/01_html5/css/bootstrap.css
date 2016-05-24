@@ -5507,14 +5507,19 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 	color: #777777;
 }
 
-.navbar-default .navbar-nav > li > a {
+.navbar-default .navbar-nav > li > a,
+.navbar-default .navbar-nav > li > a span {
 	color: #777777;
+	text-decoration: none;
 }
 
 .navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus {
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > li > a:hover span,
+.navbar-default .navbar-nav > li > a:focus span {
 	color: #333333;
 	background-color: transparent;
+	text-decoration: none;
 }
 
 .navbar-default .navbar-nav > .active > a,
