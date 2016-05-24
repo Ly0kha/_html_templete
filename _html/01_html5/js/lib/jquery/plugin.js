@@ -306,15 +306,15 @@ $(function() {
 
 	$('a[rel=scroll]').on('click', function() {
 
-			// リンクの判定 //
-			var href = $(this).attr('href');
+		// リンクの判定 //
+		var href = $(this).attr('href');
 
-			target = $(href === "#" || href === "" ? 'html' : href);
-			target.velocity('scroll', {
-				duration: 500,
-				easing: 'easeOutExpo'
-			});
-			return false;
+		target = $(href === "#" || href === "" ? 'html' : href);
+		target.velocity('scroll', {
+			duration: 500,
+			easing: 'easeOutExpo'
+		});
+		return false;
 
 	});
 
@@ -430,6 +430,9 @@ $(function() {
 	   for IE8
 	--------------------*/
 	$('.blank').on('click', function() {
+
+		// リンクの判定 //
+		var href = $(this).attr('href');
 
 		window.open(href, '_blank');
 		return false;
