@@ -41,6 +41,7 @@ $(function() {
 
 	/* グローバル変数
 	--------------------*/
+	// ウィンドウのサイズ判定 //
 	var window_width = $(window).width();
 	var window_height = $(window).height();
 	var window_outer_width = $(window).outerWidth();
@@ -48,7 +49,48 @@ $(function() {
 	var window_inner_width = $(window).innerWidth();
 	var window_inner_height = $(window).innerHeight();
 
+
+	// ディレクトリの判定 //
+	var rootDir = location.href.split('/');
+	var currentDir = rootDir[rootDir.length -2];
+	var relativeFirstDir = ('include/');
+	var relativeSecondDir = ('../include/');
+	var relativeThirdDir = ('../../include/');
+
+
+	// 端末ユーザーエージェントの判定 //
 	var user_agent = navigator.userAgent;
+
+
+		/* ユーザーエージェント一覧
+		--------------------
+
+		//　iOS
+		user_agent.indexOf('iPhone') > 0
+		user_agent.indexOf('iPad') > 0
+		user_agent.indexOf('iPod') > 0
+
+		//　Android
+		user_agent.indexOf('Android') > 0
+
+		//　BlackBerry
+		user_agent.indexOf('BlackBerry') > 0
+
+		//　Windows Phone
+		user_agent.indexOf('windows Phone') > 0
+
+		//　NOKIA
+		user_agent.indexOf('NOKIA') > 0
+
+		//　Firefox OS
+		/Mobile.*Firefox/.test(user_agent)
+
+		//　IE
+		user_agent.match(/MSIE/) 　////　vr.11 or high
+		user_agent.match(/Trident/) ////　vr.10 or less
+
+		--------------------
+		*/
 
 
 	// ウィンドウ自体の幅と高さを計測し、使っているブラウザのユーザーエージェントを判定
@@ -62,106 +104,157 @@ $(function() {
 
 	});
 
+	// 現在開いているディレクトリを判定
+	$('#test04').html('現在のディレクトリ' + '&nbsp;:&nbsp;' + currentDir);
+
 
 	/* test IE判定実装
 	--------------------*/
 	// IEであるか否かの判定
-	// var isIE = false; // IEか否か
-	// var version = null; // IEのバージョン
+	var isIE = false; // IEか否か
+	var version = null; // IEのバージョン
 
-	// if(user_agent.match(/MSIE/) || user_agent.match(/Trident/) ) {
+	if(user_agent.match(/MSIE/) || user_agent.match(/Trident/) ) {
 
-	//		isIE = true;
-	//		version = user_agent.match(/(MSIE\s|rv:)([\d\.]+)/)[2];
-	//		location.href='http://www.yahoo.co.jp/'
+		isIE = true;
+		version = user_agent.match(/(MSIE\s|rv:)([\d\.]+)/)[2];
+	//  location.href='http://www.yahoo.co.jp/'
 
-	// }
+	}
 
 
 	/* test btn-hover実装
 	--------------------*/
-	if (user_agent.indexOf('iPhone') > 0 || user_agent.indexOf('iPad') > 0 || user_agent.indexOf('iPod') > 0 || user_agent.indexOf('Android') > 0 || user_agent.indexOf('BlackBerry') > 0 || user_agent.indexOf('windows Phone') > 0 || user_agent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(user_agent)) {
+	function btnHoverSelect(i) {
+
+		var btnArr = i ;
+
+		switch (btnArr) {
+
+			case '1st' :
+				$.ajax ({
+					type: 'GET',
+					url: relativeFirstDir + 'btn.html',
+					dataType: 'html',
+					cache: true, // キャッシュを利用 //
+					async: true, // 非同期で読み込む //
+					}).done(function(html) {
+						html = html.replace(/\{\$root\}/g, relativeFirstDir);
+						$('#hover').append(html);
+				});
+
+				break;
+
+			case '2nd' :
+				$.ajax ({
+					type: 'GET',
+					url: relativeSecondDir + 'btn.html',
+					dataType: 'html',
+					cache: true, // キャッシュを利用 //
+					async: true, // 非同期で読み込む //
+					}).done(function(html) {
+						html = html.replace(/\{\$root\}/g, relativeSecondDir);
+						$('#hover').append(html);
+				});
+				break;
+
+			default :
+
+				break;
+
+		}
 
 	}
 
+	if (user_agent.indexOf('iPhone') > 0 || user_agent.indexOf('iPad') > 0 || user_agent.indexOf('iPod') > 0 || user_agent.indexOf('Android') > 0 || user_agent.indexOf('BlackBerry') > 0 || user_agent.indexOf('windows Phone') > 0 || user_agent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(user_agent) ) {
+		btnHoverSelect();
+	}
+
+	else if ($('header#navi-1st').length) {
+		btnHoverSelect('1st');
+	}
+
+	else if ($('header#navi-2nd').length) {
+		btnHoverSelect('2nd');
+	}
+
 	else {
-
-		var rootDir = location.href.split('/');
-		var currentDir = rootDir[rootDir.length -2];
-		var relativeFirstDir = ('include/')
-		var relativeSecondDir = ('../include/')
-
-		if ($('header#navi-1st').length) {
-
-			$.ajax ({
-				type: 'GET',
-				url: relativeFirstDir + 'btn.html',
-				dataType: 'html',
-				cache: true, // キャッシュを利用 //
-				async: true, // 非同期で読み込む //
-				}).done(function(html) {
-					html = html.replace(/\{\$root\}/g, relativeFirstDir);
-					$('#hover').append(html);
-			});
-
-		}
-
-		else {
-
-			$.ajax ({
-				type: 'GET',
-				url: relativeSecondDir + 'btn.html',
-				dataType: 'html',
-				cache: true, // キャッシュを利用 //
-				async: true, // 非同期で読み込む //
-				}).done(function(html) {
-					html = html.replace(/\{\$root\}/g, relativeSecondDir);
-					$('#hover').append(html);
-			});
-
-		}
-
+		btnHoverSelect();
 	}
 
 
 	/* Header共通化
 	--------------------*/
-	var rootDir = location.href.split('/');
-	var currentDir = rootDir[rootDir.length -2];
-	var relativeFirstDir = ('include/')
-	var relativeSecondDir = ('../include/')
+	function headerSelect(i) {
+
+		var htmlArr = i ;
+
+		switch (htmlArr) {
+
+			case '1st' :
+				$.ajax ({
+					type: 'GET',
+					url: relativeFirstDir + 'header.html',
+					dataType: 'html',
+					cache: true, // キャッシュを利用 //
+					async: true, // 非同期で読み込む //
+					}).done(function(html) {
+						html = html.replace(/\{\$root\}/g, relativeFirstDir);
+						$('header#navi-1st').append(html);
+						$('#test-btn').append('<a href="#">テスト</a>');
+				});
 
 
-	$('#test04').html('現在のディレクトリ' + '&nbsp;:&nbsp;' + currentDir)
+				break;
 
-	if ($('header#navi-1st').length) {
+			case '2nd' :
+				$.ajax ({
+					type: 'GET',
+					url: relativeSecondDir + 'header.html',
+					dataType: 'html',
+					cache: true, // キャッシュを利用 //
+					async: true, // 非同期で読み込む //
+					}).done(function(html) {
+						html = html.replace(/\{\$root\}/g, relativeSecondDir);
+						$('header#navi-2nd').append(html);
+				});
+				break;
 
-		$.ajax ({
-			type: 'GET',
-			url: relativeFirstDir + 'header.html',
-			dataType: 'html',
-			cache: true, // キャッシュを利用 //
-			async: true, // 非同期で読み込む //
-			}).done(function(html) {
-				html = html.replace(/\{\$root\}/g, relativeFirstDir);
-				$('header#navi-1st').append(html);
-		});
+			case '3rd' :
+				$.ajax ({
+					type: 'GET',
+					url: relativeThirdDir + 'header.html',
+					dataType: 'html',
+					cache: true, // キャッシュを利用 //
+					async: true, // 非同期で読み込む //
+					}).done(function(html) {
+						html = html.replace(/\{\$root\}/g, relativeThirdDir);
+						$('header#navi-3rd').append(html);
+				});
+				break;
+
+			default :
+
+				break;
+
+		}
 
 	}
 
+	if ($('header#navi-1st').length) {
+		headerSelect('1st');
+	}
+
+	else if ($('header#navi-2nd').length) {
+		headerSelect('2nd');
+	}
+
+	else if ($('header#navi-3rd').length) {
+		headerSelect('3rd');
+	}
+
 	else {
-
-		$.ajax ({
-			type: 'GET',
-			url: relativeSecondDir + 'header.html',
-			dataType: 'html',
-			cache: true, // キャッシュを利用 //
-			async: true, // 非同期で読み込む //
-			}).done(function(html) {
-				html = html.replace(/\{\$root\}/g, relativeSecondDir);
-				$('header#navi-2nd').append(html);
-		});
-
+		headerSelect();
 	}
 
 
@@ -213,7 +306,9 @@ $(function() {
 
 	$('a[rel=scroll]').on('click', function() {
 
-			var href = $(this).attr('href'),
+			// リンクの判定 //
+			var href = $(this).attr('href');
+
 			target = $(href === "#" || href === "" ? 'html' : href);
 			target.velocity('scroll', {
 				duration: 500,
@@ -289,6 +384,7 @@ $(function() {
 		var imgArr = i ;
 
 		switch (imgArr) {
+
 			case 'on' :
 				$('img.mouseover').each(function() {
 					$(this).attr('src', $(this).attr('src').replace('_off', '_on'));
@@ -302,9 +398,7 @@ $(function() {
 				break;
 
 			default :
-				$('img.mouseover').each(function() {
-					$(this).attr('src', $(this).attr('src').replace('_off', '_on'));
-				});
+
 				break;
 
 		}
@@ -313,15 +407,19 @@ $(function() {
 
 	if (user_agent.indexOf('iPhone') > 0 || user_agent.indexOf('iPad') > 0 || user_agent.indexOf('iPod') > 0 || user_agent.indexOf('Android') > 0 || user_agent.indexOf('BlackBerry') > 0 || user_agent.indexOf('windows Phone') > 0 || user_agent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(user_agent)) {
 
+		$('img.mouseover').mouseover(function() {
+			mouseOver();
+		}).mouseout(function() {
+			mouseOver();
+		});
+
 	}
 
 	else {
 
 		$('img.mouseover').mouseover(function() {
-			mouseOver('on')
-		});
-
-		$('img.mouseover').mouseout(function() {
+			mouseOver('on');
+		}).mouseout(function() {
 			mouseOver('off')
 		});
 
@@ -333,7 +431,7 @@ $(function() {
 	--------------------*/
 	$('.blank').on('click', function() {
 
-		window.open(this.href, '_blank');
+		window.open(href, '_blank');
 		return false;
 
 	});
@@ -347,16 +445,19 @@ $(function() {
 	  例）<a href="javascript:void(0)" class="policy"> &#12300;個人情報の取り扱いについて&#12301; </a>
 	*/
 
-	var tag = $('p, h1, h2, h3, h4, h5, h6, .carousel-caption, dl.news dt, dl.news dd, dl#column dt, dl#column dd, dl#form-layout-jp dt, dl#form-layout-en dt, ul.list li, ol.list li, ul.suggest-menu li, ul.form-accept li, th, td, a')
-
 	$.ajax({
 		dataType: 'json',
 	});
 
 	$.getJSON('ajax/kerning.json', function(data) {
+
+		// 中にテキストが入るタグの判定 //
+		var tag = $('p, h1, h2, h3, h4, h5, h6, .carousel-caption, dl.news dt, dl.news dd, dl#column dt, dl#column dd, dl#form-layout-jp dt, dl#form-layout-en dt, ul.list li, ol.list li, ul.suggest-menu li, ul.form-accept li, th, td, a')
+
 		$(tag).kerning({
 			'data': data
 		});
+
 	});
 
 
