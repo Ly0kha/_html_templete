@@ -166,6 +166,10 @@ address {
 	letter-spacing: 0.05em;
 }
 
+label {
+	letter-spacing: -0.025em;
+}
+
 
 /* リンク、見出し、フォームパーツ
 --------------------------*/
