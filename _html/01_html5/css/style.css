@@ -4,6 +4,19 @@
 @import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
 
 
+/*!
+
+ * Bootstrap v3.3.5 (http://getbootstrap.com)
+ * Copyright 2011-2016 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+
+ * Colorbox 1.6.1 (http://www.jacklmoore.com/colorbox/)
+ * Copyright Jack Moore.
+ * Licensed under MIT (http://www.opensource.org/licenses/mit-license.php)
+
+ */
+
+
 /****************************************
 
 			   common
@@ -1300,7 +1313,7 @@ address {
 /* ライトボックス
 --------------------------*/
 
-/* Colorbox Core Style */
+/* コアスタイル */
 #colorbox,
 #cboxOverlay,
 #cboxWrapper {
@@ -1407,7 +1420,7 @@ address {
 }
 
 
-/* Colorbox User Style */
+/* カスタム可能スタイル */
 #cboxOverlay {
 	background: #000;
 	opacity: 0.3;
@@ -1558,9 +1571,9 @@ address {
 
 
 /*
-  The following fixes a problem where IE7 and IE8 replace a PNG's alpha transparency with a black fill
-  when an alpha filter (opacity change) is set on the element or ancestor element.  This style is not applied to or needed in IE9.
-  See: http://jacklmoore.com/notes/ie-transparency-problems/
+ * The following fixes a problem where IE7 and IE8 replace a PNG's alpha transparency with a black fill
+ * when an alpha filter (opacity change) is set on the element or ancestor element.  This style is not applied to or needed in IE9.
+ * See: http://jacklmoore.com/notes/ie-transparency-problems/
 */
 
 

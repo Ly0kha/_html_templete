@@ -1,13 +1,12 @@
-/*--------------------------------------------------------------------------*
- *
- *  heightLine JavaScript Library beta4
- *
- *  MIT-style license.
- *
- *  2007 Kazuma Nishihata
- *  http://www.webcreativepark.net
- *
- *--------------------------------------------------------------------------*/
+/*!
+
+ * heightLine JavaScript Library beta4 (http://www.webcreativepark.net)
+ * Copyright 2007 Kazuma Nishihata
+ * Licensed under MIT (http://www.opensource.org/licenses/mit-license.php)
+
+ */
+
+
 new function(){
 
 	function heightLine(){

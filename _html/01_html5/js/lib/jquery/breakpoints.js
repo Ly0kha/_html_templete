@@ -1,19 +1,15 @@
-/*
-	Breakpoints.js
-	version 1.0
+/*!
 
-	Creates handy events for your responsive design breakpoints
+ * Breakpoints.js v1.0 (http://xoxco.com/)
+ * Copyright 2011 XOXCO, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
 
-	Copyright 2011 XOXCO, Inc
-	http://xoxco.com/
+ * Documentation for this plugin lives here:
+ * http://xoxco.com/projects/code/breakpoints
 
-	Documentation for this plugin lives here:
-	http://xoxco.com/projects/code/breakpoints
+ */
 
-	Licensed under the MIT license:
-	http://www.opensource.org/licenses/mit-license.php
 
-*/
 (function($) {
 
 	var lastSize = 0;
