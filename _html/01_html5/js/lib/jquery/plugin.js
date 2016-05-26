@@ -602,10 +602,8 @@ $(function() {
 		slideshow: false,
 
 		fixed: true,
-		top: '0',
-		bottom: '30%',
-		maxWidth: '75%',
-		maxHeight: '75%',
+		maxWidth: '90%',
+		maxHeight: '90%',
 		reposition: true,
 		opacity: '0.3',
 

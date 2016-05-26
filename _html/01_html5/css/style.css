@@ -46,7 +46,7 @@ html {
 body {
 	margin: 0px;
 	color: #000;
-	line-height: 1.42857143;
+	/* line-height: 1.42857143; */
 
 	-webkit-text-size-adjust: 100%;
 	word-break: break-all;
@@ -838,6 +838,7 @@ img {
 p {
 	margin: 0px;
 	padding: 0px;
+	vertical-align: top;
 	line-height: 1.8em;
 }
 
@@ -1453,9 +1454,82 @@ address {
 			padding: 1px;
 		}
 
-		#cboxLoadingGraphic {
-			background: url(../images/common/loading.gif) no-repeat center center;
+		#cboxLoadingGraphic,
+		#cboxLoadingGraphic:before,
+		#cboxLoadingGraphic:after {
+			background: #a5a5a5;
+			-webkit-animation: load1 1s infinite ease-in-out;
+			animation: load1 1s infinite ease-in-out;
+			width: 1em;
+			height: 4em;
 		}
+
+		#cboxLoadingGraphic:before,
+		#cboxLoadingGraphic:after {
+			position: absolute;
+			top: 0;
+			content: '';
+		}
+
+		#cboxLoadingGraphic:before {
+			left: -1.5em;
+			-webkit-animation-delay: -0.32s;
+			animation-delay: -0.32s;
+		}
+
+		#cboxLoadingGraphic {
+			/* background: url(../images/common/loading.gif) no-repeat center center; */
+
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			right: 50%;
+
+			color: #a5a5a5;
+			text-indent: -9999em;
+			font-size: 8px;
+
+			-webkit-transform: translateZ(0);
+			-ms-transform: translateZ(0);
+			transform: translateZ(0);
+			-webkit-animation-delay: -0.16s;
+			animation-delay: -0.16s;
+		}
+
+		#cboxLoadingGraphic:after {
+			left: 1.5em;
+		}
+
+		@-webkit-keyframes load1 {
+
+			0%,
+			80%,
+			100% {
+				box-shadow: 0 0;
+				height: 4em;
+			}
+			40% {
+				box-shadow: 0 -2em;
+				height: 5em;
+			}
+
+		}
+
+		@keyframes load1 {
+
+			0%,
+			80%,
+			100% {
+				box-shadow: 0 0;
+				height: 4em;
+			}
+			40% {
+				box-shadow: 0 -2em;
+				height: 5em;
+			}
+
+		}
+
 
 		#cboxLoadingOverlay {
 			background: none;
@@ -1468,7 +1542,7 @@ address {
 			width: 100%;
 
 			text-align: center;
-			color: #000;
+			color: #fff;
 		}
 
 		#cboxCurrent {
@@ -1478,13 +1552,6 @@ address {
 			text-indent: -9999px;
 		}
 
-		#cboxLoadingOverlay {
-			background: none;
-		}
-
-		#cboxLoadingGraphic {
-			background: url(../images/common/loading.gif) no-repeat center center;
-		}
 
 		/* these elements are buttons, and may need to have additional styles reset to avoid unwanted base styles */
 		#cboxPrevious,
