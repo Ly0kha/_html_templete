@@ -371,16 +371,16 @@ $(function() {
 			interval: 6000
 		});
 
-		// Slider-Swipe -forSP-//
+		// Slider-Swipe -for SP- //
 		var carousel = $('.carousel');
 		var hammer = new Hammer(carousel[0]);
 
-		//左にスワイプしたら次の画像に切り替え
+		//左にスワイプしたら次の画像に切り替え //
 		hammer.on('swipeleft', function() {
 			carousel.carousel('next');
 		});
 
-		//右にスワイプしたら前の画像に切り替え
+		//右にスワイプしたら前の画像に切り替え //
 		hammer.on('swiperight', function() {
 			carousel.carousel('prev');
 		});
