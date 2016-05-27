@@ -699,7 +699,8 @@ $(function() {
 					required: true
 				},
 				inquiryNameJaJp :{
-					required: true
+					required: true,
+					kana: true
 				},
 				inquiryNameEnJp :{
 					required: true,
@@ -722,7 +723,8 @@ $(function() {
 					required: '※必須項目です。'
 				},
 				inquiryNameJaJp :{
-					required: '※必須項目です。'
+					required: '※必須項目です。',
+					kana: '※全角文字で入力して下さい。'
 				},
 				inquiryNameEnJp :{
 					required: '※必須項目です。',
@@ -851,6 +853,7 @@ $(function() {
 				},
 				inquiryMailEn :{
 					required: true,
+					alphabet: true,
 					email: true
 				},
 				inquiryTextEn :{
@@ -862,13 +865,14 @@ $(function() {
 					required: '*Please select.'
 				},
 				inquiryCompanyNameEn :{
-					required: '*Please enter xxx.'
+					required: '*Please enter your company name.'
 				},
 				inquiryNameEnEn :{
-					required: '*Please enter xxx.'
+					required: '*Please enter your name.'
 				},
 				inquiryMailEn :{
-					required: '*Please enter xxx.',
+					required: '*Please enter your e-mail address.',
+					alphabet: '*Please enter the alphabet.',
 					email: '*Your e-mail address is incorrect.'
 				},
 				inquiryTextEn :{
