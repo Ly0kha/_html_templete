@@ -273,7 +273,6 @@ select {
 .bg-textarea textarea,
 .bg-inputChecker input {
 	position: absolute;
-	top: 2px;
 	left: 0px;
 
 	background-color: rgba(0,0,0,0);
@@ -283,6 +282,31 @@ select {
 	text-align: left;
 	padding: 4px;
 }
+
+
+/* BreakPoint for PC */
+@media (min-width: 960px) {
+
+	.bg-input input,
+	.bg-textarea textarea,
+	.bg-inputChecker input {
+		top: 2px;
+	}
+
+}
+
+
+/* BreakPoint for SP */
+@media (max-width: 959px) {
+
+	.bg-input input,
+	.bg-textarea textarea,
+	.bg-inputChecker input {
+		top: 0px;
+	}
+
+}
+
 
 .bg-input input,
 .bg-input button {
