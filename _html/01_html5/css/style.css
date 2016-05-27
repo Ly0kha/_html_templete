@@ -273,8 +273,8 @@ select {
 .bg-textarea textarea,
 .bg-inputChecker input {
 	position: absolute;
-	top: 0;
-	left: 0;
+	top: 2px;
+	left: 0px;
 
 	background-color: rgba(0,0,0,0);
 	color: #333;
@@ -481,14 +481,40 @@ p#form-inquiryListDisplay-jp,
 p#form-inquiryListDisplay-en {
 	position: relative;
 	left: 2px;
-	top: 2px;
 	width: 100%;
-	height: 30px;
+
+	color: #333;
 	overflow: hidden;
 	z-index: 9999;
-
-	font-size: 16px;
 }
+
+/* BreakPoint for PC */
+@media (min-width: 960px) {
+
+	p#form-inquiryListDisplay-jp,
+	p#form-inquiryListDisplay-en {
+		top: 4px;
+		height: 20px;
+		font-size: 12px;
+		letter-spacing: -0.025em;
+	}
+
+}
+
+
+/* BreakPoint for SP */
+@media (max-width: 959px) {
+
+	p#form-inquiryListDisplay-jp,
+	p#form-inquiryListDisplay-en {
+		top: 0px;
+		height: 30px;
+		font-size: 16px;
+		letter-spacing: -0.025em;
+	}
+
+}
+
 
 .bg-input,
 .bg-inputSelector,
@@ -524,21 +550,29 @@ p#form-inquiryListDisplay-en {
 
 .btn-pulldown {
 	position: absolute;
-	right: 8px;
-	top: 12px;
-	width: 10px;
-	height: 7px;
 }
 
-.input-btn-yellow {
-	background: #ffff00;
-	color: #000;
+/* BreakPoint for PC */
+@media (min-width: 960px) {
+
+	.btn-pulldown {
+		right: 12px;
+		top: 6px;
+	}
+
 }
 
-.input-btn-green {
-	background: #008000;
-	color: #fff;
+
+/* BreakPoint for SP */
+@media (max-width: 959px) {
+
+	.btn-pulldown {
+		right: 8px;
+		top: 8px;
+	}
+
 }
+
 
 
 /* エラー表示用 */
@@ -726,7 +760,7 @@ h3.accept {
 			-webkit-tap-highlight-color:rgba(0, 0, 0, 0)!important;
 		}
 
-		.suggestContainer ul li a  {
+		.suggest-container ul li a  {
 			font-size: 1em;
 		}
 
@@ -1279,7 +1313,8 @@ img.smallIcon {
 	vertical-align: middle;
 }
 
-.glyphicon-new-window {
+.glyphicon-new-window,
+.glyphicon-triangle-bottom {
 	margin-left: 4px;
 	vertical-align: baseline;
 }
@@ -1457,7 +1492,7 @@ address {
 		#cboxLoadingGraphic,
 		#cboxLoadingGraphic:before,
 		#cboxLoadingGraphic:after {
-			background: #a5a5a5;
+			background: #ddd;
 			-webkit-animation: load1 1s infinite ease-in-out;
 			animation: load1 1s infinite ease-in-out;
 			width: 1em;
@@ -1485,7 +1520,7 @@ address {
 			top: 50%;
 			right: 50%;
 
-			color: #a5a5a5;
+			color: #ddd;
 			text-indent: -9999em;
 			font-size: 8px;
 

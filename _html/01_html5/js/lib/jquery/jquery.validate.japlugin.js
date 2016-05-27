@@ -2,9 +2,11 @@
 
 
 /*
+
  * Translated default messages for the jQuery validation plugin.
  * Language: JA
  * Skipped date/dateISO/number.
+
  */
 
 

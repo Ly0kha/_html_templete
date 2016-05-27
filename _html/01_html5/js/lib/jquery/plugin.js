@@ -495,7 +495,7 @@ $(function() {
 		dataType: 'json',
 	});
 
-	if ($('header#navi-1st').length) {
+	if ($('header#navi-1st-none').length || $('header#navi-1st').length) {
 
 		$.getJSON('ajax/kerning.json', function(data) {
 
