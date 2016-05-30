@@ -203,7 +203,6 @@ $(function() {
 					}).done(function(html) {
 						html = html.replace(/\{\$root\}/g, relativeFirstDir);
 						$('header#navi-1st').append(html);
-						$('#test-btn').append('<a href="#">テスト</a>');
 				});
 				break;
 
