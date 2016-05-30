@@ -1456,7 +1456,7 @@ $(function() {
 			// Android時の傾き（ポートレイトかランドスケープか）を判定
 			if ('object' === typeof window.onorientationchange) {
 
-				window.addEventListener('orientationchange', function () {
+				window.addEventListener('orientationchange', function() {
 
 					if (window.innerHeight > window.innerWidth) {
 						// ポートレイト（ランドスケープ）
