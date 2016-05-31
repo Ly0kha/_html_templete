@@ -29,7 +29,6 @@
 /* ページ本体
 --------------------------*/
 
-
 html,
 body,
 #container {
@@ -1816,6 +1815,10 @@ address {
 
 
 	/* 左右パディング */
+	.pd-lr-05 {
+		padding: 0px 5px !important;
+	}
+
 	.pd-lr-10 {
 		padding: 0px 10px !important;
 	}
@@ -1911,6 +1914,10 @@ address {
 
 
 	/* 左右パディング */
+	.pd-lr-05 {
+		padding: 0px 2.5px !important;
+	}
+
 	.pd-lr-10 {
 		padding: 0px 5px !important;
 	}
