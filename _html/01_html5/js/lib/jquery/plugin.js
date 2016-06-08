@@ -337,7 +337,9 @@ $(function() {
 
 	}
 
-	adjust();
+	$(function() {
+		adjust();
+	});
 
 	$(window).on('load resize', function() {
 		adjust();
@@ -387,7 +389,7 @@ $(function() {
 	}
 
 	if ($('#carousel-slider').length) {
-		adjust();
+		hammer();
 	}
 
 
