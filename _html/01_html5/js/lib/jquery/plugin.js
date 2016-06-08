@@ -335,13 +335,13 @@ $(function() {
 		$('dl#column dd').css('margin-left', dt_column_width + 20 + 'px'); // 可変部分の高さを適用 //
 		$('dl.news dd').css('margin-left', dt_news_width  + 'px'); // 可変部分の高さを適用 //
 
-	};
+	}
 
 	adjust();
 
 	$(window).on('load resize', function() {
 		adjust();
-	})
+	});
 
 
 	/* PageScroll
@@ -363,36 +363,31 @@ $(function() {
 
 	/* Slider
 	--------------------*/
-	if (user_agent.indexOf('iPhone') > 0 || user_agent.indexOf('iPad') > 0 || user_agent.indexOf('iPod') > 0 || user_agent.indexOf('Android') > 0 || user_agent.indexOf('BlackBerry') > 0 || user_agent.indexOf('windows Phone') > 0 || user_agent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(user_agent) || $('#carousel-example-generic').children().hasClass('item')) {
+	// Slider-Config //
+	$('#carousel-slider').carousel({
+		interval: 8000
+	});
 
-		// Slider-Config //
-		$('.carousel').carousel({
-			interval: 6000
-		});
+	// Slider-Swipe -for SP- //
+	function hammer() {
 
-		// Slider-Swipe -for SP- //
-		var carousel = $('.carousel');
-		var hammer = new Hammer(carousel[0]);
+		var carouselslider = $('#carousel-slider');
+		var carousel = new Hammer(carouselslider[0]);
 
 		//左にスワイプしたら次の画像に切り替え //
-		hammer.on('swipeleft', function() {
-			carousel.carousel('next');
+		carousel.on('swipeleft', function() {
+			carouselslider.carousel('next');
 		});
 
 		//右にスワイプしたら前の画像に切り替え //
-		hammer.on('swiperight', function() {
-			carousel.carousel('prev');
+		carousel.on('swiperight', function() {
+			carouselslider.carousel('prev');
 		});
 
 	}
 
-	else {
-
-		// Slider-Config //
-		$('.carousel').carousel({
-			interval: 6000
-		});
-
+	if ($('#carousel-slider').length) {
+		adjust();
 	}
 
 
