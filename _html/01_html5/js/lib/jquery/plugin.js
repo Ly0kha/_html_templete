@@ -95,22 +95,27 @@ $(function() {
 		*/
 
 
-	// ウィンドウ自体の幅と高さを計測し、使っているブラウザのユーザーエージェントを判定
-	$(window).on('load resize', function() {
+	/* 【TEST】 window判定実装
+	   ウィンドウ自体の幅と高さを計測し、使っているブラウザのユーザーエージェントを判定
+	--------------------*/
+	function testUserStatusDecision() {
 
 		var window_width = $(window).width();
 		var window_height = $(window).height();
+
 		$('#test01').html('ウィンドウ幅' + '&nbsp;:&nbsp;' + window_width);
 		$('#test02').html('ウィンドウ高さ' + '&nbsp;:&nbsp;' + window_height);
 		$('#test03').html('ユーザーエージェント' + '&nbsp;:&nbsp;' + '<br />' + user_agent);
+		$('#test04').html('現在のディレクトリ' + '&nbsp;:&nbsp;' + currentDir);
 
+	}
+
+	$(window).on('load resize', function() {
+		testUserStatusDecision();
 	});
 
-	// 現在開いているディレクトリを判定
-	$('#test04').html('現在のディレクトリ' + '&nbsp;:&nbsp;' + currentDir);
 
-
-	/* test IE判定実装
+	/*【TEST】 IE判定実装
 	--------------------*/
 	// IEであるか否かの判定
 	var isIE = false; // IEか否か
@@ -125,7 +130,7 @@ $(function() {
 	}
 
 
-	/* test btn-hover実装
+	/*【TEST】 btn-hover実装
 	--------------------*/
 	function btnHoverSelect(i) {
 
@@ -135,6 +140,7 @@ $(function() {
 
 			case '1st' :
 				$.ajax ({
+
 					type: 'GET',
 					url: relativeFirstDir + 'btn.html',
 					dataType: 'html',
@@ -143,12 +149,14 @@ $(function() {
 					}).done(function(html) {
 						html = html.replace(/\{\$root\}/g, relativeFirstDir);
 						$('#hover').append(html);
+
 				});
 
 				break;
 
 			case '2nd' :
 				$.ajax ({
+
 					type: 'GET',
 					url: relativeSecondDir + 'btn.html',
 					dataType: 'html',
@@ -157,6 +165,7 @@ $(function() {
 					}).done(function(html) {
 						html = html.replace(/\{\$root\}/g, relativeSecondDir);
 						$('#hover').append(html);
+
 				});
 				break;
 
@@ -185,6 +194,73 @@ $(function() {
 	}
 
 
+	/* 【TEST】 Json読み込み
+	--------------------*/
+
+	$.ajax({
+		dataType: 'json'
+	});
+
+	if ($('header#navi-1st').length) {
+
+		$.getJSON('ajax/text.json', function(data) {
+
+			var items = [];
+			$.each(data, function(key, val) {
+				items.push('<li id=' + key + '>' + val + '</li>');
+			});
+
+			$('<ul/>',{
+				'class': 'my-new-list',
+				html: items.join('')
+			}).appendTo('#test05');
+
+		});
+
+	}
+
+	else if ($('header#navi-2nd').length) {
+
+		$.getJSON('../ajax/text.json', function(data) {
+
+			var items = [];
+			$.each(data, function(key, val) {
+				items.push('<li id=' + key + '>' + val + '</li>');
+			});
+
+			$('<ul/>',{
+				'class': 'my-new-list',
+				html: items.join('')
+			}).appendTo('#test05');
+
+		});
+
+	}
+
+	else if ($('header#navi-3rd').length) {
+
+		$.getJSON('../../ajax/text.json', function(data) {
+
+			var items = [];
+			$.each(data, function(key, val) {
+				items.push('<li id=' + key + '>' + val + '</li>');
+			});
+
+			$('<ul/>',{
+				'class': 'my-new-list',
+				html: items.join('')
+			}).appendTo('#test05');
+
+		});
+
+	}
+
+	else {
+
+	}
+
+
+
 	/* Header共通化
 	--------------------*/
 	function headerSelect(i) {
@@ -195,6 +271,7 @@ $(function() {
 
 			case '1st' :
 				$.ajax ({
+
 					type: 'GET',
 					url: relativeFirstDir + 'header.html',
 					dataType: 'html',
@@ -203,11 +280,13 @@ $(function() {
 					}).done(function(html) {
 						html = html.replace(/\{\$root\}/g, relativeFirstDir);
 						$('header#navi-1st').append(html);
+
 				});
 				break;
 
 			case '2nd' :
 				$.ajax ({
+
 					type: 'GET',
 					url: relativeSecondDir + 'header.html',
 					dataType: 'html',
@@ -216,11 +295,13 @@ $(function() {
 					}).done(function(html) {
 						html = html.replace(/\{\$root\}/g, relativeSecondDir);
 						$('header#navi-2nd').append(html);
+
 				});
 				break;
 
 			case '3rd' :
 				$.ajax ({
+
 					type: 'GET',
 					url: relativeThirdDir + 'header.html',
 					dataType: 'html',
@@ -229,6 +310,7 @@ $(function() {
 					}).done(function(html) {
 						html = html.replace(/\{\$root\}/g, relativeThirdDir);
 						$('header#navi-3rd').append(html);
+
 				});
 				break;
 
@@ -257,92 +339,24 @@ $(function() {
 	}
 
 
-	/* Jsonテスト
+	/* dt adjust -- 定義タグで表組する場合
 	--------------------*/
-	$(function() {
-
-		$.ajax({
-			dataType: 'json'
-		});
-
-		if ($('header#navi-1st').length) {
-
-			$.getJSON('ajax/text.json', function(data) {
-
-				var items = [];
-				$.each(data, function(key, val) {
-					items.push('<li id=' + key + '>' + val + '</li>');
-				});
-
-				$('<ul/>',{
-					'class': 'my-new-list',
-					html: items.join('')
-				}).appendTo('#test05');
-
-			});
-
-		}
-
-		else if ($('header#navi-2nd').length) {
-
-			$.getJSON('../ajax/text.json', function(data) {
-
-				var items = [];
-				$.each(data, function(key, val) {
-					items.push('<li id=' + key + '>' + val + '</li>');
-				});
-
-				$('<ul/>',{
-					'class': 'my-new-list',
-					html: items.join('')
-				}).appendTo('#test05');
-
-			});
-
-		}
-
-		else if ($('header#navi-3rd').length) {
-
-			$.getJSON('../../ajax/text.json', function(data) {
-
-				var items = [];
-				$.each(data, function(key, val) {
-					items.push('<li id=' + key + '>' + val + '</li>');
-				});
-
-				$('<ul/>',{
-					'class': 'my-new-list',
-					html: items.join('')
-				}).appendTo('#test05');
-
-			});
-
-		}
-
-		else {
-
-		}
-
-	});
-
-
-	/* dt adjust
-	--------------------*/
-	function adjust() {
+	function dtAdjust() {
 
 		var dt_column_width = $('dl#column dt').outerWidth(); // dtの幅 //
 		var dt_news_width = $('dl.news dt').outerWidth(); // dtの幅 //
+
 		$('dl#column dd').css('margin-left', dt_column_width + 20 + 'px'); // 可変部分の高さを適用 //
 		$('dl.news dd').css('margin-left', dt_news_width  + 'px'); // 可変部分の高さを適用 //
 
 	}
 
-	$(function() {
-		adjust();
-	});
+	// DOM通常 //
+	dtAdjust();
 
+	// DOMリサイズ //
 	$(window).on('load resize', function() {
-		adjust();
+		dtAdjust();
 	});
 
 
@@ -371,7 +385,7 @@ $(function() {
 	});
 
 	// Slider-Swipe -for SP- //
-	function hammer() {
+	function carouselSliderFlick() {
 
 		var carouselslider = $('#carousel-slider');
 		var carousel = new Hammer(carouselslider[0]);
@@ -389,7 +403,7 @@ $(function() {
 	}
 
 	if ($('#carousel-slider').length) {
-		hammer();
+		carouselSliderFlick();
 	}
 
 
@@ -491,12 +505,17 @@ $(function() {
 		dataType: 'json',
 	});
 
-	if ($('header#navi-1st-none').length || $('header#navi-1st').length) {
+	// AJAXが入っているディレクトリの指定 //
+	var KerningJsonFirstDir = ('ajax/kerning.json');
+	var KerningJsonSecondDir = ('../ajax/kerning.json');
+	var KerningJsonThirdDir = ('../../ajax/kerning.json');
 
-		$.getJSON('ajax/kerning.json', function(data) {
+	// 中にテキストが入るタグの判定 //
+	var tag = $('p, h1, h2, h3, h4, h5, h6, .carousel-caption, dl.news dt, dl.news dd, dl#column dt, dl#column dd, dl#form-layout-jp dt, dl#form-layout-en dt, ul.list li, ol.list li, ul.suggest-menu li, ul.form-accept li, th, td, a, address')
 
-			// 中にテキストが入るタグの判定 //
-			var tag = $('p, h1, h2, h3, h4, h5, h6, .carousel-caption, dl.news dt, dl.news dd, dl#column dt, dl#column dd, dl#form-layout-jp dt, dl#form-layout-en dt, ul.list li, ol.list li, ul.suggest-menu li, ul.form-accept li, th, td, a, address')
+	function kerningFirstDir() {
+
+		$.getJSON(KerningJsonFirstDir, function(data) {
 
 			$(tag).kerning({
 				'data': data
@@ -504,36 +523,43 @@ $(function() {
 
 		});
 
+	}
+
+	function kerningSecondDir() {
+
+		$.getJSON(KerningJsonSecondDir, function(data) {
+
+			$(tag).kerning({
+				'data': data
+			});
+
+		});
+
+	}
+
+	function KerningThirdDir() {
+
+		$.getJSON(KerningJsonThirdDir, function(data) {
+
+			$(tag).kerning({
+				'data': data
+			});
+
+		});
+
+	}
+
+
+	if ($('header#navi-1st-none').length || $('header#navi-1st').length) {
+		kerningFirstDir();
 	}
 
 	else if ($('header#navi-2nd').length) {
-
-		$.getJSON('../ajax/kerning.json', function(data) {
-
-			// 中にテキストが入るタグの判定 //
-			var tag = $('p, h1, h2, h3, h4, h5, h6, .carousel-caption, dl.news dt, dl.news dd, dl#column dt, dl#column dd, dl#form-layout-jp dt, dl#form-layout-en dt, ul.list li, ol.list li, ul.suggest-menu li, ul.form-accept li, th, td, a, address')
-
-			$(tag).kerning({
-				'data': data
-			});
-
-		});
-
+		kerningSecondDir();
 	}
 
 	else if ($('header#navi-3rd').length) {
-
-		$.getJSON('../../ajax/kerning.json', function(data) {
-
-			// 中にテキストが入るタグの判定 //
-			var tag = $('p, h1, h2, h3, h4, h5, h6, .carousel-caption, dl.news dt, dl.news dd, dl#column dt, dl#column dd, dl#form-layout-jp dt, dl#form-layout-en dt, ul.list li, ol.list li, ul.suggest-menu li, ul.form-accept li, th, td, a, address')
-
-			$(tag).kerning({
-				'data': data
-			});
-
-		});
-
+		KerningThirdDir();
 	}
 
 	else {
@@ -548,10 +574,10 @@ $(function() {
 	$(window).on('load resize', function() {
 
 		// min_height = 400;
-		var $box = $('.bgLogin.box.center');
-		var padding = parseInt($box.css('padding-top')) + parseInt($box.css('padding-bottom'));
+		var box = $('.bgLogin.box.center');
+		var padding = parseInt(box.css('padding-top')) + parseInt(box.css('padding-bottom'));
 		var margin = 50;
-		var min_height = $box.height() + padding + $('footer').height() + margin;
+		var min_height = box.height() + padding + $('footer').height() + margin;
 
 		if( window_inner_height < min_height ) {
 			window_inner_height = min_height
