@@ -125,7 +125,8 @@ $(function() {
 
 		isIE = true;
 		version = user_agent.match(/(MSIE\s|rv:)([\d\.]+)/)[2];
-	//  location.href='http://www.yahoo.co.jp/'
+	    version = parseInt(version);
+		console.log('IE : Ver:', version);
 
 	}
 
@@ -138,14 +139,15 @@ $(function() {
 
 		switch (btnArr) {
 
-			case '1st' :
+			case 1 :
+
 				$.ajax ({
 
 					type: 'GET',
 					url: relativeFirstDir + 'btn.html',
 					dataType: 'html',
 					cache: true, // キャッシュを利用 //
-					async: true, // 非同期で読み込む //
+					async: false, // 非同期で読み込む //
 					}).done(function(html) {
 						html = html.replace(/\{\$root\}/g, relativeFirstDir);
 						$('#hover').append(html);
@@ -154,14 +156,15 @@ $(function() {
 
 				break;
 
-			case '2nd' :
+			case 2 :
+
 				$.ajax ({
 
 					type: 'GET',
 					url: relativeSecondDir + 'btn.html',
 					dataType: 'html',
 					cache: true, // キャッシュを利用 //
-					async: true, // 非同期で読み込む //
+					async: false, // 非同期で読み込む //
 					}).done(function(html) {
 						html = html.replace(/\{\$root\}/g, relativeSecondDir);
 						$('#hover').append(html);
@@ -182,11 +185,11 @@ $(function() {
 	}
 
 	else if ($('header#navi-1st').length) {
-		btnHoverSelect('1st');
+		btnHoverSelect(1);
 	}
 
 	else if ($('header#navi-2nd').length) {
-		btnHoverSelect('2nd');
+		btnHoverSelect(2);
 	}
 
 	else {
@@ -196,69 +199,95 @@ $(function() {
 
 	/* 【TEST】 Json読み込み
 	--------------------*/
-
 	$.ajax({
 		dataType: 'json'
 	});
 
+	// AJAXが入っているディレクトリの指定 //
+	var testJsonFirstDir = ('ajax/text.json');
+	var testJsonSecondDir = ('../ajax/text.json');
+	var testJsonThirdDir = ('../../ajax/text.json');
+
+	function testJsonSelect(i) {
+
+		var testJsonArr = i ;
+
+		switch (testJsonArr) {
+
+			case 1 :
+
+				$.getJSON(testJsonFirstDir, function(data) {
+
+					var items = [];
+					$.each(data, function(key, val) {
+						items.push('<li id=' + key + '>' + val + '</li>');
+					});
+
+					$('<ul/>',{
+						'class': 'my-new-list',
+						html: items.join('')
+					}).appendTo('#test05');
+
+				});
+				break;
+
+			case 2 :
+
+				$.getJSON(testJsonSecondDir, function(data) {
+
+					var items = [];
+					$.each(data, function(key, val) {
+						items.push('<li id=' + key + '>' + val + '</li>');
+					});
+
+					$('<ul/>',{
+						'class': 'my-new-list',
+						html: items.join('')
+					}).appendTo('#test05');
+
+				});
+				break;
+
+			case 3 :
+
+				$.getJSON(testJsonThirdDir, function(data) {
+
+					var items = [];
+					$.each(data, function(key, val) {
+						items.push('<li id=' + key + '>' + val + '</li>');
+					});
+
+					$('<ul/>',{
+						'class': 'my-new-list',
+						html: items.join('')
+					}).appendTo('#test05');
+
+				});
+				break;
+
+			default :
+
+				break;
+
+		}
+
+	}
+
 	if ($('header#navi-1st').length) {
-
-		$.getJSON('ajax/text.json', function(data) {
-
-			var items = [];
-			$.each(data, function(key, val) {
-				items.push('<li id=' + key + '>' + val + '</li>');
-			});
-
-			$('<ul/>',{
-				'class': 'my-new-list',
-				html: items.join('')
-			}).appendTo('#test05');
-
-		});
-
+		testJsonSelect(1);
 	}
 
 	else if ($('header#navi-2nd').length) {
-
-		$.getJSON('../ajax/text.json', function(data) {
-
-			var items = [];
-			$.each(data, function(key, val) {
-				items.push('<li id=' + key + '>' + val + '</li>');
-			});
-
-			$('<ul/>',{
-				'class': 'my-new-list',
-				html: items.join('')
-			}).appendTo('#test05');
-
-		});
-
+		testJsonSelect(2);
 	}
 
 	else if ($('header#navi-3rd').length) {
-
-		$.getJSON('../../ajax/text.json', function(data) {
-
-			var items = [];
-			$.each(data, function(key, val) {
-				items.push('<li id=' + key + '>' + val + '</li>');
-			});
-
-			$('<ul/>',{
-				'class': 'my-new-list',
-				html: items.join('')
-			}).appendTo('#test05');
-
-		});
-
+		testJsonSelect(3);
 	}
 
 	else {
-
+		testJsonSelect();
 	}
-
 
 
 	/* Header共通化
@@ -269,14 +298,15 @@ $(function() {
 
 		switch (htmlArr) {
 
-			case '1st' :
+			case 1 :
+
 				$.ajax ({
 
 					type: 'GET',
 					url: relativeFirstDir + 'header.html',
 					dataType: 'html',
 					cache: true, // キャッシュを利用 //
-					async: true, // 非同期で読み込む //
+					async: false, // 非同期で読み込む //
 					}).done(function(html) {
 						html = html.replace(/\{\$root\}/g, relativeFirstDir);
 						$('header#navi-1st').append(html);
@@ -284,14 +314,15 @@ $(function() {
 				});
 				break;
 
-			case '2nd' :
+			case 2 :
+
 				$.ajax ({
 
 					type: 'GET',
 					url: relativeSecondDir + 'header.html',
 					dataType: 'html',
 					cache: true, // キャッシュを利用 //
-					async: true, // 非同期で読み込む //
+					async: false, // 非同期で読み込む //
 					}).done(function(html) {
 						html = html.replace(/\{\$root\}/g, relativeSecondDir);
 						$('header#navi-2nd').append(html);
@@ -299,14 +330,15 @@ $(function() {
 				});
 				break;
 
-			case '3rd' :
+			case 3 :
+
 				$.ajax ({
 
 					type: 'GET',
 					url: relativeThirdDir + 'header.html',
 					dataType: 'html',
 					cache: true, // キャッシュを利用 //
-					async: true, // 非同期で読み込む //
+					async: false, // 非同期で読み込む //
 					}).done(function(html) {
 						html = html.replace(/\{\$root\}/g, relativeThirdDir);
 						$('header#navi-3rd').append(html);
@@ -323,15 +355,15 @@ $(function() {
 	}
 
 	if ($('header#navi-1st').length) {
-		headerSelect('1st');
+		headerSelect(1);
 	}
 
 	else if ($('header#navi-2nd').length) {
-		headerSelect('2nd');
+		headerSelect(2);
 	}
 
 	else if ($('header#navi-3rd').length) {
-		headerSelect('3rd');
+		headerSelect(3);
 	}
 
 	else {
@@ -439,12 +471,14 @@ $(function() {
 		switch (imgArr) {
 
 			case 'on' :
+
 				$('img.mouseover').each(function() {
 					$(this).attr('src', $(this).attr('src').replace('_off', '_on'));
 				});
 				break;
 
 			case 'off' :
+
 				$('img.mouseover').each(function() {
 					$(this).attr('src', $(this).attr('src').replace('_on', '_off'));
 				});
@@ -506,64 +540,83 @@ $(function() {
 	});
 
 	// AJAXが入っているディレクトリの指定 //
-	var KerningJsonFirstDir = ('ajax/kerning.json');
-	var KerningJsonSecondDir = ('../ajax/kerning.json');
-	var KerningJsonThirdDir = ('../../ajax/kerning.json');
+	var kerningJsonFirstDir = ('ajax/kerning.json');
+	var kerningJsonSecondDir = ('../ajax/kerning.json');
+	var kerningJsonThirdDir = ('../../ajax/kerning.json');
 
 	// 中にテキストが入るタグの判定 //
 	var tag = $('p, h1, h2, h3, h4, h5, h6, .carousel-caption, dl.news dt, dl.news dd, dl#column dt, dl#column dd, dl#form-layout-jp dt, dl#form-layout-en dt, ul.list li, ol.list li, ul.suggest-menu li, ul.form-accept li, th, td, a, address')
 
-	function kerningFirstDir() {
+	function kerningDir(i) {
 
-		$.getJSON(KerningJsonFirstDir, function(data) {
+		var kerningArr = i ;
 
-			$(tag).kerning({
-				'data': data
-			});
+		switch (kerningArr) {
 
-		});
+			case 1 :
 
-	}
+				$.getJSON(kerningJsonFirstDir, function(data) {
 
-	function kerningSecondDir() {
+					$(tag).kerning({
+						'data': data
+					});
 
-		$.getJSON(KerningJsonSecondDir, function(data) {
+				});
+				break;
 
-			$(tag).kerning({
-				'data': data
-			});
+			case 2 :
 
-		});
+				$.getJSON(kerningJsonSecondDir, function(data) {
 
-	}
+					async: false, // 非同期で読み込む //
+					$(tag).kerning({
+						'data': data
+					});
 
-	function KerningThirdDir() {
+				});
+				break;
 
-		$.getJSON(KerningJsonThirdDir, function(data) {
+			case 3 :
 
-			$(tag).kerning({
-				'data': data
-			});
+				$.getJSON(kerningJsonThirdDir, function(data) {
 
-		});
+					$(tag).kerning({
+						'data': data
+					});
+
+				});
+				break;
+
+			default :
+
+				$.getJSON(kerningJsonFirstDir, function(data) {
+
+					$(tag).kerning({
+						'data': data
+					});
+
+				});
+				break;
+
+		}
 
 	}
 
 
 	if ($('header#navi-1st-none').length || $('header#navi-1st').length) {
-		kerningFirstDir();
+		kerningDir(1);
 	}
 
 	else if ($('header#navi-2nd').length) {
-		kerningSecondDir();
+		kerningDir(2);
 	}
 
 	else if ($('header#navi-3rd').length) {
-		KerningThirdDir();
+		kerningDir(3);
 	}
 
 	else {
-
+		kerningDir();
 	}
 
 
@@ -574,39 +627,27 @@ $(function() {
 	$(window).on('load resize', function() {
 
 		// min_height = 400;
-		var box = $('.bgLogin.box.center');
+		var box = $('.centerParentWrapper');
 		var padding = parseInt(box.css('padding-top')) + parseInt(box.css('padding-bottom'));
 		var margin = 50;
 		var min_height = box.height() + padding + $('footer').height() + margin;
 
 		if( window_inner_height < min_height ) {
 			window_inner_height = min_height
-			$('.centerParentWrapper').css('position', 'relative');
+			$('#fixed-container').css('position', 'relative');
 		}
 
 		else {
-			$('.centerParentWrapper').css('position', 'fixed');
+			$('#fixed-container').css('position', 'fixed');
 		}
 
-		$('.centerParentWrapper').css({
+		$('#fixed-container').css({
 			"height" : window_inner_height + "px"
 		});
 
-		$('.centerParentWrapper').css({
+		$('#fixed-container').css({
 			"height" : window_inner_height - 30 + "px"
 		});
-
-		if (window_inner_width < 768) {
-			$('.bgProduct').css({
-				"width" : window_inner_width - 30 + "px"
-			});
-		}
-
-		else {
-			$('.bgProduct').css({
-				"width" : 750 + "px"
-			});
-		}
 
 	}).trigger('resize');
 
