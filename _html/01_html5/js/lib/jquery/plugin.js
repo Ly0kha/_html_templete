@@ -3,7 +3,7 @@
 
 
 
-/* --------------------------
+/*----------------------------------------------------
 
 ・Common UI
 　→UI動作で必要な実装
@@ -29,7 +29,7 @@
 ・Device
 　→PC版とのレイアウトや挙動の切替、SPの特定端末における挙動対策等
 
---------------------------*/
+----------------------------------------------------*/
 
 
 
@@ -38,7 +38,7 @@ $(function() {
 
 
 /* Common UI
---------------------------*/
+------------------------------------------------------------------------------*/
 
 
 	/* グローバル変数
@@ -62,6 +62,8 @@ $(function() {
 
 	// 端末ユーザーエージェントの判定 //
 	var user_agent = navigator.userAgent;
+
+
 
 
 		/* ユーザーエージェント一覧
@@ -95,199 +97,305 @@ $(function() {
 		*/
 
 
-	/* 【TEST】 window判定実装
-	   ウィンドウ自体の幅と高さを計測し、使っているブラウザのユーザーエージェントを判定
+
+
+	/* Kerning
 	--------------------*/
-	function testUserStatusDecision() {
-
-		var window_width = $(window).width();
-		var window_height = $(window).height();
-
-		$('#test01').html('ウィンドウ幅' + '&nbsp;:&nbsp;' + window_width);
-		$('#test02').html('ウィンドウ高さ' + '&nbsp;:&nbsp;' + window_height);
-		$('#test03').html('ユーザーエージェント' + '&nbsp;:&nbsp;' + '<br />' + user_agent);
-		$('#test04').html('現在のディレクトリ' + '&nbsp;:&nbsp;' + currentDir);
-
-	}
-
-	$(window).on('load resize', function() {
-		testUserStatusDecision();
-	});
 
 
-	/*【TEST】 IE判定実装
-	--------------------*/
-	// IEであるか否かの判定
-	var isIE = false; // IEか否か
-	var version = null; // IEのバージョン
+	/*Attention
+	--------------------
 
-	if(user_agent.match(/MSIE/) || user_agent.match(/Trident/) ) {
+	※約物含めたリンク箇所でのカーニング指定を行うと挙動がおかしくなる
+	　→約物を記号化、前後に半角スペースを入れる事で対応
+	  例）<a href="javascript:void(0)" class="policy"> &#12300;個人情報の取り扱いについて&#12301; </a>
 
-		isIE = true;
-		version = user_agent.match(/(MSIE\s|rv:)([\d\.]+)/)[2];
-	    version = parseInt(version);
-		console.log('IE : Ver:', version);
-
-	}
+	--------------------
+	*/
 
 
-	/*【TEST】 btn-hover実装
-	--------------------*/
-	function btnHoverSelect(i) {
-
-		var btnArr = i ;
-
-		switch (btnArr) {
-
-			case 1 :
-
-				$.ajax ({
-
-					type: 'GET',
-					url: relativeFirstDir + 'btn.html',
-					dataType: 'html',
-					cache: true, // キャッシュを利用 //
-					async: false, // 非同期で読み込む //
-					}).done(function(html) {
-						html = html.replace(/\{\$root\}/g, relativeFirstDir);
-						$('#hover').append(html);
-
-				});
-
-				break;
-
-			case 2 :
-
-				$.ajax ({
-
-					type: 'GET',
-					url: relativeSecondDir + 'btn.html',
-					dataType: 'html',
-					cache: true, // キャッシュを利用 //
-					async: false, // 非同期で読み込む //
-					}).done(function(html) {
-						html = html.replace(/\{\$root\}/g, relativeSecondDir);
-						$('#hover').append(html);
-
-				});
-				break;
-
-			default :
-
-				break;
-
-		}
-
-	}
-
-	if (user_agent.indexOf('iPhone') > 0 || user_agent.indexOf('iPad') > 0 || user_agent.indexOf('iPod') > 0 || user_agent.indexOf('Android') > 0 || user_agent.indexOf('BlackBerry') > 0 || user_agent.indexOf('windows Phone') > 0 || user_agent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(user_agent) ) {
-		btnHoverSelect();
-	}
-
-	else if ($('header#navi-1st').length) {
-		btnHoverSelect(1);
-	}
-
-	else if ($('header#navi-2nd').length) {
-		btnHoverSelect(2);
-	}
-
-	else {
-		btnHoverSelect();
-	}
-
-
-	/* 【TEST】 Json読み込み
-	--------------------*/
-	$.ajax({
-		dataType: 'json'
+	$.ajax ({
+		dataType: 'json',
 	});
 
 	// AJAXが入っているディレクトリの指定 //
-	var testJsonFirstDir = ('ajax/text.json');
-	var testJsonSecondDir = ('../ajax/text.json');
-	var testJsonThirdDir = ('../../ajax/text.json');
+	var kerningJsonFirstDir = ('ajax/kerning.json');
+	var kerningJsonSecondDir = ('../ajax/kerning.json');
+	var kerningJsonThirdDir = ('../../ajax/kerning.json');
 
-	function testJsonSelect(i) {
+	// 中にテキストが入るタグの判定 //
+	var tag = $('p, h1, h2, h3, h4, h5, h6, .carousel-caption, dl.news dt, dl.news dd, dl#column dt, dl#column dd, dl#form-layout-jp dt, dl#form-layout-en dt, ul.list li, ol.list li, ul.suggest-menu li, ul.form-accept li, th, td, a, address')
 
-		var testJsonArr = i ;
+	function kerningDir(i) {
 
-		switch (testJsonArr) {
+		var kerningArr = i ;
+
+		switch (kerningArr) {
 
 			case 1 :
 
-				$.getJSON(testJsonFirstDir, function(data) {
+				return $.getJSON(kerningJsonFirstDir, function(data) {
 
-					var items = [];
-					$.each(data, function(key, val) {
-						items.push('<li id=' + key + '>' + val + '</li>');
+					$(tag).kerning({
+						'data': data
 					});
-
-					$('<ul/>',{
-						'class': 'my-new-list',
-						html: items.join('')
-					}).appendTo('#test05');
 
 				});
 				break;
 
 			case 2 :
 
-				$.getJSON(testJsonSecondDir, function(data) {
+				return $.getJSON(kerningJsonSecondDir, function(data) {
 
-					var items = [];
-					$.each(data, function(key, val) {
-						items.push('<li id=' + key + '>' + val + '</li>');
+					$(tag).kerning({
+						'data': data
 					});
-
-					$('<ul/>',{
-						'class': 'my-new-list',
-						html: items.join('')
-					}).appendTo('#test05');
 
 				});
 				break;
 
 			case 3 :
 
-				$.getJSON(testJsonThirdDir, function(data) {
+				return $.getJSON(kerningJsonThirdDir, function(data) {
 
-					var items = [];
-					$.each(data, function(key, val) {
-						items.push('<li id=' + key + '>' + val + '</li>');
+					$(tag).kerning({
+						'data': data
 					});
-
-					$('<ul/>',{
-						'class': 'my-new-list',
-						html: items.join('')
-					}).appendTo('#test05');
 
 				});
 				break;
 
 			default :
 
+				return $.getJSON(kerningJsonFirstDir, function(data) {
+
+					$(tag).kerning({
+						'data': data
+					});
+
+				});
 				break;
 
 		}
 
 	}
 
-	if ($('header#navi-1st').length) {
-		testJsonSelect(1);
+	if ($('header#navi-1st-none').length || $('header#navi-1st').length) {
+		kerningDir(1);
 	}
 
 	else if ($('header#navi-2nd').length) {
-		testJsonSelect(2);
+		kerningDir(2);
 	}
 
 	else if ($('header#navi-3rd').length) {
-		testJsonSelect(3);
+		kerningDir(3);
 	}
 
 	else {
-		testJsonSelect();
+		kerningDir();
 	}
+
+
+
+
+	/* 【TEST】
+	----------------------------------------------------*/
+
+
+		/* 【TEST】 window判定実装
+		   ウィンドウ自体の幅と高さを計測し、使っているブラウザのユーザーエージェントを判定
+		--------------------*/
+		function testUserStatusDecision() {
+
+			var window_width = $(window).width();
+			var window_height = $(window).height();
+
+			$('#test01').html('ウィンドウ幅' + '&nbsp;:&nbsp;' + window_width);
+			$('#test02').html('ウィンドウ高さ' + '&nbsp;:&nbsp;' + window_height);
+			$('#test03').html('ユーザーエージェント' + '&nbsp;:&nbsp;' + '<br />' + user_agent);
+			$('#test04').html('現在のディレクトリ' + '&nbsp;:&nbsp;' + currentDir);
+
+		}
+
+		$(window).on('load resize', function() {
+			testUserStatusDecision();
+		});
+
+
+		/*【TEST】 IE判定実装
+		--------------------*/
+		// IEであるか否かの判定
+		var isIE = false; // IEか否か
+		var version = null; // IEのバージョン
+
+		if(user_agent.match(/MSIE/) || user_agent.match(/Trident/) ) {
+
+			isIE = true;
+			version = user_agent.match(/(MSIE\s|rv:)([\d\.]+)/)[2];
+		    version = parseInt(version);
+			console.log('IE : Ver:', version);
+
+		}
+
+
+		/* 【TEST】 Json読み込み
+		--------------------*/
+		$.ajax({
+			dataType: 'json'
+		});
+
+		// AJAXが入っているディレクトリの指定 //
+		var testJsonFirstDir = ('ajax/text.json');
+		var testJsonSecondDir = ('../ajax/text.json');
+		var testJsonThirdDir = ('../../ajax/text.json');
+
+		function testJsonSelect(i) {
+
+			var testJsonArr = i ;
+
+			switch (testJsonArr) {
+
+				case 1 :
+
+					$.getJSON(testJsonFirstDir, function(data) {
+
+						var items = [];
+						$.each(data, function(key, val) {
+							items.push('<li id=' + key + '>' + val + '</li>');
+						});
+
+						$('<ul/>',{
+							'class': 'my-new-list',
+							html: items.join('')
+						}).appendTo('#test05');
+
+					});
+					break;
+
+				case 2 :
+
+					$.getJSON(testJsonSecondDir, function(data) {
+
+						var items = [];
+						$.each(data, function(key, val) {
+							items.push('<li id=' + key + '>' + val + '</li>');
+						});
+
+						$('<ul/>',{
+							'class': 'my-new-list',
+							html: items.join('')
+						}).appendTo('#test05');
+
+					});
+					break;
+
+				case 3 :
+
+					$.getJSON(testJsonThirdDir, function(data) {
+
+						var items = [];
+						$.each(data, function(key, val) {
+							items.push('<li id=' + key + '>' + val + '</li>');
+						});
+
+						$('<ul/>',{
+							'class': 'my-new-list',
+							html: items.join('')
+						}).appendTo('#test05');
+
+					});
+					break;
+
+				default :
+
+					break;
+
+			}
+
+		}
+
+		if ($('header#navi-1st').length) {
+			testJsonSelect(1);
+		}
+
+		else if ($('header#navi-2nd').length) {
+			testJsonSelect(2);
+		}
+
+		else if ($('header#navi-3rd').length) {
+			testJsonSelect(3);
+		}
+
+		else {
+			testJsonSelect();
+		}
+
+
+		/*【TEST】 btn-hover実装
+		--------------------*/
+		function btnHoverSelect(i) {
+
+			var btnArr = i ;
+
+			switch (btnArr) {
+
+				case 1 :
+
+					return $.ajax ({
+
+						type: 'GET',
+						url: relativeFirstDir + 'btn.html',
+
+					});
+
+					break;
+
+				case 2 :
+
+					return $.ajax ({
+
+						type: 'GET',
+						url: relativeSecondDir + 'btn.html',
+
+					});
+					break;
+
+				default :
+
+					break;
+
+			}
+
+		}
+
+		if (user_agent.indexOf('iPhone') > 0 || user_agent.indexOf('iPad') > 0 || user_agent.indexOf('iPod') > 0 || user_agent.indexOf('Android') > 0 || user_agent.indexOf('BlackBerry') > 0 || user_agent.indexOf('windows Phone') > 0 || user_agent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(user_agent) ) {
+			btnHoverSelect();
+		}
+
+		else if ($('header#navi-1st').length) {
+			btnHoverSelect(1).done(function(result) {
+				$('#hover').append(result);
+			});
+		}
+
+		else if ($('header#navi-2nd').length) {
+			btnHoverSelect(2).done(function(result) {
+				$('#hover').append(result);
+			});
+		}
+
+		else {
+			btnHoverSelect();
+		}
+
+
+
+
+	/* 【TEST】ここまで
+	----------------------------------------------------*/
+
+
 
 
 	/* Header共通化
@@ -300,54 +408,42 @@ $(function() {
 
 			case 1 :
 
-				$.ajax ({
+				return $.ajax ({
 
 					type: 'GET',
 					url: relativeFirstDir + 'header.html',
-					dataType: 'html',
-					cache: true, // キャッシュを利用 //
-					async: false, // 非同期で読み込む //
-					}).done(function(html) {
-						html = html.replace(/\{\$root\}/g, relativeFirstDir);
-						$('header#navi-1st').append(html);
 
 				});
 				break;
 
 			case 2 :
 
-				$.ajax ({
+				return $.ajax ({
 
 					type: 'GET',
 					url: relativeSecondDir + 'header.html',
-					dataType: 'html',
-					cache: true, // キャッシュを利用 //
-					async: false, // 非同期で読み込む //
-					}).done(function(html) {
-						html = html.replace(/\{\$root\}/g, relativeSecondDir);
-						$('header#navi-2nd').append(html);
 
 				});
 				break;
 
 			case 3 :
 
-				$.ajax ({
+				return $.ajax ({
 
 					type: 'GET',
 					url: relativeThirdDir + 'header.html',
-					dataType: 'html',
-					cache: true, // キャッシュを利用 //
-					async: false, // 非同期で読み込む //
-					}).done(function(html) {
-						html = html.replace(/\{\$root\}/g, relativeThirdDir);
-						$('header#navi-3rd').append(html);
 
 				});
 				break;
 
 			default :
 
+				$.ajax ({
+
+					type: 'GET',
+					url: relativeFirstDir + 'header.html',
+
+				});
 				break;
 
 		}
@@ -355,19 +451,27 @@ $(function() {
 	}
 
 	if ($('header#navi-1st').length) {
-		headerSelect(1);
+		headerSelect(1).done(function(result) {
+			$('header#navi-1st').append(result);
+		});
 	}
 
 	else if ($('header#navi-2nd').length) {
-		headerSelect(2);
+		headerSelect(2).done(function(result) {
+			$('header#navi-2nd').append(result);
+		});
 	}
 
 	else if ($('header#navi-3rd').length) {
-		headerSelect(3);
+		headerSelect(3).done(function(result) {
+			$('header#navi-3rd').append(result);
+		});
 	}
 
 	else {
-		headerSelect();
+		headerSelect().done(function(result) {
+			$('header#navi-1st').append(result);
+		});
 	}
 
 
@@ -527,99 +631,6 @@ $(function() {
 	});
 
 
-	/* Kerning
-	--------------------*/
-	/*Attention
-	※約物含めたリンク箇所でのカーニング指定を行うと挙動がおかしくなる
-	　→約物を記号化、前後に半角スペースを入れる事で対応
-	  例）<a href="javascript:void(0)" class="policy"> &#12300;個人情報の取り扱いについて&#12301; </a>
-	*/
-
-	$.ajax({
-		dataType: 'json',
-	});
-
-	// AJAXが入っているディレクトリの指定 //
-	var kerningJsonFirstDir = ('ajax/kerning.json');
-	var kerningJsonSecondDir = ('../ajax/kerning.json');
-	var kerningJsonThirdDir = ('../../ajax/kerning.json');
-
-	// 中にテキストが入るタグの判定 //
-	var tag = $('p, h1, h2, h3, h4, h5, h6, .carousel-caption, dl.news dt, dl.news dd, dl#column dt, dl#column dd, dl#form-layout-jp dt, dl#form-layout-en dt, ul.list li, ol.list li, ul.suggest-menu li, ul.form-accept li, th, td, a, address')
-
-	function kerningDir(i) {
-
-		var kerningArr = i ;
-
-		switch (kerningArr) {
-
-			case 1 :
-
-				$.getJSON(kerningJsonFirstDir, function(data) {
-
-					$(tag).kerning({
-						'data': data
-					});
-
-				});
-				break;
-
-			case 2 :
-
-				$.getJSON(kerningJsonSecondDir, function(data) {
-
-					async: false, // 非同期で読み込む //
-					$(tag).kerning({
-						'data': data
-					});
-
-				});
-				break;
-
-			case 3 :
-
-				$.getJSON(kerningJsonThirdDir, function(data) {
-
-					$(tag).kerning({
-						'data': data
-					});
-
-				});
-				break;
-
-			default :
-
-				$.getJSON(kerningJsonFirstDir, function(data) {
-
-					$(tag).kerning({
-						'data': data
-					});
-
-				});
-				break;
-
-		}
-
-	}
-
-
-	if ($('header#navi-1st-none').length || $('header#navi-1st').length) {
-		kerningDir(1);
-	}
-
-	else if ($('header#navi-2nd').length) {
-		kerningDir(2);
-	}
-
-	else if ($('header#navi-3rd').length) {
-		kerningDir(3);
-	}
-
-	else {
-		kerningDir();
-	}
-
-
 
 
 	/* Centering
@@ -655,7 +666,7 @@ $(function() {
 
 
 /* Lightbox
---------------------------*/
+------------------------------------------------------------------------------*/
 
 
 	//Examples of how to assign the Colorbox event to elements
@@ -745,7 +756,7 @@ $(function() {
 
 
 /* Validate
---------------------------*/
+------------------------------------------------------------------------------*/
 
 
 	// Submitを押したときのバリデート判定 Jp:日本語  //
@@ -1026,7 +1037,7 @@ $(function() {
 
 
 /* MailForm
---------------------------*/
+------------------------------------------------------------------------------*/
 
 
 	// Resetを押したときの判定 //
@@ -1136,7 +1147,7 @@ $(function() {
 
 
 /* Suggest
---------------------------*/
+------------------------------------------------------------------------------*/
 
 
 	// Suggest En:英語、Jp:日本語  //
@@ -1267,7 +1278,7 @@ $(function() {
 
 
 /* LanguageChange
---------------------------*/
+------------------------------------------------------------------------------*/
 
 
 	// 1.ブラウザの言語設定から言語判定をとり、そこから日本語表示か英語表示か切り替える //
@@ -1413,7 +1424,7 @@ $(function() {
 
 
 /* SNSAPI
---------------------------*/
+------------------------------------------------------------------------------*/
 
 
 	// Twitter-Facebook //
@@ -1441,7 +1452,7 @@ $(function() {
 
 
 /* Device
---------------------------*/
+------------------------------------------------------------------------------*/
 
 
 	// 1.SP版とPC版でレイアウトを変える  //
