@@ -99,106 +99,6 @@ $(function() {
 
 
 
-	/* Kerning
-	--------------------*/
-
-
-	/*Attention
-	--------------------
-
-	※約物含めたリンク箇所でのカーニング指定を行うと挙動がおかしくなる
-	　→約物を記号化、前後に半角スペースを入れる事で対応
-	  例）<a href="javascript:void(0)" class="policy"> &#12300;個人情報の取り扱いについて&#12301; </a>
-
-	--------------------
-	*/
-
-
-	$.ajax ({
-		dataType: 'json',
-	});
-
-	// AJAXが入っているディレクトリの指定 //
-	var kerningJsonFirstDir = ('ajax/kerning.json');
-	var kerningJsonSecondDir = ('../ajax/kerning.json');
-	var kerningJsonThirdDir = ('../../ajax/kerning.json');
-
-	// 中にテキストが入るタグの判定 //
-	var tag = $('p, h1, h2, h3, h4, h5, h6, .carousel-caption, dl.news dt, dl.news dd, dl#column dt, dl#column dd, dl#form-layout-jp dt, dl#form-layout-en dt, ul.list li, ol.list li, ul.suggest-menu li, ul.form-accept li, th, td, a, address')
-
-	function kerningDir(i) {
-
-		var kerningArr = i ;
-
-		switch (kerningArr) {
-
-			case 1 :
-
-				return $.getJSON(kerningJsonFirstDir, function(data) {
-
-					$(tag).kerning({
-						'data': data
-					});
-
-				});
-				break;
-
-			case 2 :
-
-				return $.getJSON(kerningJsonSecondDir, function(data) {
-
-					$(tag).kerning({
-						'data': data
-					});
-
-				});
-				break;
-
-			case 3 :
-
-				return $.getJSON(kerningJsonThirdDir, function(data) {
-
-					$(tag).kerning({
-						'data': data
-					});
-
-				});
-				break;
-
-			default :
-
-				return $.getJSON(kerningJsonFirstDir, function(data) {
-
-					$(tag).kerning({
-						'data': data
-					});
-
-				});
-				break;
-
-		}
-
-	}
-
-	if ($('header#navi-1st-none').length || $('header#navi-1st').length) {
-		kerningDir(1);
-	}
-
-	else if ($('header#navi-2nd').length) {
-		kerningDir(2);
-	}
-
-	else if ($('header#navi-3rd').length) {
-		kerningDir(3);
-	}
-
-	else {
-		kerningDir();
-	}
-
-
-
-
 	/* 【TEST】
 	----------------------------------------------------*/
 
@@ -631,6 +531,112 @@ $(function() {
 	});
 
 
+	/* Kerning
+	--------------------*/
+
+
+	/*Attention
+	--------------------
+
+	※約物含めたリンク箇所でのカーニング指定を行うと挙動がおかしくなる
+	　→約物を記号化、前後に半角スペースを入れる事で対応
+	  例）<a href="javascript:void(0)" class="policy"> &#12300;個人情報の取り扱いについて&#12301; </a>
+
+	--------------------
+	*/
+
+
+	$.ajax ({
+		dataType: 'json',
+	});
+
+	// AJAXが入っているディレクトリの指定 //
+	var kerningJsonFirstDir = ('ajax/kerning.json');
+	var kerningJsonSecondDir = ('../ajax/kerning.json');
+	var kerningJsonThirdDir = ('../../ajax/kerning.json');
+
+
+	function kerningDir(i) {
+
+		var kerningArr = i ;
+
+		switch (kerningArr) {
+
+			case 1 :
+
+				return $.getJSON(kerningJsonFirstDir, function(data) {
+
+					// 中にテキストが入るタグの判定 //
+					var tag = $('p, h1, h2, h3, h4, h5, h6, .carousel-caption, dl.news dt, dl.news dd, dl#column dt, dl#column dd, dl#form-layout-jp dt, dl#form-layout-en dt, ul.list li, ol.list li, ul.suggest-menu li, ul.form-accept li, th, td, a, address')
+
+					$(tag).kerning({
+						'data': data
+					});
+
+				});
+				break;
+
+			case 2 :
+
+				return $.getJSON(kerningJsonSecondDir, function(data) {
+
+					// 中にテキストが入るタグの判定 //
+					var tag = $('p, h1, h2, h3, h4, h5, h6, .carousel-caption, dl.news dt, dl.news dd, dl#column dt, dl#column dd, dl#form-layout-jp dt, dl#form-layout-en dt, ul.list li, ol.list li, ul.suggest-menu li, ul.form-accept li, th, td, a, address')
+
+					$(tag).kerning({
+						'data': data
+					});
+
+				});
+				break;
+
+			case 3 :
+
+				return $.getJSON(kerningJsonThirdDir, function(data) {
+
+					// 中にテキストが入るタグの判定 //
+					var tag = $('p, h1, h2, h3, h4, h5, h6, .carousel-caption, dl.news dt, dl.news dd, dl#column dt, dl#column dd, dl#form-layout-jp dt, dl#form-layout-en dt, ul.list li, ol.list li, ul.suggest-menu li, ul.form-accept li, th, td, a, address')
+
+					$(tag).kerning({
+						'data': data
+					});
+
+				});
+				break;
+
+			default :
+
+				return $.getJSON(kerningJsonFirstDir, function(data) {
+
+					// 中にテキストが入るタグの判定 //
+					var tag = $('p, h1, h2, h3, h4, h5, h6, .carousel-caption, dl.news dt, dl.news dd, dl#column dt, dl#column dd, dl#form-layout-jp dt, dl#form-layout-en dt, ul.list li, ol.list li, ul.suggest-menu li, ul.form-accept li, th, td, a, address')
+
+					$(tag).kerning({
+						'data': data
+					});
+
+				});
+				break;
+
+		}
+
+	}
+
+	if ($('header#navi-1st-none').length || $('header#navi-1st').length) {
+		kerningDir(1);
+	}
+
+	else if ($('header#navi-2nd').length) {
+		kerningDir(2);
+	}
+
+	else if ($('header#navi-3rd').length) {
+		kerningDir(3);
+	}
+
+	else {
+		kerningDir();
+	}
 
 
 	/* Centering
