@@ -28,7 +28,7 @@ $(function() {
 		});
 
 		ReactDOM.render(
-			React.createElement(Hello, {name: "世界"}),
+			React.createElement(Hello, {name: "World"}),
 			document.getElementById('test06')
 		);
 
