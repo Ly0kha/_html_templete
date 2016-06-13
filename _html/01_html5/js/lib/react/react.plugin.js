@@ -18,19 +18,34 @@ $(function() {
 
 
 
-		/*【TEST】 React実装
-		--------------------*/
-		var Hello = React.createClass({
-			displayName: 'Hello',
-			render: function() {
-				return React.createElement("div", null, "Hello ", this.props.name);
-			}
-		});
+	/*【TEST】 React実装
+	--------------------*/
+	var Hello = React.createClass({
+		displayName: 'Hello',
+		render: function() {
+			return React.createElement('div', {className: 'box mb-20'}, 'Hello ', this.props.name);
+		}
+	});
 
-		ReactDOM.render(
-			React.createElement(Hello, {name: "World"}),
-			document.getElementById('test06')
-		);
+
+	ReactDOM.render(
+		React.createElement(Hello, {name: 'World'}),
+		document.getElementById('test06')
+	);
+
+
+	var Test = React.createClass({
+		displayName: 'Test',
+		render: function() {
+			return React.createElement('div', {className: 'box mb-20'}, 'Mr ', this.props.name);
+		}
+	});
+
+
+	ReactDOM.render(
+		React.createElement(Test, {name: 'Rolling Thunder'}),
+		document.getElementById('test07')
+	);
 
 
 
