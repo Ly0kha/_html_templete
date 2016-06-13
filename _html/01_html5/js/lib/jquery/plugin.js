@@ -43,6 +43,8 @@ $(function() {
 
 	/* グローバル変数
 	--------------------*/
+
+
 	// ウィンドウのサイズ判定 //
 	var window_width = $(window).width();
 	var window_height = $(window).height();
@@ -69,6 +71,7 @@ $(function() {
 		/* ユーザーエージェント一覧
 		--------------------
 
+
 		//　iOS
 		user_agent.indexOf('iPhone') > 0
 		user_agent.indexOf('iPad') > 0
@@ -93,6 +96,7 @@ $(function() {
 		user_agent.match(/MSIE/) 　////　vr.11 or high
 		user_agent.match(/Trident/) ////　vr.10 or less
 
+
 		--------------------
 		*/
 
@@ -106,6 +110,8 @@ $(function() {
 		/* 【TEST】 window判定実装
 		   ウィンドウ自体の幅と高さを計測し、使っているブラウザのユーザーエージェントを判定
 		--------------------*/
+
+
 		function testUserStatusDecision() {
 
 			var window_width = $(window).width();
@@ -124,8 +130,11 @@ $(function() {
 		});
 
 
+
+
 		/*【TEST】 IE判定実装
 		--------------------*/
+
 
 		/* IEか否か */
 		var isIE = false;
@@ -144,8 +153,12 @@ $(function() {
 		}
 
 
+
+
 		/* 【TEST】 Json読み込み
 		--------------------*/
+
+
 		$.ajax ({
 			dataType: 'json'
 		});
@@ -240,8 +253,12 @@ $(function() {
 		}
 
 
+
+
 		/*【TEST】 btn-hover実装
 		--------------------*/
+
+
 		function btnHoverSelect(i) {
 
 			var btnArr = i ;
@@ -309,6 +326,8 @@ $(function() {
 
 	/* Header共通化
 	--------------------*/
+
+
 	function headerSelect(i) {
 
 		var htmlArr = i ;
@@ -383,8 +402,12 @@ $(function() {
 	}
 
 
+
+
 	/* dt adjust -- 定義タグで表組する場合
 	--------------------*/
+
+
 	// dtの幅を定義して、dtに応じてddのマージンを調整しdt,ddでの表組を作る //
 	function dtAdjust() {
 
@@ -411,8 +434,12 @@ $(function() {
 	});
 
 
+
+
 	/* PageScroll
 	--------------------*/
+
+
 	$('a[rel=scroll]').on('click', function() {
 
 		// リンクの判定 //
@@ -428,8 +455,12 @@ $(function() {
 	});
 
 
+
+
 	/* Slider
 	--------------------*/
+
+
 	// Slider-Config //
 	$('#carousel-slider').carousel({
 		interval: 8000
@@ -462,8 +493,12 @@ $(function() {
 	}
 
 
+
+
 	/* Tabs
 	--------------------*/
+
+
 	$('#tabs').tabs({
 
 		collapsible: false,
@@ -473,8 +508,12 @@ $(function() {
 	});
 
 
+
+
 	/* WindowClose
 	--------------------*/
+
+
 	function quitBox(cmd) {
 
 		if (cmd=='quit'){
@@ -485,8 +524,12 @@ $(function() {
 	}
 
 
+
+
 	/* MouseOver
 	--------------------*/
+
+
 	function mouseOver(i) {
 
 		var imgArr = i ;
@@ -537,9 +580,13 @@ $(function() {
 	}
 
 
+
+
 	/* TargetBlank
 	   for IE8
 	--------------------*/
+
+
 	$('.blank').on('click', function() {
 
 		// リンクの判定 //
@@ -549,6 +596,8 @@ $(function() {
 		return false;
 
 	});
+
+
 
 
 	/* Kerning
@@ -669,8 +718,12 @@ $(function() {
 	}
 
 
+
+
 	/* Centering
 	--------------------*/
+
+
 	$(window).on('load resize', function() {
 
 		// min_height = 400;
@@ -680,16 +733,19 @@ $(function() {
 		var min_height = box.height() + padding + $('footer').height() + margin;
 
 		if( window_inner_height < min_height ) {
-			window_inner_height = min_height
+
 			$('#fixed-container').css({
 				'position' : 'relative'
 			});
+
 		}
 
 		else {
+
 			$('#fixed-container').css({
 				'position' : 'fixed'
 			});
+
 		}
 
 		$('#fixed-container').css({
@@ -707,6 +763,7 @@ $(function() {
 
 /* Lightbox
 ------------------------------------------------------------------------------*/
+
 
 	var colorboxJsFirstDir = ('js/lib/jquery/jquery.colorbox.min.js');
 	var colorboxJsSecondDir = ('../js/lib/jquery/jquery.colorbox.min.js');
@@ -732,6 +789,26 @@ $(function() {
 			retinaUrl: false
 
 		});
+
+		$('.group2').colorbox({
+
+			rel: 'group2',
+			transition: 'fade',
+			slideshow: false,
+
+			fixed: true,
+			maxWidth: '90%',
+			maxHeight: '90%',
+			reposition: true,
+			opacity: '0.3',
+
+			retinaImage: false,
+			retinaUrl: false
+
+		});
+
+
+
 
 		$('.ajax').colorbox();
 
@@ -1737,6 +1814,7 @@ $(function() {
 			/* 傾き（ポートレイトかランドスケープか）を判定 */
 			if ('object' === typeof window.onorientationchange) {
 
+
 				window.addEventListener('orientationchange', function() {
 
 					/* ランドスケープ */
@@ -1758,6 +1836,7 @@ $(function() {
 					}
 
 				}, false);
+
 
 			}
 
