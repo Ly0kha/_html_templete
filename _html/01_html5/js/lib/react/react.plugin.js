@@ -79,6 +79,30 @@ $.getJSON(kerningJsonFirstDir, function(data) {
 	var m = ReactDOM.render(<Hirata name='平田だろ？' />, document.getElementById('test09'));
 
 
+	var MyComponent = React.createClass({
+		render: function() {
+				return (
+					<p className='box mb-20'>お前、{this.props.name}</p>
+				);
+		}
+	});
+
+	var m = ReactDOM.render(<MyComponent name='名無しだろ？' />, document.getElementById('test10'));
+
+
+	React.createClass({
+		displayName : '',
+		propTypes: {},
+		mixins : [],
+		getInitialState : function() {},
+		componentWillMount : function() {},
+		componentWillUnmount : function() {},
+		_onChange : function() {},
+		_onCreate : function() {},
+		render : function() {}
+	});
+
+
 	/*【TEST】 React実装 ここまで
 	------------------------------------------------------------*/
 
