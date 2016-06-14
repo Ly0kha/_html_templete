@@ -28,7 +28,7 @@ $.getJSON(kerningJsonFirstDir, function(data) {
 
 
 	/*【TEST】 React実装
-	------------------------------------------------------------*/
+	--------------------*/
 	var Hello = React.createClass({
 		displayName: 'Hello',
 		render: function() {
@@ -68,19 +68,15 @@ $.getJSON(kerningJsonFirstDir, function(data) {
 	var m = ReactDOM.render(<HelloWorld />, document.getElementById('test08'));
 
 
-	var Hirata = React.createClass({
+	var HelloWorld = React.createClass({
 		render: function() {
 				return (
-					<p className='box mb-20'>お前、{this.props.name}</p>
+					<p>ひょっとして読み込めちゃった系？</p>
 				);
 		}
 	});
 
-	var m = ReactDOM.render(<Hirata name='平田だろ？' />, document.getElementById('test09'));
-
-
-	/*【TEST】 React実装 ここまで
-	------------------------------------------------------------*/
+	var m = ReactDOM.render(<HelloWorld />, document.getElementById('test08'));
 
 
 
@@ -91,8 +87,6 @@ $.getJSON(kerningJsonFirstDir, function(data) {
 	$(tag).kerning({
 		'data': data
 	});
-
-
 
 
 });
