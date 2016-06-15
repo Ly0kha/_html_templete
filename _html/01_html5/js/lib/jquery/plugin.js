@@ -37,6 +37,8 @@
 $(function() {
 
 
+
+
 	/* Common UI
 	------------------------------------------------------------------------------*/
 
@@ -215,7 +217,7 @@ $(function() {
 
 
 			if (user_agent.indexOf('iPhone') > 0 || user_agent.indexOf('iPad') > 0 || user_agent.indexOf('iPod') > 0 || user_agent.indexOf('Android') > 0 || user_agent.indexOf('BlackBerry') > 0 || user_agent.indexOf('windows Phone') > 0 || user_agent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(user_agent) ) {
-				btnHoverSelect();
+
 			}
 
 			else if ($('header#navi-1st').length) {
@@ -231,7 +233,7 @@ $(function() {
 			}
 
 			else {
-				btnHoverSelect();
+
 			}
 
 
