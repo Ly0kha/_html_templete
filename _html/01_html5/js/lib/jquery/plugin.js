@@ -61,9 +61,6 @@ $(function() {
 		// ディレクトリの判定 //
 		var rootDir = location.href.split('/');
 		var currentDir = rootDir[rootDir.length -2];
-		var relativeFirstDir = ('include/');
-		var relativeSecondDir = ('../include/');
-		var relativeThirdDir = ('../../include/');
 
 
 		// 端末ユーザーエージェントの判定 //
@@ -279,6 +276,40 @@ $(function() {
 
 
 
+		/* Footer共通化
+		----------------------------------------------------*/
+
+
+		function footerSelect(rootDir) {
+
+			return $.ajax ({
+
+				type: 'GET',
+				url: rootDir + 'include/footer.html',
+				}).done(function(html){
+					html = html.replace(/\{\$root\}/g, rootDir);
+					$('footer').append(html);
+
+			});
+
+		}
+
+
+		if ($('footer#info-1st').length) {
+			footerSelect('./')
+		}
+
+		else if ($('footer#info-2nd').length) {
+			footerSelect('../')
+		}
+
+		else if ($('footer#info-3rd').length) {
+			footerSelect('../../');
+		}
+
+
+
+
 		/* dt adjust -- 定義タグで表組する場合
 		----------------------------------------------------*/
 
@@ -313,19 +344,29 @@ $(function() {
 		----------------------------------------------------*/
 
 
-		$('a[rel=scroll]').on('click', function() {
+		function pagescroll() {
 
-			// リンクの判定 //
-			var href = $(this).attr('href');
+			return $.getScript('//cdnjs.cloudflare.com/ajax/libs/velocity/1.2.2/velocity.js', function() {
 
-			target = $(href === "#" || href === "" ? 'html' : href);
-			target.velocity('scroll', {
-				duration: 500,
-				easing: 'easeOutExpo'
+				$('a[rel=scroll]').on('click', function() {
+
+					// リンクの判定 //
+					var href = $(this).attr('href');
+
+					target = $(href === "#" || href === "" ? 'html' : href);
+					target.velocity('scroll', {
+						duration: 500,
+						easing: 'easeOutExpo'
+					});
+					return false;
+
+				});
+
 			});
-			return false;
 
-		});
+		}
+
+		pagescroll();
 
 
 
