@@ -5,6 +5,9 @@
 
 /*----------------------------------------------------
 
+・AJAX Async
+　→非同期通信対応
+
 ・Common UI
 　→UI動作で必要な実装
 
@@ -27,7 +30,7 @@
 　→Twitter、FacebookなどのSNS API処理の実装
 
 ・Device Adjust
-　→PC版とのレイアウトや挙動の切替、SPの特定端末における挙動対策等
+　→PC版とのレイアウトや挙動の切替、SPの特定端末における挙動対策、等
 
 ----------------------------------------------------*/
 
@@ -145,7 +148,7 @@ $(function() {
 			var version = null;
 
 			/* IEであるか否かの判定 */
-			if(user_agent.match(/MSIE/) || user_agent.match(/Trident/) ) {
+			if (user_agent.match(/MSIE/) || user_agent.match(/Trident/) ) {
 
 				isIE = true;
 				version = user_agent.match(/(MSIE\s|rv:)([\d\.]+)/)[2];
@@ -180,15 +183,15 @@ $(function() {
 			}
 
 
-			if ($('header#navi-1st-none').length || $('header#navi-1st').length) {
+			if ($('header#header-navi-1st-none').length || $('header#header-navi-1st').length) {
 				testJsonSelect('./');
 			}
 
-			else if ($('header#navi-2nd').length) {
+			else if ($('header#header-navi-2nd').length) {
 				testJsonSelect('../');
 			}
 
-			else if ($('header#navi-3rd').length) {
+			else if ($('header#header-navi-3rd').length) {
 				testJsonSelect('../../');
 			}
 
@@ -217,15 +220,15 @@ $(function() {
 
 			}
 
-			else if ($('header#navi-1st').length) {
+			else if ($('header#header-navi-1st').length) {
 				btnHoverSelect('./');
 			}
 
-			else if ($('header#navi-2nd').length) {
+			else if ($('header#header-navi-2nd').length) {
 				btnHoverSelect('../');
 			}
 
-			else if ($('header#navi-3rd').length) {
+			else if ($('header#header-navi-3rd').length) {
 				btnHoverSelect('../../');
 			}
 
@@ -261,15 +264,15 @@ $(function() {
 		}
 
 
-		if ($('header#navi-1st').length) {
+		if ($('header#header-navi-1st').length) {
 			headerSelect('./')
 		}
 
-		else if ($('header#navi-2nd').length) {
+		else if ($('header#header-navi-2nd').length) {
 			headerSelect('../')
 		}
 
-		else if ($('header#navi-3rd').length) {
+		else if ($('header#header-navi-3rd').length) {
 			headerSelect('../../');
 		}
 
@@ -295,15 +298,15 @@ $(function() {
 		}
 
 
-		if ($('footer#info-1st').length) {
+		if ($('footer#footer-navi-1st').length) {
 			footerSelect('./')
 		}
 
-		else if ($('footer#info-2nd').length) {
+		else if ($('footer#footer-navi-2nd').length) {
 			footerSelect('../')
 		}
 
-		else if ($('footer#info-3rd').length) {
+		else if ($('footer#footer-navi-3rd').length) {
 			footerSelect('../../');
 		}
 
@@ -543,15 +546,15 @@ $(function() {
 		}
 
 
-		if ($('header#navi-1st-none').length || $('header#navi-1st').length) {
+		if ($('header#header-navi-1st-none').length || $('header#header-navi-1st').length) {
 			kerningDir('./');
 		}
 
-		else if ($('header#navi-2nd').length) {
+		else if ($('header#header-navi-2nd').length) {
 			kerningDir('../');
 		}
 
-		else if ($('header#navi-3rd').length) {
+		else if ($('header#header-navi-3rd').length) {
 			kerningDir('../../');
 		}
 
@@ -562,9 +565,9 @@ $(function() {
 		----------------------------------------------------*/
 
 
-		$(window).on('load resize', function() {
+		function centering() {
 
-			// min_height = 400;
+
 			var box = $('.centerParentWrapper');
 			var padding = parseInt(box.css('padding-top')) + parseInt(box.css('padding-bottom'));
 			var margin = 50;
@@ -594,6 +597,12 @@ $(function() {
 				'height' : window_inner_height - 30 + 'px'
 			});
 
+
+		}
+
+
+		$(window).on('load resize', function() {
+			centering();
 		}).trigger('resize');
 
 
@@ -743,15 +752,15 @@ $(function() {
 		}
 
 
-		if ($('header#navi-1st-none').length || $('header#navi-1st').length) {
+		if ($('header#header-navi-1st-none').length || $('header#header-navi-1st').length) {
 			colorbox('./');
 		}
 
-		else if ($('header#navi-2nd').length) {
+		else if ($('header#header-navi-2nd').length) {
 			colorbox('../');
 		}
 
-		else if ($('header#navi-3rd').length) {
+		else if ($('header#header-navi-3rd').length) {
 			colorbox('../../');
 		}
 
