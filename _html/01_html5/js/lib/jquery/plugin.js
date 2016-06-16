@@ -42,6 +42,36 @@ $(function() {
 
 
 
+	$.ajaxSetup ({
+		cache: true
+	});
+
+	function getScript(rootDir) {
+
+		$.getScript(rootDir + 'js/lib/jquery/jquery.validate.min.js');
+		$.getScript(rootDir + 'js/lib/jquery/jquery.validate.japlugin.js');
+		$.getScript(rootDir + 'js/lib/jquery/jquery.kerning.min.js');
+		$.getScript(rootDir + 'js/lib/jquery/jquery.colorbox.min.js');
+		$.getScript(rootDir + 'js/lib/jquery/jquery.heightLine.min.js');
+
+	}
+
+
+	if ($('header#header-navi-1st-none').length || $('header#header-navi-1st').length) {
+		getScript('./');
+	}
+
+	else if ($('header#header-navi-2nd').length) {
+		getScript('../');
+	}
+
+	else if ($('header#header-navi-3rd').length) {
+		getScript('../../');
+	}
+
+
+
+
 	/* Common UI
 	------------------------------------------------------------------------------*/
 
