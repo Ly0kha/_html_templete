@@ -42,9 +42,17 @@ $(function() {
 
 
 
+	/* AJAX Setup
+	------------------------------------------------------------------------------*/
+
+
+
+
 	$.ajaxSetup ({
-		cache: true
+		cache: true,
+		async: true
 	});
+
 
 	function getScript(rootDir) {
 
@@ -68,6 +76,12 @@ $(function() {
 	else if ($('header#header-navi-3rd').length) {
 		getScript('../../');
 	}
+
+
+
+
+	/* AJAX Setup ここまで
+	------------------------------------------------------------------------------*/
 
 
 
@@ -1151,20 +1165,16 @@ $(function() {
 			$('p#form-inquiryListDisplay-jp, p#form-inquiryListDisplay-en').html('');
 			$('input#form-inquiryList-jp, input#form-inquiryList-en').val('');
 
-
 			/* [input type='text'][textarea]内の値を消す -共通- */
 			$('input:text, input:checked, textarea').val('');
 
-
 			/* 同意するボタン内の値を消す -共通- */
 			$('#accept-ja, #accept-en').attr('checked', false);
-
 
 			/* 同意ボタンにチェックが入っているか否かでのリセット、確認ボタンの動作 */
 			if ($('#accept-ja:checked, #accept-en:checked').length === 0) {
 				mailFormInputDisabled();
 			}
-
 
 			/* リセットボタン押したらページトップへ飛ぶ */
 			var scldurat = 500;
@@ -1253,68 +1263,57 @@ $(function() {
 
 
 
-		// Suggest En:英語、Jp:日本語  //
-		/* サジェスト外がクリッカブルになる為のサジェストクリアゾーン -初期設定: hidden- */
-		$('.suggest-clear').hide();
+		function suggestOnPC () {
 
-		$(window).on('load resize', function() {
+			/* マウスカーソルがセレクターの上に乗ったらサジェストを出す */
+			$('.suggest-pc').on({
 
+				/* マウスオン */
+				'mouseenter': function() {
+				$('#suggest-jp, #suggest-en').fadeIn();
+				},
 
-			/* サジェストを出す -for SP- */
-			if (user_agent.indexOf('iPhone') > 0 || user_agent.indexOf('iPad') > 0 || user_agent.indexOf('iPod') > 0 || user_agent.indexOf('Android') > 0 || user_agent.indexOf('BlackBerry') > 0 || user_agent.indexOf('windows Phone') > 0 || user_agent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(user_agent)) {
-
-
-				/* タッチがサジェストの上に乗った時の判定 */
-				$('#form-inquiryListDisplay-jp, #form-inquiryListDisplay-en').on('click', function() {
-
-					/* サジェストクリアゾーンを出す */
-					$('#suggest-jp, #suggest-en').fadeIn();
-					$('.suggest-clear').show();
-
-
-					/* サジェストクリアゾーンが全面に出るように設定 */
-					var window_width = $(window).width();
-					var window_height = $(window).height();
-					$('.suggest-clear').css({
-						'width': window_width,
-						'height': window_height,
-					});
-
-				});
-
-
-				/* タッチがサジェストクリアゾーンの上に乗った時の動作 */
-				$('.suggest-clear').on('click', function() {
+				/* マウスアウト */
+				'mouseleave': function() {
 					$('#suggest-jp, #suggest-en').fadeOut();
-					$('.suggest-clear').hide();
+				}
+
+			});
+
+		}
+
+
+		function suggestOnSP () {
+
+			/* タッチがサジェストの上に乗った時の判定 */
+			$('#form-inquiryListDisplay-jp, #form-inquiryListDisplay-en').on('click', function() {
+
+				/* サジェストクリアゾーンを出す */
+				$('#suggest-jp, #suggest-en').fadeIn();
+				$('.suggest-clear').show();
+
+
+				/* サジェストクリアゾーンが全面に出るように設定 */
+				var window_width = $(window).width();
+				var window_height = $(window).height();
+				$('.suggest-clear').css({
+					'width': window_width,
+					'height': window_height,
 				});
 
-
-			}
-
-
-			/* サジェストを出す -for PC- */
-			else {
+			});
 
 
-				/* マウスカーソルがセレクターの上に乗ったらサジェストを出す */
-				$('.suggest-pc').on({
+			/* タッチがサジェストクリアゾーンの上に乗った時の動作 */
+			$('.suggest-clear').on('click', function() {
+				$('#suggest-jp, #suggest-en').fadeOut();
+				$('.suggest-clear').hide();
+			});
 
-					/* マウスオン */
-					'mouseenter': function() {
-					$('#suggest-jp, #suggest-en').fadeIn();
-					},
-
-					/* マウスアウト */
-					'mouseleave': function() {
-						$('#suggest-jp, #suggest-en').fadeOut();
-					}
-
-				});
+		}
 
 
-			}
-
+		function suggestOff () {
 
 			/* セレクター内のテキストをクリックした時の動作 */
 			$('#suggest-jp, #suggest-en').on('click', function() {
@@ -1322,6 +1321,26 @@ $(function() {
 				$('.suggest-clear').hide();
 			});
 
+		}
+
+
+		// - Suggest En:英語 / Jp:日本語 - //
+		// サジェスト外がクリッカブルになる為のサジェストクリアゾーン -初期設定: hidden- //
+		$('.suggest-clear').hide();
+
+		$(window).on('load resize', function() {
+
+			/* サジェストを出す -for SP- */
+			if (user_agent.indexOf('iPhone') > 0 || user_agent.indexOf('iPad') > 0 || user_agent.indexOf('iPod') > 0 || user_agent.indexOf('Android') > 0 || user_agent.indexOf('BlackBerry') > 0 || user_agent.indexOf('windows Phone') > 0 || user_agent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(user_agent)) {
+				suggestOnSP();
+			}
+
+			/* サジェストを出す -for PC- */
+			else {
+				suggestOnPC();
+			}
+
+			suggestOff();
 
 		});
 
@@ -1433,6 +1452,7 @@ $(function() {
 			try {
 				return (navigator.browserLanguage || navigator.language || navigator.userLanguage).substr(0,2) == 'ja' ? 'ja' : 'en';
 			}
+
 			catch(e) {
 				return undefined;
 			}
@@ -1543,7 +1563,7 @@ $(function() {
 		}
 
 
-		// デフォルトの表示 - lang_ja:和文 / lang_en:英文- //
+		// デフォルトの表示 - lang_ja:和文 / lang_en:英文 - //
 		var lang_ja = $.cookie('lang_ja');
 		var lang_en = $.cookie('lang_en');
 
