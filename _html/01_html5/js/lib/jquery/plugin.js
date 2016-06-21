@@ -5,8 +5,9 @@
 
 /*----------------------------------------------------
 
-・AJAX Async
-　→非同期通信対応
+・Setup
+　→グローバル変数の実装
+　→AJAX非同期通信対応
 
 ・Common UI
 　→UI動作で必要な実装
@@ -29,6 +30,9 @@
 ・SNSAPI
 　→Twitter、FacebookなどのSNS API処理の実装
 
+・Kerning / Centering Adjust
+　→カーニングやセンタリングの実装
+
 ・Device Adjust
 　→PC版とのレイアウトや挙動の切替、SPの特定端末における挙動対策、等
 
@@ -42,1732 +46,1812 @@ $(function() {
 
 
 
-	/* AJAX Setup
-	------------------------------------------------------------------------------*/
+    /* Setup
+    ------------------------------------------------------------------------------*/
 
 
 
 
-	$.ajaxSetup ({
-		cache: true,
-		async: true
-	});
+        /* グローバル変数
+        ----------------------------------------*/
 
 
-	function getScript(rootDir) {
+        // ウィンドウのサイズ判定 //
+        var window_width = $(window).width();
+        var window_height = $(window).height();
+        var window_outer_width = $(window).outerWidth();
+        var window_outer_height = $(window).outerHeight();
+        var window_inner_width = $(window).innerWidth();
+        var window_inner_height = $(window).innerHeight();
 
-		$.getScript(rootDir + 'js/lib/jquery/jquery.validate.min.js');
-		$.getScript(rootDir + 'js/lib/jquery/jquery.validate.japlugin.js');
-		$.getScript(rootDir + 'js/lib/jquery/jquery.kerning.min.js');
-		$.getScript(rootDir + 'js/lib/jquery/jquery.colorbox.min.js');
-		$.getScript(rootDir + 'js/lib/jquery/jquery.heightLine.min.js');
 
-	}
+        // ディレクトリの判定 //
+        var rootDir = location.href.split('/');
+        var currentDir = rootDir[rootDir.length -2];
 
 
-	if ($('header#header-navi-1st-none').length || $('header#header-navi-1st').length) {
-		getScript('./');
-	}
+        // 端末ユーザーエージェントの判定 //
+        var user_agent = navigator.userAgent;
 
-	else if ($('header#header-navi-2nd').length) {
-		getScript('../');
-	}
 
-	else if ($('header#header-navi-3rd').length) {
-		getScript('../../');
-	}
+        // ヘッダーの判定 //
+        var header = $('header');
+        var header_navi_1st_none = $('header#header-navi-1st-none');
+        var header_navi_1st = $('header#header-navi-1st');
+        var header_navi_2nd = $('header#header-navi-2nd');
+        var header_navi_3rd = $('header#header-navi-3rd');
 
 
+        // フッターの判定 //
+        var footer = $('footer');
+        var footer_navi_1st = $('footer#footer-navi-1st');
+        var footer_navi_2nd = $('footer#footer-navi-2nd');
+        var footer_navi_3rd = $('footer#footer-navi-3rd');
 
 
-	/* AJAX Setup ここまで
-	------------------------------------------------------------------------------*/
 
 
+            /* ユーザーエージェント一覧
+            ----------------------------------------
 
 
-	/* Common UI
-	------------------------------------------------------------------------------*/
+            //　iOS
+            user_agent.indexOf('iPhone') > 0
+            user_agent.indexOf('iPad') > 0
+            user_agent.indexOf('iPod') > 0
 
+            //　Android
+            user_agent.indexOf('Android') > 0
 
+            //　BlackBerry
+            user_agent.indexOf('BlackBerry') > 0
 
+            //　Windows Phone
+            user_agent.indexOf('windows Phone') > 0
 
-		/* グローバル変数
-		----------------------------------------*/
+            //　NOKIA
+            user_agent.indexOf('NOKIA') > 0
 
+            //　Firefox OS
+            /Mobile.*Firefox/.test(user_agent)
 
-		// ウィンドウのサイズ判定 //
-		var window_width = $(window).width();
-		var window_height = $(window).height();
-		var window_outer_width = $(window).outerWidth();
-		var window_outer_height = $(window).outerHeight();
-		var window_inner_width = $(window).innerWidth();
-		var window_inner_height = $(window).innerHeight();
+            //　IE
+            user_agent.match(/MSIE/) 　////　vr.11 or high
+            user_agent.match(/Trident/) ////　vr.10 or less
 
 
-		// ディレクトリの判定 //
-		var rootDir = location.href.split('/');
-		var currentDir = rootDir[rootDir.length -2];
+            ----------------------------------------
+            */
 
 
-		// 端末ユーザーエージェントの判定 //
-		var user_agent = navigator.userAgent;
 
 
+    $.ajaxSetup ({
+        cache: true,
+        async: true
+    });
 
 
-			/* ユーザーエージェント一覧
-			----------------------------------------
+    function getScript(rootDir) {
 
+        $.getScript(rootDir + 'js/lib/jquery/jquery.validate.min.js');
+        $.getScript(rootDir + 'js/lib/jquery/jquery.validate.japlugin.js');
+        $.getScript(rootDir + 'js/lib/jquery/jquery.kerning.min.js');
+        $.getScript(rootDir + 'js/lib/jquery/jquery.colorbox.min.js');
+        $.getScript(rootDir + 'js/lib/jquery/jquery.heightLine.min.js');
 
-			//　iOS
-			user_agent.indexOf('iPhone') > 0
-			user_agent.indexOf('iPad') > 0
-			user_agent.indexOf('iPod') > 0
+    }
 
-			//　Android
-			user_agent.indexOf('Android') > 0
 
-			//　BlackBerry
-			user_agent.indexOf('BlackBerry') > 0
+    if (header_navi_1st.length || header_navi_1st_none.length) {
+        getScript('./');
+    }
 
-			//　Windows Phone
-			user_agent.indexOf('windows Phone') > 0
+    else if (header_navi_2nd.length) {
+        getScript('../');
+    }
 
-			//　NOKIA
-			user_agent.indexOf('NOKIA') > 0
+    else if (header_navi_3rd.length) {
+        getScript('../../');
+    }
 
-			//　Firefox OS
-			/Mobile.*Firefox/.test(user_agent)
 
-			//　IE
-			user_agent.match(/MSIE/) 　////　vr.11 or high
-			user_agent.match(/Trident/) ////　vr.10 or less
 
 
-			----------------------------------------
-			*/
+    /* AJAX Setup ここまで
+    ------------------------------------------------------------------------------*/
 
 
 
 
-		/* 【TEST】
-		----------------------------------------------------*/
+    /* Common UI
+    ------------------------------------------------------------------------------*/
 
 
 
 
-			/* 【TEST】 window判定実装
-			   ウィンドウ自体の幅と高さを計測し、使っているブラウザのユーザーエージェントを判定
-			----------------------------------------*/
+        /* 【TEST】
+        ----------------------------------------------------*/
 
 
-			function testUserStatusDecision() {
 
-				var window_width = $(window).width();
-				var window_height = $(window).height();
 
-				$('#test01').html('ウィンドウ幅' + '&nbsp;:&nbsp;' + window_width);
-				$('#test02').html('ウィンドウ高さ' + '&nbsp;:&nbsp;' + window_height);
-				$('#test03').html('ユーザーエージェント' + '&nbsp;:&nbsp;' + '<br />' + user_agent);
-				$('#test04').html('現在のディレクトリ' + '&nbsp;:&nbsp;' + currentDir);
+            /* 【TEST】 window判定実装
+               ウィンドウ自体の幅と高さを計測し、使っているブラウザのユーザーエージェントを判定
+            ----------------------------------------*/
 
-			}
 
-			$(window).on('load resize', function() {
-				testUserStatusDecision();
-			});
+            function testUserStatusDecision() {
 
+                var window_width = $(window).width();
+                var window_height = $(window).height();
 
+                $('#test01').html('ウィンドウ幅' + '&nbsp;:&nbsp;' + window_width);
+                $('#test02').html('ウィンドウ高さ' + '&nbsp;:&nbsp;' + window_height);
+                $('#test03').html('ユーザーエージェント' + '&nbsp;:&nbsp;' + '<br />' + user_agent);
+                $('#test04').html('現在のディレクトリ' + '&nbsp;:&nbsp;' + currentDir);
 
+            }
 
-			/*【TEST】 IE判定実装
-			----------------------------------------*/
+            $(window).on('load resize', function() {
+                testUserStatusDecision();
+            });
 
 
-			/* IEか否か */
-			var isIE = false;
 
-			/* IEのバージョン */
-			var version = null;
 
-			/* IEであるか否かの判定 */
-			if (user_agent.match(/MSIE/) || user_agent.match(/Trident/) ) {
+            /*【TEST】 IE判定実装
+            ----------------------------------------*/
 
-				isIE = true;
-				version = user_agent.match(/(MSIE\s|rv:)([\d\.]+)/)[2];
-			    version = parseInt(version);
-				console.log('IE : Ver:', version);
 
-			}
+            /* IEか否か */
+            var isIE = false;
 
+            /* IEのバージョン */
+            var version = null;
 
+            /* IEであるか否かの判定 */
+            if (user_agent.match(/MSIE/) || user_agent.match(/Trident/) ) {
 
+                isIE = true;
+                version = user_agent.match(/(MSIE\s|rv:)([\d\.]+)/)[2];
+                version = parseInt(version);
+                console.log('IE : Ver:', version);
 
-			/* 【TEST】 Json読み込み
-			----------------------------------------*/
+            }
 
 
-			function testJsonSelect(rootDir) {
 
-				return $.getJSON(rootDir + 'ajax/text.json', function(data) {
 
-					var items = [];
-					$.each(data, function(key, val) {
-						items.push('<li id=' + key + '>' + val + '</li>');
-					});
+            /* 【TEST】 Json読み込み
+            ----------------------------------------*/
 
-					$('<ul/>',{
-						'class': 'my-new-list',
-						html: items.join('')
-					}).appendTo('#test05');
 
-				});
+            function testJsonSelect(rootDir) {
 
-			}
+                return $.getJSON(rootDir + 'ajax/text.json', function(data) {
 
+                    var items = [];
+                    $.each(data, function(key, val) {
+                        items.push('<li id=' + key + '>' + val + '</li>');
+                    });
 
-			if ($('header#header-navi-1st-none').length || $('header#header-navi-1st').length) {
-				testJsonSelect('./');
-			}
+                    $('<ul/>',{
+                        'class': 'my-new-list',
+                        html: items.join('')
+                    }).appendTo('#test05');
 
-			else if ($('header#header-navi-2nd').length) {
-				testJsonSelect('../');
-			}
+                });
 
-			else if ($('header#header-navi-3rd').length) {
-				testJsonSelect('../../');
-			}
+            }
 
 
+            if (header_navi_1st.length || header_navi_1st_none.length) {
+                testJsonSelect('./');
+            }
 
+            else if (header_navi_2nd.length) {
+                testJsonSelect('../');
+            }
 
-			/*【TEST】 btn-hover実装
-			----------------------------------------*/
+            else if (header_navi_3rd.length) {
+                testJsonSelect('../../');
+            }
 
 
-			function btnHoverSelect(rootDir) {
 
-				return $.ajax ({
 
-					type: 'GET',
-					url: rootDir + 'include/btn.html',
-					}).done(function(btn){
-						btn = btn.replace(/\{\$root\}/g, rootDir);
-						$('#hover').append(btn);
-				});
+            /*【TEST】 btn-hover実装
+            ----------------------------------------*/
 
-			}
 
+            function btnHoverSelect(rootDir) {
 
-			if (user_agent.indexOf('iPhone') > 0 || user_agent.indexOf('iPad') > 0 || user_agent.indexOf('iPod') > 0 || user_agent.indexOf('Android') > 0 || user_agent.indexOf('BlackBerry') > 0 || user_agent.indexOf('windows Phone') > 0 || user_agent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(user_agent) ) {
+                return $.ajax ({
 
-			}
+                    type: 'GET',
+                    url: rootDir + 'include/btn.html',
+                    }).done(function(btn) {
+                        btn = btn.replace(/\{\$root\}/g, rootDir);
+                        $('#hover').append(btn);
+                });
 
-			else if ($('header#header-navi-1st').length) {
-				btnHoverSelect('./');
-			}
+            }
 
-			else if ($('header#header-navi-2nd').length) {
-				btnHoverSelect('../');
-			}
 
-			else if ($('header#header-navi-3rd').length) {
-				btnHoverSelect('../../');
-			}
+            if (user_agent.indexOf('iPhone') > 0 || user_agent.indexOf('iPad') > 0 || user_agent.indexOf('iPod') > 0 || user_agent.indexOf('Android') > 0 || user_agent.indexOf('BlackBerry') > 0 || user_agent.indexOf('windows Phone') > 0 || user_agent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(user_agent) ) {
 
-			else {
+            }
 
-			}
+            else if (header_navi_1st.length || header_navi_1st_none.length) {
+                btnHoverSelect('./');
+            }
 
+            else if (header_navi_2nd.length) {
+                btnHoverSelect('../');
+            }
 
+            else if (header_navi_3rd.length) {
+                btnHoverSelect('../../');
+            }
 
+            else {
 
-		/* 【TEST】ここまで
-		----------------------------------------------------*/
+            }
 
 
 
 
-		/* Header共通化
-		----------------------------------------------------*/
+        /* 【TEST】ここまで
+        ----------------------------------------------------*/
 
 
-		function headerSelect(rootDir) {
 
-			return $.ajax ({
 
-				type: 'GET',
-				url: rootDir + 'include/header.html',
-				}).done(function(html){
-					html = html.replace(/\{\$root\}/g, rootDir);
-					$('header').append(html);
+        /* Header共通化
+        ----------------------------------------------------*/
 
-			});
 
-		}
+        function headerSelect(rootDir) {
 
+            return $.ajax ({
 
-		if ($('header#header-navi-1st').length) {
-			headerSelect('./')
-		}
+                type: 'GET',
+                url: rootDir + 'include/header.html',
+                }).done(function(html) {
+                    html = html.replace(/\{\$root\}/g, rootDir);
+                    $('header').append(html);
 
-		else if ($('header#header-navi-2nd').length) {
-			headerSelect('../')
-		}
+            });
 
-		else if ($('header#header-navi-3rd').length) {
-			headerSelect('../../');
-		}
+        }
 
 
+        if (header_navi_1st.length) {
+            headerSelect('./');
+        }
 
+        else if (header_navi_2nd.length) {
+            headerSelect('../')
+        }
 
-		/* Footer共通化
-		----------------------------------------------------*/
+        else if (header_navi_3rd.length) {
+            headerSelect('../../');
+        }
 
+        else if (header_navi_1st_none.length) {
 
-		function footerSelect(rootDir) {
+        }
 
-			return $.ajax ({
 
-				type: 'GET',
-				url: rootDir + 'include/footer.html',
-				}).done(function(html){
-					html = html.replace(/\{\$root\}/g, rootDir);
-					$('footer').append(html);
 
-			});
 
-		}
+        /* Footer共通化
+        ----------------------------------------------------*/
 
 
-		if ($('footer#footer-navi-1st').length) {
-			footerSelect('./')
-		}
+        function footerSelect(rootDir) {
 
-		else if ($('footer#footer-navi-2nd').length) {
-			footerSelect('../')
-		}
+            return $.ajax ({
 
-		else if ($('footer#footer-navi-3rd').length) {
-			footerSelect('../../');
-		}
+                type: 'GET',
+                url: rootDir + 'include/footer.html',
+                }).done(function(html) {
+                    html = html.replace(/\{\$root\}/g, rootDir);
+                    $('footer').append(html);
 
+            });
 
+        }
 
 
-		/* dt adjust -- 定義タグで表組する場合
-		----------------------------------------------------*/
+        if (footer_navi_1st.length) {
+            footerSelect('./');
+        }
 
+        else if (footer_navi_2nd.length) {
+            footerSelect('../')
+        }
 
-		// dtの幅を定義して、dtに応じてddのマージンを調整しdt,ddでの表組を作る //
-		function dtAdjust() {
+        else if (footer_navi_3rd.length) {
+            footerSelect('../../');
+        }
 
-			/* dtの幅 */
-			var dt_column_width = $('dl#column dt').outerWidth();
-			var dt_news_width = $('dl.news dt').outerWidth();
 
-			/* 可変部分の高さを適用 */
-			$('dl#column dd').css('margin-left', dt_column_width + 20 + 'px');
-			$('dl.news dd').css('margin-left', dt_news_width  + 'px');
 
-		}
 
+        /* dt adjust -- 定義タグで表組する場合
+        ----------------------------------------------------*/
 
-		// DOM通常 //
-		dtAdjust();
 
+        // dtの幅を定義して、dtに応じてddのマージンを調整しdt,ddでの表組を作る //
+        function dtAdjust() {
 
-		// DOMリサイズ //
-		$(window).on('load resize', function() {
-			dtAdjust();
-		});
+            /* dtの幅 */
+            var dt_column_width = $('dl#column dt').width();
+            var dt_news_width = $('dl.news dt').width();
 
+            /* ddの判定 */
+            var dd_column = $('dl#column dd');
+            var dd_news = $('dl.news dd');
 
 
+            /* 可変部分の高さを適用 */
+            dd_column.css('margin-left', dt_column_width + 20 + 'px');
+            dd_news.css('margin-left', dt_news_width  + 'px');
 
-		/* PageScroll
-		----------------------------------------------------*/
+        }
 
 
-		function pagescroll() {
+        // DOM 読み込み／リサイズ //
+        $(window).on('load resize', function() {
+            dtAdjust();
+        });
 
-			return $.getScript('//cdnjs.cloudflare.com/ajax/libs/velocity/1.2.2/velocity.js', function() {
 
-				$('a[rel=scroll]').on('click', function() {
 
-					// リンクの判定 //
-					var href = $(this).attr('href');
 
-					target = $(href === "#" || href === "" ? 'html' : href);
-					target.velocity('scroll', {
-						duration: 500,
-						easing: 'easeOutExpo'
-					});
-					return false;
+        /* PageScroll
+        ----------------------------------------------------*/
 
-				});
 
-			});
+        function pagescroll() {
 
-		}
+            return $.getScript('//cdnjs.cloudflare.com/ajax/libs/velocity/1.2.2/velocity.js', function() {
 
-		pagescroll();
+                $('a[rel=scroll]').on('click', function() {
 
+                    // リンクの判定 //
+                    var href = $(this).attr('href');
 
+                    target = $(href === "#" || href === "" ? 'html' : href);
+                    target.velocity('scroll', {
+                        duration: 500,
+                        easing: 'easeOutExpo'
+                    });
+                    return false;
 
+                });
 
-		/* Slider
-		----------------------------------------------------*/
+            });
 
+        }
 
-		// Slider-Config //
-		$('#carousel-slider').carousel({
-			interval: 8000
-		});
 
+        pagescroll();
 
-		// Slider-Swipe -for SP- //
-		function carouselSliderFlick() {
 
-			var carouselslider = $('#carousel-slider');
-			var carousel = new Hammer(carouselslider[0]);
 
-			/* 左にスワイプしたら次の画像に切り替え */
-			carousel.on('swipeleft', function() {
-				carouselslider.carousel('next');
-			});
 
-			/* 右にスワイプしたら前の画像に切り替え */
-			carousel.on('swiperight', function() {
-				carouselslider.carousel('prev');
-			});
+        /* Slider
+        ----------------------------------------------------*/
 
-		}
 
+        // スライダーのクラスを設定 //
+        var carouselslider = $('#carousel-slider');
 
-		if ($('#carousel-slider').length) {
-			carouselSliderFlick();
-		}
+        carouselslider.carousel({
+            interval: 8000
+        });
 
 
+        // スライダーにタッチスワイプを実装する -for SP- //
+        function carouselSliderFlick() {
 
+            var carousel = new Hammer(carouselslider[0]);
 
-		/* Tabs
-		----------------------------------------------------*/
+            /* 左にスワイプしたら次の画像に切り替え */
+            carousel.on('swipeleft', function() {
+                carouselslider.carousel('next');
+            });
 
+            /* 右にスワイプしたら前の画像に切り替え */
+            carousel.on('swiperight', function() {
+                carouselslider.carousel('prev');
+            });
 
-		$('#tabs').tabs({
+        }
 
-			collapsible: false,
-			show: { effect: 'fadeIn', duration: 800 },
-			fx: { height: 'toggle', opacity: 'toggle', duration: 300 }
 
-		});
+        // ソースにスライダー用のid名が含まれていたらタッチスワイプを発火する -for SP- //
+        if (carouselslider.length) {
+            carouselSliderFlick();
+        }
 
 
 
 
-		/* WindowClose
-		----------------------------------------------------*/
+        /* Tabs
+        ----------------------------------------------------*/
 
 
-		function quitBox(cmd) {
+        $('#tabs').tabs({
 
-			if (cmd=='quit'){
-				open(location, '_self').close();
-			}
-			return false;
+            collapsible: false,
+            show: { effect: 'fadeIn', duration: 800 },
+            fx: { height: 'toggle', opacity: 'toggle', duration: 300 }
 
-		}
+        });
 
 
 
 
-		/* MouseOver
-		----------------------------------------------------*/
+        /* WindowClose
+        ----------------------------------------------------*/
 
 
-		function mouseOver(i) {
+        function quitBox(cmd) {
 
-			var imgArr = i ;
+            if (cmd=='quit') {
+                open(location, '_self').close();
+            }
+            return false;
 
-			switch (imgArr) {
+        }
 
-				case 'on' :
 
-					$('img.mouseover').each(function() {
-						$(this).attr('src', $(this).attr('src').replace('_off', '_on'));
-					});
-					break;
 
-				case 'off' :
 
-					$('img.mouseover').each(function() {
-						$(this).attr('src', $(this).attr('src').replace('_on', '_off'));
-					});
-					break;
+        /* MouseOver
+        ----------------------------------------------------*/
 
-				default :
 
-					break;
+        // マウスオーバー用のクラスを設定 //
+        var img_mouse_over = $('img.img-mouseover');
 
-			}
 
-		}
+        // マウスオーバー時の挙動を設定 //
+        function mouseOver(i) {
 
+            var imgArr = i ;
 
-		if (user_agent.indexOf('iPhone') > 0 || user_agent.indexOf('iPad') > 0 || user_agent.indexOf('iPod') > 0 || user_agent.indexOf('Android') > 0 || user_agent.indexOf('BlackBerry') > 0 || user_agent.indexOf('windows Phone') > 0 || user_agent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(user_agent)) {
+            switch (imgArr) {
 
-			$('img.mouseover').mouseover(function() {
-				mouseOver();
-			}).mouseout(function() {
-				mouseOver();
-			});
+                case 'on' :
 
-		}
+                    img_mouse_over.each(function() {
+                        $(this).attr('src', $(this).attr('src').replace('_off', '_on'));
+                    });
+                    break;
 
-		else {
+                case 'off' :
 
-			$('img.mouseover').mouseover(function() {
-				mouseOver('on');
-			}).mouseout(function() {
-				mouseOver('off')
-			});
+                    img_mouse_over.each(function() {
+                        $(this).attr('src', $(this).attr('src').replace('_on', '_off'));
+                    });
+                    break;
 
-		}
+                default :
 
+                    break;
 
+            }
 
+        }
 
-		/* TargetBlank
-		   for IE8
-		----------------------------------------------------*/
 
+        // PCのみ発火 //
+        if (user_agent.indexOf('iPhone') > 0 || user_agent.indexOf('iPad') > 0 || user_agent.indexOf('iPod') > 0 || user_agent.indexOf('Android') > 0 || user_agent.indexOf('BlackBerry') > 0 || user_agent.indexOf('windows Phone') > 0 || user_agent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(user_agent)) {
 
-		$('.blank').on('click', function() {
+            img_mouse_over.mouseover(function() {
+                mouseOver();
+            }).mouseout(function() {
+                mouseOver();
+            });
 
-			// リンクの判定 //
-			var href = $(this).attr('href');
+        }
 
-			window.open(href, '_blank');
-			return false;
+        else {
 
-		});
+            img_mouse_over.mouseover(function() {
+                mouseOver('on');
+            }).mouseout(function() {
+                mouseOver('off')
+            });
 
+        }
 
 
 
-		/* Kerning
-		----------------------------------------------------*/
 
+        /* TargetBlank
+           for IE8
+        ----------------------------------------------------*/
 
-		/*Attention
-		----------------------------------------------------------------------------------------------------
 
-		※約物含めたリンク箇所でのカーニング指定を行うと挙動がおかしくなる
-		　→約物を記号化、前後に半角スペースを入れる事で対応
-		  例）<a href="javascript:void(0)" class="policy"> &#12300;個人情報の取り扱いについて&#12301; </a>
+        // マウスオーバー用のクラスを設定 //
+        var window_blank = $('.blank');
 
-		----------------------------------------------------------------------------------------------------
-		*/
 
+        window_blank.on('click', function() {
 
-		function kerningDir(rootDir) {
+            // リンクの判定 //
+            var href = $(this).attr('href');
 
-			return $.getJSON(rootDir + 'ajax/kerning.json', function(data) {
+            window.open(href, '_blank');
+            return false;
 
-				setTimeout(function() {
+        });
 
-					/* 中にテキストが入るタグの判定 */
-					var tag = $('p, h1, h2, h3, h4, h5, h6, .carousel-caption, dl.news dt, dl.news dd, dl#column dt, dl#column dd, dl#form-layout-jp dt, dl#form-layout-en dt, ul.list li, ol.list li, ul.suggest-menu li, ul.form-accept li, th, td, a, address')
 
-					$(tag).kerning({
-						'data': data
-					});
 
-				}, 100);
 
-			});
+    /* Common UI ここまで
+    ------------------------------------------------------------------------------*/
 
-		}
 
 
-		if ($('header#header-navi-1st-none').length || $('header#header-navi-1st').length) {
-			kerningDir('./');
-		}
 
-		else if ($('header#header-navi-2nd').length) {
-			kerningDir('../');
-		}
+    /* Lightbox
+    ------------------------------------------------------------------------------*/
 
-		else if ($('header#header-navi-3rd').length) {
-			kerningDir('../../');
-		}
 
 
 
+        function colorbox(rootDir) {
 
-		/* Centering
-		----------------------------------------------------*/
 
+            $.getScript(rootDir + 'js/lib/jquery/jquery.colorbox.min.js', function(){
 
-		function centering() {
 
+                /* 用途別colorbox実行スクリプト */
+                $('.group1').colorbox({
 
-			var box = $('.centerParentWrapper');
-			var padding = parseInt(box.css('padding-top')) + parseInt(box.css('padding-bottom'));
-			var margin = 50;
-			var min_height = box.height() + padding + $('footer').height() + margin;
+                    rel: 'group1',
+                    transition: 'fade',
+                    slideshow: false,
 
-			if( window_inner_height < min_height ) {
+                    fixed: true,
+                    maxWidth: '90%',
+                    maxHeight: '90%',
+                    reposition: true,
+                    opacity: '0.3',
 
-				$('#fixed-container').css({
-					'position' : 'relative'
-				});
+                    retinaImage: false,
+                    retinaUrl: false
 
-			}
+                });
 
-			else {
+                $('.group2').colorbox({
 
-				$('#fixed-container').css({
-					'position' : 'fixed'
-				});
+                    rel: 'group2',
+                    transition: 'fade',
+                    slideshow: false,
 
-			}
+                    fixed: true,
+                    maxWidth: '90%',
+                    maxHeight: '90%',
+                    reposition: true,
+                    opacity: '0.3',
 
-			$('#fixed-container').css({
-				'height' : window_inner_height + 'px'
-			});
+                    retinaImage: false,
+                    retinaUrl: false
 
-			$('#fixed-container').css({
-				'height' : window_inner_height - 30 + 'px'
-			});
+                });
 
 
-		}
+                /* オプション */
+                $('.ajax').colorbox();
 
+                $('.youtube').colorbox({
 
-		$(window).on('load resize', function() {
-			centering();
-		}).trigger('resize');
+                    iframe: true,
+                    innerWidth: 640,
+                    innerHeight: 390
 
+                });
 
+                $('.vimeo').colorbox({
 
+                    iframe: true,
+                    innerWidth: 500,
+                    innerHeight: 409
 
-	/* Common UI ここまで
-	------------------------------------------------------------------------------*/
+                });
 
+                $('.iframe').colorbox({
 
+                    iframe: true,
+                    width: '80%',
+                    height: '80%'
 
+                });
 
-	/* Lightbox
-	------------------------------------------------------------------------------*/
+                $('.inline').colorbox({
 
+                    inline: true,
+                    width: '50%'
 
+                });
 
+                $('.callbacks').colorbox({
 
-		function colorbox(rootDir) {
+                    onOpen:function() {
+                        alert('onOpen: colorbox is about to open');
+                    },
+                    onLoad:function() {
+                        alert('onLoad: colorbox has started to load the targeted content');
+                    },
+                    onComplete:function() {
+                        alert('onComplete: colorbox has displayed the loaded content');
+                    },
+                    onCleanup:function() {
+                        alert('onCleanup: colorbox has begun the close process');
+                    },
+                    onClosed:function() {
+                        alert('onClosed: colorbox has completely closed');
+                    }
 
+                });
 
-			$.getScript(rootDir + 'js/lib/jquery/jquery.colorbox.min.js', function(){
+                $('.non-retina').colorbox({
 
+                    rel: 'group5',
+                    transition: 'none'
 
-				/* 用途別colorbox実行スクリプト */
-				$('.group1').colorbox({
+                })
 
-					rel: 'group1',
-					transition: 'fade',
-					slideshow: false,
+                $('.retina').colorbox({
 
-					fixed: true,
-					maxWidth: '90%',
-					maxHeight: '90%',
-					reposition: true,
-					opacity: '0.3',
+                    rel: 'group5',
+                    transition: 'none',
+                    retinaImage: true,
+                    retinaUrl: true
 
-					retinaImage: false,
-					retinaUrl: false
+                });
 
-				});
 
-				$('.group2').colorbox({
+                /* inlineで呼び出すcolorbox実行スクリプト例 */
+                $('#click').on('click', function() {
 
-					rel: 'group2',
-					transition: 'fade',
-					slideshow: false,
+                    $('#click').css({
 
-					fixed: true,
-					maxWidth: '90%',
-					maxHeight: '90%',
-					reposition: true,
-					opacity: '0.3',
+                        'background-color': '#f00',
+                        'color': '#fff',
+                        'cursor': 'inherit'
 
-					retinaImage: false,
-					retinaUrl: false
+                    }).text("Open this window again and this message will still be here.");
+                    return false;
 
-				});
+                });
 
-				$('.ajax').colorbox();
 
-				$('.youtube').colorbox({
+            });
 
-					iframe: true,
-					innerWidth: 640,
-					innerHeight: 390
 
-				});
+        }
 
-				$('.vimeo').colorbox({
 
-					iframe: true,
-					innerWidth: 500,
-					innerHeight: 409
+        if (header_navi_1st.length || header_navi_1st_none.length) {
+            colorbox('./');
+        }
 
-				});
+        else if (header_navi_2nd.length) {
+            colorbox('../');
+        }
 
-				$('.iframe').colorbox({
+        else if (header_navi_3rd.length) {
+            colorbox('../../');
+        }
 
-					iframe: true,
-					width: '80%',
-					height: '80%'
 
-				});
 
-				$('.inline').colorbox({
 
-					inline: true,
-					width: '50%'
+    /* Lightbox ここまで
+    ------------------------------------------------------------------------------*/
 
-				});
 
-				$('.callbacks').colorbox({
 
-					onOpen:function() {
-						alert('onOpen: colorbox is about to open');
-					},
-					onLoad:function() {
-						alert('onLoad: colorbox has started to load the targeted content');
-					},
-					onComplete:function() {
-						alert('onComplete: colorbox has displayed the loaded content');
-					},
-					onCleanup:function() {
-						alert('onCleanup: colorbox has begun the close process');
-					},
-					onClosed:function() {
-						alert('onClosed: colorbox has completely closed');
-					}
 
-				});
+    /* Form
+    ------------------------------------------------------------------------------*/
 
-				$('.non-retina').colorbox({
 
-					rel: 'group5',
-					transition: 'none'
+        /* フォームサブミットの判定 */
+        var form_submit_on_ja = $('input#btn-confirm-on-ja');
+        var form_submit_on_en = $('input#btn-confirm-on-en');
+        var form_reset_on_ja = $('input#btn-reset-on-ja');
+        var form_reset_on_en = $('input#btn-reset-on-en');
 
-				})
+        var form_submit_off_ja = $('input#btn-confirm-off-ja');
+        var form_submit_off_en = $('input#btn-confirm-off-en');
+        var form_reset_off_ja = $('input#btn-reset-off-ja');
+        var form_reset_off_en = $('input#btn-reset-off-en');
 
-				$('.retina').colorbox({
 
-					rel: 'group5',
-					transition: 'none',
-					retinaImage: true,
-					retinaUrl: true
 
-				});
+        /* Validate
+        ------------------------------------------------------------------------------*/
 
 
-				/* inlineで呼び出すcolorbox実行スクリプト例 */
-				$('#click').on('click', function() {
 
-					$('#click').css({
+            // Submitを押したときのバリデート判定 Jp:日本語  //
+            form_submit_on_ja.on('click', function() {
 
-						'background-color': '#f00',
-						'color': '#fff',
-						'cursor': 'inherit'
 
-					}).text("Open this window again and this message will still be here.");
-					return false;
+                /* エラー判定 */
+                $('#inquiry-form-jp').validate({
 
-				});
+                    ignore: '.ignore',
+                    rules: {
 
+                        inquiryListJp :{
+                            required: true
+                        },
+                        inquiryCompanyNameJp :{
+                            required: true
+                        },
+                        inquiryNameJaJp :{
+                            required: true,
+                            kana: true
+                        },
+                        inquiryNameEnJp :{
+                            required: true,
+                            alphabet: true
+                        },
+                        inquiryMailJp :{
+                            required: true,
+                            alphabet: true,
+                            email: true
+                        },
+                        inquiryTextJp :{
+                            required: true
+                        }
 
-			});
+                    },
+                    messages: {
 
+                        inquiryListJp :{
+                            required: '※お問い合わせ内容をお選び下さい。'
+                        },
+                        inquiryCompanyNameJp :{
+                            required: '※必須項目です。'
+                        },
+                        inquiryNameJaJp :{
+                            required: '※必須項目です。',
+                            kana: '※全角文字で入力して下さい。'
+                        },
+                        inquiryNameEnJp :{
+                            required: '※必須項目です。',
+                            alphabet: '※半角英数で入力して下さい。'
+                        },
+                        inquiryMailJp :{
+                            required: '※必須項目です',
+                            alphabet: '※半角英数で入力して下さい。',
+                            email: '※メールアドレスを入力してください。'
+                        },
+                        inquiryTextJp :{
+                            required: '※必須項目です。'
+                        }
 
-		}
+                    }
 
+                });
 
-		if ($('header#header-navi-1st-none').length || $('header#header-navi-1st').length) {
-			colorbox('./');
-		}
 
-		else if ($('header#header-navi-2nd').length) {
-			colorbox('../');
-		}
+                /* エラーが出た箇所へ飛ぶ */
+                var scldurat = 500;
 
-		else if ($('header#header-navi-3rd').length) {
-			colorbox('../../');
-		}
+                function validateScrollJp(i) {
 
+                    var caseArr = i ;
 
+                    switch (caseArr) {
 
+                        case 'inquiry-list-jp' :
 
-	/* Lightbox ここまで
-	------------------------------------------------------------------------------*/
+                            target = $('#inquiry-list-jp');
+                            target.velocity('scroll', {
+                                duration: scldurat, easing: 'easeOutExpo'
+                            });
+                            return false;
+                            break;
 
+                        case 'inquiry-companyName-jp' :
 
+                            target = $('#inquiry-companyName-jp');
+                            target.velocity('scroll', {
+                                duration: scldurat, easing: 'easeOutExpo'
+                            });
+                            return false;
+                            break;
 
+                        case 'inquiry-nameJa-jp' :
 
-	/* Validate
-	------------------------------------------------------------------------------*/
+                            target = $('#inquiry-nameJa-jp');
+                            target.velocity('scroll', {
+                                duration: scldurat, easing: 'easeOutExpo'
+                            });
+                            return false;
+                            break;
 
+                        case 'inquiry-nameEn-jp' :
 
+                            target = $('#inquiry-nameEn-jp');
+                            target.velocity('scroll', {
+                                duration: scldurat, easing: 'easeOutExpo'
+                            });
+                            return false;
+                            break;
 
+                        case 'inquiry-mail-jp' :
 
-		// Submitを押したときのバリデート判定 Jp:日本語  //
-		$('input#btn-confirm-ja:submit').on('click', function() {
+                            target = $('#inquiry-mail-jp');
+                            target.velocity('scroll', {
+                                duration: scldurat, easing: 'easeOutExpo'
+                            });
+                            return false;
+                            break;
 
+                        case 'inquiry-text-jp' :
+                            target = $('#inquiry-text-jp');
+                            target.velocity('scroll', {
+                                duration: scldurat, easing: 'easeOutExpo'
+                            });
+                            return false;
+                            break;
 
-			/* エラー判定 */
-			$('#inquiry-form-jp').validate({
+                    }
 
-				ignore: '.ignore',
-				rules: {
+                }
 
-					inquiryListJp :{
-						required: true
-					},
-					inquiryCompanyNameJp :{
-						required: true
-					},
-					inquiryNameJaJp :{
-						required: true,
-						kana: true
-					},
-					inquiryNameEnJp :{
-						required: true,
-						alphabet: true
-					},
-					inquiryMailJp :{
-						required: true,
-						alphabet: true,
-						email: true
-					},
-					inquiryTextJp :{
-						required: true
-					}
 
-				},
-				messages: {
+                if ($('input#form-inquiryList-jp').val() === '') {
+                    validateScrollJp('inquiry-list-jp');
+                }
 
-					inquiryListJp :{
-						required: '※お問い合わせ内容をお選び下さい。'
-					},
-					inquiryCompanyNameJp :{
-						required: '※必須項目です。'
-					},
-					inquiryNameJaJp :{
-						required: '※必須項目です。',
-						kana: '※全角文字で入力して下さい。'
-					},
-					inquiryNameEnJp :{
-						required: '※必須項目です。',
-						alphabet: '※半角英数で入力して下さい。'
-					},
-					inquiryMailJp :{
-						required: '※必須項目です',
-						alphabet: '※半角英数で入力して下さい。',
-						email: '※メールアドレスを入力してください。'
-					},
-					inquiryTextJp :{
-						required: '※必須項目です。'
-					}
+                else if ($('input#form-inquiryCompanyName-jp').val() === '') {
+                    validateScrollJp('inquiry-companyName-jp');
+                }
 
-				}
+                else if ($('input#form-inquiryNameJa-jp').val() === '') {
+                    validateScrollJp('inquiry-nameJa-jp');
+                }
 
-			});
+                else if ($('input#form-inquiryNameEn-jp').val() === '') {
+                    validateScrollJp('inquiry-nameEn-jp');
+                }
 
+                else if ($('input#form-inquiryMail-jp').val() === '') {
+                    validateScrollJp('inquiry-mail-jp');
+                }
 
-			/* エラーが出た箇所へ飛ぶ */
-			var scldurat = 500;
+                else if ($('textarea#form-inquiryText-jp').val() === '') {
+                    validateScrollJp('inquiry-text-jp');
+                }
 
-			function validateScrollJp(i) {
+            });
 
-				var caseArr = i ;
 
-				switch (caseArr) {
+            // Submitを押したときのバリデート判定 En:英語  //
+            form_submit_on_en.on('click', function() {
 
-					case 'inquiry-list-jp' :
 
-						target = $('#inquiry-list-jp');
-						target.velocity('scroll', {
-							duration: scldurat, easing: 'easeOutExpo'
-						});
-						return false;
-						break;
+                /* エラー判定 */
+                $('#inquiry-form-en').validate({
 
-					case 'inquiry-companyName-jp' :
+                    ignore: '.ignore',
+                    rules: {
 
-						target = $('#inquiry-companyName-jp');
-						target.velocity('scroll', {
-							duration: scldurat, easing: 'easeOutExpo'
-						});
-						return false;
-						break;
+                        inquiryListEn :{
+                            required: true
+                        },
+                        inquiryCompanyNameEn :{
+                            required: true
+                        },
+                        inquiryNameEnEn :{
+                            required: true,
+                            alphabet: true
+                        },
+                        inquiryMailEn :{
+                            required: true,
+                            alphabet: true,
+                            email: true
+                        },
+                        inquiryTextEn :{
+                            required: true
+                        }
 
-					case 'inquiry-nameJa-jp' :
+                    },
+                    messages: {
 
-						target = $('#inquiry-nameJa-jp');
-						target.velocity('scroll', {
-							duration: scldurat, easing: 'easeOutExpo'
-						});
-						return false;
-						break;
+                        inquiryListEn :{
+                            required: '*Please select.'
+                        },
+                        inquiryCompanyNameEn :{
+                            required: '*Please enter your company name.'
+                        },
+                        inquiryNameEnEn :{
+                            required: '*Please enter your name.'
+                        },
+                        inquiryMailEn :{
+                            required: '*Please enter your e-mail address.',
+                            alphabet: '*Please enter the alphabet.',
+                            email: '*Your e-mail address is incorrect.'
+                        },
+                        inquiryTextEn :{
+                            required: '*Please enter xxx.'
+                        }
 
-					case 'inquiry-nameEn-jp' :
+                    }
 
-						target = $('#inquiry-nameEn-jp');
-						target.velocity('scroll', {
-							duration: scldurat, easing: 'easeOutExpo'
-						});
-						return false;
-						break;
+                });
 
-					case 'inquiry-mail-jp' :
 
-						target = $('#inquiry-mail-jp');
-						target.velocity('scroll', {
-							duration: scldurat, easing: 'easeOutExpo'
-						});
-						return false;
-						break;
+                /* エラーが出た箇所へ飛ぶ */
+                var scldurat = 500;
 
-					case 'inquiry-text-jp' :
-						target = $('#inquiry-text-jp');
-						target.velocity('scroll', {
-							duration: scldurat, easing: 'easeOutExpo'
-						});
-						return false;
-						break;
+                function validateScrollEn(i) {
 
-				}
+                    var caseArr = i ;
 
-			}
+                    switch (caseArr) {
 
+                        case 'inquiry-list-en' :
 
-			if ($('input#form-inquiryList-jp').val() === '') {
-				validateScrollJp('inquiry-list-jp');
-			}
+                            target = $('#inquiry-list-en');
+                            target.velocity('scroll', {
+                                duration: scldurat, easing: 'easeOutExpo'
+                            });
+                            return false;
+                            break;
 
-			else if ($('input#form-inquiryCompanyName-jp').val() === '') {
-				validateScrollJp('inquiry-companyName-jp');
-			}
+                        case 'inquiry-companyName-en' :
 
-			else if ($('input#form-inquiryNameJa-jp').val() === '') {
-				validateScrollJp('inquiry-nameJa-jp');
-			}
+                            target = $('#inquiry-companyName-en');
+                            target.velocity('scroll', {
+                                duration: scldurat, easing: 'easeOutExpo'
+                            });
+                            return false;
+                            break;
 
-			else if ($('input#form-inquiryNameEn-jp').val() === '') {
-				validateScrollJp('inquiry-nameEn-jp');
-			}
+                        case 'inquiry-nameEn-en' :
 
-			else if ($('input#form-inquiryMail-jp').val() === '') {
-				validateScrollJp('inquiry-mail-jp');
-			}
+                            target = $('#inquiry-nameEn-en');
+                            target.velocity('scroll', {
+                                duration: scldurat, easing: 'easeOutExpo'
+                            });
+                            return false;
+                            break;
 
-			else if ($('textarea#form-inquiryText-jp').val() === '') {
-				validateScrollJp('inquiry-text-jp');
-			}
+                        case 'inquiry-mail-en' :
 
-		});
+                            target = $('#inquiry-mail-en');
+                            target.velocity('scroll', {
+                                duration: scldurat, easing: 'easeOutExpo'
+                            });
+                            return false;
+                            break;
 
+                        case 'inquiry-text-en' :
 
-		// Submitを押したときのバリデート判定 En:英語  //
-		$('input#btn-confirm-en:submit').on('click', function() {
+                            target = $('#inquiry-text-en');
+                            target.velocity('scroll', {
+                                duration: scldurat, easing: 'easeOutExpo'
+                            });
+                            return false;
+                            break;
 
+                    }
 
-			/* エラー判定 */
-			$('#inquiry-form-en').validate({
+                }
 
-				ignore: '.ignore',
-				rules: {
 
-					inquiryListEn :{
-						required: true
-					},
-					inquiryCompanyNameEn :{
-						required: true
-					},
-					inquiryNameEnEn :{
-						required: true,
-						alphabet: true
-					},
-					inquiryMailEn :{
-						required: true,
-						alphabet: true,
-						email: true
-					},
-					inquiryTextEn :{
-						required: true
-					}
+                if ($('input#form-inquiryList-en').val() === '') {
+                    validateScrollEn('inquiry-list-en');
+                }
 
-				},
-				messages: {
+                else if ($('input#form-inquiryCompanyName-en').val() === '') {
+                    validateScrollEn('inquiry-companyName-en');
+                }
 
-					inquiryListEn :{
-						required: '*Please select.'
-					},
-					inquiryCompanyNameEn :{
-						required: '*Please enter your company name.'
-					},
-					inquiryNameEnEn :{
-						required: '*Please enter your name.'
-					},
-					inquiryMailEn :{
-						required: '*Please enter your e-mail address.',
-						alphabet: '*Please enter the alphabet.',
-						email: '*Your e-mail address is incorrect.'
-					},
-					inquiryTextEn :{
-						required: '*Please enter xxx.'
-					}
+                else if ($('input#form-inquiryNameEn-en').val() === '') {
+                    validateScrollEn('inquiry-nameEn-en');
+                }
 
-				}
+                else if ($('input#form-inquiryMail-en').val() === '') {
+                    validateScrollEn('inquiry-mail-en');
+                }
 
-			});
+                else if ($('textarea#form-inquiryText-en').val() === '') {
+                    validateScrollEn('inquiry-text-en');
+                }
 
 
-			/* エラーが出た箇所へ飛ぶ */
-			var scldurat = 500;
+            });
 
-			function validateScrollEn(i) {
 
-				var caseArr = i ;
 
-				switch (caseArr) {
 
-					case 'inquiry-list-en' :
+        /* Validate ここまで
+        ------------------------------------------------------------------------------*/
 
-						target = $('#inquiry-list-en');
-						target.velocity('scroll', {
-							duration: scldurat, easing: 'easeOutExpo'
-						});
-						return false;
-						break;
 
-					case 'inquiry-companyName-en' :
 
-						target = $('#inquiry-companyName-en');
-						target.velocity('scroll', {
-							duration: scldurat, easing: 'easeOutExpo'
-						});
-						return false;
-						break;
 
-					case 'inquiry-nameEn-en' :
+        /* MailForm
+        ------------------------------------------------------------------------------*/
 
-						target = $('#inquiry-nameEn-en');
-						target.velocity('scroll', {
-							duration: scldurat, easing: 'easeOutExpo'
-						});
-						return false;
-						break;
 
-					case 'inquiry-mail-en' :
 
-						target = $('#inquiry-mail-en');
-						target.velocity('scroll', {
-							duration: scldurat, easing: 'easeOutExpo'
-						});
-						return false;
-						break;
 
-					case 'inquiry-text-en' :
+            var form_accept = $('#accept-ja, #accept-en');
 
-						target = $('#inquiry-text-en');
-						target.velocity('scroll', {
-							duration: scldurat, easing: 'easeOutExpo'
-						});
-						return false;
-						break;
 
-				}
+            // 同意する //
+            function mailFormInputAbled() {
 
-			}
+                $('#btn-reset-off-ja').attr('id', 'btn-reset-on-ja').attr('disabled', false);
+                $('#btn-reset-off-en').attr('id', 'btn-reset-on-en').attr('disabled', false);
+                $('#btn-confirm-off-ja').attr('id', 'btn-confirm-on-ja').attr('disabled', false);
+                $('#btn-confirm-off-en').attr('id', 'btn-confirm-on-en').attr('disabled', false);
 
+            }
 
-			if ($('input#form-inquiryList-en').val() === '') {
-				validateScrollEn('inquiry-list-en');
-			}
 
-			else if ($('input#form-inquiryCompanyName-en').val() === '') {
-				validateScrollEn('inquiry-companyName-en');
-			}
+            // 同意しない //
+            function mailFormInputDisabled() {
 
-			else if ($('input#form-inquiryNameEn-en').val() === '') {
-				validateScrollEn('inquiry-nameEn-en');
-			}
+                $('#btn-reset-on-ja').attr('id','btn-reset-off-ja').attr('disabled', true);
+                $('#btn-reset-on-en').attr('id','btn-reset-off-en').attr('disabled', true);
+                $('#btn-confirm-on-ja').attr('id','btn-confirm-off-ja').attr('disabled', true);
+                $('#btn-confirm-on-en').attr('id','btn-confirm-off-en').attr('disabled', true);
 
-			else if ($('input#form-inquiryMail-en').val() === '') {
-				validateScrollEn('inquiry-mail-en');
-			}
+            }
 
-			else if ($('textarea#form-inquiryText-en').val() === '') {
-				validateScrollEn('inquiry-text-en');
-			}
 
+            // 入力内容を消す //
+            function mailFormInputReset() {
 
-		});
+                /* input、label、pの値を設定 */
+                var form_label_error = $('label.error');
+                var form_p_html = $('p#form-inquiryListDisplay-jp, p#form-inquiryListDisplay-en');
+                var form_input_val = $('input#form-inquiryList-jp, input#form-inquiryList-en','input:text, input:checked, textarea');
 
 
+                /* バリデート注意文言を消す -日本語- */
+                form_label_error.html('').hide();
 
+                /* サジェスト部分の注意文言及び以下の値を消す -共通-
+                    [input type='hidden']
+                    [input type='text']
+                    [textarea] */
+                form_p_html.html('');
+                form_input_val.val('');
 
-	/* Validate ここまで
-	------------------------------------------------------------------------------*/
 
+                /* 同意するボタン内の値を消す -共通- */
+                form_accept.attr('checked', false);
 
+                /* 同意ボタンにチェックが入っているか否かでのリセット、確認ボタンの動作 */
+                if (form_accept.length === 0) {
+                    mailFormInputDisabled();
+                }
 
+                /* リセットボタン押したらページトップへ飛ぶ */
+                var scldurat = 500;
 
-	/* MailForm
-	------------------------------------------------------------------------------*/
+                target = $('#form');
+                target.velocity('scroll', {
+                    duration: scldurat, easing: 'easeOutExpo'
+                });
+                return false;
 
+            }
 
 
+            // Resetを押したときの動作 //
+            $('input#btn-reset-on-ja, input#btn-reset-on-en').on('click', function() {
+                mailFormInputReset();
+            });
 
-		// 同意する //
-		function mailFormInputAbled() {
 
-			$('#btn-reset-off-ja').attr('id', 'btn-reset-ja').attr('disabled', false);
-			$('#btn-reset-off-en').attr('id', 'btn-reset-en').attr('disabled', false);
-			$('#btn-confirm-off-ja').attr('id', 'btn-confirm-ja').attr('disabled', false);
-			$('#btn-confirm-off-en').attr('id', 'btn-confirm-en').attr('disabled', false);
+            // 同意ボタンを押したときのリセット、確認ボタンの動作 //
+            /*  default */
+            mailFormInputDisabled();
 
-		}
+            /*  accept */
+            form_accept.on('click', function() {
 
+                if (form_accept.length === 1) {
+                    mailFormInputAbled();
+                }
 
-		// 同意しない //
-		function mailFormInputDisabled() {
+                else {
+                    mailFormInputDisabled();
+                }
 
-			$('#btn-reset-ja').attr('id','btn-reset-off-ja').attr('disabled', true);
-			$('#btn-reset-en').attr('id','btn-reset-off-en').attr('disabled', true);
-			$('#btn-confirm-ja').attr('id','btn-confirm-off-ja').attr('disabled', true);
-			$('#btn-confirm-en').attr('id','btn-confirm-off-en').attr('disabled', true);
+            }).css('cursor','pointer');
 
-		}
 
+            // 戻るボタンを押したときの動作 //
+            $('input#btn-formback-ja, input#btn-formback-en').on('click', function() {
+                location.href='index.html'
+            });
 
-		// 入力内容を消す //
-		function mailFormInputReset() {
 
-			/* バリデート注意文言を消す -日本語- */
-			$('label.error').html('').hide();
+            // SPとPCでとび先を変える //
+            $(window).on('load', function() {
 
-			/* サジェスト部分の注意文言及び[input type='hidden']内の値を消す -共通-*/
-			$('p#form-inquiryListDisplay-jp, p#form-inquiryListDisplay-en').html('');
-			$('input#form-inquiryList-jp, input#form-inquiryList-en').val('');
 
-			/* [input type='text'][textarea]内の値を消す -共通- */
-			$('input:text, input:checked, textarea').val('');
+                /* -for SP- */
+                if (user_agent.indexOf('iPhone') > 0 || user_agent.indexOf('iPad') > 0 || user_agent.indexOf('iPod') > 0 || user_agent.indexOf('Android') > 0 || user_agent.indexOf('BlackBerry') > 0 || user_agent.indexOf('windows Phone') > 0 || user_agent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(user_agent)) {
 
-			/* 同意するボタン内の値を消す -共通- */
-			$('#accept-ja, #accept-en').attr('checked', false);
+                    $('.policy').on('click', function() {
+                        // location.href='../sitepolicy/index.html'
+                        // window.open('../sitepolicy/index.html', '_blank');
+                        return false;
+                    });
 
-			/* 同意ボタンにチェックが入っているか否かでのリセット、確認ボタンの動作 */
-			if ($('#accept-ja:checked, #accept-en:checked').length === 0) {
-				mailFormInputDisabled();
-			}
+                }
 
-			/* リセットボタン押したらページトップへ飛ぶ */
-			var scldurat = 500;
 
-			target = $('#form');
-			target.velocity('scroll', {
-				duration: scldurat, easing: 'easeOutExpo'
-			});
-			return false;
+                /* -for PC- */
+                else {
 
-		}
+                    $('.policy').on('click', function() {
+                        // location.href='../../#/sitepolicy/'
+                        // window.open('../../#/sitepolicy/', '_blank');
+                        return false;
+                    });
 
+                }
 
-		// Resetを押したときの動作 //
-		$('input#btn-reset-ja, input#btn-reset-en').on('click', function() {
-			mailFormInputReset();
-		});
 
+            });
 
-		// 同意ボタンを押したときのリセット、確認ボタンの動作 //
-		/*  default */
-		mailFormInputDisabled();
 
-		/*  accept */
-		$('#accept-ja,#accept-en').click(function() {
 
-			if ($('#accept-ja:checked,#accept-en:checked').length === 1) {
-				mailFormInputAbled();
-			}
 
-			else {
-				mailFormInputDisabled();
-			}
+        /* MailForm ここまで
+        ------------------------------------------------------------------------------*/
 
-		}).css('cursor','pointer');
 
 
-		// 戻るボタンを押したときの動作 //
-		$('input#btn-formback-ja, input#btn-formback-en').on('click', function() {
-			location.href='index.html'
-		});
 
+    /* Form ここまで
+    ------------------------------------------------------------------------------*/
 
-		// SPとPCでとび先を変える //
-		$(window).on('load', function() {
 
 
-			/* -for SP- */
-			if (user_agent.indexOf('iPhone') > 0 || user_agent.indexOf('iPad') > 0 || user_agent.indexOf('iPod') > 0 || user_agent.indexOf('Android') > 0 || user_agent.indexOf('BlackBerry') > 0 || user_agent.indexOf('windows Phone') > 0 || user_agent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(user_agent)) {
 
-				$('.policy').on('click', function() {
-					// location.href='../sitepolicy/index.html'
-					// window.open('../sitepolicy/index.html', '_blank');
-					return false;
-				});
+    /* Suggest
+    ------------------------------------------------------------------------------*/
 
-			}
 
 
-			/* -for PC- */
-			else {
 
-				$('.policy').on('click', function() {
-					// location.href='../../#/sitepolicy/'
-					// window.open('../../#/sitepolicy/', '_blank');
-					return false;
-				});
+        function suggestOnPC () {
 
-			}
+            /* マウスカーソルがセレクターの上に乗ったらサジェストを出す */
+            $('.suggest-pc').on({
 
+                /* マウスオン */
+                'mouseenter': function() {
+                $('#suggest-jp, #suggest-en').fadeIn();
+                },
 
-		});
+                /* マウスアウト */
+                'mouseleave': function() {
+                    $('#suggest-jp, #suggest-en').fadeOut();
+                }
 
+            });
 
+        }
 
 
-	/* MailForm ここまで
-	------------------------------------------------------------------------------*/
+        function suggestOnSP () {
 
+            /* タッチがサジェストの上に乗った時の判定 */
+            $('#form-inquiryListDisplay-jp, #form-inquiryListDisplay-en').on('click', function() {
 
+                /* サジェストクリアゾーンを出す */
+                $('#suggest-jp, #suggest-en').fadeIn();
+                $('.suggest-clear').show();
 
 
-	/* Suggest
-	------------------------------------------------------------------------------*/
+                /* サジェストクリアゾーンが全面に出るように設定 */
+                var window_width = $(window).width();
+                var window_height = $(window).height();
+                $('.suggest-clear').css({
+                    'width': window_width,
+                    'height': window_height,
+                });
 
+            });
 
 
+            /* タッチがサジェストクリアゾーンの上に乗った時の動作 */
+            $('.suggest-clear').on('click', function() {
+                $('#suggest-jp, #suggest-en').fadeOut();
+                $('.suggest-clear').hide();
+            });
 
-		function suggestOnPC () {
+        }
 
-			/* マウスカーソルがセレクターの上に乗ったらサジェストを出す */
-			$('.suggest-pc').on({
 
-				/* マウスオン */
-				'mouseenter': function() {
-				$('#suggest-jp, #suggest-en').fadeIn();
-				},
+        function suggestOff () {
 
-				/* マウスアウト */
-				'mouseleave': function() {
-					$('#suggest-jp, #suggest-en').fadeOut();
-				}
+            /* セレクター内のテキストをクリックした時の動作 */
+            $('#suggest-jp, #suggest-en').on('click', function() {
+                $('#suggest-jp, #suggest-en').fadeOut();
+                $('.suggest-clear').hide();
+            });
 
-			});
+        }
 
-		}
 
+        // - Suggest En:英語 / Jp:日本語 - //
+        // サジェスト外がクリッカブルになる為のサジェストクリアゾーン -初期設定: hidden- //
+        $('.suggest-clear').hide();
 
-		function suggestOnSP () {
+        $(window).on('load resize', function() {
 
-			/* タッチがサジェストの上に乗った時の判定 */
-			$('#form-inquiryListDisplay-jp, #form-inquiryListDisplay-en').on('click', function() {
+            /* サジェストを出す -for SP- */
+            if (user_agent.indexOf('iPhone') > 0 || user_agent.indexOf('iPad') > 0 || user_agent.indexOf('iPod') > 0 || user_agent.indexOf('Android') > 0 || user_agent.indexOf('BlackBerry') > 0 || user_agent.indexOf('windows Phone') > 0 || user_agent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(user_agent)) {
+                suggestOnSP();
+            }
 
-				/* サジェストクリアゾーンを出す */
-				$('#suggest-jp, #suggest-en').fadeIn();
-				$('.suggest-clear').show();
+            /* サジェストを出す -for PC- */
+            else {
+                suggestOnPC();
+            }
 
+            suggestOff();
 
-				/* サジェストクリアゾーンが全面に出るように設定 */
-				var window_width = $(window).width();
-				var window_height = $(window).height();
-				$('.suggest-clear').css({
-					'width': window_width,
-					'height': window_height,
-				});
+        });
 
-			});
 
+        // サジェスト内のお問い合わせ事項テキストを値として読み込む  //
+        var suggestBusinessJp = $('#menu-jp1').text();
+        var suggestRecruitJp  = $('#menu-jp2').text();
+        var suggestCreativeJp = $('#menu-jp3').text();
+        var suggestPersonalJp = $('#menu-jp4').text();
+        var suggestOtherJp    = $('#menu-jp5').text();
 
-			/* タッチがサジェストクリアゾーンの上に乗った時の動作 */
-			$('.suggest-clear').on('click', function() {
-				$('#suggest-jp, #suggest-en').fadeOut();
-				$('.suggest-clear').hide();
-			});
+        var suggestBusinessEn = $('#menu-en1').text();
+        var suggestRecruitEn  = $('#menu-en2').text();
+        var suggestCreativeEn = $('#menu-en3').text();
+        var suggestPersonalEn = $('#menu-en4').text();
+        var suggestOtherEn    = $('#menu-en5').text();
 
-		}
 
+        function suggestMenu(i) {
 
-		function suggestOff () {
+            var caseArr = i ;
 
-			/* セレクター内のテキストをクリックした時の動作 */
-			$('#suggest-jp, #suggest-en').on('click', function() {
-				$('#suggest-jp, #suggest-en').fadeOut();
-				$('.suggest-clear').hide();
-			});
+            switch (caseArr) {
 
-		}
+                case 'menu1' :
 
+                    $('#form-inquiryList-jp').val(suggestBusinessJp);
+                    $('#form-inquiryListDisplay-jp').html(suggestBusinessJp);
+                    $('#form-inquiryList-en').val(suggestBusinessEn);
+                    $('#form-inquiryListDisplay-en').html(suggestBusinessEn);
+                    break;
 
-		// - Suggest En:英語 / Jp:日本語 - //
-		// サジェスト外がクリッカブルになる為のサジェストクリアゾーン -初期設定: hidden- //
-		$('.suggest-clear').hide();
+                case 'menu2' :
 
-		$(window).on('load resize', function() {
+                    $('#form-inquiryList-jp').val(suggestRecruitJp);
+                    $('#form-inquiryListDisplay-jp').html(suggestRecruitJp);
+                    $('#form-inquiryList-en').val(suggestRecruitEn);
+                    $('#form-inquiryListDisplay-en').html(suggestRecruitEn);
+                    break;
 
-			/* サジェストを出す -for SP- */
-			if (user_agent.indexOf('iPhone') > 0 || user_agent.indexOf('iPad') > 0 || user_agent.indexOf('iPod') > 0 || user_agent.indexOf('Android') > 0 || user_agent.indexOf('BlackBerry') > 0 || user_agent.indexOf('windows Phone') > 0 || user_agent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(user_agent)) {
-				suggestOnSP();
-			}
+                case 'menu3' :
 
-			/* サジェストを出す -for PC- */
-			else {
-				suggestOnPC();
-			}
+                    $('#form-inquiryList-jp').val(suggestCreativeJp);
+                    $('#form-inquiryListDisplay-jp').html(suggestCreativeJp);
+                    $('#form-inquiryList-en').val(suggestCreativeEn);
+                    $('#form-inquiryListDisplay-en').html(suggestCreativeEn);
+                    break;
 
-			suggestOff();
+                case 'menu4' :
 
-		});
+                    $('#form-inquiryList-jp').val(suggestPersonalJp);
+                    $('#form-inquiryListDisplay-jp').html(suggestPersonalJp);
+                    $('#form-inquiryList-en').val(suggestPersonalEn);
+                    $('#form-inquiryListDisplay-en').html(suggestPersonalEn);
+                    break;
 
+                case 'menu5' :
 
-		// サジェスト内のお問い合わせ事項テキストを値として読み込む  //
-		var suggestBusinessJp = $('#menu-jp1').text();
-		var suggestRecruitJp  = $('#menu-jp2').text();
-		var suggestCreativeJp = $('#menu-jp3').text();
-		var suggestPersonalJp = $('#menu-jp4').text();
-		var suggestOtherJp    = $('#menu-jp5').text();
+                    $('#form-inquiryList-jp').val(suggestOtherJp);
+                    $('#form-inquiryListDisplay-jp').html(suggestOtherJp);
+                    $('#form-inquiryList-en').val(suggestOtherEn);
+                    $('#form-inquiryListDisplay-en').html(suggestOtherEn);
+                    break;
 
-		var suggestBusinessEn = $('#menu-en1').text();
-		var suggestRecruitEn  = $('#menu-en2').text();
-		var suggestCreativeEn = $('#menu-en3').text();
-		var suggestPersonalEn = $('#menu-en4').text();
-		var suggestOtherEn    = $('#menu-en5').text();
+            }
 
+        }
 
-		function suggestMenu(i) {
 
-			var caseArr = i ;
+        // テキストの値をinput#inquiryListへ与える  //
+        $('#menu-jp1, #menu-en1').on('mouseover', function() {
+            suggestMenu('menu1');
+        });
 
-			switch (caseArr) {
+        $('#menu-jp2, #menu-en2').on('mouseover', function() {
+            suggestMenu('menu2');
+        });
 
-				case 'menu1' :
+        $('#menu-jp3, #menu-en3').on('mouseover', function() {
+            suggestMenu('menu3');
+        });
 
-					$('#form-inquiryList-jp').val(suggestBusinessJp);
-					$('#form-inquiryListDisplay-jp').html(suggestBusinessJp);
-					$('#form-inquiryList-en').val(suggestBusinessEn);
-					$('#form-inquiryListDisplay-en').html(suggestBusinessEn);
-					break;
+        $('#menu-jp4, #menu-en4').on('mouseover', function() {
+            suggestMenu('menu4');
+        });
 
-				case 'menu2' :
+        $('#menu-jp5, #menu-en5').on('mouseover', function() {
+            suggestMenu('menu5');
+        });
 
-					$('#form-inquiryList-jp').val(suggestRecruitJp);
-					$('#form-inquiryListDisplay-jp').html(suggestRecruitJp);
-					$('#form-inquiryList-en').val(suggestRecruitEn);
-					$('#form-inquiryListDisplay-en').html(suggestRecruitEn);
-					break;
 
-				case 'menu3' :
 
-					$('#form-inquiryList-jp').val(suggestCreativeJp);
-					$('#form-inquiryListDisplay-jp').html(suggestCreativeJp);
-					$('#form-inquiryList-en').val(suggestCreativeEn);
-					$('#form-inquiryListDisplay-en').html(suggestCreativeEn);
-					break;
 
-				case 'menu4' :
+    /* Suggest ここまで
+    ------------------------------------------------------------------------------*/
 
-					$('#form-inquiryList-jp').val(suggestPersonalJp);
-					$('#form-inquiryListDisplay-jp').html(suggestPersonalJp);
-					$('#form-inquiryList-en').val(suggestPersonalEn);
-					$('#form-inquiryListDisplay-en').html(suggestPersonalEn);
-					break;
 
-				case 'menu5' :
 
-					$('#form-inquiryList-jp').val(suggestOtherJp);
-					$('#form-inquiryListDisplay-jp').html(suggestOtherJp);
-					$('#form-inquiryList-en').val(suggestOtherEn);
-					$('#form-inquiryListDisplay-en').html(suggestOtherEn);
-					break;
 
-			}
+    /* LanguageChange
+    ------------------------------------------------------------------------------*/
 
-		}
 
 
-		// テキストの値をinput#inquiryListへ与える  //
-		$('#menu-jp1, #menu-en1').on('mouseover', function() {
-			suggestMenu('menu1');
-		});
 
-		$('#menu-jp2, #menu-en2').on('mouseover', function() {
-			suggestMenu('menu2');
-		});
+        // ブラウザの言語設定から言語判定をとり、そこから日本語表示か英語表示か切り替える //
+        function browserLanguage() {
 
-		$('#menu-jp3, #menu-en3').on('mouseover', function() {
-			suggestMenu('menu3');
-		});
+            try {
+                return (navigator.browserLanguage || navigator.language || navigator.userLanguage).substr(0,2) == 'ja' ? 'ja' : 'en';
+            }
 
-		$('#menu-jp4, #menu-en4').on('mouseover', function() {
-			suggestMenu('menu4');
-		});
+            catch(e) {
+                return undefined;
+            }
 
-		$('#menu-jp5, #menu-en5').on('mouseover', function() {
-			suggestMenu('menu5');
-		});
+        }
+        var settinglang = browserLanguage();
 
 
+        // グローバルナビから言語判定をとり、そこから日本語表示か英語表示か切り替える -for PC- //
+        function showLanguagePC(i) {
 
+            var langArr = i ;
 
-	/* Suggest ここまで
-	------------------------------------------------------------------------------*/
+            switch (langArr) {
 
+                case 'ja' :
 
+                    /* Cookie判定 */
+                    $.cookie('lang', langArr, { expires: 365 , path: '/' });
+                    $.removeCookie('lang_en', { path: '/' });
 
+                    /* IDを切り替え */
+                    $('#ja').fadeIn().show();
+                    $('#en').fadeOut().hide();
+                    break;
 
-	/* LanguageChange
-	------------------------------------------------------------------------------*/
+                case 'en' :
 
+                    /* Cookie判定 */
+                    $.cookie('lang', langArr, { expires: 365 , path: '/' });
+                    $.removeCookie('lang_ja', { path: '/' });
 
+                    /* IDを切り替え */
+                    $('#en').fadeIn().show();
+                    $('#ja').fadeOut().hide();
+                    break;
 
+                default :
 
-		// ブラウザの言語設定から言語判定をとり、そこから日本語表示か英語表示か切り替える //
-		function browserLanguage() {
+                    /* Cookie判定 */
+                    $.cookie('lang', langArr, { expires: 365 , path: '/' });
+                    $.removeCookie('lang_en', { path: '/' });
 
-			try {
-				return (navigator.browserLanguage || navigator.language || navigator.userLanguage).substr(0,2) == 'ja' ? 'ja' : 'en';
-			}
+                    /* IDを切り替え */
+                    $('#ja').fadeIn().show();
+                    $('#en').fadeOut().hide();
+                    break;
 
-			catch(e) {
-				return undefined;
-			}
+            }
 
-		}
-		var settinglang = browserLanguage();
+        }
 
 
-		// グローバルナビから言語判定をとり、そこから日本語表示か英語表示か切り替える -for PC- //
-		function showLanguagePC(i) {
+        // グローバルナビから言語判定をとり、そこから日本語表示か英語表示か切り替える -for SP- //
+        function showLanguageSP(i) {
 
-			var langArr = i ;
+            var langArr = i ;
 
-			switch (langArr) {
+            switch (langArr){
 
-				case 'ja' :
+                case 'ja' :
 
-					/* Cookie判定 */
-					$.cookie('lang', langArr, { expires: 365 , path: '/' });
-					$.removeCookie('lang_en', { path: '/' });
+                    /* Cookie判定 */
+                    $.cookie('lang_ja', langArr, { expires: 365 , path: '/' });
+                    $.removeCookie('lang_en', { path: '/' });
 
-					/* IDを切り替え */
-					$('#ja').fadeIn().show();
-					$('#en').fadeOut().hide();
-					break;
+                    /* IDを切り替え */
+                    $('#ja').fadeIn().show();
+                    $('#en').fadeOut().hide();
 
-				case 'en' :
+                    /* Classを切り替え */
+                    $('.language-list li.btn-ja').removeClass('btn-ja').addClass('btn-ja-active');
+                    $('.language-list li.btn-en-active').removeClass('btn-en-active').addClass('btn-en');
+                    break;
 
-					/* Cookie判定 */
-					$.cookie('lang', langArr, { expires: 365 , path: '/' });
-					$.removeCookie('lang_ja', { path: '/' });
+                case 'en' :
 
-					/* IDを切り替え */
-					$('#en').fadeIn().show();
-					$('#ja').fadeOut().hide();
-					break;
+                    /* Cookie判定 */
+                    $.cookie('lang_en', langArr , { expires: 365 , path: '/' });
+                    $.removeCookie('lang_ja', { path: '/' });
 
-				default :
+                    /* IDを切り替え */
+                    $('#en').fadeIn().show();
+                    $('#ja').fadeOut().hide();
 
-					/* Cookie判定 */
-					$.cookie('lang', langArr, { expires: 365 , path: '/' });
-					$.removeCookie('lang_en', { path: '/' });
+                    /* Classを切り替え */
+                    $('.language-list li.btn-en').removeClass('btn-en').addClass('btn-en-active');
+                    $('.language-list li.btn-ja-active').removeClass('btn-ja-active').addClass('btn-ja');
+                    break;
 
-					/* IDを切り替え */
-					$('#ja').fadeIn().show();
-					$('#en').fadeOut().hide();
-					break;
+                default :
 
-			}
+                    /* Cookie判定 */
+                    $.cookie('lang_ja', langArr, { expires: 365 , path: '/' });
+                    $.removeCookie('lang_en', { path: '/' });
 
-		}
+                    /* IDを切り替え */
+                    $('#ja').fadeIn().show();
+                    $('#en').fadeOut().hide();
 
+                    /* Classを切り替え */
+                    $('.language-list li.btn-ja').removeClass('btn-ja').addClass('btn-ja-active');
+                    $('.language-list li.btn-en-active').removeClass('btn-en-active').addClass('btn-en');
+                    break;
 
-		// グローバルナビから言語判定をとり、そこから日本語表示か英語表示か切り替える -for SP- //
-		function showLanguageSP(i) {
+            }
 
-			var langArr = i ;
+        }
 
-			switch (langArr){
 
-				case 'ja' :
+        // デフォルトの表示 - lang_ja:和文 / lang_en:英文 - //
+        var lang_ja = $.cookie('lang_ja');
+        var lang_en = $.cookie('lang_en');
 
-					/* Cookie判定 */
-					$.cookie('lang_ja', langArr, { expires: 365 , path: '/' });
-					$.removeCookie('lang_en', { path: '/' });
+        if (lang_ja) {
+            showLanguagePC('ja');
+            showLanguageSP('ja');
+        }
 
-					/* IDを切り替え */
-					$('#ja').fadeIn().show();
-					$('#en').fadeOut().hide();
+        else if (lang_en) {
+            showLanguagePC('en');
+            showLanguageSP('en');
+        }
 
-					/* Classを切り替え */
-					$('.language-list li.btn-ja').removeClass('btn-ja').addClass('btn-ja-active');
-					$('.language-list li.btn-en-active').removeClass('btn-en-active').addClass('btn-en');
-					break;
+        else {
+            showLanguagePC();
+            showLanguageSP();
+        }
 
-				case 'en' :
 
-					/* Cookie判定 */
-					$.cookie('lang_en', langArr , { expires: 365 , path: '/' });
-					$.removeCookie('lang_ja', { path: '/' });
+        // 切り替えた時の表示  -for SP- //
+        $('#jaBtn').on('click', function() {
+            showLanguagePC('ja');
+        });
 
-					/* IDを切り替え */
-					$('#en').fadeIn().show();
-					$('#ja').fadeOut().hide();
+        $('#enBtn').on('click', function() {
+            showLanguageSP('en');
+        });
 
-					/* Classを切り替え */
-					$('.language-list li.btn-en').removeClass('btn-en').addClass('btn-en-active');
-					$('.language-list li.btn-ja-active').removeClass('btn-ja-active').addClass('btn-ja');
-					break;
 
-				default :
 
-					/* Cookie判定 */
-					$.cookie('lang_ja', langArr, { expires: 365 , path: '/' });
-					$.removeCookie('lang_en', { path: '/' });
 
-					/* IDを切り替え */
-					$('#ja').fadeIn().show();
-					$('#en').fadeOut().hide();
+    /* LanguageChange ここまで
+    ------------------------------------------------------------------------------*/
 
-					/* Classを切り替え */
-					$('.language-list li.btn-ja').removeClass('btn-ja').addClass('btn-ja-active');
-					$('.language-list li.btn-en-active').removeClass('btn-en-active').addClass('btn-en');
-					break;
 
-			}
 
-		}
 
+    /* SNSAPI
+    ------------------------------------------------------------------------------*/
 
-		// デフォルトの表示 - lang_ja:和文 / lang_en:英文 - //
-		var lang_ja = $.cookie('lang_ja');
-		var lang_en = $.cookie('lang_en');
 
-		if (lang_ja) {
-			showLanguagePC('ja');
-			showLanguageSP('ja');
-		}
 
-		else if (lang_en) {
-			showLanguagePC('en');
-			showLanguageSP('en');
-		}
 
-		else {
-			showLanguagePC();
-			showLanguageSP();
-		}
+        // Twitter-Facebook //
+        function popupLink(type, _self) {
 
+            var href,
+                windowname;
 
-		// 切り替えた時の表示  -for SP- //
-		$('#jaBtn').on('click', function() {
-			showLanguagePC('ja');
-		});
+            if (type === 'twitter') {
+                href = 'http://twitter.com/share?original_referer=http://wwww.test.jp/&textテキストが入ります。&url=http://wwww.test.jp/';
+                windowname = 'twitterwindow';
+            }
 
-		$('#enBtn').on('click', function() {
-			showLanguageSP('en');
-		});
+            else if (type === 'facebook') {
+                href = 'http://www.facebook.com/share.php?u=http://www.test.jp/';
+                windowname = 'facebookwindow';
+            }
 
+            window.open(href, windowname, 'width=550, height=450,personalbar=0,toolbar=0,scrollbars=1,resizable=1');
+            return false;
 
+        }
 
 
-	/* LanguageChange ここまで
-	------------------------------------------------------------------------------*/
 
 
+    /* SNSAPI ここまで
+    ------------------------------------------------------------------------------*/
 
 
-	/* SNSAPI
-	------------------------------------------------------------------------------*/
 
+    /* Kerning / Centering Adjust
+    ------------------------------------------------------------------------------*/
 
 
+        /* Kerning
+        ----------------------------------------------------*/
 
-		// Twitter-Facebook //
-		function popupLink(type, _self) {
 
-			var href,
-				windowname;
+        /*Attention
+        ----------------------------------------------------------------------------------------------------
 
-			if (type === 'twitter') {
-				href = 'http://twitter.com/share?original_referer=http://wwww.test.jp/&textテキストが入ります。&url=http://wwww.test.jp/';
-				windowname = 'twitterwindow';
-			}
+        ※約物含めたリンク箇所でのカーニング指定を行うと挙動がおかしくなる
+        　→約物を記号化、前後に半角スペースを入れる事で対応
+          例）<a href="javascript:void(0)" class="policy"> &#12300;個人情報の取り扱いについて&#12301; </a>
 
-			else if (type === 'facebook') {
-				href = 'http://www.facebook.com/share.php?u=http://www.test.jp/';
-				windowname = 'facebookwindow';
-			}
+        ----------------------------------------------------------------------------------------------------
+        */
 
-			window.open(href, windowname, 'width=550, height=450,personalbar=0,toolbar=0,scrollbars=1,resizable=1');
-			return false;
 
-		}
+        function kerningDir(rootDir) {
 
+            return $.getJSON(rootDir + 'ajax/kerning.json', function(data) {
 
+                setTimeout(function() {
 
+                    /* 中にテキストが入るタグの判定 */
+                    var tag = $('p, h1, h2, h3, h4, h5, h6, .carousel-caption, dl.news dt, dl.news dd, dl#column dt, dl#column dd, dl#form-layout-jp dt, dl#form-layout-en dt, ul.list li, ol.list li, ul.suggest-menu li, ul.form-accept li, th, td, a, address')
 
-	/* SNSAPI ここまで
-	------------------------------------------------------------------------------*/
+                    $(tag).kerning({
+                        'data': data
+                    });
 
+                }, 100);
 
+            });
 
+        }
 
-	/* Device Adjust
-	------------------------------------------------------------------------------*/
 
+        if (header_navi_1st.length || header_navi_1st_none.length) {
+            kerningDir('./');
+        }
 
+        else if (header_navi_2nd.length) {
+            kerningDir('../');
+        }
 
+        else if (header_navi_3rd.length) {
+            kerningDir('../../');
+        }
 
-		// SP版とPC版でレイアウトを変える  //
-		/* ブレークポイントの設定 */
-		$(window).setBreakpoints({
 
-			distinct: true,
-			breakpoints: [ 1, 945 ]
 
-		});
 
+        /* Centering
+        ----------------------------------------------------*/
 
-		/* ブレークポイント945の時 */
-		$(window).on('enterBreakpoint945', function() {
 
+        function centering() {
 
-			/* PC用画像ソースフォルダに切り替える */
-			$('.img-response').each(function() {
-				$(this).attr('src', $(this).attr('src').replace('sp', 'pc'));
-			});
 
-			$('#form-layout-jp').each(function() {
-				$(this).attr('class', $(this).attr('class').replace('sp', 'pc'));
-				$('.colon').show();
-				$('dl.form-pc dd').css({
-					'width': 400 + 'px'
-				});
-			});
+            var box = $('.centerParentWrapper');
+            var fixedContainer = $('#fixed-container');
 
-			$('#suggest').each(function() {
-				$(this).attr('class', $(this).attr('class').replace('sp', 'pc'));
-			});
 
+            var padding = parseInt(box.css('padding-top')) + parseInt(box.css('padding-bottom'));
+            var margin = 50;
+            var min_height = box.height() + padding + footer.height() + margin;
 
-		});
 
+            if( window_inner_height < min_height ) {
 
-		/* ブレークポイント1の時 */
-		$(window).on('enterBreakpoint1', function() {
+                fixedContainer.css({
+                    'position' : 'relative'
+                });
 
+            }
 
-			/* SP用画像ソースフォルダに切り替える */
-			$('.img-response').each(function() {
-				$(this).attr('src', $(this).attr('src').replace('pc', 'sp'));
-			});
+            else {
 
-			$('#form-layout-jp').each(function() {
-				$(this).attr('class', $(this).attr('class').replace('pc', 'sp'));
-				$('.colon').hide();
-				$('dl.form-sp dd').css({
-					'width': 400 / 400 * 100 + '%'
-				});
+                fixedContainer.css({
+                    'position' : 'fixed'
+                });
 
-			});
+            }
 
-			$('#suggest').each(function() {
-				$(this).attr('class', $(this).attr('class').replace('pc', 'sp'));
-			});
+            fixedContainer.css({
+                'height' : window_inner_height + 'px'
+            });
 
+            fixedContainer.css({
+                'height' : window_inner_height - 30 + 'px'
+            });
 
-		});
 
+        }
 
-		// Android対策 -横向きで微妙にずれる- //
-		var portraitWidth,landscapeWidth;
 
-		$(window).on('load resize', function() {
+        $(window).on('load resize', function() {
+            centering();
+        }).trigger('resize');
 
 
-			/* iPhone, iPadなど */
-			if ((user_agent.indexOf('iPhone') > 0 && user_agent.indexOf('iPad') == -1) || user_agent.indexOf('iPod') > 0) {
 
-				$('html').css({
-					'zoom': 1
-				});
 
-			}
+    /* Centering / Kerning Adjust ここまで
+    ------------------------------------------------------------------------------*/
 
 
-			/* Android */
-			else if (user_agent.indexOf('Android') > 0) {
 
 
-				/* 傾き（ポートレイトかランドスケープか）を判定 */
-				if ('object' === typeof window.onorientationchange) {
+    /* Device Adjust
+    ------------------------------------------------------------------------------*/
 
 
-					window.addEventListener('orientationchange', function() {
 
-						/* ランドスケープ */
-						if (window.innerHeight > window.innerWidth) {
 
-							$('html').css({
-								'zoom': landscapeWidth / 320
-							});
+        // SP版とPC版でレイアウトを変える  //
+        /* ブレークポイントの設定 */
+        $(window).setBreakpoints({
 
-						}
+            distinct: true,
+            breakpoints: [ 1, 945 ]
 
-						/* ポートレイト */
-						else {
+        });
 
-							$('html').css({
-								'zoom': portraitWidth / 320
-							});
 
-						}
+        /* ブレークポイント945の時 */
+        $(window).on('enterBreakpoint945', function() {
 
-					}, false);
 
+            /* PC用画像ソースフォルダに切り替える */
+            $('.img-response').each(function() {
+                $(this).attr('src', $(this).attr('src').replace('sp', 'pc'));
+            });
 
-				}
+            $('#form-layout-jp').each(function() {
+                $(this).attr('class', $(this).attr('class').replace('sp', 'pc'));
+                $('.colon').show();
+                $('dl.form-pc dd').css({
+                    'width': 400 + 'px'
+                });
+            });
 
+            $('#suggest').each(function() {
+                $(this).attr('class', $(this).attr('class').replace('sp', 'pc'));
+            });
 
-			}
 
+        });
 
-		}).trigger('resize');
 
+        /* ブレークポイント1の時 */
+        $(window).on('enterBreakpoint1', function() {
 
 
+            /* SP用画像ソースフォルダに切り替える */
+            $('.img-response').each(function() {
+                $(this).attr('src', $(this).attr('src').replace('pc', 'sp'));
+            });
 
-	/* Device Adjust ここまで
-	------------------------------------------------------------------------------*/
+            $('#form-layout-jp').each(function() {
+                $(this).attr('class', $(this).attr('class').replace('pc', 'sp'));
+                $('.colon').hide();
+                $('dl.form-sp dd').css({
+                    'width': 400 / 400 * 100 + '%'
+                });
+
+            });
+
+            $('#suggest').each(function() {
+                $(this).attr('class', $(this).attr('class').replace('pc', 'sp'));
+            });
+
+
+        });
+
+
+        // Android対策 -横向きで微妙にずれる- //
+        var portraitWidth,landscapeWidth;
+
+        $(window).on('load resize', function() {
+
+
+            /* iPhone, iPadなど */
+            if ((user_agent.indexOf('iPhone') > 0 && user_agent.indexOf('iPad') == -1) || user_agent.indexOf('iPod') > 0) {
+
+                $('html').css({
+                    'zoom': 1
+                });
+
+            }
+
+
+            /* Android */
+            else if (user_agent.indexOf('Android') > 0) {
+
+
+                /* 傾き（ポートレイトかランドスケープか）を判定 */
+                if ('object' === typeof window.onorientationchange) {
+
+
+                    window.addEventListener('orientationchange', function() {
+
+                        /* ランドスケープ */
+                        if (window.innerHeight > window.innerWidth) {
+
+                            $('html').css({
+                                'zoom': landscapeWidth / 320
+                            });
+
+                        }
+
+                        /* ポートレイト */
+                        else {
+
+                            $('html').css({
+                                'zoom': portraitWidth / 320
+                            });
+
+                        }
+
+                    }, false);
+
+
+                }
+
+
+            }
+
+
+        }).trigger('resize');
+
+
+
+
+    /* Device Adjust ここまで
+    ------------------------------------------------------------------------------*/
 
 
 
