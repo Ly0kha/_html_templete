@@ -617,35 +617,35 @@ $(function() {
                 /* 用途別colorbox実行スクリプト */
                 $('.group1').colorbox({
 
-                    rel: 'group1',
-                    transition: 'fade',
-                    slideshow: false,
+                    rel:            'group1',
+                    transition:     'fade',
+                    slideshow:      false,
 
-                    fixed: true,
-                    maxWidth: '90%',
-                    maxHeight: '90%',
-                    reposition: true,
-                    opacity: '0.3',
+                    fixed:          true,
+                    maxWidth:       '90%',
+                    maxHeight:      '90%',
+                    reposition:     true,
+                    opacity:        '0.3',
 
-                    retinaImage: false,
-                    retinaUrl: false
+                    retinaImage:    false,
+                    retinaUrl:      false
 
                 });
 
                 $('.group2').colorbox({
 
-                    rel: 'group2',
-                    transition: 'fade',
-                    slideshow: false,
+                    rel:            'group2',
+                    transition:     'fade',
+                    slideshow:      false,
 
-                    fixed: true,
-                    maxWidth: '90%',
-                    maxHeight: '90%',
-                    reposition: true,
-                    opacity: '0.3',
+                    fixed:          true,
+                    maxWidth:       '90%',
+                    maxHeight:      '90%',
+                    reposition:     true,
+                    opacity:        '0.3',
 
-                    retinaImage: false,
-                    retinaUrl: false
+                    retinaImage:    false,
+                    retinaUrl:      false
 
                 });
 
@@ -655,32 +655,30 @@ $(function() {
 
                 $('.youtube').colorbox({
 
-                    iframe: true,
-                    innerWidth: 640,
-                    innerHeight: 390
+                    iframe:         true,
+                    innerWidth:     640,
+                    innerHeight:    390
 
                 });
 
                 $('.vimeo').colorbox({
 
-                    iframe: true,
-                    innerWidth: 500,
-                    innerHeight: 409
+                    iframe:         true,
+                    innerWidth:     500,
+                    innerHeight:    409
 
                 });
 
                 $('.iframe').colorbox({
-
-                    iframe: true,
-                    width: '80%',
-                    height: '80%'
+                    iframe:         true,
+                    width:          '80%',
+                    height:         '80%'
 
                 });
 
                 $('.inline').colorbox({
-
-                    inline: true,
-                    width: '50%'
+                    inline:         true,
+                    width:          '50%'
 
                 });
 
@@ -713,10 +711,10 @@ $(function() {
 
                 $('.retina').colorbox({
 
-                    rel: 'group5',
-                    transition: 'none',
-                    retinaImage: true,
-                    retinaUrl: true
+                    rel:            'group5',
+                    transition:     'none',
+                    retinaImage:    true,
+                    retinaUrl:      true
 
                 });
 
@@ -727,8 +725,8 @@ $(function() {
                     $('#click').css({
 
                         'background-color': '#f00',
-                        'color': '#fff',
-                        'cursor': 'inherit'
+                        'color':            '#fff',
+                        'cursor':           'inherit'
 
                     }).text("Open this window again and this message will still be here.");
                     return false;
@@ -767,16 +765,19 @@ $(function() {
     ------------------------------------------------------------------------------*/
 
 
-        /* フォームサブミットの判定 */
-        var form_submit_on_ja = $('input#btn-confirm-on-ja');
-        var form_submit_on_en = $('input#btn-confirm-on-en');
-        var form_reset_on_ja = $('input#btn-reset-on-ja');
-        var form_reset_on_en = $('input#btn-reset-on-en');
 
-        var form_submit_off_ja = $('input#btn-confirm-off-ja');
-        var form_submit_off_en = $('input#btn-confirm-off-en');
-        var form_reset_off_ja = $('input#btn-reset-off-ja');
-        var form_reset_off_en = $('input#btn-reset-off-en');
+
+        /* フォームサブミットの判定 */
+        var form_submit_on_ja   = $('input#btn-confirm-on-ja');
+        var form_submit_on_en   = $('input#btn-confirm-on-en');
+        var form_reset_on_ja    = $('input#btn-reset-on-ja');
+        var form_reset_on_en    = $('input#btn-reset-on-en');
+
+        var form_submit_off_ja  = $('input#btn-confirm-off-ja');
+        var form_submit_off_en  = $('input#btn-confirm-off-en');
+        var form_reset_off_ja   = $('input#btn-reset-off-ja');
+        var form_reset_off_en   = $('input#btn-reset-off-en');
+
 
 
 
@@ -1095,8 +1096,6 @@ $(function() {
 
 
 
-            var form_accept = $('#accept-ja, #accept-en');
-
 
             // 同意する //
             function mailFormInputAbled() {
@@ -1124,9 +1123,10 @@ $(function() {
             function mailFormInputReset() {
 
                 /* input、label、pの値を設定 */
-                var form_label_error = $('label.error');
-                var form_p_html = $('p#form-inquiryListDisplay-jp, p#form-inquiryListDisplay-en');
-                var form_input_val = $('input#form-inquiryList-jp, input#form-inquiryList-en','input:text, input:checked, textarea');
+                var form_label_error    = $('label.error');
+                var form_p_html         = $('p#form-inquiryListDisplay-jp, p#form-inquiryListDisplay-en');
+                var form_input_val      = $('input#form-inquiryList-jp, input#form-inquiryList-en','input:text, input:checked, textarea');
+                var form_accept         = $('input#btn-reset-on-ja, input#btn-reset-on-en');
 
 
                 /* バリデート注意文言を消す -日本語- */
@@ -1171,9 +1171,9 @@ $(function() {
             mailFormInputDisabled();
 
             /*  accept */
-            form_accept.on('click', function() {
+            $('#accept-ja,#accept-en').on('click', function() {
 
-                if (form_accept.length === 1) {
+                if ($('#accept-ja:checked,#accept-en:checked').length === 1) {
                     mailFormInputAbled();
                 }
 
@@ -1275,8 +1275,8 @@ $(function() {
                 var window_width = $(window).width();
                 var window_height = $(window).height();
                 $('.suggest-clear').css({
-                    'width': window_width,
-                    'height': window_height,
+                    'width':    window_width,
+                    'height':   window_height,
                 });
 
             });
@@ -1324,17 +1324,17 @@ $(function() {
 
 
         // サジェスト内のお問い合わせ事項テキストを値として読み込む  //
-        var suggestBusinessJp = $('#menu-jp1').text();
-        var suggestRecruitJp  = $('#menu-jp2').text();
-        var suggestCreativeJp = $('#menu-jp3').text();
-        var suggestPersonalJp = $('#menu-jp4').text();
-        var suggestOtherJp    = $('#menu-jp5').text();
+        var suggestBusinessJp   = $('#menu-jp1').text();
+        var suggestRecruitJp    = $('#menu-jp2').text();
+        var suggestCreativeJp   = $('#menu-jp3').text();
+        var suggestPersonalJp   = $('#menu-jp4').text();
+        var suggestOtherJp      = $('#menu-jp5').text();
 
-        var suggestBusinessEn = $('#menu-en1').text();
-        var suggestRecruitEn  = $('#menu-en2').text();
-        var suggestCreativeEn = $('#menu-en3').text();
-        var suggestPersonalEn = $('#menu-en4').text();
-        var suggestOtherEn    = $('#menu-en5').text();
+        var suggestBusinessEn   = $('#menu-en1').text();
+        var suggestRecruitEn    = $('#menu-en2').text();
+        var suggestCreativeEn   = $('#menu-en3').text();
+        var suggestPersonalEn   = $('#menu-en4').text();
+        var suggestOtherEn      = $('#menu-en5').text();
 
 
         function suggestMenu(i) {
