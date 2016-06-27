@@ -503,8 +503,8 @@ var GLOBAL = GLOBAL || self;
     nav_tabs.tabs({
 
         collapsible: false,
-        show: { effect: 'fadeIn', duration: 800 },
-        fx: { height: 'toggle', opacity: 'toggle', duration: 300 }
+        show:   { effect: 'fadeIn', duration: 800 },
+        fx:     { height: 'toggle', opacity: 'toggle', duration: 300 }
 
     });
 
@@ -568,20 +568,32 @@ var GLOBAL = GLOBAL || self;
     // PCのみ発火 //
     if (user_agent.indexOf('iPhone') > 0 || user_agent.indexOf('iPad') > 0 || user_agent.indexOf('iPod') > 0 || user_agent.indexOf('Android') > 0 || user_agent.indexOf('BlackBerry') > 0 || user_agent.indexOf('windows Phone') > 0 || user_agent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(user_agent)) {
 
-        img_mouse_over.mouseover(function() {
-            mouseOver();
-        }).mouseout(function() {
-            mouseOver();
+        img_mouse_over.on({
+
+            'mouseenter': function() {
+                mouseOver();
+            },
+
+            'mouseleave': function() {
+                mouseOver();
+            }
+
         });
 
     }
 
     else {
 
-        img_mouse_over.mouseover(function() {
-            mouseOver('on');
-        }).mouseout(function() {
-            mouseOver('off')
+        img_mouse_over.on({
+
+            'mouseenter': function() {
+                mouseOver('on');
+            },
+
+            'mouseleave': function() {
+                mouseOver('off');
+            }
+
         });
 
     }
@@ -594,10 +606,11 @@ var GLOBAL = GLOBAL || self;
     ----------------------------------------------------*/
 
 
-    // マウスオーバー用のクラスを設定 //
+    // ブランク用のクラスを設定 //
     var window_blank = $('.blank');
 
 
+    // クリックしたらアンカーリンクをブランクで動作 //
     window_blank.on('click', function() {
 
         // リンクの判定 //
@@ -622,7 +635,7 @@ var GLOBAL = GLOBAL || self;
 
 
 
-
+    // ライトボックス(colorbox)の実行スクリプト //
     function colorbox(rootDir) {
 
         $.getScript(rootDir + 'js/lib/jquery/jquery.colorbox.min.js', function(){
@@ -778,7 +791,7 @@ var GLOBAL = GLOBAL || self;
 
 
 
-    /* フォームサブミットの判定 */
+    // フォームサブミットの判定 //
     var form_submit_on_ja   = $('input#btn-confirm-on-ja');
     var form_submit_on_en   = $('input#btn-confirm-on-en');
 
@@ -1207,16 +1220,18 @@ var GLOBAL = GLOBAL || self;
 
 
         // 同意ボタンを押したときのリセット、確認ボタンの動作 //
-        /*  default */
+        /*  デフォルト */
         mailFormInputAbled('off');
 
-        /*  accept */
+        /*  同意する */
         $('#accept-ja,#accept-en').on('click', function() {
 
+             /*  同意するにチェックが入っている場合 */
             if ($('#accept-ja:checked,#accept-en:checked').length === 1) {
                 mailFormInputAbled('on');
             }
 
+            /*  同意するにチェックが入っていない場合 */
             else {
                 mailFormInputAbled('off');
             }
@@ -1282,7 +1297,7 @@ var GLOBAL = GLOBAL || self;
 
             /* マウスオン */
             'mouseenter': function() {
-            $('#suggest-jp, #suggest-en').fadeIn();
+                $('#suggest-jp, #suggest-en').fadeIn();
             },
 
             /* マウスアウト */
