@@ -435,9 +435,9 @@ var GLOBAL = GLOBAL || self;
             $('a[rel=scroll]').on('click', function() {
 
                 // リンクの判定 //
-                var href = $(this).attr('href');
+                var href    = $(this).attr('href');
 
-                var target = $(href === "#" || href === "" ? 'html' : href);
+                var target  = $(href === "#" || href === "" ? 'html' : href);
                 target.velocity('scroll', {
                     duration:   500,
                     easing:     'easeOutExpo'
@@ -1171,7 +1171,7 @@ var GLOBAL = GLOBAL || self;
             var form_label_error    = $('label.error');
             var form_p_html         = $('p#form-inquiryListDisplay-jp, p#form-inquiryListDisplay-en');
             var form_input_val      = $('input#form-inquiryList-jp, input#form-inquiryList-en','input:text', 'input:checked', 'textarea');
-            var form_accept         = $('#accept-ja, #accept-en')
+            var form_accept         = $('#accept-ja, #accept-en');
 
             /* バリデート注意文言を消す */
             form_label_error.html('').hide();
@@ -1638,13 +1638,13 @@ var GLOBAL = GLOBAL || self;
             windowname;
 
         if (type === 'twitter') {
-            href = 'http://twitter.com/share?original_referer=http://wwww.test.jp/&textテキストが入ります。&url=http://wwww.test.jp/';
-            windowname = 'twitterwindow';
+            href        = 'http://twitter.com/share?original_referer=http://wwww.test.jp/&textテキストが入ります。&url=http://wwww.test.jp/';
+            windowname  = 'twitterwindow';
         }
 
         else if (type === 'facebook') {
-            href = 'http://www.facebook.com/share.php?u=http://www.test.jp/';
-            windowname = 'facebookwindow';
+            href        = 'http://www.facebook.com/share.php?u=http://www.test.jp/';
+            windowname  = 'facebookwindow';
         }
 
         window.open(href, windowname, 'width=550, height=450,personalbar=0,toolbar=0,scrollbars=1,resizable=1');
@@ -1723,11 +1723,11 @@ var GLOBAL = GLOBAL || self;
 
     function centering() {
 
-        var box = $('.centerParentWrapper');
-        var fixed_container = $('#fixed-container');
-        var padding = parseInt(box.css('padding-top')) + parseInt(box.css('padding-bottom'));
-        var margin = 50;
-        var min_height = box.height() + padding + footer.height() + margin;
+        var box                 = $('.centerParentWrapper');
+        var fixed_container     = $('#fixed-container');
+        var padding             = parseInt(box.css('padding-top')) + parseInt(box.css('padding-bottom'));
+        var margin              = 50;
+        var min_height          = box.height() + padding + footer.height() + margin;
 
 
         if( window_inner_height < min_height ) {
