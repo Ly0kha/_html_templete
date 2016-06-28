@@ -3,6 +3,59 @@
 
 
 
+/*!
+
+ * Bootstrap v3.3.5 (http://getbootstrap.com)
+ * Copyright 2011-2016 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+
+ * Colorbox 1.6.1 (http://www.jacklmoore.com/colorbox/)
+ * Copyright Jack Moore.
+ * Licensed under MIT (http://www.opensource.org/licenses/mit-license.php)
+
+ */
+
+
+
+
+/*----------------------------------------------------
+
+・Webフォント
+　→Webフォントの実装
+
+・レイアウト共通CSS
+　→コンテンツ全体のレイアウトに関する実装
+
+・共通パーツCSS
+　→UIデザインで必要な実装
+
+・フォーム用共通CSS
+　→フォームに於けるUIデザインで必要な実装
+
+・ライトボックス - for Colorbox
+　→モーダルウィンドウのCSS実装
+
+・コンテンツ調整用CSS
+ →フロート、アライン、パディング、マージン、幅などの調整で使える実装
+
+・下層ページ
+ →2nd以降のCSS実装
+
+----------------------------------------------------*/
+
+
+
+
+/* Webフォント
+------------------------------------
+ -font-family: 'Noto Sans Japanese';
+  font-weight: 100 - 900
+
+------------------------------------------------------------------------------*/
+
+
+
+
 @font-face {
 	font-family: 'Noto Sans Japanese';
 	font-style: normal;
@@ -70,51 +123,11 @@
 
 
 
-/*!
-
- * Bootstrap v3.3.5 (http://getbootstrap.com)
- * Copyright 2011-2016 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
-
- * Colorbox 1.6.1 (http://www.jacklmoore.com/colorbox/)
- * Copyright Jack Moore.
- * Licensed under MIT (http://www.opensource.org/licenses/mit-license.php)
-
- */
-
-
-
-
-/*----------------------------------------------------
-
-・レイアウト共通CSS
-　→コンテンツ全体のレイアウトに関する実装
-
-・共通パーツCSS
-　→UIデザインで必要な実装
-
-・フォーム用共通CSS
-　→フォームに於けるUIデザインで必要な実装
-
-・ライトボックス - for Colorbox
-　→モーダルウィンドウのCSS実装
-
-・コンテンツ調整用CSS
- →フロート、アライン、パディング、マージン、幅などの調整で使える実装
-
-・下層ページ
- →2nd以降のCSS実装
-
-----------------------------------------------------*/
-
-
-
-
 /* レイアウト共通CSS
 ------------------------------------
  -ページ本体
- -コンテンツ／ラッパー
- -ヘッダー／フッター
+ -コンテンツ / ラッパー
+ -ヘッダー / フッター
  -背景色
 
 ------------------------------------------------------------------------------*/
@@ -176,7 +189,7 @@ body {
 }
 
 
-/* コンテンツ／ラッパー
+/* コンテンツ / ラッパー
 ----------------------------------------*/
 
 
@@ -206,7 +219,7 @@ body {
 }
 
 
-/* ヘッダー／フッター
+/* ヘッダー / フッター
 ----------------------------------------*/
 
 
@@ -301,7 +314,7 @@ ul.form-accept li,
 a,
 address {
 	/* letter-spacing: 0.125em; */
-	letter-spacing: 0.05em;
+	letter-spacing: 0.075em;
 }
 
 label {
@@ -390,6 +403,8 @@ p.caption-right {
 	text-align: right;
 }
 
+
+/* 文字太さ */
 .bold {
 	font-weight: bold;
 }
@@ -1345,7 +1360,9 @@ h3.accept {
 	margin: 0px;
 	padding: 0px;
 	overflow: hidden;
+	/*
 	font-family: "Lucida Grande","ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ",Meiryo,"ＭＳ Ｐゴシック", "MS PGothic",Helvetica,Osaka,sans-serif;
+	*/
 	z-index: 3000;
 }
 
