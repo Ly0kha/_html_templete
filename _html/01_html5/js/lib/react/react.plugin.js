@@ -11,6 +11,8 @@
 ----------------------------------------------------*/
 
 
+
+
 $.ajax ({
     dataType: 'json',
 });
@@ -226,6 +228,45 @@ $.getJSON(kerningJsonFirstDir, function(data) {
     };
 
     var m = ReactDOM.render(<Avatar02 user={user} />, document.getElementById('test13'));
+
+
+    /*----------------------------------------------------------*/
+
+
+    var User = React.createClass({
+
+        propTypes: {
+            user: React.PropTypes.shape({
+                name:   React.PropTypes.string.isRequired,
+                id:     React.PropTypes.number.isRequired,
+            })
+        },
+
+        render() {
+
+            return (
+
+                <div className='box center mb-10'>
+                    <p className='small mg-00 center'>
+                        {this.props.user.id}
+                    </p>
+                    <p className='small mg-00 center'>
+                        {this.props.user.name}
+                    </p>
+                </div>
+
+            );
+
+        }
+
+    });
+
+    var user = {
+        name:       'Atsushi Kikushima',
+        id:         10
+    };
+
+    var m = ReactDOM.render(<User user={user} />, document.getElementById('test14'));
 
 
     /*【TEST】 React実装 ここまで
