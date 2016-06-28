@@ -402,11 +402,11 @@ var GLOBAL = GLOBAL || self;
     function dtAdjust() {
 
         /* dtの幅 */
-        var dt_column_width     = $('dl#column dt').width();
+        var dt_column_width     = $('dl.column dt').width();
         var dt_news_width       = $('dl.news dt').width();
 
         /* ddの判定 */
-        var dd_column           = $('dl#column dd');
+        var dd_column           = $('dl.column dd');
         var dd_news             = $('dl.news dd');
 
         /* 可変部分の高さを適用 */
@@ -428,16 +428,18 @@ var GLOBAL = GLOBAL || self;
     ----------------------------------------------------*/
 
 
+    // ページスクロール //
     function pagescroll() {
 
         return $.getScript('//cdnjs.cloudflare.com/ajax/libs/velocity/1.2.2/velocity.js', function() {
 
             $('a[rel=scroll]').on('click', function() {
 
-                // リンクの判定 //
+                /* リンクの判定 */
                 var href    = $(this).attr('href');
-
                 var target  = $(href === "#" || href === "" ? 'html' : href);
+
+                /* アンカーリンクへスクロール */
                 target.velocity('scroll', {
                     duration:   500,
                     easing:     'easeOutExpo'
@@ -613,7 +615,7 @@ var GLOBAL = GLOBAL || self;
     // クリックしたらアンカーリンクをブランクで動作 //
     window_blank.on('click', function() {
 
-        // リンクの判定 //
+        /* リンクの判定 */
         var href = $(this).attr('href');
 
         window.open(href, '_blank');
@@ -632,6 +634,7 @@ var GLOBAL = GLOBAL || self;
 
 /* Lightbox
 ------------------------------------------------------------------------------*/
+
 
 
 
@@ -876,7 +879,10 @@ var GLOBAL = GLOBAL || self;
 
                     case 'inquiry-list-jp' :
 
+                        /* アンカーの判定 */
                         var target = $('#inquiry-list-jp');
+
+                        /* アンカーリンクへスクロール */
                         target.velocity('scroll', {
                             duration:   500,
                             easing:     'easeOutExpo'
@@ -886,7 +892,10 @@ var GLOBAL = GLOBAL || self;
 
                     case 'inquiry-companyName-jp' :
 
+                        /* アンカーの判定 */
                         var target = $('#inquiry-companyName-jp');
+
+                        /* アンカーリンクへスクロール */
                         target.velocity('scroll', {
                             duration:   500,
                             easing:     'easeOutExpo'
@@ -896,7 +905,10 @@ var GLOBAL = GLOBAL || self;
 
                     case 'inquiry-nameJa-jp' :
 
+                        /* アンカーの判定 */
                         var target = $('#inquiry-nameJa-jp');
+
+                        /* アンカーリンクへスクロール */
                         target.velocity('scroll', {
                             duration:   500,
                             easing:     'easeOutExpo'
@@ -906,7 +918,10 @@ var GLOBAL = GLOBAL || self;
 
                     case 'inquiry-nameEn-jp' :
 
+                        /* アンカーの判定 */
                         var target = $('#inquiry-nameEn-jp');
+
+                        /* アンカーリンクへスクロール */
                         target.velocity('scroll', {
                             duration:   500,
                             easing:     'easeOutExpo'
@@ -916,7 +931,10 @@ var GLOBAL = GLOBAL || self;
 
                     case 'inquiry-mail-jp' :
 
+                        /* アンカーの判定 */
                         var target = $('#inquiry-mail-jp');
+
+                        /* アンカーリンクへスクロール */
                         target.velocity('scroll', {
                             duration:   500,
                             easing:     'easeOutExpo'
@@ -925,7 +943,11 @@ var GLOBAL = GLOBAL || self;
                         break;
 
                     case 'inquiry-text-jp' :
+
+                        /* アンカーの判定 */
                         var target = $('#inquiry-text-jp');
+
+                        /* アンカーリンクへスクロール */
                         target.velocity('scroll', {
                             duration:   500,
                             easing:     'easeOutExpo'
@@ -1036,7 +1058,10 @@ var GLOBAL = GLOBAL || self;
 
                     case 'inquiry-list-en' :
 
+                        /* アンカーの判定 */
                         var target = $('#inquiry-list-en');
+
+                        /* アンカーリンクへスクロール */
                         target.velocity('scroll', {
                             duration:   500,
                             easing:     'easeOutExpo'
@@ -1046,7 +1071,10 @@ var GLOBAL = GLOBAL || self;
 
                     case 'inquiry-companyName-en' :
 
+                        /* アンカーの判定 */
                         var target = $('#inquiry-companyName-en');
+
+                        /* アンカーリンクへスクロール */
                         target.velocity('scroll', {
                             duration:   500,
                             easing:     'easeOutExpo'
@@ -1056,7 +1084,10 @@ var GLOBAL = GLOBAL || self;
 
                     case 'inquiry-nameEn-en' :
 
+                        /* アンカーの判定 */
                         var target = $('#inquiry-nameEn-en');
+
+                        /* アンカーリンクへスクロール */
                         target.velocity('scroll', {
                             duration:   500,
                             easing:     'easeOutExpo'
@@ -1066,7 +1097,10 @@ var GLOBAL = GLOBAL || self;
 
                     case 'inquiry-mail-en' :
 
+                        /* アンカーの判定 */
                         var target = $('#inquiry-mail-en');
+
+                        /* アンカーリンクへスクロール */
                         target.velocity('scroll', {
                             duration:   500,
                             easing:     'easeOutExpo'
@@ -1076,7 +1110,10 @@ var GLOBAL = GLOBAL || self;
 
                     case 'inquiry-text-en' :
 
+                        /* アンカーの判定 */
                         var target = $('#inquiry-text-en');
+
+                        /* アンカーリンクへスクロール */
                         target.velocity('scroll', {
                             duration:   500,
                             easing:     'easeOutExpo'
@@ -1149,7 +1186,6 @@ var GLOBAL = GLOBAL || self;
             var form_reset_off_ja   = $('input#btn-reset-off-ja');
             var form_reset_off_en   = $('input#btn-reset-off-en');
 
-
             switch (caseArr) {
 
                 case 'on' :
@@ -1204,6 +1240,7 @@ var GLOBAL = GLOBAL || self;
 
             /* リセットボタン押したらページトップへ飛ぶ */
             var target = $('#form');
+
             target.velocity('scroll', {
                 duration:   500,
                 easing:     'easeOutExpo'
@@ -1290,7 +1327,7 @@ var GLOBAL = GLOBAL || self;
 
 
     // サジェスト -PC- //
-    function suggestOnPC () {
+    function suggestOnPC() {
 
         /* マウスカーソルがセレクターの上に乗ったらサジェストを出す */
         $('.suggest-pc').on({
@@ -1311,7 +1348,7 @@ var GLOBAL = GLOBAL || self;
 
 
     // サジェスト -SP- //
-    function suggestOnSP () {
+    function suggestOnSP() {
 
         /* タッチがサジェストの上に乗った時の判定 */
         $('#form-inquiryListDisplay-jp, #form-inquiryListDisplay-en').on('click', function() {
@@ -1340,7 +1377,7 @@ var GLOBAL = GLOBAL || self;
 
 
     // サジェストオフ -共通- //
-    function suggestOff () {
+    function suggestOff() {
 
         /* セレクター内のテキストをクリックした時の動作 */
         $('#suggest-jp, #suggest-en').on('click', function() {
@@ -1622,12 +1659,14 @@ var GLOBAL = GLOBAL || self;
     }
 
 
-    // 切り替えた時の表示  -for SP- //
+    // 切り替えた時の表示 //
     $('#jaBtn').on('click', function() {
         showLanguagePC('ja');
+        showLanguageSP('ja');
     });
 
     $('#enBtn').on('click', function() {
+        showLanguagePC('en');
         showLanguageSP('en');
     });
 
@@ -1699,13 +1738,16 @@ var GLOBAL = GLOBAL || self;
 
     function kerningDir(rootDir) {
 
+        /* JSONデータ読み込み - 非同期通信するためgetJSONで読み出すこと - */
         return $.getJSON(rootDir + 'ajax/kerning.json', function(data) {
 
+            /* カーニング実行スクリプト setTimeoutで遅延読み込み */
             setTimeout(function() {
 
-                /* 中にテキストが入るタグの判定 */
-                var tag = $('p, h1, h2, h3, h4, h5, h6, .carousel-caption, dl.news dt, dl.news dd, dl#column dt, dl#column dd, dl#form-layout-jp dt, dl#form-layout-en dt, ul.list li, ol.list li, ul.suggest-menu li, ul.form-accept li, th, td, a, address')
+                /* 中にテキストが入るタグの判定 divは含まれない */
+                var tag = $('p, h1, h2, h3, h4, h5, h6, .carousel-caption, dl.news dt, dl.news dd, dl.column dt, dl.column dd, dl#form-layout-jp dt, dl#form-layout-en dt, ul.list li, ol.list li, ul.suggest-menu li, ul.form-accept li, th, td, a, address')
 
+                /* JSONのデータを基にカーニングを実行 */
                 tag.kerning({
                     'data': data
                 });

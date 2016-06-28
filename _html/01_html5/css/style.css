@@ -4,6 +4,8 @@
 @import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
 
 
+
+
 /*!
 
  * Bootstrap v3.3.5 (http://getbootstrap.com)
@@ -17,18 +19,46 @@
  */
 
 
-/****************************************
-
-			   common
-
-*****************************************/
 
 
-/********** コンテンツ共有CSS ***********/
+/*----------------------------------------------------
+
+・レイアウト共通CSS
+　→コンテンツ全体のレイアウトに関する実装
+
+・共通パーツCSS
+　→UIデザインで必要な実装
+
+・フォーム用共通CSS
+　→フォームに於けるUIデザインで必要な実装
+
+・ライトボックス - for Colorbox
+　→モーダルウィンドウのCSS実装
+
+・コンテンツ調整用CSS
+ →フロート、アライン、パディング、マージン、幅などの調整で使える実装
+
+・下層ページ
+ →2nd以降のCSS実装
+
+----------------------------------------------------*/
+
+
+
+
+/* レイアウト共通CSS
+ -ページ本体
+ -コンテンツ／ラッパー
+ -ヘッダー／フッター
+ -背景色
+
+------------------------------------------------------------------------------*/
+
+
 
 
 /* ページ本体
---------------------------*/
+----------------------------------------*/
 
 
 html,
@@ -82,7 +112,7 @@ body {
 
 
 /* コンテンツ／ラッパー
---------------------------*/
+----------------------------------------*/
 
 
 #container,
@@ -112,7 +142,7 @@ body {
 
 
 /* ヘッダー／フッター
---------------------------*/
+----------------------------------------*/
 
 
 /* 共通 */
@@ -156,7 +186,7 @@ footer.fixed .btn-top {
 
 
 /* 背景色
---------------------------*/
+----------------------------------------*/
 
 
 body {
@@ -164,8 +194,34 @@ body {
 }
 
 
+
+
+/* レイアウト共通CSS ここまで
+------------------------------------------------------------------------------*/
+
+
+
+
+/* 共通パーツCSS
+ -テキストトラッキング
+ -リンク
+ -画像
+ -本文
+ -ボックス(div、block指定)
+ -テーブル
+ -リスト、
+ -定義
+ -境界線 / ボーダー
+ -文字色
+ -その他
+
+ ------------------------------------------------------------------------------*/
+
+
+
+
 /* テキストトラッキング
---------------------------*/
+----------------------------------------*/
 
 
 p,
@@ -187,8 +243,8 @@ label {
 }
 
 
-/* リンク、見出し、フォームパーツ
---------------------------*/
+/* リンク
+----------------------------------------*/
 
 
 /* リンク */
@@ -219,673 +275,8 @@ a.hvr-fade-btn span {
 }
 
 
-/* フォーム */
-input {
-	background-color: rgba(0,0,0,0);
-	color: #333;
-	border: none;
-	vertical-align: middle;
-	text-align: center;
-	font-size: 14px;
-
-}
-
-input[type="text"],
-input[type="password"],
-textarea,
-select {
-	font-family: 'Noto Sans Japanese', 'Glyphicons Halflings', sans-serif;
-}
-
-input,
-textarea,
-select {
-	outline: none;
-}
-
-
-/* BreakPoint for PC */
-@media (min-width: 960px) {
-
-	input[type="text"],
-	input[type="password"],
-	textarea,
-	select {
-		font-size: 12px !important;
-	}
-
-}
-
-
-/* BreakPoint for SP */
-@media (max-width: 959px) {
-
-	input[type="text"],
-	input[type="password"],
-	textarea,
-	select {
-		font-size: 16px !important;
-		scale(0.8);
-	}
-
-}
-
-
-/* input、textareaのカスタム */
-.bg-input input,
-.bg-textarea textarea,
-.bg-inputChecker input {
-	position: absolute;
-	left: 0px;
-
-	background-color: rgba(0,0,0,0);
-	color: #333;
-	border: none;
-	font-size: 14px;
-	text-align: left;
-	padding: 4px;
-}
-
-
-/* BreakPoint for PC */
-@media (min-width: 960px) {
-
-	.bg-input input,
-	.bg-textarea textarea,
-	.bg-inputChecker input {
-		top: 2px;
-	}
-
-}
-
-
-/* BreakPoint for SP */
-@media (max-width: 959px) {
-
-	.bg-input input,
-	.bg-textarea textarea,
-	.bg-inputChecker input {
-		top: 0px;
-	}
-
-}
-
-
-.bg-input input,
-.bg-input button {
-	width: 100%;
-	vertical-align: middle;
-}
-
-.bg-textarea textarea {
-	width: 100%;
-	height: 120px;
-
-	vertical-align: top;
-	resize: none;
-}
-
-.bg-inputChecker input {
-	display: none;
-	width: 20px;
-	vertical-align: bottom;
-}
-
-#selected {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 240px;
-
-	background-color: rgba(0,0,0,0);
-	color: #333;
-	font-size: 12px;
-	vertical-align: middle;
-	text-align: center;
-}
-
-
-/* checkboxのカスタム */
-.bg-inputChecker input[type=radio],
-.bg-inputChecker input[type=checkbox] {
-	display: inline-block;
-	margin-right: 6px;
-}
-
-.bg-inputChecker input[type=radio] + label,
-.bg-inputChecker input[type=checkbox] + label {
-	position: relative;
-	margin: 0px;
-
-	display: inline-block;
-	font-size: 14px;
-	line-height: 22px;
-
-	cursor: pointer;
-}
-
-
-/* checkbox内チェック表示のカスタム */
-@media (min-width: 1px) {
-
-	.bg-inputChecker input[type=radio],
-	.bg-inputChecker input[type=checkbox] {
-		display: none;
-		margin: 0;
-	}
-
-	.bg-inputChecker input[type=radio] + label,
-	.bg-inputChecker input[type=checkbox] + label {
-		padding: 0px 0px 0px 32px;
-	}
-
-	.bg-inputChecker input[type=radio] + label::before,
-	.bg-inputChecker input[type=checkbox] + label::before {
-		position: absolute;
-		top: 0px;
-		left: 0px;
-		width: 22px;
-		height: 22px;
-
-		background-color: #fff;
-		background-image: none;
-		border: 1px solid #ccc;
-		border-radius: 4px;
-		-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
-		box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
-
-		opacity: 0.6;
-		-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity = 60);
-		filter: alpha(opacity = 60);
-
-		content: "";
-		color: #000;
-
-		display: block;
-	}
-
-	.bg-inputChecker input[type=radio]:checked + label::after,
-	.bg-inputChecker input[type=checkbox]:checked + label::after {
-		position: absolute;
-		top: 0px;
-		left: 4px;
-
-		content: "\e013";
-		color: #999;
-
-		display: block;
-	}
-
-}
-
-
-/* フォーム
---------------------------*/
-
-
-/* 項目レイアウト -PC用- */
-dl.form-pc {
-	min-width: 280px;
-	max-width: 944px;
-	margin: 0px;
-	padding: 0px 8px;
-}
-
-dl.form-pc dt {
-	display: inline-block;
-	float: left;
-	margin: 0px 0px 10px;
-	max-width: 190px;
-	min-width: 31%;
-	line-height: 1.2;
-	font-weight: bold;
-}
-
-dl.form-pc dd.colon {
-	display: inline-block;
-	float: left;
-	margin: 0px;
-	width: 10px;
-}
-
-dl.form-pc dd,
-dl.form-pc dd.textarea {
-	display: inline-block;
-	width: 400px;
-}
-
-dl.form-pc dd {
-	margin: 0px 0px 32px;
-}
-
-dl.form-pc dd.textarea {
-	margin: 0px;
-	min-height: 150px;
-}
-
-
-/* 項目レイアウト -SP用- */
-dl.form-sp {
-	width: 100%;
-	padding: 0px;
-}
-
-dl.form-sp dt {
-	display: inline;
-	margin: 0px 0px 8px;
-	font-weight: bold;
-}
-
-dl.form-sp dd.colon {
-	display: inline;
-	margin: 0px 0px 8px;
-	width: 10px;
-}
-
-dl.form-sp dd,
-dl.form-sp dd.textarea {
-	clear: both;
-	width: 100%;
-	height: auto;
-}
-
-dl.form-sp dd {
-	margin: 0px 0px 32px;
-}
-
-dl.form-sp dd.textarea {
-	margin: 0px;
-	min-height: 150px;
-}
-
-dl.form-sp dd p {
-	width: 60%;
-}
-
-
-/* フォーム部品のサイズ、背景用 */
-p#form-inquiryListDisplay-jp,
-p#form-inquiryListDisplay-en {
-	position: relative;
-	left: 2px;
-	width: 100%;
-
-	color: #333;
-	overflow: hidden;
-	z-index: 9999;
-}
-
-/* BreakPoint for PC */
-@media (min-width: 960px) {
-
-	p#form-inquiryListDisplay-jp,
-	p#form-inquiryListDisplay-en {
-		top: 4px;
-		height: 20px;
-		font-size: 12px;
-		letter-spacing: -0.025em;
-	}
-
-}
-
-
-/* BreakPoint for SP */
-@media (max-width: 959px) {
-
-	p#form-inquiryListDisplay-jp,
-	p#form-inquiryListDisplay-en {
-		top: 0px;
-		height: 30px;
-		font-size: 16px;
-		letter-spacing: -0.025em;
-	}
-
-}
-
-
-.bg-input,
-.bg-inputSelector,
-.bg-textarea {
-	background-color: #fff;
-	background-image: none;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
-	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
-
-	opacity: 0.6;
-	-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity = 60);
-	filter: alpha(opacity = 60);
-
-	position: relative;
-	left: 0px;
-	top: 0px;
-}
-
-.bg-input,
-.bg-inputSelector {
-	height: 30px;
-}
-
-.bg-textarea {
-	height: 128px;
-}
-
-.txt-accept {
-	font-size: 1.2em;
-}
-
-.btn-pulldown {
-	position: absolute;
-}
-
-/* BreakPoint for PC */
-@media (min-width: 960px) {
-
-	.btn-pulldown {
-		right: 12px;
-		top: 6px;
-	}
-
-}
-
-
-/* BreakPoint for SP */
-@media (max-width: 959px) {
-
-	.btn-pulldown {
-		right: 8px;
-		top: 8px;
-	}
-
-}
-
-
-
-/* エラー表示用 */
-label.error {
-	color: #F00;
-	font-size: 0.8em;
-}
-
-
-/* エラーメッセージ  -PC版- */
-dl.form-pc label#form-inquiryList-jp-error,
-dl.form-pc label#form-inquiryCompanyName-jp-error,
-dl.form-pc label#form-inquiryNameJa-jp-error,
-dl.form-pc label#form-inquiryNameEn-jp-error,
-dl.form-pc label#form-inquiryMail-jp-error,
-dl.form-pc label#form-inquiryPhone-jp-error,
-
-dl.form-pc label#form-inquiryList-en-error,
-dl.form-pc label#form-inquiryCompanyName-en-error,
-dl.form-pc label#form-inquiryNameEn-en-error,
-dl.form-pc label#form-inquiryMail-en-error,
-dl.form-pc label#form-inquiryPhone-en-error {
-	position: absolute;
-	left: 0px;
-	top: 32px;
-}
-
-dl.form-pc label#form-inquiryText-jp-error,
-dl.form-pc label#form-inquiryText-en-error {
-	position: absolute;
-	left: 0px;
-	top: 130px;
-}
-
-
-/* エラーメッセージ  -SP版- */
-dl.form-sp label#form-inquiryList-jp-error,
-dl.form-sp label#form-inquiryCompanyName-jp-error,
-dl.form-sp label#form-inquiryNameJa-jp-error,
-dl.form-sp label#form-inquiryNameEn-jp-error,
-dl.form-sp label#form-inquiryMail-jp-error,
-dl.form-sp label#form-inquiryPhone-jp-error,
-
-dl.form-sp label#form-inquiryList-en-error,
-dl.form-sp label#form-inquiryCompanyName-en-error,
-dl.form-sp label#form-inquiryNameEn-en-error,
-dl.form-sp label#form-inquiryMail-en-error,
-dl.form-sp label#form-inquiryPhone-en-error {
-	position: absolute;
-	left: 0px;
-	top: 32px;
-}
-
-dl.form-sp label#form-inquiryText-jp-error,
-dl.form-sp label#form-inquiryText-en-error {
-	position: absolute;
-	left: 0px;
-	top: 130px;
-}
-
-
-/* レイアウト -個人情報同意ウィンドウ- */
-h3.accept {
-	font-size: 1em;
-}
-
-
-/* フォームサジェスト
---------------------------*/
-
-
-/* サジェストwrapper部分 */
-.suggest-wrapper {
-	position: absolute;
-	height: auto;
-	margin: 0px;
-	padding: 0px;
-	overflow: hidden;
-	font-family: "Lucida Grande","ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ",Meiryo,"ＭＳ Ｐゴシック", "MS PGothic",Helvetica,Osaka,sans-serif;
-	z-index: 3000;
-}
-
-
-/* サジェスト外にクリッカブルなエリアを作らない為のボックス -PC版のみ- */
-.suggest-clear {
-	position: fixed;
-	top: 0px;
-	left: 0px;
-	right: 0px;
-	bottom: 0px;
-
-	margin: auto;
-	padding: 0px;
-
-	z-index: 1000;
-	cursor: pointer;
-	-webkit-tap-highlight-color:rgba(0, 0, 0, 0)!important;
-}
-
-
-/* サジェストレイアウト -_pc:PC版、_sp:SP版- */
-/* BreakPoint for PC */
-@media (min-width: 960px) {
-
-	/* 大枠 */
-	.suggest-pc {
-		position: relative;
-		left: 0px;
-		top: 0px;
-		width: 100%;
-
-		cursor: pointer;
-	}
-
-
-	/* サジェストの表示開始位置 -_pc:PC版、_sp:SP版- */
-	.suggest-pc .suggest-wrapper {
-		top: 30px;
-		width: 100%;
-	}
-
-
-	/* サジェストの吹き出し部分 -_pc:PC版、_sp:SP版- */
-	.suggest-pc .suggest-wrapper .suggest-box {
-		width: 100%;
-		margin: 12px auto;
-		overflow: hidden;
-	}
-
-}
-
-
-/* BreakPoint for SP */
-@media (max-width: 959px) {
-
-	/* 大枠 */
-	.suggest-sp {
-		position: relative;
-		left: 0px;
-		top: 0px;
-		width: 100%;
-
-		cursor: pointer;
-	}
-
-
-	/* サジェストの表示開始位置 -_pc:PC版、_sp:SP版- */
-	.suggest-sp .suggest-wrapper {
-		top: 30px;
-		width: 100%;
-	}
-
-
-	/* サジェストの吹き出し部分 -_pc:PC版、_sp:SP版- */
-	.suggest-sp .suggest-wrapper .suggest-box {
-		width: 100%;
-		margin: 12px auto;
-		overflow: hidden;
-	}
-
-
-	/*　横向き、縦向きになった時のサジェスト表示サイズ -SP版のみ- */
-	/* 縦向き */
-	@media only screen and (orientation : portrait) {
-
-		.suggest-wrapper  {
-			z-index: 3000;
-			zoom: 1;
-			-webkit-tap-highlight-color:rgba(0, 0, 0, 0)!important;
-		}
-
-		.suggest-container ul li a  {
-			font-size: 1em;
-		}
-
-	}
-
-
-	/* 横向き */
-	@media only screen and (orientation : landscape) {
-
-		.suggest-wrapper {
-			z-index: 3000;
-			zoom: 1.25;
-			-webkit-tap-highlight-color:rgba(0, 0, 0, 0)!important;
-		}
-
-		.suggest-container ul li a  {
-			font-size: 1em;
-		}
-
-	}
-
-
-	/* メール送信後 */
-	/* 縦向き */
-	@media only screen and (orientation : portrait) {
-
-		.img-complete-sp {
-			width: 100%;
-		}
-
-	}
-
-
-	/* 横向き */
-	@media only screen and (orientation : landscape) {
-
-		.img-complete-sp {
-			width: 70%;
-		}
-
-	}
-
-}
-
-
-/* サジェスト本体のContainer */
-.suggest-container {
-	background-color: #fff;
-	background-image: none;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
-	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
-
-	width: 100%;
-	margin: 0px;
-	padding: 20px;
-	overflow: hidden;
-}
-
-.suggest-container:before{
-	content: "";
-	border: 12px solid transparent;
-	border-bottom: 12px solid #ccc;
-	position: absolute;
-	right: 30%;
-	top: -12px;
-}
-
-.suggest-container:after{
-	content: "";
-	border: 12px solid transparent;
-	border-bottom: 12px solid #fff;
-	position: absolute;
-	right: 30%;
-	top: -10px;
-}
-
-ul.suggest-menu li {
-	margin: 0px 0px 10px;
-}
-
-
-/* サジェスト本体のリンク装飾 */
-.suggest-container ul li a {
-	width: 100%;
-	margin: 3px 0px;
-	padding: 0px;
-
-	font-size: 12px;
-	cursor: pointer;
-	display: block;
-}
-
-.suggest-container ul li a,
-.suggest-container ul li a span {
-	color: #666;
-}
-
-.suggest-container ul li.acv a,
-.suggest-container ul li.acv a span {
-	color: #000;
-	background-color: #ddd;
-}
-
-.suggest-container ul li a:hover,
-.suggest-container ul li a:hover span {
-	color: #000;
-	background-color: #ddd;
-}
-
-
-/* 本文、コンテンツボックス、テーブル、リスト、定義、罫線など
---------------------------*/
+/* 画像
+----------------------------------------*/
 
 
 /* 画像 */
@@ -893,6 +284,10 @@ img {
 	max-width: 100%;
 	height: auto;
 }
+
+
+/* 本文
+----------------------------------------*/
 
 
 /* 本文、文字装飾 */
@@ -956,6 +351,10 @@ p.caption-right {
 }
 
 
+/* ボックス(div、block指定)
+----------------------------------------*/
+
+
 /* ボックス、ブロック指定 */
 .box {
 	margin: 0px;
@@ -966,6 +365,10 @@ p.caption-right {
 .block {
 	display: block;
 }
+
+
+/* テーブル
+----------------------------------------*/
 
 
 /* テーブル */
@@ -1007,6 +410,10 @@ table.border td:last-child {
 	border-right: none;
 	border-bottom: 1px solid #ddd;
 }
+
+
+/* リスト
+----------------------------------------*/
 
 
 /* リスト */
@@ -1148,6 +555,10 @@ ol.list {
 }
 
 
+/* 定義
+----------------------------------------*/
+
+
 /* 定義：ヘッドラインなど */
 dl,
 dl.news {
@@ -1211,6 +622,10 @@ dl.news dd p {
 }
 
 
+/* 境界線 / ボーダー
+----------------------------------------*/
+
+
 /* 境界線指定 */
 hr {
 	border: 0;
@@ -1262,6 +677,10 @@ hr {
 .border {
 	border: 1px solid #000;
 }
+
+
+/* 文字色
+----------------------------------------*/
 
 
 /* テキストカラー指定 */
@@ -1334,6 +753,10 @@ hr {
 }
 
 
+/* その他
+----------------------------------------*/
+
+
 /* インラインアイコン指定 */
 img.smallIcon {
 	margin-left: 2px;
@@ -1373,10 +796,714 @@ address {
 }
 
 
-/* ライトボックス
---------------------------*/
 
-/* コアスタイル */
+
+/* 共通パーツCSS ここまで
+ ------------------------------------------------------------------------------*/
+
+
+
+
+/* フォーム用共通CSS
+ -レイアウト
+ -フォーム部品
+ -フォームバリデート
+ -フォームサジェスト
+
+ ------------------------------------------------------------------------------*/
+
+
+
+
+/* レイアウト
+----------------------------------------*/
+
+
+/* レイアウト -PC- */
+dl.form-pc {
+	min-width: 280px;
+	max-width: 944px;
+	margin: 0px;
+	padding: 0px 8px;
+}
+
+dl.form-pc dt {
+	display: inline-block;
+	float: left;
+	margin: 0px 0px 10px;
+	max-width: 190px;
+	min-width: 31%;
+	line-height: 1.2;
+	font-weight: bold;
+}
+
+dl.form-pc dd.colon {
+	display: inline-block;
+	float: left;
+	margin: 0px;
+	width: 10px;
+}
+
+dl.form-pc dd,
+dl.form-pc dd.textarea {
+	display: inline-block;
+	width: 400px;
+}
+
+dl.form-pc dd {
+	margin: 0px 0px 32px;
+}
+
+dl.form-pc dd.textarea {
+	margin: 0px;
+	min-height: 150px;
+}
+
+
+/* レイアウト -SP- */
+dl.form-sp {
+	width: 100%;
+	padding: 0px;
+}
+
+dl.form-sp dt {
+	display: inline;
+	margin: 0px 0px 8px;
+	font-weight: bold;
+}
+
+dl.form-sp dd.colon {
+	display: inline;
+	margin: 0px 0px 8px;
+	width: 10px;
+}
+
+dl.form-sp dd,
+dl.form-sp dd.textarea {
+	clear: both;
+	width: 100%;
+	height: auto;
+}
+
+dl.form-sp dd {
+	margin: 0px 0px 32px;
+}
+
+dl.form-sp dd.textarea {
+	margin: 0px;
+	min-height: 150px;
+}
+
+dl.form-sp dd p {
+	width: 60%;
+}
+
+
+/* フォーム部品
+----------------------------------------*/
+
+
+/* 基本部品 */
+input {
+	background-color: rgba(0,0,0,0);
+	color: #333;
+	border: none;
+	vertical-align: middle;
+	text-align: center;
+	font-size: 14px;
+
+}
+
+input[type="text"],
+input[type="password"],
+textarea,
+select {
+	font-family: 'Noto Sans Japanese', 'Glyphicons Halflings', sans-serif;
+}
+
+input,
+textarea,
+select {
+	outline: none;
+}
+
+
+/* BreakPoint for PC */
+@media (min-width: 960px) {
+
+	input[type="text"],
+	input[type="password"],
+	textarea,
+	select {
+		font-size: 12px !important;
+	}
+
+}
+
+
+/* BreakPoint for SP */
+@media (max-width: 959px) {
+
+	input[type="text"],
+	input[type="password"],
+	textarea,
+	select {
+		font-size: 16px !important;
+		scale(0.8);
+	}
+
+}
+
+
+/* input、textarea枠のカスタム */
+.bg-input,
+.bg-inputSelector,
+.bg-textarea {
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+
+	opacity: 0.6;
+	-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity = 60);
+	filter: alpha(opacity = 60);
+
+	position: relative;
+	left: 0px;
+	top: 0px;
+}
+
+.bg-input,
+.bg-inputSelector {
+	height: 30px;
+}
+
+.bg-textarea {
+	height: 128px;
+}
+
+.bg-input input,
+.bg-textarea textarea,
+.bg-inputChecker input {
+	position: absolute;
+	left: 0px;
+
+	background-color: rgba(0,0,0,0);
+	color: #333;
+	border: none;
+	font-size: 14px;
+	text-align: left;
+	padding: 4px;
+}
+
+
+/* BreakPoint for PC */
+@media (min-width: 960px) {
+
+	.bg-input input,
+	.bg-textarea textarea,
+	.bg-inputChecker input {
+		top: 2px;
+	}
+
+}
+
+
+/* BreakPoint for SP */
+@media (max-width: 959px) {
+
+	.bg-input input,
+	.bg-textarea textarea,
+	.bg-inputChecker input {
+		top: 0px;
+	}
+
+}
+
+
+.bg-input input,
+.bg-input button {
+	width: 100%;
+	vertical-align: middle;
+}
+
+.bg-textarea textarea {
+	width: 100%;
+	height: 120px;
+
+	vertical-align: top;
+	resize: none;
+}
+
+.bg-inputChecker input {
+	display: none;
+	width: 20px;
+	vertical-align: bottom;
+}
+
+#selected {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 240px;
+
+	background-color: rgba(0,0,0,0);
+	color: #333;
+	font-size: 12px;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.bg-inputChecker input[type=radio],
+.bg-inputChecker input[type=checkbox] {
+	display: inline-block;
+	margin-right: 6px;
+}
+
+.bg-inputChecker input[type=radio] + label,
+.bg-inputChecker input[type=checkbox] + label {
+	position: relative;
+	margin: 0px;
+
+	display: inline-block;
+	font-size: 14px;
+	line-height: 22px;
+
+	cursor: pointer;
+}
+
+
+/* checkbox内チェック表示のカスタム */
+@media (min-width: 1px) {
+
+	.bg-inputChecker input[type=radio],
+	.bg-inputChecker input[type=checkbox] {
+		display: none;
+		margin: 0;
+	}
+
+	.bg-inputChecker input[type=radio] + label,
+	.bg-inputChecker input[type=checkbox] + label {
+		padding: 0px 0px 0px 32px;
+	}
+
+	.bg-inputChecker input[type=radio] + label::before,
+	.bg-inputChecker input[type=checkbox] + label::before {
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		width: 22px;
+		height: 22px;
+
+		background-color: #fff;
+		background-image: none;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+		box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+
+		opacity: 0.6;
+		-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity = 60);
+		filter: alpha(opacity = 60);
+
+		content: "";
+		color: #000;
+
+		display: block;
+	}
+
+	.bg-inputChecker input[type=radio]:checked + label::after,
+	.bg-inputChecker input[type=checkbox]:checked + label::after {
+		position: absolute;
+		top: 0px;
+		left: 4px;
+
+		content: "\e013";
+		color: #999;
+
+		display: block;
+	}
+
+}
+
+
+p#form-inquiryListDisplay-jp,
+p#form-inquiryListDisplay-en {
+	position: relative;
+	left: 2px;
+	width: 100%;
+
+	color: #333;
+	overflow: hidden;
+	z-index: 9999;
+}
+
+/* BreakPoint for PC */
+@media (min-width: 960px) {
+
+	p#form-inquiryListDisplay-jp,
+	p#form-inquiryListDisplay-en {
+		top: 4px;
+		height: 20px;
+		font-size: 12px;
+		letter-spacing: -0.025em;
+	}
+
+}
+
+
+/* BreakPoint for SP */
+@media (max-width: 959px) {
+
+	p#form-inquiryListDisplay-jp,
+	p#form-inquiryListDisplay-en {
+		top: 0px;
+		height: 30px;
+		font-size: 16px;
+		letter-spacing: -0.025em;
+	}
+
+}
+
+
+.txt-accept {
+	font-size: 1.2em;
+}
+
+.btn-pulldown {
+	position: absolute;
+}
+
+/* BreakPoint for PC */
+@media (min-width: 960px) {
+
+	.btn-pulldown {
+		right: 12px;
+		top: 6px;
+	}
+
+}
+
+
+/* BreakPoint for SP */
+@media (max-width: 959px) {
+
+	.btn-pulldown {
+		right: 8px;
+		top: 8px;
+	}
+
+}
+
+
+/* フォームバリデート
+----------------------------------------*/
+
+
+/* エラー表示用 */
+label.error {
+	color: #F00;
+	font-size: 0.8em;
+}
+
+
+/* エラーメッセージ  -PC- */
+dl.form-pc label#form-inquiryList-jp-error,
+dl.form-pc label#form-inquiryCompanyName-jp-error,
+dl.form-pc label#form-inquiryNameJa-jp-error,
+dl.form-pc label#form-inquiryNameEn-jp-error,
+dl.form-pc label#form-inquiryMail-jp-error,
+dl.form-pc label#form-inquiryPhone-jp-error,
+
+dl.form-pc label#form-inquiryList-en-error,
+dl.form-pc label#form-inquiryCompanyName-en-error,
+dl.form-pc label#form-inquiryNameEn-en-error,
+dl.form-pc label#form-inquiryMail-en-error,
+dl.form-pc label#form-inquiryPhone-en-error {
+	position: absolute;
+	left: 0px;
+	top: 32px;
+}
+
+dl.form-pc label#form-inquiryText-jp-error,
+dl.form-pc label#form-inquiryText-en-error {
+	position: absolute;
+	left: 0px;
+	top: 130px;
+}
+
+
+/* エラーメッセージ  -SP- */
+dl.form-sp label#form-inquiryList-jp-error,
+dl.form-sp label#form-inquiryCompanyName-jp-error,
+dl.form-sp label#form-inquiryNameJa-jp-error,
+dl.form-sp label#form-inquiryNameEn-jp-error,
+dl.form-sp label#form-inquiryMail-jp-error,
+dl.form-sp label#form-inquiryPhone-jp-error,
+
+dl.form-sp label#form-inquiryList-en-error,
+dl.form-sp label#form-inquiryCompanyName-en-error,
+dl.form-sp label#form-inquiryNameEn-en-error,
+dl.form-sp label#form-inquiryMail-en-error,
+dl.form-sp label#form-inquiryPhone-en-error {
+	position: absolute;
+	left: 0px;
+	top: 32px;
+}
+
+dl.form-sp label#form-inquiryText-jp-error,
+dl.form-sp label#form-inquiryText-en-error {
+	position: absolute;
+	left: 0px;
+	top: 130px;
+}
+
+
+/* レイアウト -個人情報同意ウィンドウ- */
+h3.accept {
+	font-size: 1em;
+}
+
+
+/* フォームサジェスト
+----------------------------------------*/
+
+
+/* サジェストwrapper部分 */
+.suggest-wrapper {
+	position: absolute;
+	height: auto;
+	margin: 0px;
+	padding: 0px;
+	overflow: hidden;
+	font-family: "Lucida Grande","ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ",Meiryo,"ＭＳ Ｐゴシック", "MS PGothic",Helvetica,Osaka,sans-serif;
+	z-index: 3000;
+}
+
+
+/* サジェスト外にクリッカブルなエリアを作らない為のボックス -PC- */
+.suggest-clear {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+
+	margin: auto;
+	padding: 0px;
+
+	z-index: 1000;
+	cursor: pointer;
+	-webkit-tap-highlight-color:rgba(0, 0, 0, 0)!important;
+}
+
+
+/* サジェストレイアウト */
+/* BreakPoint for PC */
+@media (min-width: 960px) {
+
+	/* 大枠 */
+	.suggest-pc {
+		position: relative;
+		left: 0px;
+		top: 0px;
+		width: 100%;
+
+		cursor: pointer;
+	}
+
+
+	/* サジェストの表示開始位置  */
+	.suggest-pc .suggest-wrapper {
+		top: 30px;
+		width: 100%;
+	}
+
+
+	/* サジェストの吹き出し部分 */
+	.suggest-pc .suggest-wrapper .suggest-box {
+		width: 100%;
+		margin: 12px auto;
+		overflow: hidden;
+	}
+
+}
+
+
+/* BreakPoint for SP */
+@media (max-width: 959px) {
+
+	/* 大枠 */
+	.suggest-sp {
+		position: relative;
+		left: 0px;
+		top: 0px;
+		width: 100%;
+
+		cursor: pointer;
+	}
+
+
+	/* サジェストの表示開始位置 */
+	.suggest-sp .suggest-wrapper {
+		top: 30px;
+		width: 100%;
+	}
+
+
+	/* サジェストの吹き出し部分 */
+	.suggest-sp .suggest-wrapper .suggest-box {
+		width: 100%;
+		margin: 12px auto;
+		overflow: hidden;
+	}
+
+
+	/*　横向き、縦向きになった時のサジェスト表示サイズ -SP- */
+	/* 縦向き */
+	@media only screen and (orientation : portrait) {
+
+		.suggest-wrapper  {
+			z-index: 3000;
+			zoom: 1;
+			-webkit-tap-highlight-color:rgba(0, 0, 0, 0)!important;
+		}
+
+		.suggest-container ul li a  {
+			font-size: 1em;
+		}
+
+	}
+
+
+	/* 横向き */
+	@media only screen and (orientation : landscape) {
+
+		.suggest-wrapper {
+			z-index: 3000;
+			zoom: 1.25;
+			-webkit-tap-highlight-color:rgba(0, 0, 0, 0)!important;
+		}
+
+		.suggest-container ul li a  {
+			font-size: 1em;
+		}
+
+	}
+
+
+	/* メール送信後 */
+	/* 縦向き */
+	@media only screen and (orientation : portrait) {
+
+		.img-complete-sp {
+			width: 100%;
+		}
+
+	}
+
+
+	/* 横向き */
+	@media only screen and (orientation : landscape) {
+
+		.img-complete-sp {
+			width: 70%;
+		}
+
+	}
+
+}
+
+
+/* サジェスト本体のContainer */
+.suggest-container {
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+
+	width: 100%;
+	margin: 0px;
+	padding: 20px;
+	overflow: hidden;
+}
+
+.suggest-container:before {
+	content: "";
+	border: 12px solid transparent;
+	border-bottom: 12px solid #ccc;
+	position: absolute;
+	right: 30%;
+	top: -12px;
+}
+
+.suggest-container:after {
+	content: "";
+	border: 12px solid transparent;
+	border-bottom: 12px solid #fff;
+	position: absolute;
+	right: 30%;
+	top: -10px;
+}
+
+ul.suggest-menu li {
+	margin: 0px 0px 10px;
+}
+
+
+/* サジェスト本体のリンク装飾 */
+.suggest-container ul li a {
+	width: 100%;
+	margin: 3px 0px;
+	padding: 0px;
+
+	font-size: 12px;
+	cursor: pointer;
+	display: block;
+}
+
+.suggest-container ul li a,
+.suggest-container ul li a span {
+	color: #666;
+}
+
+.suggest-container ul li.acv a,
+.suggest-container ul li.acv a span {
+	color: #000;
+	background-color: #ddd;
+}
+
+.suggest-container ul li a:hover,
+.suggest-container ul li a:hover span {
+	color: #000;
+	background-color: #ddd;
+}
+
+
+
+
+/* フォーム用共通CSS ここまで
+ ------------------------------------------------------------------------------*/
+
+
+
+
+/* ライトボックス - for Colorbox
+ -コアスタイル
+ -カスタム可能スタイル
+ ------------------------------------------------------------------------------*/
+
+
+
+
+/* コアスタイル
+----------------------------------------*/
+
+
 #colorbox,
 #cboxOverlay,
 #cboxWrapper {
@@ -1483,7 +1610,10 @@ address {
 }
 
 
-/* カスタム可能スタイル */
+/* カスタム可能スタイル
+----------------------------------------*/
+
+
 #cboxOverlay {
 	background: #000;
 	opacity: 0.3;
@@ -1720,10 +1850,28 @@ address {
 
 
 
-/********** コンテンツ調整用CSS ***********/
+/* ライトボックス　ここまで
+------------------------------------------------------------------------------*/
+
+
+
+
+/* コンテンツ調整用CSS
+ -フロート
+ -テキストアライン
+ -バーティカルアライン
+ -パディング
+ -マージン
+ -幅
+ -ナビゲーション
+
+------------------------------------------------------------------------------*/
+
+
+
 
 /* フロート
---------------------------*/
+----------------------------------------*/
 
 
 .float-l {
@@ -1736,7 +1884,7 @@ address {
 
 
 /* テキストアライン
---------------------------*/
+----------------------------------------*/
 
 
 .left {
@@ -1753,7 +1901,7 @@ address {
 
 
 /* バーティカルアライン
---------------------------*/
+----------------------------------------*/
 
 
 .top {
@@ -1769,8 +1917,8 @@ address {
 }
 
 
-/* パディング調整
---------------------------*/
+/* パディング
+----------------------------------------*/
 
 
 /* パディングなし */
@@ -1781,6 +1929,7 @@ address {
 
 /* BreakPoint for PC */
 @media (min-width: 960px) {
+
 
 	/* 四隅パディング */
 	.pd-10 {
@@ -1875,11 +2024,13 @@ address {
 		padding: 0px 40px 0px 0px !important;
 	}
 
+
 }
 
 
 /* BreakPoint for SP */
 @media (max-width: 959px) {
+
 
 	/* 四隅パディング */
 	.pd-10 {
@@ -1974,11 +2125,12 @@ address {
 		padding: 0px 20px 0px 0px !important;
 	}
 
+
 }
 
 
-/* マージン調整
---------------------------*/
+/* マージン
+----------------------------------------*/
 
 
 /* 左右マージン均等 */
@@ -1995,6 +2147,7 @@ address {
 
 /* BreakPoint for PC */
 @media (min-width: 960px) {
+
 
 	/* 左マージン */
 	.ml-05 {
@@ -2163,11 +2316,13 @@ address {
 		margin-bottom: 100px !important;
 	}
 
+
 }
 
 
 /* BreakPoint for SP */
 @media (max-width: 959px) {
+
 
 	/* 左マージン */
 	.ml-05 {
@@ -2336,11 +2491,12 @@ address {
 		margin-bottom: 50px !important;
 	}
 
+
 }
 
 
-/* 幅調整
---------------------------*/
+/* 幅
+----------------------------------------*/
 
 
 .wd-all {
@@ -2413,7 +2569,7 @@ address {
 
 
 /* ナビゲーション
---------------------------*/
+----------------------------------------*/
 
 
 .navbar-default .navbar-toggle span,
@@ -2466,11 +2622,21 @@ address {
 	transform: translateY(0px) rotate(45deg);
 }
 
-/*************** common END ******************/
+
+
+
+/* コンテンツ調整用CSS ここまで
+------------------------------------------------------------------------------*/
+
+
+
+
+/* 下層ページ
+------------------------------------------------------------------------------*/
 
 
 /* 2nd: top
---------------------------*/
+----------------------------------------*/
 
 
 .centerParentWrapper {
@@ -2514,3 +2680,12 @@ address {
 	height: 480px;
 	overflow: hidden;
 }
+
+
+
+
+/* 下層ページ ここまで
+------------------------------------------------------------------------------*/
+
+
+
