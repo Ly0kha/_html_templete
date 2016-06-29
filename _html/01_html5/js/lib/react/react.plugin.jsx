@@ -305,16 +305,16 @@ $.getJSON(kerningJsonFirstDir, function(data) {
     var Counter = React.createClass({
 
         propTypes: {
-            count: React.PropTypes.number
+            initialCount: React.PropTypes.number
         },
         getDefaultProps() {
             return {
-                count: 0
+                initialCount: 0
             };
         },
         getInitialState() {
             return {
-                count: this.props.count
+                count: this.props.initialCount
             }
         },
         onClick() {
