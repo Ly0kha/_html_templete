@@ -1211,6 +1211,7 @@ select {
 }
 
 
+/* サジェスト表示のカスタム */
 p#form-inquiryListDisplay-jp,
 p#form-inquiryListDisplay-en {
 	position: relative;
@@ -1353,7 +1354,7 @@ h3.accept {
 ----------------------------------------*/
 
 
-/* サジェストwrapper部分 */
+/* サジェストWrapper部分 */
 .suggest-wrapper {
 	position: absolute;
 	height: auto;
@@ -1501,7 +1502,7 @@ h3.accept {
 }
 
 
-/* サジェスト本体のContainer */
+/* サジェストContainer部分 */
 .suggest-container {
 	background-color: #fff;
 	background-image: none;
@@ -2590,6 +2591,8 @@ ul.suggest-menu li {
 	width: 100% !important;
 }
 
+
+/* カラム数別 */
 .wd-2nd {
 	width: 50% !important;
 }
@@ -2618,6 +2621,24 @@ ul.suggest-menu li {
 	width: 12.5% !important;
 }
 
+.wd-9th {
+	width: 11.1111111% !important;
+}
+
+.wd-10th {
+	width: 10% !important;
+}
+
+.wd-11th {
+	width: 9.09090909% !important;
+}
+
+.wd-12th {
+	width: 8.33333333% !important;
+}
+
+
+/* 10%別 */
 .wd-10 {
 	width: 10% !important;
 }

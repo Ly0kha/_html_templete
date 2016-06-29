@@ -1219,7 +1219,7 @@ var GLOBAL = GLOBAL || self;
             /* input、label、pの値を設定 */
             var form_label_error    = $('label.error');
             var form_p_html         = $('p#form-inquiryListDisplay-jp, p#form-inquiryListDisplay-en');
-            var form_input_val      = $('input#form-inquiryList-jp, input#form-inquiryList-en','input:text', 'input:checked', 'textarea');
+            var form_input_val      = $('input#form-inquiryList-jp, input#form-inquiryList-en, input:text, input:checked, textarea');
             var form_accept         = $('#accept-ja, #accept-en');
 
             /* バリデート注意文言を消す */
