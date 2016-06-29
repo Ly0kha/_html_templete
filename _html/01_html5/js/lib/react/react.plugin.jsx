@@ -18,8 +18,12 @@ $.ajax ({
 });
 
 
+
+
 // AJAXが入っているディレクトリの指定 //
 var kerningJsonFirstDir = ('ajax/kerning.json');
+
+
 
 
 $.getJSON(kerningJsonFirstDir, function(data) {
@@ -69,7 +73,7 @@ $.getJSON(kerningJsonFirstDir, function(data) {
         }
     });
 
-    var m = ReactDOM.render(<HelloWorld />, document.getElementById('test08'));
+    ReactDOM.render(<HelloWorld />, document.getElementById('test08'));
 
 
     /*----------------------------------------------------------*/
@@ -86,7 +90,7 @@ $.getJSON(kerningJsonFirstDir, function(data) {
         }
     });
 
-    var m = ReactDOM.render(<Hirata name='平田だろ!?' />, document.getElementById('test09'));
+    ReactDOM.render(<Hirata name='平田だろ!?' />, document.getElementById('test09'));
 
 
     /*----------------------------------------------------------*/
@@ -100,7 +104,7 @@ $.getJSON(kerningJsonFirstDir, function(data) {
         }
     });
 
-    var m = ReactDOM.render(<MyComponent name='名無しだろ!?' />, document.getElementById('test10'));
+    ReactDOM.render(<MyComponent name='名無しだろ!?' />, document.getElementById('test10'));
 
 
     /*----------------------------------------------------------*/
@@ -133,7 +137,7 @@ $.getJSON(kerningJsonFirstDir, function(data) {
 
     });
 
-    var m = ReactDOM.render(<Counter />, document.getElementById('test11'));
+    ReactDOM.render(<Counter />, document.getElementById('test11'));
 
 
     /*----------------------------------------------------------*/
@@ -160,7 +164,7 @@ $.getJSON(kerningJsonFirstDir, function(data) {
         name: 'Atsushi Kikushima'
     };
 
-    var m = ReactDOM.render(<Avatar user={user} />, document.getElementById('test12'));
+    ReactDOM.render(<Avatar user={user} />, document.getElementById('test12'));
 
 
     /*----------------------------------------------------------*/
@@ -227,46 +231,107 @@ $.getJSON(kerningJsonFirstDir, function(data) {
         alt:        'ヒマ人'
     };
 
-    var m = ReactDOM.render(<Avatar02 user={user} />, document.getElementById('test13'));
+    ReactDOM.render(<Avatar02 user={user} />, document.getElementById('test13'));
 
 
     /*----------------------------------------------------------*/
 
 
-    var User = React.createClass({
+    var Todo = React.createClass({
 
         propTypes: {
-            user: React.PropTypes.shape({
-                name:   React.PropTypes.string.isRequired,
-                id:     React.PropTypes.number.isRequired,
-            })
+            todo: React.PropTypes.shape({
+                id: React.PropTypes.number.isRequired,
+                text: React.PropTypes.string.isRequired
+            }),
+            // 削除するための処理をI/Fとして定義
+            onDelete: React.PropTypes.func.isRequired
         },
+        // 親に処理を委譲する
+        _onDelete() {
+            this.props.onDelete(this.props.todo.id);
+        },
+        render() {
+            return (
+                <div>
+                    <span>{this.props.todo.text}</span>
+                    <button onClick={this._onDelete}>delete</button>
+                </div>
+            );
+        }
 
+    });
+
+    var TodoList = React.createClass({
+
+        getInitialState() {
+            return {
+
+                todos: [
+                    {id:1, text:"advent calendar1"},
+                    {id:2, text:"advent calendar2"},
+                    {id:3, text:"advent calendar3"}
+                ]
+
+            };
+        },
+        // TodoListはこのComponentが管理しているので削除する処理もここにあるべき
+        deleteTodo(id) {
+
+            this.setState({
+                todos: this.state.todos.filter((todo) => {
+                    return todo.id !== id;
+                })
+            });
+
+        },
         render() {
 
-            return (
-
-                <div className='box center mb-10'>
-                    <p className='small mg-00 center'>
-                        {this.props.user.id}
-                    </p>
-                    <p className='small mg-00 center'>
-                        {this.props.user.name}
-                    </p>
-                </div>
-
-            );
+            var todos = this.state.todos.map((todo) => {
+                return <li key={todo.id}><Todo onDelete={this.deleteTodo} todo={todo} /></li>;
+            });
+            return <ul>{todos}</ul>;
 
         }
 
     });
 
-    var user = {
-        name:       'Atsushi Kikushima',
-        id:         10
-    };
+    ReactDOM.render(<TodoList />, document.getElementById('test14'));
 
-    var m = ReactDOM.render(<User user={user} />, document.getElementById('test14'));
+
+    /*----------------------------------------------------------*/
+
+
+    var Counter = React.createClass({
+
+        propTypes: {
+            count: React.PropTypes.number
+        },
+        getDefaultProps() {
+            return {
+                count: 0
+            };
+        },
+        getInitialState() {
+            return {
+                count: this.props.count
+            }
+        },
+        onClick() {
+            this.setState({ count: this.state.count + 1 });
+        },
+        render() {
+            return (
+                <div>
+                    <p>{this.state.count}</p>
+                    <button onClick={this.onClick}>click</button>
+                </div>
+            );
+        }
+
+    });
+
+    ReactDOM.render(<Counter />, document.getElementById('test15'));
 
 
     /*【TEST】 React実装 ここまで
@@ -283,6 +348,8 @@ $.getJSON(kerningJsonFirstDir, function(data) {
         });
 
     }, 1000);
+
+
 
 
 });

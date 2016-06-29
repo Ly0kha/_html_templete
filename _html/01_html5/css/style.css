@@ -406,7 +406,7 @@ p.caption-right {
 
 /* 文字太さ */
 .bold {
-	font-weight: bold;
+	font-weight: 400;
 }
 
 
@@ -916,7 +916,7 @@ dl.form-pc dt {
 	max-width: 190px;
 	min-width: 31%;
 	line-height: 1.2;
-	font-weight: bold;
+	font-weight: 400;
 }
 
 dl.form-pc dd.colon {
@@ -951,7 +951,7 @@ dl.form-sp {
 dl.form-sp dt {
 	display: inline;
 	margin: 0px 0px 8px;
-	font-weight: bold;
+	font-weight: 200;
 }
 
 dl.form-sp dd.colon {

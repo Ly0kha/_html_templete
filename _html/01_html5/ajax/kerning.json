@@ -1,6 +1,8 @@
 {
-	"font":"Noto Sans Japanese",
-	"kerning":{
+
+
+	"font": "Noto Sans Japanese",
+	"kerning": {
 
 
 		"入":[0,-0.05],
@@ -211,4 +213,6 @@
 
 
 	}
+
+
 }
