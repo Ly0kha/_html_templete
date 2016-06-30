@@ -33,7 +33,7 @@ $.getJSON(kerningJsonFirstDir, function(data) {
     ------------------------------------------------------------*/
 
 
-    var Hello = React.createClass({
+    var Test06 = React.createClass({
         displayName: 'Hello',
         render: function() {
             return React.createElement('div', {className: 'box mb-20'}, 'Hello ', this.props.name);
@@ -41,7 +41,7 @@ $.getJSON(kerningJsonFirstDir, function(data) {
     });
 
     ReactDOM.render(
-        React.createElement(Hello, {name: 'World'}),
+        React.createElement(Test06, {name: 'World'}),
         document.getElementById('test06')
     );
 
@@ -49,7 +49,7 @@ $.getJSON(kerningJsonFirstDir, function(data) {
     /*----------------------------------------------------------*/
 
 
-    var Test = React.createClass({
+    var Test07 = React.createClass({
         displayName: 'Test',
         render: function() {
             return React.createElement('div', {className: 'box mb-20'}, 'Mr ', this.props.name);
@@ -57,7 +57,7 @@ $.getJSON(kerningJsonFirstDir, function(data) {
     });
 
     ReactDOM.render(
-        React.createElement(Test, {name: 'Rolling Thunder'}),
+        React.createElement(Test07, {name: 'Rolling Thunder'}),
         document.getElementById('test07')
     );
 
@@ -65,7 +65,7 @@ $.getJSON(kerningJsonFirstDir, function(data) {
     /*----------------------------------------------------------*/
 
 
-    var HelloWorld = React.createClass({
+    var Test08 = React.createClass({
         render: function() {
                 return (
                     <p>ひょっとして読み込めちゃった系？</p>
@@ -73,13 +73,13 @@ $.getJSON(kerningJsonFirstDir, function(data) {
         }
     });
 
-    ReactDOM.render(<HelloWorld />, document.getElementById('test08'));
+    ReactDOM.render(<Test08 />, document.getElementById('test08'));
 
 
     /*----------------------------------------------------------*/
 
 
-    var Hirata = React.createClass({
+    var Test09 = React.createClass({
         render: function() {
                 return (
                     <div>
@@ -90,13 +90,13 @@ $.getJSON(kerningJsonFirstDir, function(data) {
         }
     });
 
-    ReactDOM.render(<Hirata name='平田だろ!?' />, document.getElementById('test09'));
+    ReactDOM.render(<Test09 name='平田だろ!?' />, document.getElementById('test09'));
 
 
     /*----------------------------------------------------------*/
 
 
-    var MyComponent = React.createClass({
+    var Test10 = React.createClass({
         render: function() {
                 return (
                     <p className='box mb-20'>お前、{this.props.name}</p>
@@ -104,13 +104,13 @@ $.getJSON(kerningJsonFirstDir, function(data) {
         }
     });
 
-    ReactDOM.render(<MyComponent name='名無しだろ!?' />, document.getElementById('test10'));
+    ReactDOM.render(<Test10 name='名無しだろ!?' />, document.getElementById('test10'));
 
 
     /*----------------------------------------------------------*/
 
 
-    var Counter = React.createClass ({
+    var Test11 = React.createClass ({
 
         getInitialState() {
             return {
@@ -137,13 +137,13 @@ $.getJSON(kerningJsonFirstDir, function(data) {
 
     });
 
-    ReactDOM.render(<Counter />, document.getElementById('test11'));
+    ReactDOM.render(<Test11 />, document.getElementById('test11'));
 
 
     /*----------------------------------------------------------*/
 
 
-    var Avatar = React.createClass ({
+    var Test12 = React.createClass ({
 
         render() {
             var avatarImg = `images/avatar/avatar_${this.props.user.id}.png`;
@@ -164,7 +164,7 @@ $.getJSON(kerningJsonFirstDir, function(data) {
         name: 'Atsushi Kikushima'
     };
 
-    ReactDOM.render(<Avatar user={user} />, document.getElementById('test12'));
+    ReactDOM.render(<Test12 user={user} />, document.getElementById('test12'));
 
 
     /*----------------------------------------------------------*/
@@ -194,7 +194,7 @@ $.getJSON(kerningJsonFirstDir, function(data) {
     ----------------------------------------------------------*/
 
 
-    var Avatar02 = React.createClass({
+    var Test13 = React.createClass({
 
         propTypes: {
             user: React.PropTypes.shape({
@@ -231,7 +231,7 @@ $.getJSON(kerningJsonFirstDir, function(data) {
         alt:        'ヒマ人'
     };
 
-    ReactDOM.render(<Avatar02 user={user} />, document.getElementById('test13'));
+    ReactDOM.render(<Test13 user={user} />, document.getElementById('test13'));
 
 
     /*----------------------------------------------------------*/
@@ -262,7 +262,7 @@ $.getJSON(kerningJsonFirstDir, function(data) {
 
     });
 
-    var TodoList = React.createClass({
+    var Test14 = React.createClass({
 
         getInitialState() {
             return {
@@ -296,13 +296,13 @@ $.getJSON(kerningJsonFirstDir, function(data) {
 
     });
 
-    ReactDOM.render(<TodoList />, document.getElementById('test14'));
+    ReactDOM.render(<Test14 />, document.getElementById('test14'));
 
 
     /*----------------------------------------------------------*/
 
 
-    var Counter = React.createClass({
+    var Test15 = React.createClass({
 
         propTypes: {
             initialCount: React.PropTypes.number
@@ -331,23 +331,26 @@ $.getJSON(kerningJsonFirstDir, function(data) {
 
     });
 
-    ReactDOM.render(<Counter />, document.getElementById('test15'));
+    ReactDOM.render(<Test15 />, document.getElementById('test15'));
+
+
+    /*----------------------------------------------------------*/
+
+
 
 
     /*【TEST】 React実装 ここまで
     ------------------------------------------------------------*/
 
 
-    setTimeout(function() {
 
-        /* 中にテキストが入るタグの判定 */
-        var tag = $('p, h1, h2, h3, h4, h5, h6, .carousel-caption, dl.news dt, dl.news dd, dl#column dt, dl#column dd, dl#form-layout-jp dt, dl#form-layout-en dt, ul.list li, ol.list li, ul.suggest-menu li, ul.form-accept li, th, td, a, address')
 
-        tag.kerning({
-            'data': data
-        });
+    /* 中にテキストが入るタグの判定 */
+    var tag = $('p, h1, h2, h3, h4, h5, h6, .carousel-caption, dl.news dt, dl.news dd, dl#column dt, dl#column dd, dl#form-layout-jp dt, dl#form-layout-en dt, ul.list li, ol.list li, ul.suggest-menu li, ul.form-accept li, th, td, a, address');
 
-    }, 1000);
+    tag.kerning({
+        'data': data
+    });
 
 
 
