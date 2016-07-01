@@ -63,6 +63,10 @@ var GLOBAL = GLOBAL || self;
 
 
     // ウィンドウのサイズ判定 //
+    var self  = this;
+
+
+    // ウィンドウのサイズ判定 //
     var window_width            = $(window).width();
     var window_height           = $(window).height();
     var window_outer_width      = $(window).outerWidth();
@@ -405,13 +409,9 @@ var GLOBAL = GLOBAL || self;
         var dt_column_width     = $('dl.column dt').width();
         var dt_news_width       = $('dl.news dt').width();
 
-        /* ddの判定 */
-        var dd_column           = $('dl.column dd');
-        var dd_news             = $('dl.news dd');
-
         /* 可変部分の高さを適用 */
-        dd_column.css('margin-left', dt_column_width + 20 + 'px');
-        dd_news.css('margin-left', dt_news_width  + 'px');
+        $('dl.column dd').css('margin-left', dt_column_width + 20 + 'px');
+        $('dl.news dd').css('margin-left', dt_news_width  + 'px');
 
     }
 
@@ -500,13 +500,11 @@ var GLOBAL = GLOBAL || self;
     ----------------------------------------------------*/
 
 
-    var nav_tabs = $('#tabs');
+    $('#tabs').tabs({
 
-    nav_tabs.tabs({
-
-        collapsible: false,
-        show:   { effect: 'fadeIn', duration: 800 },
-        fx:     { height: 'toggle', opacity: 'toggle', duration: 300 }
+        collapsible:    false,
+        show:           { effect: 'fadeIn', duration: 800 },
+        fx:             { height: 'toggle', opacity: 'toggle', duration: 300 }
 
     });
 
@@ -533,10 +531,6 @@ var GLOBAL = GLOBAL || self;
     ----------------------------------------------------*/
 
 
-    // マウスオーバー用のクラスを設定 //
-    var img_mouse_over = $('img.img-mouseover');
-
-
     // マウスオーバー時の挙動を設定 //
     function mouseOver(i) {
 
@@ -546,14 +540,14 @@ var GLOBAL = GLOBAL || self;
 
             case 'on' :
 
-                img_mouse_over.each(function() {
+                $('img.img-mouseover').each(function() {
                     $(this).attr('src', $(this).attr('src').replace('_off', '_on'));
                 });
                 break;
 
             case 'off' :
 
-                img_mouse_over.each(function() {
+                $('img.img-mouseover').each(function() {
                     $(this).attr('src', $(this).attr('src').replace('_on', '_off'));
                 });
                 break;
@@ -570,7 +564,7 @@ var GLOBAL = GLOBAL || self;
     // PCのみ発火 //
     if (user_agent.indexOf('iPhone') > 0 || user_agent.indexOf('iPad') > 0 || user_agent.indexOf('iPod') > 0 || user_agent.indexOf('Android') > 0 || user_agent.indexOf('BlackBerry') > 0 || user_agent.indexOf('windows Phone') > 0 || user_agent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(user_agent)) {
 
-        img_mouse_over.on({
+        $('img.img-mouseover').on({
 
             'mouseenter': function() {
                 mouseOver();
@@ -586,7 +580,7 @@ var GLOBAL = GLOBAL || self;
 
     else {
 
-        img_mouse_over.on({
+        $('img.img-mouseover').on({
 
             'mouseenter': function() {
                 mouseOver('on');
@@ -608,12 +602,8 @@ var GLOBAL = GLOBAL || self;
     ----------------------------------------------------*/
 
 
-    // ブランク用のクラスを設定 //
-    var window_blank = $('.blank');
-
-
     // クリックしたらアンカーリンクをブランクで動作 //
-    window_blank.on('click', function() {
+    $('.blank').on('click', function() {
 
         /* リンクの判定 */
         var href = $(this).attr('href');
@@ -794,13 +784,6 @@ var GLOBAL = GLOBAL || self;
 
 
 
-    // フォームサブミットの判定 //
-    var form_submit_on_ja   = $('input#btn-confirm-on-ja');
-    var form_submit_on_en   = $('input#btn-confirm-on-en');
-
-
-
-
     /* Validate
     ------------------------------------------------------------------------------*/
 
@@ -808,7 +791,7 @@ var GLOBAL = GLOBAL || self;
 
 
         // Submitを押したときのバリデート判定 Jp:日本語  //
-        form_submit_on_ja.on('click', function() {
+        $('input#btn-confirm-on-ja').on('click', function() {
 
             /* エラー判定 */
             $('#inquiry-form-jp').validate({
@@ -960,35 +943,27 @@ var GLOBAL = GLOBAL || self;
             }
 
 
-            var inquiryListJp           = $('input#form-inquiryList-jp')
-            var inquiryCompanyNameJp    = $('input#form-inquiryCompanyName-jp')
-            var inquiryNameJaJp         = $('input#form-inquiryNameJa-jp')
-            var inquiryNameEnJp         = $('input#form-inquiryNameEn-jp')
-            var inquiryMailJp           = $('input#form-inquiryMail-jp')
-            var inquiryTextJp           = $('textarea#form-inquiryText-jp')
-
-
-            if (inquiryListJp.val() === '') {
+            if ($('input#form-inquiryList-jp').val() === '') {
                 validateScrollJp('inquiry-list-jp');
             }
 
-            else if (inquiryCompanyNameJp.val() === '') {
+            else if ($('input#form-inquiryCompanyName-jp').val() === '') {
                 validateScrollJp('inquiry-companyName-jp');
             }
 
-            else if (inquiryNameJaJp.val() === '') {
+            else if ($('input#form-inquiryNameJa-jp').val() === '') {
                 validateScrollJp('inquiry-nameJa-jp');
             }
 
-            else if (inquiryNameEnJp.val() === '') {
+            else if ($('input#form-inquiryNameEn-jp').val() === '') {
                 validateScrollJp('inquiry-nameEn-jp');
             }
 
-            else if (inquiryMailJp.val() === '') {
+            else if ($('input#form-inquiryMail-jp').val() === '') {
                 validateScrollJp('inquiry-mail-jp');
             }
 
-            else if (inquiryTextJp.val() === '') {
+            else if ($('textarea#form-inquiryText-jp').val() === '') {
                 validateScrollJp('inquiry-text-jp');
             }
 
@@ -996,7 +971,7 @@ var GLOBAL = GLOBAL || self;
 
 
         // Submitを押したときのバリデート判定 En:英語  //
-        form_submit_on_en.on('click', function() {
+        $('input#btn-confirm-on-en').on('click', function() {
 
             /* エラー判定 */
             $('#inquiry-form-en').validate({
@@ -1126,30 +1101,23 @@ var GLOBAL = GLOBAL || self;
             }
 
 
-            var inquiryListEn           = $('input#form-inquiryList-en')
-            var inquiryCompanyNameEn    = $('input#form-inquiryCompanyName-en')
-            var inquiryNameEnEn         = $('input#form-inquiryNameEn-en')
-            var inquiryMailEn           = $('input#form-inquiryMail-en')
-            var inquiryTextEn           = $('textarea#form-inquiryText-en')
-
-
-            if (inquiryListEn.val() === '') {
+            if ($('input#form-inquiryList-en').val() === '') {
                 validateScrollEn('inquiry-list-en');
             }
 
-            else if (inquiryCompanyNameEn.val() === '') {
+            else if ($('input#form-inquiryCompanyName-en').val() === '') {
                 validateScrollEn('inquiry-companyName-en');
             }
 
-            else if (inquiryNameEnEn.val() === '') {
+            else if ($('input#form-inquiryNameEn-en').val() === '') {
                 validateScrollEn('inquiry-nameEn-en');
             }
 
-            else if (inquiryMailEn.val() === '') {
+            else if ($('input#form-inquiryMail-en').val() === '') {
                 validateScrollEn('inquiry-mail-en');
             }
 
-            else if (inquiryTextEn.val() === '') {
+            else if ($('textarea#form-inquiryText-en').val() === '') {
                 validateScrollEn('inquiry-text-en');
             }
 
@@ -1175,36 +1143,25 @@ var GLOBAL = GLOBAL || self;
 
             var caseArr = i ;
 
-            /* フォームサブミットの判定  */
-            var form_submit_on_ja   = $('input#btn-confirm-on-ja');
-            var form_submit_on_en   = $('input#btn-confirm-on-en');
-            var form_reset_on_ja    = $('input#btn-reset-on-ja');
-            var form_reset_on_en    = $('input#btn-reset-on-en');
-
-            var form_submit_off_ja  = $('input#btn-confirm-off-ja');
-            var form_submit_off_en  = $('input#btn-confirm-off-en');
-            var form_reset_off_ja   = $('input#btn-reset-off-ja');
-            var form_reset_off_en   = $('input#btn-reset-off-en');
-
             switch (caseArr) {
 
                 case 'on' :
 
                     /* ボタンのdisabledを取る  */
-                    form_submit_off_ja.attr('id', 'btn-confirm-on-ja').attr('disabled', false);
-                    form_submit_off_en.attr('id', 'btn-confirm-on-en').attr('disabled', false);
-                    form_reset_off_ja.attr('id', 'btn-reset-on-ja').attr('disabled', false);
-                    form_reset_off_en.attr('id', 'btn-reset-on-en').attr('disabled', false);
+                    $('input#btn-confirm-off-ja').attr('id', 'btn-confirm-on-ja').attr('disabled', false);
+                    $('input#btn-confirm-off-en').attr('id', 'btn-confirm-on-en').attr('disabled', false);
+                    $('input#btn-reset-off-ja').attr('id', 'btn-reset-on-ja').attr('disabled', false);
+                    $('input#btn-reset-off-en').attr('id', 'btn-reset-on-en').attr('disabled', false);
                     return false;
                     break;
 
                 case 'off' :
 
                     /* ボタンのdisabledを付与する  */
-                    form_submit_on_ja.attr('id','btn-confirm-off-ja').attr('disabled', true);
-                    form_submit_on_en.attr('id','btn-confirm-off-en').attr('disabled', true);
-                    form_reset_on_ja.attr('id','btn-reset-off-ja').attr('disabled', true);
-                    form_reset_on_en.attr('id','btn-reset-off-en').attr('disabled', true);
+                    $('input#btn-confirm-on-ja').attr('id','btn-confirm-off-ja').attr('disabled', true);
+                    $('input#btn-confirm-on-en').attr('id','btn-confirm-off-en').attr('disabled', true);
+                    $('input#btn-reset-on-ja').attr('id','btn-reset-off-ja').attr('disabled', true);
+                    $('input#btn-reset-on-en').attr('id','btn-reset-off-en').attr('disabled', true);
                     return false;
                     break;
 
@@ -1216,24 +1173,18 @@ var GLOBAL = GLOBAL || self;
         // 入力内容を消す //
         function mailFormInputReset() {
 
-            /* input、label、pの値を設定 */
-            var form_label_error    = $('label.error');
-            var form_p_html         = $('p#form-inquiryListDisplay-jp, p#form-inquiryListDisplay-en');
-            var form_input_val      = $('input#form-inquiryList-jp, input#form-inquiryList-en, input:text, input:checked, textarea');
-            var form_accept         = $('#accept-ja, #accept-en');
-
             /* バリデート注意文言を消す */
-            form_label_error.html('').hide();
+            $('label.error').html('').hide();
 
             /* サジェスト部分の注意文言及び以下の値を消す
                 [input type='hidden']
                 [input type='text']
                 [textarea]                       */
-            form_p_html.html('');
-            form_input_val.val('');
+            $('p#form-inquiryListDisplay-jp, p#form-inquiryListDisplay-en').html('');
+            $('input#form-inquiryList-jp, input#form-inquiryList-en, input:text, input:checked, textarea').val('');
 
             /* 同意するボタン内の値を消す */
-            form_accept.attr('checked', false);
+            $('#accept-ja, #accept-en').attr('checked', false);
 
             /* 同意ボタンにチェックが入っているか否かでのリセット、確認ボタンの動作 */
             mailFormInputAbled('off');
@@ -1728,9 +1679,9 @@ var GLOBAL = GLOBAL || self;
     /*Attention
     ----------------------------------------------------------------------------------------------------
 
-    ※約物含めたリンク箇所でのカーニング指定を行うと挙動がおかしくなる
-    　→約物を記号化、前後に半角スペースを入れる事で対応
-      例）<a href="javascript:void(0)" class="policy"> &#12300;個人情報の取り扱いについて&#12301; </a>
+    ※カーニングは半角英数には対応不可
+    ※数字、記号、約物は全角のみカーニングに対応
+    ※詳しい対応文字はajax/kerning.jsonを確認
 
     ----------------------------------------------------------------------------------------------------
     */
@@ -1778,29 +1729,28 @@ var GLOBAL = GLOBAL || self;
     function centering() {
 
         var box                 = $('.centerParentWrapper');
-        var fixed_container     = $('#fixed-container');
         var padding             = parseInt(box.css('padding-top')) + parseInt(box.css('padding-bottom'));
         var margin              = 50;
         var min_height          = box.height() + padding + footer.height() + margin;
 
 
         if( window_inner_height < min_height ) {
-            fixed_container.css({
+            $('#fixed-container').css({
                 'position' : 'relative'
             });
         }
 
         else {
-            fixed_container.css({
+            $('#fixed-container').css({
                 'position' : 'fixed'
             });
         }
 
-        fixed_container.css({
+        $('#fixed-container').css({
             'height' : window_inner_height + 'px'
         });
 
-        fixed_container.css({
+        $('#fixed-container').css({
             'height' : window_inner_height - 30 + 'px'
         });
 
