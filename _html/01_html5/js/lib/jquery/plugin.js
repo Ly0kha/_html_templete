@@ -541,14 +541,14 @@ var GLOBAL = GLOBAL || self;
             case 'on' :
 
                 $('img.img-mouseover').each(function() {
-                    $(this).attr('src', $(this).attr('src').replace('_off', '_on'));
+                    $(this).prop('src', $(this).prop('src').replace('_off', '_on'));
                 });
                 break;
 
             case 'off' :
 
                 $('img.img-mouseover').each(function() {
-                    $(this).attr('src', $(this).attr('src').replace('_on', '_off'));
+                    $(this).prop('src', $(this).prop('src').replace('_on', '_off'));
                 });
                 break;
 
@@ -1148,20 +1148,20 @@ var GLOBAL = GLOBAL || self;
                 case 'on' :
 
                     /* ボタンのdisabledを取る  */
-                    $('input#btn-confirm-off-ja').attr('id', 'btn-confirm-on-ja').attr('disabled', false);
-                    $('input#btn-confirm-off-en').attr('id', 'btn-confirm-on-en').attr('disabled', false);
-                    $('input#btn-reset-off-ja').attr('id', 'btn-reset-on-ja').attr('disabled', false);
-                    $('input#btn-reset-off-en').attr('id', 'btn-reset-on-en').attr('disabled', false);
+                    $('input#btn-confirm-off-ja').prop('id', 'btn-confirm-on-ja').prop('disabled', false);
+                    $('input#btn-confirm-off-en').prop('id', 'btn-confirm-on-en').prop('disabled', false);
+                    $('input#btn-reset-off-ja').prop('id', 'btn-reset-on-ja').prop('disabled', false);
+                    $('input#btn-reset-off-en').prop('id', 'btn-reset-on-en').prop('disabled', false);
                     return false;
                     break;
 
                 case 'off' :
 
                     /* ボタンのdisabledを付与する  */
-                    $('input#btn-confirm-on-ja').attr('id','btn-confirm-off-ja').attr('disabled', true);
-                    $('input#btn-confirm-on-en').attr('id','btn-confirm-off-en').attr('disabled', true);
-                    $('input#btn-reset-on-ja').attr('id','btn-reset-off-ja').attr('disabled', true);
-                    $('input#btn-reset-on-en').attr('id','btn-reset-off-en').attr('disabled', true);
+                    $('input#btn-confirm-on-ja').prop('id','btn-confirm-off-ja').prop('disabled', true);
+                    $('input#btn-confirm-on-en').prop('id','btn-confirm-off-en').prop('disabled', true);
+                    $('input#btn-reset-on-ja').prop('id','btn-reset-off-ja').prop('disabled', true);
+                    $('input#btn-reset-on-en').prop('id','btn-reset-off-en').prop('disabled', true);
                     return false;
                     break;
 
@@ -1184,7 +1184,7 @@ var GLOBAL = GLOBAL || self;
             $('input#form-inquiryList-jp, input#form-inquiryList-en, input:text, input:checked, textarea').val('');
 
             /* 同意するボタン内の値を消す */
-            $('#accept-ja, #accept-en').attr('checked', false);
+            $('#accept-ja, #accept-en').prop('checked', false);
 
             /* 同意ボタンにチェックが入っているか否かでのリセット、確認ボタンの動作 */
             mailFormInputAbled('off');
@@ -1791,11 +1791,11 @@ var GLOBAL = GLOBAL || self;
 
         /* PC用画像ソースフォルダに切り替える */
         $('.img-response').each(function() {
-            $(this).attr('src', $(this).attr('src').replace('sp', 'pc'));
+            $(this).prop('src', $(this).prop('src').replace('sp', 'pc'));
         });
 
         $('#form-layout-jp').each(function() {
-            $(this).attr('class', $(this).attr('class').replace('sp', 'pc'));
+            $(this).prop('class', $(this).prop('class').replace('sp', 'pc'));
             $('.colon').show();
             $('dl.form-pc dd').css({
                 'width': 400 + 'px'
@@ -1803,7 +1803,7 @@ var GLOBAL = GLOBAL || self;
         });
 
         $('#suggest').each(function() {
-            $(this).attr('class', $(this).attr('class').replace('sp', 'pc'));
+            $(this).prop('class', $(this).prop('class').replace('sp', 'pc'));
         });
 
     });
@@ -1814,11 +1814,11 @@ var GLOBAL = GLOBAL || self;
 
         /* SP用画像ソースフォルダに切り替える */
         $('.img-response').each(function() {
-            $(this).attr('src', $(this).attr('src').replace('pc', 'sp'));
+            $(this).prop('src', $(this).prop('src').replace('pc', 'sp'));
         });
 
         $('#form-layout-jp').each(function() {
-            $(this).attr('class', $(this).attr('class').replace('pc', 'sp'));
+            $(this).prop('class', $(this).prop('class').replace('pc', 'sp'));
             $('.colon').hide();
             $('dl.form-sp dd').css({
                 'width': 400 / 400 * 100 + '%'
@@ -1827,7 +1827,7 @@ var GLOBAL = GLOBAL || self;
         });
 
         $('#suggest').each(function() {
-            $(this).attr('class', $(this).attr('class').replace('pc', 'sp'));
+            $(this).prop('class', $(this).prop('class').replace('pc', 'sp'));
         });
 
     });
