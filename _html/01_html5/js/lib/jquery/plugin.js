@@ -46,7 +46,7 @@ var GLOBAL = GLOBAL || self;
 
 
 
-(function(global) {
+window.onload = (function(global) {
 
 
 "use strict";
@@ -225,9 +225,9 @@ var GLOBAL = GLOBAL || self;
 
         /* IEであるか否かの判定 */
         if (user_agent.match(/MSIE/) || user_agent.match(/Trident/) ) {
-            isIE = true;
-            version = user_agent.match(/(MSIE\s|rv:)([\d\.]+)/)[2];
-            version = parseInt(version);
+            isIE        = true;
+            version     = user_agent.match(/(MSIE\s|rv:)([\d\.]+)/)[2];
+            version     = parseInt(version);
             console.log('IE : Ver:', version);
         }
 
@@ -606,7 +606,7 @@ var GLOBAL = GLOBAL || self;
     $('.blank').on('click', function() {
 
         /* リンクの判定 */
-        var href = $(this).attr('href');
+        var href = $(this).prop('href');
 
         window.open(href, '_blank');
         return false;
