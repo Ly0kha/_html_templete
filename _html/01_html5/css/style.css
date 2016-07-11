@@ -2783,9 +2783,8 @@ ul.suggest-menu li {
 
 	margin: 0px auto;
 	padding: 40px 20px;
-	min-width: 240px;
-	max-width: 959px;
-	height: 480px;
+	min-width: 280px;
+	max-width: 960px;
 	overflow: hidden;
 }
 
