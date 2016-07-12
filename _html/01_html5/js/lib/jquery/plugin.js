@@ -63,7 +63,7 @@ window.onload = (function(global) {
 
 
     // ウィンドウのサイズ判定 //
-    var self  = this;
+    var self                    = this;
 
 
     // ウィンドウのサイズ判定 //
@@ -82,6 +82,7 @@ window.onload = (function(global) {
 
     // 端末ユーザーエージェントの判定 //
     var user_agent              = navigator.userAgent;
+    var ua_sp                   = user_agent.indexOf('iPhone') > 0 || user_agent.indexOf('iPad') > 0 || user_agent.indexOf('iPod') > 0 || user_agent.indexOf('Android') > 0 || user_agent.indexOf('BlackBerry') > 0 || user_agent.indexOf('windows Phone') > 0 || user_agent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(user_agent);
 
 
     // ヘッダーの判定 //
@@ -186,8 +187,6 @@ window.onload = (function(global) {
     ----------------------------------------------------*/
 
 
-
-
         /* 【TEST】 window判定実装
            ウィンドウ自体の幅と高さを計測し、使っているブラウザのユーザーエージェントを判定
         ----------------------------------------*/
@@ -209,6 +208,19 @@ window.onload = (function(global) {
         $(window).on('load resize', function() {
             testUserStatusDecision();
         });
+
+
+        /*【TEST】 ユーザーエージェントコンソールログ
+        ----------------------------------------*/
+
+
+        if(ua_sp) {
+            console.log('SP');
+        }
+
+        else {
+            console.log('PC');
+        }
 
 
 
@@ -293,7 +305,7 @@ window.onload = (function(global) {
         }
 
 
-        if (user_agent.indexOf('iPhone') > 0 || user_agent.indexOf('iPad') > 0 || user_agent.indexOf('iPod') > 0 || user_agent.indexOf('Android') > 0 || user_agent.indexOf('BlackBerry') > 0 || user_agent.indexOf('windows Phone') > 0 || user_agent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(user_agent) ) {
+        if (ua_sp) {
 
         }
 
@@ -312,12 +324,6 @@ window.onload = (function(global) {
         else {
 
         }
-
-
-
-
-    /* 【TEST】ここまで
-    ----------------------------------------------------*/
 
 
 
@@ -562,7 +568,7 @@ window.onload = (function(global) {
 
 
     // PCのみ発火 //
-    if (user_agent.indexOf('iPhone') > 0 || user_agent.indexOf('iPad') > 0 || user_agent.indexOf('iPod') > 0 || user_agent.indexOf('Android') > 0 || user_agent.indexOf('BlackBerry') > 0 || user_agent.indexOf('windows Phone') > 0 || user_agent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(user_agent)) {
+    if (ua_sp) {
 
         $('img.img-mouseover').on({
 
@@ -1237,7 +1243,7 @@ window.onload = (function(global) {
         $(window).on('load', function() {
 
             /* -SP- */
-            if (user_agent.indexOf('iPhone') > 0 || user_agent.indexOf('iPad') > 0 || user_agent.indexOf('iPod') > 0 || user_agent.indexOf('Android') > 0 || user_agent.indexOf('BlackBerry') > 0 || user_agent.indexOf('windows Phone') > 0 || user_agent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(user_agent)) {
+            if (ua_sp) {
                 $('.policy').on('click', function() {
                     // location.href='../sitepolicy/index.html'
                     // window.open('../sitepolicy/index.html', '_blank');
@@ -1346,7 +1352,7 @@ window.onload = (function(global) {
     $(window).on('load resize', function() {
 
         /* サジェストを出す -SP- */
-        if (user_agent.indexOf('iPhone') > 0 || user_agent.indexOf('iPad') > 0 || user_agent.indexOf('iPod') > 0 || user_agent.indexOf('Android') > 0 || user_agent.indexOf('BlackBerry') > 0 || user_agent.indexOf('windows Phone') > 0 || user_agent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(user_agent)) {
+        if (ua_sp) {
             suggestOnSP();
         }
 
