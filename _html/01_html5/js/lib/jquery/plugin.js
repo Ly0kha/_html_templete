@@ -187,6 +187,8 @@ window.onload = (function(global) {
     ----------------------------------------------------*/
 
 
+
+
         /* 【TEST】 window判定実装
            ウィンドウ自体の幅と高さを計測し、使っているブラウザのユーザーエージェントを判定
         ----------------------------------------*/
@@ -208,6 +210,8 @@ window.onload = (function(global) {
         $(window).on('load resize', function() {
             testUserStatusDecision();
         });
+
+
 
 
         /*【TEST】 ユーザーエージェントコンソールログ
@@ -324,6 +328,41 @@ window.onload = (function(global) {
         else {
 
         }
+
+
+
+
+        /*【TEST】 背景スライド
+        ----------------------------------------*/
+
+        var img_width               = $('#tumblr-test img').width();
+        var img_height              = $('#tumblr-test img').height();
+
+        fitImageSize();
+
+        $(window).on('load resize', function() {
+            fitImageSize();
+        });
+
+        //画像をウィンドウに合わせる
+        function fitImageSize() {
+            var window_width        = $(window).width();
+            var window_height       = $(window).height();
+            var scale_width         = window_width / img_width;
+            var scale_height        = window_height / img_height;
+            var fixScale            = Math.max(scale_width, scale_height);
+            var set_width           = img_width * fixScale;
+            var set_height          = img_height * fixScale;
+            var moveX               = Math.floor((window_width - set_width) / 2);
+            var moveY               = Math.floor((window_height - set_height) / 2);
+            $('#view img').css({
+                'width':            set_width,
+                'height':           set_height,
+                'left':             moveX,
+                'top':              moveY
+            });
+        }
+
 
 
 
@@ -791,7 +830,7 @@ window.onload = (function(global) {
 
 
     /* Validate
-    ------------------------------------------------------------------------------*/
+    ----------------------------------------------------*/
 
 
 
@@ -1133,13 +1172,13 @@ window.onload = (function(global) {
 
 
     /* Validate ここまで
-    ------------------------------------------------------------------------------*/
+    ----------------------------------------------------*/
 
 
 
 
     /* MailForm
-    ------------------------------------------------------------------------------*/
+    ----------------------------------------------------*/
 
 
 
@@ -1266,7 +1305,7 @@ window.onload = (function(global) {
 
 
     /* MailForm ここまで
-    ------------------------------------------------------------------------------*/
+    ----------------------------------------------------*/
 
 
 
@@ -1683,13 +1722,13 @@ window.onload = (function(global) {
 
 
     /*Attention
-    ----------------------------------------------------------------------------------------------------
+    ----------------------------------------------------
 
     ※カーニングは半角英数には対応不可
     ※数字、記号、約物は全角のみカーニングに対応
     ※詳しい対応文字はajax/kerning.jsonを確認
 
-    ----------------------------------------------------------------------------------------------------
+    ----------------------------------------------------
     */
 
 
@@ -1829,7 +1868,6 @@ window.onload = (function(global) {
             $('dl.form-sp dd').css({
                 'width': 400 / 400 * 100 + '%'
             });
-
         });
 
         $('#suggest').each(function() {
