@@ -335,36 +335,43 @@ window.onload = (function(global) {
         /*【TEST】 背景スライド
         ----------------------------------------*/
 
-        var img_width               = $('#tumblr-test img').width();
-        var img_height              = $('#tumblr-test img').height();
 
-        fitImageSize();
+        function bgSize() {
 
-        $(window).on('load resize', function() {
-            fitImageSize();
-        });
+            // ウィンドウのサイズ判定 //
+            var window_width    = $(window).width();
+            var window_height   = $(window).height();
 
-        //画像をウィンドウに合わせる
-        function fitImageSize() {
-            var window_width        = $(window).width();
-            var window_height       = $(window).height();
-            var scale_width         = window_width / img_width;
-            var scale_height        = window_height / img_height;
-            var fixScale            = Math.max(scale_width, scale_height);
-            var set_width           = img_width * fixScale;
-            var set_height          = img_height * fixScale;
-            var moveX               = Math.floor((window_width - set_width) / 2);
-            var moveY               = Math.floor((window_height - set_height) / 2);
-            $('#view img').css({
-                'width':            set_width,
-                'height':           set_height,
-                'left':             moveX,
-                'top':              moveY
+            // 画像サイズ判定 //
+            var img_width       = $('img.post-img').width();
+            var img_height      = $('img.post-img').height();
+
+            // スケール //
+            var scale_width     = window_width / img_width;
+            var scale_height    = window_height / img_height;
+            var fix_scale       = Math.max(scale_width, scale_height);
+
+            var set_width       = img_width * fix_scale;
+            var set_height      = img_height * fix_scale;
+            var moveX           = Math.floor((window_width - set_width) / 2);
+            var moveY           = Math.floor((window_height - set_height) / 2);
+
+            $('.post-img').css({
+                'width': set_width,
+                'height': set_height,
+                'left' : moveX,
+                'top' : moveY
             });
+
         }
 
 
+        bgSize();
 
+        //リサイズしたら実行
+        $(window).on('load resize', function() {
+           bgSize();
+        });
 
 
     /* Header共通化
