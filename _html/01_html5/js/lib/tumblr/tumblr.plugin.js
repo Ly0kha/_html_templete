@@ -15,7 +15,7 @@ window.onload = (function(global) {
     url = "kik888.tumblr.com";
     key = "DxAdNEP9PrL03Eq1H2duB0FHcqNETXBwAXbRVpxB1fjuBHmDUC";
 
-    $.getJSON("http://api.tumblr.com/v2/blog/" + url + "/posts?api_key=" + key + "&jsonp=?"　+　"&limit=1", function (data) {
+    $.getJSON("http://api.tumblr.com/v2/blog/" + url + "/posts?api_key=" + key + "&jsonp=?"　+　"&limit=10", function (data) {
 
 
         $.each(data, function (index, val) {
@@ -72,11 +72,28 @@ window.onload = (function(global) {
 
                                                     var image = v[n];
 
+                                                    function bgHtml(index) {
+
+                                                        var activeObj = $('.post-photo:eq(1)');
+
+                                                        if (activeObj == 0) {
+                                                            return '<div class="post-cover"></div><div class="post-' + type + ' active" style="background-image:url( ' + image + ' );">';
+                                                        }
+
+                                                        else {
+                                                            return '<div class="post-cover"></div><div class="post-' + type + '" style="background-image:url( ' + image + ' );">';
+                                                        }
+
+                                                    }
+
+
                                                     // $('#tumblr-test').append('<div class="post-' + type + '"><ul><li>' + data + '</li><li><a href="' + link + '">link</a></li></ul><img src="' + image + '"></div>');
 
                                                     // $('#tumblr-test').append('<li class="post-' + type + ' float-l"><a href="' + link + '"><img src=" ' + image + '"></a></li>');
 
-                                                    $('#tumblr-test').append('<li class="post-' + type + ' float-l"><a href="' + link + '"><img src=" ' + image + ' " class="post-img"></a></li>');
+                                                    // $('#tumblr-test').append('<li class="post-' + type + ' float-l"><a href="' + link + '"><img src=" ' + image + ' " class="post-img"></a></li>');
+
+                                                    $('#bg-slider').append(bgHtml);
 
                                                 }
                                             }

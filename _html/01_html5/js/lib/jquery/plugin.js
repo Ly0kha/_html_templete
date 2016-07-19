@@ -338,30 +338,45 @@ window.onload = (function(global) {
 
         function bgSize() {
 
-            // ウィンドウのサイズ判定 //
-            var window_width    = $(window).width();
-            var window_height   = $(window).height();
+            var window_width            = $(window).width();
+            var window_height           = $(window).height();
 
-            // 画像サイズ判定 //
-            var img_width       = $('img.post-img').width();
-            var img_height      = $('img.post-img').height();
-
-            // スケール //
-            var scale_width     = window_width / img_width;
-            var scale_height    = window_height / img_height;
-            var fix_scale       = Math.max(scale_width, scale_height);
-
-            var set_width       = img_width * fix_scale;
-            var set_height      = img_height * fix_scale;
-            var moveX           = Math.floor((window_width - set_width) / 2);
-            var moveY           = Math.floor((window_height - set_height) / 2);
-
-            $('.post-img').css({
-                'width': set_width,
-                'height': set_height,
-                'left' : moveX,
-                'top' : moveY
+            $('.post-cover, .post-photo').css({
+                'width':  window_width,
+                'height':  window_height,
             });
+
+
+            // スライダーのクラスを設定 //
+            var bgslider = $('#bg-slider');
+
+            bgslider.carousel({
+                interval: 8000
+            });
+
+
+            // スライダーにタッチスワイプを実装する -SP- //
+            function bgSliderFlick() {
+
+                var carousel = new Hammer(bgslider[0]);
+
+                /* 左にスワイプしたら次の画像に切り替え */
+                carousel.on('swipeleft', function() {
+                    bgslider.carousel('next');
+                });
+
+                /* 右にスワイプしたら前の画像に切り替え */
+                carousel.on('swiperight', function() {
+                    bgslider.carousel('prev');
+                });
+
+            }
+
+
+            // ソースにスライダー用のid名が含まれていたらタッチスワイプを発火する -SP- //
+            if (bgslider.length) {
+                bgSliderFlick();
+            }
 
         }
 
