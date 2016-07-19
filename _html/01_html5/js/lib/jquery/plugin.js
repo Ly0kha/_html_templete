@@ -339,13 +339,12 @@ window.onload = (function(global) {
         function bgSize() {
 
             var window_width            = $(window).width();
-            var window_height           = $(window).height();
+            var window_height           = $(window).height() + 80;
 
             $('.post-cover, .post-photo').css({
                 'width':  window_width,
                 'height':  window_height,
             });
-
 
             // スライダーのクラスを設定 //
             var bgslider = $('#bg-slider');
@@ -353,30 +352,6 @@ window.onload = (function(global) {
             bgslider.carousel({
                 interval: 8000
             });
-
-
-            // スライダーにタッチスワイプを実装する -SP- //
-            function bgSliderFlick() {
-
-                var carousel = new Hammer(bgslider[0]);
-
-                /* 左にスワイプしたら次の画像に切り替え */
-                carousel.on('swipeleft', function() {
-                    bgslider.carousel('next');
-                });
-
-                /* 右にスワイプしたら前の画像に切り替え */
-                carousel.on('swiperight', function() {
-                    bgslider.carousel('prev');
-                });
-
-            }
-
-
-            // ソースにスライダー用のid名が含まれていたらタッチスワイプを発火する -SP- //
-            if (bgslider.length) {
-                bgSliderFlick();
-            }
 
         }
 

@@ -382,8 +382,6 @@ img {
 .post-photo,
 .post-cover {
 	background-position: center center;
-	background-attachment: fixed;
-	background-size: cover;
 
 	position: fixed;
 	left: 0px;
@@ -393,6 +391,10 @@ img {
 .post-photo {
 	background-color: #464646;
 	background-repeat: no-repeat;
+	/*
+	background-attachment: fixed;*/
+	background-size: cover;
+
 	z-index: -5;
 }
 
@@ -400,6 +402,11 @@ img {
 	background-image: url('../images/common/img_overlays02.png');
 	background-repeat: repeat;
 	z-index: -1;
+}
+
+#test-container .carousel {
+	position: relative;
+	margin: 0px !important;
 }
 
 

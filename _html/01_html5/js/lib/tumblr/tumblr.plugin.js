@@ -74,14 +74,14 @@ window.onload = (function(global) {
 
                                                     function bgHtml(index) {
 
-                                                        var activeObj = $('.post-photo:eq(1)');
+                                                        var activeObj = $('.post-' + type + '');
 
-                                                        if (activeObj == 0) {
-                                                            return '<div class="post-cover"></div><div class="post-' + type + ' active" style="background-image:url( ' + image + ' );">';
+                                                        if ($('.post-' + type + '').get(0).className.split(" ")[0];) {
+                                                            return '<div class="post-' + type + ' active" style="background-image:url( ' + image + ' );" role="listbox"><div class="post-cover">';
                                                         }
 
                                                         else {
-                                                            return '<div class="post-cover"></div><div class="post-' + type + '" style="background-image:url( ' + image + ' );">';
+                                                            return '<div class="post-' + type + '" style="background-image:url( ' + image + ' );" role="listbox"><div class="post-cover">';
                                                         }
 
                                                     }
