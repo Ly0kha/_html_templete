@@ -74,15 +74,7 @@ window.onload = (function(global) {
 
                                                     function bgHtml(index) {
 
-                                                        var activeObj = $('.post-' + type + '');
-
-                                                        if ($('.post-' + type + '').get(0).className.split(" ")[0];) {
-                                                            return '<div class="post-' + type + ' active" style="background-image:url( ' + image + ' );" role="listbox"><div class="post-cover">';
-                                                        }
-
-                                                        else {
-                                                            return '<div class="post-' + type + '" style="background-image:url( ' + image + ' );" role="listbox"><div class="post-cover">';
-                                                        }
+                                                        return '<div class="post-' + type + ' item" style="background-image:url( ' + image + ' ); background-position: 50％ 50％;"><div class="post-cover">';
 
                                                     }
 
@@ -93,7 +85,8 @@ window.onload = (function(global) {
 
                                                     // $('#tumblr-test').append('<li class="post-' + type + ' float-l"><a href="' + link + '"><img src=" ' + image + ' " class="post-img"></a></li>');
 
-                                                    $('#bg-slider').append(bgHtml);
+                                                    $('.carousel-inner').append(bgHtml);
+                                                    $('.post-' + type + ':first').addClass('active');
 
                                                 }
                                             }

@@ -405,8 +405,9 @@ img {
 }
 
 #test-container .carousel {
-	position: relative;
+	position: fixed;
 	margin: 0px !important;
+	z-index: -1;
 }
 
 
