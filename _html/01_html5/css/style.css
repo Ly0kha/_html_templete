@@ -379,6 +379,8 @@ img {
 	height: auto;
 }
 
+
+/* 【TEST】背景画像カルーセル */
 .post-photo,
 .post-cover {
 	background-position: center center;
@@ -409,6 +411,40 @@ img {
 	margin: 0px !important;
 	z-index: -1;
 }
+
+#bg-slider {
+	display: none;
+}
+
+#bg-slider .item {
+	transition-property: opacity;
+}
+
+#bg-slider .item,
+#bg-slider .active.left,
+#bg-slider .active.right {
+	opacity: 0;
+}
+
+#bg-slider .active,
+#bg-slider .next.left,
+#bg-slider .prev.right {
+	opacity: 1;
+}
+
+#bg-slider .next,
+#bg-slider .prev,
+#bg-slider .active.left,
+#bg-slider .active.right {
+	left: 0;
+	transform: translate3d(0, 0, 0);
+}
+
+#bg-slider .carousel-control {
+	z-index: 2;
+}
+
+
 
 
 /* 本文
@@ -1089,10 +1125,14 @@ select {
 .bg-textarea {
 	background-color: #fff;
 	background-image: none;
+	border-bottom: 1px solid #ccc;
+
+	/*
 	border: 1px solid #ccc;
 	border-radius: 4px;
 	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
 	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+	*/
 
 	opacity: 0.6;
 	-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity = 60);

@@ -49,7 +49,11 @@ var GLOBAL = GLOBAL || self;
 window.onload = (function(global) {
 
 
+
+
 "use strict";
+
+
 
 
 /* Setup
@@ -330,38 +334,6 @@ window.onload = (function(global) {
         }
 
 
-
-
-        /*【TEST】 背景スライド
-        ----------------------------------------*/
-
-
-        function bgSize() {
-
-            var window_width            = $(window).width();
-            var window_height           = $(window).height() + 80;
-
-            $('.post-cover, .post-photo').css({
-                'width':  window_width,
-                'height':  window_height,
-            });
-
-            // スライダーのクラスを設定 //
-            var bgslider = $('#bg-slider');
-
-            bgslider.carousel({
-                interval: 8000
-            });
-
-        }
-
-
-        bgSize();
-
-        //リサイズしたら実行
-        $(window).on('load resize', function() {
-           bgSize();
-        });
 
 
     /* Header共通化

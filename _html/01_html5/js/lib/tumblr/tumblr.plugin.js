@@ -2,6 +2,23 @@
 
 
 
+
+/*----------------------------------------------------
+
+・Setup
+　→TumblrのAPI設定
+　→TumblrのJson読み出し
+　→Jsonを元にHTMLに整形
+
+・Function
+　→画像をフルサイズにリサイズ
+　→スライドする為の設定とカスタマイズ
+
+----------------------------------------------------*/
+
+
+
+
 var GLOBAL = GLOBAL || self;
 
 
@@ -12,9 +29,20 @@ window.onload = (function(global) {
 
 
 
+/* Setup
+------------------------------------------------------------------------------*/
+
+
+
+
+    // Tumblrの情報を取得 //
     url = "kik888.tumblr.com";
     key = "DxAdNEP9PrL03Eq1H2duB0FHcqNETXBwAXbRVpxB1fjuBHmDUC";
 
+
+
+
+    // JsonをAJAXで読み込む //
     $.getJSON("http://api.tumblr.com/v2/blog/" + url + "/posts?api_key=" + key + "&jsonp=?"　+　"&limit=10", function (data) {
 
 
@@ -37,9 +65,9 @@ window.onload = (function(global) {
                                 type = v_post[kp].type;
 
 
+                            /* テキスト */
                             if (type == 'text') {
 
-                                // ブログ
                                 var title   = v_post[kp].title,
                                     content = v_post[kp].body;
 
@@ -48,9 +76,9 @@ window.onload = (function(global) {
                             }
 
 
+                            /* リンク */
                             else if (type == 'link') {
 
-                                // リンク
                                 var link_ol = v_post[kp].url,
                                     title   = v_post[kp].title;
 
@@ -59,9 +87,9 @@ window.onload = (function(global) {
                             }
 
 
+                            /* 画像 */
                             else if (type == 'photo') {
 
-                                // 画像
                                 $.each(v_post[kp].photos, function (k_photo, v_photo) {
 
                                     $.each(v_photo, function (k, v) {
@@ -85,7 +113,10 @@ window.onload = (function(global) {
 
                                                     // $('#tumblr-test').append('<li class="post-' + type + ' float-l"><a href="' + link + '"><img src=" ' + image + ' " class="post-img"></a></li>');
 
-                                                    $('.carousel-inner').append(bgHtml);
+
+
+
+                                                    $('.carousel-inner').append(bgHtml).fadeIn();
                                                     $('.post-' + type + ':first').addClass('active');
 
                                                 }
@@ -100,13 +131,13 @@ window.onload = (function(global) {
                             }
 
 
+                            /* 動画 */
                             else if (type == 'video') {
 
-                                // 動画
                                 var caption = v_post[kp].caption;
                                 $.each(v_post[kp].player, function (k_play, v_play) {
 
-                                    // 動画のサイズ（0:幅250px 1:幅400px 2:幅500px ）
+                                    /* 動画のサイズ (0:幅250px 1:幅400px 2:幅500px) */
                                     if (k_play == 1) {
                                         $.each(v_play, function (k, v) {
 
@@ -141,6 +172,53 @@ window.onload = (function(global) {
 
 
     });
+
+
+
+
+/* Function
+------------------------------------------------------------------------------*/
+
+
+
+
+    // 読み込んだ背景画像をフルサイズ / スライダーに設定 //
+    function bgSize() {
+
+        /* 背景画像を全画面に */
+        var window_width            = $(window).width();
+        var window_height           = $(window).height() + 80;
+
+        $('.post-cover, .post-photo').css({
+            'width':  window_width,
+            'height':  window_height,
+        });
+
+        /* スライダーのクラスを設定 */
+        var bgslider = $('#bg-slider');
+
+        /* スライダーの設定 */
+        bgslider.carousel({
+            interval: 8000
+        });
+
+    }
+
+
+    // 読み込んだら実行 //
+    bgSize();
+
+    // リサイズしたら実行 //
+    $(window).on('load resize', function() {
+       bgSize();
+    });
+
+    // 遅延ロード //
+    setTimeout(function() {
+        $('#bg-slider').fadeIn();
+    },3000);
+
+
 
 
 })((this || 0).self || global);
