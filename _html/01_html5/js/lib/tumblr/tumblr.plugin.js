@@ -60,10 +60,9 @@ window.onload = (function(global) {
                         for (var kp in v_post) {
 
 
-                            var data = v_post[kp].date,
-                                link = v_post[kp].post_url,
-                                type = v_post[kp].type;
-
+                            var data    = v_post[kp].date,
+                                link    = v_post[kp].post_url,
+                                type    = v_post[kp].type;
 
                             /* テキスト */
                             if (type == 'text') {
@@ -71,7 +70,7 @@ window.onload = (function(global) {
                                 var title   = v_post[kp].title,
                                     content = v_post[kp].body;
 
-                                $('#tumblr-test').append('<div class="post-' + type + '"><h1>' + title + '</h1>' + content + '</div>')
+                                $('.tumblr-test').append('<div class="post-' + type + '"><h1>' + title + '</h1>' + content + '</div>')
 
                             }
 
@@ -98,11 +97,12 @@ window.onload = (function(global) {
                                             for (var n in v) {
                                                 if (n == 'url') {
 
-                                                    var image = v[n];
+                                                    var image = v[n],
+                                                        caption = v_post[kp].caption;
 
                                                     function bgHtml(index) {
 
-                                                        return '<div class="post-' + type + ' item" style="background-image:url( ' + image + ' ); background-position: 50％ 50％;"><div class="post-cover">';
+                                                        return '<div class="post-' + type + ' item text-color-white" style="background-image:url( ' + image + ' ); background-position: 50％ 50％;"><time>' + data + '</time><div class="post-cover">';
 
                                                     }
 
@@ -133,6 +133,7 @@ window.onload = (function(global) {
                             else if (type == 'video') {
 
                                 var caption = v_post[kp].caption;
+
                                 $.each(v_post[kp].player, function (k_play, v_play) {
 
                                     /* 動画のサイズ (0:幅250px 1:幅400px 2:幅500px) */
@@ -206,21 +207,26 @@ window.onload = (function(global) {
     // 読み込んだら実行 //
     bgSize();
 
+
     // リサイズしたら実行 //
     $(window).on('load resize', function() {
        bgSize();
     });
+
 
     // 遅延ロード //
     setTimeout(function() {
         $('#bg-slider').fadeIn();
     },1000);
 
+
     // ローディング状況を取得する要素を指定 //
     var $preload = $('img');
 
+
     // 指定要素のsrcを格納するための配列 //
     var obj_srcs = [];
+
 
      // .eachを使って、指定した要素を順番に参照していきsrcを配列に格納 //
     $preload.each(function(){
@@ -235,11 +241,13 @@ window.onload = (function(global) {
         timeout:    20000
     });
 
+
     // progressはローディングの進捗ごとに発生します //
     loader.on('progress', function(progressInfo){
         // progressInfo.loadedRatioで進捗状況を0〜1で取得できます //
         console.log(progressInfo.loadedRatio);
     });
+
 
     // ファイルのロードが完了するごとに行う処理です //
     loader.on('itemload', function($img){
@@ -247,14 +255,17 @@ window.onload = (function(global) {
         console.log('アイテム読み込んだ');
     });
 
+
     //全てのロードが完了した際に行う処理です //
     loader.on('allload', function($img){
         // 処理を記述 //
         console.log('全部読み込んだ');
     });
 
+
     // ローダーを起動します //
     loader.load();
+
 
     // ちなみに全てのロードを中断する場合は下記が用意されています //
     loader.kill();
