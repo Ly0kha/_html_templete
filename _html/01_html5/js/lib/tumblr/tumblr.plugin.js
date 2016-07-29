@@ -59,10 +59,16 @@ window.onload = (function(global) {
 
                         for (var kp in v_post) {
 
-
+                            /* 引っ張ってくる情報 */
                             var data    = v_post[kp].date,
                                 link    = v_post[kp].post_url,
                                 type    = v_post[kp].type;
+
+
+                            /* 日付け表示を変える */
+                            date = new Date(data);
+                            strDate = date.toLocaleDateString();
+
 
                             /* テキスト */
                             if (type == 'text') {
@@ -102,7 +108,7 @@ window.onload = (function(global) {
 
                                                     function bgHtml(index) {
 
-                                                        return '<div class="post-' + type + ' item text-color-white" style="background-image:url( ' + image + ' ); background-position: 50％ 50％;"><time>' + data + '</time><div class="post-cover">';
+                                                        return '<div class="post-' + type + ' item text-color-white" style="background-image:url( ' + image + ' ); background-position: 50％ 50％;"><div class="box pd-20"><time class="block mb-40">' + strDate + '</time>' + caption + '<div class="post-cover">';
 
                                                     }
 
@@ -168,6 +174,8 @@ window.onload = (function(global) {
 
 
         });
+
+
 
 
     });
