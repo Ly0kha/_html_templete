@@ -241,6 +241,7 @@ window.onload = (function(global) {
             obj_srcs.push($(this).attr('src'));
         });
 
+
         var loader = new $.ImgLoader({
             srcs:       obj_srcs,
             pipesize:   1, // 同時にロードを行う要素の数。これだと3つごとに読み込み完了となる //

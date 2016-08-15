@@ -228,6 +228,59 @@
 		<hr class="hr-large">
 
 
+		<!-- Textbox 1Columns -->
+		<section>
+
+			<script id="input" type="text/x-handlebars-template">
+
+				<section>
+
+					<h2>
+						パーティ状況
+					</h2>
+
+					<dl>
+
+						{{#each myParty}}
+
+							<dt>
+								なまえ
+							</dt>
+							<dd>
+								{{name}}
+							</dd>
+							<dt>
+								しょくぎょう
+							</dt>
+							<dd>
+								{{job}}
+							</dd>
+							<dt>
+								HP
+							</dt>
+							<dd>
+								{{current_hp}}/{{max_hp}}
+							</dd>
+							<dt>
+								じょうたい
+							</dt>
+							<dd>
+								{{#showCondition current_hp}}{{/showCondition}}
+							</dd>
+
+						{{/each}}
+
+					</dl>
+
+				</section>
+
+			</script>
+
+			<div id="output"></div>
+
+		</section>
+
+
 		<!-- Footer -->
 		<footer id="footer-navi-1st" class="box center">
 
@@ -241,12 +294,11 @@
 </div>
 
 
-
-
 <!-- JS Framework -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
 
 
 <!-- React Framework -->
@@ -267,6 +319,8 @@
 <script src="js/lib/jquery/plugin.js" async></script>
 <script src="js/lib/tumblr/tumblr.plugin.js" async></script>
 <script src="js/lib/react/react.plugin.jsx" type="text/babel"></script>
+<script src="js/lib/handlebars/handlebars.plugin.js" async></script>
+
 
 
 </body>
