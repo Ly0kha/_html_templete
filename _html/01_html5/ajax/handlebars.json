@@ -1,5 +1,335 @@
 {
-	"one": "Singular sensation",
-	"two": "Beady little eyes",
-	"three": "Little birds pitch by my doorstep"
+
+    "rosterDirectorList": [
+
+            {
+                "name":           "三原 脩",
+                "job":            "監督",
+                "win":            1687,
+                "lose":           1453,
+                "current_hp":     0,
+                "isLive":         false
+            },
+            {
+                "name":           "鶴岡 一人",
+                "job":            "ヘッドコーチ",
+                "win":            1773,
+                "lose":           1140,
+                "current_hp":     0,
+                "isLive":         false
+            },
+            {
+                "name":           "川上 哲治",
+                "job":            "打撃コーチ",
+                "win":            1066,
+                "lose":           739,
+                "current_hp":     0,
+                "isLive":         false
+            },
+            {
+                "name":           "中西 太",
+                "job":            "打撃コーチ",
+                "win":            748,
+                "lose":           811,
+                "current_hp":     40,
+                "isLive":         true
+            },
+            {
+                "name":           "権藤 博",
+                "job":            "投手コーチ",
+                "win":            219,
+                "lose":           186,
+                "current_hp":     100,
+                "isLive":         true
+            },
+            {
+                "name":           "藤田 元司",
+                "job":            "投手コーチ",
+                "win":            516,
+                "lose":           361,
+                "current_hp":     0,
+                "isLive":         false
+            },
+            {
+                "name":           "仰木 彬",
+                "job":            "走塁/守備コーチ",
+                "win":            988,
+                "lose":           815,
+                "current_hp":     0,
+                "isLive":         false
+            },
+            {
+                "name":           "古葉 竹識",
+                "job":            "走塁/守備コーチ",
+                "win":            873,
+                "lose":           791,
+                "current_hp":     100,
+                "isLive":         true
+            }
+
+    ],
+
+    "rosterFielderList": [
+
+            {
+                "name":           "福本 豊",
+                "job":            "ライト",
+                "avg":            291,
+                "hr":             21,
+                "current_hp":     100,
+                "isLive":         true
+            },
+            {
+                "name":           "高木 守道",
+                "job":            "セカンド",
+                "avg":            272,
+                "hr":             24,
+                "current_hp":     100,
+                "isLive":         true
+            },
+            {
+                "name":           "長嶋 茂雄",
+                "job":            "サード",
+                "avg":            305,
+                "hr":             39,
+                "current_hp":     20,
+                "isLive":         true
+            },
+            {
+                "name":           "王 貞治",
+                "job":            "ファースト",
+                "avg":            301,
+                "hr":             55,
+                "current_hp":     50,
+                "isLive":         true
+            },
+            {
+                "name":           "A・ラミレス",
+                "job":            "レフト",
+                "avg":            301,
+                "hr":             49,
+                "current_hp":     100,
+                "isLive":         true
+            },
+            {
+                "name":           "野村 克也",
+                "job":            "キャッチャー",
+                "avg":            277,
+                "hr":             52,
+                "current_hp":     100,
+                "isLive":         true
+            },
+            {
+                "name":           "秋山 幸二",
+                "job":            "センター",
+                "avg":            270,
+                "hr":             43,
+                "current_hp":     60,
+                "isLive":         true
+            },
+            {
+                "name":           "駒田 徳広",
+                "job":            "DH",
+                "avg":            289,
+                "hr":             27,
+                "current_hp":     100,
+                "isLive":         true
+            },
+            {
+                "name":           "石井 啄朗",
+                "job":            "ショート",
+                "avg":            282,
+                "hr":             10,
+                "current_hp":     100,
+                "isLive":         true
+            },
+            {
+                "name":           "松井 秀喜",
+                "job":            "ライト",
+                "avg":            282,
+                "hr":             50,
+                "current_hp":     100,
+                "isLive":         true
+            },
+            {
+                "name":           "小久保 裕紀",
+                "job":            "セカンド",
+                "avg":            273,
+                "hr":             44,
+                "current_hp":     100,
+                "isLive":         true
+            },
+            {
+                "name":           "榎本 喜八",
+                "job":            "ファースト",
+                "avg":            298,
+                "hr":             24,
+                "current_hp":     0,
+                "isLive":         false
+            },
+            {
+                "name":           "落合 博満",
+                "job":            "サード",
+                "avg":            311,
+                "hr":             52,
+                "current_hp":     60,
+                "isLive":         true
+            },
+            {
+                "name":           "金本 知憲",
+                "job":            "レフト",
+                "avg":            285,
+                "hr":             40,
+                "current_hp":     60,
+                "isLive":         true
+            },
+            {
+                "name":           "古田 敦也",
+                "job":            "キャッチャー",
+                "avg":            294,
+                "hr":             30,
+                "current_hp":     80,
+                "isLive":         true
+            },
+            {
+                "name":           "山本 浩二",
+                "job":            "センター",
+                "avg":            290,
+                "hr":             44,
+                "current_hp":     80,
+                "isLive":         true
+            },
+            {
+                "name":           "門田 博光",
+                "job":            "DH",
+                "avg":            289,
+                "hr":             44,
+                "current_hp":     100,
+                "isLive":         true
+            },
+            {
+                "name":           "野村 謙次郎",
+                "job":            "ショート",
+                "avg":            285,
+                "hr":             32,
+                "current_hp":     100,
+                "isLive":         true
+            }
+        ],
+
+    "rosterPitcherList": [
+
+            {
+                "name":           "金田 正一",
+                "job":            "先発",
+                "win":            31,
+                "lose":           14,
+                "save":           "-",
+                "era":            1.31,
+                "current_hp":     40,
+                "isLive":         true
+            },
+            {
+                "name":           "小山 正明",
+                "job":            "先発",
+                "win":            30,
+                "lose":           12,
+                "save":           "-",
+                "era":            2.47,
+                "current_hp":     40,
+                "isLive":         true
+            },
+            {
+                "name":           "米田 哲也",
+                "job":            "先発",
+                "win":            25,
+                "lose":           17,
+                "save":           "-",
+                "era":            3.19,
+                "current_hp":     50,
+                "isLive":         true
+            },
+            {
+                "name":           "鈴木 啓示",
+                "job":            "先発",
+                "win":            25,
+                "lose":           10,
+                "save":           0,
+                "era":            2.02,
+                "current_hp":     80,
+                "isLive":         true
+            },
+            {
+                "name":           "村田 兆治",
+                "job":            "先発",
+                "win":            21,
+                "lose":           11,
+                "save":           4,
+                "era":            1.82,
+                "current_hp":     100,
+                "isLive":         true
+            },
+            {
+                "name":           "山田 久志",
+                "job":            "リリーフ",
+                "win":            26,
+                "lose":           7,
+                "save":           5,
+                "era":            2.39,
+                "current_hp":     70,
+                "isLive":         true
+            },
+            {
+                "name":           "東尾 修",
+                "job":            "リリーフ",
+                "win":            23,
+                "lose":           15,
+                "save":           7,
+                "era":            2.38,
+                "current_hp":     100,
+                "isLive":         true
+            },
+            {
+                "name":           "山本 昌広",
+                "job":            "リリーフ",
+                "win":            19,
+                "lose":           8,
+                "save":           0,
+                "era":            3.49,
+                "current_hp":     100,
+                "isLive":         true
+            },
+            {
+                "name":           "江夏 豊",
+                "job":            "リリーフ",
+                "win":            25,
+                "lose":           12,
+                "save":           "-",
+                "era":            2.13,
+                "current_hp":     40,
+                "isLive":         true
+            },
+            {
+                "name":           "高津 臣吾",
+                "job":            "リリーフ",
+                "win":            0,
+                "lose":           4,
+                "save":           37,
+                "era":            2.61,
+                "current_hp":     100,
+                "isLive":         true
+            },
+            {
+                "name":           "佐々木 主浩",
+                "job":            "リリーフ",
+                "win":            1,
+                "lose":           1,
+                "save":           45,
+                "era":            0.64,
+                "current_hp":     100,
+                "isLive":         true
+            }
+
+        ]
+
 }

@@ -560,6 +560,7 @@ table.border td {
 
 table.border th {
 	background-color: #f9f9f9;
+	opacity: 0.6;
 	border-right: 1px solid #eee;
 	border-bottom: 3px solid #ddd;
 }

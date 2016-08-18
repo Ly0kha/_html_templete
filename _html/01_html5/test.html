@@ -58,7 +58,7 @@
 	<script type="text/coffeescript" src="js/lib/coffee/plugin.coffee"></script> -->
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!-- WARNING: Respond.js doesn"t work if you view the page via file:// -->
 	<!--[if lt IE 9]>
 		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -167,7 +167,128 @@
 			<div id="test15" class="mb-05"></div>
 			<hr class="hr-small">
 
+
+			<script id="json-test" type="text/x-handlebars-template">
+
+				<section>
+
+					<h2>
+						パーティ状況
+					</h2>
+
+					<table class="border">
+
+
+						<thead>
+
+							<tr>
+								<th colspan="4">監督 / コーチ</th>
+							</tr>
+
+							<tr>
+								<th>名前</th>
+								<th>ポジション</th>
+								<th>勝&nbsp;/&nbsp;負</th>
+								<th>状態</th>
+							</tr>
+
+						</thead>
+
+
+						{{#each rosterDirectorList}}
+
+						<tbody>
+
+							<tr>
+								<td>{{name}}</td>
+								<td>{{job}}</td>
+								<td>{{win}}&nbsp;/&nbsp;{{lose}}</td>
+								<td>{{#showCondition current_hp}}{{/showCondition}}</td>
+							</tr>
+
+						</tbody>
+
+
+						{{/each}}
+
+
+						<thead>
+
+							<tr>
+								<th colspan="4">バッター</th>
+							</tr>
+
+							<tr>
+								<th>名前</th>
+								<th>ポジション</th>
+								<th>.AVG&nbsp;/&nbsp;HR</th>
+								<th>状態</th>
+							</tr>
+
+						</thead>
+
+
+						{{#each rosterFielderList}}
+
+
+						<tbody>
+
+							<tr>
+								<td>{{name}}</td>
+								<td>{{job}}</td>
+								<td>.{{avg}}&nbsp;/&nbsp;{{hr}}HR</td>
+								<td>{{#showCondition current_hp}}{{/showCondition}}</td>
+							</tr>
+
+						</tbody>
+
+
+						{{/each}}
+
+
+						<thead>
+
+							<tr>
+								<th colspan="4">ピッチャー</th>
+							</tr>
+
+							<tr>
+								<th>名前</th>
+								<th>ポジション</th>
+								<th>.ERA&nbsp;/&nbsp;W&nbsp;/&nbsp;L&nbsp;/&nbsp;S</th>
+								<th>状態</th>
+							</tr>
+
+						</thead>
+
+
+						{{#each rosterPitcherList}}
+
+
+						<tbody>
+
+							<tr>
+								<td>{{name}}</td>
+								<td>{{job}}</td>
+								<td>{{era}}&nbsp;/&nbsp;{{win}}W&nbsp;/&nbsp;{{lose}}L&nbsp;/&nbsp;{{save}}S&nbsp;</td>
+								<td>{{#showCondition current_hp}}{{/showCondition}}</td>
+							</tr>
+
+						</tbody>
+
+						{{/each}}
+
+
+
+					</table>
+
+				</section>
+
+			</script>
+
+
 			<div id="test16" class="mb-05"></div>
+			<hr class="hr-small">
 
 		</div>
 
@@ -231,6 +352,7 @@
 		<!-- Textbox 1Columns -->
 		<section>
 
+
 			<script id="input" type="text/x-handlebars-template">
 
 				<section>
@@ -239,38 +361,111 @@
 						パーティ状況
 					</h2>
 
-					<dl>
+					<table class="border">
 
-						{{#each myParty}}
 
-							<dt>
-								なまえ
-							</dt>
-							<dd>
-								{{name}}
-							</dd>
-							<dt>
-								しょくぎょう
-							</dt>
-							<dd>
-								{{job}}
-							</dd>
-							<dt>
-								HP
-							</dt>
-							<dd>
-								{{current_hp}}/{{max_hp}}
-							</dd>
-							<dt>
-								じょうたい
-							</dt>
-							<dd>
-								{{#showCondition current_hp}}{{/showCondition}}
-							</dd>
+						<thead>
+
+							<tr>
+								<th colspan="4">かんとく / コーチ</th>
+							</tr>
+
+							<tr>
+								<th>なまえ</th>
+								<th>ポジション</th>
+								<th>かち&nbsp;/&nbsp;まけ</th>
+								<th>じょうたい</th>
+							</tr>
+
+						</thead>
+
+
+						{{#each director}}
+
+						<tbody>
+
+							<tr>
+								<td>{{name}}</td>
+								<td>{{job}}</td>
+								<td>{{win}}&nbsp;/&nbsp;{{lose}}</td>
+								<td>{{#showCondition current_hp}}{{/showCondition}}</td>
+							</tr>
+
+						</tbody>
+
 
 						{{/each}}
 
-					</dl>
+
+						<thead>
+
+							<tr>
+								<th colspan="4">バッター</th>
+							</tr>
+
+							<tr>
+								<th>なまえ</th>
+								<th>ポジション</th>
+								<th>だりつ&nbsp;/&nbsp;ホームラン</th>
+								<th>じょうたい</th>
+							</tr>
+
+						</thead>
+
+
+						{{#each roster_fielder}}
+
+
+						<tbody>
+
+							<tr>
+								<td>{{name}}</td>
+								<td>{{job}}</td>
+								<td>.{{avg}}&nbsp;/&nbsp;{{hr}}ほん</td>
+								<td>{{#showCondition current_hp}}{{/showCondition}}</td>
+							</tr>
+
+						</tbody>
+
+
+						{{/each}}
+
+
+						<thead>
+
+							<tr>
+								<th colspan="4">ピッチャー</th>
+							</tr>
+
+							<tr>
+								<th>なまえ</th>
+								<th>ポジション</th>
+								<th>ぼうぎょりつ&nbsp;/&nbsp;かち&nbsp;/&nbsp;まけ&nbsp;/&nbsp;セーブ</th>
+								<th>じょうたい</th>
+							</tr>
+
+						</thead>
+
+
+						{{#each roster_pitcher}}
+
+
+						<tbody>
+
+							<tr>
+								<td>{{name}}</td>
+								<td>{{job}}</td>
+								<td>{{era}}&nbsp;/&nbsp;{{win}}かち&nbsp;/&nbsp;{{lose}}まけ&nbsp;/&nbsp;{{save}}セーブ&nbsp;</td>
+								<td>{{#showCondition current_hp}}{{/showCondition}}</td>
+							</tr>
+
+						</tbody>
+
+						{{/each}}
+
+
+
+					</table>
 
 				</section>
 
