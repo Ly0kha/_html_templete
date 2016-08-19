@@ -260,6 +260,16 @@
                 "isLive":         true
             },
             {
+                "name":           "稲尾 和久",
+                "job":            "先発",
+                "win":            42,
+                "lose":           14,
+                "save":           "-",
+                "era":            1.69,
+                "current_hp":     0,
+                "isLive":         false
+            },
+            {
                 "name":           "村田 兆治",
                 "job":            "先発",
                 "win":            21,

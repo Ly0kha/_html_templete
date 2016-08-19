@@ -202,7 +202,14 @@
 							<tr>
 								<td>{{name}}</td>
 								<td>{{job}}</td>
-								<td>{{win}}&nbsp;/&nbsp;{{lose}}</td>
+								<td>
+									{{win}}&nbsp;/&nbsp;{{lose}}
+									{{#if isLive}}
+									  Active
+									{{else}}
+									  Inactive
+									{{/if}}
+								</td>
 								<td>{{#showCondition current_hp}}{{/showCondition}}</td>
 							</tr>
 
@@ -270,7 +277,7 @@
 							<tr>
 								<td>{{name}}</td>
 								<td>{{job}}</td>
-								<td>{{era}}&nbsp;/&nbsp;{{win}}W&nbsp;/&nbsp;{{lose}}L&nbsp;/&nbsp;{{save}}S&nbsp;</td>
+								<td>{{era}}&nbsp;/&nbsp;{{win}}W&nbsp;/&nbsp;{{lose}}L&nbsp;/&nbsp;{{#showSavePoint save}}{{/showSavePoint}}&nbsp;</td>
 								<td>{{#showCondition current_hp}}{{/showCondition}}</td>
 							</tr>
 
@@ -387,7 +394,14 @@
 							<tr>
 								<td>{{name}}</td>
 								<td>{{job}}</td>
-								<td>{{win}}&nbsp;/&nbsp;{{lose}}</td>
+								<td>
+									{{win}}&nbsp;/&nbsp;{{lose}}
+									{{#if isLive}}
+									  あくてぃぶ
+									{{else}}
+									  いんあくてぃぶ
+									{{/if}}
+								</td>
 								<td>{{#showCondition current_hp}}{{/showCondition}}</td>
 							</tr>
 
@@ -455,7 +469,7 @@
 							<tr>
 								<td>{{name}}</td>
 								<td>{{job}}</td>
-								<td>{{era}}&nbsp;/&nbsp;{{win}}かち&nbsp;/&nbsp;{{lose}}まけ&nbsp;/&nbsp;{{save}}セーブ&nbsp;</td>
+								<td>{{era}}&nbsp;/&nbsp;{{win}}かち&nbsp;/&nbsp;{{lose}}まけ&nbsp;/&nbsp;{{#showSavePoint save}}{{/showSavePoint}}&nbsp;</td>
 								<td>{{#showCondition current_hp}}{{/showCondition}}</td>
 							</tr>
 
@@ -513,8 +527,9 @@
 <!-- JS Executable file -->
 <script src="js/lib/jquery/plugin.js" async></script>
 <script src="js/lib/tumblr/tumblr.plugin.js" async></script>
-<script src="js/lib/react/react.plugin.jsx" type="text/babel"></script>
 <script src="js/lib/handlebars/handlebars.plugin.js" async></script>
+
+<script src="js/lib/react/react.plugin.jsx" type="text/babel"></script>
 
 
 
