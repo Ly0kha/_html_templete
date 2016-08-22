@@ -116,14 +116,68 @@ window.onload = (function(global) {
         });
 
 
+        /* アウトラインでソースを書き出すテスト */
+        function testHandlebarsListJson (rootDir) {
+
+
+            var list_raw_template = $('#list-input').html();
+            var list_template = Handlebars.compile(list_raw_template);
+            var list_placeHolder = $("#test16");
+
+            $.get(rootDir + 'ajax/list.json', function(listdata, liststatus, listxhr) {
+
+
+                /* if */
+                // Handlebars.registerHelper('if', function(cond, opt) {
+
+                //     if (cond) {
+                //         return opt.fn(this);
+                //     }
+
+                // });
+
+
+                Handlebars.registerHelper('list', function(context, options) {
+
+                    return "<ul>" + context.map(function(item) {
+                        return "<li>" + options.fn(item) + "</li>";
+                    }).join("\n") + "</ul>";
+
+                });
+
+
+                var listhtml = list_template(listdata);
+                list_placeHolder.append(listhtml);
+
+            });
+
+
+        }
+
+        if (header_navi_1st.length || header_navi_1st_none.length) {
+            testHandlebarsListJson('./');
+        }
+
+        else if (header_navi_2nd.length) {
+            testHandlebarsListJson('../');
+        }
+
+        else if (header_navi_3rd.length) {
+            testHandlebarsListJson('../../');
+        }
+
+
+
+
+        /* アウトラインでソースを書き出すテスト */
         function testHandlebarsJson (rootDir) {
 
 
             var test_raw_template = $('#json-test').html();
             var test_template = Handlebars.compile(test_raw_template);
-            var test_placeHolder = $("#test16");
+            var test_placeHolder = $("#test17");
 
-            $.get(rootDir + 'ajax/handlebars.json', function(data,status,xhr) {
+            $.get(rootDir + 'ajax/handlebars.json', function(data, status, xhr) {
 
                 /* セーブの数がある場合は表示、無ければ非表示 */
                 Handlebars.registerHelper('showSavePoint', function(save, opt) {
@@ -196,6 +250,9 @@ window.onload = (function(global) {
         }
 
 
+
+
+        /* インラインでソースを書き出すテスト */
         function testHandlebarsJsonInline () {
 
 
@@ -607,6 +664,8 @@ window.onload = (function(global) {
 
 
         testHandlebarsJsonInline();
+
+
 
 
     /* Function

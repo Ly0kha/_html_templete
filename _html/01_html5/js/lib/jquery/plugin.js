@@ -620,7 +620,7 @@ window.onload = (function(global) {
     $('.blank').on('click', function() {
 
         /* リンクの判定 */
-        var href = $(this).prop('href');
+        var href = $(this).attr('href');
 
         window.open(href, '_blank');
         return false;
