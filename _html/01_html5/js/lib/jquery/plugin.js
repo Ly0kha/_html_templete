@@ -56,7 +56,7 @@ window.onload = (function(global) {
 
 
 
-/* Setup
+/* AJAX Setup
 ------------------------------------------------------------------------------*/
 
 
@@ -620,7 +620,7 @@ window.onload = (function(global) {
     $('.blank').on('click', function() {
 
         /* リンクの判定 */
-        var href = $(this).attr('href');
+        var href = $(this).prop('href');
 
         window.open(href, '_blank');
         return false;

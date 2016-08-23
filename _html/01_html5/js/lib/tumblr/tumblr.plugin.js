@@ -183,6 +183,12 @@ window.onload = (function(global) {
 
 
 
+    /* Setup ここまで
+    ------------------------------------------------------------------------------*/
+
+
+
+
     /* Function
     ------------------------------------------------------------------------------*/
 
@@ -228,56 +234,62 @@ window.onload = (function(global) {
         },1000);
 
 
-        // ローディング状況を取得する要素を指定 //
-        var $preload = $('img');
+        // // ローディング状況を取得する要素を指定 //
+        // var $preload = $('img');
 
 
-        // 指定要素のsrcを格納するための配列 //
-        var obj_srcs = [];
+        // // 指定要素のsrcを格納するための配列 //
+        // var obj_srcs = [];
 
 
-         // .eachを使って、指定した要素を順番に参照していきsrcを配列に格納 //
-        $preload.each(function(){
-            obj_srcs.push($(this).attr('src'));
-        });
+        //  // .eachを使って、指定した要素を順番に参照していきsrcを配列に格納 //
+        // $preload.each(function(){
+        //     obj_srcs.push($(this).attr('src'));
+        // });
 
 
-        var loader = new $.ImgLoader({
-            srcs:       obj_srcs,
-            pipesize:   1, // 同時にロードを行う要素の数。これだと3つごとに読み込み完了となる //
-            delay:      1000, // 次のロード開始までの遅延時間を指定する //
-            useXHR2:    true,
-            timeout:    20000
-        });
+        // var loader = new $.ImgLoader({
+        //     srcs:       obj_srcs,
+        //     pipesize:   1, // 同時にロードを行う要素の数。これだと3つごとに読み込み完了となる //
+        //     delay:      1000, // 次のロード開始までの遅延時間を指定する //
+        //     useXHR2:    true,
+        //     timeout:    20000
+        // });
 
 
-        // progressはローディングの進捗ごとに発生します //
-        loader.on('progress', function(progressInfo){
-            // progressInfo.loadedRatioで進捗状況を0〜1で取得できます //
-            console.log(progressInfo.loadedRatio);
-        });
+        // // progressはローディングの進捗ごとに発生します //
+        // loader.on('progress', function(progressInfo){
+        //     // progressInfo.loadedRatioで進捗状況を0〜1で取得できます //
+        //     console.log(progressInfo.loadedRatio);
+        // });
 
 
-        // ファイルのロードが完了するごとに行う処理です //
-        loader.on('itemload', function($img){
-            // 処理を記述 //
-            console.log('アイテム読み込んだ');
-        });
+        // // ファイルのロードが完了するごとに行う処理です //
+        // loader.on('itemload', function($img){
+        //     // 処理を記述 //
+        //     console.log('アイテム読み込んだ');
+        // });
 
 
-        //全てのロードが完了した際に行う処理です //
-        loader.on('allload', function($img){
-            // 処理を記述 //
-            console.log('全部読み込んだ');
-        });
+        // //全てのロードが完了した際に行う処理です //
+        // loader.on('allload', function($img){
+        //     // 処理を記述 //
+        //     console.log('全部読み込んだ');
+        // });
 
 
-        // ローダーを起動します //
-        loader.load();
+        // // ローダーを起動します //
+        // loader.load();
 
 
-        // ちなみに全てのロードを中断する場合は下記が用意されています //
-        loader.kill();
+        // // ちなみに全てのロードを中断する場合は下記が用意されています //
+        // loader.kill();
+
+
+
+
+    /* Function ここまで
+    ------------------------------------------------------------------------------*/
 
 
 
