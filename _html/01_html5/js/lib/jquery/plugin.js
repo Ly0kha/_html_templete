@@ -244,13 +244,31 @@ window.onload = (function(global) {
         var version     = null;
 
         /* IEであるか否かの判定 */
-        if (user_agent.match(/MSIE/) || user_agent.match(/Trident/) ) {
+        if (user_agent.match(/MSIE/) || user_agent.match(/Trident/)) {
             isIE        = true;
             version     = user_agent.match(/(MSIE\s|rv:)([\d\.]+)/)[2];
             version     = parseInt(version);
             console.log('IE : Ver:', version);
         }
 
+
+        /*【TEST】 Chrome判定実装
+        ----------------------------------------*/
+
+
+        /* Chromeか否か */
+        var isChrome    = false;
+
+        /* Chromeのバージョン */
+        var version     = null;
+
+        /* IEであるか否かの判定 */
+        if (user_agent.match(/Chrome/)) {
+            isChrome    = true;
+            version     = user_agent.match(/Chrome/)[9];
+            version     = parseInt(version);
+            console.log('Chrome : Ver:', version);
+        }
 
 
 
