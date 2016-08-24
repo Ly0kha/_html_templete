@@ -252,6 +252,8 @@ window.onload = (function(global) {
         }
 
 
+
+
         /*【TEST】 Chrome判定実装
         ----------------------------------------*/
 
@@ -265,10 +267,12 @@ window.onload = (function(global) {
         /* IEであるか否かの判定 */
         if (user_agent.match(/Chrome/)) {
             isChrome    = true;
-            version     = user_agent.match(/Chrome/)[9];
-            version     = parseInt(version);
+            version     = user_agent.replace(/Chrome [/.-].*/, '');
+            // version     = parseInt(version);
             console.log('Chrome : Ver:', version);
         }
+
+        $('#test03b').html('Chrome : Ver:' + version);
 
 
 

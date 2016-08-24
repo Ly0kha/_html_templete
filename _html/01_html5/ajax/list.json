@@ -4,35 +4,35 @@
 
             {
                 "url":             "http://www.yahoo.co.jp",
-                "title":           "禿"
+                "title":           "Yahoo! JAPAN"
             },
             {
                 "url":             "http://www.google.co.jp",
-                "title":           "ggrks"
+                "title":           "Google"
             },
             {
                 "url":             "https://ja.wikipedia.org/",
-                "title":           "情弱"
+                "title":           "Wikipedia"
             },
             {
                 "url":             "https://www.msn.com/ja-jp",
-                "title":           "ビル的な"
+                "title":           "MSN"
             },
             {
                 "url":             "http://www.goo.ne.jp/",
-                "title":           "バッチグー"
+                "title":           "GOO"
             },
             {
                 "url":             "http://www.aol.jp/",
-                "title":           "老舗"
+                "title":           "AOL JAPAN"
             },
             {
                 "url":             "http://www.excite.co.jp/",
-                "title":           "通"
+                "title":           "excite"
             },
             {
                 "url":             "http://www.infoseek.co.jp/",
-                "title":           "楽"
+                "title":           "RAKUTEN infoseek"
             }
 
     ]
