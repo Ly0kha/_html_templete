@@ -471,10 +471,10 @@ window.onload = (function(global) {
     $('.blank').on('click', function() {
 
         /* リンクの判定 */
-        var href = $(this).prop('href');
+        var href = $(this).attr('href');
 
         if (user_agent.match(/Chrome/)) {
-            window.open(href, '_blank');
+            $('a').attr('target','_blank');
             return false;
         }
 
@@ -503,7 +503,7 @@ window.onload = (function(global) {
     // ライトボックス(colorbox)の実行スクリプト //
     function colorbox(rootDir) {
 
-        $.getScript(rootDir + 'js/lib/jquery/jquery.colorbox.min.js', function(){
+        $.getScript(rootDir + 'js/lib/jquery/jquery.colorbox.min.js', function() {
 
             /* 用途別colorbox実行スクリプト */
             $('.group1').colorbox({
