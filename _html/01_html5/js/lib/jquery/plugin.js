@@ -151,7 +151,7 @@ window.onload = (function(global) {
 
     function getScript(rootDir) {
 
-        $.getScript(rootDir + 'js/lib/jquery/test.plugin.js');
+        $.getScript(rootDir + 'js/lib/jquery/jquery.colorbox.min.js');
         $.getScript(rootDir + 'js/lib/jquery/jquery.validate.min.js');
         $.getScript(rootDir + 'js/lib/jquery/jquery.validate.japlugin.js');
         $.getScript(rootDir + 'js/lib/jquery/jquery.kerning.min.js');
@@ -296,7 +296,7 @@ window.onload = (function(global) {
     // ページスクロール //
     function pagescroll() {
 
-        return $.getScript('//cdnjs.cloudflare.com/ajax/libs/velocity/1.2.2/velocity.js', function() {
+        return $.getScript('//cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js', function() {
 
             $('a[rel=scroll]').on('click', function() {
 
@@ -1254,6 +1254,8 @@ window.onload = (function(global) {
 
             case 'menu1' :
 
+                $('#input-test').html(suggestBusinessJp);
+
                 $('#form-inquiryList-jp').val(suggestBusinessJp);
                 $('#form-inquiryListDisplay-jp').html(suggestBusinessJp);
                 $('#form-inquiryList-en').val(suggestBusinessEn);
@@ -1261,6 +1263,8 @@ window.onload = (function(global) {
                 break;
 
             case 'menu2' :
+
+                $('#input-test').html(suggestRecruitJp);
 
                 $('#form-inquiryList-jp').val(suggestRecruitJp);
                 $('#form-inquiryListDisplay-jp').html(suggestRecruitJp);
@@ -1270,6 +1274,8 @@ window.onload = (function(global) {
 
             case 'menu3' :
 
+                $('#input-test').html(suggestCreativeJp);
+
                 $('#form-inquiryList-jp').val(suggestCreativeJp);
                 $('#form-inquiryListDisplay-jp').html(suggestCreativeJp);
                 $('#form-inquiryList-en').val(suggestCreativeEn);
@@ -1278,6 +1284,8 @@ window.onload = (function(global) {
 
             case 'menu4' :
 
+                $('#input-test').html(suggestPersonalJp);
+
                 $('#form-inquiryList-jp').val(suggestPersonalJp);
                 $('#form-inquiryListDisplay-jp').html(suggestPersonalJp);
                 $('#form-inquiryList-en').val(suggestPersonalEn);
@@ -1285,6 +1293,8 @@ window.onload = (function(global) {
                 break;
 
             case 'menu5' :
+
+                $('#input-test').html(suggestOtherJp);
 
                 $('#form-inquiryList-jp').val(suggestOtherJp);
                 $('#form-inquiryListDisplay-jp').html(suggestOtherJp);

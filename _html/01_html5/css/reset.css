@@ -56,7 +56,7 @@ time, mark, audio, video {
 body {
 	font-family: "ヒラギノ明朝 Pro W6", "Hiragino Mincho Pro", "HGS明朝E", "ＭＳ Ｐ明朝", "Times New Roman", serif;
 	font-size: 13px;
-	font-size: 0.813em \9;
+	font-size: 0.813em;
 	line-height: 1.231em;
 	*font-size: small;
 }
