@@ -40,7 +40,7 @@ window.onload = (function(global) {
 
 
     /* グローバル変数
-    ----------------------------------------*/
+    ----------------------------------------------------*/
 
 
     // ウィンドウのサイズ判定 //
@@ -84,7 +84,7 @@ window.onload = (function(global) {
 
 
         /* ユーザーエージェント一覧
-        ----------------------------------------
+        ----------------------------------------------------
 
 
         //　iOS
@@ -112,7 +112,7 @@ window.onload = (function(global) {
         user_agent.match(/Trident/) ////　vr.10 or less
 
 
-        ----------------------------------------
+        ----------------------------------------------------
         */
 
 
@@ -157,207 +157,201 @@ window.onload = (function(global) {
 
 
 
-/* Common UI
+/* 【TEST】
 ------------------------------------------------------------------------------*/
 
 
 
 
-    /* 【TEST】
-    ----------------------------------------------------*/
+    /* 【TEST】 window判定実装
+       ウィンドウ自体の幅と高さを計測し、使っているブラウザのユーザーエージェントを判定
+    ----------------------------------------*/
+
+
+    function testUserStatusDecision() {
+
+        var window_width    = $(window).width();
+        var window_height   = $(window).height();
+
+        $('#test01').html('ウィンドウ幅' + '&nbsp;:&nbsp;' + window_width);
+        $('#test02').html('ウィンドウ高さ' + '&nbsp;:&nbsp;' + window_height);
+        $('#test03').html('ユーザーエージェント' + '&nbsp;:&nbsp;' + '<br />' + user_agent);
+        $('#test04').html('現在のディレクトリ' + '&nbsp;:&nbsp;' + currentDir);
+
+    }
+
+
+    $(window).on('load resize', function() {
+        testUserStatusDecision();
+    });
 
 
 
 
-        /* 【TEST】 window判定実装
-           ウィンドウ自体の幅と高さを計測し、使っているブラウザのユーザーエージェントを判定
-        ----------------------------------------*/
+    /*【TEST】 ユーザーエージェントコンソールログ
+    ----------------------------------------*/
 
 
-        function testUserStatusDecision() {
+    if(ua_sp) {
+        console.log('SP');
+    }
 
-            var window_width    = $(window).width();
-            var window_height   = $(window).height();
-
-            $('#test01').html('ウィンドウ幅' + '&nbsp;:&nbsp;' + window_width);
-            $('#test02').html('ウィンドウ高さ' + '&nbsp;:&nbsp;' + window_height);
-            $('#test03').html('ユーザーエージェント' + '&nbsp;:&nbsp;' + '<br />' + user_agent);
-            $('#test04').html('現在のディレクトリ' + '&nbsp;:&nbsp;' + currentDir);
-
-        }
+    else {
+        console.log('PC');
+    }
 
 
-        $(window).on('load resize', function() {
-            testUserStatusDecision();
+
+
+    /*【TEST】 IE判定実装
+    ----------------------------------------*/
+
+
+    /* IEか否か */
+    var isIE        = false;
+
+    /* IEのバージョン */
+    var version     = null;
+
+    /* IEであるか否かの判定 */
+    if (user_agent.match(/MSIE/) || user_agent.match(/Trident/)) {
+        isIE        = true;
+        version     = user_agent.match(/(MSIE\s|rv:)([\d\.]+)/)[2];
+        version     = parseInt(version);
+        console.log('IE : Ver:', version);
+    }
+
+
+
+
+    /*【TEST】 Chrome判定実装
+    ----------------------------------------*/
+
+
+    /* Chromeか否か */
+    var isChrome    = false;
+
+    /* Chromeのバージョン */
+    var version     = null;
+
+    /* IEであるか否かの判定 */
+    if (user_agent.match(/Chrome/)) {
+        isChrome    = true;
+        version     = user_agent.match(/(Chrome)([\0-9\.]+)/)[2];
+        // version     = parseInt(version);
+        console.log('Chrome : Ver:', version);
+    }
+
+    $('#test03b').html('Chrome Ver:' + version);
+
+
+
+
+    /* 【TEST】 Cookie読み込み
+    ----------------------------------------*/
+    function cookiePC () {
+        var cookiePCAdd = $.cookie('PC', '1', { expires: 365 , path: '/' });
+        var cookieSPRemove = $.removeCookie('SP', { path: '/' });
+    }
+
+    function cookieSP () {
+        var cookieSPAdd = $.cookie('SP', '2', { expires: 365 , path: '/' });
+        var cookiePCRemove = $.removeCookie('PC', { path: '/' });
+    }
+
+    if(ua_sp) {
+        cookieSP();
+        $('#test03b').html('Cookie : SP');
+        console.log('Cookie : SP');
+    }
+
+    else {
+        cookiePC();
+        $('#test03b').html('Cookie : PC');
+        console.log('Cookie : PC');
+    }
+
+
+
+
+    /* 【TEST】 Json読み込み
+    ----------------------------------------*/
+
+
+    function testJsonSelect(rootDir) {
+
+        return $.getJSON(rootDir + 'ajax/text.json', function(data) {
+
+            var items = [];
+            $.each(data, function(key, val) {
+                items.push('<li id=' + key + '>' + val + '</li>');
+            });
+
+            $('<ul/>',{
+                'class':    'my-new-list',
+                html:       items.join('')
+            }).appendTo('#test05');
+
         });
 
+    }
 
 
+    if (header_navi_1st.length || header_navi_1st_none.length) {
+        testJsonSelect('./');
+    }
 
-        /*【TEST】 ユーザーエージェントコンソールログ
-        ----------------------------------------*/
+    else if (header_navi_2nd.length) {
+        testJsonSelect('../');
+    }
 
+    else if (header_navi_3rd.length) {
+        testJsonSelect('../../');
+    }
 
-        if(ua_sp) {
-            console.log('SP');
-        }
 
-        else {
-            console.log('PC');
-        }
 
 
+    /*【TEST】 btn-hover実装
+    ----------------------------------------*/
 
 
-        /*【TEST】 IE判定実装
-        ----------------------------------------*/
+    function btnHoverSelect(rootDir) {
 
+        return $.ajax ({
 
-        /* IEか否か */
-        var isIE        = false;
+                type:   'GET',
+                url:    rootDir + 'include/btn.html',
 
-        /* IEのバージョン */
-        var version     = null;
+            }).done(function(btn) {
 
-        /* IEであるか否かの判定 */
-        if (user_agent.match(/MSIE/) || user_agent.match(/Trident/)) {
-            isIE        = true;
-            version     = user_agent.match(/(MSIE\s|rv:)([\d\.]+)/)[2];
-            version     = parseInt(version);
-            console.log('IE : Ver:', version);
-        }
+                btn = btn.replace(/\{\$root\}/g, rootDir);
+                $('#hover').append(btn);
 
+        });
 
+    }
 
 
-        /*【TEST】 Chrome判定実装
-        ----------------------------------------*/
+    if (ua_sp) {
 
+    }
 
-        /* Chromeか否か */
-        var isChrome    = false;
+    else if (header_navi_1st.length || header_navi_1st_none.length) {
+        btnHoverSelect('./');
+    }
 
-        /* Chromeのバージョン */
-        var version     = null;
+    else if (header_navi_2nd.length) {
+        btnHoverSelect('../');
+    }
 
-        /* IEであるか否かの判定 */
-        if (user_agent.match(/Chrome/)) {
-            isChrome    = true;
-            version     = user_agent.match(/(Chrome)([\0-9\.]+)/)[2];
-            // version     = parseInt(version);
-            console.log('Chrome : Ver:', version);
-        }
+    else if (header_navi_3rd.length) {
+        btnHoverSelect('../../');
+    }
 
-        $('#test03b').html('Chrome Ver:' + version);
+    else {
 
-
-
-
-        /* 【TEST】 Cookie読み込み
-        ----------------------------------------*/
-        function cookiePC () {
-            var cookiePCAdd = $.cookie('PC', '1', { expires: 365 , path: '/' });
-            var cookieSPRemove = $.removeCookie('SP', { path: '/' });
-        }
-
-        function cookieSP () {
-            var cookieSPAdd = $.cookie('SP', '2', { expires: 365 , path: '/' });
-            var cookiePCRemove = $.removeCookie('PC', { path: '/' });
-        }
-
-        if(ua_sp) {
-            cookieSP();
-            $('#test03b').html('Cookie : SP');
-            console.log('Cookie : SP');
-        }
-
-        else {
-            cookiePC();
-            $('#test03b').html('Cookie : PC');
-            console.log('Cookie : PC');
-        }
-
-
-
-
-        /* 【TEST】 Json読み込み
-        ----------------------------------------*/
-
-
-        function testJsonSelect(rootDir) {
-
-            return $.getJSON(rootDir + 'ajax/text.json', function(data) {
-
-                var items = [];
-                $.each(data, function(key, val) {
-                    items.push('<li id=' + key + '>' + val + '</li>');
-                });
-
-                $('<ul/>',{
-                    'class':    'my-new-list',
-                    html:       items.join('')
-                }).appendTo('#test05');
-
-            });
-
-        }
-
-
-        if (header_navi_1st.length || header_navi_1st_none.length) {
-            testJsonSelect('./');
-        }
-
-        else if (header_navi_2nd.length) {
-            testJsonSelect('../');
-        }
-
-        else if (header_navi_3rd.length) {
-            testJsonSelect('../../');
-        }
-
-
-
-
-        /*【TEST】 btn-hover実装
-        ----------------------------------------*/
-
-
-        function btnHoverSelect(rootDir) {
-
-            return $.ajax ({
-
-                    type:   'GET',
-                    url:    rootDir + 'include/btn.html',
-
-                }).done(function(btn) {
-
-                    btn = btn.replace(/\{\$root\}/g, rootDir);
-                    $('#hover').append(btn);
-
-            });
-
-        }
-
-
-        if (ua_sp) {
-
-        }
-
-        else if (header_navi_1st.length || header_navi_1st_none.length) {
-            btnHoverSelect('./');
-        }
-
-        else if (header_navi_2nd.length) {
-            btnHoverSelect('../');
-        }
-
-        else if (header_navi_3rd.length) {
-            btnHoverSelect('../../');
-        }
-
-        else {
-
-        }
+    }
 
 
 

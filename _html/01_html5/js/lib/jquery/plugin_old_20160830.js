@@ -46,24 +46,28 @@ var GLOBAL = GLOBAL || self;
 
 
 
-window.onload = (function(global) {
+(function(global) {
+
+
 
 
 "use strict";
 
 
-/* Setup
+
+
+/* AJAX Setup
 ------------------------------------------------------------------------------*/
 
 
 
 
     /* グローバル変数
-    ----------------------------------------------------*/
+    ----------------------------------------*/
 
 
     // ウィンドウのサイズ判定 //
-    var self                    = this;
+    var self  = this;
 
 
     // ウィンドウのサイズ判定 //
@@ -84,6 +88,7 @@ window.onload = (function(global) {
     var user_agent              = navigator.userAgent;
     var ua_sp                   = user_agent.indexOf('iPhone') > 0 || user_agent.indexOf('iPad') > 0 || user_agent.indexOf('iPod') > 0 || user_agent.indexOf('Android') > 0 || user_agent.indexOf('BlackBerry') > 0 || user_agent.indexOf('windows Phone') > 0 || user_agent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(user_agent);
 
+
     // ヘッダーの判定 //
     var header                  = $('header');
     var header_navi_1st_none    = $('header#header-navi-1st-none');
@@ -102,7 +107,8 @@ window.onload = (function(global) {
 
 
         /* ユーザーエージェント一覧
-        ----------------------------------------------------
+        ----------------------------------------
+
 
         //　iOS
         user_agent.indexOf('iPhone') > 0
@@ -128,7 +134,8 @@ window.onload = (function(global) {
         user_agent.match(/MSIE/) 　////　vr.11 or high
         user_agent.match(/Trident/) ////　vr.10 or less
 
-        ----------------------------------------------------
+
+        ----------------------------------------
         */
 
 
@@ -176,6 +183,144 @@ window.onload = (function(global) {
 
 /* Common UI
 ------------------------------------------------------------------------------*/
+
+
+    /* 【TEST】
+    ----------------------------------------------------*/
+
+
+
+
+        /* 【TEST】 window判定実装
+           ウィンドウ自体の幅と高さを計測し、使っているブラウザのユーザーエージェントを判定
+        ----------------------------------------*/
+
+
+        function testUserStatusDecision() {
+
+            var window_width    = $(window).width();
+            var window_height   = $(window).height();
+
+            $('#test01').html('ウィンドウ幅' + '&nbsp;:&nbsp;' + window_width);
+            $('#test02').html('ウィンドウ高さ' + '&nbsp;:&nbsp;' + window_height);
+            $('#test03').html('ユーザーエージェント' + '&nbsp;:&nbsp;' + '<br />' + user_agent);
+            $('#test04').html('現在のディレクトリ' + '&nbsp;:&nbsp;' + currentDir);
+
+        }
+
+
+        $(window).on('load resize', function() {
+            testUserStatusDecision();
+        });
+
+
+
+
+        /*【TEST】 IE判定実装
+        ----------------------------------------*/
+
+
+        /* IEか否か */
+        var isIE        = false;
+
+        /* IEのバージョン */
+        var version     = null;
+
+        /* IEであるか否かの判定 */
+        if (user_agent.match(/MSIE/) || user_agent.match(/Trident/) ) {
+            isIE = true;
+            version = user_agent.match(/(MSIE\s|rv:)([\d\.]+)/)[2];
+            version = parseInt(version);
+            console.log('IE : Ver:', version);
+        }
+
+
+
+
+        /* 【TEST】 Json読み込み
+        ----------------------------------------*/
+
+
+        function testJsonSelect(rootDir) {
+
+            return $.getJSON(rootDir + 'ajax/text.json', function(data) {
+
+                var items = [];
+                $.each(data, function(key, val) {
+                    items.push('<li id=' + key + '>' + val + '</li>');
+                });
+
+                $('<ul/>',{
+                    'class':    'my-new-list',
+                    html:       items.join('')
+                }).appendTo('#test05');
+
+            });
+
+        }
+
+
+        if (header_navi_1st.length || header_navi_1st_none.length) {
+            testJsonSelect('./');
+        }
+
+        else if (header_navi_2nd.length) {
+            testJsonSelect('../');
+        }
+
+        else if (header_navi_3rd.length) {
+            testJsonSelect('../../');
+        }
+
+
+
+
+        /*【TEST】 btn-hover実装
+        ----------------------------------------*/
+
+
+        function btnHoverSelect(rootDir) {
+
+            return $.ajax ({
+
+                    type:   'GET',
+                    url:    rootDir + 'include/btn.html',
+
+                }).done(function(btn) {
+
+                    btn = btn.replace(/\{\$root\}/g, rootDir);
+                    $('#hover').append(btn);
+
+            });
+
+        }
+
+
+        if (user_agent.indexOf('iPhone') > 0 || user_agent.indexOf('iPad') > 0 || user_agent.indexOf('iPod') > 0 || user_agent.indexOf('Android') > 0 || user_agent.indexOf('BlackBerry') > 0 || user_agent.indexOf('windows Phone') > 0 || user_agent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(user_agent) ) {
+
+        }
+
+        else if (header_navi_1st.length || header_navi_1st_none.length) {
+            btnHoverSelect('./');
+        }
+
+        else if (header_navi_2nd.length) {
+            btnHoverSelect('../');
+        }
+
+        else if (header_navi_3rd.length) {
+            btnHoverSelect('../../');
+        }
+
+        else {
+
+        }
+
+
+
+
+    /* 【TEST】ここまで
+    ----------------------------------------------------*/
 
 
 
@@ -289,7 +434,7 @@ window.onload = (function(global) {
     // ページスクロール //
     function pagescroll() {
 
-        return $.getScript('//cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.js', function() {
+        return $.getScript('//cdnjs.cloudflare.com/ajax/libs/velocity/1.2.2/velocity.js', function() {
 
             $('a[rel=scroll]').on('click', function() {
 
@@ -420,7 +565,7 @@ window.onload = (function(global) {
 
 
     // PCのみ発火 //
-    if (ua_sp) {
+    if (user_agent.indexOf('iPhone') > 0 || user_agent.indexOf('iPad') > 0 || user_agent.indexOf('iPod') > 0 || user_agent.indexOf('Android') > 0 || user_agent.indexOf('BlackBerry') > 0 || user_agent.indexOf('windows Phone') > 0 || user_agent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(user_agent)) {
 
         $('img.img-mouseover').on({
 
@@ -489,7 +634,7 @@ window.onload = (function(global) {
     // ライトボックス(colorbox)の実行スクリプト //
     function colorbox(rootDir) {
 
-        $.getScript(rootDir + 'js/lib/jquery/jquery.colorbox.min.js', function(){
+        $.getScript(rootDir + 'js/lib/jquery/jquery.colorbox.min.js', function() {
 
             /* 用途別colorbox実行スクリプト */
             $('.group1').colorbox({
@@ -1095,7 +1240,7 @@ window.onload = (function(global) {
         $(window).on('load', function() {
 
             /* -SP- */
-            if (ua_sp) {
+            if (user_agent.indexOf('iPhone') > 0 || user_agent.indexOf('iPad') > 0 || user_agent.indexOf('iPod') > 0 || user_agent.indexOf('Android') > 0 || user_agent.indexOf('BlackBerry') > 0 || user_agent.indexOf('windows Phone') > 0 || user_agent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(user_agent)) {
                 $('.policy').on('click', function() {
                     // location.href='../sitepolicy/index.html'
                     // window.open('../sitepolicy/index.html', '_blank');
@@ -1204,7 +1349,7 @@ window.onload = (function(global) {
     $(window).on('load resize', function() {
 
         /* サジェストを出す -SP- */
-        if (ua_sp) {
+        if (user_agent.indexOf('iPhone') > 0 || user_agent.indexOf('iPad') > 0 || user_agent.indexOf('iPod') > 0 || user_agent.indexOf('Android') > 0 || user_agent.indexOf('BlackBerry') > 0 || user_agent.indexOf('windows Phone') > 0 || user_agent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(user_agent)) {
             suggestOnSP();
         }
 
@@ -1536,9 +1681,11 @@ window.onload = (function(global) {
 
     /*Attention
     ----------------------------------------------------
+
     ※カーニングは半角英数には対応不可
     ※数字、記号、約物は全角のみカーニングに対応
     ※詳しい対応文字はajax/kerning.jsonを確認
+
     ----------------------------------------------------
     */
 
@@ -1550,7 +1697,7 @@ window.onload = (function(global) {
 
 
             /* 中にテキストが入るタグの判定 divは含まれない */
-            var tag = $('p, h1, h2, h3, h4, h5, h6, .carousel-caption, dl.news dt, dl.news dd, dl.column dt, dl.column dd, dl#form-layout-jp dt, dl#form-layout-en dt, ul.list li, ol.list li, ul.suggest-menu li, ul.form-accept li, th, td, a, address');
+            var tag = $('p, h1, h2, h3, h4, h5, h6, .carousel-caption, dl, dt, dd, dl.news dt, dl.news dd, dl.column dt, dl.column dd, dl#form-layout-jp dt, dl#form-layout-en dt, ul.list li, ol.list li, ul.suggest-menu li, ul.form-accept li, th, td, a, address');
 
             /* JSONのデータを基にカーニングを実行 */
             tag.kerning({
