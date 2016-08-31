@@ -26,11 +26,7 @@ var GLOBAL = GLOBAL || self;
 window.onload = (function(global) {
 
 
-
-
 "use strict";
-
-
 
 
 /* AJAX Setup

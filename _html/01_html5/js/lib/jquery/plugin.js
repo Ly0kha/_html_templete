@@ -180,7 +180,7 @@ window.onload = (function(global) {
 
 
 
-    /* Header共通化
+    /* header共通化
     ----------------------------------------------------*/
 
 
@@ -220,7 +220,7 @@ window.onload = (function(global) {
 
 
 
-    /* Footer共通化
+    /* footer共通化
     ----------------------------------------------------*/
 
 
@@ -282,7 +282,7 @@ window.onload = (function(global) {
 
 
 
-    /* PageScroll
+    /* PageScroll -- ページスクロール
     ----------------------------------------------------*/
 
 
@@ -316,7 +316,7 @@ window.onload = (function(global) {
 
 
 
-    /* Slider
+    /* Slider -- スライダー
     ----------------------------------------------------*/
 
 
@@ -354,7 +354,7 @@ window.onload = (function(global) {
 
 
 
-    /* Tabs
+    /* Tabs -- タブ
     ----------------------------------------------------*/
 
 
@@ -369,7 +369,7 @@ window.onload = (function(global) {
 
 
 
-    /* WindowClose
+    /* WindowClose -- 別窓を閉じる
     ----------------------------------------------------*/
 
 
@@ -385,7 +385,7 @@ window.onload = (function(global) {
 
 
 
-    /* MouseOver
+    /* MouseOver -- マウスオーバー
     ----------------------------------------------------*/
 
 
@@ -456,7 +456,7 @@ window.onload = (function(global) {
 
 
     /* TargetBlank
-       for IE8
+       for IE8 -- target="_blank" を class="blank" で動かす
     ----------------------------------------------------*/
 
 
@@ -642,7 +642,7 @@ window.onload = (function(global) {
 
 
 
-    /* Validate
+    /* Validate -- バリデートの制御
     ----------------------------------------------------*/
 
 
@@ -990,7 +990,7 @@ window.onload = (function(global) {
 
 
 
-    /* MailForm
+    /* MailForm -- 各種ボタン、チェックボックスの制御
     ----------------------------------------------------*/
 
 
@@ -1530,7 +1530,7 @@ window.onload = (function(global) {
 
 
 
-    /* Kerning
+    /* Kerning -- 和文のカーニング
     ----------------------------------------------------*/
 
 
@@ -1578,7 +1578,7 @@ window.onload = (function(global) {
 
 
 
-    /* Centering
+    /* Centering -- オブジェクトの縦横センタリング
     ----------------------------------------------------*/
 
 
