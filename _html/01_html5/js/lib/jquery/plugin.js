@@ -1739,4 +1739,4 @@ var GLOBAL = GLOBAL || self;
 
 
 
-});
+})((this || 0).self || global);
