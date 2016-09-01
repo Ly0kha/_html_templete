@@ -13,7 +13,7 @@
 
 
 
-window.onload = (function() {
+(function($) {
 
 
 
@@ -26,6 +26,9 @@ window.onload = (function() {
 
     /* グローバル変数
     ----------------------------------------*/
+
+
+    "use strict";
 
 
     // ウィンドウのサイズ判定 //
@@ -473,4 +476,4 @@ window.onload = (function() {
 
 
 
-});
+})(jQuery);

@@ -19,91 +19,89 @@
 
 
 
-var GLOBAL = GLOBAL || self;
+(function($) {
 
 
 
 
-window.onload = (function(global) {
+    /* グローバル変数
+    ----------------------------------------*/
+
+
+    "use strict";
+
+
+    // ウィンドウのサイズ判定 //
+    var self                    = this;
+
+
+    // ウィンドウのサイズ判定 //
+    var window_width            = $(window).width();
+    var window_height           = $(window).height();
+    var window_outer_width      = $(window).outerWidth();
+    var window_outer_height     = $(window).outerHeight();
+    var window_inner_width      = $(window).innerWidth();
+    var window_inner_height     = $(window).innerHeight();
+
+
+    // ディレクトリの判定 //
+    var rootDir                 = location.href.split('/');
+    var currentDir              = rootDir[rootDir.length -2];
+
+
+    // 端末ユーザーエージェントの判定 //
+    var user_agent              = navigator.userAgent;
+    var ua_sp                   = user_agent.indexOf('iPhone') > 0 || user_agent.indexOf('iPad') > 0 || user_agent.indexOf('iPod') > 0 || user_agent.indexOf('Android') > 0 || user_agent.indexOf('BlackBerry') > 0 || user_agent.indexOf('windows Phone') > 0 || user_agent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(user_agent);
+
+
+    // ヘッダーの判定 //
+    var header                  = $('header');
+    var header_navi_1st_none    = $('header#header-navi-1st-none');
+    var header_navi_1st         = $('header#header-navi-1st');
+    var header_navi_2nd         = $('header#header-navi-2nd');
+    var header_navi_3rd         = $('header#header-navi-3rd');
+
+
+    // フッターの判定 //
+    var footer                  = $('footer');
+    var footer_navi_1st         = $('footer#footer-navi-1st');
+    var footer_navi_2nd         = $('footer#footer-navi-2nd');
+    var footer_navi_3rd         = $('footer#footer-navi-3rd');
 
 
 
 
-        /* グローバル変数
-        ----------------------------------------*/
+        /* ユーザーエージェント一覧
+        ----------------------------------------
 
 
-        // ウィンドウのサイズ判定 //
-        var self                    = this;
+        //　iOS
+        user_agent.indexOf('iPhone') > 0
+        user_agent.indexOf('iPad') > 0
+        user_agent.indexOf('iPod') > 0
+
+        //　Android
+        user_agent.indexOf('Android') > 0
+
+        //　BlackBerry
+        user_agent.indexOf('BlackBerry') > 0
+
+        //　Windows Phone
+        user_agent.indexOf('windows Phone') > 0
+
+        //　NOKIA
+        user_agent.indexOf('NOKIA') > 0
+
+        //　Firefox OS
+        /Mobile.*Firefox/.test(user_agent)
+
+        //　IE
+        user_agent.match(/MSIE/) 　////　vr.11 or high
+        user_agent.match(/Trident/) ////　vr.10 or less
 
 
-        // ウィンドウのサイズ判定 //
-        var window_width            = $(window).width();
-        var window_height           = $(window).height();
-        var window_outer_width      = $(window).outerWidth();
-        var window_outer_height     = $(window).outerHeight();
-        var window_inner_width      = $(window).innerWidth();
-        var window_inner_height     = $(window).innerHeight();
-
-
-        // ディレクトリの判定 //
-        var rootDir                 = location.href.split('/');
-        var currentDir              = rootDir[rootDir.length -2];
-
-
-        // 端末ユーザーエージェントの判定 //
-        var user_agent              = navigator.userAgent;
-        var ua_sp                   = user_agent.indexOf('iPhone') > 0 || user_agent.indexOf('iPad') > 0 || user_agent.indexOf('iPod') > 0 || user_agent.indexOf('Android') > 0 || user_agent.indexOf('BlackBerry') > 0 || user_agent.indexOf('windows Phone') > 0 || user_agent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(user_agent);
-
-
-        // ヘッダーの判定 //
-        var header                  = $('header');
-        var header_navi_1st_none    = $('header#header-navi-1st-none');
-        var header_navi_1st         = $('header#header-navi-1st');
-        var header_navi_2nd         = $('header#header-navi-2nd');
-        var header_navi_3rd         = $('header#header-navi-3rd');
-
-
-        // フッターの判定 //
-        var footer                  = $('footer');
-        var footer_navi_1st         = $('footer#footer-navi-1st');
-        var footer_navi_2nd         = $('footer#footer-navi-2nd');
-        var footer_navi_3rd         = $('footer#footer-navi-3rd');
-
-
-
-
-            /* ユーザーエージェント一覧
-            ----------------------------------------
-
-
-            //　iOS
-            user_agent.indexOf('iPhone') > 0
-            user_agent.indexOf('iPad') > 0
-            user_agent.indexOf('iPod') > 0
-
-            //　Android
-            user_agent.indexOf('Android') > 0
-
-            //　BlackBerry
-            user_agent.indexOf('BlackBerry') > 0
-
-            //　Windows Phone
-            user_agent.indexOf('windows Phone') > 0
-
-            //　NOKIA
-            user_agent.indexOf('NOKIA') > 0
-
-            //　Firefox OS
-            /Mobile.*Firefox/.test(user_agent)
-
-            //　IE
-            user_agent.match(/MSIE/) 　////　vr.11 or high
-            user_agent.match(/Trident/) ////　vr.10 or less
-
-
-            ----------------------------------------
-            */
+        ----------------------------------------
+        */
 
 
 
@@ -692,4 +690,4 @@ window.onload = (function(global) {
 
 
 
-})((this || 0).self || global);
+})(jQuery);

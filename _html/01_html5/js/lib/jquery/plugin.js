@@ -41,15 +41,9 @@
 
 
 
-var GLOBAL = GLOBAL || self;
+(function($) {
 
 
-
-
-window.onload = (function(global) {
-
-
-"use strict";
 
 
 /* Setup
@@ -60,6 +54,9 @@ window.onload = (function(global) {
 
     /* グローバル変数
     ----------------------------------------------------*/
+
+
+    "use strict";
 
 
     // ウィンドウのサイズ判定 //
@@ -189,7 +186,7 @@ window.onload = (function(global) {
         return $.ajax ({
 
                 type:   'GET',
-                url:    rootDir + 'include/header.html',
+                url:    rootDir + 'include/header.html'
 
             }).done(function(html) {
 
@@ -206,7 +203,7 @@ window.onload = (function(global) {
     }
 
     else if (header_navi_2nd.length) {
-        headerSelect('../')
+        headerSelect('../');
     }
 
     else if (header_navi_3rd.length) {
@@ -229,7 +226,7 @@ window.onload = (function(global) {
         return $.ajax ({
 
                 type:   'GET',
-                url:    rootDir + 'include/footer.html',
+                url:    rootDir + 'include/footer.html'
 
             }).done(function(html) {
 
@@ -246,7 +243,7 @@ window.onload = (function(global) {
     }
 
     else if (footer_navi_2nd.length) {
-        footerSelect('../')
+        footerSelect('../');
     }
 
     else if (footer_navi_3rd.length) {
@@ -585,7 +582,7 @@ window.onload = (function(global) {
                 rel:            'group5',
                 transition:     'none'
 
-            })
+            });
 
             $('.retina').colorbox({
 
@@ -1087,7 +1084,7 @@ window.onload = (function(global) {
 
         // 戻るボタンを押したときの動作 //
         $('input#btn-formback-ja, input#btn-formback-en').on('click', function() {
-            location.href='index.html'
+            location.href='index.html';
         });
 
 
@@ -1097,7 +1094,7 @@ window.onload = (function(global) {
             /* -SP- */
             if (ua_sp) {
                 $('.policy').on('click', function() {
-                    // location.href='../sitepolicy/index.html'
+                    // location.href='../sitepolicy/index.html';
                     // window.open('../sitepolicy/index.html', '_blank');
                     return false;
                 });
@@ -1106,7 +1103,7 @@ window.onload = (function(global) {
             /* -PC- */
             else {
                 $('.policy').on('click', function() {
-                    // location.href='../../#/sitepolicy/'
+                    // location.href='../../#/sitepolicy/';
                     // window.open('../../#/sitepolicy/', '_blank');
                     return false;
                 });
@@ -1171,7 +1168,7 @@ window.onload = (function(global) {
             var window_height = $(window).height();
             $('.suggest-clear').css({
                 'width':    window_width,
-                'height':   window_height,
+                'height':   window_height
             });
 
         });
@@ -1739,4 +1736,4 @@ window.onload = (function(global) {
 
 
 
-})((this || 0).self || global);
+})(jQuery);

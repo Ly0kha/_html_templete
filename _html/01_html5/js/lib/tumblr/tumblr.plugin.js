@@ -19,12 +19,7 @@
 
 
 
-var GLOBAL = GLOBAL || self;
-
-
-
-
-window.onload = (function(global) {
+(function($) {
 
 
 
@@ -33,6 +28,7 @@ window.onload = (function(global) {
     ------------------------------------------------------------------------------*/
 
 
+        "use strict";
 
 
         // Tumblrの情報を取得 //
@@ -294,4 +290,4 @@ window.onload = (function(global) {
 
 
 
-})((this || 0).self || global);
+})(jQuery);

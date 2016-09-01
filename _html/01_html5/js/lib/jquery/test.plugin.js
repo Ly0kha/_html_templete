@@ -18,15 +18,9 @@
 
 
 
-var GLOBAL = GLOBAL || self;
+(function($) {
 
 
-
-
-window.onload = (function(global) {
-
-
-"use strict";
 
 
 /* AJAX Setup
@@ -37,6 +31,9 @@ window.onload = (function(global) {
 
     /* グローバル変数
     ----------------------------------------------------*/
+
+
+    "use strict";
 
 
     // ウィンドウのサイズ判定 //
@@ -352,4 +349,4 @@ window.onload = (function(global) {
 
 
 
-})((this || 0).self || global);
+})(jQuery);
