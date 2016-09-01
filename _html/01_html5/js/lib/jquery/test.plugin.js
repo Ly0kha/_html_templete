@@ -18,9 +18,15 @@
 
 
 
-(function($) {
+var GLOBAL = GLOBAL || self;
 
 
+
+
+(function(global) {
+
+
+"use strict";
 
 
 /* AJAX Setup
@@ -31,9 +37,6 @@
 
     /* グローバル変数
     ----------------------------------------------------*/
-
-
-    "use strict";
 
 
     // ウィンドウのサイズ判定 //
@@ -349,4 +352,4 @@
 
 
 
-})(jQuery);
+})((this || 0).self || global);
