@@ -23,7 +23,7 @@ var GLOBAL = GLOBAL || self;
 
 
 
-(function(global) {
+(function(global){
 
 
 "use strict";
@@ -122,7 +122,7 @@ var GLOBAL = GLOBAL || self;
     });
 
 
-    function getScript(rootDir) {
+    function getScript(rootDir){
 
         $.getScript(rootDir + 'js/lib/jquery/jquery.validate.min.js');
         $.getScript(rootDir + 'js/lib/jquery/jquery.validate.japlugin.js');
@@ -132,15 +132,15 @@ var GLOBAL = GLOBAL || self;
     }
 
 
-    if (header_navi_1st.length || header_navi_1st_none.length) {
+    if (header_navi_1st.length || header_navi_1st_none.length){
         getScript('./');
     }
 
-    else if (header_navi_2nd.length) {
+    else if (header_navi_2nd.length){
         getScript('../');
     }
 
-    else if (header_navi_3rd.length) {
+    else if (header_navi_3rd.length){
         getScript('../../');
     }
 
@@ -164,7 +164,7 @@ var GLOBAL = GLOBAL || self;
     ----------------------------------------*/
 
 
-    function testUserStatusDecision() {
+    function testUserStatusDecision(){
 
         var window_width    = $(window).width();
         var window_height   = $(window).height();
@@ -177,7 +177,7 @@ var GLOBAL = GLOBAL || self;
     }
 
 
-    $(window).on('load resize', function() {
+    $(window).on('load resize', function(){
         testUserStatusDecision();
     });
 
@@ -188,7 +188,7 @@ var GLOBAL = GLOBAL || self;
     ----------------------------------------*/
 
 
-    if(ua_sp) {
+    if(ua_sp){
         console.log('SP');
     }
 
@@ -210,7 +210,7 @@ var GLOBAL = GLOBAL || self;
     var version     = null;
 
     /* IEであるか否かの判定 */
-    if (user_agent.match(/MSIE/) || user_agent.match(/Trident/)) {
+    if (user_agent.match(/MSIE/) || user_agent.match(/Trident/)){
         isIE        = true;
         version     = user_agent.match(/(MSIE\s|rv:)([\d\.]+)/)[2];
         version     = parseInt(version);
@@ -231,7 +231,7 @@ var GLOBAL = GLOBAL || self;
     var version     = null;
 
     /* IEであるか否かの判定 */
-    if (user_agent.match(/Chrome/)) {
+    if (user_agent.match(/Chrome/)){
         isChrome    = true;
         version     = user_agent.match(/(Chrome)([\0-9\.]+)/)[2];
         // version     = parseInt(version);
@@ -245,17 +245,17 @@ var GLOBAL = GLOBAL || self;
 
     /* 【TEST】 Cookie読み込み
     ----------------------------------------*/
-    function cookiePC () {
+    function cookiePC (){
         var cookiePCAdd = $.cookie('PC', '1', { expires: 365 , path: '/' });
         var cookieSPRemove = $.removeCookie('SP', { path: '/' });
     }
 
-    function cookieSP () {
+    function cookieSP (){
         var cookieSPAdd = $.cookie('SP', '2', { expires: 365 , path: '/' });
         var cookiePCRemove = $.removeCookie('PC', { path: '/' });
     }
 
-    if(ua_sp) {
+    if(ua_sp){
         cookieSP();
         $('#test03b').html('Cookie : SP');
         console.log('Cookie : SP');
@@ -274,12 +274,12 @@ var GLOBAL = GLOBAL || self;
     ----------------------------------------*/
 
 
-    function testJsonSelect(rootDir) {
+    function testJsonSelect(rootDir){
 
-        return $.getJSON(rootDir + 'ajax/text.json', function(data) {
+        return $.getJSON(rootDir + 'ajax/text.json', function(data){
 
             var items = [];
-            $.each(data, function(key, val) {
+            $.each(data, function(key, val){
                 items.push('<li id=' + key + '>' + val + '</li>');
             });
 
@@ -293,15 +293,15 @@ var GLOBAL = GLOBAL || self;
     }
 
 
-    if (header_navi_1st.length || header_navi_1st_none.length) {
+    if (header_navi_1st.length || header_navi_1st_none.length){
         testJsonSelect('./');
     }
 
-    else if (header_navi_2nd.length) {
+    else if (header_navi_2nd.length){
         testJsonSelect('../');
     }
 
-    else if (header_navi_3rd.length) {
+    else if (header_navi_3rd.length){
         testJsonSelect('../../');
     }
 
@@ -312,14 +312,14 @@ var GLOBAL = GLOBAL || self;
     ----------------------------------------*/
 
 
-    function btnHoverSelect(rootDir) {
+    function btnHoverSelect(rootDir){
 
         return $.ajax ({
 
                 type:   'GET',
                 url:    rootDir + 'include/btn.html',
 
-            }).done(function(btn) {
+            }).done(function(btn){
 
                 btn = btn.replace(/\{\$root\}/g, rootDir);
                 $('#hover').append(btn);
@@ -329,19 +329,19 @@ var GLOBAL = GLOBAL || self;
     }
 
 
-    if (ua_sp) {
+    if (ua_sp){
 
     }
 
-    else if (header_navi_1st.length || header_navi_1st_none.length) {
+    else if (header_navi_1st.length || header_navi_1st_none.length){
         btnHoverSelect('./');
     }
 
-    else if (header_navi_2nd.length) {
+    else if (header_navi_2nd.length){
         btnHoverSelect('../');
     }
 
-    else if (header_navi_3rd.length) {
+    else if (header_navi_3rd.length){
         btnHoverSelect('../../');
     }
 

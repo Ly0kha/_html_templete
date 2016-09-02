@@ -18,7 +18,7 @@ var GLOBAL = GLOBAL || self;
 
 
 
-(function(global) {
+(function(global){
 
 
 
@@ -124,7 +124,7 @@ var GLOBAL = GLOBAL || self;
 
     var Test06 = React.createClass({
         displayName: 'Hello',
-        render: function() {
+        render: function(){
             return React.createElement('div', {className: 'box mb-20'}, 'Hello ', this.props.name);
         }
     });
@@ -140,7 +140,7 @@ var GLOBAL = GLOBAL || self;
 
     var Test07 = React.createClass({
         displayName: 'Test',
-        render: function() {
+        render: function(){
             return React.createElement('div', {className: 'box mb-20'}, 'Mr ', this.props.name);
         }
     });
@@ -155,7 +155,7 @@ var GLOBAL = GLOBAL || self;
 
 
     var Test08 = React.createClass({
-        render: function() {
+        render: function(){
                 return (
                     <p>ひょっとして読み込めちゃった系？</p>
                 );
@@ -169,7 +169,7 @@ var GLOBAL = GLOBAL || self;
 
 
     var Test09 = React.createClass({
-        render: function() {
+        render: function(){
                 return (
                     <div>
                         <p className='box'>お前、{this.props.name}</p>
@@ -186,7 +186,7 @@ var GLOBAL = GLOBAL || self;
 
 
     var Test10 = React.createClass({
-        render: function() {
+        render: function(){
                 return (
                     <p className='box mb-20'>お前、{this.props.name}</p>
                 );
@@ -201,17 +201,17 @@ var GLOBAL = GLOBAL || self;
 
     var Test11 = React.createClass ({
 
-        getInitialState() {
+        getInitialState(){
             return {
                 count: 0
             };
         },
 
-        onClick() {
+        onClick(){
             this.setState({count: this.state.count + 1 });
         },
 
-        render () {
+        render (){
             return (
                 <div>
                     <div>
@@ -234,7 +234,7 @@ var GLOBAL = GLOBAL || self;
 
     var Test12 = React.createClass ({
 
-        render() {
+        render(){
             var avatarImg = `images/avatar/avatar_${this.props.user.id}.png`;
             return (
                 <div className='box center mb-10'>
@@ -295,7 +295,7 @@ var GLOBAL = GLOBAL || self;
             })
         },
 
-        render() {
+        render(){
             var src = `images/avatar/avatar_${this.props.user.id}.png`;
             return (
 
@@ -337,10 +337,10 @@ var GLOBAL = GLOBAL || self;
             onDelete: React.PropTypes.func.isRequired
         },
         // 親に処理を委譲する
-        _onDelete() {
+        _onDelete(){
             this.props.onDelete(this.props.todo.id);
         },
-        render() {
+        render(){
             return (
                 <div>
                     <span>{this.props.todo.text}</span>
@@ -353,7 +353,7 @@ var GLOBAL = GLOBAL || self;
 
     var Test14 = React.createClass({
 
-        getInitialState() {
+        getInitialState(){
             return {
 
                 todos: [
@@ -365,7 +365,7 @@ var GLOBAL = GLOBAL || self;
             };
         },
         // TodoListはこのComponentが管理しているので削除する処理もここにあるべき
-        deleteTodo(id) {
+        deleteTodo(id){
 
             this.setState({
                 todos: this.state.todos.filter((todo) => {
@@ -374,7 +374,7 @@ var GLOBAL = GLOBAL || self;
             });
 
         },
-        render() {
+        render(){
 
             var todos = this.state.todos.map((todo) => {
                 return <li key={todo.id}><Todo onDelete={this.deleteTodo} todo={todo} /></li>;
@@ -396,20 +396,20 @@ var GLOBAL = GLOBAL || self;
         propTypes: {
             initialCount: React.PropTypes.number
         },
-        getDefaultProps() {
+        getDefaultProps(){
             return {
                 initialCount: 0
             };
         },
-        getInitialState() {
+        getInitialState(){
             return {
                 count: this.props.initialCount
             }
         },
-        onClick() {
+        onClick(){
             this.setState({ count: this.state.count + 1 });
         },
-        render() {
+        render(){
             return (
                 <div>
                     <p>{this.state.count}</p>
@@ -443,10 +443,10 @@ var GLOBAL = GLOBAL || self;
 
 
 
-    function kerningDir(rootDir) {
+    function kerningDir(rootDir){
 
         /* JSONデータ読み込み - 非同期通信するためgetJSONで読み出すこと - */
-        return $.getJSON(rootDir + 'ajax/kerning.json', function(data) {
+        return $.getJSON(rootDir + 'ajax/kerning.json', function(data){
 
 
             /* 中にテキストが入るタグの判定 divは含まれない */
@@ -463,15 +463,15 @@ var GLOBAL = GLOBAL || self;
     }
 
 
-    if (header_navi_1st.length || header_navi_1st_none.length) {
+    if (header_navi_1st.length || header_navi_1st_none.length){
         kerningDir('./');
     }
 
-    else if (header_navi_2nd.length) {
+    else if (header_navi_2nd.length){
         kerningDir('../');
     }
 
-    else if (header_navi_3rd.length) {
+    else if (header_navi_3rd.length){
         kerningDir('../../');
     }
 

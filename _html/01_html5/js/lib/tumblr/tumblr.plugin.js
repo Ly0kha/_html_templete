@@ -24,7 +24,10 @@ var GLOBAL = GLOBAL || self;
 
 
 
-(function(global) {
+(function(global){
+
+
+"use strict";
 
 
 /* Setup
@@ -32,42 +35,40 @@ var GLOBAL = GLOBAL || self;
 
 
     // Tumblrの情報を取得 //
-    url = "kik888.tumblr.com";
-    key = "DxAdNEP9PrL03Eq1H2duB0FHcqNETXBwAXbRVpxB1fjuBHmDUC";
-
-
+    var url = 'kik888.tumblr.com';
+    var key = 'DxAdNEP9PrL03Eq1H2duB0FHcqNETXBwAXbRVpxB1fjuBHmDUC';
 
 
     // JsonをAJAXで読み込む //
-    $.getJSON("http://api.tumblr.com/v2/blog/" + url + "/posts?api_key=" + key + "&jsonp=?"　+　"&limit=10", function (data) {
+    $.getJSON("http://api.tumblr.com/v2/blog/" + url + "/posts?api_key=" + key + "&jsonp=?"　+　"&limit=10", function (data){
 
 
-        $.each(data, function (index, val) {
+        $.each(data, function (index, val){
 
 
-                $.each(val, function (k_post, v_post) {
+                $.each(val, function (k_post, v_post){
 
 
-                    if (k_post == 'posts') {
+                    if (k_post == 'posts'){
 
 
 
 
-                        for (var kp in v_post) {
+                        for (var kp in v_post){
 
                             /* 引っ張ってくる情報 */
                             var data    = v_post[kp].date,
                                 link    = v_post[kp].post_url,
-                                type    = v_post[kp].type;
+                                type    = v_post[kp].type,
 
 
-                            /* 日付け表示を変える */
-                            date = new Date(data);
-                            strDate = date.toLocaleDateString();
+                                /* 日付け表示を変える */
+                                date = new Date(data),
+                                strDate = date.toLocaleDateString();
 
 
                             /* テキスト */
-                            if (type == 'text') {
+                            if (type == 'text'){
 
                                 var title   = v_post[kp].title,
                                     content = v_post[kp].body;
@@ -78,7 +79,7 @@ var GLOBAL = GLOBAL || self;
 
 
                             /* リンク */
-                            else if (type == 'link') {
+                            else if (type == 'link'){
 
                                 var link_ol = v_post[kp].url,
                                     title   = v_post[kp].title;
@@ -89,20 +90,20 @@ var GLOBAL = GLOBAL || self;
 
 
                             /* 画像 */
-                            else if (type == 'photo') {
+                            else if (type == 'photo'){
 
-                                $.each(v_post[kp].photos, function (k_photo, v_photo) {
+                                $.each(v_post[kp].photos, function (k_photo, v_photo){
 
-                                    $.each(v_photo, function (k, v) {
-                                        if (k == 'original_size') {
+                                    $.each(v_photo, function (k, v){
+                                        if (k == 'original_size'){
 
-                                            for (var n in v) {
-                                                if (n == 'url') {
+                                            for (var n in v){
+                                                if (n == 'url'){
 
                                                     var image = v[n],
                                                         caption = v_post[kp].caption;
 
-                                                    function bgHtml(index) {
+                                                    function bgHtml(index){
 
                                                         return '<div class="post-' + type + ' item text-color-white" style="background-image:url( ' + image + ' ); background-position: 50％ 50％;"><div class="box pd-20"><time class="block mb-40">' + strDate + '</time>' + caption + '<div class="post-cover">';
 
@@ -132,17 +133,17 @@ var GLOBAL = GLOBAL || self;
 
 
                             /* 動画 */
-                            else if (type == 'video') {
+                            else if (type == 'video'){
 
                                 var caption = v_post[kp].caption;
 
-                                $.each(v_post[kp].player, function (k_play, v_play) {
+                                $.each(v_post[kp].player, function (k_play, v_play){
 
                                     /* 動画のサイズ (0:幅250px 1:幅400px 2:幅500px) */
-                                    if (k_play == 1) {
-                                        $.each(v_play, function (k, v) {
+                                    if (k_play == 1){
+                                        $.each(v_play, function (k, v){
 
-                                            if (k == 'embed_code') {
+                                            if (k == 'embed_code'){
 
                                                 // $('#tumblr-test').append('<div class="post-' + type + '">' + v + '<ul><li><a href="' + link + '">link</a></li><li>' + caption + '</li></ul></div>');
 
@@ -192,7 +193,7 @@ var GLOBAL = GLOBAL || self;
 
 
     // 読み込んだ背景画像をフルサイズ / スライダーに設定 //
-    function bgSize() {
+    function bgSize(){
 
         /* 背景画像を全画面に */
         var window_width            = $(window).width();
@@ -219,13 +220,13 @@ var GLOBAL = GLOBAL || self;
 
 
     // リサイズしたら実行 //
-    $(window).on('load resize', function() {
+    $(window).on('load resize', function(){
        bgSize();
     });
 
 
     // 遅延ロード //
-    setTimeout(function() {
+    setTimeout(function(){
         $('#bg-slider').fadeIn();
     },1000);
 

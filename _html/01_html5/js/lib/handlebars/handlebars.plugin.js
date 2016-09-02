@@ -24,7 +24,7 @@ var GLOBAL = GLOBAL || self;
 
 
 
-(function(global) {
+(function(global){
 
 
 "use strict";
@@ -124,29 +124,29 @@ var GLOBAL = GLOBAL || self;
 
 
         /* アウトラインでソースを書き出すテスト */
-        function testHandlebarsListJson (rootDir) {
+        function testHandlebarsListJson (rootDir){
 
 
             var list_raw_template = $('#list-input').html();
             var list_template = Handlebars.compile(list_raw_template);
             var list_placeHolder = $("#test16");
 
-            $.get(rootDir + 'ajax/list.json', function(listdata, liststatus, listxhr) {
+            $.get(rootDir + 'ajax/list.json', function(listdata, liststatus, listxhr){
 
 
                 /* if */
-                // Handlebars.registerHelper('if', function(cond, opt) {
+                // Handlebars.registerHelper('if', function(cond, opt){
 
-                //     if (cond) {
+                //     if (cond){
                 //         return opt.fn(this);
                 //     }
 
                 // });
 
 
-                Handlebars.registerHelper('list', function(context, options) {
+                Handlebars.registerHelper('list', function(context, options){
 
-                    return "<ul>" + context.map(function(item) {
+                    return "<ul>" + context.map(function(item){
                         return "<li>" + options.fn(item) + "</li>";
                     }).join("\n") + "</ul>";
 
@@ -161,15 +161,15 @@ var GLOBAL = GLOBAL || self;
 
         }
 
-        if (header_navi_1st.length || header_navi_1st_none.length) {
+        if (header_navi_1st.length || header_navi_1st_none.length){
             testHandlebarsListJson('./');
         }
 
-        else if (header_navi_2nd.length) {
+        else if (header_navi_2nd.length){
             testHandlebarsListJson('../');
         }
 
-        else if (header_navi_3rd.length) {
+        else if (header_navi_3rd.length){
             testHandlebarsListJson('../../');
         }
 
@@ -177,21 +177,21 @@ var GLOBAL = GLOBAL || self;
 
 
         /* アウトラインでソースを書き出すテスト */
-        function testHandlebarsJson (rootDir) {
+        function testHandlebarsJson (rootDir){
 
 
             var test_raw_template = $('#json-test').html();
             var test_template = Handlebars.compile(test_raw_template);
             var test_placeHolder = $("#test17");
 
-            $.get(rootDir + 'ajax/handlebars.json', function(data, status, xhr) {
+            $.get(rootDir + 'ajax/handlebars.json', function(data, status, xhr){
 
                 /* セーブの数がある場合は表示、無ければ非表示 */
-                Handlebars.registerHelper('showSavePoint', function(save, opt) {
+                Handlebars.registerHelper('showSavePoint', function(save, opt){
 
                     var savepoint = '';
 
-                    if (save === '-') {
+                    if (save === '-'){
                         savepoint =  '';
                     }
 
@@ -205,15 +205,15 @@ var GLOBAL = GLOBAL || self;
 
 
                 /* コンディション */
-                Handlebars.registerHelper('showCondition', function(cond, opt) {
+                Handlebars.registerHelper('showCondition', function(cond, opt){
 
                     var condition = '';
 
-                    if (cond > 80) {
+                    if (cond > 80){
                         condition = 'Good';
                     }
 
-                    else if (cond > 10) {
+                    else if (cond > 10){
                         condition = 'Normal';
                     }
 
@@ -227,9 +227,9 @@ var GLOBAL = GLOBAL || self;
 
 
                 /* if */
-                Handlebars.registerHelper('if', function(cond, opt) {
+                Handlebars.registerHelper('if', function(cond, opt){
 
-                    if (cond) {
+                    if (cond){
                         return opt.fn(this);
                     }
 
@@ -244,15 +244,15 @@ var GLOBAL = GLOBAL || self;
 
         }
 
-        if (header_navi_1st.length || header_navi_1st_none.length) {
+        if (header_navi_1st.length || header_navi_1st_none.length){
             testHandlebarsJson('./');
         }
 
-        else if (header_navi_2nd.length) {
+        else if (header_navi_2nd.length){
             testHandlebarsJson('../');
         }
 
-        else if (header_navi_3rd.length) {
+        else if (header_navi_3rd.length){
             testHandlebarsJson('../../');
         }
 
@@ -260,7 +260,7 @@ var GLOBAL = GLOBAL || self;
 
 
         /* インラインでソースを書き出すテスト */
-        function testHandlebarsJsonInline () {
+        function testHandlebarsJsonInline (){
 
 
             var values = {
@@ -615,11 +615,11 @@ var GLOBAL = GLOBAL || self;
             var template = Handlebars.compile(raw_template);
 
             /* セーブの数がある場合は表示、無ければ非表示 */
-            Handlebars.registerHelper('showSavePoint', function(save, opt) {
+            Handlebars.registerHelper('showSavePoint', function(save, opt){
 
                 var savepoint = '';
 
-                if (save === '-') {
+                if (save === '-'){
                     savepoint =  '';
                 }
 
@@ -633,15 +633,15 @@ var GLOBAL = GLOBAL || self;
 
 
             /* コンディション */
-            Handlebars.registerHelper('showCondition', function(cond, opt) {
+            Handlebars.registerHelper('showCondition', function(cond, opt){
 
                 var condition = '';
 
-                if (cond > 80) {
+                if (cond > 80){
                     condition = 'すごくげんき';
                 }
 
-                else if (cond > 10) {
+                else if (cond > 10){
                     condition = 'げんき';
                 }
 
@@ -655,9 +655,9 @@ var GLOBAL = GLOBAL || self;
 
 
             /* if */
-            Handlebars.registerHelper('if', function(cond, opt) {
+            Handlebars.registerHelper('if', function(cond, opt){
 
-                if (cond) {
+                if (cond){
                     return opt.fn(this);
                 }
 

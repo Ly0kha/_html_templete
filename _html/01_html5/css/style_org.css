@@ -1,0 +1,2885 @@
+@charset "utf-8";
+
+
+
+
+/*!
+
+ * Bootstrap v3.3.5 (http://getbootstrap.com)
+ * Copyright 2011-2016 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+
+ * Colorbox 1.6.1 (http://www.jacklmoore.com/colorbox/)
+ * Copyright Jack Moore.
+ * Licensed under MIT (http://www.opensource.org/licenses/mit-license.php)
+
+ */
+
+
+
+
+/*----------------------------------------------------
+
+・Webフォント
+　→Webフォントの実装
+
+・レイアウト共通CSS
+　→コンテンツ全体のレイアウトに関する実装
+
+・共通パーツCSS
+　→UIデザインで必要な実装
+
+・フォーム用共通CSS
+　→フォームに於けるUIデザインで必要な実装
+
+・ライトボックス - for Colorbox
+　→モーダルウィンドウのCSS実装
+
+・コンテンツ調整用CSS
+ →フロート、アライン、パディング、マージン、幅などの調整で使える実装
+
+・下層ページ
+ →2nd以降のCSS実装
+
+----------------------------------------------------*/
+
+
+
+
+/* Webフォント
+------------------------------------
+ -font-family: 'Noto Sans Japanese';
+  font-weight: 100 - 900
+
+------------------------------------------------------------------------------*/
+
+
+
+
+@font-face {
+	font-family: 'Noto Sans Japanese';
+	font-style: normal;
+	font-weight: 100;
+	src: url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Thin.woff2) format('woff2'),
+		 url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Thin.woff) format('woff'),
+		 url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Thin.otf) format('opentype');
+}
+
+@font-face {
+	font-family: 'Noto Sans Japanese';
+	font-style: normal;
+	font-weight: 200;
+	src: url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Light.woff2) format('woff2'),
+		 url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Light.woff) format('woff'),
+		 url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Light.otf) format('opentype');
+}
+
+@font-face {
+	font-family: 'Noto Sans Japanese';
+	font-style: normal;
+	font-weight: 300;
+	src: url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-DemiLight.woff2) format('woff2'),
+		 url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-DemiLight.woff) format('woff'),
+		 url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-DemiLight.otf) format('opentype');
+}
+
+@font-face {
+	font-family: 'Noto Sans Japanese';
+	font-style: normal;
+	font-weight: 400;
+	src: local('NotoSansJP-Regular.otf'),
+		 url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Regular.woff2) format('woff2'),
+		 url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Regular.woff) format('woff'),
+		 url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Regular.otf) format('opentype');
+ }
+
+@font-face {
+	font-family: 'Noto Sans Japanese';
+	font-style: normal;
+	font-weight: 500;
+	src: url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Medium.woff2) format('woff2'),
+		 url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Medium.woff) format('woff'),
+		 url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Medium.otf) format('opentype');
+ }
+
+@font-face {
+	font-family: 'Noto Sans Japanese';
+	font-style: normal;
+	font-weight: 700;
+	src: url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Bold.woff2) format('woff2'),
+		 url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Bold.woff) format('woff'),
+		 url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Bold.otf) format('opentype');
+ }
+
+@font-face {
+	font-family: 'Noto Sans Japanese';
+	font-style: normal;
+	font-weight: 900;
+	src: url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Black.woff2) format('woff2'),
+		 url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Black.woff) format('woff'),
+		 url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Black.otf) format('opentype');
+ }
+
+
+
+
+/* レイアウト共通CSS
+------------------------------------
+ -ページ本体
+ -コンテンツ / ラッパー
+ -ヘッダー / フッター
+ -背景色
+
+------------------------------------------------------------------------------*/
+
+
+
+
+/* ページ本体
+----------------------------------------*/
+
+
+html,
+body,
+#container {
+	min-height: 100%;
+	height: auto !important;
+}
+
+html {
+	font-size: 100%;
+	-webkit-text-size-adjust: 100%;
+	  -ms-text-size-adjust: 100%;
+}
+
+body {
+	margin: 0px;
+	color: #000;
+	/* line-height: 1.42857143; */
+
+	-webkit-text-size-adjust: 100%;
+	word-break: break-all;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+
+/* BreakPoint for PC */
+@media (min-width: 960px) {
+
+	body {
+		font-family: 'Noto Sans Japanese', 'Glyphicons Halflings', sans-serif;
+		font-size: 14px; /* PC用 */
+	}
+
+}
+
+
+/* BreakPoint for SP */
+@media (max-width: 959px) {
+
+	body {
+		font-family: 'Noto Sans Japanese', 'Glyphicons Halflings', sans-serif;
+		font-size: 11px; /* SP用 */
+	}
+
+}
+
+
+/* コンテンツ / ラッパー
+----------------------------------------*/
+
+
+#container,
+#fixed-container,
+#test-container  {
+	position: relative;
+	margin: 0px auto;
+	padding: 0px;
+	width: 100%;
+	height: 100%;
+	overflow: visible;
+}
+
+#container,
+#fixed-container {
+	background: #f1f1f1;
+}
+
+#test-container {
+	background: none;
+}
+
+#wrapper,
+#test-wrapper {
+	position: relative;
+	margin: 0px auto;
+	padding: 0px 20px;
+	min-width: 300px;
+	max-width: 959px;
+	height: 100%;
+	overflow: hidden;
+	z-index: 10;
+}
+
+#wrapper {
+	background: rgba(255,255,255,1);
+}
+
+#test-wrapper {
+	background: rgba(255,255,255,0.8);
+}
+
+
+/* ヘッダー / フッター
+----------------------------------------*/
+
+
+/* 共通 */
+header,
+footer,
+header.fixed,
+footer.fixed {
+	width: 100%;
+	margin: 0px;
+	z-index: 10;
+}
+
+
+/* 通常用 */
+header,
+footer {
+	position: relative;
+}
+
+
+/* 固定用 */
+header.fixed,
+footer.fixed {
+	position: fixed;
+}
+
+header.fixed {
+	top: 0px;
+}
+
+footer.fixed {
+	bottom: 0px;
+}
+
+
+/* ボタン */
+footer .btn-top,
+footer.fixed .btn-top {
+	font-size: 2em;
+}
+
+
+/* 背景色
+----------------------------------------*/
+
+
+body {
+	background: #f1f1f1;
+}
+
+
+
+
+/* レイアウト共通CSS ここまで
+------------------------------------------------------------------------------*/
+
+
+
+
+/* 共通パーツCSS
+------------------------------------
+ -テキストトラッキング
+ -リンク
+ -画像
+ -本文
+ -ボックス(div、block指定)
+ -テーブル
+ -リスト、
+ -定義
+ -境界線 / ボーダー
+ -文字色
+ -その他
+
+ ------------------------------------------------------------------------------*/
+
+
+
+
+/* テキストトラッキング
+----------------------------------------*/
+
+
+p,
+h1, h2, h3, h4, h5, h6,
+dt, dd,
+th, td,
+ul.list li,
+ol.list li,
+ul.suggest-menu li,
+ul.form-accept li,
+a,
+address {
+	/* letter-spacing: 0.125em; */
+	letter-spacing: 0.1em;
+}
+
+label {
+	letter-spacing: -0.025em;
+}
+
+
+/* リンク
+----------------------------------------*/
+
+
+/* リンク */
+a,
+a span {
+	color: #143956;
+	text-decoration: none;
+	outline: none;
+	noFocusLine: expression(this.onFocus=this.blur()); /* OLD IE */
+}
+
+a:hover,
+a:focus,
+a:hover span,
+a:focus span  {
+	outline: none;
+	color: #2C7CBA;
+	text-decoration: underline;
+}
+
+a.carousel-control span {
+	color: #fff !important;
+	text-decoration: none !important;
+}
+
+a.hvr-fade-btn span {
+	text-decoration: none !important;
+}
+
+
+/* 画像
+----------------------------------------*/
+
+
+/* 画像 */
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+
+/* 【TEST】背景画像カルーセル */
+.post-photo,
+.post-cover {
+	background-position: center center;
+
+	position: fixed;
+	left: 0px;
+	top: 0px;
+}
+
+.post-photo {
+	background-color: #464646;
+	background-repeat: no-repeat;
+	/*
+	background-attachment: fixed;*/
+	background-size: cover;
+
+	z-index: -5;
+}
+
+.post-cover {
+	background-image: url('../images/common/img_overlays02.png');
+	background-repeat: repeat;
+	z-index: -1;
+}
+
+#test-container .carousel {
+	position: fixed;
+	margin: 0px !important;
+	z-index: -1;
+}
+
+#bg-slider {
+	display: none;
+}
+
+#bg-slider .item {
+	transition-property: opacity;
+}
+
+#bg-slider .item,
+#bg-slider .active.left,
+#bg-slider .active.right {
+	opacity: 0;
+}
+
+#bg-slider .active,
+#bg-slider .next.left,
+#bg-slider .prev.right {
+	opacity: 1;
+}
+
+#bg-slider .next,
+#bg-slider .prev,
+#bg-slider .active.left,
+#bg-slider .active.right {
+	left: 0;
+	transform: translate3d(0, 0, 0);
+}
+
+#bg-slider .carousel-control {
+	z-index: 2;
+}
+
+
+
+
+/* 本文
+----------------------------------------*/
+
+
+/* 本文、文字装飾 */
+p {
+	margin: 0px;
+	padding: 0px;
+	vertical-align: top;
+	line-height: 1.8em;
+}
+
+p.caption-left,
+p.caption-center,
+p.caption-right {
+	margin: 0px;
+	padding: 0px;
+
+	opacity: 0.6;
+	-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity = 60);
+	filter: alpha(opacity = 60);
+
+	font-size: 0.83em;
+	line-height: 1.15;
+}
+
+p.caption-left {
+	text-align: left;
+}
+
+p.caption-center {
+	text-align: center;
+}
+
+p.caption-right {
+	text-align: right;
+}
+
+
+/* 文字太さ */
+.bold {
+	font-weight: 400;
+}
+
+
+/* 文字大きさ */
+.x-large {
+	font-size: 2em;
+}
+
+.large {
+	font-size: 1.4em;
+}
+
+.normal {
+	font-size: 1em;
+}
+
+.small {
+	font-size: 0.8em;
+}
+
+.x-small {
+	font-size: 0.6em;
+}
+
+
+/* ボックス(div、block指定)
+----------------------------------------*/
+
+
+/* ボックス、ブロック指定 */
+.box {
+	margin: 0px;
+	padding: 0px;
+	overflow: hidden;
+}
+
+.block {
+	display: block;
+}
+
+
+/* テーブル
+----------------------------------------*/
+
+
+/* テーブル */
+table {
+	width: 99.999999%;
+	margin: 0px auto;
+}
+
+
+/* 罫線ありテーブル */
+table.border {
+	width: 98.999999%;
+	margin: 8px auto;
+	border: none;
+	/* border: 1px solid #000; */
+}
+
+table.border th,
+table.border td {
+	margin: 0px;
+	padding: 8px;
+
+	font-size: 1em;
+	text-align: left;
+}
+
+table.border th {
+	background-color: #f9f9f9;
+	opacity: 0.6;
+	border-right: 1px solid #eee;
+	border-bottom: 3px solid #ddd;
+}
+
+table.border td {
+	border-right: 1px dotted #ddd;
+	border-bottom: 1px solid #ddd;
+}
+
+table.border td:last-child {
+	border-right: none;
+	border-bottom: 1px solid #ddd;
+}
+
+
+/* リスト
+----------------------------------------*/
+
+
+/* リスト */
+ul,
+li  {
+	margin: 0px;
+	padding: 0px;
+}
+
+
+/* ナカグロありリスト */
+ul.list {
+	list-style: outside;
+}
+
+
+/* BreakPoint for PC */
+@media (min-width: 960px) {
+
+	ul.list li {
+		margin: 0px 0px 20px 24px;
+	}
+
+}
+
+
+/* BreakPoint for SP */
+@media (max-width: 959px) {
+
+	ul.list li {
+		margin: 0px 0px 10px 18px;
+	}
+
+}
+
+
+/* 数字付きリスト */
+ol.list {
+	list-style: outside decimal
+}
+
+
+/* BreakPoint for PC */
+@media (min-width: 960px) {
+
+	ol.list li {
+		margin: 0px 0px 20px 24px;
+	}
+
+}
+
+
+/* BreakPoint for SP */
+@media (max-width: 959px) {
+
+	ol.list li {
+		margin: 0px 0px 10px 18px;
+	}
+
+}
+
+
+/* navタグ以降のliは並列で表示 */
+/* BreakPoint for PC */
+@media (min-width: 960px) {
+
+	nav li,
+	nav.bread li {
+		display: inline;
+		margin: 0px 8px 0px 0px;
+		font-size: 0.8em;
+	}
+
+	nav.bread li:after {
+		content: ">";
+		margin: 0px 0px 0px 12px;
+	}
+
+	nav.bread li:last-child:after {
+		content: "";
+		margin: 0px 0px 0px 12px;
+	}
+
+}
+
+
+/* BreakPoint for SP */
+@media (max-width: 959px) {
+
+	nav li,
+	nav.bread li {
+		display: inline;
+		margin: 0px 4px 0px 0px;
+		font-size: 0.8em;
+	}
+
+	nav.bread li:after {
+		content: ">";
+		margin: 0px 0px 0px 6px;
+	}
+
+	nav.bread li:last-child:after {
+		content: "";
+		margin: 0px 0px 0px 6px;
+	}
+
+}
+
+
+#tabs .nav > li > a {
+	background-color: #f9f9f9;
+}
+
+#tabs .nav > li > a:hover,
+#tabs .nav > li > a:focus {
+	text-decoration: none;
+	background-color: #eee;
+	outline: none;
+	noFocusLine: expression(this.onFocus=this.blur()); /* OLD IE */
+}
+
+#tabs .nav > li.disabled > a {
+	color: #777;
+}
+
+#tabs .nav > li.disabled > a:hover,
+#tabs .nav > li.disabled > a:focus {
+	color: #777;
+	text-decoration: none;
+	cursor: not-allowed;
+	background-color: transparent;
+}
+
+#tabs .nav .open > a,
+#tabs .nav .open > a:hover,
+#tabs .nav .open > a:focus {
+	background-color: #eee;
+	border-color: #337ab7;
+}
+
+
+/* 定義
+----------------------------------------*/
+
+
+/* 定義：ヘッドラインなど */
+dl,
+dl.news {
+	width: 100%;
+	padding: 0px;
+}
+
+dt {
+	float: left;
+}
+
+dl.news dt,
+dl.news dd {
+	border: 0;
+	border-top: 1px solid #eeeeee;
+}
+
+
+/* BreakPoint for PC */
+@media (min-width: 960px) {
+
+	dd {
+		margin: 0px 0px 20px 80px;
+		padding: 0px;
+	}
+
+	dl.news dt {
+		padding: 40px 0px 0px;
+	}
+
+	dl.news dd {
+		margin: 0px 0px 40px 100px;
+		padding: 40px 0px 0px 20px;
+	}
+
+}
+
+
+/* BreakPoint for SP */
+@media (max-width: 959px) {
+
+	dd {
+		margin: 0px 0px 10px 40px;
+		padding: 0px;
+	}
+
+	dl.news dt {
+		padding: 20px 0px 0px;
+	}
+
+	dl.news dd {
+		margin: 0px 0px 20px 80px;
+		padding: 20px 0px 0px 10px;
+	}
+
+}
+
+
+dl.news dd p {
+	/* width: 98%; */
+}
+
+
+/* 境界線 / ボーダー
+----------------------------------------*/
+
+
+/* 境界線指定 */
+hr {
+	border: 0;
+	border-top: 1px solid #eeeeee;
+	clear: both;
+}
+
+.hr-none {
+	margin: 0px;
+}
+
+
+/* BreakPoint for PC */
+@media (min-width: 960px) {
+
+	.hr-large {
+		margin: 80px 0px;
+	}
+
+	.hr-normal {
+		margin: 40px 0px;
+	}
+
+	.hr-small {
+		margin: 20px 0px;
+	}
+
+}
+
+
+/* BreakPoint for SP */
+@media (max-width: 959px) {
+
+	.hr-large {
+		margin: 40px 0px;
+	}
+
+	.hr-normal {
+		margin: 20px 0px;
+	}
+
+	.hr-small {
+		margin: 10px 0px;
+	}
+
+}
+
+
+.border {
+	border: 1px solid #000;
+}
+
+
+/* 文字色
+----------------------------------------*/
+
+
+/* テキストカラー指定 */
+.text-color-black {
+	color: #000;
+}
+
+.text-color-darkgray {
+	color: #696969;
+}
+
+.text-color-gray {
+	color: #808080;
+}
+
+.text-color-lightgray {
+	color: #d3d3d3;
+}
+
+.text-color-white {
+	color: #fff;
+}
+
+.text-color-darkblue {
+	color: #00008b;
+}
+
+.text-color-blue {
+	color: #0000ff;
+}
+
+.text-color-lightblue {
+	color: #add8e6;
+}
+
+.text-color-darkgreen {
+	color: #006400;
+}
+
+.text-color-green {
+	color: #008000;
+}
+
+.text-color-lightgreen {
+	color: #90ee90;
+}
+
+.text-color-yellow {
+	color: #ffff00;
+}
+
+.text-color-gold {
+	color: #ffd700;
+}
+
+.text-color-darkorange {
+	color: #ff8c00;
+}
+
+.text-color-orange {
+	color: #ffa500;
+}
+
+.text-color-darkred {
+	color: #8b0000;
+}
+
+.text-color-red {
+	color: #ff0000;
+}
+
+
+/* その他
+----------------------------------------*/
+
+
+/* インラインアイコン指定 */
+img.small-icon {
+	margin-left: 2px;
+	vertical-align: middle;
+}
+
+.glyphicon-new-window,
+.glyphicon-triangle-bottom {
+	margin-left: 4px;
+	vertical-align: baseline;
+}
+
+address {
+	text-align: center;
+}
+
+
+/* BreakPoint for PC */
+@media (min-width: 960px) {
+
+	address {
+		margin: 40px 0px;
+		font-size: 0.8em;
+	}
+
+}
+
+
+/* BreakPoint for SP */
+@media (max-width: 959px) {
+
+	address {
+		margin: 20px 0px;
+		font-size: 0.8em;
+	}
+
+}
+
+
+
+
+/* 共通パーツCSS ここまで
+ ------------------------------------------------------------------------------*/
+
+
+
+
+/* フォーム用共通CSS
+------------------------------------
+ -レイアウト
+ -フォーム部品
+ -フォームバリデート
+ -フォームサジェスト
+
+ ------------------------------------------------------------------------------*/
+
+
+
+
+/* レイアウト
+----------------------------------------*/
+
+
+/* レイアウト -PC- */
+dl.form-pc {
+	min-width: 280px;
+	max-width: 944px;
+	margin: 0px;
+	padding: 0px 8px;
+}
+
+dl.form-pc dt {
+	display: inline-block;
+	float: left;
+	margin: 0px 0px 10px;
+	max-width: 190px;
+	min-width: 31%;
+	line-height: 1.2;
+	font-weight: 400;
+}
+
+dl.form-pc dd.colon {
+	display: inline-block;
+	float: left;
+	margin: 0px;
+	width: 10px;
+}
+
+dl.form-pc dd,
+dl.form-pc dd.textarea {
+	display: inline-block;
+	width: 400px;
+}
+
+dl.form-pc dd {
+	margin: 0px 0px 32px;
+}
+
+dl.form-pc dd.textarea {
+	margin: 0px;
+	min-height: 150px;
+}
+
+
+/* レイアウト -SP- */
+dl.form-sp {
+	width: 100%;
+	padding: 0px;
+}
+
+dl.form-sp dt {
+	display: inline;
+	margin: 0px 0px 8px;
+	font-weight: 200;
+}
+
+dl.form-sp dd.colon {
+	display: inline;
+	margin: 0px 0px 8px;
+	width: 10px;
+}
+
+dl.form-sp dd,
+dl.form-sp dd.textarea {
+	clear: both;
+	width: 100%;
+	height: auto;
+}
+
+dl.form-sp dd {
+	margin: 0px 0px 32px;
+}
+
+dl.form-sp dd.textarea {
+	margin: 0px;
+	min-height: 150px;
+}
+
+dl.form-sp dd p {
+	width: 60%;
+}
+
+
+/* フォーム部品
+----------------------------------------*/
+
+
+/* 基本部品 */
+input {
+	background-color: rgba(0,0,0,0);
+	color: #333;
+	border: none;
+	vertical-align: middle;
+	text-align: center;
+	font-size: 14px;
+
+}
+
+input[type="text"],
+input[type="password"],
+textarea,
+select {
+	font-family: 'Noto Sans Japanese', 'Glyphicons Halflings', sans-serif;
+}
+
+input,
+textarea,
+select {
+	outline: none;
+}
+
+
+/* BreakPoint for PC */
+@media (min-width: 960px) {
+
+	input[type="text"],
+	input[type="password"],
+	textarea,
+	select {
+		font-size: 12px !important;
+	}
+
+}
+
+
+/* BreakPoint for SP */
+@media (max-width: 959px) {
+
+	input[type="text"],
+	input[type="password"],
+	textarea,
+	select {
+		font-size: 16px !important;
+		scale(0.8);
+	}
+
+}
+
+
+/* input、textarea枠のカスタム */
+.bg-input,
+.bg-inputSelector,
+.bg-textarea {
+	background-color: #fff;
+	background-image: none;
+	border-bottom: 1px solid #ccc;
+
+	/*
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+	*/
+
+	opacity: 0.6;
+	-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity = 60);
+	filter: alpha(opacity = 60);
+
+	position: relative;
+	left: 0px;
+	top: 0px;
+}
+
+.bg-input,
+.bg-inputSelector {
+	height: 30px;
+}
+
+.bg-textarea {
+	height: 128px;
+}
+
+.bg-input input,
+.bg-textarea textarea,
+.bg-inputChecker input {
+	position: absolute;
+	left: 0px;
+
+	background-color: rgba(0,0,0,0);
+	color: #333;
+	border: none;
+	font-size: 14px;
+	text-align: left;
+	padding: 4px;
+}
+
+
+/* BreakPoint for PC */
+@media (min-width: 960px) {
+
+	.bg-input input,
+	.bg-textarea textarea,
+	.bg-inputChecker input {
+		top: 2px;
+	}
+
+}
+
+
+/* BreakPoint for SP */
+@media (max-width: 959px) {
+
+	.bg-input input,
+	.bg-textarea textarea,
+	.bg-inputChecker input {
+		top: 0px;
+	}
+
+}
+
+
+.bg-input input,
+.bg-input button {
+	width: 100%;
+	vertical-align: middle;
+}
+
+.bg-textarea textarea {
+	width: 100%;
+	height: 120px;
+
+	vertical-align: top;
+	resize: none;
+}
+
+.bg-inputChecker input {
+	display: none;
+	width: 20px;
+	vertical-align: bottom;
+}
+
+#selected {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 240px;
+
+	background-color: rgba(0,0,0,0);
+	color: #333;
+	font-size: 12px;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.bg-inputChecker input[type=radio],
+.bg-inputChecker input[type=checkbox] {
+	display: inline-block;
+	margin-right: 6px;
+}
+
+.bg-inputChecker input[type=radio] + label,
+.bg-inputChecker input[type=checkbox] + label {
+	position: relative;
+	margin: 0px;
+
+	display: inline-block;
+	font-size: 14px;
+	line-height: 22px;
+
+	cursor: pointer;
+}
+
+
+/* checkbox内チェック表示のカスタム */
+@media (min-width: 1px) {
+
+	.bg-inputChecker input[type=radio],
+	.bg-inputChecker input[type=checkbox] {
+		display: none;
+		margin: 0;
+	}
+
+	.bg-inputChecker input[type=radio] + label,
+	.bg-inputChecker input[type=checkbox] + label {
+		padding: 0px 0px 0px 32px;
+	}
+
+	.bg-inputChecker input[type=radio] + label::before,
+	.bg-inputChecker input[type=checkbox] + label::before {
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		width: 22px;
+		height: 22px;
+
+		background-color: #fff;
+		background-image: none;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+		box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+
+		opacity: 0.6;
+		-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity = 60);
+		filter: alpha(opacity = 60);
+
+		content: "";
+		color: #000;
+
+		display: block;
+	}
+
+	.bg-inputChecker input[type=radio]:checked + label::after,
+	.bg-inputChecker input[type=checkbox]:checked + label::after {
+		position: absolute;
+		top: 0px;
+		left: 4px;
+
+		content: "\e013";
+		color: #999;
+
+		display: block;
+	}
+
+}
+
+
+/* サジェスト表示のカスタム */
+p#form-inquiryListDisplay-jp,
+p#form-inquiryListDisplay-en {
+	position: relative;
+	left: 2px;
+	width: 100%;
+
+	color: #333;
+	overflow: hidden;
+	z-index: 9999;
+}
+
+/* BreakPoint for PC */
+@media (min-width: 960px) {
+
+	p#form-inquiryListDisplay-jp,
+	p#form-inquiryListDisplay-en {
+		top: 4px;
+		height: 20px;
+		font-size: 12px;
+		letter-spacing: -0.025em;
+	}
+
+}
+
+
+/* BreakPoint for SP */
+@media (max-width: 959px) {
+
+	p#form-inquiryListDisplay-jp,
+	p#form-inquiryListDisplay-en {
+		top: 0px;
+		height: 30px;
+		font-size: 16px;
+		letter-spacing: -0.025em;
+	}
+
+}
+
+
+.txt-accept {
+	font-size: 1.2em;
+}
+
+.btn-pulldown {
+	position: absolute;
+}
+
+/* BreakPoint for PC */
+@media (min-width: 960px) {
+
+	.btn-pulldown {
+		right: 12px;
+		top: 6px;
+	}
+
+}
+
+
+/* BreakPoint for SP */
+@media (max-width: 959px) {
+
+	.btn-pulldown {
+		right: 8px;
+		top: 8px;
+	}
+
+}
+
+
+/* フォームバリデート
+----------------------------------------*/
+
+
+/* エラー表示用 */
+label.error {
+	color: #F00;
+	font-size: 0.8em;
+}
+
+
+/* エラーメッセージ  -PC- */
+dl.form-pc label#form-inquiryList-jp-error,
+dl.form-pc label#form-inquiryCompanyName-jp-error,
+dl.form-pc label#form-inquiryNameJa-jp-error,
+dl.form-pc label#form-inquiryNameEn-jp-error,
+dl.form-pc label#form-inquiryMail-jp-error,
+dl.form-pc label#form-inquiryPhone-jp-error,
+
+dl.form-pc label#form-inquiryList-en-error,
+dl.form-pc label#form-inquiryCompanyName-en-error,
+dl.form-pc label#form-inquiryNameEn-en-error,
+dl.form-pc label#form-inquiryMail-en-error,
+dl.form-pc label#form-inquiryPhone-en-error {
+	position: absolute;
+	left: 0px;
+	top: 32px;
+}
+
+dl.form-pc label#form-inquiryText-jp-error,
+dl.form-pc label#form-inquiryText-en-error {
+	position: absolute;
+	left: 0px;
+	top: 130px;
+}
+
+
+/* エラーメッセージ  -SP- */
+dl.form-sp label#form-inquiryList-jp-error,
+dl.form-sp label#form-inquiryCompanyName-jp-error,
+dl.form-sp label#form-inquiryNameJa-jp-error,
+dl.form-sp label#form-inquiryNameEn-jp-error,
+dl.form-sp label#form-inquiryMail-jp-error,
+dl.form-sp label#form-inquiryPhone-jp-error,
+
+dl.form-sp label#form-inquiryList-en-error,
+dl.form-sp label#form-inquiryCompanyName-en-error,
+dl.form-sp label#form-inquiryNameEn-en-error,
+dl.form-sp label#form-inquiryMail-en-error,
+dl.form-sp label#form-inquiryPhone-en-error {
+	position: absolute;
+	left: 0px;
+	top: 32px;
+}
+
+dl.form-sp label#form-inquiryText-jp-error,
+dl.form-sp label#form-inquiryText-en-error {
+	position: absolute;
+	left: 0px;
+	top: 130px;
+}
+
+
+/* レイアウト -個人情報同意ウィンドウ- */
+h3.accept {
+	font-size: 1em;
+}
+
+
+/* フォームサジェスト
+----------------------------------------*/
+
+
+/* サジェストWrapper部分 */
+.suggest-wrapper {
+	position: absolute;
+	height: auto;
+	margin: 0px;
+	padding: 0px;
+	overflow: hidden;
+	/*
+	font-family: "Lucida Grande","ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ",Meiryo,"ＭＳ Ｐゴシック", "MS PGothic",Helvetica,Osaka,sans-serif;
+	*/
+	z-index: 3000;
+}
+
+
+/* サジェスト外にクリッカブルなエリアを作らない為のボックス -PC- */
+.suggest-clear {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+
+	margin: auto;
+	padding: 0px;
+
+	z-index: 1000;
+	cursor: pointer;
+	-webkit-tap-highlight-color:rgba(0, 0, 0, 0)!important;
+}
+
+
+/* サジェストレイアウト */
+/* BreakPoint for PC */
+@media (min-width: 960px) {
+
+	/* 大枠 */
+	.suggest-pc {
+		position: relative;
+		left: 0px;
+		top: 0px;
+		width: 100%;
+
+		cursor: pointer;
+	}
+
+
+	/* サジェストの表示開始位置  */
+	.suggest-pc .suggest-wrapper {
+		top: 30px;
+		width: 100%;
+	}
+
+
+	/* サジェストの吹き出し部分 */
+	.suggest-pc .suggest-wrapper .suggest-box {
+		width: 100%;
+		margin: 12px auto;
+		overflow: hidden;
+	}
+
+}
+
+
+/* BreakPoint for SP */
+@media (max-width: 959px) {
+
+	/* 大枠 */
+	.suggest-sp {
+		position: relative;
+		left: 0px;
+		top: 0px;
+		width: 100%;
+
+		cursor: pointer;
+	}
+
+
+	/* サジェストの表示開始位置 */
+	.suggest-sp .suggest-wrapper {
+		top: 30px;
+		width: 100%;
+	}
+
+
+	/* サジェストの吹き出し部分 */
+	.suggest-sp .suggest-wrapper .suggest-box {
+		width: 100%;
+		margin: 12px auto;
+		overflow: hidden;
+	}
+
+
+	/*　横向き、縦向きになった時のサジェスト表示サイズ -SP- */
+	/* 縦向き */
+	@media only screen and (orientation : portrait) {
+
+		.suggest-wrapper  {
+			z-index: 3000;
+			zoom: 1;
+			-webkit-tap-highlight-color:rgba(0, 0, 0, 0)!important;
+		}
+
+		.suggest-container ul li a  {
+			font-size: 1em;
+		}
+
+	}
+
+
+	/* 横向き */
+	@media only screen and (orientation : landscape) {
+
+		.suggest-wrapper {
+			z-index: 3000;
+			zoom: 1.25;
+			-webkit-tap-highlight-color:rgba(0, 0, 0, 0)!important;
+		}
+
+		.suggest-container ul li a  {
+			font-size: 1em;
+		}
+
+	}
+
+
+	/* メール送信後 */
+	/* 縦向き */
+	@media only screen and (orientation : portrait) {
+
+		.img-complete-sp {
+			width: 100%;
+		}
+
+	}
+
+
+	/* 横向き */
+	@media only screen and (orientation : landscape) {
+
+		.img-complete-sp {
+			width: 70%;
+		}
+
+	}
+
+}
+
+
+/* サジェストContainer部分 */
+.suggest-container {
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+
+	width: 100%;
+	margin: 0px;
+	padding: 20px;
+	overflow: hidden;
+}
+
+.suggest-container:before {
+	content: "";
+	border: 12px solid transparent;
+	border-bottom: 12px solid #ccc;
+	position: absolute;
+	right: 30%;
+	top: -12px;
+}
+
+.suggest-container:after {
+	content: "";
+	border: 12px solid transparent;
+	border-bottom: 12px solid #fff;
+	position: absolute;
+	right: 30%;
+	top: -10px;
+}
+
+ul.suggest-menu li {
+	margin: 0px 0px 10px;
+}
+
+
+/* サジェスト本体のリンク装飾 */
+.suggest-container ul li a {
+	width: 100%;
+	margin: 3px 0px;
+	padding: 0px;
+
+	font-size: 12px;
+	cursor: pointer;
+	display: block;
+}
+
+.suggest-container ul li a,
+.suggest-container ul li a span {
+	color: #666;
+}
+
+.suggest-container ul li.acv a,
+.suggest-container ul li.acv a span {
+	color: #000;
+	background-color: #ddd;
+}
+
+.suggest-container ul li a:hover,
+.suggest-container ul li a:hover span {
+	color: #000;
+	background-color: #ddd;
+}
+
+
+
+
+/* フォーム用共通CSS ここまで
+ ------------------------------------------------------------------------------*/
+
+
+
+
+/* ライトボックス - for Colorbox
+------------------------------------
+ -コアスタイル
+ -カスタム可能スタイル
+
+ ------------------------------------------------------------------------------*/
+
+
+
+
+/* コアスタイル
+----------------------------------------*/
+
+
+#colorbox,
+#cboxOverlay,
+#cboxWrapper {
+	position:　absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 9999;
+	overflow: hidden;
+}
+
+#cboxWrapper {
+	max-width: none;
+}
+
+#cboxOverlay {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+
+	-webkit-box-pack: center;
+	-moz-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+
+	-webkit-box-align: center;
+	-moz-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+}
+
+#cboxMiddleLeft,
+#cboxBottomLeft {
+	clear: left;
+}
+
+#cboxContent {
+	position: relative;
+}
+
+#cboxLoadedContent {
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+#cboxTitle {
+	margin: 0;
+}
+
+#cboxLoadingOverlay,
+#cboxLoadingGraphic {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+}
+
+#cboxPrevious,
+#cboxNext,
+#cboxClose,
+#cboxSlideshow {
+	cursor: pointer;
+}
+
+.cboxPhoto {
+	float: left;
+	margin: auto;
+	border: 0;
+	display: block;
+	max-width: none;
+	-ms-interpolation-mode: bicubic;
+}
+
+.cboxIframe {
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+	display: block;
+	border: 0;
+}
+
+#colorbox,
+#cboxContent,
+#cboxLoadedContent {
+	box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+}
+
+
+/* カスタム可能スタイル
+----------------------------------------*/
+
+
+#cboxOverlay {
+	background: #000;
+	opacity: 0.3;
+	-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity = 30);
+	filter: alpha(opacity = 30);
+}
+
+#colorbox {
+	outline: 0;
+}
+
+
+	#cboxContent {
+		margin-top: 32px;
+		overflow: visible;
+		background: none;
+	}
+
+		.cboxIframe {
+			background: #fff;
+		}
+
+		#cboxError {
+			padding: 50px;
+			border: 1px solid #ccc;
+		}
+
+		#cboxLoadedContent {
+			background: none;
+			padding: 1px;
+		}
+
+		#cboxLoadingGraphic,
+		#cboxLoadingGraphic:before,
+		#cboxLoadingGraphic:after {
+			background: #ddd;
+			-webkit-animation: load1 1s infinite ease-in-out;
+			animation: load1 1s infinite ease-in-out;
+			width: 1em;
+			height: 4em;
+		}
+
+		#cboxLoadingGraphic:before,
+		#cboxLoadingGraphic:after {
+			position: absolute;
+			top: 0;
+			content: '';
+		}
+
+		#cboxLoadingGraphic:before {
+			left: -1.5em;
+			-webkit-animation-delay: -0.32s;
+			animation-delay: -0.32s;
+		}
+
+		#cboxLoadingGraphic {
+			/* background: url('../images/common/loading.gif') no-repeat center center; */
+
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			right: 50%;
+
+			color: #ddd;
+			text-indent: -9999em;
+			font-size: 8px;
+
+			-webkit-transform: translateZ(0);
+			-ms-transform: translateZ(0);
+			transform: translateZ(0);
+			-webkit-animation-delay: -0.16s;
+			animation-delay: -0.16s;
+		}
+
+		#cboxLoadingGraphic:after {
+			left: 1.5em;
+		}
+
+		@-webkit-keyframes load1 {
+
+			0%,
+			80%,
+			100% {
+				box-shadow: 0 0;
+				height: 4em;
+			}
+			40% {
+				box-shadow: 0 -2em;
+				height: 5em;
+			}
+
+		}
+
+		@keyframes load1 {
+
+			0%,
+			80%,
+			100% {
+				box-shadow: 0 0;
+				height: 4em;
+			}
+			40% {
+				box-shadow: 0 -2em;
+				height: 5em;
+			}
+
+		}
+
+
+		#cboxLoadingOverlay {
+			background: none;
+		}
+
+		#cboxTitle {
+			position: absolute;
+			top: -22px;
+			left: 0;
+			width: 100%;
+
+			text-align: center;
+			color: #fff;
+		}
+
+		#cboxCurrent {
+			position: absolute;
+			top: -22px;
+			right: 205px;
+			text-indent: -9999px;
+		}
+
+
+		/* these elements are buttons, and may need to have additional styles reset to avoid unwanted base styles */
+		#cboxPrevious,
+		#cboxNext,
+		#cboxSlideshow,
+		#cboxClose {
+			background: url('../images/common/controls.png') no-repeat left top;
+
+			position: absolute;
+			top: -20px;
+			width: 20px;
+			height: 20px;
+			margin: 0px;
+			padding: 0px;
+
+			border: 0;
+			overflow: visible;
+			text-indent: -9999px;
+		}
+
+		/* avoid outlines on :active (mouseclick), but preserve outlines on :focus (tabbed navigating) */
+		#cboxPrevious:active,
+		#cboxNext:active,
+		#cboxSlideshow:active,
+		#cboxClose:active {
+			outline: 0;
+		}
+
+		#cboxSlideshow {
+			position: absolute;
+			bottom: 4px;
+			right: 30px;
+			color: #0092ef;
+		}
+
+		#cboxPrevious {
+			background-position: 0px 0px;
+			right: 44px;
+		}
+
+		#cboxPrevious:hover {
+			background-position: 0px -25px;
+		}
+
+		#cboxNext {
+			background-position: -25px 0px;
+			right: 22px;
+		}
+
+		#cboxNext:hover {
+			background-position: -25px -25px;
+		}
+
+		#cboxClose {
+			background-position: -50px 0px;
+			right: 0px;
+		}
+
+		#cboxClose:hover {
+			background-position: -50px -25px;
+		}
+
+		.cboxSlideshow_on #cboxPrevious,
+		.cboxSlideshow_off #cboxPrevious {
+			right: 66px;
+		}
+
+		.cboxSlideshow_on #cboxSlideshow {
+			background-position: -75px -25px;
+			right: 44px;
+		}
+		.cboxSlideshow_on #cboxSlideshow:hover {
+			background-position: -100px -25px;
+		}
+
+		.cboxSlideshow_off #cboxSlideshow {
+			background-position: -100px 0px;
+			right: 44px;
+		}
+
+		.cboxSlideshow_off #cboxSlideshow:hover {
+			background-position: -75px -25px;
+		}
+
+
+/*
+ * The following fixes a problem where IE7 and IE8 replace a PNG's alpha transparency with a black fill
+ * when an alpha filter (opacity change) is set on the element or ancestor element.  This style is not applied to or needed in IE9.
+ * See: http://jacklmoore.com/notes/ie-transparency-problems/
+*/
+
+
+.cboxIE #cboxTopLeft,
+.cboxIE #cboxTopCenter,
+.cboxIE #cboxTopRight,
+.cboxIE #cboxBottomLeft,
+.cboxIE #cboxBottomCenter,
+.cboxIE #cboxBottomRight,
+.cboxIE #cboxMiddleLeft,
+.cboxIE #cboxMiddleRight {
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF);
+}
+
+
+
+
+/* ライトボックス　ここまで
+------------------------------------------------------------------------------*/
+
+
+
+
+/* コンテンツ調整用CSS
+------------------------------------
+ -フロート
+ -テキストアライン
+ -バーティカルアライン
+ -パディング
+ -マージン
+ -幅
+ -ナビゲーション
+
+------------------------------------------------------------------------------*/
+
+
+
+
+/* フロート
+----------------------------------------*/
+
+
+.float-l {
+	float: left;
+}
+
+.float-r {
+	float: right;
+}
+
+
+/* テキストアライン
+----------------------------------------*/
+
+
+.left {
+	text-align: left;
+}
+
+.right {
+	text-align: right;
+}
+
+.center {
+	text-align: center;
+}
+
+
+/* バーティカルアライン
+----------------------------------------*/
+
+
+.top {
+	vertical-align: top;
+}
+
+.middle {
+	vertical-align: middle;
+}
+
+.bottom {
+	vertical-align: bottom;
+}
+
+
+/* パディング
+----------------------------------------*/
+
+
+/* パディングなし */
+.pd-00 {
+	padding: 0px !important;
+}
+
+
+/* BreakPoint for PC */
+@media (min-width: 960px) {
+
+
+	/* 四隅パディング */
+	.pd-10 {
+		padding: 10px !important;
+	}
+
+	.pd-20 {
+		padding: 20px !important;
+	}
+
+	.pd-30 {
+		padding: 30px !important;
+	}
+
+	.pd-40 {
+		padding: 40px !important;
+	}
+
+
+	/* 上下パディング */
+	.pd-tb-10 {
+		padding: 10px 0px !important;
+	}
+
+	.pd-tb-20 {
+		padding: 20px 0px !important;
+	}
+
+	.pd-tb-30 {
+		padding: 30px 0px !important;
+	}
+
+	.pd-tb-40 {
+		padding: 40px 0px !important;
+	}
+
+
+	/* 左右パディング */
+	.pd-lr-05 {
+		padding: 0px 5px !important;
+	}
+
+	.pd-lr-10 {
+		padding: 0px 10px !important;
+	}
+
+	.pd-lr-20 {
+		padding: 0px 20px !important;
+	}
+
+	.pd-lr-30 {
+		padding: 0px 30px !important;
+	}
+
+	.pd-lr-40 {
+		padding: 0px 40px !important;
+	}
+
+
+	/* 左パディング */
+	.pd-l-10 {
+		padding: 0px 0px 0px 10px !important;
+	}
+
+	.pd-l-20 {
+		padding: 0px 0px 0px 20px !important;
+	}
+
+	.pd-l-30 {
+		padding: 0px 0px 0px 30px !important;
+	}
+
+	.pd-l-40 {
+		padding: 0px 0px 0px 40px !important;
+	}
+
+
+	/* 右パディング */
+	.pd-r-10 {
+		padding: 0px 10px 0px 0px !important;
+	}
+
+	.pd-r-20 {
+		padding: 0px 20px 0px 0px !important;
+	}
+
+	.pd-r-30 {
+		padding: 0px 30px 0px 0px !important;
+	}
+
+	.pd-r-40 {
+		padding: 0px 40px 0px 0px !important;
+	}
+
+
+}
+
+
+/* BreakPoint for SP */
+@media (max-width: 959px) {
+
+
+	/* 四隅パディング */
+	.pd-10 {
+		padding: 5px !important;
+	}
+
+	.pd-20 {
+		padding: 10px !important;
+	}
+
+	.pd-30 {
+		padding: 15px !important;
+	}
+
+	.pd-40 {
+		padding: 20px !important;
+	}
+
+
+	/* 上下パディング */
+	.pd-tb-10 {
+		padding: 5px 0px !important;
+	}
+
+	.pd-tb-20 {
+		padding: 10px 0px !important;
+	}
+
+	.pd-tb-30 {
+		padding: 15px 0px !important;
+	}
+
+	.pd-tb-40 {
+		padding: 20px 0px !important;
+	}
+
+
+	/* 左右パディング */
+	.pd-lr-05 {
+		padding: 0px 2.5px !important;
+	}
+
+	.pd-lr-10 {
+		padding: 0px 5px !important;
+	}
+
+	.pd-lr-20 {
+		padding: 0px 10px !important;
+	}
+
+	.pd-lr-30 {
+		padding: 0px 15px !important;
+	}
+
+	.pd-lr-40 {
+		padding: 0px 20px !important;
+	}
+
+
+	/* 左パディング */
+	.pd-l-10 {
+		padding: 0px 0px 0px 5px !important;
+	}
+
+	.pd-l-20 {
+		padding: 0px 0px 0px 10px !important;
+	}
+
+	.pd-l-30 {
+		padding: 0px 0px 0px 15px !important;
+	}
+
+	.pd-l-40 {
+		padding: 0px 0px 0px 20px !important;
+	}
+
+
+	/* 右パディング */
+	.pd-r-10 {
+		padding: 0px 5px 0px 0px !important;
+	}
+
+	.pd-r-20 {
+		padding: 0px 10px 0px 0px !important;
+	}
+
+	.pd-r-30 {
+		padding: 0px 15px 0px 0px !important;
+	}
+
+	.pd-r-40 {
+		padding: 0px 20px 0px 0px !important;
+	}
+
+
+}
+
+
+/* マージン
+----------------------------------------*/
+
+
+/* 左右マージン均等 */
+.mg-auto {
+	margin: 0px auto !important;
+}
+
+
+/* マージンなし */
+.mg-00 {
+	margin: 0px !important;
+}
+
+
+/* BreakPoint for PC */
+@media (min-width: 960px) {
+
+
+	/* 左マージン */
+	.ml-05 {
+		margin-left: 5px !important;
+	}
+
+	.ml-10 {
+		margin-left: 10px !important;
+	}
+
+	.ml-15 {
+		margin-left: 15px !important;
+	}
+
+	.ml-20 {
+		margin-left: 20px !important;
+	}
+
+	.ml-25 {
+		margin-left: 25px !important;
+	}
+
+	.ml-30 {
+		margin-left: 30px !important;
+	}
+
+	.ml-40 {
+		margin-left: 40px !important;
+	}
+
+
+	/* 右マージン */
+	.mr-05 {
+		margin-right: 5px !important;
+	}
+
+	.mr-10 {
+		margin-right: 10px !important;
+	}
+
+	.mr-15 {
+		margin-right: 15px !important;
+	}
+
+	.mr-20 {
+		margin-right: 20px !important;
+	}
+
+	.mr-25 {
+		margin-right: 25px !important;
+	}
+
+	.mr-30 {
+		margin-right: 30px !important;
+	}
+
+	.mr-40 {
+		margin-right: 40px !important;
+	}
+
+
+	/* 上マージン */
+	.mt-05 {
+		margin-top: 5px !important;
+	}
+
+	.mt-10 {
+		margin-top: 10px !important;
+	}
+
+	.mt-15 {
+		margin-top: 15px !important;
+	}
+
+	.mt-20 {
+		margin-top: 20px !important;
+	}
+
+	.mt-25 {
+		margin-top: 25px !important;
+	}
+
+	.mt-30 {
+		margin-top: 30px !important;
+	}
+
+	.mt-40 {
+		margin-top: 40px !important;
+	}
+
+	.mt-50 {
+		margin-top: 50px !important;
+	}
+
+	.mt-60 {
+		margin-top: 60px !important;
+	}
+
+	.mt-70 {
+		margin-top: 70px !important;
+	}
+
+	.mt-80 {
+		margin-top: 80px !important;
+	}
+
+	.mt-90 {
+		margin-top: 90px !important;
+	}
+
+	.mt-100 {
+		margin-bottom: 100px !important;
+	}
+
+
+	/* 下マージン */
+	.mb-05 {
+		margin-bottom: 5px !important;
+	}
+
+	.mb-10 {
+		margin-bottom: 10px !important;
+	}
+
+	.mb-15 {
+		margin-bottom: 15px !important;
+	}
+
+	.mb-20 {
+		margin-bottom: 20px !important;
+	}
+
+	.mb-25 {
+		margin-bottom: 25px !important;
+	}
+
+	.mb-30 {
+		margin-bottom: 30px !important;
+	}
+
+	.mb-40 {
+		margin-bottom: 40px !important;
+	}
+
+	.mb-50 {
+		margin-bottom: 50px !important;
+	}
+
+	.mb-60 {
+		margin-bottom: 60px !important;
+	}
+
+	.mb-70 {
+		margin-bottom: 70px !important;
+	}
+
+	.mb-80 {
+		margin-bottom: 80px !important;
+	}
+
+	.mb-90 {
+		margin-bottom: 90px !important;
+	}
+
+	.mb-100 {
+		margin-bottom: 100px !important;
+	}
+
+
+}
+
+
+/* BreakPoint for SP */
+@media (max-width: 959px) {
+
+
+	/* 左マージン */
+	.ml-05 {
+		margin-left: 2.5px !important;
+	}
+
+	.ml-10 {
+		margin-left: 5px !important;
+	}
+
+	.ml-15 {
+		margin-left: 7.5px !important;
+	}
+
+	.ml-20 {
+		margin-left: 10px !important;
+	}
+
+	.ml-25 {
+		margin-left: 12.5px !important;
+	}
+
+	.ml-30 {
+		margin-left: 15px !important;
+	}
+
+	.ml-40 {
+		margin-left: 20px !important;
+	}
+
+
+	/* 右マージン */
+	.mr-05 {
+		margin-right: 2.5px !important;
+	}
+
+	.mr-10 {
+		margin-right: 5px !important;
+	}
+
+	.mr-15 {
+		margin-right: 7.5px !important;
+	}
+
+	.mr-20 {
+		margin-right: 10px !important;
+	}
+
+	.mr-25 {
+		margin-right: 12.5px !important;
+	}
+
+	.mr-30 {
+		margin-right: 15px !important;
+	}
+
+	.mr-40 {
+		margin-right: 20px !important;
+	}
+
+
+	/* 上マージン */
+	.mt-05 {
+		margin-top: 2.5px !important;
+	}
+
+	.mt-10 {
+		margin-top: 5px !important;
+	}
+
+	.mt-15 {
+		margin-top: 7.5px !important;
+	}
+
+	.mt-20 {
+		margin-top: 10px !important;
+	}
+
+	.mt-25 {
+		margin-top: 12.5px !important;
+	}
+
+	.mt-30 {
+		margin-top: 15px !important;
+	}
+
+	.mt-40 {
+		margin-top: 20px !important;
+	}
+
+	.mt-50 {
+		margin-top: 25px !important;
+	}
+
+	.mt-60 {
+		margin-top: 30px !important;
+	}
+
+	.mt-70 {
+		margin-top: 35px !important;
+	}
+
+	.mt-80 {
+		margin-top: 40px !important;
+	}
+
+	.mt-90 {
+		margin-top: 45px !important;
+	}
+
+	.mt-100 {
+		margin-bottom: 50px !important;
+	}
+
+
+	/* 下マージン */
+	.mb-05 {
+		margin-bottom: 2.5px !important;
+	}
+
+	.mb-10 {
+		margin-bottom: 5px !important;
+	}
+
+	.mb-15 {
+		margin-bottom: 7.5px !important;
+	}
+
+	.mb-20 {
+		margin-bottom: 10px !important;
+	}
+
+	.mb-25 {
+		margin-bottom: 12.5px !important;
+	}
+
+	.mb-30 {
+		margin-bottom: 15px !important;
+	}
+
+	.mb-40 {
+		margin-bottom: 20px !important;
+	}
+
+	.mb-50 {
+		margin-bottom: 25px !important;
+	}
+
+	.mb-60 {
+		margin-bottom: 30px !important;
+	}
+
+	.mb-70 {
+		margin-bottom: 35px !important;
+	}
+
+	.mb-80 {
+		margin-bottom: 40px !important;
+	}
+
+	.mb-90 {
+		margin-bottom: 45px !important;
+	}
+
+	.mb-100 {
+		margin-bottom: 50px !important;
+	}
+
+
+}
+
+
+/* 幅
+----------------------------------------*/
+
+
+.wd-all {
+	width: 100% !important;
+}
+
+
+/* カラム数別 */
+.wd-2nd {
+	width: 50% !important;
+}
+
+.wd-3rd {
+	width: 33.3333333% !important;
+}
+
+.wd-4th {
+	width: 25% !important;
+}
+
+.wd-5th {
+	width: 20% !important;
+}
+
+.wd-6th {
+	width: 16.6666667% !important;
+}
+
+.wd-7th {
+	width: 14.2857143% !important;
+}
+
+.wd-8th {
+	width: 12.5% !important;
+}
+
+.wd-9th {
+	width: 11.1111111% !important;
+}
+
+.wd-10th {
+	width: 10% !important;
+}
+
+.wd-11th {
+	width: 9.09090909% !important;
+}
+
+.wd-12th {
+	width: 8.33333333% !important;
+}
+
+
+/* 10%別 */
+.wd-10 {
+	width: 10% !important;
+}
+
+.wd-20 {
+	width: 20% !important;
+}
+
+.wd-30 {
+	width: 30% !important;
+}
+
+.wd-40 {
+	width: 40% !important;
+}
+
+.wd-50 {
+	width: 50% !important;
+}
+
+.wd-60 {
+	width: 60% !important;
+}
+
+.wd-70 {
+	width: 70% !important;
+}
+
+.wd-80 {
+	width: 80% !important;
+}
+
+.wd-90 {
+	width: 90% !important;
+}
+
+
+/* ナビゲーション
+----------------------------------------*/
+
+
+.navbar-default .navbar-toggle span,
+.navbar-default .navbar-toggle:not(.collapsed) span {
+	display: inline-block;
+	transition: all .4s;
+	box-sizing: border-box;
+}
+
+.navbar-default .navbar-toggle.collapsed,
+.navbar-default .navbar-toggle:not(.collapsed) {
+	position: absolute;
+	right: 0px;
+	width: 30px;
+	height: 22px;
+}
+
+.navbar-default .navbar-toggle.collapsed span,
+.navbar-default .navbar-toggle:not(.collapsed) span {
+	position: absolute;
+	right: 0px;
+	width: 100%;
+	height: 2px;
+	background-color: #999;
+}
+
+.navbar-default .navbar-toggle.collapsed span:nth-of-type(1) {
+	top: 0px;
+}
+
+.navbar-default .navbar-toggle.collapsed span:nth-of-type(2) {
+	top: 10px;
+}
+
+.navbar-default .navbar-toggle.collapsed span:nth-of-type(3) {
+	bottom: 0px;
+}
+
+.navbar-default .navbar-toggle:not(.collapsed) span:nth-of-type(1) {
+	-webkit-transform: translateY(0px) rotate(-45deg);
+	transform: translateY(0px) rotate(-45deg);
+}
+
+.navbar-default .navbar-toggle:not(.collapsed) span:nth-of-type(2){
+	opacity: 0;
+}
+
+.navbar-default .navbar-toggle:not(.collapsed) span:nth-of-type(3) {
+	-webkit-transform: translateY(0px) rotate(45deg);
+	transform: translateY(0px) rotate(45deg);
+}
+
+
+
+
+/* コンテンツ調整用CSS ここまで
+------------------------------------------------------------------------------*/
+
+
+
+
+/* 下層ページ
+------------------------------------------------------------------------------*/
+
+
+/* 2nd: top
+----------------------------------------*/
+
+
+.centerParentWrapper {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+
+	-webkit-box-pack: center;
+	-moz-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+
+	-webkit-box-align: center;
+	-moz-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	margin: 0px;
+	padding: 20px;
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+}
+
+.centerChildrenWrapper {
+	background: #fff;
+
+	margin: 0px auto;
+	padding: 40px 20px;
+	min-width: 280px;
+	max-width: 960px;
+	overflow: hidden;
+}
+
+
+
+
+/* 下層ページ ここまで
+------------------------------------------------------------------------------*/
+
+
+
