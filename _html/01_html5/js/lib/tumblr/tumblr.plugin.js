@@ -19,12 +19,7 @@
 
 
 
-var GLOBAL = GLOBAL || self;
-
-
-
-
-(function(global){
+(function ($) {
 
 
 "use strict";
@@ -291,4 +286,4 @@ var GLOBAL = GLOBAL || self;
 
 
 
-})((this || 0).self || global);
+}(jQuery));

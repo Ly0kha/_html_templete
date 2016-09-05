@@ -41,12 +41,7 @@
 
 
 
-var GLOBAL = GLOBAL || self;
-
-
-
-
-(function(global){
+(function ($) {
 
 
 "use strict";
@@ -1689,7 +1684,8 @@ var GLOBAL = GLOBAL || self;
 
 
     // Android対策 -横向きで微妙にずれる- //
-    var portraitWidth,landscapeWidth;
+    var portraitWidth,
+        landscapeWidth;
 
     $(window).on('load resize', function(){
 
@@ -1739,4 +1735,4 @@ var GLOBAL = GLOBAL || self;
 
 
 
-})((this || 0).self || global);
+}(jQuery));

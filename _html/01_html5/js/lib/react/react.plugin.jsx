@@ -13,12 +13,7 @@
 
 
 
-var GLOBAL = GLOBAL || self;
-
-
-
-
-(function(global){
+(function ($) {
 
 
 
