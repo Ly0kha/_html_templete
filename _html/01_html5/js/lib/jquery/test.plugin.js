@@ -18,10 +18,10 @@
 
 
 
-(function ($) {
+(function ($){
 
 
-"use strict";
+'use strict';
 
 
 /* AJAX Setup

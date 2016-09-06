@@ -41,10 +41,10 @@
 
 
 
-(function ($) {
+(function ($){
 
 
-"use strict";
+'use strict';
 
 
 /* Setup
@@ -144,6 +144,7 @@
         $.getScript(rootDir + 'js/lib/jquery/jquery.kerning.min.js');
         $.getScript(rootDir + 'js/lib/jquery/jquery.colorbox.min.js');
         $.getScript(rootDir + 'js/lib/jquery/jquery.heightLine.min.js');
+        $.getScript(rootDir + 'js/lib/jquery/moment.min.js');
 
     }
 

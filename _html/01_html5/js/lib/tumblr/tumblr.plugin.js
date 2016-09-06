@@ -4,25 +4,22 @@
 
 
 /*----------------------------------------------------
-
 ・Setup
 　→TumblrのAPI設定
 　→TumblrのJson読み出し
 　→Jsonを元にHTMLに整形
-
 ・Function
 　→画像をフルサイズにリサイズ
 　→スライドする為の設定とカスタマイズ
-
 ----------------------------------------------------*/
 
 
 
 
-(function ($) {
+(function ($){
 
 
-"use strict";
+'use strict';
 
 
 /* Setup
@@ -30,12 +27,12 @@
 
 
     // Tumblrの情報を取得 //
-    var url = 'kik888.tumblr.com';
-    var key = 'DxAdNEP9PrL03Eq1H2duB0FHcqNETXBwAXbRVpxB1fjuBHmDUC';
+    var url = 'kik888.tumblr.com',
+        key = 'DxAdNEP9PrL03Eq1H2duB0FHcqNETXBwAXbRVpxB1fjuBHmDUC';
 
 
     // JsonをAJAXで読み込む //
-    $.getJSON("http://api.tumblr.com/v2/blog/" + url + "/posts?api_key=" + key + "&jsonp=?"　+　"&limit=10", function (data){
+    $.getJSON('http://api.tumblr.com/v2/blog/' + url + '/posts?api_key=' + key + '&jsonp=?'　+　'&limit=20', function (data){
 
 
         $.each(data, function (index, val){
@@ -52,14 +49,15 @@
                         for (var kp in v_post){
 
                             /* 引っ張ってくる情報 */
-                            var data    = v_post[kp].date,
-                                link    = v_post[kp].post_url,
-                                type    = v_post[kp].type,
+                            var data        = v_post[kp].date,
+                                link        = v_post[kp].post_url,
+                                type        = v_post[kp].type;
 
 
-                                /* 日付け表示を変える */
-                                date = new Date(data),
-                                strDate = date.toLocaleDateString();
+                            /* 日付け表示を変える */
+                            var date        = moment(data).format('YYYY.M.D');
+                                // date        = new Date(data),
+                                // strDate = date.toLocaleDateString();
 
 
                             /* テキスト */
@@ -98,9 +96,9 @@
                                                     var image = v[n],
                                                         caption = v_post[kp].caption;
 
-                                                    function bgHtml(index){
+                                                    var bgHtml = function (index){
 
-                                                        return '<div class="post-' + type + ' item text-color-white" style="background-image:url( ' + image + ' ); background-position: 50％ 50％;"><div class="box pd-20"><time class="block mb-40">' + strDate + '</time>' + caption + '<div class="post-cover">';
+                                                        return '<div class="post-' + type + ' item text-color-white" style="background-image:url( ' + image + ' ); background-position: 50％ 50％;"><div class="box pd-20"><time class="block mb-40">' + date + '</time>' + caption + '<div class="post-cover">';
 
                                                     }
 
@@ -191,8 +189,8 @@
     function bgSize(){
 
         /* 背景画像を全画面に */
-        var window_width            = $(window).width();
-        var window_height           = $(window).height() + 80;
+        var window_width            = $(window).width(),
+            window_height           = $(window).height() + 80;
 
         $('.post-cover, .post-photo').css({
             'width':    window_width,

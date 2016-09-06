@@ -19,10 +19,10 @@
 
 
 
-(function ($) {
+(function ($){
 
 
-"use strict";
+'use strict';
 
 
     /* グローバル変数
