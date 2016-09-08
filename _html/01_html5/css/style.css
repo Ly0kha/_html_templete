@@ -214,9 +214,9 @@ body {
 }
 
 #wrapper,
-#test-wrapper {
+#test-wrapper,
+#test02-wrapper {
 	position: relative;
-	margin: 0px auto;
 	padding: 0px 20px;
 	min-width: 300px;
 	max-width: 959px;
@@ -227,10 +227,17 @@ body {
 
 #wrapper {
 	background: rgba(255,255,255,1);
+	margin: 0px auto;
 }
 
 #test-wrapper {
 	background: rgba(255,255,255,0.8);
+	margin: 0px auto;
+}
+
+#test02-wrapper {
+	background: rgba(255,255,255,0.8);
+	margin: 50px auto 200px;
 }
 
 
@@ -245,7 +252,7 @@ header.fixed,
 footer.fixed {
 	width: 100%;
 	margin: 0px;
-	z-index: 10;
+	z-index: 100;
 }
 
 
@@ -274,7 +281,16 @@ footer.fixed {
 /* ボタン */
 footer .btn-top,
 footer.fixed .btn-top {
-	font-size: 2em;
+	background: #e2e2e2;
+	border-color: #e7e7e7;
+	font-size: 1em;
+}
+
+footer .btn-top:hover,
+footer.fixed .btn-top:hover {
+	background: #efefeF;
+	border-color: #e7e7e7;
+	font-size: 1em;
 }
 
 

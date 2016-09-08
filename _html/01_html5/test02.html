@@ -52,7 +52,7 @@
 	<link href="css/style.css" rel="stylesheet" />
 	<link href="css/hover.css" rel="stylesheet" media="screen" />
 	<link href="css/bootstrap.css" rel="stylesheet" />
-	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" media="all">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" media="all" />
 
 
 	<!-- <script type="text/javascript" src="js/lib/coffee/coffee-script.js"></script>
@@ -76,31 +76,17 @@
 <div id="test-container">
 
 
-	<div id="bg-slider" class="carousel slide" data-ride="carousel">
+	<!-- Header -->
+	<header id="header-navi-1st" class="fixed">
 
-		<div class="carousel-inner" role="listbox">
-		</div>
-
-	</div>
+	</header><!-- /.Header -->
 
 
 	<!-- Wrapper -->
-	<div id="test-wrapper">
-
-
-		<!-- Header -->
-		<header id="header-navi-1st">
-
-			<h1 class="mt-20 small">Head Title -SEO Text Word Here-</h1>
-
-			<!-- Global Navi -->
-			<!--body要素内のヘッダーを埋め込みたい箇所に記述-->
-
-		</header><!-- /.Header -->
-
+	<div id="test02-wrapper">
 
 		<!-- Main -->
-		<p class="small">キャプション</p>
+		<p class="mt-20 small">キャプション</p>
 		<h2>タイトルが入ります。</h2>
 		<nav>
 			<a href="#">デバッグディレクトリページに飛びます。</a>
@@ -120,413 +106,34 @@
 		</nav>
 
 
-		<!-- Window取得テスト -->
-		<div class="box mt-40 mb-40">
-
-			<div id="test01" class="mb-05"></div>
-			<hr class="hr-small">
-
-			<div id="test02" class="mb-05"></div>
-			<hr class="hr-small">
-
-			<div id="test03" class="mb-05"></div>
-			<div id="test03b" class="mb-05"></div>
-			<div id="test03c" class="mb-05"></div>
-			<hr class="hr-small">
-
-			<div id="test04" class="mb-05"></div>
-			<hr class="hr-small">
-
-			<div id="test05" class="mb-05"></div>
-			<hr class="hr-small">
-
-			<div id="test06" class="mb-05"></div>
-			<hr class="hr-small">
-
-			<div id="test07" class="mb-05"></div>
-			<hr class="hr-small">
-
-			<div id="test08" class="mb-05"></div>
-			<hr class="hr-small">
-
-			<div id="test09" class="mb-05"></div>
-			<hr class="hr-small">
-
-			<div id="test10" class="mb-05"></div>
-			<hr class="hr-small">
-
-			<div id="test11" class="mb-05"></div>
-			<hr class="hr-small">
-
-			<div id="test12" class="mb-05"></div>
-			<hr class="hr-small">
-
-			<div id="test13" class="mb-05"></div>
-			<hr class="hr-small">
-
-			<div id="test14" class="mb-05"></div>
-			<hr class="hr-small">
-
-			<div id="test15" class="mb-05"></div>
-			<hr class="hr-small">
-
-
-			<!-- Textbox 1Columns -->
-
-			<script id="list-input" type="text/x-handlebars-template">
-
-				<section>
-
-					<h2>
-						パーティ状況
-					</h2>
-
-					<ul class="list">
-
-					{{#list nav}}
-						<a href="{{url}}" class="blank">{{title}}</a>
-					{{/list}}
-
-					</ul>
-
-
-				</section>
-
-			</script>
-
-
-
-			<div id="test16" class="mb-05"></div>
-			<hr class="hr-small">
-
-
-			<script id="json-test" type="text/x-handlebars-template">
-
-				<section>
-
-					<h2>
-						パーティ状況
-					</h2>
-
-					<table class="border">
-
-
-						<thead>
-
-							<tr>
-								<th colspan="4">監督 / コーチ</th>
-							</tr>
-
-							<tr>
-								<th>名前</th>
-								<th>ポジション</th>
-								<th>勝&nbsp;/&nbsp;負</th>
-								<th>状態</th>
-							</tr>
-
-						</thead>
-
-
-						{{#each rosterDirectorList}}
-
-						<tbody>
-
-							<tr>
-								<td>{{name}}</td>
-								<td>{{job}}</td>
-								<td>
-									{{win}}&nbsp;/&nbsp;{{lose}}
-									{{#if isLive}}
-									  Active
-									{{else}}
-									  Inactive
-									{{/if}}
-								</td>
-								<td>{{#showCondition current_hp}}{{/showCondition}}</td>
-							</tr>
-
-						</tbody>
-
-
-						{{/each}}
-
-
-						<thead>
-
-							<tr>
-								<th colspan="4">バッター</th>
-							</tr>
-
-							<tr>
-								<th>名前</th>
-								<th>ポジション</th>
-								<th>.AVG&nbsp;/&nbsp;HR</th>
-								<th>状態</th>
-							</tr>
-
-						</thead>
-
-
-						{{#each rosterFielderList}}
-
-
-						<tbody>
-
-							<tr>
-								<td>{{name}}</td>
-								<td>{{job}}</td>
-								<td>.{{avg}}&nbsp;/&nbsp;{{hr}}HR</td>
-								<td>{{#showCondition current_hp}}{{/showCondition}}</td>
-							</tr>
-
-						</tbody>
-
-
-						{{/each}}
-
-
-						<thead>
-
-							<tr>
-								<th colspan="4">ピッチャー</th>
-							</tr>
-
-							<tr>
-								<th>名前</th>
-								<th>ポジション</th>
-								<th>.ERA&nbsp;/&nbsp;W&nbsp;/&nbsp;L&nbsp;/&nbsp;S</th>
-								<th>状態</th>
-							</tr>
-
-						</thead>
-
-
-						{{#each rosterPitcherList}}
-
-
-						<tbody>
-
-							<tr>
-								<td>{{name}}</td>
-								<td>{{job}}</td>
-								<td>{{era}}&nbsp;/&nbsp;{{win}}W&nbsp;/&nbsp;{{lose}}L&nbsp;/&nbsp;{{#showSavePoint save}}{{/showSavePoint}}&nbsp;</td>
-								<td>{{#showCondition current_hp}}{{/showCondition}}</td>
-							</tr>
-
-						</tbody>
-
-						{{/each}}
-
-
-
-					</table>
-
-				</section>
-
-			</script>
-
-
-			<div id="test17" class="mb-05"></div>
-			<hr class="hr-small">
-
-
-			<script id="input" type="text/x-handlebars-template">
-
-				<section>
-
-					<h2>
-						パーティ状況
-					</h2>
-
-					<table class="border">
-
-
-						<thead>
-
-							<tr>
-								<th colspan="4">かんとく / コーチ</th>
-							</tr>
-
-							<tr>
-								<th>なまえ</th>
-								<th>ポジション</th>
-								<th>かち&nbsp;/&nbsp;まけ</th>
-								<th>じょうたい</th>
-							</tr>
-
-						</thead>
-
-
-						{{#each director}}
-
-						<tbody>
-
-							<tr>
-								<td>{{name}}</td>
-								<td>{{job}}</td>
-								<td>
-									{{win}}&nbsp;/&nbsp;{{lose}}
-									{{#if isLive}}
-									  あくてぃぶ
-									{{else}}
-									  いんあくてぃぶ
-									{{/if}}
-								</td>
-								<td>{{#showCondition current_hp}}{{/showCondition}}</td>
-							</tr>
-
-						</tbody>
-
-
-						{{/each}}
-
-
-						<thead>
-
-							<tr>
-								<th colspan="4">バッター</th>
-							</tr>
-
-							<tr>
-								<th>なまえ</th>
-								<th>ポジション</th>
-								<th>だりつ&nbsp;/&nbsp;ホームラン</th>
-								<th>じょうたい</th>
-							</tr>
-
-						</thead>
-
-
-						{{#each roster_fielder}}
-
-
-						<tbody>
-
-							<tr>
-								<td>{{name}}</td>
-								<td>{{job}}</td>
-								<td>.{{avg}}&nbsp;/&nbsp;{{hr}}ほん</td>
-								<td>{{#showCondition current_hp}}{{/showCondition}}</td>
-							</tr>
-
-						</tbody>
-
-
-						{{/each}}
-
-
-						<thead>
-
-							<tr>
-								<th colspan="4">ピッチャー</th>
-							</tr>
-
-							<tr>
-								<th>なまえ</th>
-								<th>ポジション</th>
-								<th>ぼうぎょりつ&nbsp;/&nbsp;かち&nbsp;/&nbsp;まけ&nbsp;/&nbsp;セーブ</th>
-								<th>じょうたい</th>
-							</tr>
-
-						</thead>
-
-
-						{{#each roster_pitcher}}
-
-
-						<tbody>
-
-							<tr>
-								<td>{{name}}</td>
-								<td>{{job}}</td>
-								<td>{{era}}&nbsp;/&nbsp;{{win}}かち&nbsp;/&nbsp;{{lose}}まけ&nbsp;/&nbsp;{{#showSavePoint save}}{{/showSavePoint}}&nbsp;</td>
-								<td>{{#showCondition current_hp}}{{/showCondition}}</td>
-							</tr>
-
-						</tbody>
-
-						{{/each}}
-
-
-
-					</table>
-
-				</section>
-
-			</script>
-
-
-			<div id="test18" class="mb-05"></div>
-			<hr class="hr-small">
-
-
-		</div>
-
-
 		<!-- Text Appearance -->
 		<section>
 
 			<h3>テキスト表示</h3>
 
 			<div class="box mb-20">
-				<p>
-					テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
-				</p>
-				<p>
-					txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.
-				</p>
-				<p>
-					<span class="text-color-black">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</span><br />
-					<span class="text-color-darkgray">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</span><br />
-					<span class="text-color-gray">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</span><br />
-					<span class="text-color-lightgray">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</span><br />
-					<span class="text-color-white">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</span><br />
-					<span class="text-color-darkblue">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</span><br />
-					<span class="text-color-blue">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</span><br />
-					<span class="text-color-lightblue">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</span><br />
-					<span class="text-color-yellow">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</span><br />
-					<span class="text-color-gold">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</span><br />
-					<span class="text-color-darkorange">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</span><br />
-					<span class="text-color-orange">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</span><br />
-					<span class="text-color-darkred">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</span><br />
-					<span class="text-color-red">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</span><br />
-				</p>
+
+				<ul id="tumblr-test" >
+
+
+				</ul>
+
 			</div>
 
 		</section>
 
 
 		<hr class="hr-large">
-
-
-		<!-- Textbox 1Columns -->
-		<section>
-
-			<h3>1カラム</h3>
-
-			<div class="box mb-20">
-				<p>
-					テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
-				</p>
-				<p>
-					txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.txtinsert.
-				</p>
-			</div>
-
-		</section>
-
-
-		<hr class="hr-large">
-
-
-		<!-- Footer -->
-		<footer id="footer-navi-1st" class="box center">
-
-
-		</footer>
 
 
 	</div>
+
+
+	<!-- Footer -->
+	<footer class="fixed box center">
+
+
+	</footer>
 
 
 </div>
@@ -556,10 +163,9 @@
 <!-- JS Executable file -->
 <script src="js/lib/jquery/test.plugin.js" async></script>
 <script src="js/lib/jquery/plugin.js" async></script>
-<script src="js/lib/tumblr/tumblr.plugin.js" async></script>
-<script src="js/lib/handlebars/handlebars.plugin.js" async></script>
+<script src="js/lib/tumblr/tumblr-react.plugin.js" async></script>
 
-<script src="js/lib/react/react.plugin.jsx" type="text/babel"></script>
+<script src="js/lib/react/tumblr-react.plugin.jsx" type="text/babel"></script>
 
 
 </body>

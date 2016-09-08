@@ -55,10 +55,12 @@
  }
 
  [class^="hvr-"] {
-	/*display: inline-block;*/
-	/*vertical-align: middle;*/
-	margin: .4em;
-	padding: 1em;
+	/* display: inline-block; */
+	/* vertical-align: middle; */
+	/* margin: .4em; */
+	/* padding: 1em; */
+	margin: 0px;
+	padding: 0.5em;
 	cursor: pointer;
 	background: #e1e1e1;
 	text-decoration: none;
@@ -1793,7 +1795,8 @@
  }
  .hvr-fade-btn {
 	background: none;
-	display: inline-block;
+	display: block;
+	/* display: inline-block; */
 	vertical-align: middle;
 	-webkit-transform: translateZ(0);
 	transform: translateZ(0);

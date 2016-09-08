@@ -445,7 +445,7 @@
 
 
             /* 中にテキストが入るタグの判定 divは含まれない */
-            var tag = $('p, h1, h2, h3, h4, h5, h6, .carousel-caption, dl, dt, dd, dl.news dt, dl.news dd, dl.column dt, dl.column dd, dl#form-layout-jp dt, dl#form-layout-en dt, ul.list li, ol.list li, ul.suggest-menu li, ul.form-accept li, th, td, a, address');
+            var tag = $('p, h1, h2, h3, h4, h5, h6, .carousel-caption, dl.news dt, dl.news dd, dl.column dt, dl.column dd, dl#form-layout-jp dt, dl#form-layout-en dt, ul.list li, ol.list li, ul.suggest-menu li, ul.form-accept li, th, td, a, address');
 
             /* JSONのデータを基にカーニングを実行 */
             tag.kerning({

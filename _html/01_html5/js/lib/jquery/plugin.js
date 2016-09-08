@@ -176,7 +176,7 @@
 
 
 
-    /* header共通化
+    /* header / footer共通化
     ----------------------------------------------------*/
 
 
@@ -197,29 +197,6 @@
     }
 
 
-    if (header_navi_1st.length){
-        headerSelect('./');
-    }
-
-    else if (header_navi_2nd.length){
-        headerSelect('../');
-    }
-
-    else if (header_navi_3rd.length){
-        headerSelect('../../');
-    }
-
-    else if (header_navi_1st_none.length){
-
-    }
-
-
-
-
-    /* footer共通化
-    ----------------------------------------------------*/
-
-
     function footerSelect(rootDir){
 
         return $.ajax ({
@@ -237,16 +214,23 @@
     }
 
 
-    if (footer_navi_1st.length){
+    if (header_navi_1st.length){
+        headerSelect('./');
         footerSelect('./');
     }
 
-    else if (footer_navi_2nd.length){
+    else if (header_navi_2nd.length){
+        headerSelect('../');
         footerSelect('../');
     }
 
-    else if (footer_navi_3rd.length){
+    else if (header_navi_3rd.length){
+        headerSelect('../../');
         footerSelect('../../');
+    }
+
+    else if (header_navi_1st_none.length){
+
     }
 
 
@@ -290,13 +274,14 @@
             $('a[rel=scroll]').on('click', function(){
 
                 /* リンクの判定 */
-                var href    = $(this).attr('href');
-                var target  = $(href === "#" || href === "" ? 'html' : href);
+                var href        = $(this).attr('href'),
+                    target      = $(href === "#" || href === "" ? 'html' : href);
 
                 /* アンカーリンクへスクロール */
                 target.velocity('scroll', {
-                    duration:   500,
-                    easing:     'easeOutExpo'
+                    offset:     -50,
+                    duration:   2000,
+                    easing:     'easeInOutQuart'
                 });
                 return false;
 
@@ -1340,8 +1325,8 @@
         var langArr = i ;
 
         /* コンテンツ判定 */
-        var ja = $('#ja');
-        var en = $('#en');
+        var ja = $('#ja'),
+            en = $('#en');
 
         switch (langArr){
 
@@ -1389,8 +1374,8 @@
         var langArr = i ;
 
         /* コンテンツ判定 */
-        var ja = $('#ja');
-        var en = $('#en');
+        var ja = $('#ja'),
+            en = $('#en');
 
         switch (langArr){
 

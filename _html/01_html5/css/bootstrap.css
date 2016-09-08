@@ -332,7 +332,7 @@ th {
 
 .glyphicon {
 	position: relative;
-	top: 1px;
+	top: 2px;
 	display: inline-block;
 	font-family: 'Glyphicons Halflings';
 	font-style: normal;
@@ -1861,7 +1861,7 @@ blockquote.pull-right .small:after {
 }
 
 address {
-	margin-bottom: 20px;
+	/*margin-bottom: 20px;*/
 	font-style: normal;
 	line-height: 1.42857143;
 }
