@@ -1571,7 +1571,7 @@
         var min_height          = box.height() + padding + footer.height() + margin;
 
 
-        if( window_inner_height < min_height ){
+        if(window_inner_height < min_height){
             $('#fixed-container').css({
                 'position' : 'relative'
             });
