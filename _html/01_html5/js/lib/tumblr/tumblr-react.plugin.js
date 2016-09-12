@@ -29,13 +29,16 @@
 ------------------------------------------------------------------------------*/
 
 
+
+
     // Tumblrの情報を取得 //
-    var url = 'kik888.tumblr.com',
-        key = 'DxAdNEP9PrL03Eq1H2duB0FHcqNETXBwAXbRVpxB1fjuBHmDUC';
+    var domain = 'kik888.tumblr.com',
+        api_key = 'DxAdNEP9PrL03Eq1H2duB0FHcqNETXBwAXbRVpxB1fjuBHmDUC';
 
 
     // JsonをAJAXで読み込む //
-    $.getJSON('http://api.tumblr.com/v2/blog/' + url + '/posts?api_key=' + key + '&jsonp=?'　+　'&limit=20', function (data){
+    $.getJSON('http://api.tumblr.com/v2/blog/' + domain + '/posts?api_key=' + api_key + '&jsonp=?'　+　'&limit=20', function (data){
+
 
 
         $.each(data, function (index, val){
@@ -57,8 +60,6 @@
 
                             /* 日付け表示を変える */
                             var date        = moment(data).format('YYYY.M.D');
-                                // date        = new Date(data),
-                                // strDate = date.toLocaleDateString();
 
 
                             /* テキスト */
@@ -97,22 +98,9 @@
                                                     var image = v[n],
                                                         caption = v_post[kp].caption;
 
-                                                    // var bgHtml = function (index){
 
-                                                    //     return '<div class="post-' + type + ' item text-color-white" style="background-image:url( ' + image + ' ); background-position: 50％ 50％;"><div class="box pd-20"><time class="block mb-40">' + date + '</time>' + caption + '<div class="post-cover">';
+                                                    $('#tumblr-test').append('<li class="post-graphic-' + type + ' float-l"><a href="' + link + '"><img src=" ' + image + ' " class="post-img"></a><time class="block mb-40">' + date + '</time>' + caption + '</li>');
 
-                                                    // }
-
-
-                                                    // $('#tumblr-test').append('<div class="post-' + type + '"><ul><li>' + data + '</li><li><a href="' + link + '">link</a></li></ul><img src="' + image + '"></div>');
-
-                                                    // $('#tumblr-test').append('<li class="post-' + type + ' float-l"><a href="' + link + '"><img src=" ' + image + '"></a></li>');
-
-                                                    $('#tumblr-test').append('<li class="post-graphic-' + type + ' float-l"><a href="' + link + '"><img src=" ' + image + ' " class="post-img"></a></li>');
-
-
-                                                    // $('.carousel-inner').append(bgHtml).fadeIn();
-                                                    // $('.post-' + type + ':first').addClass('active');
 
                                                 }
                                             }
@@ -138,8 +126,6 @@
                                         $.each(v_play, function (k, v){
 
                                             if (k == 'embed_code'){
-
-                                                // $('#tumblr-test').append('<div class="post-' + type + '">' + v + '<ul><li><a href="' + link + '">link</a></li><li>' + caption + '</li></ul></div>');
 
                                                 $('#tumblr-test').append('<li class="post-' + type + ' float-l"><div class="box thumb"><a href="' + link + '">' + v + '</a></div></li>');
 
