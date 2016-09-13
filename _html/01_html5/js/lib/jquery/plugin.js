@@ -58,42 +58,42 @@
 
 
     // ウィンドウのサイズ判定 //
-    var self                    = this;
+    var self                    = this,
 
 
     // ウィンドウのサイズ判定 //
-    var $win = $(window);
+        $win = $(window),
 
-    var window_width            = $win.width();
-    var window_height           = $win.height();
-    var window_outer_width      = $win.outerWidth();
-    var window_outer_height     = $win.outerHeight();
-    var window_inner_width      = $win.innerWidth();
-    var window_inner_height     = $win.innerHeight();
+        window_width            = $win.width(),
+        window_height           = $win.height(),
+        window_outer_width      = $win.outerWidth(),
+        window_outer_height     = $win.outerHeight(),
+        window_inner_width      = $win.innerWidth(),
+        window_inner_height     = $win.innerHeight(),
 
 
     // ディレクトリの判定 //
-    var rootDir                 = location.href.split('/');
-    var currentDir              = rootDir[rootDir.length -2];
+        rootDir                 = location.href.split('/'),
+        currentDir              = rootDir[rootDir.length -2],
 
 
     // 端末ユーザーエージェントの判定 //
-    var user_agent              = navigator.userAgent;
-    var ua_sp                   = user_agent.indexOf('iPhone') > 0 || user_agent.indexOf('iPad') > 0 || user_agent.indexOf('iPod') > 0 || user_agent.indexOf('Android') > 0 || user_agent.indexOf('BlackBerry') > 0 || user_agent.indexOf('windows Phone') > 0 || user_agent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(user_agent);
+        user_agent              = navigator.userAgent,
+        ua_sp                   = user_agent.indexOf('iPhone') > 0 || user_agent.indexOf('iPad') > 0 || user_agent.indexOf('iPod') > 0 || user_agent.indexOf('Android') > 0 || user_agent.indexOf('BlackBerry') > 0 || user_agent.indexOf('windows Phone') > 0 || user_agent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(user_agent),
 
     // ヘッダーの判定 //
-    var header                  = $('header');
-    var header_navi_1st_none    = $('header#header-navi-1st-none');
-    var header_navi_1st         = $('header#header-navi-1st');
-    var header_navi_2nd         = $('header#header-navi-2nd');
-    var header_navi_3rd         = $('header#header-navi-3rd');
+        header                  = $('header'),
+        header_navi_1st_none    = $('header#header-navi-1st-none'),
+        header_navi_1st         = $('header#header-navi-1st'),
+        header_navi_2nd         = $('header#header-navi-2nd'),
+        header_navi_3rd         = $('header#header-navi-3rd'),
 
 
     // フッターの判定 //
-    var footer                  = $('footer');
-    var footer_navi_1st         = $('footer#footer-navi-1st');
-    var footer_navi_2nd         = $('footer#footer-navi-2nd');
-    var footer_navi_3rd         = $('footer#footer-navi-3rd');
+        footer                  = $('footer'),
+        footer_navi_1st         = $('footer#footer-navi-1st'),
+        footer_navi_2nd         = $('footer#footer-navi-2nd'),
+        footer_navi_3rd         = $('footer#footer-navi-3rd');
 
 
 
@@ -246,8 +246,8 @@
     function dtAdjust(){
 
         /* dtの幅 */
-        var dt_column_width     = $('dl.column dt').width();
-        var dt_news_width       = $('dl.news dt').width();
+        var dt_column_width   = $('dl.column dt').width(),
+            dt_news_width     = $('dl.news dt').width();
 
         /* 可変部分の高さを適用 */
         $('dl.column dd').css('margin-left', dt_column_width + 20 + 'px');
@@ -1079,20 +1079,24 @@
 
             /* -SP- */
             if (ua_sp){
+
                 $('.policy').on('click', function(){
                     // location.href='../sitepolicy/index.html';
                     // window.open('../sitepolicy/index.html', '_blank');
                     return false;
                 });
+
             }
 
             /* -PC- */
             else {
+
                 $('.policy').on('click', function(){
                     // location.href='../../#/sitepolicy/';
                     // window.open('../../#/sitepolicy/', '_blank');
                     return false;
                 });
+
             }
 
         });
@@ -1150,8 +1154,9 @@
             $('.suggest-clear').show();
 
             /* サジェストクリアゾーンが全面に出るように設定 */
-            var window_width = $win.width();
-            var window_height = $win.height();
+            var window_width = $win.width(),
+                window_height = $win.height();
+
             $('.suggest-clear').css({
                 'width':    window_width,
                 'height':   window_height
@@ -1202,17 +1207,17 @@
 
 
     // サジェスト内のお問い合わせ事項テキストを値として読み込む  //
-    var suggestBusinessJp   = $('#menu-jp1').text();
-    var suggestRecruitJp    = $('#menu-jp2').text();
-    var suggestCreativeJp   = $('#menu-jp3').text();
-    var suggestPersonalJp   = $('#menu-jp4').text();
-    var suggestOtherJp      = $('#menu-jp5').text();
+    var suggestBusinessJp   = $('#menu-jp1').text(),
+        suggestRecruitJp    = $('#menu-jp2').text(),
+        suggestCreativeJp   = $('#menu-jp3').text(),
+        suggestPersonalJp   = $('#menu-jp4').text(),
+        suggestOtherJp      = $('#menu-jp5').text(),
 
-    var suggestBusinessEn   = $('#menu-en1').text();
-    var suggestRecruitEn    = $('#menu-en2').text();
-    var suggestCreativeEn   = $('#menu-en3').text();
-    var suggestPersonalEn   = $('#menu-en4').text();
-    var suggestOtherEn      = $('#menu-en5').text();
+        suggestBusinessEn   = $('#menu-en1').text(),
+        suggestRecruitEn    = $('#menu-en2').text(),
+        suggestCreativeEn   = $('#menu-en3').text(),
+        suggestPersonalEn   = $('#menu-en4').text(),
+        suggestOtherEn      = $('#menu-en5').text();
 
 
     function suggestMenu(i){
@@ -1432,8 +1437,8 @@
 
 
     // デフォルトの表示 -lang_ja:和文 / lang_en:英文- //
-    var lang_ja = $.cookie('lang_ja');
-    var lang_en = $.cookie('lang_en');
+    var lang_ja = $.cookie('lang_ja'),
+        lang_en = $.cookie('lang_en');
 
     if (lang_ja){
         showLanguagePC('ja');
@@ -1567,10 +1572,10 @@
 
     function centering(){
 
-        var box                 = $('.centerParentWrapper');
-        var padding             = parseInt(box.css('padding-top')) + parseInt(box.css('padding-bottom'));
-        var margin              = 50;
-        var min_height          = box.height() + padding + footer.height() + margin;
+        var box        = $('.centerParentWrapper'),
+            padding    = parseInt(box.css('padding-top')) + parseInt(box.css('padding-bottom')),
+            margin     = 50,
+            min_height = box.height() + padding + footer.height() + margin;
 
 
         if(window_inner_height < min_height){

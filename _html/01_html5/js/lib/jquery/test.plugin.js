@@ -35,41 +35,42 @@
 
 
     // ウィンドウのサイズ判定 //
-    var self                    = this;
+    var self                    = this,
 
 
     // ウィンドウのサイズ判定 //
-    var window_width            = $(window).width();
-    var window_height           = $(window).height();
-    var window_outer_width      = $(window).outerWidth();
-    var window_outer_height     = $(window).outerHeight();
-    var window_inner_width      = $(window).innerWidth();
-    var window_inner_height     = $(window).innerHeight();
+        $win = $(window),
+
+        window_width            = $win.width(),
+        window_height           = $win.height(),
+        window_outer_width      = $win.outerWidth(),
+        window_outer_height     = $win.outerHeight(),
+        window_inner_width      = $win.innerWidth(),
+        window_inner_height     = $win.innerHeight(),
 
 
     // ディレクトリの判定 //
-    var rootDir                 = location.href.split('/');
-    var currentDir              = rootDir[rootDir.length -2];
+        rootDir                 = location.href.split('/'),
+        currentDir              = rootDir[rootDir.length -2],
 
 
     // 端末ユーザーエージェントの判定 //
-    var user_agent              = navigator.userAgent;
-    var ua_sp                   = user_agent.indexOf('iPhone') > 0 || user_agent.indexOf('iPad') > 0 || user_agent.indexOf('iPod') > 0 || user_agent.indexOf('Android') > 0 || user_agent.indexOf('BlackBerry') > 0 || user_agent.indexOf('windows Phone') > 0 || user_agent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(user_agent);
-
+        user_agent              = navigator.userAgent,
+        ua_sp                   = user_agent.indexOf('iPhone') > 0 || user_agent.indexOf('iPad') > 0 || user_agent.indexOf('iPod') > 0 || user_agent.indexOf('Android') > 0 || user_agent.indexOf('BlackBerry') > 0 || user_agent.indexOf('windows Phone') > 0 || user_agent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(user_agent),
 
     // ヘッダーの判定 //
-    var header                  = $('header');
-    var header_navi_1st_none    = $('header#header-navi-1st-none');
-    var header_navi_1st         = $('header#header-navi-1st');
-    var header_navi_2nd         = $('header#header-navi-2nd');
-    var header_navi_3rd         = $('header#header-navi-3rd');
+        header                  = $('header'),
+        header_navi_1st_none    = $('header#header-navi-1st-none'),
+        header_navi_1st         = $('header#header-navi-1st'),
+        header_navi_2nd         = $('header#header-navi-2nd'),
+        header_navi_3rd         = $('header#header-navi-3rd'),
 
 
     // フッターの判定 //
-    var footer                  = $('footer');
-    var footer_navi_1st         = $('footer#footer-navi-1st');
-    var footer_navi_2nd         = $('footer#footer-navi-2nd');
-    var footer_navi_3rd         = $('footer#footer-navi-3rd');
+        footer                  = $('footer'),
+        footer_navi_1st         = $('footer#footer-navi-1st'),
+        footer_navi_2nd         = $('footer#footer-navi-2nd'),
+        footer_navi_3rd         = $('footer#footer-navi-3rd');
 
 
 
@@ -161,8 +162,8 @@
 
     function testUserStatusDecision(){
 
-        var window_width    = $(window).width();
-        var window_height   = $(window).height();
+        var window_width    = $win.width(),
+            window_height   = $win.height();
 
         $('#test01').html('ウィンドウ幅' + '&nbsp;:&nbsp;' + window_width);
         $('#test02').html('ウィンドウ高さ' + '&nbsp;:&nbsp;' + window_height);
@@ -172,7 +173,7 @@
     }
 
 
-    $(window).on('load resize', function(){
+    $win.on('load resize', function(){
         testUserStatusDecision();
     });
 
@@ -199,10 +200,10 @@
 
 
     /* IEか否か */
-    var isIE        = false;
+    var isIE        = false,
 
     /* IEのバージョン */
-    var version     = null;
+        version     = null;
 
     /* IEであるか否かの判定 */
     if (user_agent.match(/MSIE/) || user_agent.match(/Trident/)){
@@ -220,10 +221,10 @@
 
 
     /* Chromeか否か */
-    var isChrome    = false;
+    var isChrome    = false,
 
     /* Chromeのバージョン */
-    var version     = null;
+        version     = null;
 
     /* IEであるか否かの判定 */
     if (user_agent.match(/Chrome/)){
@@ -241,13 +242,13 @@
     /* 【TEST】 Cookie読み込み
     ----------------------------------------*/
     function cookiePC (){
-        var cookiePCAdd = $.cookie('PC', '1', { expires: 365 , path: '/' });
-        var cookieSPRemove = $.removeCookie('SP', { path: '/' });
+        var cookiePCAdd = $.cookie('PC', '1', { expires: 365 , path: '/' }),
+            cookieSPRemove = $.removeCookie('SP', { path: '/' });
     }
 
     function cookieSP (){
-        var cookieSPAdd = $.cookie('SP', '2', { expires: 365 , path: '/' });
-        var cookiePCRemove = $.removeCookie('PC', { path: '/' });
+        var cookieSPAdd = $.cookie('SP', '2', { expires: 365 , path: '/' }),
+            cookiePCRemove = $.removeCookie('PC', { path: '/' });
     }
 
     if(ua_sp){
