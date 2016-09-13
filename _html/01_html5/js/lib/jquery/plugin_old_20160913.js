@@ -64,12 +64,12 @@
     // ウィンドウのサイズ判定 //
     var $win = $(window);
 
-    var window_width            = $win.width();
-    var window_height           = $win.height();
-    var window_outer_width      = $win.outerWidth();
-    var window_outer_height     = $win.outerHeight();
-    var window_inner_width      = $win.innerWidth();
-    var window_inner_height     = $win.innerHeight();
+    var window_width            = $(window).width();
+    var window_height           = $(window).height();
+    var window_outer_width      = $(window).outerWidth();
+    var window_outer_height     = $(window).outerHeight();
+    var window_inner_width      = $(window).innerWidth();
+    var window_inner_height     = $(window).innerHeight();
 
 
     // ディレクトリの判定 //
@@ -257,7 +257,7 @@
 
 
     // DOM 読み込み / リサイズ //
-    $win.on('load resize', function(){
+    $(window).on('load resize', function(){
         dtAdjust();
     });
 
@@ -1075,7 +1075,7 @@
 
 
         // SPとPCでとび先を変える //
-        $win.on('load', function(){
+        $(window).on('load', function(){
 
             /* -SP- */
             if (ua_sp){
@@ -1150,8 +1150,8 @@
             $('.suggest-clear').show();
 
             /* サジェストクリアゾーンが全面に出るように設定 */
-            var window_width = $win.width();
-            var window_height = $win.height();
+            var window_width = $(window).width();
+            var window_height = $(window).height();
             $('.suggest-clear').css({
                 'width':    window_width,
                 'height':   window_height
@@ -1184,7 +1184,7 @@
     // サジェスト外がクリッカブルになる為のサジェストクリアゾーン -初期設定: hidden- //
     $('.suggest-clear').hide();
 
-    $win.on('load resize', function(){
+    $(window).on('load resize', function(){
 
         /* サジェストを出す -SP- */
         if (ua_sp){
@@ -1596,7 +1596,7 @@
     }
 
 
-    $win.on('load resize', function(){
+    $(window).on('load resize', function(){
         centering();
     }).trigger('resize');
 
@@ -1614,7 +1614,7 @@
 
 
 
-    // ブレークポイント -PCとSPでのファイル・ソースの切り分け- //
+
     function changeClass(i){
 
         var classArr  = i;
@@ -1680,18 +1680,22 @@
     }
 
 
-    $win.on('load resize', function() {
+    /* ブレークポイントの設定 */
+    $(window).setBreakpoints({
 
-        var window_width = $win.width();
+        distinct: true,
+        breakpoints: [ 1, 945 ]
 
-        if (window_width > 960){
-            changeClass('pc');
-        }
+    });
 
-        else if (window_width < 960 || ua_sp){
-            changeClass('sp');
-        }
+    /* ブレークポイント945の時 */
+    $(window).on('enterBreakpoint945', function(){
+        changeClass('pc');
+    });
 
+    /* ブレークポイント1の時 */
+    $(window).on('enterBreakpoint1', function(){
+        changeClass('sp');
     });
 
 
@@ -1699,7 +1703,7 @@
     var portraitWidth,
         landscapeWidth;
 
-    $win.on('load resize', function(){
+    $(window).on('load resize', function(){
 
         /* iPhone, iPadなど */
         if ((user_agent.indexOf('iPhone') > 0 && user_agent.indexOf('iPad') == -1) || user_agent.indexOf('iPod') > 0){
