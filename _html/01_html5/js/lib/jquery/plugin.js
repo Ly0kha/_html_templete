@@ -1489,13 +1489,17 @@
             windowname;
 
         if (type === 'twitter'){
+
             href        = 'http://twitter.com/share?original_referer=http://wwww.test.jp/&textテキストが入ります。&url=http://wwww.test.jp/';
             windowname  = 'twitterwindow';
+
         }
 
         else if (type === 'facebook'){
+
             href        = 'http://www.facebook.com/share.php?u=http://www.test.jp/';
             windowname  = 'facebookwindow';
+
         }
 
         window.open(href, windowname, 'width=550, height=450,personalbar=0,toolbar=0,scrollbars=1,resizable=1');
@@ -1536,7 +1540,6 @@
         /* JSONデータ読み込み - 非同期通信するためgetJSONで読み出すこと - */
         return $.getJSON(rootDir + 'ajax/kerning.json', function(data){
 
-
             /* 中にテキストが入るタグの判定 divは含まれない */
             var tag = $('p, h1, h2, h3, h4, h5, h6, .carousel-caption, dl.news dt, dl.news dd, dl.column dt, dl.column dd, dl#form-layout-jp dt, dl#form-layout-en dt, ul.list li, ol.list li, ul.suggest-menu li, ul.form-accept li, th, td, a, address');
 
@@ -1544,7 +1547,6 @@
             tag.kerning({
                 'data': data
             });
-
 
         });
 
@@ -1576,7 +1578,6 @@
             padding    = parseInt(box.css('padding-top')) + parseInt(box.css('padding-bottom')),
             margin     = 50,
             min_height = box.height() + padding + footer.height() + margin;
-
 
         if(window_inner_height < min_height){
             $('#fixed-container').css({

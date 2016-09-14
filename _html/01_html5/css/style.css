@@ -91,7 +91,7 @@
 		 url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Regular.woff2) format('woff2'),
 		 url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Regular.woff) format('woff'),
 		 url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Regular.otf) format('opentype');
- }
+}
 
 @font-face {
 	font-family: 'Noto Sans Japanese';
@@ -100,7 +100,7 @@
 	src: url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Medium.woff2) format('woff2'),
 		 url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Medium.woff) format('woff'),
 		 url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Medium.otf) format('opentype');
- }
+}
 
 @font-face {
 	font-family: 'Noto Sans Japanese';
@@ -109,7 +109,7 @@
 	src: url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Bold.woff2) format('woff2'),
 		 url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Bold.woff) format('woff'),
 		 url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Bold.otf) format('opentype');
- }
+}
 
 @font-face {
 	font-family: 'Noto Sans Japanese';
@@ -118,7 +118,7 @@
 	src: url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Black.woff2) format('woff2'),
 		 url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Black.woff) format('woff'),
 		 url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Black.otf) format('opentype');
- }
+}
 
 
 
