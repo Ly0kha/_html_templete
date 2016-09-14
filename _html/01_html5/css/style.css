@@ -213,9 +213,9 @@ body {
 	background: none;
 }
 
-#wrapper,
-#test-wrapper,
-#test02-wrapper {
+.wrapper,
+.test-wrapper,
+.test02-wrapper {
 	position: relative;
 	padding: 0px 20px;
 	min-width: 300px;
@@ -225,17 +225,17 @@ body {
 	z-index: 10;
 }
 
-#wrapper {
+.wrapper {
 	background: rgba(255,255,255,1);
 	margin: 0px auto;
 }
 
-#test-wrapper {
+.test-wrapper {
 	background: rgba(255,255,255,0.8);
 	margin: 0px auto;
 }
 
-#test02-wrapper {
+.test02-wrapper {
 	background: rgba(255,255,255,0.8);
 	margin: 50px auto 200px;
 }
@@ -267,6 +267,8 @@ footer {
 header.fixed,
 footer.fixed {
 	position: fixed;
+	transform: translateZ(0);
+	-webkit-transform: translateZ(0);
 }
 
 header.fixed {

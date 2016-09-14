@@ -1636,7 +1636,7 @@
 
                 });
 
-                $('#suggest, #form-layout-jp').each(function(){
+                $('body, #suggest, #form-layout-jp').each(function(){
 
                     /* クラスをSP用とPC用で切り替える */
                     $(this).prop('class', $(this).prop('class').replace('sp', 'pc'));
@@ -1661,7 +1661,7 @@
 
                 });
 
-                $('#suggest, #form-layout-jp').each(function(){
+                $('body, #suggest, #form-layout-jp').each(function(){
 
                     /* クラスをSP用とPC用で切り替える */
                     $(this).prop('class', $(this).prop('class').replace('pc', 'sp'));
