@@ -1151,7 +1151,7 @@
             $('.suggest-clear').show();
 
             /* サジェストクリアゾーンが全面に出るように設定 */
-            var $winWidth = $win.width(),
+            var $winWidth  = $win.width(),
                 $winHeight = $win.height();
 
             $('.suggest-clear').css({
