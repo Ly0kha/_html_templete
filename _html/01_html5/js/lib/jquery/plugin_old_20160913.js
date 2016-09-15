@@ -78,8 +78,8 @@
 
 
     // 端末ユーザーエージェントの判定 //
-    var user_agent              = navigator.userAgent;
-    var ua_sp                   = user_agent.indexOf('iPhone') > 0 || user_agent.indexOf('iPad') > 0 || user_agent.indexOf('iPod') > 0 || user_agent.indexOf('Android') > 0 || user_agent.indexOf('BlackBerry') > 0 || user_agent.indexOf('windows Phone') > 0 || user_agent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(user_agent);
+    var userAgent               = navigator.userAgent;
+    var ua_sp                   = userAgent.indexOf('iPhone') > 0 || userAgent.indexOf('iPad') > 0 || userAgent.indexOf('iPod') > 0 || userAgent.indexOf('Android') > 0 || userAgent.indexOf('BlackBerry') > 0 || userAgent.indexOf('windows Phone') > 0 || userAgent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(userAgent);
 
     // ヘッダーの判定 //
     var header                  = $('header');
@@ -102,28 +102,28 @@
         ----------------------------------------------------
 
         //　iOS
-        user_agent.indexOf('iPhone') > 0
-        user_agent.indexOf('iPad') > 0
-        user_agent.indexOf('iPod') > 0
+        userAgent.indexOf('iPhone') > 0
+        userAgent.indexOf('iPad') > 0
+        userAgent.indexOf('iPod') > 0
 
         //　Android
-        user_agent.indexOf('Android') > 0
+        userAgent.indexOf('Android') > 0
 
         //　BlackBerry
-        user_agent.indexOf('BlackBerry') > 0
+        userAgent.indexOf('BlackBerry') > 0
 
         //　Windows Phone
-        user_agent.indexOf('windows Phone') > 0
+        userAgent.indexOf('windows Phone') > 0
 
         //　NOKIA
-        user_agent.indexOf('NOKIA') > 0
+        userAgent.indexOf('NOKIA') > 0
 
         //　Firefox OS
-        /Mobile.*Firefox/.test(user_agent)
+        /Mobile.*Firefox/.test(userAgent)
 
         //　IE
-        user_agent.match(/MSIE/) 　////　vr.11 or high
-        user_agent.match(/Trident/) ////　vr.10 or less
+        userAgent.match(/MSIE/) 　////　vr.11 or high
+        userAgent.match(/Trident/) ////　vr.10 or less
 
         ----------------------------------------------------
         */
@@ -1706,14 +1706,14 @@
     $(window).on('load resize', function(){
 
         /* iPhone, iPadなど */
-        if ((user_agent.indexOf('iPhone') > 0 && user_agent.indexOf('iPad') == -1) || user_agent.indexOf('iPod') > 0){
+        if ((userAgent.indexOf('iPhone') > 0 && userAgent.indexOf('iPad') == -1) || userAgent.indexOf('iPod') > 0){
             $('html').css({
                 'zoom': 1
             });
         }
 
         /* Android */
-        else if (user_agent.indexOf('Android') > 0){
+        else if (userAgent.indexOf('Android') > 0){
 
             /* 傾き（ポートレイトかランドスケープか）を判定 */
             if ('object' === typeof window.onorientationchange){

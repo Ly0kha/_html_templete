@@ -29,6 +29,122 @@
 ------------------------------------------------------------------------------*/
 
 
+
+
+    /* グローバル変数
+    ----------------------------------------------------*/
+
+
+    // ウィンドウのサイズ判定 //
+    var self                = this,
+
+
+    // ウィンドウのサイズ判定 //
+        $win                = $(window),
+
+        $winWidth           = $win.width(),
+        $winHeight          = $win.height(),
+        $winOuterWidth      = $win.outerWidth(),
+        $winOuterHeight     = $win.outerHeight(),
+        $winInnerWidth      = $win.innerWidth(),
+        $winInnerHeight     = $win.innerHeight(),
+
+
+    // ディレクトリの判定 //
+        rootDir             = location.href.split('/'),
+        currentDir          = rootDir[rootDir.length -2],
+
+
+    // 端末ユーザーエージェントの判定 //
+        userAgent           = navigator.userAgent,
+        ua_sp               = userAgent.indexOf('iPhone') > 0 || userAgent.indexOf('iPad') > 0 || userAgent.indexOf('iPod') > 0 || userAgent.indexOf('Android') > 0 || userAgent.indexOf('BlackBerry') > 0 || userAgent.indexOf('windows Phone') > 0 || userAgent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(userAgent),
+
+    // ヘッダーの判定 //
+        $header             = $('header'),
+        $headerNav1st_none  = $('header#header-navi-1st-none'),
+        $headerNav1st       = $('header#header-navi-1st'),
+        $headerNav2nd       = $('header#header-navi-2nd'),
+        $headerNav3rd       = $('header#header-navi-3rd'),
+
+
+    // フッターの判定 //
+        $footer             = $('footer');
+
+
+
+
+        /* ユーザーエージェント一覧
+        ----------------------------------------------------
+
+        //　iOS
+        userAgent.indexOf('iPhone') > 0
+        userAgent.indexOf('iPad') > 0
+        userAgent.indexOf('iPod') > 0
+
+        //　Android
+        userAgent.indexOf('Android') > 0
+
+        //　BlackBerry
+        userAgent.indexOf('BlackBerry') > 0
+
+        //　Windows Phone
+        userAgent.indexOf('windows Phone') > 0
+
+        //　NOKIA
+        userAgent.indexOf('NOKIA') > 0
+
+        //　Firefox OS
+        /Mobile.*Firefox/.test(userAgent)
+
+        //　IE
+        userAgent.match(/MSIE/) 　////　vr.11 or high
+        userAgent.match(/Trident/) ////　vr.10 or less
+
+        ----------------------------------------------------
+        */
+
+
+
+
+    $.ajaxSetup ({
+
+        cache: true,
+        async: true
+
+    });
+
+
+    function getScript(rootDir){
+
+        $.getScript(rootDir + 'js/lib/jquery/jquery.validate.min.js');
+        $.getScript(rootDir + 'js/lib/jquery/jquery.validate.japlugin.js');
+        $.getScript(rootDir + 'js/lib/jquery/jquery.kerning.min.js');
+        $.getScript(rootDir + 'js/lib/jquery/jquery.colorbox.min.js');
+        $.getScript(rootDir + 'js/lib/jquery/jquery.heightLine.min.js');
+        $.getScript(rootDir + 'js/lib/jquery/moment.min.js');
+
+    }
+
+
+    if ($headerNav1st.length || $headerNav1st_none.length){
+        getScript('./');
+    }
+
+    else if ($headerNav2nd.length){
+        getScript('../');
+    }
+
+    else if ($headerNav3rd.length){
+        getScript('../../');
+    }
+
+
+
+
+    /* Tumblr
+    ----------------------------------------------------*/
+
+
     // Tumblrの情報を取得 //
     var url = 'kik888.tumblr.com',
         key = 'DxAdNEP9PrL03Eq1H2duB0FHcqNETXBwAXbRVpxB1fjuBHmDUC';
@@ -190,19 +306,19 @@
     function bgSize(){
 
         /* 背景画像を全画面に */
-        var window_width            = $(window).width(),
-            window_height           = $(window).height() + 80;
+        var $coverWidth            = $win.width(),
+            $coverHeight           = $win.height() + 80;
 
         $('.post-cover, .post-photo').css({
-            'width':    window_width,
-            'height':   window_height,
+            'width':    $coverWidth,
+            'height':   $coverHeight,
         });
 
         /* スライダーのクラスを設定 */
-        var bgslider = $('#bg-slider');
+        var $bgslider = $('#bg-slider');
 
         /* スライダーの設定 */
-        bgslider.carousel({
+        $bgslider.carousel({
             interval: 10000
         });
 
@@ -214,7 +330,7 @@
 
 
     // リサイズしたら実行//
-    $(window).on('load resize', function(){
+    $win.on('load resize', function(){
        bgSize();
     });
 

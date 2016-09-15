@@ -25,79 +25,75 @@
 
 
     /* グローバル変数
-    ----------------------------------------*/
+    ----------------------------------------------------*/
 
 
     // ウィンドウのサイズ判定 //
-    var self                    = this;
+    var self                = this,
 
 
     // ウィンドウのサイズ判定 //
-    var window_width            = $(window).width();
-    var window_height           = $(window).height();
-    var window_outer_width      = $(window).outerWidth();
-    var window_outer_height     = $(window).outerHeight();
-    var window_inner_width      = $(window).innerWidth();
-    var window_inner_height     = $(window).innerHeight();
+        $win                = $(window),
+
+        $winWidth           = $win.width(),
+        $winHeight          = $win.height(),
+        $winOuterWidth      = $win.outerWidth(),
+        $winOuterHeight     = $win.outerHeight(),
+        $winInnerWidth      = $win.innerWidth(),
+        $winInnerHeight     = $win.innerHeight(),
 
 
     // ディレクトリの判定 //
-    var rootDir                 = location.href.split('/');
-    var currentDir              = rootDir[rootDir.length -2];
+        rootDir             = location.href.split('/'),
+        currentDir          = rootDir[rootDir.length -2],
 
 
     // 端末ユーザーエージェントの判定 //
-    var user_agent              = navigator.userAgent;
-    var ua_sp                   = user_agent.indexOf('iPhone') > 0 || user_agent.indexOf('iPad') > 0 || user_agent.indexOf('iPod') > 0 || user_agent.indexOf('Android') > 0 || user_agent.indexOf('BlackBerry') > 0 || user_agent.indexOf('windows Phone') > 0 || user_agent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(user_agent);
-
+        userAgent           = navigator.userAgent,
+        ua_sp               = userAgent.indexOf('iPhone') > 0 || userAgent.indexOf('iPad') > 0 || userAgent.indexOf('iPod') > 0 || userAgent.indexOf('Android') > 0 || userAgent.indexOf('BlackBerry') > 0 || userAgent.indexOf('windows Phone') > 0 || userAgent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(userAgent),
 
     // ヘッダーの判定 //
-    var header                  = $('header');
-    var header_navi_1st_none    = $('header#header-navi-1st-none');
-    var header_navi_1st         = $('header#header-navi-1st');
-    var header_navi_2nd         = $('header#header-navi-2nd');
-    var header_navi_3rd         = $('header#header-navi-3rd');
+        $header             = $('header'),
+        $headerNav1st_none  = $('header#header-navi-1st-none'),
+        $headerNav1st       = $('header#header-navi-1st'),
+        $headerNav2nd       = $('header#header-navi-2nd'),
+        $headerNav3rd       = $('header#header-navi-3rd'),
 
 
     // フッターの判定 //
-    var footer                  = $('footer');
-    var footer_navi_1st         = $('footer#footer-navi-1st');
-    var footer_navi_2nd         = $('footer#footer-navi-2nd');
-    var footer_navi_3rd         = $('footer#footer-navi-3rd');
+        $footer             = $('footer');
 
 
 
 
         /* ユーザーエージェント一覧
-        ----------------------------------------
-
+        ----------------------------------------------------
 
         //　iOS
-        user_agent.indexOf('iPhone') > 0
-        user_agent.indexOf('iPad') > 0
-        user_agent.indexOf('iPod') > 0
+        userAgent.indexOf('iPhone') > 0
+        userAgent.indexOf('iPad') > 0
+        userAgent.indexOf('iPod') > 0
 
         //　Android
-        user_agent.indexOf('Android') > 0
+        userAgent.indexOf('Android') > 0
 
         //　BlackBerry
-        user_agent.indexOf('BlackBerry') > 0
+        userAgent.indexOf('BlackBerry') > 0
 
         //　Windows Phone
-        user_agent.indexOf('windows Phone') > 0
+        userAgent.indexOf('windows Phone') > 0
 
         //　NOKIA
-        user_agent.indexOf('NOKIA') > 0
+        userAgent.indexOf('NOKIA') > 0
 
         //　Firefox OS
-        /Mobile.*Firefox/.test(user_agent)
+        /Mobile.*Firefox/.test(userAgent)
 
         //　IE
-        user_agent.match(/MSIE/) 　////　vr.11 or high
-        user_agent.match(/Trident/) ////　vr.10 or less
+        userAgent.match(/MSIE/) 　////　vr.11 or high
+        userAgent.match(/Trident/) ////　vr.10 or less
 
-
-        ----------------------------------------
+        ----------------------------------------------------
         */
 
 
@@ -109,6 +105,14 @@
         async: true
 
     });
+
+
+
+
+/* AJAX Setup ここまで
+------------------------------------------------------------------------------*/
+
+
 
 
     // tutorial1.js
@@ -156,10 +160,10 @@
 
 
             /* 中にテキストが入るタグの判定 divは含まれない */
-            var tag = $('p, h1, h2, h3, h4, h5, h6, .carousel-caption, dl.news dt, dl.news dd, dl.column dt, dl.column dd, dl#form-layout-jp dt, dl#form-layout-en dt, ul.list li, ol.list li, ul.suggest-menu li, ul.form-accept li, th, td, a, address');
+            var $tag = $('p, h1, h2, h3, h4, h5, h6, .carousel-caption, dl.news dt, dl.news dd, dl.column dt, dl.column dd, dl#form-layout-jp dt, dl#form-layout-en dt, ul.list li, ol.list li, ul.suggest-menu li, ul.form-accept li, th, td, a, address');
 
             /* JSONのデータを基にカーニングを実行 */
-            tag.kerning({
+            $tag.kerning({
                 'data': data
             });
 
@@ -169,15 +173,15 @@
     }
 
 
-    if (header_navi_1st.length || header_navi_1st_none.length){
+    if ($headerNav1st.length || $headerNav1st_none.length){
         kerningDir('./');
     }
 
-    else if (header_navi_2nd.length){
+    else if ($headerNav2nd.length){
         kerningDir('../');
     }
 
-    else if (header_navi_3rd.length){
+    else if ($headerNav3rd.length){
         kerningDir('../../');
     }
 

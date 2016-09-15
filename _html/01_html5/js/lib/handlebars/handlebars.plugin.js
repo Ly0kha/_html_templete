@@ -30,41 +30,39 @@
 
 
     // ウィンドウのサイズ判定 //
-    var self                    = this;
+    var self                = this,
 
 
     // ウィンドウのサイズ判定 //
-    var window_width            = $(window).width();
-    var window_height           = $(window).height();
-    var window_outer_width      = $(window).outerWidth();
-    var window_outer_height     = $(window).outerHeight();
-    var window_inner_width      = $(window).innerWidth();
-    var window_inner_height     = $(window).innerHeight();
+        $win                = $(window),
+
+        $winWidth           = $win.width(),
+        $winHeight          = $win.height(),
+        $winOuterWidth      = $win.outerWidth(),
+        $winOuterHeight     = $win.outerHeight(),
+        $winInnerWidth      = $win.innerWidth(),
+        $winInnerHeight     = $win.innerHeight(),
 
 
     // ディレクトリの判定 //
-    var rootDir                 = location.href.split('/');
-    var currentDir              = rootDir[rootDir.length -2];
+        rootDir             = location.href.split('/'),
+        currentDir          = rootDir[rootDir.length -2],
 
 
     // 端末ユーザーエージェントの判定 //
-    var user_agent              = navigator.userAgent;
-    var ua_sp                   = user_agent.indexOf('iPhone') > 0 || user_agent.indexOf('iPad') > 0 || user_agent.indexOf('iPod') > 0 || user_agent.indexOf('Android') > 0 || user_agent.indexOf('BlackBerry') > 0 || user_agent.indexOf('windows Phone') > 0 || user_agent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(user_agent);
-
+        userAgent           = navigator.userAgent,
+        ua_sp               = userAgent.indexOf('iPhone') > 0 || userAgent.indexOf('iPad') > 0 || userAgent.indexOf('iPod') > 0 || userAgent.indexOf('Android') > 0 || userAgent.indexOf('BlackBerry') > 0 || userAgent.indexOf('windows Phone') > 0 || userAgent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(userAgent),
 
     // ヘッダーの判定 //
-    var header                  = $('header');
-    var header_navi_1st_none    = $('header#header-navi-1st-none');
-    var header_navi_1st         = $('header#header-navi-1st');
-    var header_navi_2nd         = $('header#header-navi-2nd');
-    var header_navi_3rd         = $('header#header-navi-3rd');
+        $header             = $('header'),
+        $headerNav1st_none  = $('header#header-navi-1st-none'),
+        $headerNav1st       = $('header#header-navi-1st'),
+        $headerNav2nd       = $('header#header-navi-2nd'),
+        $headerNav3rd       = $('header#header-navi-3rd'),
 
 
     // フッターの判定 //
-    var footer                  = $('footer');
-    var footer_navi_1st         = $('footer#footer-navi-1st');
-    var footer_navi_2nd         = $('footer#footer-navi-2nd');
-    var footer_navi_3rd         = $('footer#footer-navi-3rd');
+        $footer             = $('footer');
 
 
 
@@ -74,28 +72,28 @@
 
 
         //　iOS
-        user_agent.indexOf('iPhone') > 0
-        user_agent.indexOf('iPad') > 0
-        user_agent.indexOf('iPod') > 0
+        userAgent.indexOf('iPhone') > 0
+        userAgent.indexOf('iPad') > 0
+        userAgent.indexOf('iPod') > 0
 
         //　Android
-        user_agent.indexOf('Android') > 0
+        userAgent.indexOf('Android') > 0
 
         //　BlackBerry
-        user_agent.indexOf('BlackBerry') > 0
+        userAgent.indexOf('BlackBerry') > 0
 
         //　Windows Phone
-        user_agent.indexOf('windows Phone') > 0
+        userAgent.indexOf('windows Phone') > 0
 
         //　NOKIA
-        user_agent.indexOf('NOKIA') > 0
+        userAgent.indexOf('NOKIA') > 0
 
         //　Firefox OS
-        /Mobile.*Firefox/.test(user_agent)
+        /Mobile.*Firefox/.test(userAgent)
 
         //　IE
-        user_agent.match(/MSIE/) 　////　vr.11 or high
-        user_agent.match(/Trident/) ////　vr.10 or less
+        userAgent.match(/MSIE/) 　////　vr.11 or high
+        userAgent.match(/Trident/) ////　vr.10 or less
 
 
         ----------------------------------------
@@ -122,12 +120,12 @@
         function testHandlebarsListJson (rootDir){
 
 
-            var list_raw_template = $('#list-input').html();
-            var list_template = Handlebars.compile(list_raw_template);
-            var list_placeHolder = $("#test16");
+            var $list_raw_template = $('#list-input').html(),
+                list_template = Handlebars.compile($list_raw_template),
+                $list_placeHolder = $("#test16");
+
 
             $.get(rootDir + 'ajax/list.json', function(listdata, liststatus, listxhr){
-
 
                 /* if */
                 // Handlebars.registerHelper('if', function(cond, opt){
@@ -138,7 +136,6 @@
 
                 // });
 
-
                 Handlebars.registerHelper('list', function(context, options){
 
                     return "<ul>" + context.map(function(item){
@@ -147,24 +144,23 @@
 
                 });
 
-
                 var listhtml = list_template(listdata);
-                list_placeHolder.append(listhtml);
+                $list_placeHolder.append(listhtml);
 
             });
 
 
         }
 
-        if (header_navi_1st.length || header_navi_1st_none.length){
+        if ($headerNav1st.length || $headerNav1st_none.length){
             testHandlebarsListJson('./');
         }
 
-        else if (header_navi_2nd.length){
+        else if ($headerNav2nd.length){
             testHandlebarsListJson('../');
         }
 
-        else if (header_navi_3rd.length){
+        else if ($headerNav3rd.length){
             testHandlebarsListJson('../../');
         }
 
@@ -175,9 +171,10 @@
         function testHandlebarsJson (rootDir){
 
 
-            var test_raw_template = $('#json-test').html();
-            var test_template = Handlebars.compile(test_raw_template);
-            var test_placeHolder = $("#test17");
+            var $test_raw_template = $('#json-test').html(),
+                test_template = Handlebars.compile($test_raw_template),
+                $test_placeHolder = $("#test17");
+
 
             $.get(rootDir + 'ajax/handlebars.json', function(data, status, xhr){
 
@@ -232,22 +229,22 @@
 
 
                 var html = test_template(data);
-                test_placeHolder.append(html);
+                $test_placeHolder.append(html);
 
             });
 
 
         }
 
-        if (header_navi_1st.length || header_navi_1st_none.length){
+        if ($headerNav1st.length || $headerNav1st_none.length){
             testHandlebarsJson('./');
         }
 
-        else if (header_navi_2nd.length){
+        else if ($headerNav2nd.length){
             testHandlebarsJson('../');
         }
 
-        else if (header_navi_3rd.length){
+        else if ($headerNav3rd.length){
             testHandlebarsJson('../../');
         }
 
@@ -606,8 +603,8 @@
             };
 
 
-            var raw_template = $('#input').html();
-            var template = Handlebars.compile(raw_template);
+            var $raw_template = $('#input').html();
+            var template = Handlebars.compile($raw_template);
 
             /* セーブの数がある場合は表示、無ければ非表示 */
             Handlebars.registerHelper('showSavePoint', function(save, opt){
@@ -671,18 +668,6 @@
 
 
     /* Setup ここまで
-    ------------------------------------------------------------------------------*/
-
-
-
-
-    /* Function
-    ------------------------------------------------------------------------------*/
-
-
-
-
-    /* Function ここまで
     ------------------------------------------------------------------------------*/
 
 

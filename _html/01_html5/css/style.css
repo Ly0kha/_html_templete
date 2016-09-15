@@ -235,9 +235,26 @@ body {
 	margin: 0px auto;
 }
 
-.test02-wrapper {
-	background: rgba(255,255,255,0.8);
-	margin: 50px auto 200px;
+
+/* BreakPoint for PC */
+@media (min-width: 960px) {
+
+	.test02-wrapper {
+		background: rgba(255,255,255,0.8);
+		margin: 50px auto 168px;
+	}
+
+}
+
+
+/* BreakPoint for SP */
+@media (max-width: 959px) {
+
+	.test02-wrapper {
+		background: rgba(255,255,255,0.8);
+		margin: 50px auto 84px;
+	}
+
 }
 
 

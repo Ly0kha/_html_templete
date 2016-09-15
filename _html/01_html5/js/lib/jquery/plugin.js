@@ -58,42 +58,39 @@
 
 
     // ウィンドウのサイズ判定 //
-    var self                    = this,
+    var self                = this,
 
 
     // ウィンドウのサイズ判定 //
-        $win = $(window),
+        $win                = $(window),
 
-        window_width            = $win.width(),
-        window_height           = $win.height(),
-        window_outer_width      = $win.outerWidth(),
-        window_outer_height     = $win.outerHeight(),
-        window_inner_width      = $win.innerWidth(),
-        window_inner_height     = $win.innerHeight(),
+        $winWidth           = $win.width(),
+        $winHeight          = $win.height(),
+        $winOuterWidth      = $win.outerWidth(),
+        $winOuterHeight     = $win.outerHeight(),
+        $winInnerWidth      = $win.innerWidth(),
+        $winInnerHeight     = $win.innerHeight(),
 
 
     // ディレクトリの判定 //
-        rootDir                 = location.href.split('/'),
-        currentDir              = rootDir[rootDir.length -2],
+        rootDir             = location.href.split('/'),
+        currentDir          = rootDir[rootDir.length -2],
 
 
     // 端末ユーザーエージェントの判定 //
-        user_agent              = navigator.userAgent,
-        ua_sp                   = user_agent.indexOf('iPhone') > 0 || user_agent.indexOf('iPad') > 0 || user_agent.indexOf('iPod') > 0 || user_agent.indexOf('Android') > 0 || user_agent.indexOf('BlackBerry') > 0 || user_agent.indexOf('windows Phone') > 0 || user_agent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(user_agent),
+        userAgent           = navigator.userAgent,
+        ua_sp               = userAgent.indexOf('iPhone') > 0 || userAgent.indexOf('iPad') > 0 || userAgent.indexOf('iPod') > 0 || userAgent.indexOf('Android') > 0 || userAgent.indexOf('BlackBerry') > 0 || userAgent.indexOf('windows Phone') > 0 || userAgent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(userAgent),
 
     // ヘッダーの判定 //
-        header                  = $('header'),
-        header_navi_1st_none    = $('header#header-navi-1st-none'),
-        header_navi_1st         = $('header#header-navi-1st'),
-        header_navi_2nd         = $('header#header-navi-2nd'),
-        header_navi_3rd         = $('header#header-navi-3rd'),
+        $header             = $('header'),
+        $headerNav1st_none  = $('header#header-navi-1st-none'),
+        $headerNav1st       = $('header#header-navi-1st'),
+        $headerNav2nd       = $('header#header-navi-2nd'),
+        $headerNav3rd       = $('header#header-navi-3rd'),
 
 
     // フッターの判定 //
-        footer                  = $('footer'),
-        footer_navi_1st         = $('footer#footer-navi-1st'),
-        footer_navi_2nd         = $('footer#footer-navi-2nd'),
-        footer_navi_3rd         = $('footer#footer-navi-3rd');
+        $footer             = $('footer');
 
 
 
@@ -102,28 +99,28 @@
         ----------------------------------------------------
 
         //　iOS
-        user_agent.indexOf('iPhone') > 0
-        user_agent.indexOf('iPad') > 0
-        user_agent.indexOf('iPod') > 0
+        userAgent.indexOf('iPhone') > 0
+        userAgent.indexOf('iPad') > 0
+        userAgent.indexOf('iPod') > 0
 
         //　Android
-        user_agent.indexOf('Android') > 0
+        userAgent.indexOf('Android') > 0
 
         //　BlackBerry
-        user_agent.indexOf('BlackBerry') > 0
+        userAgent.indexOf('BlackBerry') > 0
 
         //　Windows Phone
-        user_agent.indexOf('windows Phone') > 0
+        userAgent.indexOf('windows Phone') > 0
 
         //　NOKIA
-        user_agent.indexOf('NOKIA') > 0
+        userAgent.indexOf('NOKIA') > 0
 
         //　Firefox OS
-        /Mobile.*Firefox/.test(user_agent)
+        /Mobile.*Firefox/.test(userAgent)
 
         //　IE
-        user_agent.match(/MSIE/) 　////　vr.11 or high
-        user_agent.match(/Trident/) ////　vr.10 or less
+        userAgent.match(/MSIE/) 　////　vr.11 or high
+        userAgent.match(/Trident/) ////　vr.10 or less
 
         ----------------------------------------------------
         */
@@ -151,15 +148,15 @@
     }
 
 
-    if (header_navi_1st.length || header_navi_1st_none.length){
+    if ($headerNav1st.length || $headerNav1st_none.length){
         getScript('./');
     }
 
-    else if (header_navi_2nd.length){
+    else if ($headerNav2nd.length){
         getScript('../');
     }
 
-    else if (header_navi_3rd.length){
+    else if ($headerNav3rd.length){
         getScript('../../');
     }
 
@@ -192,7 +189,7 @@
             }).done(function(html){
 
                 html = html.replace(/\{\$root\}/g, rootDir);
-                header.append(html);
+                $header.append(html);
 
         });
 
@@ -209,29 +206,29 @@
             }).done(function(html){
 
                 html = html.replace(/\{\$root\}/g, rootDir);
-                footer.append(html);
+                $footer.append(html);
 
         });
 
     }
 
 
-    if (header_navi_1st.length){
+    if ($headerNav1st.length){
         headerSelect('./');
         footerSelect('./');
     }
 
-    else if (header_navi_2nd.length){
+    else if ($headerNav2nd.length){
         headerSelect('../');
         footerSelect('../');
     }
 
-    else if (header_navi_3rd.length){
+    else if ($headerNav3rd.length){
         headerSelect('../../');
         footerSelect('../../');
     }
 
-    else if (header_navi_1st_none.length){
+    else if ($headerNav1st_none.length){
 
     }
 
@@ -246,12 +243,12 @@
     function dtAdjust(){
 
         /* dtの幅 */
-        var dt_column_width   = $('dl.column dt').width(),
-            dt_news_width     = $('dl.news dt').width();
+        var $dtColumnWidth   = $('dl.column dt').width(),
+            $dtNewsWidth     = $('dl.news dt').width();
 
         /* 可変部分の高さを適用 */
-        $('dl.column dd').css('margin-left', dt_column_width + 20 + 'px');
-        $('dl.news dd').css('margin-left', dt_news_width  + 'px');
+        $('dl.column dd').css('margin-left', $dtColumnWidth + 20 + 'px');
+        $('dl.news dd').css('margin-left', $dtNewsWidth  + 'px');
 
     }
 
@@ -276,11 +273,11 @@
             $('a[rel=scroll]').on('click', function(){
 
                 /* リンクの判定 */
-                var href        = $(this).attr('href'),
-                    target      = $(href === "#" || href === "" ? 'html' : href);
+                var $href        = $(this).attr('href'),
+                    $target      = $($href === "#" || $href === "" ? 'html' : $href);
 
                 /* アンカーリンクへスクロール */
-                target.velocity('scroll', {
+                $target.velocity('scroll', {
                     offset:     -50,
                     duration:   2000,
                     easing:     'easeInOutQuart'
@@ -304,9 +301,9 @@
 
 
     // スライダーのクラスを設定 //
-    var carouselslider = $('#carousel-slider');
+    var $carouselslider = $('#carousel-slider');
 
-    carouselslider.carousel({
+    $carouselslider.carousel({
         interval: 8000
     });
 
@@ -314,23 +311,23 @@
     // スライダーにタッチスワイプを実装する -SP- //
     function carouselSliderFlick(){
 
-        var carousel = new Hammer(carouselslider[0]);
+        var $carousel = new Hammer($carouselslider[0]);
 
         /* 左にスワイプしたら次の画像に切り替え */
-        carousel.on('swipeleft', function(){
-            carouselslider.carousel('next');
+        $carousel.on('swipeleft', function(){
+            $carouselslider.carousel('next');
         });
 
         /* 右にスワイプしたら前の画像に切り替え */
-        carousel.on('swiperight', function(){
-            carouselslider.carousel('prev');
+        $carousel.on('swiperight', function(){
+            $carouselslider.carousel('prev');
         });
 
     }
 
 
     // ソースにスライダー用のid名が含まれていたらタッチスワイプを発火する -SP- //
-    if (carouselslider.length){
+    if ($carouselslider.length){
         carouselSliderFlick();
     }
 
@@ -447,9 +444,9 @@
     $('.blank').on('click', function(){
 
         /* リンクの判定 */
-        var href = $(this).attr('href');
+        var $href = $(this).attr('href');
 
-        window.open(href, '_blank');
+        window.open($href, '_blank');
         return false;
 
     });
@@ -598,15 +595,15 @@
     }
 
 
-    if (header_navi_1st.length || header_navi_1st_none.length){
+    if ($headerNav1st.length || $headerNav1st_none.length){
         colorbox('./');
     }
 
-    else if (header_navi_2nd.length){
+    else if ($headerNav2nd.length){
         colorbox('../');
     }
 
-    else if (header_navi_3rd.length){
+    else if ($headerNav3rd.length){
         colorbox('../../');
     }
 
@@ -704,10 +701,10 @@
                     case 'inquiry-list-jp' :
 
                         /* アンカーの判定 */
-                        var target = $('#inquiry-list-jp');
+                        var $target = $('#inquiry-list-jp');
 
                         /* アンカーリンクへスクロール */
-                        target.velocity('scroll', {
+                        $target.velocity('scroll', {
                             duration:   500,
                             easing:     'easeOutExpo'
                         });
@@ -717,10 +714,10 @@
                     case 'inquiry-companyName-jp' :
 
                         /* アンカーの判定 */
-                        var target = $('#inquiry-companyName-jp');
+                        var $target = $('#inquiry-companyName-jp');
 
                         /* アンカーリンクへスクロール */
-                        target.velocity('scroll', {
+                        $target.velocity('scroll', {
                             duration:   500,
                             easing:     'easeOutExpo'
                         });
@@ -730,10 +727,10 @@
                     case 'inquiry-nameJa-jp' :
 
                         /* アンカーの判定 */
-                        var target = $('#inquiry-nameJa-jp');
+                        var $target = $('#inquiry-nameJa-jp');
 
                         /* アンカーリンクへスクロール */
-                        target.velocity('scroll', {
+                        $target.velocity('scroll', {
                             duration:   500,
                             easing:     'easeOutExpo'
                         });
@@ -743,10 +740,10 @@
                     case 'inquiry-nameEn-jp' :
 
                         /* アンカーの判定 */
-                        var target = $('#inquiry-nameEn-jp');
+                        var $target = $('#inquiry-nameEn-jp');
 
                         /* アンカーリンクへスクロール */
-                        target.velocity('scroll', {
+                        $target.velocity('scroll', {
                             duration:   500,
                             easing:     'easeOutExpo'
                         });
@@ -756,10 +753,10 @@
                     case 'inquiry-mail-jp' :
 
                         /* アンカーの判定 */
-                        var target = $('#inquiry-mail-jp');
+                        var $target = $('#inquiry-mail-jp');
 
                         /* アンカーリンクへスクロール */
-                        target.velocity('scroll', {
+                        $target.velocity('scroll', {
                             duration:   500,
                             easing:     'easeOutExpo'
                         });
@@ -769,10 +766,10 @@
                     case 'inquiry-text-jp' :
 
                         /* アンカーの判定 */
-                        var target = $('#inquiry-text-jp');
+                        var $target = $('#inquiry-text-jp');
 
                         /* アンカーリンクへスクロール */
-                        target.velocity('scroll', {
+                        $target.velocity('scroll', {
                             duration:   500,
                             easing:     'easeOutExpo'
                         });
@@ -875,10 +872,10 @@
                     case 'inquiry-list-en' :
 
                         /* アンカーの判定 */
-                        var target = $('#inquiry-list-en');
+                        var $target = $('#inquiry-list-en');
 
                         /* アンカーリンクへスクロール */
-                        target.velocity('scroll', {
+                        $target.velocity('scroll', {
                             duration:   500,
                             easing:     'easeOutExpo'
                         });
@@ -888,10 +885,10 @@
                     case 'inquiry-companyName-en' :
 
                         /* アンカーの判定 */
-                        var target = $('#inquiry-companyName-en');
+                        var $target = $('#inquiry-companyName-en');
 
                         /* アンカーリンクへスクロール */
-                        target.velocity('scroll', {
+                        $target.velocity('scroll', {
                             duration:   500,
                             easing:     'easeOutExpo'
                         });
@@ -901,10 +898,10 @@
                     case 'inquiry-nameEn-en' :
 
                         /* アンカーの判定 */
-                        var target = $('#inquiry-nameEn-en');
+                        var $target = $('#inquiry-nameEn-en');
 
                         /* アンカーリンクへスクロール */
-                        target.velocity('scroll', {
+                        $target.velocity('scroll', {
                             duration:   500,
                             easing:     'easeOutExpo'
                         });
@@ -914,10 +911,10 @@
                     case 'inquiry-mail-en' :
 
                         /* アンカーの判定 */
-                        var target = $('#inquiry-mail-en');
+                        var $target = $('#inquiry-mail-en');
 
                         /* アンカーリンクへスクロール */
-                        target.velocity('scroll', {
+                        $target.velocity('scroll', {
                             duration:   500,
                             easing:     'easeOutExpo'
                         });
@@ -927,10 +924,10 @@
                     case 'inquiry-text-en' :
 
                         /* アンカーの判定 */
-                        var target = $('#inquiry-text-en');
+                        var $target = $('#inquiry-text-en');
 
                         /* アンカーリンクへスクロール */
-                        target.velocity('scroll', {
+                        $target.velocity('scroll', {
                             duration:   500,
                             easing:     'easeOutExpo'
                         });
@@ -1031,9 +1028,9 @@
             mailFormInputAbled('off');
 
             /* リセットボタン押したらページトップへ飛ぶ */
-            var target = $('#form');
+            var $target = $('#form');
 
-            target.velocity('scroll', {
+            $target.velocity('scroll', {
                 duration:   500,
                 easing:     'easeOutExpo'
             });
@@ -1154,12 +1151,12 @@
             $('.suggest-clear').show();
 
             /* サジェストクリアゾーンが全面に出るように設定 */
-            var window_width = $win.width(),
-                window_height = $win.height();
+            var $winWidth = $win.width(),
+                $winHeight = $win.height();
 
             $('.suggest-clear').css({
-                'width':    window_width,
-                'height':   window_height
+                'width':    $winWidth,
+                'height':   $winHeight
             });
 
         });
@@ -1207,17 +1204,17 @@
 
 
     // サジェスト内のお問い合わせ事項テキストを値として読み込む  //
-    var suggestBusinessJp   = $('#menu-jp1').text(),
-        suggestRecruitJp    = $('#menu-jp2').text(),
-        suggestCreativeJp   = $('#menu-jp3').text(),
-        suggestPersonalJp   = $('#menu-jp4').text(),
-        suggestOtherJp      = $('#menu-jp5').text(),
+    var $suggestBusinessJp   = $('#menu-jp1').text(),
+        $suggestRecruitJp    = $('#menu-jp2').text(),
+        $suggestCreativeJp   = $('#menu-jp3').text(),
+        $suggestPersonalJp   = $('#menu-jp4').text(),
+        $suggestOtherJp      = $('#menu-jp5').text(),
 
-        suggestBusinessEn   = $('#menu-en1').text(),
-        suggestRecruitEn    = $('#menu-en2').text(),
-        suggestCreativeEn   = $('#menu-en3').text(),
-        suggestPersonalEn   = $('#menu-en4').text(),
-        suggestOtherEn      = $('#menu-en5').text();
+        $suggestBusinessEn   = $('#menu-en1').text(),
+        $suggestRecruitEn    = $('#menu-en2').text(),
+        $suggestCreativeEn   = $('#menu-en3').text(),
+        $suggestPersonalEn   = $('#menu-en4').text(),
+        $suggestOtherEn      = $('#menu-en5').text();
 
 
     function suggestMenu(i){
@@ -1228,42 +1225,42 @@
 
             case 'menu1' :
 
-                $('#form-inquiryList-jp').val(suggestBusinessJp);
-                $('#form-inquiryListDisplay-jp').html(suggestBusinessJp);
-                $('#form-inquiryList-en').val(suggestBusinessEn);
-                $('#form-inquiryListDisplay-en').html(suggestBusinessEn);
+                $('#form-inquiryList-jp').val($suggestBusinessJp);
+                $('#form-inquiryListDisplay-jp').html($suggestBusinessJp);
+                $('#form-inquiryList-en').val($suggestBusinessEn);
+                $('#form-inquiryListDisplay-en').html($suggestBusinessEn);
                 break;
 
             case 'menu2' :
 
-                $('#form-inquiryList-jp').val(suggestRecruitJp);
-                $('#form-inquiryListDisplay-jp').html(suggestRecruitJp);
-                $('#form-inquiryList-en').val(suggestRecruitEn);
-                $('#form-inquiryListDisplay-en').html(suggestRecruitEn);
+                $('#form-inquiryList-jp').val($suggestRecruitJp);
+                $('#form-inquiryListDisplay-jp').html($suggestRecruitJp);
+                $('#form-inquiryList-en').val($suggestRecruitEn);
+                $('#form-inquiryListDisplay-en').html($suggestRecruitEn);
                 break;
 
             case 'menu3' :
 
-                $('#form-inquiryList-jp').val(suggestCreativeJp);
-                $('#form-inquiryListDisplay-jp').html(suggestCreativeJp);
-                $('#form-inquiryList-en').val(suggestCreativeEn);
-                $('#form-inquiryListDisplay-en').html(suggestCreativeEn);
+                $('#form-inquiryList-jp').val($suggestCreativeJp);
+                $('#form-inquiryListDisplay-jp').html($suggestCreativeJp);
+                $('#form-inquiryList-en').val($suggestCreativeEn);
+                $('#form-inquiryListDisplay-en').html($suggestCreativeEn);
                 break;
 
             case 'menu4' :
 
-                $('#form-inquiryList-jp').val(suggestPersonalJp);
-                $('#form-inquiryListDisplay-jp').html(suggestPersonalJp);
-                $('#form-inquiryList-en').val(suggestPersonalEn);
-                $('#form-inquiryListDisplay-en').html(suggestPersonalEn);
+                $('#form-inquiryList-jp').val($suggestPersonalJp);
+                $('#form-inquiryListDisplay-jp').html($suggestPersonalJp);
+                $('#form-inquiryList-en').val($suggestPersonalEn);
+                $('#form-inquiryListDisplay-en').html($suggestPersonalEn);
                 break;
 
             case 'menu5' :
 
-                $('#form-inquiryList-jp').val(suggestOtherJp);
-                $('#form-inquiryListDisplay-jp').html(suggestOtherJp);
-                $('#form-inquiryList-en').val(suggestOtherEn);
-                $('#form-inquiryListDisplay-en').html(suggestOtherEn);
+                $('#form-inquiryList-jp').val($suggestOtherJp);
+                $('#form-inquiryListDisplay-jp').html($suggestOtherJp);
+                $('#form-inquiryList-en').val($suggestOtherEn);
+                $('#form-inquiryListDisplay-en').html($suggestOtherEn);
                 break;
 
             default :
@@ -1332,8 +1329,8 @@
         var langArr = i ;
 
         /* コンテンツ判定 */
-        var ja = $('#ja'),
-            en = $('#en');
+        var $ja = $('#ja'),
+            $en = $('#en');
 
         switch (langArr){
 
@@ -1344,8 +1341,8 @@
                 $.removeCookie('lang_en', { path: '/' });
 
                 /* IDを切り替え */
-                ja.fadeIn().show();
-                en.fadeOut().hide();
+                $ja.fadeIn().show();
+                $en.fadeOut().hide();
                 break;
 
             case 'en' :
@@ -1355,8 +1352,8 @@
                 $.removeCookie('lang_ja', { path: '/' });
 
                 /* IDを切り替え */
-                en.fadeIn().show();
-                ja.fadeOut().hide();
+                $en.fadeIn().show();
+                $ja.fadeOut().hide();
                 break;
 
             default :
@@ -1366,8 +1363,8 @@
                 $.removeCookie('lang_en', { path: '/' });
 
                 /* IDを切り替え */
-                ja.fadeIn().show();
-                en.fadeOut().hide();
+                $ja.fadeIn().show();
+                $en.fadeOut().hide();
                 break;
 
         }
@@ -1381,8 +1378,8 @@
         var langArr = i ;
 
         /* コンテンツ判定 */
-        var ja = $('#ja'),
-            en = $('#en');
+        var $ja = $('#ja'),
+            $en = $('#en');
 
         switch (langArr){
 
@@ -1393,8 +1390,8 @@
                 $.removeCookie('lang_en', { path: '/' });
 
                 /* IDを切り替え */
-                ja.fadeIn().show();
-                en.fadeOut().hide();
+                $ja.fadeIn().show();
+                $en.fadeOut().hide();
 
                 /* Classを切り替え */
                 $('.language-list li.btn-ja').removeClass('btn-ja').addClass('btn-ja-active');
@@ -1408,8 +1405,8 @@
                 $.removeCookie('lang_ja', { path: '/' });
 
                 /* IDを切り替え */
-                en.fadeIn().show();
-                ja.fadeOut().hide();
+                $en.fadeIn().show();
+                $ja.fadeOut().hide();
 
                 /* Classを切り替え */
                 $('.language-list li.btn-en').removeClass('btn-en').addClass('btn-en-active');
@@ -1423,8 +1420,8 @@
                 $.removeCookie('lang_en', { path: '/' });
 
                 /* IDを切り替え */
-                ja.fadeIn().show();
-                en.fadeOut().hide();
+                $ja.fadeIn().show();
+                $en.fadeOut().hide();
 
                 /* Classを切り替え */
                 $('.language-list li.btn-ja').removeClass('btn-ja').addClass('btn-ja-active');
@@ -1437,15 +1434,15 @@
 
 
     // デフォルトの表示 -lang_ja:和文 / lang_en:英文- //
-    var lang_ja = $.cookie('lang_ja'),
-        lang_en = $.cookie('lang_en');
+    var $lang_ja = $.cookie('lang_ja'),
+        $lang_en = $.cookie('lang_en');
 
-    if (lang_ja){
+    if ($lang_ja){
         showLanguagePC('ja');
         showLanguageSP('ja');
     }
 
-    else if (lang_en){
+    else if ($lang_en){
         showLanguagePC('en');
         showLanguageSP('en');
     }
@@ -1541,10 +1538,10 @@
         return $.getJSON(rootDir + 'ajax/kerning.json', function(data){
 
             /* 中にテキストが入るタグの判定 divは含まれない */
-            var tag = $('p, h1, h2, h3, h4, h5, h6, .carousel-caption, dl.news dt, dl.news dd, dl.column dt, dl.column dd, dl#form-layout-jp dt, dl#form-layout-en dt, ul.list li, ol.list li, ul.suggest-menu li, ul.form-accept li, th, td, a, address');
+            var $tag = $('p, h1, h2, h3, h4, h5, h6, .carousel-caption, dl.news dt, dl.news dd, dl.column dt, dl.column dd, dl#form-layout-jp dt, dl#form-layout-en dt, ul.list li, ol.list li, ul.suggest-menu li, ul.form-accept li, th, td, a, address');
 
             /* JSONのデータを基にカーニングを実行 */
-            tag.kerning({
+            $tag.kerning({
                 'data': data
             });
 
@@ -1553,15 +1550,15 @@
     }
 
 
-    if (header_navi_1st.length || header_navi_1st_none.length){
+    if ($headerNav1st.length || $headerNav1st_none.length){
         kerningDir('./');
     }
 
-    else if (header_navi_2nd.length){
+    else if ($headerNav2nd.length){
         kerningDir('../');
     }
 
-    else if (header_navi_3rd.length){
+    else if ($headerNav3rd.length){
         kerningDir('../../');
     }
 
@@ -1574,12 +1571,12 @@
 
     function centering(){
 
-        var box        = $('.centerParentWrapper'),
-            padding    = parseInt(box.css('padding-top')) + parseInt(box.css('padding-bottom')),
-            margin     = 50,
-            min_height = box.height() + padding + footer.height() + margin;
+        var $box      = $('.centerParentWrapper'),
+            padding   = parseInt($box.css('padding-top')) + parseInt($box.css('padding-bottom')),
+            margin    = 50,
+            minHeight = $box.height() + padding + $footer.height() + margin;
 
-        if(window_inner_height < min_height){
+        if ($winInnerHeight < minHeight){
             $('#fixed-container').css({
                 'position' : 'relative'
             });
@@ -1592,11 +1589,11 @@
         }
 
         $('#fixed-container').css({
-            'height' : window_inner_height + 'px'
+            'height' : $winInnerHeight + 'px'
         });
 
         $('#fixed-container').css({
-            'height' : window_inner_height - 30 + 'px'
+            'height' : $winInnerHeight - 30 + 'px'
         });
 
     }
@@ -1688,13 +1685,13 @@
 
     $win.on('load resize', function() {
 
-        var window_width = $win.width();
+        var $resizeWinWidth = $win.width();
 
-        if (window_width > 960){
+        if ($resizeWinWidth > 960){
             changeClass('pc');
         }
 
-        else if (window_width < 960 || ua_sp){
+        else if ($resizeWinWidth < 960 || ua_sp){
             changeClass('sp');
         }
 
@@ -1708,14 +1705,14 @@
     $win.on('load resize', function(){
 
         /* iPhone, iPadなど */
-        if ((user_agent.indexOf('iPhone') > 0 && user_agent.indexOf('iPad') == -1) || user_agent.indexOf('iPod') > 0){
+        if ((userAgent.indexOf('iPhone') > 0 && userAgent.indexOf('iPad') == -1) || userAgent.indexOf('iPod') > 0){
             $('html').css({
                 'zoom': 1
             });
         }
 
         /* Android */
-        else if (user_agent.indexOf('Android') > 0){
+        else if (userAgent.indexOf('Android') > 0){
 
             /* 傾き（ポートレイトかランドスケープか）を判定 */
             if ('object' === typeof window.onorientationchange){

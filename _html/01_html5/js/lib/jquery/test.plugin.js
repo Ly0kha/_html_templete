@@ -35,42 +35,40 @@
 
 
     // ウィンドウのサイズ判定 //
-    var self                    = this,
+    var self                = this,
 
 
     // ウィンドウのサイズ判定 //
-        $win = $(window),
+        $win                = $(window),
 
-        window_width            = $win.width(),
-        window_height           = $win.height(),
-        window_outer_width      = $win.outerWidth(),
-        window_outer_height     = $win.outerHeight(),
-        window_inner_width      = $win.innerWidth(),
-        window_inner_height     = $win.innerHeight(),
+        $winWidth           = $win.width(),
+        $winHeight          = $win.height(),
+        $winOuterWidth      = $win.outerWidth(),
+        $winOuterHeight     = $win.outerHeight(),
+        $winInnerWidth      = $win.innerWidth(),
+        $winInnerHeight     = $win.innerHeight(),
 
 
     // ディレクトリの判定 //
-        rootDir                 = location.href.split('/'),
-        currentDir              = rootDir[rootDir.length -2],
+        rootDir             = location.href.split('/'),
+        currentDir          = rootDir[rootDir.length -2],
 
 
     // 端末ユーザーエージェントの判定 //
-        user_agent              = navigator.userAgent,
-        ua_sp                   = user_agent.indexOf('iPhone') > 0 || user_agent.indexOf('iPad') > 0 || user_agent.indexOf('iPod') > 0 || user_agent.indexOf('Android') > 0 || user_agent.indexOf('BlackBerry') > 0 || user_agent.indexOf('windows Phone') > 0 || user_agent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(user_agent),
+        userAgent           = navigator.userAgent,
+        ua_sp               = userAgent.indexOf('iPhone') > 0 || userAgent.indexOf('iPad') > 0 || userAgent.indexOf('iPod') > 0 || userAgent.indexOf('Android') > 0 || userAgent.indexOf('BlackBerry') > 0 || userAgent.indexOf('windows Phone') > 0 || userAgent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(userAgent),
 
     // ヘッダーの判定 //
-        header                  = $('header'),
-        header_navi_1st_none    = $('header#header-navi-1st-none'),
-        header_navi_1st         = $('header#header-navi-1st'),
-        header_navi_2nd         = $('header#header-navi-2nd'),
-        header_navi_3rd         = $('header#header-navi-3rd'),
+        $header             = $('header'),
+        $headerNav1st_none  = $('header#header-navi-1st-none'),
+        $headerNav1st       = $('header#header-navi-1st'),
+        $headerNav2nd       = $('header#header-navi-2nd'),
+        $headerNav3rd       = $('header#header-navi-3rd'),
 
 
     // フッターの判定 //
-        footer                  = $('footer'),
-        footer_navi_1st         = $('footer#footer-navi-1st'),
-        footer_navi_2nd         = $('footer#footer-navi-2nd'),
-        footer_navi_3rd         = $('footer#footer-navi-3rd');
+        $footer             = $('footer');
+
 
 
 
@@ -80,28 +78,28 @@
 
 
         //　iOS
-        user_agent.indexOf('iPhone') > 0
-        user_agent.indexOf('iPad') > 0
-        user_agent.indexOf('iPod') > 0
+        userAgent.indexOf('iPhone') > 0
+        userAgent.indexOf('iPad') > 0
+        userAgent.indexOf('iPod') > 0
 
         //　Android
-        user_agent.indexOf('Android') > 0
+        userAgent.indexOf('Android') > 0
 
         //　BlackBerry
-        user_agent.indexOf('BlackBerry') > 0
+        userAgent.indexOf('BlackBerry') > 0
 
         //　Windows Phone
-        user_agent.indexOf('windows Phone') > 0
+        userAgent.indexOf('windows Phone') > 0
 
         //　NOKIA
-        user_agent.indexOf('NOKIA') > 0
+        userAgent.indexOf('NOKIA') > 0
 
         //　Firefox OS
-        /Mobile.*Firefox/.test(user_agent)
+        /Mobile.*Firefox/.test(userAgent)
 
         //　IE
-        user_agent.match(/MSIE/) 　////　vr.11 or high
-        user_agent.match(/Trident/) ////　vr.10 or less
+        userAgent.match(/MSIE/) 　////　vr.11 or high
+        userAgent.match(/Trident/) ////　vr.10 or less
 
 
         ----------------------------------------------------
@@ -112,8 +110,8 @@
 
     $.ajaxSetup ({
 
-        cache: true,
-        async: true
+        cache:                      true,
+        async:                      true
 
     });
 
@@ -128,15 +126,15 @@
     }
 
 
-    if (header_navi_1st.length || header_navi_1st_none.length){
+    if ($headerNav1st.length || $headerNav1st_none.length){
         getScript('./');
     }
 
-    else if (header_navi_2nd.length){
+    else if ($headerNav2nd.length){
         getScript('../');
     }
 
-    else if (header_navi_3rd.length){
+    else if ($headerNav3rd.length){
         getScript('../../');
     }
 
@@ -162,12 +160,12 @@
 
     function testUserStatusDecision(){
 
-        var window_width    = $win.width(),
-            window_height   = $win.height();
+        var $winWidth               = $win.width(),
+            $winHeight              = $win.height();
 
-        $('#test01').html('ウィンドウ幅' + '&nbsp;:&nbsp;' + window_width);
-        $('#test02').html('ウィンドウ高さ' + '&nbsp;:&nbsp;' + window_height);
-        $('#test03').html('ユーザーエージェント' + '&nbsp;:&nbsp;' + '<br />' + user_agent);
+        $('#test01').html('ウィンドウ幅' + '&nbsp;:&nbsp;' + $winWidth);
+        $('#test02').html('ウィンドウ高さ' + '&nbsp;:&nbsp;' + $winHeight);
+        $('#test03').html('ユーザーエージェント' + '&nbsp;:&nbsp;' + '<br />' + userAgent);
         $('#test04').html('現在のディレクトリ' + '&nbsp;:&nbsp;' + currentDir);
 
     }
@@ -200,16 +198,16 @@
 
 
     /* IEか否か */
-    var isIE        = false,
+    var isIE                        = false,
 
     /* IEのバージョン */
-        version     = null;
+        version                     = null;
 
     /* IEであるか否かの判定 */
-    if (user_agent.match(/MSIE/) || user_agent.match(/Trident/)){
-        isIE        = true;
-        version     = user_agent.match(/(MSIE\s|rv:)([\d\.]+)/)[2];
-        version     = parseInt(version);
+    if (userAgent.match(/MSIE/) || userAgent.match(/Trident/)){
+        isIE                        = true;
+        version                     = userAgent.match(/(MSIE\s|rv:)([\d\.]+)/)[2];
+        version                     = parseInt(version);
         console.log('IE : Ver:', version);
     }
 
@@ -221,16 +219,16 @@
 
 
     /* Chromeか否か */
-    var isChrome    = false,
+    var isChrome                    = false,
 
     /* Chromeのバージョン */
-        version     = null;
+        version                     = null;
 
     /* IEであるか否かの判定 */
-    if (user_agent.match(/Chrome/)){
-        isChrome    = true;
-        version     = user_agent.match(/(Chrome)([\0-9\.]+)/)[2];
-        // version     = parseInt(version);
+    if (userAgent.match(/Chrome/)){
+        isChrome                    = true;
+        version                     = userAgent.match(/(Chrome)([\0-9\.]+)/)[2];
+        // version                  = parseInt(version);
         console.log('Chrome : Ver:', version);
     }
 
@@ -242,13 +240,13 @@
     /* 【TEST】 Cookie読み込み
     ----------------------------------------*/
     function cookiePC (){
-        var cookiePCAdd = $.cookie('PC', '1', { expires: 365 , path: '/' }),
-            cookieSPRemove = $.removeCookie('SP', { path: '/' });
+        var $cookiePCAdd            = $.cookie('PC', '1', { expires: 365 , path: '/' }),
+            $cookieSPRemove         = $.removeCookie('SP', { path: '/' });
     }
 
     function cookieSP (){
-        var cookieSPAdd = $.cookie('SP', '2', { expires: 365 , path: '/' }),
-            cookiePCRemove = $.removeCookie('PC', { path: '/' });
+        var $cookieSPAdd            = $.cookie('SP', '2', { expires: 365 , path: '/' }),
+            $cookiePCRemove         = $.removeCookie('PC', { path: '/' });
     }
 
     if(ua_sp){
@@ -274,14 +272,14 @@
 
         return $.getJSON(rootDir + 'ajax/text.json', function(data){
 
-            var items = [];
+            var items               = [];
             $.each(data, function(key, val){
                 items.push('<li id=' + key + '>' + val + '</li>');
             });
 
             $('<ul/>',{
-                'class':    'my-new-list',
-                html:       items.join('')
+                'class':            'my-new-list',
+                html:               items.join('')
             }).appendTo('#test05');
 
         });
@@ -289,15 +287,15 @@
     }
 
 
-    if (header_navi_1st.length || header_navi_1st_none.length){
+    if ($headerNav1st.length || $headerNav1st_none.length){
         testJsonSelect('./');
     }
 
-    else if (header_navi_2nd.length){
+    else if ($headerNav2nd.length){
         testJsonSelect('../');
     }
 
-    else if (header_navi_3rd.length){
+    else if ($headerNav3rd.length){
         testJsonSelect('../../');
     }
 
@@ -312,12 +310,12 @@
 
         return $.ajax ({
 
-                type:   'GET',
-                url:    rootDir + 'include/btn.html',
+                type:               'GET',
+                url:                rootDir + 'include/btn.html',
 
             }).done(function(btn){
 
-                btn = btn.replace(/\{\$root\}/g, rootDir);
+                btn                 = btn.replace(/\{\$root\}/g, rootDir);
                 $('#hover').append(btn);
 
         });
@@ -329,15 +327,15 @@
 
     }
 
-    else if (header_navi_1st.length || header_navi_1st_none.length){
+    else if ($headerNav1st.length || $headerNav1st_none.length){
         btnHoverSelect('./');
     }
 
-    else if (header_navi_2nd.length){
+    else if ($headerNav2nd.length){
         btnHoverSelect('../');
     }
 
-    else if (header_navi_3rd.length){
+    else if ($headerNav3rd.length){
         btnHoverSelect('../../');
     }
 

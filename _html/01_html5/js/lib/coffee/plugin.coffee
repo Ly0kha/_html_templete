@@ -45,7 +45,7 @@ $ ->
 	window_outer_height = $(window).outerHeight()
 	window_inner_width = $(window).innerWidth()
 	window_inner_height = $(window).innerHeight()
-	user_agent = navigator.userAgent
+	userAgent = navigator.userAgent
 	# ウィンドウ自体の幅と高さを計測し、使っているブラウザのユーザーエージェントを判定
 
 	###jsonテスト
@@ -217,7 +217,7 @@ $ ->
 		window_height = $(window).height()
 		$('#test01').html 'ウィンドウ幅' + '&nbsp;:&nbsp;' + window_width
 		$('#test02').html 'ウィンドウ高さ' + '&nbsp;:&nbsp;' + window_height
-		$('#test03').html 'ユーザーエージェント' + '&nbsp;:&nbsp;' + '<br />' + user_agent
+		$('#test03').html 'ユーザーエージェント' + '&nbsp;:&nbsp;' + '<br />' + userAgent
 		return
 
 	###test IE判定実装
@@ -227,9 +227,9 @@ $ ->
 	# IEであるか否かの判定
 	# var isIE = false; // IEか否か
 	# var version = null; // IEのバージョン
-	# if(user_agent.match(/MSIE/) || user_agent.match(/Trident/) ) {
+	# if(userAgent.match(/MSIE/) || userAgent.match(/Trident/) ) {
 	#		isIE = true;
-	#		version = user_agent.match(/(MSIE\s|rv:)([\d\.]+)/)[2];
+	#		version = userAgent.match(/(MSIE\s|rv:)([\d\.]+)/)[2];
 	#		location.href='http://www.yahoo.co.jp/'
 	# }
 
@@ -237,7 +237,7 @@ $ ->
 	--------------------
 	###
 
-	if user_agent.indexOf('iPhone') > 0 or user_agent.indexOf('iPad') > 0 or user_agent.indexOf('iPod') > 0 or user_agent.indexOf('Android') > 0 or user_agent.indexOf('BlackBerry') > 0 or user_agent.indexOf('windows Phone') > 0 or user_agent.indexOf('NOKIA') > 0 or /Mobile.*Firefox/.test(user_agent)
+	if userAgent.indexOf('iPhone') > 0 or userAgent.indexOf('iPad') > 0 or userAgent.indexOf('iPod') > 0 or userAgent.indexOf('Android') > 0 or userAgent.indexOf('BlackBerry') > 0 or userAgent.indexOf('windows Phone') > 0 or userAgent.indexOf('NOKIA') > 0 or /Mobile.*Firefox/.test(userAgent)
 	else
 		$.ajax(
 			url: 'include/btn.html'
@@ -302,7 +302,7 @@ $ ->
 	--------------------
 	###
 
-	if user_agent.indexOf('iPhone') > 0 or user_agent.indexOf('iPad') > 0 or user_agent.indexOf('iPod') > 0 or user_agent.indexOf('Android') > 0 or user_agent.indexOf('BlackBerry') > 0 or user_agent.indexOf('windows Phone') > 0 or user_agent.indexOf('NOKIA') > 0 or /Mobile.*Firefox/.test(user_agent) or $('#carousel-example-generic').children().hasClass('item')
+	if userAgent.indexOf('iPhone') > 0 or userAgent.indexOf('iPad') > 0 or userAgent.indexOf('iPod') > 0 or userAgent.indexOf('Android') > 0 or userAgent.indexOf('BlackBerry') > 0 or userAgent.indexOf('windows Phone') > 0 or userAgent.indexOf('NOKIA') > 0 or /Mobile.*Firefox/.test(userAgent) or $('#carousel-example-generic').children().hasClass('item')
 		# Slider-Config //
 		$('.carousel').carousel interval: 6000
 		# Slider-Swipe -forSP-//
@@ -335,7 +335,7 @@ $ ->
 			height: 'toggle'
 			opacity: 'toggle'
 			duration: 300
-	if user_agent.indexOf('iPhone') > 0 or user_agent.indexOf('iPad') > 0 or user_agent.indexOf('iPod') > 0 or user_agent.indexOf('Android') > 0 or user_agent.indexOf('BlackBerry') > 0 or user_agent.indexOf('windows Phone') > 0 or user_agent.indexOf('NOKIA') > 0 or /Mobile.*Firefox/.test(user_agent)
+	if userAgent.indexOf('iPhone') > 0 or userAgent.indexOf('iPad') > 0 or userAgent.indexOf('iPod') > 0 or userAgent.indexOf('Android') > 0 or userAgent.indexOf('BlackBerry') > 0 or userAgent.indexOf('windows Phone') > 0 or userAgent.indexOf('NOKIA') > 0 or /Mobile.*Firefox/.test(userAgent)
 	else
 		$('img.mouseover').mouseover ->
 			mouseOver 'on'
@@ -431,7 +431,7 @@ $ ->
 			document_height = $(document).height()
 			lightbox_width = $('.bg-lightbox').width()
 			lightbox_height = $('.bg-lightbox').height()
-			if user_agent.indexOf('iPhone') > 0 or user_agent.indexOf('iPad') > 0 or user_agent.indexOf('iPod') > 0 or user_agent.indexOf('Android') > 0 or user_agent.indexOf('BlackBerry') > 0 or user_agent.indexOf('windows Phone') > 0 or user_agent.indexOf('NOKIA') > 0 or /Mobile.*Firefox/.test(user_agent)
+			if userAgent.indexOf('iPhone') > 0 or userAgent.indexOf('iPad') > 0 or userAgent.indexOf('iPod') > 0 or userAgent.indexOf('Android') > 0 or userAgent.indexOf('BlackBerry') > 0 or userAgent.indexOf('windows Phone') > 0 or userAgent.indexOf('NOKIA') > 0 or /Mobile.*Firefox/.test(userAgent)
 				$('#lb-overlay').css
 					'width': window_width
 					'height': window_height + 100 + 'px'
@@ -454,7 +454,7 @@ $ ->
 				document_height = $(document).height()
 				lightbox_width = $('.bg-lightbox').width()
 				lightbox_height = $('.bg-lightbox').height()
-				if user_agent.indexOf('iPhone') > 0 or user_agent.indexOf('iPad') > 0 or user_agent.indexOf('iPod') > 0 or user_agent.indexOf('Android') > 0 or user_agent.indexOf('BlackBerry') > 0 or user_agent.indexOf('windows Phone') > 0 or user_agent.indexOf('NOKIA') > 0 or /Mobile.*Firefox/.test(user_agent)
+				if userAgent.indexOf('iPhone') > 0 or userAgent.indexOf('iPad') > 0 or userAgent.indexOf('iPod') > 0 or userAgent.indexOf('Android') > 0 or userAgent.indexOf('BlackBerry') > 0 or userAgent.indexOf('windows Phone') > 0 or userAgent.indexOf('NOKIA') > 0 or /Mobile.*Firefox/.test(userAgent)
 					$('#lb-overlay').css
 						'width': window_width
 						'height': window_height + 100 + 'px'
@@ -485,7 +485,7 @@ $ ->
 			document_height = $(document).height()
 			lightbox_width = $('.bg-lightbox').width()
 			lightbox_height = $('.bg-lightbox').height()
-			if user_agent.indexOf('iPhone') > 0 or user_agent.indexOf('iPad') > 0 or user_agent.indexOf('iPod') > 0 or user_agent.indexOf('Android') > 0 or user_agent.indexOf('BlackBerry') > 0 or user_agent.indexOf('windows Phone') > 0 or user_agent.indexOf('NOKIA') > 0 or /Mobile.*Firefox/.test(user_agent)
+			if userAgent.indexOf('iPhone') > 0 or userAgent.indexOf('iPad') > 0 or userAgent.indexOf('iPod') > 0 or userAgent.indexOf('Android') > 0 or userAgent.indexOf('BlackBerry') > 0 or userAgent.indexOf('windows Phone') > 0 or userAgent.indexOf('NOKIA') > 0 or /Mobile.*Firefox/.test(userAgent)
 				$('#lb-overlay').css
 					'width': window_width
 					'height': window_height + 100 + 'px'
@@ -508,7 +508,7 @@ $ ->
 				document_height = $(document).height()
 				lightbox_width = $('.bg-lightbox').width()
 				lightbox_height = $('.bg-lightbox').height()
-				if user_agent.indexOf('iPhone') > 0 or user_agent.indexOf('iPad') > 0 or user_agent.indexOf('iPod') > 0 or user_agent.indexOf('Android') > 0 or user_agent.indexOf('BlackBerry') > 0 or user_agent.indexOf('windows Phone') > 0 or user_agent.indexOf('NOKIA') > 0 or /Mobile.*Firefox/.test(user_agent)
+				if userAgent.indexOf('iPhone') > 0 or userAgent.indexOf('iPad') > 0 or userAgent.indexOf('iPod') > 0 or userAgent.indexOf('Android') > 0 or userAgent.indexOf('BlackBerry') > 0 or userAgent.indexOf('windows Phone') > 0 or userAgent.indexOf('NOKIA') > 0 or /Mobile.*Firefox/.test(userAgent)
 					$('#lb-overlay').css
 						'width': window_width
 						'height': window_height + 100 + 'px'
@@ -542,7 +542,7 @@ $ ->
 
 	# Submitを押したときの判定 Jp:日本語  //
 	$('input#btn-confirm-ja:submit').on 'click', ->
-		`var user_agent`
+		`var userAgent`
 		`var offset`
 		`var offset`
 		`var offset`
@@ -586,10 +586,10 @@ $ ->
 					alphabet: '※半角英数で入力して下さい。'
 					email: '※メールアドレスを入力してください。'
 				inquiryTextJp: required: '※必須項目です。'
-		user_agent = navigator.userAgent
+		userAgent = navigator.userAgent
 		scldurat = 500
 		# エラーが出た箇所へ飛ぶ -forSP- //
-		if user_agent.indexOf('iPhone') > 0 or user_agent.indexOf('iPad') > 0 or user_agent.indexOf('iPod') > 0 or user_agent.indexOf('Android') > 0 or user_agent.indexOf('BlackBerry') > 0 or user_agent.indexOf('windows Phone') > 0 or user_agent.indexOf('NOKIA') > 0 or /Mobile.*Firefox/.test(user_agent)
+		if userAgent.indexOf('iPhone') > 0 or userAgent.indexOf('iPad') > 0 or userAgent.indexOf('iPod') > 0 or userAgent.indexOf('Android') > 0 or userAgent.indexOf('BlackBerry') > 0 or userAgent.indexOf('windows Phone') > 0 or userAgent.indexOf('NOKIA') > 0 or /Mobile.*Firefox/.test(userAgent)
 			if $('input#inquiryListJp').val() == ''
 				inquiryListJp = $('input#inquiryListJp')
 				offset = inquiryListJp.offset()
@@ -657,7 +657,7 @@ $ ->
 				inquiryTextEn: required: '*Please enter xxx.'
 		# エラーが出た箇所へ飛ぶ -forSP- //
 		scldurat = 500
-		if user_agent.indexOf('iPhone') > 0 or user_agent.indexOf('iPad') > 0 or user_agent.indexOf('iPod') > 0 or user_agent.indexOf('Android') > 0 or user_agent.indexOf('BlackBerry') > 0 or user_agent.indexOf('windows Phone') > 0 or user_agent.indexOf('NOKIA') > 0 or /Mobile.*Firefox/.test(user_agent)
+		if userAgent.indexOf('iPhone') > 0 or userAgent.indexOf('iPad') > 0 or userAgent.indexOf('iPod') > 0 or userAgent.indexOf('Android') > 0 or userAgent.indexOf('BlackBerry') > 0 or userAgent.indexOf('windows Phone') > 0 or userAgent.indexOf('NOKIA') > 0 or /Mobile.*Firefox/.test(userAgent)
 			if $('input#inquiryListEn').val() == ''
 				inquiryListEn = $('input#inquiryListEn')
 				offset = inquiryListEn.offset()
@@ -715,7 +715,7 @@ $ ->
 			$('#btn-confirm-en').attr('id', 'btn-confirm-off-en').attr 'disabled', true
 		# リセットボタン押したらページトップへ飛ぶ -forSP- //
 		scldurat = 500
-		if user_agent.indexOf('iPhone') > 0 or user_agent.indexOf('iPad') > 0 or user_agent.indexOf('iPod') > 0 or user_agent.indexOf('Android') > 0 or user_agent.indexOf('BlackBerry') > 0 or user_agent.indexOf('windows Phone') > 0 or user_agent.indexOf('NOKIA') > 0 or /Mobile.*Firefox/.test(user_agent)
+		if userAgent.indexOf('iPhone') > 0 or userAgent.indexOf('iPad') > 0 or userAgent.indexOf('iPod') > 0 or userAgent.indexOf('Android') > 0 or userAgent.indexOf('BlackBerry') > 0 or userAgent.indexOf('windows Phone') > 0 or userAgent.indexOf('NOKIA') > 0 or /Mobile.*Firefox/.test(userAgent)
 			$('html,body').animate { scrollTop: 0 }, 'fast'
 		return
 	# 同意ボタンを押したときのリセット、確認ボタンの判定 //
@@ -749,7 +749,7 @@ $ ->
 	# SPとPCでとび先を変える //
 	$(window).load ->
 		# -forSP- //
-		if user_agent.indexOf('iPhone') > 0 or user_agent.indexOf('iPad') > 0 or user_agent.indexOf('iPod') > 0 or user_agent.indexOf('Android') > 0 or user_agent.indexOf('BlackBerry') > 0 or user_agent.indexOf('windows Phone') > 0 or user_agent.indexOf('NOKIA') > 0 or /Mobile.*Firefox/.test(user_agent)
+		if userAgent.indexOf('iPhone') > 0 or userAgent.indexOf('iPad') > 0 or userAgent.indexOf('iPod') > 0 or userAgent.indexOf('Android') > 0 or userAgent.indexOf('BlackBerry') > 0 or userAgent.indexOf('windows Phone') > 0 or userAgent.indexOf('NOKIA') > 0 or /Mobile.*Firefox/.test(userAgent)
 			$('.policy').on 'click', ->
 				# location.href='../sitepolicy/index.html'
 				# window.open('../sitepolicy/index.html', '_blank');
@@ -764,7 +764,7 @@ $ ->
 	$(window).on 'load resize', ->
 		`var window_width`
 		# -forSP- //
-		if user_agent.indexOf('iPhone') > 0 or user_agent.indexOf('iPad') > 0 or user_agent.indexOf('iPod') > 0 or user_agent.indexOf('Android') > 0 or user_agent.indexOf('BlackBerry') > 0 or user_agent.indexOf('windows Phone') > 0 or user_agent.indexOf('NOKIA') > 0 or /Mobile.*Firefox/.test(user_agent)
+		if userAgent.indexOf('iPhone') > 0 or userAgent.indexOf('iPad') > 0 or userAgent.indexOf('iPod') > 0 or userAgent.indexOf('Android') > 0 or userAgent.indexOf('BlackBerry') > 0 or userAgent.indexOf('windows Phone') > 0 or userAgent.indexOf('NOKIA') > 0 or /Mobile.*Firefox/.test(userAgent)
 			# なし  //
 		else
 			# ウィンドウサイズを精査  //
@@ -788,7 +788,7 @@ $ ->
 	$('.suggestClear').hide()
 	$(window).on 'load resize', ->
 		# サジェストを出す -forSP- //
-		if user_agent.indexOf('iPhone') > 0 or user_agent.indexOf('iPad') > 0 or user_agent.indexOf('iPod') > 0 or user_agent.indexOf('Android') > 0 or user_agent.indexOf('BlackBerry') > 0 or user_agent.indexOf('windows Phone') > 0 or user_agent.indexOf('NOKIA') > 0 or /Mobile.*Firefox/.test(user_agent)
+		if userAgent.indexOf('iPhone') > 0 or userAgent.indexOf('iPad') > 0 or userAgent.indexOf('iPod') > 0 or userAgent.indexOf('Android') > 0 or userAgent.indexOf('BlackBerry') > 0 or userAgent.indexOf('windows Phone') > 0 or userAgent.indexOf('NOKIA') > 0 or /Mobile.*Firefox/.test(userAgent)
 			$('#inquiryListDisplayJp,#inquiryListDisplayEn').on 'click': ->
 				`var window_width`
 				`var window_height`
@@ -925,9 +925,9 @@ $ ->
 	landscapeWidth = undefined
 	$(window).on('load resize', ->
 		# iPhone, iPadなど //
-		if user_agent.indexOf('iPhone') > 0 and user_agent.indexOf('iPad') == -1 or user_agent.indexOf('iPod') > 0
+		if userAgent.indexOf('iPhone') > 0 and userAgent.indexOf('iPad') == -1 or userAgent.indexOf('iPod') > 0
 			$('html').css 'zoom', 1
-		else if user_agent.indexOf('Android') > 0
+		else if userAgent.indexOf('Android') > 0
 			# Android時の傾き（ポートレイトかランドスケープか）を判定
 			if 'object' == typeof window.onorientationchange
 				window.addEventListener 'orientationchange', (->

@@ -85,8 +85,8 @@ var GLOBAL = GLOBAL || self;
 
 
     // 端末ユーザーエージェントの判定 //
-    var user_agent              = navigator.userAgent;
-    var ua_sp                   = user_agent.indexOf('iPhone') > 0 || user_agent.indexOf('iPad') > 0 || user_agent.indexOf('iPod') > 0 || user_agent.indexOf('Android') > 0 || user_agent.indexOf('BlackBerry') > 0 || user_agent.indexOf('windows Phone') > 0 || user_agent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(user_agent);
+    var userAgent               = navigator.userAgent;
+    var ua_sp                   = userAgent.indexOf('iPhone') > 0 || userAgent.indexOf('iPad') > 0 || userAgent.indexOf('iPod') > 0 || userAgent.indexOf('Android') > 0 || userAgent.indexOf('BlackBerry') > 0 || userAgent.indexOf('windows Phone') > 0 || userAgent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(userAgent);
 
 
     // ヘッダーの判定 //
@@ -111,28 +111,28 @@ var GLOBAL = GLOBAL || self;
 
 
         //　iOS
-        user_agent.indexOf('iPhone') > 0
-        user_agent.indexOf('iPad') > 0
-        user_agent.indexOf('iPod') > 0
+        userAgent.indexOf('iPhone') > 0
+        userAgent.indexOf('iPad') > 0
+        userAgent.indexOf('iPod') > 0
 
         //　Android
-        user_agent.indexOf('Android') > 0
+        userAgent.indexOf('Android') > 0
 
         //　BlackBerry
-        user_agent.indexOf('BlackBerry') > 0
+        userAgent.indexOf('BlackBerry') > 0
 
         //　Windows Phone
-        user_agent.indexOf('windows Phone') > 0
+        userAgent.indexOf('windows Phone') > 0
 
         //　NOKIA
-        user_agent.indexOf('NOKIA') > 0
+        userAgent.indexOf('NOKIA') > 0
 
         //　Firefox OS
-        /Mobile.*Firefox/.test(user_agent)
+        /Mobile.*Firefox/.test(userAgent)
 
         //　IE
-        user_agent.match(/MSIE/) 　////　vr.11 or high
-        user_agent.match(/Trident/) ////　vr.10 or less
+        userAgent.match(/MSIE/) 　////　vr.11 or high
+        userAgent.match(/Trident/) ////　vr.10 or less
 
 
         ----------------------------------------
@@ -203,7 +203,7 @@ var GLOBAL = GLOBAL || self;
 
             $('#test01').html('ウィンドウ幅' + '&nbsp;:&nbsp;' + window_width);
             $('#test02').html('ウィンドウ高さ' + '&nbsp;:&nbsp;' + window_height);
-            $('#test03').html('ユーザーエージェント' + '&nbsp;:&nbsp;' + '<br />' + user_agent);
+            $('#test03').html('ユーザーエージェント' + '&nbsp;:&nbsp;' + '<br />' + userAgent);
             $('#test04').html('現在のディレクトリ' + '&nbsp;:&nbsp;' + currentDir);
 
         }
@@ -227,9 +227,9 @@ var GLOBAL = GLOBAL || self;
         var version     = null;
 
         /* IEであるか否かの判定 */
-        if (user_agent.match(/MSIE/) || user_agent.match(/Trident/) ) {
+        if (userAgent.match(/MSIE/) || userAgent.match(/Trident/) ) {
             isIE = true;
-            version = user_agent.match(/(MSIE\s|rv:)([\d\.]+)/)[2];
+            version = userAgent.match(/(MSIE\s|rv:)([\d\.]+)/)[2];
             version = parseInt(version);
             console.log('IE : Ver:', version);
         }
@@ -296,7 +296,7 @@ var GLOBAL = GLOBAL || self;
         }
 
 
-        if (user_agent.indexOf('iPhone') > 0 || user_agent.indexOf('iPad') > 0 || user_agent.indexOf('iPod') > 0 || user_agent.indexOf('Android') > 0 || user_agent.indexOf('BlackBerry') > 0 || user_agent.indexOf('windows Phone') > 0 || user_agent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(user_agent) ) {
+        if (userAgent.indexOf('iPhone') > 0 || userAgent.indexOf('iPad') > 0 || userAgent.indexOf('iPod') > 0 || userAgent.indexOf('Android') > 0 || userAgent.indexOf('BlackBerry') > 0 || userAgent.indexOf('windows Phone') > 0 || userAgent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(userAgent) ) {
 
         }
 
@@ -565,7 +565,7 @@ var GLOBAL = GLOBAL || self;
 
 
     // PCのみ発火 //
-    if (user_agent.indexOf('iPhone') > 0 || user_agent.indexOf('iPad') > 0 || user_agent.indexOf('iPod') > 0 || user_agent.indexOf('Android') > 0 || user_agent.indexOf('BlackBerry') > 0 || user_agent.indexOf('windows Phone') > 0 || user_agent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(user_agent)) {
+    if (userAgent.indexOf('iPhone') > 0 || userAgent.indexOf('iPad') > 0 || userAgent.indexOf('iPod') > 0 || userAgent.indexOf('Android') > 0 || userAgent.indexOf('BlackBerry') > 0 || userAgent.indexOf('windows Phone') > 0 || userAgent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(userAgent)) {
 
         $('img.img-mouseover').on({
 
@@ -1240,7 +1240,7 @@ var GLOBAL = GLOBAL || self;
         $(window).on('load', function() {
 
             /* -SP- */
-            if (user_agent.indexOf('iPhone') > 0 || user_agent.indexOf('iPad') > 0 || user_agent.indexOf('iPod') > 0 || user_agent.indexOf('Android') > 0 || user_agent.indexOf('BlackBerry') > 0 || user_agent.indexOf('windows Phone') > 0 || user_agent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(user_agent)) {
+            if (userAgent.indexOf('iPhone') > 0 || userAgent.indexOf('iPad') > 0 || userAgent.indexOf('iPod') > 0 || userAgent.indexOf('Android') > 0 || userAgent.indexOf('BlackBerry') > 0 || userAgent.indexOf('windows Phone') > 0 || userAgent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(userAgent)) {
                 $('.policy').on('click', function() {
                     // location.href='../sitepolicy/index.html'
                     // window.open('../sitepolicy/index.html', '_blank');
@@ -1349,7 +1349,7 @@ var GLOBAL = GLOBAL || self;
     $(window).on('load resize', function() {
 
         /* サジェストを出す -SP- */
-        if (user_agent.indexOf('iPhone') > 0 || user_agent.indexOf('iPad') > 0 || user_agent.indexOf('iPod') > 0 || user_agent.indexOf('Android') > 0 || user_agent.indexOf('BlackBerry') > 0 || user_agent.indexOf('windows Phone') > 0 || user_agent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(user_agent)) {
+        if (userAgent.indexOf('iPhone') > 0 || userAgent.indexOf('iPad') > 0 || userAgent.indexOf('iPod') > 0 || userAgent.indexOf('Android') > 0 || userAgent.indexOf('BlackBerry') > 0 || userAgent.indexOf('windows Phone') > 0 || userAgent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(userAgent)) {
             suggestOnSP();
         }
 
@@ -1841,14 +1841,14 @@ var GLOBAL = GLOBAL || self;
     $(window).on('load resize', function() {
 
         /* iPhone, iPadなど */
-        if ((user_agent.indexOf('iPhone') > 0 && user_agent.indexOf('iPad') == -1) || user_agent.indexOf('iPod') > 0) {
+        if ((userAgent.indexOf('iPhone') > 0 && userAgent.indexOf('iPad') == -1) || userAgent.indexOf('iPod') > 0) {
             $('html').css({
                 'zoom': 1
             });
         }
 
         /* Android */
-        else if (user_agent.indexOf('Android') > 0) {
+        else if (userAgent.indexOf('Android') > 0) {
 
             /* 傾き（ポートレイトかランドスケープか）を判定 */
             if ('object' === typeof window.onorientationchange) {
