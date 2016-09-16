@@ -146,12 +146,73 @@
 
 
     // Tumblrの情報を取得 //
-    var url = 'kik888.tumblr.com',
-        key = 'DxAdNEP9PrL03Eq1H2duB0FHcqNETXBwAXbRVpxB1fjuBHmDUC';
+    var domain = 'kik888.tumblr.com',
+        apiKey = 'DxAdNEP9PrL03Eq1H2duB0FHcqNETXBwAXbRVpxB1fjuBHmDUC',
+        apiUrl = 'http://api.tumblr.com/v2/blog/' + domain + '/posts?api_key=' + apiKey + '&jsonp=?';
+
+
+    $.ajax ({
+
+        type:       'GET',
+        url:        apiUrl,
+        dataType:   'jsonp'
+
+    }).done(function(data){
+
+        console.log('ajax success!');
+        for (var i = 0, length = data.response.posts.length; i < length; ++i) {
+
+            console.log(data.response.posts[i].type);
+
+            /* 引っ張ってくる情報 */
+            var dateData    = data.response.posts[i].date,
+                link        = data.response.posts[i].post_url,
+                type        = data.response.posts[i].type,
+                caption     = data.response.posts[i].caption;
+
+
+            /* 日付け表示を変える */
+            var date        = moment(dateData).format('YYYY.M.D');
+
+            $('#post-date').text(date);
+            $('#post-caption').text(caption);
+
+            switch (data.response.posts[i].type){
+
+                case 'text' :
+
+
+                    break;
+
+                case 'link' :
+
+
+                    break;
+
+                case 'photo' :
+
+
+                    break;
+
+                case 'video' :
+
+
+                    break;
+
+                default :
+
+                    break;
+
+            }
+
+        }
+
+    });
+
 
 
     // JsonをAJAXで読み込む //
-    $.getJSON('http://api.tumblr.com/v2/blog/' + url + '/posts?api_key=' + key + '&jsonp=?'　+　'&limit=20', function (data){
+    $.getJSON('http://api.tumblr.com/v2/blog/' + domain + '/posts?api_key=' + apiKey + '&jsonp=?'　+　'&limit=20', function (data){
 
 
         $.each(data, function (index, val){
@@ -218,13 +279,6 @@
                                                         return '<div class="post-' + type + ' item text-color-white" style="background-image:url( ' + image + ' ); background-position: 50％ 50％;"><div class="box pd-20"><time class="block mb-40">' + date + '</time>' + caption + '<div class="post-cover">';
 
                                                     }
-
-
-                                                    // $('#tumblr-test').append('<div class="post-' + type + '"><ul><li>' + data + '</li><li><a href="' + link + '">link</a></li></ul><img src="' + image + '"></div>');
-
-                                                    // $('#tumblr-test').append('<li class="post-' + type + ' float-l"><a href="' + link + '"><img src=" ' + image + '"></a></li>');
-
-                                                    // $('#tumblr-test').append('<li class="post-' + type + ' float-l"><a href="' + link + '"><img src=" ' + image + ' " class="post-img"></a></li>');
 
 
                                                     $('.carousel-inner').append(bgHtml).fadeIn();
@@ -323,10 +377,6 @@
         });
 
     }
-
-
-    // 読み込んだら実行 //
-    bgSize();
 
 
     // リサイズしたら実行//

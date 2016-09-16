@@ -705,7 +705,7 @@ ol.list {
 	nav li,
 	nav.bread li {
 		display: inline;
-		margin: 0px 4px 0px 0px;
+		margin: 0px;
 		font-size: 0.8em;
 	}
 

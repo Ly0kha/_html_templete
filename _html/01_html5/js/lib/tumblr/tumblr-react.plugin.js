@@ -99,7 +99,7 @@
                                                         caption = v_post[kp].caption;
 
 
-                                                    $('#tumblr-test').append('<li class="post-graphic-' + type + ' float-l"><a href="' + link + '"><img src=" ' + image + ' " class="post-img"></a><time class="block mb-40">' + date + '</time>' + caption + '</li>');
+                                                    $('#tumblr-test').append('<li class="post-graphic-' + type + ' float-l mb-40"><a href="' + link + '"><img src=" ' + image + ' " class="post-img mb-20"></a><time class="block mb-40">' + date + '</time>' + caption + '</li>');
 
 
                                                 }

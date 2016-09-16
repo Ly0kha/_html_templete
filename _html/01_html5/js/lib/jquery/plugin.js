@@ -279,8 +279,8 @@
                 /* アンカーリンクへスクロール */
                 $target.velocity('scroll', {
                     offset:     -50,
-                    duration:   2000,
-                    easing:     'easeInOutQuart'
+                    duration:   500,
+                    easing:     'easeOutExpo'
                 });
                 return false;
 
