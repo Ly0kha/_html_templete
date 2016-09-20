@@ -151,6 +151,7 @@
         apiUrl = 'http://api.tumblr.com/v2/blog/' + domain + '/posts?api_key=' + apiKey + '&jsonp=?&limit=20';
 
 
+    // Jsonをajaxで読み込む //
     $.ajax ({
 
         type:       'GET',
@@ -194,8 +195,7 @@
     });
 
 
-
-    // JsonをAJAXで読み込む //
+    // JsonをgetJSONで読み込む //
     $.getJSON('http://api.tumblr.com/v2/blog/' + domain + '/posts?api_key=' + apiKey + '&jsonp=?'　+　'&limit=20', function (data){
 
 
