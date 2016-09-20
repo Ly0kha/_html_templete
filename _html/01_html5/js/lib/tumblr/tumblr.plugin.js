@@ -57,7 +57,7 @@
 
     // 端末ユーザーエージェントの判定 //
         userAgent           = navigator.userAgent,
-        ua_sp               = userAgent.indexOf('iPhone') > 0 || userAgent.indexOf('iPad') > 0 || userAgent.indexOf('iPod') > 0 || userAgent.indexOf('Android') > 0 || userAgent.indexOf('BlackBerry') > 0 || userAgent.indexOf('windows Phone') > 0 || userAgent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(userAgent),
+        userAgentSP         = userAgent.indexOf('iPhone') > 0 || userAgent.indexOf('iPad') > 0 || userAgent.indexOf('iPod') > 0 || userAgent.indexOf('Android') > 0 || userAgent.indexOf('BlackBerry') > 0 || userAgent.indexOf('windows Phone') > 0 || userAgent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(userAgent),
 
     // ヘッダーの判定 //
         $header             = $('header'),
@@ -148,7 +148,7 @@
     // Tumblrの情報を取得 //
     var domain = 'kik888.tumblr.com',
         apiKey = 'DxAdNEP9PrL03Eq1H2duB0FHcqNETXBwAXbRVpxB1fjuBHmDUC',
-        apiUrl = 'http://api.tumblr.com/v2/blog/' + domain + '/posts?api_key=' + apiKey + '&jsonp=?';
+        apiUrl = 'http://api.tumblr.com/v2/blog/' + domain + '/posts?api_key=' + apiKey + '&jsonp=?&limit=20';
 
 
     $.ajax ({
@@ -160,52 +160,36 @@
     }).done(function(data){
 
         console.log('ajax success!');
-        for (var i = 0, length = data.response.posts.length; i < length; ++i) {
+        // for (var i = 0, length = data.response.posts.length; i < length; ++i) {
 
-            console.log(data.response.posts[i].type);
+            $.each(data.response.posts, function(i, item) {
 
-            /* 引っ張ってくる情報 */
-            var dateData    = data.response.posts[i].date,
-                link        = data.response.posts[i].post_url,
-                type        = data.response.posts[i].type,
-                caption     = data.response.posts[i].caption;
+                console.log(data.response.posts[i].type);
 
-
-            /* 日付け表示を変える */
-            var date        = moment(dateData).format('YYYY.M.D');
-
-            $('#post-date').text(date);
-            $('#post-caption').text(caption);
-
-            switch (data.response.posts[i].type){
-
-                case 'text' :
+                /* 引っ張ってくる情報 */
+                var dateData    = data.response.posts[i].date,
+                    title       = data.response.posts[i].title,
+                    link        = data.response.posts[i].post_url,
+                    type        = data.response.posts[i].type,
+                    tags        = data.response.posts[i].tags,
+                    images      = data.response.posts[i].photos[0].alt_sizes[0].url,
+                    caption     = data.response.posts[i].caption;
 
 
-                    break;
+                /* 日付け表示を変える */
+                var date        = moment(dateData).format('YYYY.M.D');
 
-                case 'link' :
+                var captionHtml = function(item){
 
+                    return '<div class="box pd-tb-20"><img src="' + images + '" /></div><time class="block mb-40">' + date + '</time><p>' + caption + '</p>';
 
-                    break;
+                }
 
-                case 'photo' :
+                $('#test19').append(captionHtml).fadeIn();
 
+            });
 
-                    break;
-
-                case 'video' :
-
-
-                    break;
-
-                default :
-
-                    break;
-
-            }
-
-        }
+        // }
 
     });
 

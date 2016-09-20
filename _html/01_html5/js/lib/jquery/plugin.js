@@ -79,7 +79,7 @@
 
     // 端末ユーザーエージェントの判定 //
         userAgent           = navigator.userAgent,
-        ua_sp               = userAgent.indexOf('iPhone') > 0 || userAgent.indexOf('iPad') > 0 || userAgent.indexOf('iPod') > 0 || userAgent.indexOf('Android') > 0 || userAgent.indexOf('BlackBerry') > 0 || userAgent.indexOf('windows Phone') > 0 || userAgent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(userAgent),
+        userAgentSP         = userAgent.indexOf('iPhone') > 0 || userAgent.indexOf('iPad') > 0 || userAgent.indexOf('iPod') > 0 || userAgent.indexOf('Android') > 0 || userAgent.indexOf('BlackBerry') > 0 || userAgent.indexOf('windows Phone') > 0 || userAgent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(userAgent),
 
     // ヘッダーの判定 //
         $header             = $('header'),
@@ -400,7 +400,7 @@
 
 
     // PCのみ発火 //
-    if (ua_sp){
+    if (userAgentSP){
 
         $('img.img-mouseover').on({
 
@@ -1015,9 +1015,12 @@
             $('label.error').html('').hide();
 
             /* サジェスト部分の注意文言及び以下の値を消す
+            ----------------------------------------------------
                 [input type='hidden']
                 [input type='text']
-                [textarea]                       */
+                [textarea]
+            ----------------------------------------------------
+            */
             $('p#form-inquiryListDisplay-jp, p#form-inquiryListDisplay-en').html('');
             $('input#form-inquiryList-jp, input#form-inquiryList-en, input:text, input:checked, textarea').val('');
 
@@ -1075,7 +1078,7 @@
         $win.on('load', function(){
 
             /* -SP- */
-            if (ua_sp){
+            if (userAgentSP){
 
                 $('.policy').on('click', function(){
                     // location.href='../sitepolicy/index.html';
@@ -1189,7 +1192,7 @@
     $win.on('load resize', function(){
 
         /* サジェストを出す -SP- */
-        if (ua_sp){
+        if (userAgentSP){
             suggestOnSP();
         }
 
@@ -1691,7 +1694,7 @@
             changeClass('pc');
         }
 
-        else if ($resizeWinWidth < 960 || ua_sp){
+        else if ($resizeWinWidth < 960 || userAgentSP){
             changeClass('sp');
         }
 

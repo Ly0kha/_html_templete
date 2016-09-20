@@ -79,7 +79,7 @@
 
     // 端末ユーザーエージェントの判定 //
     var userAgent               = navigator.userAgent;
-    var ua_sp                   = userAgent.indexOf('iPhone') > 0 || userAgent.indexOf('iPad') > 0 || userAgent.indexOf('iPod') > 0 || userAgent.indexOf('Android') > 0 || userAgent.indexOf('BlackBerry') > 0 || userAgent.indexOf('windows Phone') > 0 || userAgent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(userAgent);
+    var userAgentSP                   = userAgent.indexOf('iPhone') > 0 || userAgent.indexOf('iPad') > 0 || userAgent.indexOf('iPod') > 0 || userAgent.indexOf('Android') > 0 || userAgent.indexOf('BlackBerry') > 0 || userAgent.indexOf('windows Phone') > 0 || userAgent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(userAgent);
 
     // ヘッダーの判定 //
     var header                  = $('header');
@@ -403,7 +403,7 @@
 
 
     // PCのみ発火 //
-    if (ua_sp){
+    if (userAgentSP){
 
         $('img.img-mouseover').on({
 
@@ -1078,7 +1078,7 @@
         $(window).on('load', function(){
 
             /* -SP- */
-            if (ua_sp){
+            if (userAgentSP){
                 $('.policy').on('click', function(){
                     // location.href='../sitepolicy/index.html';
                     // window.open('../sitepolicy/index.html', '_blank');
@@ -1187,7 +1187,7 @@
     $(window).on('load resize', function(){
 
         /* サジェストを出す -SP- */
-        if (ua_sp){
+        if (userAgentSP){
             suggestOnSP();
         }
 
