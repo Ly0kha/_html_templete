@@ -101,8 +101,8 @@
 
     $.ajaxSetup ({
 
-        cache: true,
-        async: true
+        cache:  true,
+        async:  true
 
     });
 

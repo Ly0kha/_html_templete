@@ -108,8 +108,8 @@
 
     $.ajaxSetup ({
 
-        cache: true,
-        async: true
+        cache:  true,
+        async:  true
 
     });
 
@@ -148,7 +148,7 @@
     // Tumblrの情報を取得 //
     var domain = 'kik888.tumblr.com',
         apiKey = 'DxAdNEP9PrL03Eq1H2duB0FHcqNETXBwAXbRVpxB1fjuBHmDUC',
-        apiUrl = 'http://api.tumblr.com/v2/blog/' + domain + '/posts?api_key=' + apiKey + '&jsonp=?&limit=20';
+        apiUrl = 'http://api.tumblr.com/v2/blog/' + domain + '/posts?api_key=' + apiKey + '&jsonp=?&limit=10';
 
 
     // Jsonをajaxで読み込む //
@@ -160,37 +160,37 @@
 
     }).done(function(data){
 
+
         console.log('ajax success!');
-        // for (var i = 0, length = data.response.posts.length; i < length; ++i) {
-
-            $.each(data.response.posts, function(i, item) {
-
-                console.log(data.response.posts[i].type);
-
-                /* 引っ張ってくる情報 */
-                var dateData    = data.response.posts[i].date,
-                    title       = data.response.posts[i].title,
-                    link        = data.response.posts[i].post_url,
-                    type        = data.response.posts[i].type,
-                    tags        = data.response.posts[i].tags,
-                    images      = data.response.posts[i].photos[0].alt_sizes[0].url,
-                    caption     = data.response.posts[i].caption;
 
 
-                /* 日付け表示を変える */
-                var date        = moment(dateData).format('YYYY.M.D');
+        $.each(data.response.posts, function(i, item) {
 
-                var captionHtml = function(item){
+            console.log(data.response.posts[i].type);
 
-                    return '<div class="box pd-tb-20"><img src="' + images + '" /></div><time class="block mb-40">' + date + '</time><p>' + caption + '</p>';
+            /* 引っ張ってくる情報 */
+            var dateData    = data.response.posts[i].date,
+                title       = data.response.posts[i].title,
+                link        = data.response.posts[i].post_url,
+                type        = data.response.posts[i].type,
+                tags        = data.response.posts[i].tags,
+                images      = data.response.posts[i].photos[0].alt_sizes[0].url,
+                caption     = data.response.posts[i].caption;
 
-                }
 
-                $('#test19').append(captionHtml).fadeIn();
+            /* 日付け表示を変える */
+            var date        = moment(dateData).format('YYYY.M.D');
 
-            });
+            var captionHtml = function(item){
 
-        // }
+                return '<div class="box mb-40"><div class="box mb-20"><img src="' + images + '" /></div><time class="block mb-20">' + date + '</time>' + caption + '</div>';
+
+            }
+
+            $('#test19').append(captionHtml).fadeIn();
+
+        });
+
 
     });
 

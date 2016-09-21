@@ -130,8 +130,8 @@
 
     $.ajaxSetup ({
 
-        cache: true,
-        async: true
+        cache:  true,
+        async:  true
 
     });
 
@@ -1632,7 +1632,7 @@
                 /* PC用画像ソースフォルダに切り替える */
                 $('.img-response').each(function(){
 
-                    /* ソースをSP用とPC用で切り替える */
+                    /* 画像ソースをPC用に切り替える */
                     $(this).prop('src', $(this).prop('src').replace('sp', 'pc'));
 
                 });
@@ -1657,7 +1657,7 @@
                 /* SP用画像ソースフォルダに切り替える */
                 $('.img-response').each(function(){
 
-                    /* ソースをSP用とPC用で切り替える */
+                    /* 画像ソースをSP用に切り替える */
                     $(this).prop('src', $(this).prop('src').replace('pc', 'sp'));
 
                 });

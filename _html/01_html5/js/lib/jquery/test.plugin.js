@@ -110,8 +110,8 @@
 
     $.ajaxSetup ({
 
-        cache:                      true,
-        async:                      true
+        cache:  true,
+        async:  true
 
     });
 
@@ -193,22 +193,101 @@
 
 
 
+    /*【TEST】 ブラウザ判定実装
+    ----------------------------------------*/
+
+
+    function browserCheck(i){
+
+        var browserArr = i ;
+
+        switch (browserArr){
+
+            case 'IE' :
+
+                /* IEか否か */
+                var isIE                        = false,
+
+                /* IEのバージョン */
+                    version                     = null;
+
+                isIE                        = true;
+                version                     = userAgent.match(/(MSIE\s|rv:)([\d\.]+)/)[2];
+                version                     = parseInt(version);
+                console.log('IE Ver:', version);
+                $('#test03b').html('IE Ver:' + version);
+
+                break;
+
+            case 'Safari' :
+
+                /* Safariか否か */
+                var isSafari                    = false,
+
+                /* Safariのバージョン */
+                    version                     = null;
+
+                isSafari                    = true;
+                version                     = userAgent.match(/(Safari)([\0-9\.]+)/)[2];
+                // version                  = parseInt(version);
+                console.log('Safari Ver:', version);
+                $('#test03b').html('Safari Ver:' + version);
+
+                break;
+
+            case 'Chrome' :
+
+                /* Chromeか否か */
+                var isChrome                    = false,
+
+                /* Chromeのバージョン */
+                    version                     = null;
+
+                isChrome                    = true;
+                version                     = userAgent.match(/(Chrome)([\0-9\.]+)/)[2];
+                // version                  = parseInt(version);
+                console.log('Chrome Ver:', version);
+                $('#test03b').html('Chrome Ver:' + version);
+
+                break;
+
+            case 'Firefox' :
+
+                /* Firefoxか否か */
+                var isFirefox                    = false,
+
+                /* Firefoxのバージョン */
+                    version                     = null;
+
+                isFirefox                   = true;
+                version                     = userAgent.match(/(Firefox)([\0-9\.]+)/)[2];
+                // version                  = parseInt(version);
+                console.log('Firefox Ver:', version);
+                $('#test03b').html('Firefox Ver:' + version);
+
+                break;
+
+            default :
+
+                console.log('Undefined');
+                $('#test03b').html('Undefined');
+
+                break;
+
+
+        }
+
+    }
+
+
+
     /*【TEST】 IE判定実装
     ----------------------------------------*/
 
 
-    /* IEか否か */
-    var isIE                        = false,
-
-    /* IEのバージョン */
-        version                     = null;
-
     /* IEであるか否かの判定 */
     if (userAgent.match(/MSIE/) || userAgent.match(/Trident/)){
-        isIE                        = true;
-        version                     = userAgent.match(/(MSIE\s|rv:)([\d\.]+)/)[2];
-        version                     = parseInt(version);
-        console.log('IE : Ver:', version);
+        browserCheck('IE');
     }
 
 
@@ -218,47 +297,67 @@
     ----------------------------------------*/
 
 
-    /* Chromeか否か */
-    var isChrome                    = false,
 
-    /* Chromeのバージョン */
-        version                     = null;
-
-    /* IEであるか否かの判定 */
-    if (userAgent.match(/Chrome/)){
-        isChrome                    = true;
-        version                     = userAgent.match(/(Chrome)([\0-9\.]+)/)[2];
-        // version                  = parseInt(version);
-        console.log('Chrome : Ver:', version);
+    /* Chromeであるか否かの判定 */
+    else if (userAgent.match(/Chrome/)){
+        browserCheck('Chrome');
     }
 
-    $('#test03b').html('Chrome Ver:' + version);
+
+
+
+    /*【TEST】 Firefox判定実装
+    ----------------------------------------*/
+
+
+    /* Firefoxであるか否かの判定 */
+    else if (userAgent.match(/Firefox/)){
+        browserCheck('Firefox');
+    }
+
+
+
+
+    /*【TEST】 Safari判定実装
+    ----------------------------------------*/
+
+
+    /* Safariであるか否かの判定 */
+    else if (userAgent.match(/Safari/)){
+        browserCheck('Safari');
+    }
+
+
+    /* 上記以外のブラウザ判定 */
+    else {
+        browserCheck();
+    }
 
 
 
 
     /* 【TEST】 Cookie読み込み
     ----------------------------------------*/
-    function cookiePC (){
+    function cookiePC(){
         var $cookiePCAdd            = $.cookie('PC', '1', { expires: 365 , path: '/' }),
             $cookieSPRemove         = $.removeCookie('SP', { path: '/' });
     }
 
-    function cookieSP (){
+    function cookieSP(){
         var $cookieSPAdd            = $.cookie('SP', '2', { expires: 365 , path: '/' }),
             $cookiePCRemove         = $.removeCookie('PC', { path: '/' });
     }
 
     if(userAgentSP){
         cookieSP();
-        $('#test03b').html('Cookie : SP');
         console.log('Cookie : SP');
+        $('#test03c').html('Cookie : SP');
     }
 
     else {
         cookiePC();
-        $('#test03b').html('Cookie : PC');
         console.log('Cookie : PC');
+        $('#test03c').html('Cookie : PC');
     }
 
 
