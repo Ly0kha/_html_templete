@@ -138,6 +138,9 @@
 
     function getScript(rootDir){
 
+        // $.getScript(rootDir + 'js/lib/jquery/jquery.cookie.min.js');
+        // $.getScript(rootDir + 'js/lib/jquery/hammer.min.js');
+
         $.getScript(rootDir + 'js/lib/jquery/jquery.validate.min.js');
         $.getScript(rootDir + 'js/lib/jquery/jquery.validate.japlugin.js');
         $.getScript(rootDir + 'js/lib/jquery/jquery.kerning.min.js');

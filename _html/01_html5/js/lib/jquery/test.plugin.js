@@ -72,7 +72,6 @@
 
 
 
-
         /* ユーザーエージェント一覧
         ----------------------------------------------------
 
@@ -117,6 +116,9 @@
 
 
     function getScript(rootDir){
+
+        // $.getScript(rootDir + 'js/lib/jquery/jquery.cookie.min.js');
+        // $.getScript(rootDir + 'js/lib/jquery/hammer.min.js');
 
         $.getScript(rootDir + 'js/lib/jquery/jquery.validate.min.js');
         $.getScript(rootDir + 'js/lib/jquery/jquery.validate.japlugin.js');
@@ -371,14 +373,14 @@
 
         return $.getJSON(rootDir + 'ajax/text.json', function(data){
 
-            var items               = [];
+            var items    = [];
             $.each(data, function(key, val){
                 items.push('<li id=' + key + '>' + val + '</li>');
             });
 
             $('<ul/>',{
-                'class':            'my-new-list',
-                html:               items.join('')
+                'class': 'my-new-list',
+                html:    items.join('')
             }).appendTo('#test05');
 
         });
