@@ -156,6 +156,8 @@ body {
 	margin: 0px;
 	color: #000;
 	/* line-height: 1.42857143; */
+	font-family: 'Noto Sans Japanese', 'Glyphicons Halflings', sans-serif;
+
 
 	-webkit-text-size-adjust: 100%;
 	word-break: break-all;
@@ -171,7 +173,6 @@ body {
 @media (min-width: 960px) {
 
 	body {
-		font-family: 'Noto Sans Japanese', 'Glyphicons Halflings', sans-serif;
 		font-size: 14px; /* PC用 */
 	}
 
@@ -182,7 +183,6 @@ body {
 @media (max-width: 959px) {
 
 	body {
-		font-family: 'Noto Sans Japanese', 'Glyphicons Halflings', sans-serif;
 		font-size: 11px; /* SP用 */
 	}
 
@@ -213,9 +213,9 @@ body {
 	background: none;
 }
 
-.wrapper,
-.test-wrapper,
-.test02-wrapper {
+.wrapper {
+	background: rgba(255,255,255,0.6);
+
 	position: relative;
 	padding: 0px 20px;
 	min-width: 300px;
@@ -226,12 +226,10 @@ body {
 }
 
 .wrapper {
-	background: rgba(255,255,255,1);
 	margin: 0px auto;
 }
 
 .test-wrapper {
-	background: rgba(255,255,255,0.8);
 	margin: 0px auto;
 }
 
@@ -239,9 +237,8 @@ body {
 /* BreakPoint for PC */
 @media (min-width: 960px) {
 
-	.test02-wrapper {
-		background: rgba(255,255,255,0.8);
-		margin: 50px auto 168px;
+	.wrapper {
+		margin: 50px auto 166px;
 	}
 
 }
@@ -250,9 +247,8 @@ body {
 /* BreakPoint for SP */
 @media (max-width: 959px) {
 
-	.test02-wrapper {
-		background: rgba(255,255,255,0.8);
-		margin: 50px auto 84px;
+	.wrapper {
+		margin: 50px auto 82px;
 	}
 
 }
@@ -269,7 +265,12 @@ header.fixed,
 footer.fixed {
 	width: 100%;
 	margin: 0px;
+
 	z-index: 100;
+
+	opacity: 0.85;
+	-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity = 85);
+	filter: alpha(opacity = 85);
 }
 
 

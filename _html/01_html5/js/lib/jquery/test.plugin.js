@@ -38,7 +38,7 @@
     var self                = this,
 
 
-    // ウィンドウのサイズ判定 //
+        // ウィンドウのサイズ判定 //
         $win                = $(window),
 
         $winWidth           = $win.width(),
@@ -49,16 +49,16 @@
         $winInnerHeight     = $win.innerHeight(),
 
 
-    // ディレクトリの判定 //
+        // ディレクトリの判定 //
         rootDir             = location.href.split('/'),
         currentDir          = rootDir[rootDir.length -2],
 
 
-    // 端末ユーザーエージェントの判定 //
+        // 端末ユーザーエージェントの判定 //
         userAgent           = navigator.userAgent,
         userAgentSP         = userAgent.indexOf('iPhone') > 0 || userAgent.indexOf('iPad') > 0 || userAgent.indexOf('iPod') > 0 || userAgent.indexOf('Android') > 0 || userAgent.indexOf('BlackBerry') > 0 || userAgent.indexOf('windows Phone') > 0 || userAgent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(userAgent),
 
-    // ヘッダーの判定 //
+        // ヘッダーの判定 //
         $header             = $('header'),
         $headerNav1st_none  = $('header#header-navi-1st-none'),
         $headerNav1st       = $('header#header-navi-1st'),
@@ -66,7 +66,7 @@
         $headerNav3rd       = $('header#header-navi-3rd'),
 
 
-    // フッターの判定 //
+        // フッターの判定 //
         $footer             = $('footer');
 
 
@@ -205,71 +205,135 @@
 
         switch (browserArr){
 
-            case 'IE' :
+            case 'IE':
 
                 /* IEか否か */
-                var isIE                        = false,
+                var isIE                = false,
 
                 /* IEのバージョン */
-                    version                     = null;
+                    version             = null;
 
-                isIE                        = true;
-                version                     = userAgent.match(/(MSIE\s|rv:)([\d\.]+)/)[2];
-                version                     = parseInt(version);
+                isIE                    = true;
+                version                 = userAgent.match(/(MSIE\s|rv:)([\d\.]+)/)[2];
+                version                 = parseInt(version);
                 console.log('IE Ver:', version);
                 $('#test03b').html('IE Ver:' + version);
 
                 break;
 
-            case 'Safari' :
+            case 'Safari':
 
                 /* Safariか否か */
-                var isSafari                    = false,
+                var isSafari            = false,
 
                 /* Safariのバージョン */
-                    version                     = null;
+                    version             = null;
 
-                isSafari                    = true;
-                version                     = userAgent.match(/(Safari)([\0-9\.]+)/)[2];
-                // version                  = parseInt(version);
+                isSafari                = true;
+                version                 = userAgent.match(/(Safari)([\0-9\.]+)/)[2];
+                // version              = parseInt(version);
                 console.log('Safari Ver:', version);
                 $('#test03b').html('Safari Ver:' + version);
 
                 break;
 
-            case 'Chrome' :
+            case 'Chrome':
 
                 /* Chromeか否か */
-                var isChrome                    = false,
+                var isChrome            = false,
 
                 /* Chromeのバージョン */
-                    version                     = null;
+                    version             = null;
 
-                isChrome                    = true;
-                version                     = userAgent.match(/(Chrome)([\0-9\.]+)/)[2];
-                // version                  = parseInt(version);
+                isChrome                = true;
+                version                 = userAgent.match(/(Chrome)([\0-9\.]+)/)[2];
+                // version              = parseInt(version);
                 console.log('Chrome Ver:', version);
                 $('#test03b').html('Chrome Ver:' + version);
 
                 break;
 
-            case 'Firefox' :
+            case 'Sleipnir':
+
+                /* Chromeか否か */
+                var isSleipnir          = false,
+
+                /* Chromeのバージョン */
+                    version             = null;
+
+                isSleipnir              = true;
+                version                 = userAgent.match(/(Sleipnir)([\0-9\.]+)/)[2];
+                // version              = parseInt(version);
+                console.log('Sleipnir Ver:', version);
+                $('#test03b').html('Sleipnir Ver:' + version);
+
+                break;
+
+            case 'Firefox':
 
                 /* Firefoxか否か */
-                var isFirefox                    = false,
+                var isFirefox           = false,
 
                 /* Firefoxのバージョン */
-                    version                     = null;
+                    version             = null;
 
-                isFirefox                   = true;
-                version                     = userAgent.match(/(Firefox)([\0-9\.]+)/)[2];
-                // version                  = parseInt(version);
+                isFirefox               = true;
+                version                 = userAgent.match(/(Firefox)([\0-9\.]+)/)[2];
+                // version              = parseInt(version);
                 console.log('Firefox Ver:', version);
                 $('#test03b').html('Firefox Ver:' + version);
 
                 break;
 
-            default :
+            case 'SafariSP':
+
+                /* Safariか否か */
+                var isSafariSP          = false,
+
+                /* Safariのバージョン */
+                    version             = null;
+
+                isSafariSP              = true;
+                version                 = userAgent.match(/(iPhone OS)([\0-9\_\0-9_\0-9\.]+)/)[2];
+                // version              = parseInt(version);
+                console.log('iPhone Ver:', version);
+                $('#test03b').html('iPhone Ver:' + version);
+
+                break;
+
+            case 'ChromeSP':
+
+                /* Chromeか否か */
+                var isChromeSP          = false,
+
+                /* Chromeのバージョン */
+                    version             = null;
+
+                isChromeSP              = true;
+                version                 = userAgent.match(/(CriOS)([\0-9\.]+)/)[2];
+                // version              = parseInt(version);
+                console.log('Chrome Ver:', version);
+                $('#test03b').html('Chrome Ver:' + version);
+
+                break;
+
+            case 'FirefoxSP':
+
+                /* Firefoxか否か */
+                var isFirefoxSP         = false,
+
+                /* Firefoxのバージョン */
+                    version             = null;
+
+                isFirefoxSP             = true;
+                version                 = userAgent.match(/(FxiOS)([\0-9\.]+)/)[2];
+                // version              = parseInt(version);
+                console.log('Firefox Ver:', version);
+                $('#test03b').html('Firefox Ver:' + version);
+
+                break;
+
+            default:
 
                 console.log('Undefined');
                 $('#test03b').html('Undefined');
@@ -283,57 +347,126 @@
 
 
 
-    /*【TEST】 IE判定実装
-    ----------------------------------------*/
+
+    if(userAgentSP){
 
 
-    /* IEであるか否かの判定 */
-    if (userAgent.match(/MSIE/) || userAgent.match(/Trident/)){
-        browserCheck('IE');
+        /*【TEST】 Chrome判定実装
+        ----------------------------------------*/
+
+
+        /* Chromeであるか否かの判定 */
+        if (userAgent.match(/CriOS/)){
+            browserCheck('ChromeSP');
+        }
+
+
+
+
+        /*【TEST】 Firefox判定実装
+        ----------------------------------------*/
+
+
+        /* Firefoxであるか否かの判定 */
+        else if (userAgent.match(/FxiOS/)){
+            browserCheck('FirefoxSP');
+        }
+
+
+
+
+        /*【TEST】 Safari判定実装
+        ----------------------------------------*/
+
+
+        /* Safariであるか否かの判定 */
+        else if (userAgent.match(/Safari/)){
+            browserCheck('SafariSP');
+        }
+
+
+        /* 上記以外のブラウザ判定 */
+        else {
+            browserCheck();
+        }
+
+
     }
 
-
-
-
-    /*【TEST】 Chrome判定実装
-    ----------------------------------------*/
-
-
-
-    /* Chromeであるか否かの判定 */
-    else if (userAgent.match(/Chrome/)){
-        browserCheck('Chrome');
-    }
-
-
-
-
-    /*【TEST】 Firefox判定実装
-    ----------------------------------------*/
-
-
-    /* Firefoxであるか否かの判定 */
-    else if (userAgent.match(/Firefox/)){
-        browserCheck('Firefox');
-    }
-
-
-
-
-    /*【TEST】 Safari判定実装
-    ----------------------------------------*/
-
-
-    /* Safariであるか否かの判定 */
-    else if (userAgent.match(/Safari/)){
-        browserCheck('Safari');
-    }
-
-
-    /* 上記以外のブラウザ判定 */
     else {
-        browserCheck();
+
+
+        /*【TEST】 IE判定実装
+        ----------------------------------------*/
+
+
+        /* IEであるか否かの判定 */
+        if (userAgent.match(/MSIE/) || userAgent.match(/Trident/)){
+            browserCheck('IE');
+        }
+
+
+
+
+        /*【TEST】 Sleipnir判定実装
+        ----------------------------------------*/
+
+
+        /* Sleipnirであるか否かの判定 */
+        else if (userAgent.match(/Sleipnir/)){
+            browserCheck('Sleipnir');
+        }
+
+
+
+
+        /*【TEST】 Chrome判定実装
+        ----------------------------------------*/
+
+
+        /* Chromeであるか否かの判定 */
+        else if (userAgent.match(/Chrome/)){
+            browserCheck('Chrome');
+        }
+
+
+
+
+        /*【TEST】 Firefox判定実装
+        ----------------------------------------*/
+
+
+        /* Firefoxであるか否かの判定 */
+        else if (userAgent.match(/Firefox/)){
+            browserCheck('Firefox');
+        }
+
+
+
+
+        /*【TEST】 Safari判定実装
+        ----------------------------------------*/
+
+
+        /* Safariであるか否かの判定 */
+        else if (userAgent.match(/Safari/)){
+            browserCheck('Safari');
+        }
+
+
+        /* 上記以外のブラウザ判定 */
+        else {
+            browserCheck();
+        }
+
+
     }
+
+
+
+
+
+
 
 
 

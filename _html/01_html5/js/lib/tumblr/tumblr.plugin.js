@@ -39,7 +39,7 @@
     var self                = this,
 
 
-    // ウィンドウのサイズ判定 //
+        // ウィンドウのサイズ判定 //
         $win                = $(window),
 
         $winWidth           = $win.width(),
@@ -50,16 +50,16 @@
         $winInnerHeight     = $win.innerHeight(),
 
 
-    // ディレクトリの判定 //
+        // ディレクトリの判定 //
         rootDir             = location.href.split('/'),
         currentDir          = rootDir[rootDir.length -2],
 
 
-    // 端末ユーザーエージェントの判定 //
+        // 端末ユーザーエージェントの判定 //
         userAgent           = navigator.userAgent,
         userAgentSP         = userAgent.indexOf('iPhone') > 0 || userAgent.indexOf('iPad') > 0 || userAgent.indexOf('iPod') > 0 || userAgent.indexOf('Android') > 0 || userAgent.indexOf('BlackBerry') > 0 || userAgent.indexOf('windows Phone') > 0 || userAgent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(userAgent),
 
-    // ヘッダーの判定 //
+        // ヘッダーの判定 //
         $header             = $('header'),
         $headerNav1st_none  = $('header#header-navi-1st-none'),
         $headerNav1st       = $('header#header-navi-1st'),
@@ -67,7 +67,7 @@
         $headerNav3rd       = $('header#header-navi-3rd'),
 
 
-    // フッターの判定 //
+        // フッターの判定 //
         $footer             = $('footer');
 
 
