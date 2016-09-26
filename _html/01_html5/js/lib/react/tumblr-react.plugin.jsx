@@ -52,6 +52,7 @@
         userAgent           = navigator.userAgent,
         userAgentSP         = userAgent.indexOf('iPhone') > 0 || userAgent.indexOf('iPad') > 0 || userAgent.indexOf('iPod') > 0 || userAgent.indexOf('Android') > 0 || userAgent.indexOf('BlackBerry') > 0 || userAgent.indexOf('windows Phone') > 0 || userAgent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(userAgent),
 
+
     // ヘッダーの判定 //
         $header             = $('header'),
         $headerNav1st_none  = $('header#header-navi-1st-none'),

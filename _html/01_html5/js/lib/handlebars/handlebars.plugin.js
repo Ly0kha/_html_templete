@@ -59,6 +59,7 @@
         userAgent           = navigator.userAgent,
         userAgentSP         = userAgent.indexOf('iPhone') > 0 || userAgent.indexOf('iPad') > 0 || userAgent.indexOf('iPod') > 0 || userAgent.indexOf('Android') > 0 || userAgent.indexOf('BlackBerry') > 0 || userAgent.indexOf('windows Phone') > 0 || userAgent.indexOf('NOKIA') > 0 || /Mobile.*Firefox/.test(userAgent),
 
+
         // ヘッダーの判定 //
         $header             = $('header'),
         $headerNav1st_none  = $('header#header-navi-1st-none'),
@@ -126,6 +127,85 @@
             async:  true
 
         });
+
+
+        /* アウトラインでソースを書き出すテスト */
+        function testTumblrJson (rootDir){
+
+
+            var $tumblr_test_raw_template = $('#tumblr-test').html(),
+                tumblr_test_template = Handlebars.compile($tumblr_test_raw_template),
+                $tumblr_test_placeHolder = $("#test20");
+
+            // Tumblrの情報を取得 //
+            var domain = 'kik888.tumblr.com',
+                apiKey = 'DxAdNEP9PrL03Eq1H2duB0FHcqNETXBwAXbRVpxB1fjuBHmDUC',
+                apiUrl = 'http://api.tumblr.com/v2/blog/' + domain + '/posts?api_key=' + apiKey + '&jsonp=?&limit=10';
+
+
+            // Jsonをajaxで読み込む //
+            $.ajax ({
+
+                type:       'GET',
+                url:        apiUrl,
+                dataType:   'jsonp'
+
+            }).done(function(data){
+
+
+                console.log('JSONP success!');
+
+
+                // $.each(data.response.posts, function(i, item) {
+
+                //     console.log(data.response.posts[i].type);
+
+                //     /* 引っ張ってくる情報 */
+                //     var dateData    = data.response.posts[i].date,
+                //         title       = data.response.posts[i].title,
+                //         link        = data.response.posts[i].post_url,
+                //         type        = data.response.posts[i].type,
+                //         tags        = data.response.posts[i].tags,
+                //         images      = data.response.posts[i].photos[0].alt_sizes[0].url,
+                //         caption     = data.response.posts[i].caption;
+
+
+                //     /* 日付け表示を変える */
+                //     var date        = moment(dateData).format('YYYY.M.D');
+
+                //     var captionHtml = function(item){
+
+                //         return '<div class="box mb-40"><div class="box mb-20"><img src="' + images + '" /></div><time class="block mb-20">' + date + '</time>' + caption + '</div>';
+
+                //     }
+
+                //     $('#test19').append(captionHtml).fadeIn();
+
+                // });
+
+
+                // var html = test_template(data);
+                // $tumblr_test_placeHolder.append(html);
+
+
+            });
+
+
+        }
+
+        if ($headerNav1st.length || $headerNav1st_none.length){
+            testTumblrJson('./');
+        }
+
+        else if ($headerNav2nd.length){
+            testTumblrJson('../');
+        }
+
+        else if ($headerNav3rd.length){
+            testTumblrJson('../../');
+        }
+
+
 
 
         /* アウトラインでソースを書き出すテスト */
