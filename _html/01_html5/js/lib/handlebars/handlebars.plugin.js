@@ -156,68 +156,25 @@
                 console.log('JSONP success!');
 
 
-                // $.each(data.response.posts, function(i, item) {
+                $.each(data.response.posts, function(i, item) {
 
-                //     console.log(data.response.posts[i].type);
+                    console.log(data.response.posts[i].type, 'Load success!');
 
-                //     /* 引っ張ってくる情報 */
-                //     var dateData    = data.response.posts[i].date,
-                //         title       = data.response.posts[i].title,
-                //         link        = data.response.posts[i].post_url,
-                //         type        = data.response.posts[i].type,
-                //         tags        = data.response.posts[i].tags,
-                //         images      = data.response.posts[i].photos[0].alt_sizes[0].url,
-                //         caption     = data.response.posts[i].caption;
-
-
-                //     /* 日付け表示を変える */
-                //     var date        = moment(dateData).format('YYYY.M.D');
-
-                //     var captionHtml = function(item){
-
-                //         return '<div class="box mb-40"><div class="box mb-20"><img src="' + images + '" /></div><time class="block mb-20">' + date + '</time>' + caption + '</div>';
-
-                //     }
-
-                //     $('#test19').append(captionHtml).fadeIn();
-
-                // });
+                    /* 引っ張ってくる情報 */
+                    var dateData    = data.response.posts[i].date,
+                        title       = data.response.posts[i].title,
+                        link        = data.response.posts[i].post_url,
+                        type        = data.response.posts[i].type,
+                        tags        = data.response.posts[i].tags,
+                        images      = data.response.posts[i].photos[0].alt_sizes[0].url,
+                        caption     = data.response.posts[i].caption;
 
 
-                Handlebars.registerHelper('photos', function(context, options){
-
-                    $.each(data.response.posts, function(i, item) {
-
-                        console.log(data.response.posts[i].type);
-
-                        /* 引っ張ってくる情報 */
-                        var dateData    = data.response.posts[i].date,
-                            title       = data.response.posts[i].title,
-                            link        = data.response.posts[i].post_url,
-                            type        = data.response.posts[i].type,
-                            tags        = data.response.posts[i].tags,
-                            images      = data.response.posts[i].photos[0].alt_sizes[0].url,
-                            caption     = data.response.posts[i].caption;
-
-
-                        /* 日付け表示を変える */
-                        var date        = moment(dateData).format('YYYY.M.D');
-
-                        var captionHtml = function(item){
-
-                            return '<div class="box mb-40"><div class="box mb-20"><img src="' + images + '" /></div><time class="block mb-20">' + date + '</time>' + caption + '</div>';
-
-                        }
-
-                        $('#test20').append(captionHtml).fadeIn();
-
-                    });
+                    /* 日付け表示を変える */
+                    var date        = moment(dateData).format('YYYY.M.D');
 
                 });
 
-
-                // var listhtml = list_template(listdata);
-                // $list_placeHolder.append(listhtml);
 
                 var tumblrhtml = tumblr_test_template(data);
                 $tumblr_test_placeHolder.append(tumblrhtml);

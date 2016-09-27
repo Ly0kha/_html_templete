@@ -472,13 +472,32 @@
 						写真
 					</h2>
 
-					{{#each photos}}
-						<div class="box">
-							<img src="{{url}}">
+					<div class="box mb-20">
+						{{#each response}}
+
+							{{ask}}<br />
+							{{ask_anon}}<br />
+							{{ask_page_title}}<br />
+							{{description}}<br />
+							{{is_nsfw}}<br />
+							{{name}}<br />
+							{{posts}}<br />
+							{{share_likes}}<br />
+							{{title}}<br />
+							{{total_posts}}<br />
+							{{updated}}<br />
+							{{url}}
+
+						{{/each}}
+					</div>
+
+					<div class="box mb-20">
+						{{#each posts}}
+
 							{{date}}
-							{{caption}}
-						</div>
-					{{/each}}
+
+						{{/each}}
+					</div>
 
 				</section>
 
