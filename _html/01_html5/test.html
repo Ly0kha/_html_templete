@@ -464,47 +464,43 @@
 			<hr class="hr-small">
 
 
-			<script id="tumblr-test" type="text/x-handlebars-template">
+			<section>
 
-				<section>
+				<h2>
+					JSON読み出し
+				</h2>
 
-					<h2>
-						写真
-					</h2>
+				<script id="tumblr-test" type="text/x-handlebars-template">
 
-					<div class="box mb-20">
-						{{#each response}}
+						<div class="box mb-20">
 
-							{{ask}}<br />
-							{{ask_anon}}<br />
-							{{ask_page_title}}<br />
-							{{description}}<br />
-							{{is_nsfw}}<br />
-							{{name}}<br />
-							{{posts}}<br />
-							{{share_likes}}<br />
-							{{title}}<br />
-							{{total_posts}}<br />
-							{{updated}}<br />
-							{{url}}
+							{{#each response}}
+								{{ask}}
+								{{ask_anon}}
+								{{ask_page_title}}
+								{{description}}
+								{{is_nsfw}}
+								{{name}}
+								{{posts}}
+								{{share_likes}}
+								{{title}}
+								{{total_posts}}
+								{{updated}}
+								{{url}}
+							{{/each}}
 
-						{{/each}}
-					</div>
+						</div>
 
-					<div class="box mb-20">
-						{{#each posts}}
+				</script>
 
-							{{date}}
-
-						{{/each}}
-					</div>
-
-				</section>
-
-			</script>
+			</section>
 
 			<div id="test20" class="mb-05">
 			</div>
+
+			<div id="test20b" class="mb-05">
+			</div>
+
 			<hr class="hr-small">
 
 
