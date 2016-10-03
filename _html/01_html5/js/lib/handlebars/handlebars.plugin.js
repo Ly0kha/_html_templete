@@ -173,13 +173,13 @@
                     /* 日付け表示を変える */
                     var date        = moment(dateData).format('YYYY.M.D');
 
-                    var postTumblrHtml = function(item){
+                    // var postTumblrHtml = function(item){
 
-                        return '<div class="box mb-40"><div class="box mb-20"><img src="' + images + '" /></div><time class="block mb-20">' + date + '</time>' + caption + '</div>';
+                    //     return '<div class="box mb-40"><div class="box mb-20"><img src="' + images + '" /></div><time class="block mb-20">' + date + '</time>' + caption + '</div>';
 
-                    }
+                    // }
 
-                    $('#test20b').append(postTumblrHtml).fadeIn();
+                    // $('#test20b').append(postTumblrHtml).fadeIn();
 
                 });
 

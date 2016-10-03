@@ -188,7 +188,7 @@
 
             var captionHtml = function(item){
 
-                return '<div class="box mb-40"><div class="box mb-20"><img src="' + images + '" /></div><time class="block mb-20">' + date + '</time>' + caption + '</div>';
+                return '<div class="box mb-40"><div class="box mb-20"><img src="' + images + '" /></div><time class="block mb-20" style="margin-top: 100px">' + date + '</time>' + caption + '</div>';
 
             }
 
@@ -265,12 +265,12 @@
 
                                                     var bgHtml = function (index){
 
-                                                        return '<div class="post-' + type + ' item text-color-white" style="background-image:url( ' + image + ' ); background-position: 50％ 50％;"><div class="box pd-20"><time class="block mb-40">' + date + '</time>' + caption + '<div class="post-cover">';
+                                                        return '<div class="post-' + type + ' item text-color-white" style="background-image:url( ' + image + ' ); background-position: 50％ 50％;"><div class="box pd-20"><span style="background-color: rgba(0,0,0,0.5);"><time class="block mb-20" style="margin-top: 100px">' + date + '</time>' + caption + '</span><div class="post-cover">';
 
                                                     }
 
-
-                                                    $('.carousel-inner').append(bgHtml).fadeIn();
+                                                    $('.carousel-inner').append(bgHtml);
+                                                    // $('.carousel-inner').append(bgHtml).fadeIn();
                                                     $('.post-' + type + ':first').addClass('active');
 
                                                 }
@@ -361,9 +361,12 @@
         var $bgslider = $('#bg-slider');
 
         /* スライダーの設定 */
-        $bgslider.carousel({
-            interval: 10000
+        $bgslider.on('slide.bs.carousel', function(){
+            $bgslider.carousel({
+                interval: 10000
+            });
         });
+
 
     }
 
