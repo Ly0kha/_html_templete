@@ -1327,6 +1327,8 @@
         }
 
     }
+
+
     var settinglang = browserLanguage();
 
 

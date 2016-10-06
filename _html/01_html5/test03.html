@@ -477,10 +477,25 @@
 							<h2>{{response.posts.blog_name}}</h2>
 							<hr class="hr-small">
 
+							{{#each response}}
+								{{ask}}
+								{{ask_anon}}
+								{{ask_page_title}}
+								{{description}}
+								{{is_nsfw}}
+								{{name}}
+								{{posts}}
+								{{share_likes}}
+								{{title}}
+								{{total_posts}}
+								{{updated}}
+								{{url}}
+							{{/each}}
 
 							{{#each response.posts}}
-								<p>{{caption}}</p>
-								<img src="{{photos}}" class="mb-20" />
+								{{date}}<br />
+								{{caption}}<br />
+								{{photos.alt_sizes.url}}
 							{{/each}}
 
 
