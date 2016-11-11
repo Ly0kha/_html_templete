@@ -7762,7 +7762,8 @@ button.close {
 }
 
 .carousel-indicators li {
-display: inline-block;
+/*
+	display: inline-block;
 	width: 10px;
 	height: 10px;
 	margin: 0px 2px;
@@ -7772,28 +7773,58 @@ display: inline-block;
 	-moz-border-radius: 50px;
 	-webkit-border-radius: 50px;
 	border-radius: 50px;
-	/*IE 7 AND 8 DO NOT SUPPORT BORDER RADIUS*/
+
 	-moz-box-shadow: inset 1px 1px 2px #4a4938;
 	-webkit-box-shadow: inset 1px 1px 2px #4a4938;
 	box-shadow: inset 1px 1px 2px #4a4938;
 
-	/*Inner elements should not cover inner shadows*/
-	/*Chrome renders inset shadows incorrectly with border-radius*/
-	/*IE 7 AND 8 DO NOT SUPPORT INSET SHADOWS*/
+
 	opacity: 0.6;
 	-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity = 60);
 
-	/*-ms-filter must come before filter*/
 	filter: alpha(opacity = 60);
-	/*INNER ELEMENTS MUST NOT BREAK THIS ELEMENTS BOUNDARIES*/
-	/*All filters must be placed together*/
+*/
+
+	display: inline-block;
+	width: 60px;
+	height: 2px;
+	margin: 0px 2px;
+	text-indent: -9999px;
+	cursor: pointer;
+	background-color: #ccc;
+
+/*
+	border-bottom: 1px solid #ccc;
+*/
+
+	opacity: 0.6;
+	-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity = 60);
+
+	filter: alpha(opacity = 60);
+
 }
 
 .carousel-indicators .active {
+	width: 60px;
+	height: 2px;
+	-moz-animation: fullexpand 5s ease-out;
+	-webkit-animation: fullexpand 5s ease-out;
+/*
 	width: 10px;
 	height: 10px;
+*/
 	margin: 0px 2px;
-	background-color: #ccc;
+	background-color: #4a4938;
+}
+
+@-moz-keyframes fullexpand {
+	0%   { width: 0px;}
+	100% { width: 60px;}
+}
+
+@-webkit-keyframes fullexpand {
+    0%   { width: 0px;}
+    100% { width: 60px;}
 }
 
 .carousel-caption {
