@@ -364,7 +364,6 @@ ul.suggest-menu li,
 ul.form-accept li,
 a,
 address {
-	/* letter-spacing: 0.125em; */
 	letter-spacing: 0.1em;
 }
 
