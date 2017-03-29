@@ -2101,15 +2101,15 @@ ul.suggest-menu li {
 ----------------------------------------*/
 
 
-.left {
+.text-left {
 	text-align: left;
 }
 
-.right {
+.text-right {
 	text-align: right;
 }
 
-.center {
+.text-center {
 	text-align: center;
 }
 
@@ -2118,15 +2118,15 @@ ul.suggest-menu li {
 ----------------------------------------*/
 
 
-.top {
+.vertical-top {
 	vertical-align: top;
 }
 
-.middle {
+.vertical-middle {
 	vertical-align: middle;
 }
 
-.bottom {
+.vertical-bottom {
 	vertical-align: bottom;
 }
 
